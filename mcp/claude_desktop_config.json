@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+        "weather": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/home/zanoni/repo/tcc-mcp-example/quickstart-resources/weather",
+                "run",
+                "weather.py"
+            ]
+        }
+    }
+}

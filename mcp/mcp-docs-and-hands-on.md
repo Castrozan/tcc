@@ -31,12 +31,13 @@
   - [ ] Learn advanced integration techniques (passing environment variables, using WSL on Windows).
   - [ ] Review and study source code from repositories like [codemcp](https://github.com/ezyang/codemcp).
 
-- [ ] **Engage with the Community**
+- [x] **Engage with the Community**
 
-  - [ ] Join communities (e.g., [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/)) to discuss MCP and Claude Desktop.
-  - [ ] Ask questions and share your experiences.
-  - [ ] Follow updates and subscribe to newsletters or blogs from Anthropic and other developers.
+  - [x] Join communities (e.g., [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/)) to discuss MCP and Claude Desktop.
+  - [x] Ask questions and share your experiences.
+  - [x] Follow updates and subscribe to newsletters or blogs from Anthropic and other developers.
 
-- [ ] **Document Your Learning**
-  - [ ] Keep a journal detailing your experiments, configuration changes, and troubleshooting tips.
-  - [ ] Consider sharing your projects and learnings (e.g., blog posts or GitHub contributions).
+- [x] **Document Your Learning**
+
+  - [x] Keep a journal detailing your experiments, configuration changes, and troubleshooting tips.
+  - [x] Consider sharing your projects and learnings (e.g., blog posts or GitHub contributions).

@@ -1,0 +1,20 @@
+{
+    "exclude": [],
+    "ts-node": {
+        "esm": true,
+        "experimentalSpecifier": true,
+        "files": true
+    },
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "rootDir": ".",
+        "checkJs": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "skipLibCheck": true
+    }
+}

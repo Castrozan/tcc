@@ -1,0 +1,23 @@
+{
+  "name": "alpha-server",
+  "version": "1.0.0",
+  "description": "Mcp server for testing",
+  "engines": {
+    "npm": ">=10.0.0",
+    "node": ">=22.0.0"
+  },
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_ENV=development tsx watch ./server.ts"
+  },
+  "author": {
+    "name": "Lucas Zanoni",
+    "email": "castro.lucas290@gmail.com",
+    "url": "https://github.com/Castrozan"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

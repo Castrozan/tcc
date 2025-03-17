@@ -1,0 +1,8 @@
+services:
+    partner-mock-application:
+        build: .
+        ports:
+            - '3001:3001'
+        environment:
+            NODE_ENV: development
+            PORT: 3001

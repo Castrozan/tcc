@@ -1,8 +1,8 @@
-# Documentação **mcp-server-gateway-app**
+# Documentação **mcp-server-manager-app**
 
 ## **Índice**
 
-- [Documentação **mcp-server-gateway-app**](#documentação-mcp-server-gateway-app)
+- [Documentação **mcp-server-manager-app**](#documentação-mcp-server-manager-app)
   - [**Índice**](#índice)
   - [**Visão Geral**](#visão-geral)
   - [**Funcionamento Geral**](#funcionamento-geral)
@@ -16,7 +16,7 @@
 
 ## **Visão Geral**
 
-O projeto **mcp-server-gateway-app** é uma aplicação **Node.js** que atua como conector entre o MCP client em formato de um LLM generalista, neste caso Claude Desktop, e um ecossistema de MCP servers.
+O projeto **mcp-server-manager-app** é uma aplicação **Node.js** que atua como conector entre o MCP client em formato de um LLM generalista, neste caso Claude Desktop, e um ecossistema de MCP servers.
 
 O MCP server gateway é responsável por:
 

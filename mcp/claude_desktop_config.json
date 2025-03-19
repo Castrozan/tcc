@@ -8,6 +8,12 @@
                 "run",
                 "weather.py"
             ]
+        },
+        "alpha-server": {
+            "command": "node",
+            "args": [
+                "/home/zanoni/repo/tcc/mcp-server-manager-app/alpha-server/dist/server.js"
+            ]
         }
     }
 }

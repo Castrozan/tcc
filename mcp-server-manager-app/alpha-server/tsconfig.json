@@ -1,5 +1,8 @@
 {
-    "exclude": [],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
     "ts-node": {
         "esm": true,
         "experimentalSpecifier": true,
@@ -10,6 +13,7 @@
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
         "rootDir": ".",
+        "outDir": "./dist",
         "checkJs": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,

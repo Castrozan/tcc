@@ -15,6 +15,6 @@ apply-claude-config:
 
 .PHONY: save-bookmarks
 save-bookmarks:
-	@echo "Saving TCC bookmarks..."
+	@echo "Saving outer TCC bookmarks..."
 	@chmod +x bookmarks/save-bookmarks.sh
-	@sh bookmarks/save-bookmarks.sh
+	@bookmarks/save-bookmarks.sh "$(COMMIT_MSG)"

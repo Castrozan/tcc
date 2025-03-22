@@ -1,0 +1,49 @@
+{
+  "children": [
+    {
+      "children": [
+        {
+          "date_added": "13387153172399739",
+          "date_last_used": "0",
+          "guid": "9b8a333e-b638-4bf6-ab21-ef01b3d98902",
+          "id": "1178",
+          "name": "tcc - Google Drive",
+          "type": "url",
+          "url": "https://drive.google.com/drive/u/0/folders/1QtuqxcJKRcWoPNGE5VtoSBTNuTZhAQPl"
+        },
+        {
+          "date_added": "13387153172399881",
+          "date_last_used": "0",
+          "guid": "d34de271-e572-4870-92ce-020ebd47d87d",
+          "id": "1179",
+          "name": "PFC 1",
+          "type": "url",
+          "url": "https://storage.satc.edu.br/arquivos/docentes/3497/20251/files/PFC%201.pdf"
+        },
+        {
+          "date_added": "13387153172399968",
+          "date_last_used": "0",
+          "guid": "1e23596e-48c3-4313-b6c4-3ca177660b1d",
+          "id": "1180",
+          "name": "Modelo Artigo_2025_PFC I.docx - Documentos Google",
+          "type": "url",
+          "url": "https://docs.google.com/document/d/1cs7DxMhjDUVf1DuXDvK9ZIWaDnUnWN8S/edit"
+        }
+      ],
+      "date_added": "13387153172399680",
+      "date_last_used": "0",
+      "date_modified": "13387153172399968",
+      "guid": "ee33b1fd-03a1-4b9c-b7f1-860ce4c89ace",
+      "id": "1177",
+      "name": "TCC",
+      "type": "folder"
+    }
+  ],
+  "date_added": "13387153172399378",
+  "date_last_used": "0",
+  "date_modified": "13387153172400043",
+  "guid": "96f67014-2662-4122-ae00-95c5ced41f89",
+  "id": "1176",
+  "name": "TCC",
+  "type": "folder"
+}

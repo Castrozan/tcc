@@ -12,3 +12,9 @@ apply-claude-config:
 	@mkdir -p "${HOME}/.config/Claude"
 	@ln -sf "$(CLAUDE_CONFIG_REPO)" "$(CLAUDE_CONFIG_HOST)"
 	@echo "Claude config applied successfully!" 
+
+.PHONY: save-bookmarks
+save-bookmarks:
+	@echo "Saving TCC bookmarks..."
+	@chmod +x bookmarks/save-bookmarks.sh
+	@sh bookmarks/save-bookmarks.sh

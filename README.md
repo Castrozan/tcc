@@ -4,7 +4,7 @@ Este repositório contém o desenvolvimento do Trabalho de Conclusão de Curso s
 
 ## 📑 Documentação do Projeto
 
-- [Pré-Projeto](docs/pre-projeto.md) - Detalhes iniciais do TCC incluindo tema, objetivos e justificativa
+- [Pré-Projeto](pre-projeto.md) - Detalhes iniciais do TCC incluindo tema, objetivos e justificativa
 - [Notas de Desenvolvimento](notes.md) - Anotações e ideias sobre o desenvolvimento
 - [Temas Considerados](theme-ideas.md) - Processo de escolha e refinamento do tema
 

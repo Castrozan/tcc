@@ -557,11 +557,69 @@
       "id": "1233",
       "name": "New folder",
       "type": "folder"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "date_added": "13387261019671740",
+              "date_last_used": "0",
+              "guid": "bdde63e4-f814-4013-8df5-88ac74cce5f9",
+              "id": "1242",
+              "name": "(3) Zhuang Liu on X: \"New paper - Transformers, but without normalization layers (1/n) https://t.co/PTj1HJQ2M0\" / X",
+              "type": "url",
+              "url": "https://x.com/liuzhuang1234/status/1900370738588135805"
+            },
+            {
+              "date_added": "13387261019671876",
+              "date_last_used": "0",
+              "guid": "4631eafb-29d2-4c77-850e-b10b7fa4ed01",
+              "id": "1243",
+              "name": "[2503.09573] Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models",
+              "type": "url",
+              "url": "https://arxiv.org/abs/2503.09573"
+            },
+            {
+              "date_added": "13387261019671970",
+              "date_last_used": "0",
+              "guid": "206b66d1-89a8-468f-a337-37939669b5d5",
+              "id": "1244",
+              "name": "[2503.10622] Transformers without Normalization",
+              "type": "url",
+              "url": "https://arxiv.org/abs/2503.10622"
+            },
+            {
+              "date_added": "13387261019672034",
+              "date_last_used": "0",
+              "guid": "4b1b0f93-3658-40af-8ded-a46e54b190d2",
+              "id": "1245",
+              "name": "Transformers without Normalization - DynamicTanh - DyT",
+              "type": "url",
+              "url": "https://jiachenzhu.github.io/DyT/"
+            }
+          ],
+          "date_added": "13387261019671688",
+          "date_last_used": "0",
+          "date_modified": "13387261019672034",
+          "guid": "6b740b3a-ccdf-49c0-810d-b3f7a184fe87",
+          "id": "1241",
+          "name": "exPapers",
+          "type": "folder"
+        }
+      ],
+      "date_added": "13387261019671425",
+      "date_last_used": "0",
+      "date_modified": "13387261019672133",
+      "guid": "82ff915f-58ec-4333-8267-e738a5a5e5c2",
+      "id": "1240",
+      "name": "New folder",
+      "type": "folder"
     }
   ],
   "date_added": "13387153172399378",
   "date_last_used": "0",
-  "date_modified": "13387259243800793",
+  "date_modified": "13387261019672134",
   "guid": "96f67014-2662-4122-ae00-95c5ced41f89",
   "id": "1176",
   "name": "TCC",

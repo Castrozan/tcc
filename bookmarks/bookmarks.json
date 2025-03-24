@@ -490,11 +490,78 @@
       "id": "1219",
       "name": "New folder",
       "type": "folder"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "date_added": "13387259243800448",
+              "date_last_used": "0",
+              "guid": "5ed63ca1-6256-4dcc-8355-82cce065d21e",
+              "id": "1235",
+              "name": "Pandoc - index",
+              "type": "url",
+              "url": "https://pandoc.org/"
+            },
+            {
+              "date_added": "13387259243800520",
+              "date_last_used": "0",
+              "guid": "b3c25fe2-f926-4578-bb4c-a8d59764867b",
+              "id": "1236",
+              "name": "BibTeX",
+              "type": "url",
+              "url": "https://www.bibtex.org/"
+            },
+            {
+              "date_added": "13387259243800578",
+              "date_last_used": "0",
+              "guid": "aeb319f7-30c9-4a72-88fd-2065f95fce5c",
+              "id": "1237",
+              "name": "BibTeX Format Description",
+              "type": "url",
+              "url": "https://www.bibtex.org/Format/"
+            },
+            {
+              "date_added": "13387259243800645",
+              "date_last_used": "0",
+              "guid": "ae4076d9-3303-40fc-b42c-d4cad4894900",
+              "id": "1238",
+              "name": "Using BibTeX",
+              "type": "url",
+              "url": "https://www.bibtex.org/Using/"
+            },
+            {
+              "date_added": "13387259243800694",
+              "date_last_used": "0",
+              "guid": "8ee6f9f1-9164-4bb8-ab2f-73729e2334ab",
+              "id": "1239",
+              "name": "Get LaTeX - Mac OS, Windows, Linux",
+              "type": "url",
+              "url": "https://www.latex-project.org/get/"
+            }
+          ],
+          "date_added": "13387259243800401",
+          "date_last_used": "0",
+          "date_modified": "13387259243800694",
+          "guid": "1528e5ac-e9c2-499d-b2c4-a24136292de3",
+          "id": "1234",
+          "name": "LaTex",
+          "type": "folder"
+        }
+      ],
+      "date_added": "13387259243800171",
+      "date_last_used": "0",
+      "date_modified": "13387259243800792",
+      "guid": "6b166cd4-32c7-464f-8048-a9252b67f4ea",
+      "id": "1233",
+      "name": "New folder",
+      "type": "folder"
     }
   ],
   "date_added": "13387153172399378",
   "date_last_used": "0",
-  "date_modified": "13387155595787856",
+  "date_modified": "13387259243800793",
   "guid": "96f67014-2662-4122-ae00-95c5ced41f89",
   "id": "1176",
   "name": "TCC",

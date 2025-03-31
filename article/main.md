@@ -2,9 +2,9 @@
 title: "**AGENTE CONVERSACIONAL PARA INTERAÇÃO APRIMORADA EM SISTEMAS**"
 ---
 
-**Autor acadêmico**[^1]
+**Lucas de Castro Zanoni**[^1]
 
-**Autor orientador**[^2]
+**Thyerri Fernandes Mezzari**[^2]
 
 Resumo: o resumo é uma apresentação concisa de pontos relevantes de um
 texto na forma de uma sequência corrente de frases (RAUEN, 2015). Deve
@@ -553,7 +553,6 @@ contenha duas colunas e o tamanho da letra seja 10.
 | $$F$$                | \[N\]      | Força de momento                |     |
 | $$g$$                | \[m/s^2^\] | Aceleração da gravidade         |     |
 
-[^1]: Graduando em Engenharia/ Jornalismo/Publicidade e
-    Propaganda/Design no semestre letivo de XXXX-XX. E-mail:
+[^1]: Graduando em Engenharia de software no semestre letivo de 2024-2. E-mail: castro.lucas290@gmail.com
 
-[^2]: Professor do Centro Universitário UniSATC E-mail:
+[^2]: Professor do Centro Universitário UniSATC E-mail: thyerri.mezzari@satc.edu.br

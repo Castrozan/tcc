@@ -9,10 +9,10 @@
                 "weather.py"
             ]
         },
-        "alpha-server": {
-            "command": "node",
+        "token_info": {
+            "command": "npx",
             "args": [
-                "/home/zanoni/repo/tcc/mcp-server-manager-app/alpha-server/dist/server.js"
+                "@castrozan/token-info-mcp@latest"
             ]
         }
     }

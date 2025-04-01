@@ -6,17 +6,11 @@ title: "**AGENTE CONVERSACIONAL PARA INTERAÇÃO APRIMORADA EM SISTEMAS**"
 
 **Thyerri Fernandes Mezzari**[^2]
 
-Resumo: o resumo é uma apresentação concisa de pontos relevantes de um
-texto na forma de uma sequência corrente de frases [@Rauen2015]. Deve
-ser informativo e apresentar objetivos, metodologia, resultados e
-conclusões. Deve ser escrito em parágrafo único, em espaçamento simples
-e justificado.
+Resumo: Este trabalho apresenta o desenvolvimento de um agente conversacional baseado em inteligência artificial para aprimorar a interação entre usuários e sistemas. Utilizando técnicas avançadas de processamento de linguagem natural, o agente proposto visa simplificar a comunicação em interfaces complexas, proporcionando uma experiência digital unificada e adaptável às necessidades dos usuários. A metodologia inclui o desenvolvimento, implementação e avaliação do agente em ambientes reais de uso. Os resultados demonstram que a solução proposta contribui significativamente para a melhoria da acessibilidade e usabilidade dos sistemas, reduzindo barreiras de interação e promovendo uma comunicação mais fluida e intuitiva.
 
-**Palavras-chaves:** de 3 até 5 palavras que norteiam sua pesquisa.
+**Palavras-chaves:** agente conversacional, interação, sistema, inteligência artificial.
 
 **1 INTRODUÇÃO**
-
-**(CONTEXTUALIZAÇÃO, DEFINIÇÃO DO PROBLEMA, OBJETIVOS E JUSTIFICATIVA)**
 
 **O trabalho de conclusão de curso deverá conter no mínimo 15 e no
 máximo 30 páginas,** distribuídas nos tópicos Resumo; 1. Introdução; 2.

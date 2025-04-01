@@ -218,53 +218,16 @@ exemplos com tabela, tabela. 1 e tabela. 2:
 
 > Tabela 1: Melhor configuração (tensão constante).
 
-<table>
-<colgroup>
-<col style="width: 52%" />
-<col style="width: 47%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Variáveis</strong></th>
-<th><p><strong>Valores Otimizados</strong></p>
-<p><strong>(sem saturação)</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Fator de Potência</td>
-<td>0,7000</td>
-</tr>
-<tr class="even">
-<td>Torque Médio (N.m)</td>
-<td>15,3934</td>
-</tr>
-<tr class="odd">
-<td>Ângulo de Carga (graus)</td>
-<td>33,6239</td>
-</tr>
-<tr class="even">
-<td>Espessura da barreira (mm)</td>
-<td>1,9999</td>
-</tr>
-<tr class="odd">
-<td>Ld (mH)</td>
-<td>289,8727</td>
-</tr>
-<tr class="even">
-<td>Lq(mH)</td>
-<td>56,3546</td>
-</tr>
-<tr class="odd">
-<td>Ld/Lq</td>
-<td>5,1437</td>
-</tr>
-<tr class="even">
-<td>Ld-Lq (mH)</td>
-<td>233,5180</td>
-</tr>
-</tbody>
-</table>
+| **Variáveis** | **Valores Otimizados** <br> **(sem saturação)** |
+|---------------|------------------------------------------------|
+| Fator de Potência | 0,7000 |
+| Torque Médio (N.m) | 15,3934 |
+| Ângulo de Carga (graus) | 33,6239 |
+| Espessura da barreira (mm) | 1,9999 |
+| Ld (mH) | 289,8727 |
+| Lq(mH) | 56,3546 |
+| Ld/Lq | 5,1437 |
+| Ld-Lq (mH) | 233,5180 |
 
 Fonte: Baseado e/ou Adaptado de [@Silva2018, p. 10]
 
@@ -281,52 +244,18 @@ Exemplo de quadro, quadro 1:
 
 Quadro 1: Gêneros e aparatos de edição do jornal.
 
-<table>
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 29%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th colspan="2"><strong>Gêneros</strong></th>
-<th colspan="2"><strong>Aparatos de Edição</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><u>Presos</u>:</p>
-<p>Editorial</p>
-<p>Carta do leitor</p>
-<p>Expediente</p>
-<p>Chamada</p>
-<p>Índice</p>
-<p>Cabeçalho</p></td>
-<td><p><u>Livres</u>:</p>
-<p>Notícia</p>
-<p>Nota</p>
-<p>Crítica</p>
-<p>Comentário</p>
-<p>Opinião</p>
-<p>Reportagem</p>
-<p>Entrevista</p>
-<p>Claquete</p></td>
-<td><p>Manchete</p>
-<p>Lide</p>
-<p>Lista</p>
-<p>Painel</p>
-<p>Chapéu</p>
-<p>Olho</p>
-<p>Tabela</p>
-<p>Gráfico</p>
-<p>Citação</p></td>
-<td><p>Exemplo</p>
-<p>Perfil</p>
-<p>Selo</p></td>
-</tr>
-</tbody>
-</table>
+| **Gêneros** | | **Aparatos de Edição** | |
+|-------------|-------------|-------------------|--------------|
+| **<u>Presos</u>:** | **<u>Livres</u>:** | | |
+| Editorial | Notícia | Manchete | Exemplo |
+| Carta do leitor | Nota | Lide | Perfil |
+| Expediente | Crítica | Lista | Selo |
+| Chamada | Comentário | Painel | |
+| Índice | Opinião | Chapéu | |
+| Cabeçalho | Reportagem | Olho | |
+| | Entrevista | Tabela | |
+| | Claquete | Gráfico | |
+| | | Citação | |
 
 Fonte: [@Bonini2001]
 

@@ -38,13 +38,6 @@ make html
 # Limpar arquivos gerados
 make clean
 ```
-### Erros conhecidos
-
-- Imagens em formato png não estão sendo renderizadas no PDF 
-  - Recomenda-se utilizar jpg.
-- É possível instalar a stack de compilação com docker 
-  - Recomendo esse alias 
-  - ```alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'```
 
 ## 📝 Estrutura do Artigo
 
@@ -71,3 +64,28 @@ O artigo segue a estrutura acadêmica tradicional:
 ## 🧩 Relação com o Projeto Principal
 
 Este artigo documenta a pesquisa e implementação relacionadas ao MCP Server Manager e os servidores MCP de exemplo que estão implementados na raiz do projeto. Para mais informações sobre a implementação, consulte o [README principal](../README.md) do projeto.
+
+
+## Recomendações de uso
+
+- Utilize o alias ```alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'``` para compilar o artigo.
+- Utilize o template ```template.tex``` para compilar o artigo.
+- Utilize a sintaxe de tabelas do Markdown para formatar as tabelas.
+
+### 📊 Formatação de Tabelas
+
+Todas as tabelas no artigo agora utilizam a sintaxe de tabelas do Markdown, o que oferece várias vantagens:
+
+1. **Melhor legibilidade** - As tabelas em Markdown são mais fáceis de ler no código-fonte
+2. **Edição simplificada** - Não é necessário lidar com tags HTML complexas
+3. **Consistência** - Formato uniforme para todas as tabelas
+4. **Compatibilidade** - O Pandoc converte automaticamente tabelas Markdown para os formatos de saída (HTML, PDF, DOCX, etc.)
+
+Exemplo de sintaxe de tabela Markdown:
+
+```markdown
+| Cabeçalho 1 | Cabeçalho 2 |
+|-------------|-------------|
+| Célula 1    | Célula 2    |
+| Célula 3    | Célula 4    |
+```

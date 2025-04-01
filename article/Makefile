@@ -1,6 +1,6 @@
 # Article Makefile
 
-SOURCE := main.md
+SOURCE := article.md
 
 HTML := $(patsubst %.md,%.html, $(SOURCE))
 PDF := $(patsubst %.md,%.pdf, $(SOURCE))

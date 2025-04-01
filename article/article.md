@@ -188,13 +188,13 @@ com figuras:
 
 > Figura 1: Biblioteca virtual Pearson.
 
-<!-- ![Biblioteca virtual Pearson](./images/image1.png){width=250px} -->
+![Biblioteca virtual Pearson](./images/image-test.jpg)
 
 > Fonte: Baseado e/ou Adaptado de [@Silva2018]
 >
 > Figura 2: Nuvem de palavras.
 
-<!-- ![Nuvem de palavras](./images/image2.png){width=250px} -->
+![Nuvem de palavras](./images/image-test.jpg)
 
 > Fonte: [@Pacheco2018]
 
@@ -203,7 +203,7 @@ exemplificar:
 
 > Figura 2: Sistema de cascata.
 
-<!-- ![Sistema de cascata](./images/image3.png){width=250px} -->
+![Sistema de cascata](./images/image-test.jpg)
 
 Fonte: Adaptado de [@Fonseca2005, p. 61]
 

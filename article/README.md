@@ -93,25 +93,10 @@ Exemplo de sintaxe de tabela Markdown:
 
 ### 📐 Formatação de Equações Matemáticas
 
-Para evitar erros de renderização com equações matemáticas, utilize o formato de bloco de código com especificação de matemática:
-
-```markdown
-```math
-H_{2} + \frac{1}{2}O_{2} \rightarrow H_{2}O
-```
-```
-
-Benefícios deste formato:
-1. **Melhor renderização** - O Pandoc processa corretamente o bloco como equação matemática
-2. **Menos erros** - Evita problemas comuns de renderização TeX
-3. **Compatibilidade** - Funciona bem com diferentes motores de renderização
-4. **Legibilidade** - Mais fácil de ler e editar no código-fonte
-
-Para símbolos matemáticos em tabelas, use uma abordagem mais simples sem os delimitadores TeX complexos:
+Para alguns símbolos matemáticos, use uma abordagem mais simples sem os delimitadores TeX complexos:
 
 ```markdown
 | Símbolo | Unidade | Descrição |
 |---------|---------|-----------|
-| β       | [K^-1^] | Coeficiente de expansão térmica |
 | ΔT      | [K]     | Variação de temperatura |
 ```

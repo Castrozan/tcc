@@ -459,7 +459,7 @@ contenha duas colunas e o tamanho da letra seja 10.
 
 | $$\beta$$            | \[K^-1^\]  | Coeficiente de expansão térmica |     |
 |----------------------|------------|---------------------------------|-----|
-| $$\mathrm{\Delta}T$$ | \[K\]      | Variação de temperatura         |     |
+| $$\mathrm{ΔT}T$$     | \[K\]      | Variação de temperatura         |     |
 | $$\eta_{a}$$         | \[\-\--\]  | Eficiência da aleta             |     |
 | $$\nu$$              | \[m^2^/s\] | Viscosidade cinemática          |     |
 | $$A_{c}$$            | \[m^2^\]   | Área da seção transversal       |     |

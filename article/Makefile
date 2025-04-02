@@ -16,7 +16,7 @@ all : $(HTML) $(PDF) $(DOCX) $(TEX)
 
 %.html : %.md $(STYLE)
 	@echo --- Generating HTML ---
-	@pandoc -s --css $(STYLE) --self-contained -o $@ $<
+	@pandoc -s --css $(STYLE) --embed-resources --standalone -o $@ $<
 
 # You will need to have the appropriate pdf-engine installed.
 %.pdf : %.md

@@ -83,7 +83,7 @@ importância pessoal? Qual a importância para a academia, a ciência? Qual
 a importância para o mercado de trabalho? Como ela contribuirá com a
 sociedade ou com uma parte dela?
 
-# 2 PROCEDIMENTO EXPERIMENTAL {#procedimento-experimental .unnumbered}
+# 2 PROCEDIMENTO EXPERIMENTAL
 
 Nesta seção, deve-se descrever o procedimento experimental adotado. Seja
 um procedimento experimental realizado em laboratório ou os critérios
@@ -115,7 +115,7 @@ trabalho.
 É de extrema importância realizar uma pesquisa bibliográfica, do tema a
 ser estudado, baseada em periódicos nacionais e internacionais (artigos,
 anais de congressos, revistas especializadas) e também em livros, teses
-e dissertações para direcionar os procedimentos experimetais adotados e
+e dissertações para direcionar os procedimentos experimentais adotados e
 os resultados e discussões obtidos. Essas referências deveram ser
 citadas ao longo do artigo.
 
@@ -357,8 +357,6 @@ O autor deverá escolher a forma de apresentação das referências:
 - **ordem numérica**: as referências devem seguir a mesma ordem numérica
   crescente utilizada no texto.
 
-<!-- -->
-
 - As referências devem vir reunidas no final do artigo em uma única
   ordem (alfabética ou numérica)
 
@@ -394,7 +392,7 @@ desenvolvimento da ciência e tecnologia. Além disso, você poderá sugerir
 temas complementares a sua pesquisa para estudos futuros. Responda aqui
 a sua pergunta-problema de pesquisa.
 
-# REFERÊNCIAS {#referências .9-Títulos-pós-textuais}
+# REFERÊNCIAS
 
 [Exemplo numérico:]{.mark}
 

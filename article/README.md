@@ -71,6 +71,7 @@ Este artigo documenta a pesquisa e implementação relacionadas ao MCP Server Ma
 - Utilize o alias ```alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'``` para compilar o artigo.
 - Utilize o template ```template.tex``` para compilar o artigo.
 - Utilize a sintaxe de tabelas do Markdown para formatar as tabelas.
+- Para equações matemáticas, use o formato fenced math (```math) em vez de tabelas com TeX.
 
 ### 📊 Formatação de Tabelas
 
@@ -88,4 +89,29 @@ Exemplo de sintaxe de tabela Markdown:
 |-------------|-------------|
 | Célula 1    | Célula 2    |
 | Célula 3    | Célula 4    |
+```
+
+### 📐 Formatação de Equações Matemáticas
+
+Para evitar erros de renderização com equações matemáticas, utilize o formato de bloco de código com especificação de matemática:
+
+```markdown
+```math
+H_{2} + \frac{1}{2}O_{2} \rightarrow H_{2}O
+```
+```
+
+Benefícios deste formato:
+1. **Melhor renderização** - O Pandoc processa corretamente o bloco como equação matemática
+2. **Menos erros** - Evita problemas comuns de renderização TeX
+3. **Compatibilidade** - Funciona bem com diferentes motores de renderização
+4. **Legibilidade** - Mais fácil de ler e editar no código-fonte
+
+Para símbolos matemáticos em tabelas, use uma abordagem mais simples sem os delimitadores TeX complexos:
+
+```markdown
+| Símbolo | Unidade | Descrição |
+|---------|---------|-----------|
+| β       | [K^-1^] | Coeficiente de expansão térmica |
+| ΔT      | [K]     | Variação de temperatura |
 ```

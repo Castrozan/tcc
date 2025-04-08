@@ -39,178 +39,594 @@
       "type": "folder"
     },
     {
+      "date_added": "13387917983012634",
+      "date_last_used": "0",
+      "guid": "ae29e2b5-b501-424d-9aa6-4b385ba2f426",
+      "id": "1258",
+      "meta_info": {
+        "power_bookmark_meta": ""
+      },
+      "name": "@castrozan/token-info-mcp - npm",
+      "type": "url",
+      "url": "https://www.npmjs.com/package/@castrozan/token-info-mcp?activeTab=code"
+    },
+    {
       "children": [
         {
-          "children": [
-            {
-              "date_added": "13387155555254049",
-              "date_last_used": "0",
-              "guid": "76833959-62a7-4fb3-8aa2-87c676fd7b48",
-              "id": "1184",
-              "name": "Model Context Protocol (MCP), clearly explained (why it matters) - YouTube",
-              "type": "url",
-              "url": "https://www.youtube.com/watch?v=7j_NE6Pjv-E"
-            },
-            {
-              "date_added": "13387155555254224",
-              "date_last_used": "0",
-              "guid": "be207748-be60-4f19-98fb-ad7590837214",
-              "id": "1185",
-              "name": "mcp - Google Search",
-              "type": "url",
-              "url": "https://www.google.com/search?q=mcp&oq=mcp&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIHCAIQLhiABDIHCAMQABiABDIGCAQQRRg9MgYIBRBFGDwyBggGEEUYPDIGCAcQLhhA0gEHNzA0ajBqMagCALACAA&sourceid=chrome&ie=UTF-8"
-            },
-            {
-              "date_added": "13387155555254314",
-              "date_last_used": "0",
-              "guid": "92a370bf-3ffe-4062-811e-e277f96177f5",
-              "id": "1186",
-              "name": "For Server Developers - Model Context Protocol",
-              "type": "url",
-              "url": "https://modelcontextprotocol.io/quickstart/server"
-            },
-            {
-              "date_added": "13387155555254386",
-              "date_last_used": "0",
-              "guid": "3f55d575-6502-4a84-9874-6965a1c20b69",
-              "id": "1187",
-              "name": "Introducing the Model Context Protocol \\ Anthropic",
-              "type": "url",
-              "url": "https://www.anthropic.com/news/model-context-protocol"
-            },
-            {
-              "date_added": "13387155555254450",
-              "date_last_used": "0",
-              "guid": "fb3e14bb-4139-48a3-97bc-254a7f7cfd65",
-              "id": "1188",
-              "name": "MCP Store",
-              "type": "url",
-              "url": "https://www.mcpstore.org/"
-            },
-            {
-              "date_added": "13387155555254500",
-              "date_last_used": "0",
-              "guid": "df0345b8-1190-464c-819f-a81209e5d642",
-              "id": "1189",
-              "name": "Create Next App",
-              "type": "url",
-              "url": "https://www.mcpappstore.com/"
-            },
-            {
-              "date_added": "13387155555254547",
-              "date_last_used": "0",
-              "guid": "c3e43900-0321-461b-8dc6-861be577d1cb",
-              "id": "1190",
-              "name": "nixos claude desktop mcp - Google Search",
-              "type": "url",
-              "url": "https://www.google.com/search?q=nixos+claude+desktop+mcp&sca_esv=56d1678c3766929b&sxsrf=AHTn8zrQqZr-_LMgPwlDONx6bO_cD8dt7w%3A1742148036252&ei=xBHXZ-2SD5_C5OUPyb6ZwQw&ved=0ahUKEwjthOOWl4-MAxUfIbkGHUlfJsgQ4dUDCBA&uact=5&oq=nixos+claude+desktop+mcp&gs_lp=Egxnd3Mtd2l6LXNlcnAiGG5peG9zIGNsYXVkZSBkZXNrdG9wIG1jcDIFECEYoAEyBRAhGKABMgUQIRigAUjbDlDcBljQCHABeACQAQCYAbwBoAG3AqoBAzAuMrgBA8gBAPgBAZgCA6ACxALCAggQABiwAxjvBcICCxAAGIAEGLADGKIEwgIHECEYoAEYCsICBRAhGJ8FmAMAiAYBkAYEkgcDMS4yoAesBw&sclient=gws-wiz-serp"
-            },
-            {
-              "date_added": "13387155555254715",
-              "date_last_used": "0",
-              "guid": "6e9d02b0-460d-4787-b3c8-15f7aaa7760d",
-              "id": "1191",
-              "name": "I successfully ran Claude Desktop natively on Linux : r/ClaudeAI",
-              "type": "url",
-              "url": "https://www.reddit.com/r/ClaudeAI/comments/1hgsmpq/i_successfully_ran_claude_desktop_natively_on/"
-            },
-            {
-              "date_added": "13387155555254858",
-              "date_last_used": "0",
-              "guid": "1254604a-e178-40cf-9cdf-eb5563dbdd9e",
-              "id": "1192",
-              "name": "k3d3/claude-desktop-linux-flake: Nix Flake for Claude Desktop on Linux",
-              "type": "url",
-              "url": "https://github.com/k3d3/claude-desktop-linux-flake"
-            },
-            {
-              "date_added": "13387155555254979",
-              "date_last_used": "0",
-              "guid": "685fddb2-c4d7-462a-b9ae-4fb7350daf79",
-              "id": "1193",
-              "name": "Castrozan/tcc",
-              "type": "url",
-              "url": "https://github.com/Castrozan/tcc"
-            },
-            {
-              "date_added": "13387155555255054",
-              "date_last_used": "0",
-              "guid": "75d2d82a-53f8-4609-bda3-8b2c7b6b0022",
-              "id": "1194",
-              "name": "Package request: claude-desktop · Issue #366213 · NixOS/nixpkgs",
-              "type": "url",
-              "url": "https://github.com/NixOS/nixpkgs/issues/366213"
-            },
-            {
-              "date_added": "13387155555255124",
-              "date_last_used": "0",
-              "guid": "6ef35ffd-16cd-41f4-bbe7-0a105f5564b9",
-              "id": "1195",
-              "name": "ezyang/codemcp: Coding assistant MCP for Claude Desktop",
-              "type": "url",
-              "url": "https://github.com/ezyang/codemcp/tree/main"
-            },
-            {
-              "date_added": "13387155555255193",
-              "date_last_used": "0",
-              "guid": "282f5494-cd22-4073-81a8-857c10a06905",
-              "id": "1196",
-              "name": "modelcontextprotocol/specification: The specification of the Model Context Protocol",
-              "type": "url",
-              "url": "https://github.com/modelcontextprotocol/specification"
-            },
-            {
-              "date_added": "13387155555255250",
-              "date_last_used": "0",
-              "guid": "9082e625-50cb-45db-a840-bc78f331b8ae",
-              "id": "1197",
-              "name": "Claude",
-              "type": "url",
-              "url": "https://claude.ai/share/a229d291-6800-4cb8-a0df-896a47602ca0"
-            },
-            {
-              "date_added": "13387155555255310",
-              "date_last_used": "0",
-              "guid": "b43ad309-ba34-4ad3-9f7b-038038ccd1bc",
-              "id": "1198",
-              "name": "x.com/karim_yourself/status/1900684774387195979",
-              "type": "url",
-              "url": "https://x.com/karim_yourself/status/1900684774387195979"
-            },
-            {
-              "date_added": "13387155555255365",
-              "date_last_used": "0",
-              "guid": "3b91bb76-69c3-44d8-85e8-49be3cea013b",
-              "id": "1199",
-              "name": "x.com/donvito/status/1900588445703303365",
-              "type": "url",
-              "url": "https://x.com/donvito/status/1900588445703303365"
-            },
-            {
-              "date_added": "13387155555255417",
-              "date_last_used": "0",
-              "guid": "4fb53700-68ce-468d-93dd-0be8f2edeace",
-              "id": "1200",
-              "name": "ahujasid/blender-mcp",
-              "type": "url",
-              "url": "https://github.com/ahujasid/blender-mcp"
-            }
-          ],
-          "date_added": "13387155555253984",
+          "date_added": "13387155555254049",
           "date_last_used": "0",
-          "date_modified": "13387155555255417",
-          "guid": "ca386210-688b-4ec3-9c91-502f5b5c371e",
-          "id": "1183",
-          "name": "MCP",
-          "type": "folder"
+          "guid": "76833959-62a7-4fb3-8aa2-87c676fd7b48",
+          "id": "1184",
+          "name": "Model Context Protocol (MCP), clearly explained (why it matters) - YouTube",
+          "type": "url",
+          "url": "https://www.youtube.com/watch?v=7j_NE6Pjv-E"
+        },
+        {
+          "date_added": "13387155555254224",
+          "date_last_used": "0",
+          "guid": "be207748-be60-4f19-98fb-ad7590837214",
+          "id": "1185",
+          "name": "mcp - Google Search",
+          "type": "url",
+          "url": "https://www.google.com/search?q=mcp&oq=mcp&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIHCAIQLhiABDIHCAMQABiABDIGCAQQRRg9MgYIBRBFGDwyBggGEEUYPDIGCAcQLhhA0gEHNzA0ajBqMagCALACAA&sourceid=chrome&ie=UTF-8"
+        },
+        {
+          "date_added": "13387155555254314",
+          "date_last_used": "0",
+          "guid": "92a370bf-3ffe-4062-811e-e277f96177f5",
+          "id": "1186",
+          "name": "For Server Developers - Model Context Protocol",
+          "type": "url",
+          "url": "https://modelcontextprotocol.io/quickstart/server"
+        },
+        {
+          "date_added": "13387155555254386",
+          "date_last_used": "0",
+          "guid": "3f55d575-6502-4a84-9874-6965a1c20b69",
+          "id": "1187",
+          "name": "Introducing the Model Context Protocol \\ Anthropic",
+          "type": "url",
+          "url": "https://www.anthropic.com/news/model-context-protocol"
+        },
+        {
+          "date_added": "13387155555254450",
+          "date_last_used": "0",
+          "guid": "fb3e14bb-4139-48a3-97bc-254a7f7cfd65",
+          "id": "1188",
+          "name": "MCP Store",
+          "type": "url",
+          "url": "https://www.mcpstore.org/"
+        },
+        {
+          "date_added": "13387155555254500",
+          "date_last_used": "0",
+          "guid": "df0345b8-1190-464c-819f-a81209e5d642",
+          "id": "1189",
+          "name": "Create Next App",
+          "type": "url",
+          "url": "https://www.mcpappstore.com/"
+        },
+        {
+          "date_added": "13387155555254547",
+          "date_last_used": "0",
+          "guid": "c3e43900-0321-461b-8dc6-861be577d1cb",
+          "id": "1190",
+          "name": "nixos claude desktop mcp - Google Search",
+          "type": "url",
+          "url": "https://www.google.com/search?q=nixos+claude+desktop+mcp&sca_esv=56d1678c3766929b&sxsrf=AHTn8zrQqZr-_LMgPwlDONx6bO_cD8dt7w%3A1742148036252&ei=xBHXZ-2SD5_C5OUPyb6ZwQw&ved=0ahUKEwjthOOWl4-MAxUfIbkGHUlfJsgQ4dUDCBA&uact=5&oq=nixos+claude+desktop+mcp&gs_lp=Egxnd3Mtd2l6LXNlcnAiGG5peG9zIGNsYXVkZSBkZXNrdG9wIG1jcDIFECEYoAEyBRAhGKABMgUQIRigAUjbDlDcBljQCHABeACQAQCYAbwBoAG3AqoBAzAuMrgBA8gBAPgBAZgCA6ACxALCAggQABiwAxjvBcICCxAAGIAEGLADGKIEwgIHECEYoAEYCsICBRAhGJ8FmAMAiAYBkAYEkgcDMS4yoAesBw&sclient=gws-wiz-serp"
+        },
+        {
+          "date_added": "13387155555254715",
+          "date_last_used": "0",
+          "guid": "6e9d02b0-460d-4787-b3c8-15f7aaa7760d",
+          "id": "1191",
+          "name": "I successfully ran Claude Desktop natively on Linux : r/ClaudeAI",
+          "type": "url",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1hgsmpq/i_successfully_ran_claude_desktop_natively_on/"
+        },
+        {
+          "date_added": "13387155555254858",
+          "date_last_used": "0",
+          "guid": "1254604a-e178-40cf-9cdf-eb5563dbdd9e",
+          "id": "1192",
+          "name": "k3d3/claude-desktop-linux-flake: Nix Flake for Claude Desktop on Linux",
+          "type": "url",
+          "url": "https://github.com/k3d3/claude-desktop-linux-flake"
+        },
+        {
+          "date_added": "13387155555254979",
+          "date_last_used": "0",
+          "guid": "685fddb2-c4d7-462a-b9ae-4fb7350daf79",
+          "id": "1193",
+          "name": "Castrozan/tcc",
+          "type": "url",
+          "url": "https://github.com/Castrozan/tcc"
+        },
+        {
+          "date_added": "13387155555255054",
+          "date_last_used": "0",
+          "guid": "75d2d82a-53f8-4609-bda3-8b2c7b6b0022",
+          "id": "1194",
+          "name": "Package request: claude-desktop · Issue #366213 · NixOS/nixpkgs",
+          "type": "url",
+          "url": "https://github.com/NixOS/nixpkgs/issues/366213"
+        },
+        {
+          "date_added": "13387155555255124",
+          "date_last_used": "0",
+          "guid": "6ef35ffd-16cd-41f4-bbe7-0a105f5564b9",
+          "id": "1195",
+          "name": "ezyang/codemcp: Coding assistant MCP for Claude Desktop",
+          "type": "url",
+          "url": "https://github.com/ezyang/codemcp/tree/main"
+        },
+        {
+          "date_added": "13387155555255193",
+          "date_last_used": "0",
+          "guid": "282f5494-cd22-4073-81a8-857c10a06905",
+          "id": "1196",
+          "name": "modelcontextprotocol/specification: The specification of the Model Context Protocol",
+          "type": "url",
+          "url": "https://github.com/modelcontextprotocol/specification"
+        },
+        {
+          "date_added": "13387155555255250",
+          "date_last_used": "0",
+          "guid": "9082e625-50cb-45db-a840-bc78f331b8ae",
+          "id": "1197",
+          "name": "Claude",
+          "type": "url",
+          "url": "https://claude.ai/share/a229d291-6800-4cb8-a0df-896a47602ca0"
+        },
+        {
+          "date_added": "13387155555255310",
+          "date_last_used": "0",
+          "guid": "b43ad309-ba34-4ad3-9f7b-038038ccd1bc",
+          "id": "1198",
+          "name": "x.com/karim_yourself/status/1900684774387195979",
+          "type": "url",
+          "url": "https://x.com/karim_yourself/status/1900684774387195979"
+        },
+        {
+          "date_added": "13387155555255365",
+          "date_last_used": "0",
+          "guid": "3b91bb76-69c3-44d8-85e8-49be3cea013b",
+          "id": "1199",
+          "name": "x.com/donvito/status/1900588445703303365",
+          "type": "url",
+          "url": "https://x.com/donvito/status/1900588445703303365"
+        },
+        {
+          "date_added": "13387155555255417",
+          "date_last_used": "0",
+          "guid": "4fb53700-68ce-468d-93dd-0be8f2edeace",
+          "id": "1200",
+          "name": "ahujasid/blender-mcp",
+          "type": "url",
+          "url": "https://github.com/ahujasid/blender-mcp"
         }
       ],
-      "date_added": "13387155555253761",
+      "date_added": "13387155555253984",
       "date_last_used": "0",
-      "date_modified": "13387155555255480",
-      "guid": "ad9d6147-0026-473a-a653-95d10d10a5c0",
-      "id": "1182",
-      "name": "New folder",
+      "date_modified": "13387155555255417",
+      "guid": "ca386210-688b-4ec3-9c91-502f5b5c371e",
+      "id": "1183",
+      "name": "MCP",
+      "type": "folder"
+    },
+    {
+      "children": [
+        {
+          "date_added": "13387155577895089",
+          "date_last_used": "0",
+          "guid": "26809439-438c-4a3b-9c5c-e2838a8a68b5",
+          "id": "1203",
+          "name": "Chat with ALL Your Databases Using AskYourDatabase and LLM agents (A Review) - YouTube",
+          "type": "url",
+          "url": "https://www.youtube.com/watch?v=vvdZT3AeDqQ"
+        },
+        {
+          "date_added": "13387155577895218",
+          "date_last_used": "0",
+          "guid": "af3cd7ed-3c24-4d98-ae9e-e3559c7304f8",
+          "id": "1204",
+          "name": "Why integrate AI-powered chatbot with ERP system",
+          "type": "url",
+          "url": "https://www.softwebsolutions.com/resources/integrate-AI-powered-chatbot.html"
+        },
+        {
+          "date_added": "13387155577895285",
+          "date_last_used": "0",
+          "guid": "6c473b92-b359-46f2-93e0-5cf1a2cc0526",
+          "id": "1205",
+          "name": "Library Databases and Chatbots: Internet Reference Services Quarterly: Vol 28 , No 4 - Get Access",
+          "type": "url",
+          "url": "https://www.tandfonline.com/doi/full/10.1080/10875301.2024.2389090?src=exp-la"
+        },
+        {
+          "date_added": "13387155577895365",
+          "date_last_used": "0",
+          "guid": "2aa1f05e-0476-4bb6-a81c-de0c36fdaccd",
+          "id": "1206",
+          "name": "How Chatbots Can Be Integrated Superior Data Science",
+          "type": "url",
+          "url": "https://superiordatascience.com/how-chatbots-can-be-integrated-into-existing-business-systems/"
+        },
+        {
+          "date_added": "13387155577895427",
+          "date_last_used": "0",
+          "guid": "b5113c28-2497-415c-b4fa-3ec46838c082",
+          "id": "1207",
+          "name": "How do I use openai api or something else to chat to my database? : r/OpenAI",
+          "type": "url",
+          "url": "https://www.reddit.com/r/OpenAI/comments/18qlkf1/how_do_i_use_openai_api_or_something_else_to_chat/?rdt=51916"
+        },
+        {
+          "date_added": "13387155577895496",
+          "date_last_used": "0",
+          "guid": "eed98408-3c25-46a0-b9e8-a1587503066a",
+          "id": "1208",
+          "name": "Datasette Enrichments: a new plugin framework for augmenting your data",
+          "type": "url",
+          "url": "https://simonwillison.net/2023/Dec/1/datasette-enrichments/"
+        },
+        {
+          "date_added": "13387155577895553",
+          "date_last_used": "0",
+          "guid": "655514d4-87df-4e94-8438-76d00300ae9c",
+          "id": "1209",
+          "name": "Wren AI Cloud - Supercharge Your  Insights with GenBI & AI-Powered Spreadsheets",
+          "type": "url",
+          "url": "https://getwren.ai/"
+        },
+        {
+          "date_added": "13387155577895606",
+          "date_last_used": "0",
+          "guid": "5311c1c0-b97a-47f6-bd68-4348d7323465",
+          "id": "1210",
+          "name": "Canner/WrenAI: 🤖 Open-source GenBI AI Agent that empowers data-driven teams to chat with their data to generate Text-to-SQL, charts, spreadsheets, reports, dashboards and BI. 📈📊📋🧑‍💻",
+          "type": "url",
+          "url": "https://github.com/Canner/WrenAI"
+        },
+        {
+          "date_added": "13387155577895679",
+          "date_last_used": "0",
+          "guid": "241910c8-870b-44dd-9ec9-3d85eca178b5",
+          "id": "1211",
+          "name": "File not found",
+          "type": "url",
+          "url": "https://github.com/openai/openai-cookbook/blob/main/examples/Backtranslation_of_SQL_queries.py"
+        },
+        {
+          "date_added": "13387155577895739",
+          "date_last_used": "0",
+          "guid": "5bf7d64d-78fa-4181-a2b5-34f4ca71dceb",
+          "id": "1212",
+          "name": "Structured Query Language - Google Search",
+          "type": "url",
+          "url": "https://www.google.com/search?q=Structured+Query+Language&sourceid=chrome&ie=UTF-8"
+        },
+        {
+          "date_added": "13387155577895804",
+          "date_last_used": "0",
+          "guid": "593a920a-55ed-4f53-9e2f-4653a32b46cc",
+          "id": "1213",
+          "name": "superduper-io/superduper: Superduper: Build end-to-end AI applications and agent workflows on your existing data infrastructure and preferred tools - without migrating your data.",
+          "type": "url",
+          "url": "https://github.com/superduper-io/superduper"
+        },
+        {
+          "date_added": "13387155577895869",
+          "date_last_used": "0",
+          "guid": "b730b005-674f-4703-b106-808eb9d2afe0",
+          "id": "1214",
+          "name": "vanna-ai/vanna: 🤖 Chat with your SQL database 📊. Accurate Text-to-SQL Generation via LLMs using RAG 🔄.",
+          "type": "url",
+          "url": "https://github.com/vanna-ai/vanna"
+        },
+        {
+          "date_added": "13387155577895943",
+          "date_last_used": "0",
+          "guid": "42eca9ee-f0c6-4e93-8e0a-2912c1e993aa",
+          "id": "1215",
+          "name": "AskYourDatabase SQL AI: the best SQL AI chatbot, and AI SQL generator, enabling you to chat with database.",
+          "type": "url",
+          "url": "https://www.askyourdatabase.com/blog"
+        },
+        {
+          "date_added": "13387155577896000",
+          "date_last_used": "0",
+          "guid": "9692dd2d-1431-41e1-aac5-3802c6041fb1",
+          "id": "1216",
+          "name": "Our Recommended AskYourDatabase Alternatives in 2024",
+          "type": "url",
+          "url": "https://www.blazesql.com/blog/askyourdatabase-alternative"
+        },
+        {
+          "date_added": "13387155577896056",
+          "date_last_used": "0",
+          "guid": "0dd8d3dc-3a8f-4a7e-b1e9-a74eaffaad6d",
+          "id": "1217",
+          "name": "tcc - Google Drive",
+          "type": "url",
+          "url": "https://drive.google.com/drive/folders/1QtuqxcJKRcWoPNGE5VtoSBTNuTZhAQPl"
+        },
+        {
+          "date_added": "13387155577896109",
+          "date_last_used": "0",
+          "guid": "59fea071-96e4-47cc-a327-0331addb2466",
+          "id": "1218",
+          "name": "Pré-Projeto - PFC1.docx - Documentos Google",
+          "type": "url",
+          "url": "https://docs.google.com/document/d/1I4je7XKCydVrPCfQkYD_-vir2mxO08k7/edit#heading=h.gjdgxs"
+        }
+      ],
+      "date_added": "13387155577895048",
+      "date_last_used": "0",
+      "date_modified": "13387155577896109",
+      "guid": "72ede630-ea7e-4deb-ab85-044beff21e34",
+      "id": "1202",
+      "name": "FirstRSC",
+      "type": "folder"
+    },
+    {
+      "children": [
+        {
+          "date_added": "13387155595787077",
+          "date_last_used": "0",
+          "guid": "8d8e869c-5225-401d-8c20-268cf0ab42e6",
+          "id": "1221",
+          "name": "(3) AI SDK on X: \"MCP client support for the AI SDK is here! Shoutout to @jueungraceyun for contributing the feature! https://t.co/Pen3pvfMAw\" / X",
+          "type": "url",
+          "url": "https://x.com/aisdk/status/1899752483783671864"
+        },
+        {
+          "date_added": "13387155595787257",
+          "date_last_used": "0",
+          "guid": "d1e886da-2f70-4785-a651-a956227d11be",
+          "id": "1222",
+          "name": "AI SDK Core: Tool Calling",
+          "type": "url",
+          "url": "https://sdk.vercel.ai/docs/ai-sdk-core/tools-and-tool-calling#mcp-tools"
+        },
+        {
+          "date_added": "13387155595787332",
+          "date_last_used": "0",
+          "guid": "c49ffba8-fe74-42cf-b806-6c5dcbe61fbc",
+          "id": "1223",
+          "name": "For Server Developers - Model Context Protocol",
+          "type": "url",
+          "url": "https://modelcontextprotocol.io/quickstart/server"
+        },
+        {
+          "date_added": "13387155595787396",
+          "date_last_used": "0",
+          "guid": "6ac748f6-1c2a-42ed-9ea0-554dd5ed0e3d",
+          "id": "1224",
+          "name": "modelcontextprotocol/quickstart-resources: A repository of servers and clients from the Model Context Protocol tutorials",
+          "type": "url",
+          "url": "https://github.com/modelcontextprotocol/quickstart-resources/tree/main"
+        },
+        {
+          "date_added": "13387155595787470",
+          "date_last_used": "0",
+          "guid": "417ceb32-2ab0-4342-b3d1-ec5eb3a3d8a9",
+          "id": "1225",
+          "name": "NixOS Search - Packages - httpx",
+          "type": "url",
+          "url": "https://search.nixos.org/packages?channel=24.11&show=python312Packages.httpx&from=0&size=50&sort=relevance&type=packages&query=httpx"
+        },
+        {
+          "date_added": "13387155595787534",
+          "date_last_used": "0",
+          "guid": "cb531e01-6100-42b2-a60a-90c42cd97459",
+          "id": "1226",
+          "name": "nixpkgs/pkgs/development/python-modules/httpx/default.nix at nixos-24.11 · NixOS/nixpkgs",
+          "type": "url",
+          "url": "https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/development/python-modules/httpx/default.nix#L113"
+        },
+        {
+          "date_added": "13387155595787605",
+          "date_last_used": "0",
+          "guid": "9eb1bf97-4f6c-4422-8ee3-ae45a962d2c4",
+          "id": "1227",
+          "name": "claude desktop nixos - Brave Search",
+          "type": "url",
+          "url": "https://search.brave.com/search?q=claude+desktop+nixos&source=desktop&summary=1&conversation=58afb8f9258ec2cea9e219"
+        },
+        {
+          "date_added": "13387155595787664",
+          "date_last_used": "0",
+          "guid": "6c5882ee-be94-4acf-9384-8c2e9790eb4d",
+          "id": "1228",
+          "name": "k3d3/claude-desktop-linux-flake: Nix Flake for Claude Desktop on Linux",
+          "type": "url",
+          "url": "https://github.com/k3d3/claude-desktop-linux-flake?tab=readme-ov-file"
+        },
+        {
+          "date_added": "13387155595787721",
+          "date_last_used": "0",
+          "guid": "3ea31389-63fb-49b0-955d-9e21f1300b0a",
+          "id": "1229",
+          "name": "wankdanker/claude-desktop-linux-bash: A bash-based installer for Claude Desktop on Ubuntu",
+          "type": "url",
+          "url": "https://github.com/wankdanker/claude-desktop-linux-bash"
+        },
+        {
+          "date_added": "13387155595787795",
+          "date_last_used": "0",
+          "guid": "8e2ebd9d-8b41-4d60-ab98-430037cde62c",
+          "id": "1230",
+          "name": "claude desktop nixos - Brave Search",
+          "type": "url",
+          "url": "https://search.brave.com/search?q=claude+desktop+nixos&source=desktop&summary=1&conversation=48d98f73feb3ddfdb78cf0"
+        }
+      ],
+      "date_added": "13387155595787032",
+      "date_last_used": "0",
+      "date_modified": "13387155595787795",
+      "guid": "db6c9a95-a554-40c2-bcbf-b5e624ade4db",
+      "id": "1220",
+      "name": "MCP-DSCVR",
+      "type": "folder"
+    },
+    {
+      "children": [
+        {
+          "date_added": "13387259243800448",
+          "date_last_used": "0",
+          "guid": "5ed63ca1-6256-4dcc-8355-82cce065d21e",
+          "id": "1235",
+          "name": "Pandoc - index",
+          "type": "url",
+          "url": "https://pandoc.org/"
+        },
+        {
+          "date_added": "13387259243800520",
+          "date_last_used": "0",
+          "guid": "b3c25fe2-f926-4578-bb4c-a8d59764867b",
+          "id": "1236",
+          "name": "BibTeX",
+          "type": "url",
+          "url": "https://www.bibtex.org/"
+        },
+        {
+          "date_added": "13387259243800578",
+          "date_last_used": "0",
+          "guid": "aeb319f7-30c9-4a72-88fd-2065f95fce5c",
+          "id": "1237",
+          "name": "BibTeX Format Description",
+          "type": "url",
+          "url": "https://www.bibtex.org/Format/"
+        },
+        {
+          "date_added": "13387259243800645",
+          "date_last_used": "0",
+          "guid": "ae4076d9-3303-40fc-b42c-d4cad4894900",
+          "id": "1238",
+          "name": "Using BibTeX",
+          "type": "url",
+          "url": "https://www.bibtex.org/Using/"
+        },
+        {
+          "date_added": "13387259243800694",
+          "date_last_used": "0",
+          "guid": "8ee6f9f1-9164-4bb8-ab2f-73729e2334ab",
+          "id": "1239",
+          "name": "Get LaTeX - Mac OS, Windows, Linux",
+          "type": "url",
+          "url": "https://www.latex-project.org/get/"
+        }
+      ],
+      "date_added": "13387259243800401",
+      "date_last_used": "0",
+      "date_modified": "13387259243800694",
+      "guid": "1528e5ac-e9c2-499d-b2c4-a24136292de3",
+      "id": "1234",
+      "name": "LaTex",
+      "type": "folder"
+    },
+    {
+      "children": [
+        {
+          "date_added": "13387261019671740",
+          "date_last_used": "0",
+          "guid": "bdde63e4-f814-4013-8df5-88ac74cce5f9",
+          "id": "1242",
+          "name": "(3) Zhuang Liu on X: \"New paper - Transformers, but without normalization layers (1/n) https://t.co/PTj1HJQ2M0\" / X",
+          "type": "url",
+          "url": "https://x.com/liuzhuang1234/status/1900370738588135805"
+        },
+        {
+          "date_added": "13387261019671876",
+          "date_last_used": "0",
+          "guid": "4631eafb-29d2-4c77-850e-b10b7fa4ed01",
+          "id": "1243",
+          "name": "[2503.09573] Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models",
+          "type": "url",
+          "url": "https://arxiv.org/abs/2503.09573"
+        },
+        {
+          "date_added": "13387261019671970",
+          "date_last_used": "0",
+          "guid": "206b66d1-89a8-468f-a337-37939669b5d5",
+          "id": "1244",
+          "name": "[2503.10622] Transformers without Normalization",
+          "type": "url",
+          "url": "https://arxiv.org/abs/2503.10622"
+        },
+        {
+          "date_added": "13387261019672034",
+          "date_last_used": "0",
+          "guid": "4b1b0f93-3658-40af-8ded-a46e54b190d2",
+          "id": "1245",
+          "name": "Transformers without Normalization - DynamicTanh - DyT",
+          "type": "url",
+          "url": "https://jiachenzhu.github.io/DyT/"
+        }
+      ],
+      "date_added": "13387261019671688",
+      "date_last_used": "0",
+      "date_modified": "13387261019672034",
+      "guid": "6b740b3a-ccdf-49c0-810d-b3f7a184fe87",
+      "id": "1241",
+      "name": "exPapers",
+      "type": "folder"
+    },
+    {
+      "children": [
+        {
+          "date_added": "13387898432304947",
+          "date_last_used": "0",
+          "guid": "eed688cf-2a59-4de7-b379-b0f3439417f2",
+          "id": "1252",
+          "name": "(4) Akshay 🚀 on X: \"I just created my own MCP server! It connects to Cursor and lets it perform deep web searches, as well as RAG over a specified directory. 100% open-source code with a step-by-step guide: https://t.co/XmWjBL7aZu\" / X",
+          "type": "url",
+          "url": "https://x.com/akshay_pachaar/status/1904511566902595702"
+        },
+        {
+          "date_added": "13387898432305236",
+          "date_last_used": "0",
+          "guid": "596df3ec-ff31-4f8b-b540-be0e8f600f61",
+          "id": "1253",
+          "name": "x.com/ashpreetbedi/status/1904557405863624803",
+          "type": "url",
+          "url": "https://x.com/ashpreetbedi/status/1904557405863624803"
+        },
+        {
+          "date_added": "13387898432305336",
+          "date_last_used": "0",
+          "guid": "b1e3559a-e11a-4afd-86f6-48fc0b903b4b",
+          "id": "1254",
+          "name": "x.com/playwrightweb/status/1904265499422409047",
+          "type": "url",
+          "url": "https://x.com/playwrightweb/status/1904265499422409047"
+        },
+        {
+          "date_added": "13387898432305463",
+          "date_last_used": "0",
+          "guid": "d9c8193c-7f9c-409a-9109-c8350f8d4685",
+          "id": "1255",
+          "name": "microsoft/playwright-mcp: Playwright MCP server",
+          "type": "url",
+          "url": "https://github.com/microsoft/playwright-mcp"
+        },
+        {
+          "date_added": "13387898432305630",
+          "date_last_used": "0",
+          "guid": "29bafd0a-f50f-461d-a763-b32e9f0aa0e9",
+          "id": "1256",
+          "name": "x.com/petergyang/status/1904014468889342095",
+          "type": "url",
+          "url": "https://x.com/petergyang/status/1904014468889342095"
+        }
+      ],
+      "date_added": "13387898432304866",
+      "date_last_used": "0",
+      "date_modified": "13387898432305630",
+      "guid": "659e5580-2109-4458-91d0-9f38f4cc362e",
+      "id": "1251",
+      "name": "MCPs ex",
       "type": "folder"
     },
     {
@@ -218,408 +634,117 @@
         {
           "children": [
             {
-              "date_added": "13387155577895089",
+              "date_added": "13388554752985717",
               "date_last_used": "0",
-              "guid": "26809439-438c-4a3b-9c5c-e2838a8a68b5",
-              "id": "1203",
-              "name": "Chat with ALL Your Databases Using AskYourDatabase and LLM agents (A Review) - YouTube",
+              "guid": "7feeeccc-cd2a-4f1a-a9c2-972e66fb61dc",
+              "id": "1262",
+              "name": "A More Accessible Web with Natural Language Interface | Semantic Scholar",
               "type": "url",
-              "url": "https://www.youtube.com/watch?v=vvdZT3AeDqQ"
+              "url": "https://www.semanticscholar.org/paper/A-More-Accessible-Web-with-Natural-Language-Deng/cfd5ffcd6c257140dbf11d1c9bf84a7812812b9b"
             },
             {
-              "date_added": "13387155577895218",
+              "date_added": "13388554752985869",
               "date_last_used": "0",
-              "guid": "af3cd7ed-3c24-4d98-ae9e-e3559c7304f8",
-              "id": "1204",
-              "name": "Why integrate AI-powered chatbot with ERP system",
+              "guid": "8f2d019e-b03c-4030-a310-c742b17b917d",
+              "id": "1263",
+              "name": "A More Accessible Web with Natural Language Interface | Proceedings of the 20th International Web for All Conference",
               "type": "url",
-              "url": "https://www.softwebsolutions.com/resources/integrate-AI-powered-chatbot.html"
+              "url": "https://dl.acm.org/doi/10.1145/3587281.3587700?utm_source=chatgpt.com"
             },
             {
-              "date_added": "13387155577895285",
+              "date_added": "13388554752985981",
               "date_last_used": "0",
-              "guid": "6c473b92-b359-46f2-93e0-5cf1a2cc0526",
-              "id": "1205",
-              "name": "Library Databases and Chatbots: Internet Reference Services Quarterly: Vol 28 , No 4 - Get Access",
+              "guid": "c60b4641-1df1-4347-9a2e-58a6c876d8e2",
+              "id": "1264",
+              "name": "[PDF] Accessible conversational user interfaces: considerations for design | Semantic Scholar",
               "type": "url",
-              "url": "https://www.tandfonline.com/doi/full/10.1080/10875301.2024.2389090?src=exp-la"
+              "url": "https://www.semanticscholar.org/paper/Accessible-conversational-user-interfaces%3A-for-Lister-Coughlan/5b73e1e2a8bb764fe19e260dcab05025f21c1b5e?utm_source=chatgpt.com"
             },
             {
-              "date_added": "13387155577895365",
+              "date_added": "13388554752986068",
               "date_last_used": "0",
-              "guid": "2aa1f05e-0476-4bb6-a81c-de0c36fdaccd",
-              "id": "1206",
-              "name": "How Chatbots Can Be Integrated Superior Data Science",
+              "guid": "71bda385-e93a-41d7-a1f6-4001b51df6e9",
+              "id": "1265",
+              "name": "Accessible conversational user interfaces | Proceedings of the 17th International Web for All Conference",
               "type": "url",
-              "url": "https://superiordatascience.com/how-chatbots-can-be-integrated-into-existing-business-systems/"
+              "url": "https://dl.acm.org/doi/10.1145/3371300.3383343"
             },
             {
-              "date_added": "13387155577895427",
+              "date_added": "13388554752986131",
               "date_last_used": "0",
-              "guid": "b5113c28-2497-415c-b4fa-3ec46838c082",
-              "id": "1207",
-              "name": "How do I use openai api or something else to chat to my database? : r/OpenAI",
+              "guid": "06baef87-aa1b-4fbc-b8bd-5cec7921310e",
+              "id": "1266",
+              "name": "(PDF) The Effects of Continuous Conversation and Task Complexity on Usability of an AI-Based Conversational Agent in Smart Home Environments",
               "type": "url",
-              "url": "https://www.reddit.com/r/OpenAI/comments/18qlkf1/how_do_i_use_openai_api_or_something_else_to_chat/?rdt=51916"
+              "url": "https://www.researchgate.net/publication/335223260_The_Effects_of_Continuous_Conversation_and_Task_Complexity_on_Usability_of_an_AI-Based_Conversational_Agent_in_Smart_Home_Environments"
             },
             {
-              "date_added": "13387155577895496",
+              "date_added": "13388554752986224",
               "date_last_used": "0",
-              "guid": "eed98408-3c25-46a0-b9e8-a1587503066a",
-              "id": "1208",
-              "name": "Datasette Enrichments: a new plugin framework for augmenting your data",
+              "guid": "2c1dbb65-ba0d-466d-8a44-7cb94236d921",
+              "id": "1267",
+              "name": "[1707.05015] Iris: A Conversational Agent for Complex Tasks",
               "type": "url",
-              "url": "https://simonwillison.net/2023/Dec/1/datasette-enrichments/"
+              "url": "https://arxiv.org/abs/1707.05015?utm_source=chatgpt.com"
             },
             {
-              "date_added": "13387155577895553",
+              "date_added": "13388554752986286",
               "date_last_used": "0",
-              "guid": "655514d4-87df-4e94-8438-76d00300ae9c",
-              "id": "1209",
-              "name": "Wren AI Cloud - Supercharge Your  Insights with GenBI & AI-Powered Spreadsheets",
+              "guid": "70d7faa9-0e7c-47a1-b2a8-89548ffbdf61",
+              "id": "1268",
+              "name": "Designing technology for spatial needs: Routines, control and social competences of people with autism - ScienceDirect",
               "type": "url",
-              "url": "https://getwren.ai/"
+              "url": "https://www.sciencedirect.com/science/article/abs/pii/S1071581918303859?via%3Dihub"
             },
             {
-              "date_added": "13387155577895606",
+              "date_added": "13388554752986365",
               "date_last_used": "0",
-              "guid": "5311c1c0-b97a-47f6-bd68-4348d7323465",
-              "id": "1210",
-              "name": "Canner/WrenAI: 🤖 Open-source GenBI AI Agent that empowers data-driven teams to chat with their data to generate Text-to-SQL, charts, spreadsheets, reports, dashboards and BI. 📈📊📋🧑‍💻",
+              "guid": "e3660aab-63a8-4753-b21d-637521fb0ec2",
+              "id": "1269",
+              "name": "Journal of Medical Internet Research - The Personalization of Conversational Agents in Health Care: Systematic Review",
               "type": "url",
-              "url": "https://github.com/Canner/WrenAI"
+              "url": "https://www.jmir.org/2019/11/e15360"
             },
             {
-              "date_added": "13387155577895679",
+              "date_added": "13388554752986433",
               "date_last_used": "0",
-              "guid": "241910c8-870b-44dd-9ec9-3d85eca178b5",
-              "id": "1211",
-              "name": "File not found",
+              "guid": "caff85ea-ec6c-4748-ab05-0e06428a3af5",
+              "id": "1270",
+              "name": "The Personalization of Conversational Agents in Health Care: Systematic Review - PubMed",
               "type": "url",
-              "url": "https://github.com/openai/openai-cookbook/blob/main/examples/Backtranslation_of_SQL_queries.py"
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31697237/"
             },
             {
-              "date_added": "13387155577895739",
+              "date_added": "13388554752986500",
               "date_last_used": "0",
-              "guid": "5bf7d64d-78fa-4181-a2b5-34f4ca71dceb",
-              "id": "1212",
-              "name": "Structured Query Language - Google Search",
+              "guid": "fb571e46-f220-4018-bd2a-6cb7b0958a43",
+              "id": "1271",
+              "name": "Castrozan/tcc: Trabalho de Conclusão de Curso sobre Agentes Conversacionais com IA para Interação Aprimorada em Sistemas",
               "type": "url",
-              "url": "https://www.google.com/search?q=Structured+Query+Language&sourceid=chrome&ie=UTF-8"
-            },
-            {
-              "date_added": "13387155577895804",
-              "date_last_used": "0",
-              "guid": "593a920a-55ed-4f53-9e2f-4653a32b46cc",
-              "id": "1213",
-              "name": "superduper-io/superduper: Superduper: Build end-to-end AI applications and agent workflows on your existing data infrastructure and preferred tools - without migrating your data.",
-              "type": "url",
-              "url": "https://github.com/superduper-io/superduper"
-            },
-            {
-              "date_added": "13387155577895869",
-              "date_last_used": "0",
-              "guid": "b730b005-674f-4703-b106-808eb9d2afe0",
-              "id": "1214",
-              "name": "vanna-ai/vanna: 🤖 Chat with your SQL database 📊. Accurate Text-to-SQL Generation via LLMs using RAG 🔄.",
-              "type": "url",
-              "url": "https://github.com/vanna-ai/vanna"
-            },
-            {
-              "date_added": "13387155577895943",
-              "date_last_used": "0",
-              "guid": "42eca9ee-f0c6-4e93-8e0a-2912c1e993aa",
-              "id": "1215",
-              "name": "AskYourDatabase SQL AI: the best SQL AI chatbot, and AI SQL generator, enabling you to chat with database.",
-              "type": "url",
-              "url": "https://www.askyourdatabase.com/blog"
-            },
-            {
-              "date_added": "13387155577896000",
-              "date_last_used": "0",
-              "guid": "9692dd2d-1431-41e1-aac5-3802c6041fb1",
-              "id": "1216",
-              "name": "Our Recommended AskYourDatabase Alternatives in 2024",
-              "type": "url",
-              "url": "https://www.blazesql.com/blog/askyourdatabase-alternative"
-            },
-            {
-              "date_added": "13387155577896056",
-              "date_last_used": "0",
-              "guid": "0dd8d3dc-3a8f-4a7e-b1e9-a74eaffaad6d",
-              "id": "1217",
-              "name": "tcc - Google Drive",
-              "type": "url",
-              "url": "https://drive.google.com/drive/folders/1QtuqxcJKRcWoPNGE5VtoSBTNuTZhAQPl"
-            },
-            {
-              "date_added": "13387155577896109",
-              "date_last_used": "0",
-              "guid": "59fea071-96e4-47cc-a327-0331addb2466",
-              "id": "1218",
-              "name": "Pré-Projeto - PFC1.docx - Documentos Google",
-              "type": "url",
-              "url": "https://docs.google.com/document/d/1I4je7XKCydVrPCfQkYD_-vir2mxO08k7/edit#heading=h.gjdgxs"
+              "url": "https://github.com/castrozan/tcc?tab=readme-ov-file"
             }
           ],
-          "date_added": "13387155577895048",
+          "date_added": "13388554752985649",
           "date_last_used": "0",
-          "date_modified": "13387155577896109",
-          "guid": "72ede630-ea7e-4deb-ab85-044beff21e34",
-          "id": "1202",
-          "name": "FirstRSC",
+          "date_modified": "13388554752986500",
+          "guid": "c27bf318-b88f-44b4-bdf9-6c622dbecaa5",
+          "id": "1261",
+          "name": "introRef",
           "type": "folder"
         }
       ],
-      "date_added": "13387155577894856",
+      "date_added": "13388554752985346",
       "date_last_used": "0",
-      "date_modified": "13387155577896169",
-      "guid": "b19420a8-94b8-45ec-afc7-c9fe1166f201",
-      "id": "1201",
-      "name": "New folder",
-      "type": "folder"
-    },
-    {
-      "children": [
-        {
-          "children": [
-            {
-              "date_added": "13387155595787077",
-              "date_last_used": "0",
-              "guid": "8d8e869c-5225-401d-8c20-268cf0ab42e6",
-              "id": "1221",
-              "name": "(3) AI SDK on X: \"MCP client support for the AI SDK is here! Shoutout to @jueungraceyun for contributing the feature! https://t.co/Pen3pvfMAw\" / X",
-              "type": "url",
-              "url": "https://x.com/aisdk/status/1899752483783671864"
-            },
-            {
-              "date_added": "13387155595787257",
-              "date_last_used": "0",
-              "guid": "d1e886da-2f70-4785-a651-a956227d11be",
-              "id": "1222",
-              "name": "AI SDK Core: Tool Calling",
-              "type": "url",
-              "url": "https://sdk.vercel.ai/docs/ai-sdk-core/tools-and-tool-calling#mcp-tools"
-            },
-            {
-              "date_added": "13387155595787332",
-              "date_last_used": "0",
-              "guid": "c49ffba8-fe74-42cf-b806-6c5dcbe61fbc",
-              "id": "1223",
-              "name": "For Server Developers - Model Context Protocol",
-              "type": "url",
-              "url": "https://modelcontextprotocol.io/quickstart/server"
-            },
-            {
-              "date_added": "13387155595787396",
-              "date_last_used": "0",
-              "guid": "6ac748f6-1c2a-42ed-9ea0-554dd5ed0e3d",
-              "id": "1224",
-              "name": "modelcontextprotocol/quickstart-resources: A repository of servers and clients from the Model Context Protocol tutorials",
-              "type": "url",
-              "url": "https://github.com/modelcontextprotocol/quickstart-resources/tree/main"
-            },
-            {
-              "date_added": "13387155595787470",
-              "date_last_used": "0",
-              "guid": "417ceb32-2ab0-4342-b3d1-ec5eb3a3d8a9",
-              "id": "1225",
-              "name": "NixOS Search - Packages - httpx",
-              "type": "url",
-              "url": "https://search.nixos.org/packages?channel=24.11&show=python312Packages.httpx&from=0&size=50&sort=relevance&type=packages&query=httpx"
-            },
-            {
-              "date_added": "13387155595787534",
-              "date_last_used": "0",
-              "guid": "cb531e01-6100-42b2-a60a-90c42cd97459",
-              "id": "1226",
-              "name": "nixpkgs/pkgs/development/python-modules/httpx/default.nix at nixos-24.11 · NixOS/nixpkgs",
-              "type": "url",
-              "url": "https://github.com/NixOS/nixpkgs/blob/nixos-24.11/pkgs/development/python-modules/httpx/default.nix#L113"
-            },
-            {
-              "date_added": "13387155595787605",
-              "date_last_used": "0",
-              "guid": "9eb1bf97-4f6c-4422-8ee3-ae45a962d2c4",
-              "id": "1227",
-              "name": "claude desktop nixos - Brave Search",
-              "type": "url",
-              "url": "https://search.brave.com/search?q=claude+desktop+nixos&source=desktop&summary=1&conversation=58afb8f9258ec2cea9e219"
-            },
-            {
-              "date_added": "13387155595787664",
-              "date_last_used": "0",
-              "guid": "6c5882ee-be94-4acf-9384-8c2e9790eb4d",
-              "id": "1228",
-              "name": "k3d3/claude-desktop-linux-flake: Nix Flake for Claude Desktop on Linux",
-              "type": "url",
-              "url": "https://github.com/k3d3/claude-desktop-linux-flake?tab=readme-ov-file"
-            },
-            {
-              "date_added": "13387155595787721",
-              "date_last_used": "0",
-              "guid": "3ea31389-63fb-49b0-955d-9e21f1300b0a",
-              "id": "1229",
-              "name": "wankdanker/claude-desktop-linux-bash: A bash-based installer for Claude Desktop on Ubuntu",
-              "type": "url",
-              "url": "https://github.com/wankdanker/claude-desktop-linux-bash"
-            },
-            {
-              "date_added": "13387155595787795",
-              "date_last_used": "0",
-              "guid": "8e2ebd9d-8b41-4d60-ab98-430037cde62c",
-              "id": "1230",
-              "name": "claude desktop nixos - Brave Search",
-              "type": "url",
-              "url": "https://search.brave.com/search?q=claude+desktop+nixos&source=desktop&summary=1&conversation=48d98f73feb3ddfdb78cf0"
-            }
-          ],
-          "date_added": "13387155595787032",
-          "date_last_used": "0",
-          "date_modified": "13387155595787795",
-          "guid": "db6c9a95-a554-40c2-bcbf-b5e624ade4db",
-          "id": "1220",
-          "name": "MCP-DSCVR",
-          "type": "folder"
-        }
-      ],
-      "date_added": "13387155595786842",
-      "date_last_used": "0",
-      "date_modified": "13387155595787856",
-      "guid": "9729d751-44b1-4844-bd02-4475bea26ac0",
-      "id": "1219",
-      "name": "New folder",
-      "type": "folder"
-    },
-    {
-      "children": [
-        {
-          "children": [
-            {
-              "date_added": "13387259243800448",
-              "date_last_used": "0",
-              "guid": "5ed63ca1-6256-4dcc-8355-82cce065d21e",
-              "id": "1235",
-              "name": "Pandoc - index",
-              "type": "url",
-              "url": "https://pandoc.org/"
-            },
-            {
-              "date_added": "13387259243800520",
-              "date_last_used": "0",
-              "guid": "b3c25fe2-f926-4578-bb4c-a8d59764867b",
-              "id": "1236",
-              "name": "BibTeX",
-              "type": "url",
-              "url": "https://www.bibtex.org/"
-            },
-            {
-              "date_added": "13387259243800578",
-              "date_last_used": "0",
-              "guid": "aeb319f7-30c9-4a72-88fd-2065f95fce5c",
-              "id": "1237",
-              "name": "BibTeX Format Description",
-              "type": "url",
-              "url": "https://www.bibtex.org/Format/"
-            },
-            {
-              "date_added": "13387259243800645",
-              "date_last_used": "0",
-              "guid": "ae4076d9-3303-40fc-b42c-d4cad4894900",
-              "id": "1238",
-              "name": "Using BibTeX",
-              "type": "url",
-              "url": "https://www.bibtex.org/Using/"
-            },
-            {
-              "date_added": "13387259243800694",
-              "date_last_used": "0",
-              "guid": "8ee6f9f1-9164-4bb8-ab2f-73729e2334ab",
-              "id": "1239",
-              "name": "Get LaTeX - Mac OS, Windows, Linux",
-              "type": "url",
-              "url": "https://www.latex-project.org/get/"
-            }
-          ],
-          "date_added": "13387259243800401",
-          "date_last_used": "0",
-          "date_modified": "13387259243800694",
-          "guid": "1528e5ac-e9c2-499d-b2c4-a24136292de3",
-          "id": "1234",
-          "name": "LaTex",
-          "type": "folder"
-        }
-      ],
-      "date_added": "13387259243800171",
-      "date_last_used": "0",
-      "date_modified": "13387259243800792",
-      "guid": "6b166cd4-32c7-464f-8048-a9252b67f4ea",
-      "id": "1233",
-      "name": "New folder",
-      "type": "folder"
-    },
-    {
-      "children": [
-        {
-          "children": [
-            {
-              "date_added": "13387261019671740",
-              "date_last_used": "0",
-              "guid": "bdde63e4-f814-4013-8df5-88ac74cce5f9",
-              "id": "1242",
-              "name": "(3) Zhuang Liu on X: \"New paper - Transformers, but without normalization layers (1/n) https://t.co/PTj1HJQ2M0\" / X",
-              "type": "url",
-              "url": "https://x.com/liuzhuang1234/status/1900370738588135805"
-            },
-            {
-              "date_added": "13387261019671876",
-              "date_last_used": "0",
-              "guid": "4631eafb-29d2-4c77-850e-b10b7fa4ed01",
-              "id": "1243",
-              "name": "[2503.09573] Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models",
-              "type": "url",
-              "url": "https://arxiv.org/abs/2503.09573"
-            },
-            {
-              "date_added": "13387261019671970",
-              "date_last_used": "0",
-              "guid": "206b66d1-89a8-468f-a337-37939669b5d5",
-              "id": "1244",
-              "name": "[2503.10622] Transformers without Normalization",
-              "type": "url",
-              "url": "https://arxiv.org/abs/2503.10622"
-            },
-            {
-              "date_added": "13387261019672034",
-              "date_last_used": "0",
-              "guid": "4b1b0f93-3658-40af-8ded-a46e54b190d2",
-              "id": "1245",
-              "name": "Transformers without Normalization - DynamicTanh - DyT",
-              "type": "url",
-              "url": "https://jiachenzhu.github.io/DyT/"
-            }
-          ],
-          "date_added": "13387261019671688",
-          "date_last_used": "0",
-          "date_modified": "13387261019672034",
-          "guid": "6b740b3a-ccdf-49c0-810d-b3f7a184fe87",
-          "id": "1241",
-          "name": "exPapers",
-          "type": "folder"
-        }
-      ],
-      "date_added": "13387261019671425",
-      "date_last_used": "0",
-      "date_modified": "13387261019672133",
-      "guid": "82ff915f-58ec-4333-8267-e738a5a5e5c2",
-      "id": "1240",
+      "date_modified": "13388554752986720",
+      "guid": "64c7549f-0c66-4996-95ac-9f4a6da7787b",
+      "id": "1260",
       "name": "New folder",
       "type": "folder"
     }
   ],
   "date_added": "13387153172399378",
   "date_last_used": "0",
-  "date_modified": "13387261019672134",
+  "date_modified": "13388554752986721",
   "guid": "96f67014-2662-4122-ae00-95c5ced41f89",
   "id": "1176",
   "name": "TCC",

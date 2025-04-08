@@ -54,9 +54,7 @@ de mitigar as barreiras impostas por interfaces complexas, contribuindo para uma
 inclusão digital e para a melhoria da experiência do usuário em diversos contextos de 
 aplicação.
 
-# 2 PROCEDIMENTO EXPERIMENTAL
-
-## Abordagens de Integração para Análise
+<!-- ## Abordagens de Integração para Análise
 
 ### 1. Conexão Direta com Banco de Dados
 - [ ] Análise de Vantagens:
@@ -144,13 +142,31 @@ aplicação.
 - [ ] Metodologia de comparação padronizada
 - [ ] Métricas quantitativas
 - [ ] Análise qualitativa
-- [ ] Considerações específicas de casos de uso
+- [ ] Considerações específicas de casos de uso -->
 
-Nesta seção, deve-se descrever o procedimento experimental adotado. Seja
-um procedimento experimental realizado em laboratório ou os critérios
-analisados para o estudo do caso em questão, dentre outros. Lembrando
-que este tópico será dividido em 2.1 MATERIAIS e 2.2 MÉTODOS, ou seja,
-todos os recursos utilizados para a avaliação da pesquisa.
+# 2 PROCEDIMENTO EXPERIMENTAL
+
+Este trabalho adota uma abordagem metodológica estruturada em múltiplas etapas para 
+investigar e avaliar diferentes métodos de integração entre agentes conversacionais 
+baseados em LLMs (Large Language Models) e sistemas computacionais. A pesquisa se 
+desenvolve através de uma análise comparativa de quatro abordagens distintas de 
+integração, cada uma com suas características, vantagens e limitações específicas.
+
+O processo investigativo inicia-se com uma revisão sistemática da literatura sobre 
+integrações entre LLMs e sistemas, estabelecendo uma base teórica sólida para a 
+análise subsequente. Em seguida, são exploradas quatro abordagens principais de 
+integração: (1) conexão direta com banco de dados, permitindo consultas e manipulações 
+diretas; (2) integração via plugins ORM, facilitando o acesso através de camadas de 
+abstração existentes; (3) integração via API/Swagger, utilizando interfaces padronizadas 
+de comunicação; e (4) integração via Model Context Protocol (MCP), explorando um 
+paradigma emergente de comunicação entre LLMs e sistemas.
+
+Para cada abordagem, será desenvolvida uma prova de conceito que demonstre sua 
+viabilidade técnica e permita uma avaliação objetiva de seus aspectos funcionais e 
+não-funcionais. A avaliação seguirá critérios predefinidos, incluindo desempenho, 
+segurança, facilidade de implementação, manutenibilidade e experiência do usuário. 
+Os resultados serão documentados e analisados de forma sistemática, permitindo uma 
+comparação objetiva entre as diferentes abordagens.
 
 ## 2.1 MATERIAIS
 

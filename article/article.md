@@ -12,76 +12,50 @@ Resumo: Este trabalho apresenta o desenvolvimento de um agente conversacional ba
 
 **1 INTRODUÇÃO**
 
-**O trabalho de conclusão de curso deverá conter no mínimo 15 e no
-máximo 30 páginas,** distribuídas nos tópicos Resumo; 1. Introdução; 2.
-Procedimento Experimental, 2.1 Materiais, 2.2 Métodos; 3. Resultados e
-Discussões, 4. Considerações Finais, Agradecimentos (se houver) e
-Referências. A de quantidade máxima de páginas em cada tópico não tem
-regra.
+A evolução das interfaces de usuário tem gerado uma diversidade de padrões de design e
+usabilidade, resultando frequentemente em barreiras para a plena acessibilidade e interação
+dos usuários com os sistemas digitais. Com o aumento da complexidade do frontend e a
+multiplicidade de paradigmas de interação, muitos usuários enfrentam dificuldades
+significativas para utilizar efetivamente as funcionalidades oferecidas pelos sistemas
+computacionais modernos.
 
-O texto introdutório precisa ser claro e objetivo. Você precisará expor,
-de forma sucinta, a natureza da pesquisa, assim como a intenção desta.
-De forma sutil, deverá apresentar as informações da pesquisa e, por
-isso, a importância de a introdução ser elaborada ao final da escrita do
-artigo.
+Nesse cenário, os agentes conversacionais baseados em inteligência artificial emergem
+como uma alternativa promissora para simplificar a comunicação entre humanos e máquinas,
+oferecendo uma camada intermediária de interação que pode traduzir comandos em linguagem
+natural para ações específicas no sistema.
 
-Esta etapa do trabalho servirá para você apresentar ao leitor a sua
-pesquisa, o tema, incentivando-o e motivando-o à leitura. É importante
-lembrar de que a introdução não deve parafrasear ou repetir o resumo.
+A problemática central desta pesquisa reside na questão: de que forma um agente
+conversacional baseado em IA pode potencializar a interação entre usuários e sistemas,
+promovendo uma comunicação fluida mesmo em ambientes com interfaces complexas? Essa
+pergunta reflete a necessidade crescente de soluções que democratizem o acesso à tecnologia,
+reduzindo a curva de aprendizado necessária para a utilização de sistemas especializados e
+tornando-os mais acessíveis para diferentes perfis de usuários.
 
-Procure responder nesta seção: - Por que estudar o tema escolhido?; -
-Quais as vantagens e os benefícios que a pesquisa irá proporcionar?; -
-Como ela contribuirá com a sociedade ou com uma parte dela?).
+A relevância deste estudo se evidencia pelo potencial transformador que os agentes
+conversacionais representam para a área de interação humano-computador. Ao implementar um
+sistema intermediário capaz de interpretar linguagem natural e traduzi-la em ações específicas
+dentro de um sistema, cria-se uma ponte que permite aos usuários interagirem de forma mais
+intuitiva e natural com as tecnologias digitais.
+Esta abordagem tem o potencial de mitigar as barreiras impostas por interfaces
+complexas, contribuindo para uma maior inclusão digital e para a melhoria da experiência do
+usuário em diversos contextos de aplicação.
 
-**O que se faz?** Caracteriza-se o problema de pesquisa
-(pergunta-problema), bem como o
+O objetivo geral deste trabalho é desenvolver, implementar e avaliar um agente
+conversacional com IA que, por meio de técnicas avançadas de processamento de linguagem
+natural, simplifique a comunicação entre usuários e sistemas, proporcionando uma experiência
+digital unificada e adaptável às necessidades dos usuários.
 
-Nesta etapa (objetivo geral e os objetivos específicos) você deverá
-responder a seguinte pergunta: Com que finalidade estou fazendo este
-estudo? O objetivo geral deve descrever de modo claro e sucinto uma meta
-a ser atingida e ser capaz de explicar o que você realmente deseja obter
-com o estudo. Lembre-se que os objetivos precisarão iniciar com os
-verbos no infinitivo. Exemplos de verbos: avaliar, analisar, aplicar,
-comparar, considerar, demonstrar, desenvolver, reconhecer, usar,
-assumir, julgar, prever, reforçar, entre outros.
+A justificativa para este estudo fundamenta-se na crescente necessidade de tornar as
+tecnologias digitais mais acessíveis e intuitivas para um público diversificado. A
+implementação de um agente conversacional inteligente propicia uma camada de interação que
+pode mitigar as dificuldades impostas por interfaces complexas, oferecendo uma solução que
+simplifica a comunicação e adapta-se às necessidades dos usuários.
 
-Contém a ideia central do trabalho, e é apresentado em até três ou
-quatro linhas.
-
-Os objetivos específicos são para você detalhar as etapas que seguirá
-para alcançar o objetivo geral. Para isso, você pensará no seguinte: de
-que informações eu preciso para alcançar o objetivo geral? Assim como no
-objetivo geral, os objetivos específicos precisarão iniciar com os
-verbos no infinitivo.
-
-Não devem apresentar as etapas de realização do trabalho, ou as etapas
-do procedimento. Os objetivos específicos devem ser escritos com base
-nas conclusões que se espera obter com o trabalho. Por exemplo: muitos
-alunos escreve um objetivo específico como "realizar a [distribuição
-granulométrica]{.underline}" enquanto deveria ser "avaliar o [efeito do
-tamanho de partícula]{.underline} sobre a resistência mecânica".
-
-Em seguida, devem ser expostas as justificativas e as razões para a
-elaboração do trabalho, dando ênfase à relevância do tema proposto.
-
-A justificativa, como o próprio nome indica, procura explicar por que o
-trabalho é fundamental e relevante. O tema escolhido pelo pesquisador e
-a hipótese levantada precisam ser de suma importância para a sociedade
-ou para uma parte dela. Deve-se, no entanto, tomar o cuidado, na
-elaboração da justificativa, de não se tentar justificar a hipótese
-levantada, ou seja, ser uma conclusão da pesquisa.
-
-A justificativa exalta a importância do tema a ser estudado e justifica
-o porquê de a pesquisa ter sido empreendida. Ela difere de uma revisão
-bibliográfica e, por esse motivo, não apresenta citações de outros
-autores, apenas busca ressaltar a importância da pesquisa no campo da
-teoria.
-
-Procure responder nesta etapa: Por que estudar o tema escolhido? Quais
-as vantagens e os benefícios que a pesquisa irá proporcionar? Qual a
-importância pessoal? Qual a importância para a academia, a ciência? Qual
-a importância para o mercado de trabalho? Como ela contribuirá com a
-sociedade ou com uma parte dela?
+Do ponto de vista acadêmico, a pesquisa contribui para os campos de processamento de
+linguagem natural e interação humano-computador, explorando novas abordagens para a
+melhoria da usabilidade de sistemas digitais. Em termos práticos, os resultados obtidos podem
+subsidiar o desenvolvimento de soluções mais inclusivas e centradas no usuário, potencializando
+a adoção de tecnologias por diferentes segmentos da sociedade.
 
 # 2 PROCEDIMENTO EXPERIMENTAL
 

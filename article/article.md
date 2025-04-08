@@ -17,7 +17,7 @@ usabilidade, resultando frequentemente em barreiras para a plena acessibilidade 
 dos usuários com os sistemas digitais. Com o aumento da complexidade do frontend e a 
 multiplicidade de paradigmas de interação, muitos usuários enfrentam dificuldades 
 significativas para utilizar efetivamente as funcionalidades oferecidas pelos sistemas 
-computacionais modernos.
+computacionais modernos [@RAPP201849] [@Kocaballi2019].
 
 Nesse cenário, os agentes conversacionais baseados em inteligência artificial emergem 
 como uma alternativa promissora para simplificar a comunicação entre humanos e máquinas, 
@@ -31,7 +31,8 @@ interfaces baseadas em linguagem natural tem mostrado potencial para melhorar a 
 em contextos domésticos e inteligentes, reduzindo o tempo e o esforço necessários para 
 completar tarefas complexas [@Guo2024Doppelganger]. Ademais, tais interfaces oferecem 
 vantagens consideráveis em termos de acessibilidade, permitindo uma comunicação mais 
-inclusiva e adaptável a usuários com diferentes necessidades especiais [@Lister2020AccessibleCU].
+inclusiva e adaptável a usuários com diferentes necessidades especiais 
+[@Lister2020AccessibleCU] [@Deng2023AMA].
 
 A problemática central desta pesquisa reside na questão: de que forma um agente 
 conversacional baseado em IA pode potencializar a interação entre usuários e sistemas, 

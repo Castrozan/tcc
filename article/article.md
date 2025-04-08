@@ -10,7 +10,7 @@ Resumo: Este trabalho apresenta o desenvolvimento de um agente conversacional ba
 
 **Palavras-chaves:** agente conversacional, interação, sistema, inteligência artificial.
 
-**1 INTRODUÇÃO**
+# 1 INTRODUÇÃO
 
 A evolução das interfaces de usuário tem gerado uma diversidade de padrões de design e
 usabilidade, resultando frequentemente em barreiras para a plena acessibilidade e interação
@@ -65,13 +65,13 @@ analisados para o estudo do caso em questão, dentre outros. Lembrando
 que este tópico será dividido em 2.1 MATERIAIS e 2.2 MÉTODOS, ou seja,
 todos os recursos utilizados para a avaliação da pesquisa.
 
-2.1 MATERIAIS (SUBTÍTULO SEÇÃO SECUNDÁRIA)
+## 2.1 MATERIAIS (SUBTÍTULO SEÇÃO SECUNDÁRIA)
 
 Esta seção deve indicar os recursos utilizados para realizar a
 pesquisa.  Deve, portanto, apresentar os materiais utilizados na
 pesquisa o tamanho da amostra e como ela foi determinada.
 
-2.2 MÉTODOS (SUBTÍTULO SEÇÃO SECUNDÁRIA)
+## 2.2 MÉTODOS (SUBTÍTULO SEÇÃO SECUNDÁRIA)
 
 Em métodos deve ter uma explicação minuciosa, detalhada, rigorosa e
 exata de toda ação desenvolvida no método (caminho) do trabalho de
@@ -350,13 +350,13 @@ O autor deverá escolher a forma de apresentação das referências:
 - As citações e referências utilizadas nesse manual são meramente
   ilustrativas.
 
-**3 RESULTADOS E DISCUSSÕES**
+# 3 RESULTADOS E DISCUSSÕES
 
 Nos Resultados e Discussões, deve-se apresentar os resultados obtidos no
 Procedimento Experimental e fazer uma discussão e análise sobre os
 mesmos sempre que possível referenciando a literatura pesquisada.
 
-**4 CONSIDERAÇÕES FINAIS**
+# 4 CONSIDERAÇÕES FINAIS
 
 Etapa esta que servirá para você evidenciar as conquistas alcançadas com
 o estudo e indicar as limitações e as reconsiderações. Além disso, você

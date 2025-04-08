@@ -62,13 +62,13 @@ analisados para o estudo do caso em questão, dentre outros. Lembrando
 que este tópico será dividido em 2.1 MATERIAIS e 2.2 MÉTODOS, ou seja,
 todos os recursos utilizados para a avaliação da pesquisa.
 
-## 2.1 MATERIAIS (SUBTÍTULO SEÇÃO SECUNDÁRIA)
+## 2.1 MATERIAIS
 
 Esta seção deve indicar os recursos utilizados para realizar a
 pesquisa.  Deve, portanto, apresentar os materiais utilizados na
 pesquisa o tamanho da amostra e como ela foi determinada.
 
-## 2.2 MÉTODOS (SUBTÍTULO SEÇÃO SECUNDÁRIA)
+## 2.2 MÉTODOS
 
 Em métodos deve ter uma explicação minuciosa, detalhada, rigorosa e
 exata de toda ação desenvolvida no método (caminho) do trabalho de

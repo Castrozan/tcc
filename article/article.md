@@ -56,6 +56,96 @@ aplicação.
 
 # 2 PROCEDIMENTO EXPERIMENTAL
 
+## Abordagens de Integração para Análise
+
+### 1. Conexão Direta com Banco de Dados
+- [ ] Análise de Vantagens:
+  - Acesso direto aos dados brutos
+  - Menor latência na recuperação de dados
+  - Sem necessidade de camadas API intermediárias
+  - Controle completo sobre padrões de acesso a dados
+- [ ] Análise de Desvantagens:
+  - Preocupações com segurança no acesso direto ao BD
+  - Necessidade de lidar com múltiplos tipos de BD
+  - Geração complexa de SQL
+  - Requer compreensão profunda do esquema
+  - Alta manutenção quando o esquema do BD muda
+
+### 2. Integração via Plugin ORM
+- [ ] Análise de Vantagens:
+  - Aproveita a lógica da aplicação existente
+  - Melhor segurança através das camadas do ORM
+  - Manutenção mais fácil (segue atualizações da aplicação)
+  - Uso mais eficiente de recursos
+- [ ] Análise de Desvantagens:
+  - Específico para linguagem/framework
+  - Requer modificação do código existente
+  - Limitado às capacidades do ORM
+  - Maior complexidade de implementação para desenvolvedores
+
+### 3. Integração via API/Swagger
+- [ ] Análise de Vantagens:
+  - Utiliza infraestrutura de API existente
+  - Melhor segurança (camadas de autenticação existentes)
+  - Agnóstico quanto a linguagem/framework
+  - Mais fácil de implementar em sistemas existentes
+- [ ] Análise de Desvantagens:
+  - Maior latência (requisições HTTP)
+  - Sobrecarga de rede
+  - Depende da disponibilidade da API
+  - Pode requerer múltiplas requisições para operações complexas
+
+### 4. Model Context Protocol (MCP)
+- [ ] Análise de Vantagens:
+  - Forma padronizada de definir interações com ferramentas
+  - Flexível e extensível
+  - Agnóstico quanto a linguagem
+  - Clara separação de responsabilidades
+- [ ] Análise de Desvantagens:
+  - Necessita geração dinâmica de servidor
+  - Infraestrutura adicional necessária
+  - Tecnologia mais recente com menos suporte da comunidade
+  - Implementação complexa para ferramentas dinâmicas
+
+## Estrutura de Pesquisa
+
+### 1. Fundamentação Teórica
+- [ ] Revisão de padrões existentes de integração com LLMs
+- [ ] Análise de arquiteturas de integração de sistemas
+- [ ] Considerações de segurança em integrações com IA
+- [ ] Métricas e considerações de desempenho
+
+### 2. Análise de Implementação
+- [ ] Para cada abordagem:
+  - [ ] Design arquitetural
+  - [ ] Considerações de segurança
+  - [ ] Implicações de desempenho
+  - [ ] Complexidade de implementação
+  - [ ] Requisitos de manutenção
+  - [ ] Aspectos de escalabilidade
+
+### 3. Prova de Conceito
+- [ ] Implementação em pequena escala de cada abordagem
+- [ ] Cenário de teste padronizado
+- [ ] Coleta de métricas de desempenho
+- [ ] Análise de segurança
+- [ ] Avaliação da experiência do usuário
+
+### 4. Critérios de Avaliação
+- [ ] Métricas de desempenho
+- [ ] Avaliação de segurança
+- [ ] Complexidade de implementação
+- [ ] Sobrecarga de manutenção
+- [ ] Potencial de escalabilidade
+- [ ] Experiência do usuário
+- [ ] Esforço de integração
+
+### 5. Framework de Comparação
+- [ ] Metodologia de comparação padronizada
+- [ ] Métricas quantitativas
+- [ ] Análise qualitativa
+- [ ] Considerações específicas de casos de uso
+
 Nesta seção, deve-se descrever o procedimento experimental adotado. Seja
 um procedimento experimental realizado em laboratório ou os critérios
 analisados para o estudo do caso em questão, dentre outros. Lembrando

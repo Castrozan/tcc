@@ -377,19 +377,125 @@ abordagem tem o potencial de mitigar as barreiras impostas por
 interfaces complexas, contribuindo para uma maior inclusão digital e
 para a melhoria da experiência do usuário em diversos contextos de
 aplicação.</p>
+<!-- ## Abordagens de Integração para Análise
+
+### 1. Conexão Direta com Banco de Dados
+- [ ] Análise de Vantagens:
+  - Acesso direto aos dados brutos
+  - Menor latência na recuperação de dados
+  - Sem necessidade de camadas API intermediárias
+  - Controle completo sobre padrões de acesso a dados
+- [ ] Análise de Desvantagens:
+  - Preocupações com segurança no acesso direto ao BD
+  - Necessidade de lidar com múltiplos tipos de BD
+  - Geração complexa de SQL
+  - Requer compreensão profunda do esquema
+  - Alta manutenção quando o esquema do BD muda
+
+### 2. Integração via Plugin ORM
+- [ ] Análise de Vantagens:
+  - Aproveita a lógica da aplicação existente
+  - Melhor segurança através das camadas do ORM
+  - Manutenção mais fácil (segue atualizações da aplicação)
+  - Uso mais eficiente de recursos
+- [ ] Análise de Desvantagens:
+  - Específico para linguagem/framework
+  - Requer modificação do código existente
+  - Limitado às capacidades do ORM
+  - Maior complexidade de implementação para desenvolvedores
+
+### 3. Integração via API/Swagger
+- [ ] Análise de Vantagens:
+  - Utiliza infraestrutura de API existente
+  - Melhor segurança (camadas de autenticação existentes)
+  - Agnóstico quanto a linguagem/framework
+  - Mais fácil de implementar em sistemas existentes
+- [ ] Análise de Desvantagens:
+  - Maior latência (requisições HTTP)
+  - Sobrecarga de rede
+  - Depende da disponibilidade da API
+  - Pode requerer múltiplas requisições para operações complexas
+
+### 4. Model Context Protocol (MCP)
+- [ ] Análise de Vantagens:
+  - Forma padronizada de definir interações com ferramentas
+  - Flexível e extensível
+  - Agnóstico quanto a linguagem
+  - Clara separação de responsabilidades
+- [ ] Análise de Desvantagens:
+  - Necessita geração dinâmica de servidor
+  - Infraestrutura adicional necessária
+  - Tecnologia mais recente com menos suporte da comunidade
+  - Implementação complexa para ferramentas dinâmicas
+
+## Estrutura de Pesquisa
+
+### 1. Fundamentação Teórica
+- [ ] Revisão de padrões existentes de integração com LLMs
+- [ ] Análise de arquiteturas de integração de sistemas
+- [ ] Considerações de segurança em integrações com IA
+- [ ] Métricas e considerações de desempenho
+
+### 2. Análise de Implementação
+- [ ] Para cada abordagem:
+  - [ ] Design arquitetural
+  - [ ] Considerações de segurança
+  - [ ] Implicações de desempenho
+  - [ ] Complexidade de implementação
+  - [ ] Requisitos de manutenção
+  - [ ] Aspectos de escalabilidade
+
+### 3. Prova de Conceito
+- [ ] Implementação em pequena escala de cada abordagem
+- [ ] Cenário de teste padronizado
+- [ ] Coleta de métricas de desempenho
+- [ ] Análise de segurança
+- [ ] Avaliação da experiência do usuário
+
+### 4. Critérios de Avaliação
+- [ ] Métricas de desempenho
+- [ ] Avaliação de segurança
+- [ ] Complexidade de implementação
+- [ ] Sobrecarga de manutenção
+- [ ] Potencial de escalabilidade
+- [ ] Experiência do usuário
+- [ ] Esforço de integração
+
+### 5. Framework de Comparação
+- [ ] Metodologia de comparação padronizada
+- [ ] Métricas quantitativas
+- [ ] Análise qualitativa
+- [ ] Considerações específicas de casos de uso -->
 <h1 id="procedimento-experimental">2 PROCEDIMENTO EXPERIMENTAL</h1>
-<p>Nesta seção, deve-se descrever o procedimento experimental adotado.
-Seja um procedimento experimental realizado em laboratório ou os
-critérios analisados para o estudo do caso em questão, dentre outros.
-Lembrando que este tópico será dividido em 2.1 MATERIAIS e 2.2 MÉTODOS,
-ou seja, todos os recursos utilizados para a avaliação da pesquisa.</p>
-<h2 id="materiais-subtítulo-seção-secundária">2.1 MATERIAIS (SUBTÍTULO
-SEÇÃO SECUNDÁRIA)</h2>
+<p>Este trabalho adota uma abordagem metodológica estruturada em
+múltiplas etapas para investigar e avaliar diferentes métodos de
+integração entre agentes conversacionais baseados em LLMs (Large
+Language Models) e sistemas computacionais. A pesquisa se desenvolve
+através de uma análise comparativa de quatro abordagens distintas de
+integração, cada uma com suas características, vantagens e limitações
+específicas.</p>
+<p>O processo investigativo inicia-se com uma revisão sistemática da
+literatura sobre integrações entre LLMs e sistemas, estabelecendo uma
+base teórica sólida para a análise subsequente. Em seguida, são
+exploradas quatro abordagens principais de integração: (1) conexão
+direta com banco de dados, permitindo consultas e manipulações diretas;
+(2) integração via plugins ORM, facilitando o acesso através de camadas
+de abstração existentes; (3) integração via API/Swagger, utilizando
+interfaces padronizadas de comunicação; e (4) integração via Model
+Context Protocol (MCP), explorando um paradigma emergente de comunicação
+entre LLMs e sistemas.</p>
+<p>Para cada abordagem, será desenvolvida uma prova de conceito que
+demonstre sua viabilidade técnica e permita uma avaliação objetiva de
+seus aspectos funcionais e não-funcionais. A avaliação seguirá critérios
+predefinidos, incluindo desempenho, segurança, facilidade de
+implementação, manutenibilidade e experiência do usuário. Os resultados
+serão documentados e analisados de forma sistemática, permitindo uma
+comparação objetiva entre as diferentes abordagens.</p>
+<h2 id="materiais">2.1 MATERIAIS</h2>
 <p>Esta seção deve indicar os recursos utilizados para realizar a
 pesquisa. Deve, portanto, apresentar os materiais utilizados na pesquisa
 o tamanho da amostra e como ela foi determinada.</p>
-<h2 id="métodos-subtítulo-seção-secundária">2.2 MÉTODOS (SUBTÍTULO SEÇÃO
-SECUNDÁRIA)</h2>
+<h2 id="métodos">2.2 MÉTODOS</h2>
 <p>Em métodos deve ter uma explicação minuciosa, detalhada, rigorosa e
 exata de toda ação desenvolvida no método (caminho) do trabalho de
 pesquisa. É necessário descrever quais equipamentos serão utilizados e

@@ -12,50 +12,17 @@ Resumo: Este trabalho apresenta o desenvolvimento de um agente conversacional ba
 
 # 1 INTRODUÇÃO
 
-A evolução das interfaces de usuário tem gerado uma diversidade de padrões de design e
-usabilidade, resultando frequentemente em barreiras para a plena acessibilidade e interação
-dos usuários com os sistemas digitais. Com o aumento da complexidade do frontend e a
-multiplicidade de paradigmas de interação, muitos usuários enfrentam dificuldades
-significativas para utilizar efetivamente as funcionalidades oferecidas pelos sistemas
-computacionais modernos.
+A evolução das interfaces de usuário tem gerado uma diversidade de padrões de design e usabilidade, resultando frequentemente em barreiras para a plena acessibilidade e interação dos usuários com os sistemas digitais. Com o aumento da complexidade do frontend e a multiplicidade de paradigmas de interação, muitos usuários enfrentam dificuldades significativas para utilizar efetivamente as funcionalidades oferecidas pelos sistemas computacionais modernos.
 
-Nesse cenário, os agentes conversacionais baseados em inteligência artificial emergem
-como uma alternativa promissora para simplificar a comunicação entre humanos e máquinas,
-oferecendo uma camada intermediária de interação que pode traduzir comandos em linguagem
-natural para ações específicas no sistema.
+Nesse cenário, os agentes conversacionais baseados em inteligência artificial emergem como uma alternativa promissora para simplificar a comunicação entre humanos e máquinas, oferecendo uma camada intermediária de interação que pode traduzir comandos em linguagem natural para ações específicas no sistema.
 
-A problemática central desta pesquisa reside na questão: de que forma um agente
-conversacional baseado em IA pode potencializar a interação entre usuários e sistemas,
-promovendo uma comunicação fluida mesmo em ambientes com interfaces complexas? Essa
-pergunta reflete a necessidade crescente de soluções que democratizem o acesso à tecnologia,
-reduzindo a curva de aprendizado necessária para a utilização de sistemas especializados e
-tornando-os mais acessíveis para diferentes perfis de usuários.
+Estudos recentes têm demonstrado que agentes conversacionais podem aprimorar significativamente a experiência do usuário ao simplificar interações com sistemas complexos [@fast2017irisconversationalagentcomplex]. Além disso, a implementação de interfaces baseadas em linguagem natural tem mostrado potencial para melhorar a usabilidade em contextos domésticos e inteligentes, reduzindo o tempo e o esforço necessários para completar tarefas complexas [@Guo2024Doppelganger]. Ademais, tais interfaces oferecem vantagens consideráveis em termos de acessibilidade, permitindo uma comunicação mais inclusiva e adaptável a usuários com diferentes necessidades especiais [@ACM2020AccessibleDesign].
 
-A relevância deste estudo se evidencia pelo potencial transformador que os agentes
-conversacionais representam para a área de interação humano-computador. Ao implementar um
-sistema intermediário capaz de interpretar linguagem natural e traduzi-la em ações específicas
-dentro de um sistema, cria-se uma ponte que permite aos usuários interagirem de forma mais
-intuitiva e natural com as tecnologias digitais.
-Esta abordagem tem o potencial de mitigar as barreiras impostas por interfaces
-complexas, contribuindo para uma maior inclusão digital e para a melhoria da experiência do
-usuário em diversos contextos de aplicação.
+A problemática central desta pesquisa reside na questão: de que forma um agente conversacional baseado em IA pode potencializar a interação entre usuários e sistemas, promovendo uma comunicação fluida mesmo em ambientes com interfaces complexas? Essa pergunta reflete a necessidade crescente de soluções que democratizem o acesso à tecnologia, reduzindo a curva de aprendizado necessária para a utilização de sistemas especializados e tornando-os mais acessíveis para diferentes perfis de usuários.
 
-O objetivo geral deste trabalho é desenvolver, implementar e avaliar um agente
-conversacional com IA que, por meio de técnicas avançadas de processamento de linguagem
-natural, simplifique a comunicação entre usuários e sistemas, proporcionando uma experiência
-digital unificada e adaptável às necessidades dos usuários.
+Adicionalmente, trabalhos recentes indicam que avanços na arquitetura de modelos de IA, como o uso de transformers sem camadas de normalização, podem influenciar positivamente o desempenho e a eficiência desses agentes [@Zhu2025DyT].
 
-A justificativa para este estudo fundamenta-se na crescente necessidade de tornar as
-tecnologias digitais mais acessíveis e intuitivas para um público diversificado. A
-implementação de um agente conversacional inteligente propicia uma camada de interação que
-pode mitigar as dificuldades impostas por interfaces complexas, oferecendo uma solução que
-simplifica a comunicação e adapta-se às necessidades dos usuários.
-
-Do ponto de vista acadêmico, a pesquisa contribui para os campos de processamento de
-linguagem natural e interação humano-computador, explorando novas abordagens para a
-melhoria da usabilidade de sistemas digitais. Em termos práticos, os resultados obtidos podem
-subsidiar o desenvolvimento de soluções mais inclusivas e centradas no usuário, potencializando
-a adoção de tecnologias por diferentes segmentos da sociedade.
+A relevância deste estudo evidencia-se pelo potencial transformador que os agentes conversacionais representam para a área de interação humano-computador. Ao implementar um sistema intermediário capaz de interpretar linguagem natural e traduzi-la em ações específicas dentro de um sistema, cria-se uma ponte que permite aos usuários interagir de forma mais intuitiva e natural com as tecnologias digitais. Esta abordagem tem o potencial de mitigar as barreiras impostas por interfaces complexas, contribuindo para uma maior inclusão digital e para a melhoria da experiência do usuário em diversos contextos de aplicação.
 
 # 2 PROCEDIMENTO EXPERIMENTAL
 

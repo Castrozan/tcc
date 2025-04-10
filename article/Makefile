@@ -35,3 +35,9 @@ all : $(HTML) $(PDF) $(DOCX) $(TEX)
 clean :
 	@echo --- Deleting generated files ---
 	@-rm $(HTML) $(PDF) $(DOCX) $(TEX)
+
+.PHONY : publish
+publish: $(DOCX)
+	@echo "Uploading article.docx to Google Drive..."
+	@chmod +x ./scripts/upload_to_drive.sh
+	@./scripts/upload_to_drive.sh article.docx

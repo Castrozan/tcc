@@ -2,11 +2,32 @@
 title: "**AGENTE CONVERSACIONAL PARA INTERAÇÃO APRIMORADA EM SISTEMAS**"
 ---
 
+### Artigo em produção - Checklist de produção
+
+- [ ] Edição do artigo
+  - [ ] Aplicar ABNT
+  - [ ] Aplicar formatação da SATC
+- [ ] Escrita
+  - [ ] Resumo
+    - [x] Esqueleto
+    - [ ] Revisão após finalizar o artigo
+  - [x] Introdução (preciso de umas referencias)
+  - [ ] Material e métodos
+    - [x] Abordagem geral
+    - [ ] Procedimento experimental de cada alternativa
+  - [ ] Resultados e discussão
+  - [ ] Considerações finais
+  - [ ] Referências
+    - [ ] Formatar ABNT
+
 **Lucas de Castro Zanoni**[^1]
 
 **Thyerri Fernandes Mezzari**[^2]
 
-Resumo: Este trabalho apresenta o desenvolvimento de um agente conversacional baseado em inteligência artificial para aprimorar a interação entre usuários e sistemas. Utilizando técnicas avançadas de processamento de linguagem natural, o agente proposto visa simplificar a comunicação em interfaces complexas, proporcionando uma experiência digital unificada e adaptável às necessidades dos usuários. A metodologia inclui o desenvolvimento, implementação e avaliação do agente em ambientes reais de uso. Os resultados demonstram que a solução proposta contribui significativamente para a melhoria da acessibilidade e usabilidade dos sistemas, reduzindo barreiras de interação e promovendo uma comunicação mais fluida e intuitiva.
+Resumo: Este trabalho apresenta o desenvolvimento de um agente conversacional baseado em inteligência artificial para aprimorar a interação entre usuários e sistemas. 
+Utilizando técnicas avançadas de processamento de linguagem natural, o agente proposto visa simplificar a comunicação em interfaces complexas, proporcionando uma experiência digital unificada e adaptável às necessidades dos usuários. 
+A metodologia inclui o desenvolvimento, implementação e avaliação do agente em ambientes reais de uso. 
+Os resultados demonstram que a solução proposta contribui significativamente para a melhoria da acessibilidade e usabilidade dos sistemas, reduzindo barreiras de interação e promovendo uma comunicação mais fluida e intuitiva.
 
 **Palavras-chaves:** agente conversacional, interação, sistema, inteligência artificial.
 

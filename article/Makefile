@@ -38,6 +38,7 @@ clean :
 
 .PHONY : publish
 publish: $(DOCX)
-	@echo "Uploading article.docx to Google Drive..."
+	@echo "Uploading docx and pdf to Google Drive..."
 	@chmod +x ./scripts/upload_to_drive.sh
 	@./scripts/upload_to_drive.sh article.docx
+	@./scripts/upload_to_drive.sh article.pdf

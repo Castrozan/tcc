@@ -142,9 +142,51 @@ Para cada abordagem, será desenvolvida uma prova de conceito que demonstre sua 
 
 ## 2.1 MATERIAIS
 
-Esta seção deve indicar os recursos utilizados para realizar a
+<!-- Esta seção deve indicar os recursos utilizados para realizar a
 pesquisa.  Deve, portanto, apresentar os materiais utilizados na
-pesquisa o tamanho da amostra e como ela foi determinada.
+pesquisa o tamanho da amostra e como ela foi determinada. -->
+
+Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos conduzidos neste estudo, é essencial uma seleção criteriosa dos materiais e ferramentas utilizados. Esta seção detalha os recursos específicos empregados na condução desta pesquisa, justificando sua escolha baseada na eficiência, popularidade, robustez e aplicabilidade prática dentro do contexto dos agentes conversacionais e integração de sistemas.
+
+### Node.js para Desenvolvimento das Provas de Conceito
+
+Node.js foi escolhido como plataforma principal para o desenvolvimento das provas de conceito devido à sua comprovada eficácia na integração de sistemas baseados em inteligência artificial (IA), especialmente com agentes conversacionais e Large Language Models (LLMs). A plataforma é amplamente adotada devido à sua arquitetura orientada a eventos e capacidade de gerenciar eficientemente múltiplas conexões simultâneas, essencial para aplicações que exigem respostas rápidas em tempo real [@cherednichenko:hal-04545073].
+
+O Hugging Face fornece bibliotecas JavaScript específicas compatíveis com Node.js, como o `@huggingface/inference`, permitindo acesso direto a mais de 100 mil modelos pré-treinados com suporte a TypeScript. Isso simplifica significativamente a integração com IA, destacando a robustez técnica e facilidade de adoção do Node.js em aplicações modernas [@HuggingFace2024].
+
+Grandes empresas também reforçam a relevância de Node.js ao disponibilizarem SDKs específicos, como o da IBM para o Watsonx, lançado em 2023. Este SDK facilita o uso direto de modelos generativos robustos da IBM em aplicações Node.js, destacando sua relevância estratégica no ambiente empresarial [@IBM2023WatsonxSDK].
+
+Adicionalmente, a documentação oficial do Node.js ressalta sua capacidade superior de lidar com streaming de dados através de streams e pipelines. Essa funcionalidade permite transmitir resultados incrementais de IA aos clientes com baixa latência, tornando-o ideal para chatbots e serviços em tempo real que dependem de respostas imediatas [@Nodejs2024Docs].
+
+Por fim, relatórios da Red Hat destacam que o uso eficiente da arquitetura assíncrona do Node.js possibilita a criação de agentes baseados em LLMs com alta performance e escalabilidade. Isso garante um gerenciamento eficiente de múltiplas operações paralelas, essencial para aplicações intensivas em IA e integração com APIs externas [@RedHat2024LLMNode].
+
+### Testes End-to-End (e2e)
+
+Para validar integralmente o funcionamento dos agentes conversacionais propostos, os testes End-to-End foram implementados. Esta metodologia permite simular e avaliar a jornada completa dos usuários desde o início até a conclusão de tarefas específicas, assegurando que cada abordagem de integração seja confiável e funcional em situações reais de uso. A utilização de testes e2e é fundamental para a identificação precoce de falhas de comunicação e inconsistências no comportamento dos agentes conversacionais.
+
+### Modelos de Linguagem de Grande Escala (LLMs)
+
+Os modelos de linguagem (LLMs), incluindo tecnologias como OpenAI GPT, Anthropic e modelos disponibilizados pela Google, são essenciais neste estudo devido à sua capacidade de interpretar e gerar linguagem natural de forma avançada e eficaz. Estes modelos foram selecionados por sua performance comprovada e ampla adoção em pesquisas acadêmicas e no mercado corporativo, proporcionando um sólido embasamento para as funcionalidades de interação do agente conversacional.
+
+### Ferramentas Específicas de Integração
+
+A pesquisa investigou quatro abordagens distintas para a integração dos agentes conversacionais com sistemas computacionais, utilizando ferramentas específicas para cada uma:
+
+- **PostgreSQL para Conexão Direta com Banco de Dados:** Selecionado por sua robustez, estabilidade e desempenho em ambientes produtivos, o PostgreSQL permite consultas diretas aos dados brutos, oferecendo uma abordagem direta e eficiente.
+
+- **Sequelize para Integração via ORM:** Este ORM proporciona uma camada adicional de segurança e abstração, facilitando a manutenção e a adaptação da integração ao esquema de dados existente, reduzindo complexidade técnica e aumentando a eficiência operacional.
+
+- **OpenAPI para Integração via API/Swagger:** A utilização da especificação OpenAPI oferece uma interface padronizada e consistente para comunicação com serviços existentes através de APIs, garantindo interoperabilidade e simplificando o desenvolvimento.
+
+- **Model Context Protocol (MCP):** Este protocolo emergente foi explorado devido à sua flexibilidade e capacidade de fornecer uma estrutura padronizada para interação com ferramentas, essencial para futuras expansões e integrações com sistemas dinâmicos e complexos.
+
+### Importância e Relevância dos Materiais Escolhidos
+
+Os materiais escolhidos destacam-se não apenas pela capacidade técnica individual, mas também pela complementaridade entre si. Essa abordagem assegura que a pesquisa seja abrangente e represente adequadamente os desafios e soluções reais enfrentados na integração de agentes conversacionais avançados em sistemas complexos.
+
+### Conclusão da Seleção dos Materiais
+
+A seleção estratégica dos materiais e ferramentas utilizados neste estudo não somente garante a qualidade científica e técnica dos experimentos, mas também promove avanços significativos na interação entre usuários e sistemas. Ao incorporar tecnologias reconhecidas pela comunidade científica e pelo mercado, este estudo busca contribuir ativamente para o desenvolvimento de soluções mais eficazes e acessíveis, impactando positivamente a experiência do usuário em diversas aplicações práticas.
 
 ## 2.2 MÉTODOS
 

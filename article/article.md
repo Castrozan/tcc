@@ -24,56 +24,23 @@ title: "**AGENTE CONVERSACIONAL PARA INTERAÇÃO APRIMORADA EM SISTEMAS**"
 
 **Thyerri Fernandes Mezzari**[^2]
 
-Resumo: Este trabalho apresenta o desenvolvimento de um agente conversacional baseado em inteligência artificial para aprimorar a interação entre usuários e sistemas. 
-Utilizando técnicas avançadas de processamento de linguagem natural, o agente proposto visa simplificar a comunicação em interfaces complexas, proporcionando uma experiência digital unificada e adaptável às necessidades dos usuários. 
-A metodologia inclui o desenvolvimento, implementação e avaliação do agente em ambientes reais de uso. 
-Os resultados demonstram que a solução proposta contribui significativamente para a melhoria da acessibilidade e usabilidade dos sistemas, reduzindo barreiras de interação e promovendo uma comunicação mais fluida e intuitiva.
+Resumo: Este trabalho apresenta o desenvolvimento de um agente conversacional baseado em inteligência artificial para aprimorar a interação entre usuários e sistemas. Utilizando técnicas avançadas de processamento de linguagem natural, o agente proposto visa simplificar a comunicação em interfaces complexas, proporcionando uma experiência digital unificada e adaptável às necessidades dos usuários. A metodologia inclui o desenvolvimento, implementação e avaliação do agente em ambientes reais de uso. Os resultados demonstram que a solução proposta contribui significativamente para a melhoria da acessibilidade e usabilidade dos sistemas, reduzindo barreiras de interação e promovendo uma comunicação mais fluida e intuitiva.
 
 **Palavras-chaves:** agente conversacional, interação, sistema, inteligência artificial.
 
 # 1 INTRODUÇÃO
 
-A evolução das interfaces de usuário tem gerado uma diversidade de padrões de design e 
-usabilidade, resultando frequentemente em barreiras para a plena acessibilidade e interação 
-dos usuários com os sistemas digitais. Com o aumento da complexidade do frontend e a 
-multiplicidade de paradigmas de interação, muitos usuários enfrentam dificuldades 
-significativas para utilizar efetivamente as funcionalidades oferecidas pelos sistemas 
-computacionais modernos [@RAPP201849] [@Kocaballi2019].
+A evolução das interfaces de usuário tem gerado uma diversidade de padrões de design e usabilidade, resultando frequentemente em barreiras para a plena acessibilidade e interação dos usuários com os sistemas digitais. Com o aumento da complexidade do frontend e a multiplicidade de paradigmas de interação, muitos usuários enfrentam dificuldades significativas para utilizar efetivamente as funcionalidades oferecidas pelos sistemas computacionais modernos [@RAPP201849] [@Kocaballi2019].
 
-Nesse cenário, os agentes conversacionais baseados em inteligência artificial emergem 
-como uma alternativa promissora para simplificar a comunicação entre humanos e máquinas, 
-oferecendo uma camada intermediária de interação que pode traduzir comandos em linguagem 
-natural para ações específicas no sistema.
+Nesse cenário, os agentes conversacionais baseados em inteligência artificial emergem como uma alternativa promissora para simplificar a comunicação entre humanos e máquinas, oferecendo uma camada intermediária de interação que pode traduzir comandos em linguagem natural para ações específicas no sistema.
 
-Estudos recentes têm demonstrado que agentes conversacionais podem aprimorar 
-significativamente a experiência do usuário ao simplificar interações com sistemas 
-complexos [@fast2017irisconversationalagentcomplex]. Além disso, a implementação de 
-interfaces baseadas em linguagem natural tem mostrado potencial para melhorar a usabilidade 
-em contextos domésticos e inteligentes, reduzindo o tempo e o esforço necessários para 
-completar tarefas complexas [@Guo2024Doppelganger]. Ademais, tais interfaces oferecem 
-vantagens consideráveis em termos de acessibilidade, permitindo uma comunicação mais 
-inclusiva e adaptável a usuários com diferentes necessidades especiais 
-[@Lister2020AccessibleCU] [@Deng2023AMA].
+Estudos recentes têm demonstrado que agentes conversacionais podem aprimorar significativamente a experiência do usuário ao simplificar interações com sistemas complexos [@fast2017irisconversationalagentcomplex]. Além disso, a implementação de interfaces baseadas em linguagem natural tem mostrado potencial para melhorar a usabilidade em contextos domésticos e inteligentes, reduzindo o tempo e o esforço necessários para completar tarefas complexas [@Guo2024Doppelganger]. Ademais, tais interfaces oferecem vantagens consideráveis em termos de acessibilidade, permitindo uma comunicação mais inclusiva e adaptável a usuários com diferentes necessidades especiais [@Lister2020AccessibleCU] [@Deng2023AMA].
 
-A problemática central desta pesquisa reside na questão: de que forma um agente 
-conversacional baseado em IA pode potencializar a interação entre usuários e sistemas, 
-promovendo uma comunicação fluida mesmo em ambientes com interfaces complexas? Essa 
-pergunta reflete a necessidade crescente de soluções que democratizem o acesso à 
-tecnologia, reduzindo a curva de aprendizado necessária para a utilização de sistemas 
-especializados e tornando-os mais acessíveis para diferentes perfis de usuários.
+A problemática central desta pesquisa reside na questão: de que forma um agente conversacional baseado em IA pode potencializar a interação entre usuários e sistemas, promovendo uma comunicação fluida mesmo em ambientes com interfaces complexas? Essa pergunta reflete a necessidade crescente de soluções que democratizem o acesso à tecnologia, reduzindo a curva de aprendizado necessária para a utilização de sistemas especializados e tornando-os mais acessíveis para diferentes perfis de usuários.
 
-Adicionalmente, trabalhos recentes indicam que avanços na arquitetura de modelos de 
-IA, como o uso de transformers sem camadas de normalização, podem influenciar positivamente 
-o desempenho e a eficiência desses agentes [@Zhu2025DyT].
+Adicionalmente, trabalhos recentes indicam que avanços na arquitetura de modelos de IA, como o uso de transformers sem camadas de normalização, podem influenciar positivamente o desempenho e a eficiência desses agentes [@Zhu2025DyT].
 
-A relevância deste estudo evidencia-se pelo potencial transformador que os agentes 
-conversacionais representam para a área de interação humano-computador. Ao implementar um 
-sistema intermediário capaz de interpretar linguagem natural e traduzi-la em ações 
-específicas dentro de um sistema, cria-se uma ponte que permite aos usuários interagir de 
-forma mais intuitiva e natural com as tecnologias digitais. Esta abordagem tem o potencial 
-de mitigar as barreiras impostas por interfaces complexas, contribuindo para uma maior 
-inclusão digital e para a melhoria da experiência do usuário em diversos contextos de 
-aplicação.
+A relevância deste estudo evidencia-se pelo potencial transformador que os agentes conversacionais representam para a área de interação humano-computador. Ao implementar um sistema intermediário capaz de interpretar linguagem natural e traduzi-la em ações específicas dentro de um sistema, cria-se uma ponte que permite aos usuários interagir de forma mais intuitiva e natural com as tecnologias digitais. Esta abordagem tem o potencial de mitigar as barreiras impostas por interfaces complexas, contribuindo para uma maior inclusão digital e para a melhoria da experiência do usuário em diversos contextos de aplicação.
 
 <!-- ## Abordagens de Integração para Análise
 
@@ -167,27 +134,11 @@ aplicação.
 
 # 2 PROCEDIMENTO EXPERIMENTAL
 
-Este trabalho adota uma abordagem metodológica estruturada em múltiplas etapas para 
-investigar e avaliar diferentes métodos de integração entre agentes conversacionais 
-baseados em LLMs (Large Language Models) e sistemas computacionais. A pesquisa se 
-desenvolve através de uma análise comparativa de quatro abordagens distintas de 
-integração, cada uma com suas características, vantagens e limitações específicas.
+Este trabalho adota uma abordagem metodológica estruturada em múltiplas etapas para investigar e avaliar diferentes métodos de integração entre agentes conversacionais baseados em LLMs (Large Language Models) e sistemas computacionais. A pesquisa se desenvolve através de uma análise comparativa de quatro abordagens distintas de integração, cada uma com suas características, vantagens e limitações específicas.
 
-O processo investigativo inicia-se com uma revisão sistemática da literatura sobre 
-integrações entre LLMs e sistemas, estabelecendo uma base teórica sólida para a 
-análise subsequente. Em seguida, são exploradas quatro abordagens principais de 
-integração: (1) conexão direta com banco de dados, permitindo consultas e manipulações 
-diretas; (2) integração via plugins ORM, facilitando o acesso através de camadas de 
-abstração existentes; (3) integração via API/Swagger, utilizando interfaces padronizadas 
-de comunicação; e (4) integração via Model Context Protocol (MCP), explorando um 
-paradigma emergente de comunicação entre LLMs e sistemas.
+O processo investigativo inicia-se com uma revisão sistemática da literatura sobre integrações entre LLMs e sistemas, estabelecendo uma base teórica sólida para a análise subsequente. Em seguida, são exploradas quatro abordagens principais de integração: (1) conexão direta com banco de dados, permitindo consultas e manipulações diretas; (2) integração via plugins ORM, facilitando o acesso através de camadas de abstração existentes; (3) integração via API/Swagger, utilizando interfaces padronizadas de comunicação; e (4) integração via Model Context Protocol (MCP), explorando um paradigma emergente de comunicação entre LLMs e sistemas.
 
-Para cada abordagem, será desenvolvida uma prova de conceito que demonstre sua 
-viabilidade técnica e permita uma avaliação objetiva de seus aspectos funcionais e 
-não-funcionais. A avaliação seguirá critérios predefinidos, incluindo desempenho, 
-segurança, facilidade de implementação, manutenibilidade e experiência do usuário. 
-Os resultados serão documentados e analisados de forma sistemática, permitindo uma 
-comparação objetiva entre as diferentes abordagens.
+Para cada abordagem, será desenvolvida uma prova de conceito que demonstre sua viabilidade técnica e permita uma avaliação objetiva de seus aspectos funcionais e não-funcionais. A avaliação seguirá critérios predefinidos, incluindo desempenho, segurança, facilidade de implementação, manutenibilidade e experiência do usuário. Os resultados serão documentados e analisados de forma sistemática, permitindo uma comparação objetiva entre as diferentes abordagens.
 
 ## 2.1 MATERIAIS
 

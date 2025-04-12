@@ -258,8 +258,8 @@ escolha baseada na eficiência, popularidade, robustez e aplicabilidade
 prática dentro do contexto dos agentes conversacionais e integração de
 sistemas.
 
-\subsubsection{Node.js para Desenvolvimento das Provas de
-Conceito}\label{node.js-para-desenvolvimento-das-provas-de-conceito}
+\subsubsection{2.1.1 NODE.JS PARA DESENVOLVIMENTO DAS PROVAS DE
+CONCEITO}\label{node.js-para-desenvolvimento-das-provas-de-conceito}
 
 Node.js foi escolhido como plataforma principal para o desenvolvimento
 das provas de conceito devido à sua comprovada eficácia na integração de
@@ -296,7 +296,8 @@ baseados em LLMs com alta performance e escalabilidade. Isso garante um
 gerenciamento eficiente de múltiplas operações paralelas, essencial para
 aplicações intensivas em IA e integração com APIs externas (Blog 2024).
 
-\subsubsection{Testes End-to-End (e2e)}\label{testes-end-to-end-e2e}
+\subsubsection{2.1.2 TESTES END-TO-END
+(E2E)}\label{testes-end-to-end-e2e}
 
 O Framework de Gerenciamento de Riscos de IA do NIST (Oprea and Vassilev
 2023) destaca a importância de avaliar o desempenho de sistemas de IA de
@@ -342,7 +343,7 @@ para manter a confiança dos usuários e a estabilidade operacional,
 especialmente em aplicações críticas de negócios ou voltadas à
 segurança.
 
-\subsubsection{Modelos de Linguagem de Grande Escala
+\subsubsection{2.1.3 MODELOS DE LINGUAGEM DE GRANDE ESCALA
 (LLMs)}\label{modelos-de-linguagem-de-grande-escala-llms}
 
 Os modelos de linguagem (LLMs), incluindo tecnologias como OpenAI GPT,
@@ -353,7 +354,7 @@ performance comprovada e ampla adoção em pesquisas acadêmicas e no
 mercado corporativo, proporcionando um sólido embasamento para as
 funcionalidades de interação do agente conversacional.
 
-\paragraph{Histórico do Desenvolvimento de LLMs
+\paragraph{2.1.3.1 HISTÓRICO DO DESENVOLVIMENTO DE LLMS
 (2018--2023)}\label{histuxf3rico-do-desenvolvimento-de-llms-20182023}
 
 Nos últimos cinco anos, os Modelos de Linguagem de Grande Escala (LLMs)
@@ -375,8 +376,8 @@ estabeleceram as bases para o uso dos LLMs como interfaces
 conversacionais robustas em cenários de integração com sistemas (OpenAI
 2022).
 
-\paragraph{Extensão de Janela de
-Contexto}\label{extensuxe3o-de-janela-de-contexto}
+\paragraph{2.1.3.2 EXTENSÃO DE JANELA DE
+CONTEXTO}\label{extensuxe3o-de-janela-de-contexto}
 
 Com o avanço dos modelos, observou-se uma tendência significativa no
 aumento das janelas de contexto --- a quantidade de tokens que um LLM
@@ -397,8 +398,8 @@ há esforços contínuos para utilizar essas janelas maiores de forma
 eficiente (por exemplo, condensando ou focando a atenção nas partes mais
 relevantes) (Anthropic 2024a; OpenAI 2023b).
 
-\paragraph{Raciocínio Aprimorado e Compreensão Profunda (Deep
-Thinking)}\label{raciocuxednio-aprimorado-e-compreensuxe3o-profunda-deep-thinking}
+\paragraph{2.1.3.3 RACIOCÍNIO APRIMORADO E COMPREENSÃO PROFUNDA (DEEP
+THINKING)}\label{raciocuxednio-aprimorado-e-compreensuxe3o-profunda-deep-thinking}
 
 Os LLMs mais recentes apresentam avanços significativos em raciocínio,
 planejamento e resolução de tarefas complexas. Técnicas como o
@@ -411,8 +412,8 @@ avanços tornam os LLMs mais confiáveis para tarefas que exigem
 raciocínio profundo e tomada de decisão estruturada, fundamentais para
 integração com sistemas complexos (Yao et al. 2023).
 
-\paragraph{Uso de Ferramentas em Tempo Real e Interação com
-Sistemas}\label{uso-de-ferramentas-em-tempo-real-e-interauxe7uxe3o-com-sistemas}
+\paragraph{2.1.3.4 USO DE FERRAMENTAS EM TEMPO REAL E INTERAÇÃO COM
+SISTEMAS}\label{uso-de-ferramentas-em-tempo-real-e-interauxe7uxe3o-com-sistemas}
 
 O avanço dos LLMs em ambientes de produção foi impulsionado por recursos
 como o function calling da OpenAI (OpenAI 2023a). Essa funcionalidade
@@ -439,8 +440,8 @@ recursos, prompts e ferramentas de forma padronizada. Isso elimina a
 necessidade de integrações personalizadas para cada fonte de dados,
 promovendo uma interoperabilidade mais ampla e sustentável.
 
-\subsubsection{Ferramentas Específicas de
-Integração}\label{ferramentas-especuxedficas-de-integrauxe7uxe3o}
+\subsubsection{2.1.4 FERRAMENTAS ESPECÍFICAS DE
+INTEGRAÇÃO}\label{ferramentas-especuxedficas-de-integrauxe7uxe3o}
 
 A pesquisa investigou quatro abordagens distintas para a integração dos
 agentes conversacionais com sistemas computacionais, utilizando
@@ -448,26 +449,75 @@ ferramentas específicas para cada uma:
 
 \begin{itemize}
 \item
-  \textbf{PostgreSQL para Conexão Direta com Banco de Dados:}
-  Selecionado por sua robustez, estabilidade e desempenho em ambientes
-  produtivos, o PostgreSQL permite consultas diretas aos dados brutos,
-  oferecendo uma abordagem direta e eficiente.
+  \textbf{PostgreSQL para Conexão Direta com Banco de Dados:} foi
+  escolhido para a conexão direta com banco de dados devido à sua ampla
+  adoção e aceitação pela comunidade de desenvolvedores, evidenciada
+  pela pesquisa do Stack Overflow Developer Survey, onde apareceu como o
+  banco de dados mais admirado e desejado por desenvolvedores em 2023
+  (EnterpriseDB 2023b). Além disso, décadas de desenvolvimento ativo e
+  testes rigorosos pela comunidade garantem ao PostgreSQL uma reputação
+  sólida em termos de integridade dos dados e tolerância a falhas.
+  Assim, utilizar PostgreSQL assegura que os dados do agente
+  conversacional sejam gerenciados por uma infraestrutura confiável,
+  escalável e amplamente reconhecida pela indústria, com vasto suporte
+  operacional disponível (EnterpriseDB 2023b, 2023a).
 \item
-  \textbf{Sequelize para Integração via ORM:} Este ORM proporciona uma
-  camada adicional de segurança e abstração, facilitando a manutenção e
-  a adaptação da integração ao esquema de dados existente, reduzindo
-  complexidade técnica e aumentando a eficiência operacional.
+  \textbf{Sequelize para Integração via ORM:} Este ORM foi selecionado
+  como ferramenta ORM devido ao seu amplo uso em aplicações Node.js,
+  sendo uma das bibliotecas mais populares para gerenciamento de banco
+  de dados nessa plataforma, com cerca de 27 mil estrelas no GitHub e
+  mais de meio milhão de repositórios que o utilizam (S. Team 2024).
+  Empresas reconhecidas, como PayPal e Red Hat, utilizam Sequelize em
+  produção, reforçando sua credibilidade e robustez. Além disso, o uso
+  de Sequelize proporciona segurança adicional ao prevenir
+  automaticamente ataques de SQL injection por meio de queries
+  parametrizadas, oferecendo também suporte para caches e consultas em
+  SQL bruto quando necessário, equilibrando segurança com flexibilidade
+  e desempenho (E. Team 2023).
 \item
-  \textbf{OpenAPI para Integração via API/Swagger:} A utilização da
-  especificação OpenAPI oferece uma interface padronizada e consistente
-  para comunicação com serviços existentes através de APIs, garantindo
-  interoperabilidade e simplificando o desenvolvimento.
-\item
-  \textbf{Model Context Protocol (MCP):} Este protocolo emergente foi
-  explorado devido à sua flexibilidade e capacidade de fornecer uma
-  estrutura padronizada para interação com ferramentas, essencial para
-  futuras expansões e integrações com sistemas dinâmicos e complexos.
+  \textbf{OpenAPI para Integração via API/Swagger:} foi selecionado
+  devido à sua ampla adoção como padrão da indústria para definição de
+  interfaces RESTful, sendo reconhecido por facilitar a documentação
+  consistente e interoperabilidade entre sistemas. Sua especificação
+  permite descrever de maneira clara e estruturada os contratos das
+  APIs, incluindo esquemas de autenticação como OAuth e chaves de API,
+  essenciais para declarar uniformemente os requisitos de segurança das
+  interfaces dos agentes conversacionais (OpenAPI Initiative 2023; The
+  Postman Team 2023).
 \end{itemize}
+
+A relevância do OpenAPI para agentes baseados em LLM reside na
+possibilidade de fornecer uma descrição estruturada das capacidades
+disponíveis para o agente. Por meio de uma definição formal e
+padronizada, os modelos de linguagem podem interpretar diretamente as
+interfaces, compreendendo quais operações podem ser solicitadas e como
+realizá-las com segurança e eficiência. Essa abordagem já é aplicada por
+sistemas como os plugins do ChatGPT, demonstrando sua efetividade para
+integração direta entre LLMs e APIs externas (OpenAI 2023c).
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Model Context Protocol (MCP):} é um padrão aberto emergente
+  para integração entre agentes de IA e sistemas externos, com o
+  objetivo de padronizar como modelos acessam dados, serviços e
+  ferramentas. Ele fornece uma arquitetura clara baseada em clientes e
+  servidores MCP, permitindo que agentes conversem com fontes externas
+  de forma segura, modular e escalável. Desde seu lançamento aberto,
+  entre fevereiro e abril de 2025, o protocolo ganhou tração
+  significativa com a criação de diversos servidores prontos para
+  PostgreSQL, GitHub, Slack, entre outros, além de SDKs em múltiplas
+  linguagens (Anthropic 2024c; Model Context Protocol Contributors
+  2024).
+\end{itemize}
+
+A adoção crescente é impulsionada pela comunidade ativa, o que demonstra
+o potencial do MCP como um padrão de integração para sistemas baseados
+em LLMs. Sua proposta de ``porta universal'' para conectar agentes a
+ferramentas oferece flexibilidade e segurança --- características
+fundamentais quando agentes com poder de raciocínio, como LLMs, precisam
+acessar recursos sensíveis de forma controlada e auditável (Anthropic
+2024c).
 
 \subsection{2.2 MÉTODOS}\label{muxe9todos}
 
@@ -529,6 +579,11 @@ Claude 3 Models.''} 2024.
 Context Integration.''} 2024.
 \url{https://www.anthropic.com/news/model-context-protocol}.
 
+\bibitem[\citeproctext]{ref-Anthropic2024}
+Anthropic. 2024c. {``{Introducing the Model Context Protocol}.''}
+Anthropic News.
+\url{https://www.anthropic.com/news/model-context-protocol}.
+
 \bibitem[\citeproctext]{ref-RedHat2024LLMNode}
 Blog, Red Hat Developer. 2024. {``Building LLM Agents with Node.js.''}
 \url{https://developers.redhat.com/blog/2024/10/25/building-agents-large-language-modelsllms-and-nodejs}.
@@ -548,6 +603,16 @@ Vol. 3722. Lviv, Ukraine. \url{https://hal.science/hal-04545073}.
 Deng, Xiang. 2023. {``A More Accessible Web with Natural Language
 Interface.''} \emph{Proceedings of the 20th International Web for All
 Conference}. \url{https://api.semanticscholar.org/CorpusID:258259387}.
+
+\bibitem[\citeproctext]{ref-enterprisedb2023security}
+EnterpriseDB. 2023a. {``EnterpriseDB Raises the Bar for Postgres
+Security and Compliance.''} 2023.
+\url{https://www.enterprisedb.com/news/enterprisedb-raises-bar-postgres-security-compliance}.
+
+\bibitem[\citeproctext]{ref-enterprisedb2023postgresql}
+---------. 2023b. {``Postgres Is the Most Admired Database in Stack
+Overflow 2023 Survey.''} 2023.
+\url{https://www.enterprisedb.com/blog/postgres-most-admired-database-in-stack-overflow-2023}.
 
 \bibitem[\citeproctext]{ref-HuggingFace2024}
 Face, Hugging. 2024. {``JavaScript Libraries for ML Integration.''}
@@ -596,6 +661,11 @@ Considerations for Design.''} \emph{Proceedings of the 17th
 International Web for All Conference}.
 \url{https://api.semanticscholar.org/CorpusID:218539971}.
 
+\bibitem[\citeproctext]{ref-MCPDocs2024}
+Model Context Protocol Contributors. 2024. {``{Model Context Protocol
+Documentation - Introduction}.''} Online Documentation.
+\url{https://modelcontextprotocol.io/introduction}.
+
 \bibitem[\citeproctext]{ref-mcp2025spec}
 Model Context Protocol Team. 2025. {``Model Context Protocol
 Specification.''} Model Context Protocol.
@@ -617,6 +687,15 @@ OpenAI. \url{https://openai.com/index/instruction-following/}.
 ---------. 2023b. {``GPT-4 Research.''} OpenAI.
 \url{https://openai.com/index/gpt-4-research/}.
 
+\bibitem[\citeproctext]{ref-OpenAI2023}
+OpenAI. 2023c. {``{ChatGPT plugins}.''} OpenAI Product Blog.
+\url{https://openai.com/blog/chatgpt-plugins}.
+
+\bibitem[\citeproctext]{ref-OpenAPIInitiative2023}
+OpenAPI Initiative. 2023. {``{OpenAPI Specification - Getting
+Started}.''} OpenAPI Documentation (openapis.org).
+\url{https://learn.openapis.org/docs/getting-started}.
+
 \bibitem[\citeproctext]{ref-oprea2023adversarial}
 Oprea, Alina, and Apostol Vassilev. 2023. {``Adversarial Machine
 Learning: A Taxonomy and Terminology of Attacks and Mitigations.''}
@@ -635,6 +714,20 @@ Ribeiro, Marco Tulio, Tongshuang Wu, Carlos Guestrin, and Sameer Singh.
 2020. {``Beyond Accuracy: Behavioral Testing of NLP Models with
 CheckList.''} \emph{arXiv Preprint arXiv:2005.04118}.
 \url{https://arxiv.org/abs/2005.04118}.
+
+\bibitem[\citeproctext]{ref-eversql2023orms}
+Team, EverSQL. 2023. {``Best ORM for Node.js in 2023: A Comprehensive
+Comparison.''} 2023.
+\url{https://www.eversql.com/best-orm-for-node-js/}.
+
+\bibitem[\citeproctext]{ref-sequelize2024}
+Team, Sequelize. 2024. {``Sequelize: A Modern TypeScript and Node.js ORM
+for Postgres, MySQL, MariaDB, SQLite and SQL Server.''}
+\url{https://github.com/sequelize/sequelize}.
+
+\bibitem[\citeproctext]{ref-Postman2023}
+The Postman Team. 2023. {``{What is OpenAPI?}''} Postman Blog.
+\url{https://blog.postman.com/what-is-openapi/}.
 
 \bibitem[\citeproctext]{ref-wei2023chainofthoughtpromptingelicitsreasoning}
 Wei, Jason, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter,

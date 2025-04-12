@@ -526,9 +526,6 @@ implementação, manutenibilidade e experiência do usuário. Os resultados
 serão documentados e analisados de forma sistemática, permitindo uma
 comparação objetiva entre as diferentes abordagens.</p>
 <h2 id="materiais">2.1 MATERIAIS</h2>
-<!-- Esta seção deve indicar os recursos utilizados para realizar a
-pesquisa.  Deve, portanto, apresentar os materiais utilizados na
-pesquisa o tamanho da amostra e como ela foi determinada. -->
 <p>Para garantir a rigorosidade científica e a reprodutibilidade dos
 experimentos conduzidos neste estudo, é essencial uma seleção criteriosa
 dos materiais e ferramentas utilizados. Esta seção detalha os recursos
@@ -536,8 +533,8 @@ específicos empregados na condução desta pesquisa, justificando sua
 escolha baseada na eficiência, popularidade, robustez e aplicabilidade
 prática dentro do contexto dos agentes conversacionais e integração de
 sistemas.</p>
-<h3 id="node.js-para-desenvolvimento-das-provas-de-conceito">Node.js
-para Desenvolvimento das Provas de Conceito</h3>
+<h3 id="node.js-para-desenvolvimento-das-provas-de-conceito">2.1.1
+NODE.JS PARA DESENVOLVIMENTO DAS PROVAS DE CONCEITO</h3>
 <p>Node.js foi escolhido como plataforma principal para o
 desenvolvimento das provas de conceito devido à sua comprovada eficácia
 na integração de sistemas baseados em inteligência artificial (IA),
@@ -568,7 +565,7 @@ arquitetura assíncrona do Node.js possibilita a criação de agentes
 baseados em LLMs com alta performance e escalabilidade. Isso garante um
 gerenciamento eficiente de múltiplas operações paralelas, essencial para
 aplicações intensivas em IA e integração com APIs externas <span class="citation" data-cites="RedHat2024LLMNode">[@RedHat2024LLMNode]</span>.</p>
-<h3 id="testes-end-to-end-e2e">Testes End-to-End (e2e)</h3>
+<h3 id="testes-end-to-end-e2e">2.1.2 TESTES END-TO-END (E2E)</h3>
 <p>O Framework de Gerenciamento de Riscos de IA do NIST <span class="citation" data-cites="oprea2023adversarial">[@oprea2023adversarial]</span> destaca
 a importância de avaliar o desempenho de sistemas de IA de forma
 abrangente, defendendo que testes de integração devem avaliar os
@@ -608,8 +605,8 @@ baseados em LLM lidem de forma confiável com interações diversas dos
 usuários, atributo essencial para manter a confiança dos usuários e a
 estabilidade operacional, especialmente em aplicações críticas de
 negócios ou voltadas à segurança.</p>
-<h3 id="modelos-de-linguagem-de-grande-escala-llms">Modelos de Linguagem
-de Grande Escala (LLMs)</h3>
+<h3 id="modelos-de-linguagem-de-grande-escala-llms">2.1.3 MODELOS DE
+LINGUAGEM DE GRANDE ESCALA (LLMs)</h3>
 <p>Os modelos de linguagem (LLMs), incluindo tecnologias como OpenAI
 GPT, Anthropic e modelos disponibilizados pela Google, são essenciais
 neste estudo devido à sua capacidade de interpretar e gerar linguagem
@@ -617,8 +614,8 @@ natural de forma avançada e eficaz. Estes modelos foram selecionados por
 sua performance comprovada e ampla adoção em pesquisas acadêmicas e no
 mercado corporativo, proporcionando um sólido embasamento para as
 funcionalidades de interação do agente conversacional.</p>
-<h4 id="histórico-do-desenvolvimento-de-llms-20182023">Histórico do
-Desenvolvimento de LLMs (2018–2023)</h4>
+<h4 id="histórico-do-desenvolvimento-de-llms-20182023">2.1.3.1 HISTÓRICO
+DO DESENVOLVIMENTO DE LLMS (2018–2023)</h4>
 <p>Nos últimos cinco anos, os Modelos de Linguagem de Grande Escala
 (LLMs) evoluíram rapidamente, a partir da arquitetura Transformer. O
 lançamento do BERT (2018) mostrou avanços em compreensão textual,
@@ -636,8 +633,8 @@ modelos InstructGPT e posteriormente ChatGPT, melhorou a capacidade dos
 LLMs de seguir instruções com mais segurança e consistência. Esses
 avanços estabeleceram as bases para o uso dos LLMs como interfaces
 conversacionais robustas em cenários de integração com sistemas <span class="citation" data-cites="openai2022instructgpt">[@openai2022instructgpt]</span>.</p>
-<h4 id="extensão-de-janela-de-contexto">Extensão de Janela de
-Contexto</h4>
+<h4 id="extensão-de-janela-de-contexto">2.1.3.2 EXTENSÃO DE JANELA DE
+CONTEXTO</h4>
 <p>Com o avanço dos modelos, observou-se uma tendência significativa no
 aumento das janelas de contexto — a quantidade de tokens que um LLM pode
 processar em uma única interação. Modelos como o Claude 3 já alcançam
@@ -656,8 +653,8 @@ há esforços contínuos para utilizar essas janelas maiores de forma
 eficiente (por exemplo, condensando ou focando a atenção nas partes mais
 relevantes) <span class="citation" data-cites="anthropic2024context openai2023gpt4">[@anthropic2024context;
 @openai2023gpt4]</span>.</p>
-<h4 id="raciocínio-aprimorado-e-compreensão-profunda-deep-thinking">Raciocínio
-Aprimorado e Compreensão Profunda (Deep Thinking)</h4>
+<h4 id="raciocínio-aprimorado-e-compreensão-profunda-deep-thinking">2.1.3.3
+RACIOCÍNIO APRIMORADO E COMPREENSÃO PROFUNDA (DEEP THINKING)</h4>
 <p>Os LLMs mais recentes apresentam avanços significativos em
 raciocínio, planejamento e resolução de tarefas complexas. Técnicas como
 o Chain-of-Thought prompting, que induz os modelos a pensar em etapas
@@ -668,8 +665,8 @@ que os modelos reavaliem suas respostas e melhorem sua própria
 performance iterativamente. Esses avanços tornam os LLMs mais confiáveis
 para tarefas que exigem raciocínio profundo e tomada de decisão
 estruturada, fundamentais para integração com sistemas complexos <span class="citation" data-cites="yao2023treethoughtsdeliberateproblem">[@yao2023treethoughtsdeliberateproblem]</span>.</p>
-<h4 id="uso-de-ferramentas-em-tempo-real-e-interação-com-sistemas">Uso
-de Ferramentas em Tempo Real e Interação com Sistemas</h4>
+<h4 id="uso-de-ferramentas-em-tempo-real-e-interação-com-sistemas">2.1.3.4
+USO DE FERRAMENTAS EM TEMPO REAL E INTERAÇÃO COM SISTEMAS</h4>
 <p>O avanço dos LLMs em ambientes de produção foi impulsionado por
 recursos como o function calling da OpenAI <span class="citation" data-cites="openai2023functioncalling">[@openai2023functioncalling]</span>.
 Essa funcionalidade permite que os modelos interpretem solicitações em
@@ -692,32 +689,73 @@ cliente-servidor onde os modelos (clientes) podem acessar servidores MCP
 que expõem recursos, prompts e ferramentas de forma padronizada. Isso
 elimina a necessidade de integrações personalizadas para cada fonte de
 dados, promovendo uma interoperabilidade mais ampla e sustentável.</p>
-<h3 id="ferramentas-específicas-de-integração">Ferramentas Específicas
-de Integração</h3>
+<h3 id="ferramentas-específicas-de-integração">2.1.4 FERRAMENTAS
+ESPECÍFICAS DE INTEGRAÇÃO</h3>
 <p>A pesquisa investigou quatro abordagens distintas para a integração
 dos agentes conversacionais com sistemas computacionais, utilizando
 ferramentas específicas para cada uma:</p>
 <ul>
 <li><p><strong>PostgreSQL para Conexão Direta com Banco de
-Dados:</strong> Selecionado por sua robustez, estabilidade e desempenho
-em ambientes produtivos, o PostgreSQL permite consultas diretas aos
-dados brutos, oferecendo uma abordagem direta e eficiente.</p></li>
-<li><p><strong>Sequelize para Integração via ORM:</strong> Este ORM
-proporciona uma camada adicional de segurança e abstração, facilitando a
-manutenção e a adaptação da integração ao esquema de dados existente,
-reduzindo complexidade técnica e aumentando a eficiência
-operacional.</p></li>
-<li><p><strong>OpenAPI para Integração via API/Swagger:</strong> A
-utilização da especificação OpenAPI oferece uma interface padronizada e
-consistente para comunicação com serviços existentes através de APIs,
-garantindo interoperabilidade e simplificando o
-desenvolvimento.</p></li>
-<li><p><strong>Model Context Protocol (MCP):</strong> Este protocolo
-emergente foi explorado devido à sua flexibilidade e capacidade de
-fornecer uma estrutura padronizada para interação com ferramentas,
-essencial para futuras expansões e integrações com sistemas dinâmicos e
-complexos.</p></li>
+Dados:</strong> foi escolhido para a conexão direta com banco de dados
+devido à sua ampla adoção e aceitação pela comunidade de
+desenvolvedores, evidenciada pela pesquisa do Stack Overflow Developer
+Survey, onde apareceu como o banco de dados mais admirado e desejado por
+desenvolvedores em 2023 <span class="citation" data-cites="enterprisedb2023postgresql">[@enterprisedb2023postgresql]</span>.
+Além disso, décadas de desenvolvimento ativo e testes rigorosos pela
+comunidade garantem ao PostgreSQL uma reputação sólida em termos de
+integridade dos dados e tolerância a falhas. Assim, utilizar PostgreSQL
+assegura que os dados do agente conversacional sejam gerenciados por uma
+infraestrutura confiável, escalável e amplamente reconhecida pela
+indústria, com vasto suporte operacional disponível <span class="citation" data-cites="enterprisedb2023postgresql enterprisedb2023security">[@enterprisedb2023postgresql;
+@enterprisedb2023security]</span>.</p></li>
+<li><p><strong>Sequelize para Integração via ORM:</strong> Este ORM foi
+selecionado como ferramenta ORM devido ao seu amplo uso em aplicações
+Node.js, sendo uma das bibliotecas mais populares para gerenciamento de
+banco de dados nessa plataforma, com cerca de 27 mil estrelas no GitHub
+e mais de meio milhão de repositórios que o utilizam <span class="citation" data-cites="sequelize2024">[@sequelize2024]</span>.
+Empresas reconhecidas, como PayPal e Red Hat, utilizam Sequelize em
+produção, reforçando sua credibilidade e robustez. Além disso, o uso de
+Sequelize proporciona segurança adicional ao prevenir automaticamente
+ataques de SQL injection por meio de queries parametrizadas, oferecendo
+também suporte para caches e consultas em SQL bruto quando necessário,
+equilibrando segurança com flexibilidade e desempenho <span class="citation" data-cites="eversql2023orms">[@eversql2023orms]</span>.</p></li>
+<li><p><strong>OpenAPI para Integração via API/Swagger:</strong> foi
+selecionado devido à sua ampla adoção como padrão da indústria para
+definição de interfaces RESTful, sendo reconhecido por facilitar a
+documentação consistente e interoperabilidade entre sistemas. Sua
+especificação permite descrever de maneira clara e estruturada os
+contratos das APIs, incluindo esquemas de autenticação como OAuth e
+chaves de API, essenciais para declarar uniformemente os requisitos de
+segurança das interfaces dos agentes conversacionais <span class="citation" data-cites="OpenAPIInitiative2023 Postman2023">[@OpenAPIInitiative2023;
+@Postman2023]</span>.</p></li>
 </ul>
+<p>A relevância do OpenAPI para agentes baseados em LLM reside na
+possibilidade de fornecer uma descrição estruturada das capacidades
+disponíveis para o agente. Por meio de uma definição formal e
+padronizada, os modelos de linguagem podem interpretar diretamente as
+interfaces, compreendendo quais operações podem ser solicitadas e como
+realizá-las com segurança e eficiência. Essa abordagem já é aplicada por
+sistemas como os plugins do ChatGPT, demonstrando sua efetividade para
+integração direta entre LLMs e APIs externas <span class="citation" data-cites="OpenAI2023">[@OpenAI2023]</span>.</p>
+<ul>
+<li><strong>Model Context Protocol (MCP):</strong> é um padrão aberto
+emergente para integração entre agentes de IA e sistemas externos, com o
+objetivo de padronizar como modelos acessam dados, serviços e
+ferramentas. Ele fornece uma arquitetura clara baseada em clientes e
+servidores MCP, permitindo que agentes conversem com fontes externas de
+forma segura, modular e escalável. Desde seu lançamento aberto, entre
+fevereiro e abril de 2025, o protocolo ganhou tração significativa com a
+criação de diversos servidores prontos para PostgreSQL, GitHub, Slack,
+entre outros, além de SDKs em múltiplas linguagens <span class="citation" data-cites="Anthropic2024 MCPDocs2024">[@Anthropic2024;
+@MCPDocs2024]</span>.</li>
+</ul>
+<p>A adoção crescente é impulsionada pela comunidade ativa, o que
+demonstra o potencial do MCP como um padrão de integração para sistemas
+baseados em LLMs. Sua proposta de “porta universal” para conectar
+agentes a ferramentas oferece flexibilidade e segurança —
+características fundamentais quando agentes com poder de raciocínio,
+como LLMs, precisam acessar recursos sensíveis de forma controlada e
+auditável <span class="citation" data-cites="Anthropic2024">[@Anthropic2024]</span>.</p>
 <h2 id="métodos">2.2 MÉTODOS</h2>
 <p>Em métodos deve ter uma explicação minuciosa, detalhada, rigorosa e
 exata de toda ação desenvolvida no método (caminho) do trabalho de

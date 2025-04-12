@@ -315,18 +315,18 @@ dados brutos de banco de dados. O guia de riscos da OWASP (John et al.
 segurança, destacando a necessidade de procedimentos de teste rigorosos
 para garantir que agentes conversacionais baseados em LLMs não revelem
 inadvertidamente dados sensíveis ou contornem restrições do sistema
-quando expostos a entradas maliciosas. Recentemente, (Wu et al. 2023)
-demonstraram que ataques de jailbreak --- um tipo avançado de injeção de
-prompt --- podem burlar as salvaguardas éticas de modelos como o ChatGPT
-em até 67\% dos casos, gerando conteúdos prejudiciais como extorsão e
-desinformação.
+quando expostos a entradas maliciosas. Recentemente, Wu et al.~(2023)
+(Wu et al. 2023) demonstraram que ataques de jailbreak --- um tipo
+avançado de injeção de prompt --- podem burlar as salvaguardas éticas de
+modelos como o ChatGPT em até 67\% dos casos, gerando conteúdos
+prejudiciais como extorsão e desinformação.
 
 Com isso em mente, o uso de testes E2E pode ser utilizado para avaliar a
 resiliência da implementação ao simular entradas adversárias, processo
-conhecido como red teaming. Segundo (Inie, Stray, and Derczynski 2025),
-o red teaming desafia sistematicamente sistemas de IA com prompts
-adversários projetados para testar seus limites e mecanismos de
-segurança. Ao encapsular consultas do usuário com lembretes de
+conhecido como red teaming. Segundo Inie et al.~(2025) (Inie, Stray, and
+Derczynski 2025), o red teaming desafia sistematicamente sistemas de IA
+com prompts adversários projetados para testar seus limites e mecanismos
+de segurança. Ao encapsular consultas do usuário com lembretes de
 responsabilidade ética (e.g., ``Você deve ser um ChatGPT responsável''),
 o método reduziu a taxa de sucesso de jailbreaks para 19\%, mantendo a
 funcionalidade padrão do modelo --- um resultado validado através de
@@ -352,6 +352,92 @@ de forma avançada e eficaz. Estes modelos foram selecionados por sua
 performance comprovada e ampla adoção em pesquisas acadêmicas e no
 mercado corporativo, proporcionando um sólido embasamento para as
 funcionalidades de interação do agente conversacional.
+
+\paragraph{Histórico do Desenvolvimento de LLMs
+(2018--2023)}\label{histuxf3rico-do-desenvolvimento-de-llms-20182023}
+
+Nos últimos cinco anos, os Modelos de Linguagem de Grande Escala (LLMs)
+evoluíram rapidamente, a partir da arquitetura Transformer. O lançamento
+do BERT (2018) mostrou avanços em compreensão textual, enquanto a série
+GPT demonstrou fortes capacidades generativas. O GPT-3 (2020), com 175
+bilhões de parâmetros, evidenciou habilidades emergentes de aprendizado
+com poucos exemplos (few-shot), ampliando o escopo de tarefas possíveis
+por meio de simples instruções em linguagem natural (Brown et al. 2020).
+
+A partir de 2022, o foco da pesquisa passou a ser o aprimoramento do
+raciocínio e alinhamento dos LLMs. Técnicas como Chain-of-Thought
+prompting permitiram que os modelos resolvessem problemas complexos de
+forma mais eficaz (Wei et al. 2023). O uso de Reinforcement Learning
+from Human Feedback (RLHF), como nos modelos InstructGPT e
+posteriormente ChatGPT, melhorou a capacidade dos LLMs de seguir
+instruções com mais segurança e consistência. Esses avanços
+estabeleceram as bases para o uso dos LLMs como interfaces
+conversacionais robustas em cenários de integração com sistemas (OpenAI
+2022).
+
+\paragraph{Extensão de Janela de
+Contexto}\label{extensuxe3o-de-janela-de-contexto}
+
+Com o avanço dos modelos, observou-se uma tendência significativa no
+aumento das janelas de contexto --- a quantidade de tokens que um LLM
+pode processar em uma única interação. Modelos como o Claude 3 já
+alcançam até 100.000 tokens (Anthropic 2024a), enquanto versões
+estendidas do GPT-4 suportam até 32.000 tokens (OpenAI 2023b). Esse
+aumento permite que os modelos processem documentos extensos, múltiplas
+conversas ou grandes volumes de dados em uma única solicitação,
+superando, em muitos casos, abordagens tradicionais baseadas em
+retrieval-augmented generation (RAG), especialmente em tarefas que
+exigem síntese contextual profunda.
+
+A capacidade de manter longos contextos é altamente benéfica para
+integração com sistemas -- um LLM pode manter diálogos prolongados,
+lembrar estados extensos ou ingerir bancos de dados e logs inteiros de
+uma só vez. No entanto, isso traz custos computacionais consideráveis, e
+há esforços contínuos para utilizar essas janelas maiores de forma
+eficiente (por exemplo, condensando ou focando a atenção nas partes mais
+relevantes) (Anthropic 2024a; OpenAI 2023b).
+
+\paragraph{Raciocínio Aprimorado e Compreensão Profunda (Deep
+Thinking)}\label{raciocuxednio-aprimorado-e-compreensuxe3o-profunda-deep-thinking}
+
+Os LLMs mais recentes apresentam avanços significativos em raciocínio,
+planejamento e resolução de tarefas complexas. Técnicas como o
+Chain-of-Thought prompting, que induz os modelos a pensar em etapas
+intermediárias, mostraram ganhos substanciais em tarefas que exigem
+múltiplos passos lógicos (Wei et al. 2023). Além disso, abordagens como
+tree-of-thought e self-reflection permitem que os modelos reavaliem suas
+respostas e melhorem sua própria performance iterativamente. Esses
+avanços tornam os LLMs mais confiáveis para tarefas que exigem
+raciocínio profundo e tomada de decisão estruturada, fundamentais para
+integração com sistemas complexos (Yao et al. 2023).
+
+\paragraph{Uso de Ferramentas em Tempo Real e Interação com
+Sistemas}\label{uso-de-ferramentas-em-tempo-real-e-interauxe7uxe3o-com-sistemas}
+
+O avanço dos LLMs em ambientes de produção foi impulsionado por recursos
+como o function calling da OpenAI (OpenAI 2023a). Essa funcionalidade
+permite que os modelos interpretem solicitações em linguagem natural e
+as convertam em chamadas de funções estruturadas, conforme definido por
+esquemas JSON fornecidos pelo desenvolvedor. Por exemplo, ao receber uma
+instrução como ``agende uma reunião para amanhã às 14h'', o modelo pode
+gerar uma chamada de função com os parâmetros apropriados para interagir
+com uma API de calendário, sem depender de engenharia de prompt ou
+extração de texto.
+
+Essa abordagem, semelhante ao modelo escrever código para utilizar
+ferramentas, melhora significativamente a confiabilidade em cenários de
+integração, permitindo que o modelo obtenha dados estruturados de bancos
+de dados, chame APIs de negócios, envie e-mails, entre outras ações, em
+vez de apenas tentar adivinhar a resposta (OpenAI 2023a).
+
+Complementando essa capacidade, o Model Context Protocol (MCP),
+desenvolvido pela Anthropic (Model Context Protocol Team 2025; Anthropic
+2024b), oferece um padrão aberto para conectar LLMs a diversas fontes de
+dados e ferramentas. O MCP estabelece uma arquitetura cliente-servidor
+onde os modelos (clientes) podem acessar servidores MCP que expõem
+recursos, prompts e ferramentas de forma padronizada. Isso elimina a
+necessidade de integrações personalizadas para cada fonte de dados,
+promovendo uma interoperabilidade mais ampla e sustentável.
 
 \subsubsection{Ferramentas Específicas de
 Integração}\label{ferramentas-especuxedficas-de-integrauxe7uxe3o}
@@ -382,27 +468,6 @@ ferramentas específicas para cada uma:
   estrutura padronizada para interação com ferramentas, essencial para
   futuras expansões e integrações com sistemas dinâmicos e complexos.
 \end{itemize}
-
-\subsubsection{Importância e Relevância dos Materiais
-Escolhidos}\label{importuxe2ncia-e-relevuxe2ncia-dos-materiais-escolhidos}
-
-Os materiais escolhidos destacam-se não apenas pela capacidade técnica
-individual, mas também pela complementaridade entre si. Essa abordagem
-assegura que a pesquisa seja abrangente e represente adequadamente os
-desafios e soluções reais enfrentados na integração de agentes
-conversacionais avançados em sistemas complexos.
-
-\subsubsection{Conclusão da Seleção dos
-Materiais}\label{conclusuxe3o-da-seleuxe7uxe3o-dos-materiais}
-
-A seleção estratégica dos materiais e ferramentas utilizados neste
-estudo não somente garante a qualidade científica e técnica dos
-experimentos, mas também promove avanços significativos na interação
-entre usuários e sistemas. Ao incorporar tecnologias reconhecidas pela
-comunidade científica e pelo mercado, este estudo busca contribuir
-ativamente para o desenvolvimento de soluções mais eficazes e
-acessíveis, impactando positivamente a experiência do usuário em
-diversas aplicações práticas.
 
 \subsection{2.2 MÉTODOS}\label{muxe9todos}
 
@@ -454,9 +519,24 @@ a sua pergunta-problema de pesquisa.
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-anthropic2024context}
+Anthropic. 2024a. {``Anthropic Now Offers 100K Context Windows for
+Claude 3 Models.''} 2024.
+\url{https://www.anthropic.com/news/100k-context-windows}.
+
+\bibitem[\citeproctext]{ref-anthropic2024mcp}
+---------. 2024b. {``Model Context Protocol (MCP): A Standard for AI
+Context Integration.''} 2024.
+\url{https://www.anthropic.com/news/model-context-protocol}.
+
 \bibitem[\citeproctext]{ref-RedHat2024LLMNode}
 Blog, Red Hat Developer. 2024. {``Building LLM Agents with Node.js.''}
 \url{https://developers.redhat.com/blog/2024/10/25/building-agents-large-language-modelsllms-and-nodejs}.
+
+\bibitem[\citeproctext]{ref-brown2020languagemodelsfewshotlearners}
+Brown, Tom B., Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan,
+Prafulla Dhariwal, Arvind Neelakantan, et al. 2020. {``Language Models
+Are Few-Shot Learners.''} \url{https://arxiv.org/abs/2005.14165}.
 
 \bibitem[\citeproctext]{ref-cherednichenko:hal-04545073}
 Cherednichenko, Olga, Dmytro Sytnikov, Nazarii Romankiv, Nataliia
@@ -516,9 +596,26 @@ Considerations for Design.''} \emph{Proceedings of the 17th
 International Web for All Conference}.
 \url{https://api.semanticscholar.org/CorpusID:218539971}.
 
+\bibitem[\citeproctext]{ref-mcp2025spec}
+Model Context Protocol Team. 2025. {``Model Context Protocol
+Specification.''} Model Context Protocol.
+\url{https://modelcontextprotocol.io/specification/2025-03-26/index}.
+
 \bibitem[\citeproctext]{ref-Nodejs2024Docs}
 Node.js. 2024. {``Streams, Pipelines and WebSocket Support.''}
 \url{https://nodejs.org/api/stream.html}.
+
+\bibitem[\citeproctext]{ref-openai2022instructgpt}
+OpenAI. 2022. {``Aligning Language Models to Follow Instructions.''}
+OpenAI. \url{https://openai.com/index/instruction-following/}.
+
+\bibitem[\citeproctext]{ref-openai2023functioncalling}
+---------. 2023a. {``Function Calling and Other API Updates.''} 2023.
+\url{https://openai.com/index/function-calling-and-other-api-updates/}.
+
+\bibitem[\citeproctext]{ref-openai2023gpt4}
+---------. 2023b. {``GPT-4 Research.''} OpenAI.
+\url{https://openai.com/index/gpt-4-research/}.
 
 \bibitem[\citeproctext]{ref-oprea2023adversarial}
 Oprea, Alina, and Apostol Vassilev. 2023. {``Adversarial Machine
@@ -539,11 +636,23 @@ Ribeiro, Marco Tulio, Tongshuang Wu, Carlos Guestrin, and Sameer Singh.
 CheckList.''} \emph{arXiv Preprint arXiv:2005.04118}.
 \url{https://arxiv.org/abs/2005.04118}.
 
+\bibitem[\citeproctext]{ref-wei2023chainofthoughtpromptingelicitsreasoning}
+Wei, Jason, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter,
+Fei Xia, Ed Chi, Quoc Le, and Denny Zhou. 2023. {``Chain-of-Thought
+Prompting Elicits Reasoning in Large Language Models.''}
+\url{https://arxiv.org/abs/2201.11903}.
+
 \bibitem[\citeproctext]{ref-wu2023defending}
 Wu, Fangzhao, Yueqi Xie, Jingwei Yi, Jiawei Shao, Justin Curl, Lingjuan
 Lyu, Qifeng Chen, and Xing Xie. 2023. {``Defending Chatgpt Against
 Jailbreak Attack via Self-Reminder.''}
 \url{https://www.researchsquare.com/article/rs-2873090/v1}.
+
+\bibitem[\citeproctext]{ref-yao2023treethoughtsdeliberateproblem}
+Yao, Shunyu, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas L. Griffiths,
+Yuan Cao, and Karthik Narasimhan. 2023. {``Tree of Thoughts: Deliberate
+Problem Solving with Large Language Models.''}
+\url{https://arxiv.org/abs/2305.10601}.
 
 \bibitem[\citeproctext]{ref-Zhu2025DyT}
 Zhu, Jiachen, Xinlei Chen, Kaiming He, Yann LeCun, and Zhuang Liu. 2025.

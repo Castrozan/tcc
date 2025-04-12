@@ -586,20 +586,20 @@ de prompt como uma ameaça crítica à segurança, destacando a necessidade
 de procedimentos de teste rigorosos para garantir que agentes
 conversacionais baseados em LLMs não revelem inadvertidamente dados
 sensíveis ou contornem restrições do sistema quando expostos a entradas
-maliciosas. Recentemente, <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span> demonstraram que
+maliciosas. Recentemente, Wu et al. (2023) <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span> demonstraram que
 ataques de jailbreak — um tipo avançado de injeção de prompt — podem
 burlar as salvaguardas éticas de modelos como o ChatGPT em até 67% dos
 casos, gerando conteúdos prejudiciais como extorsão e desinformação.</p>
 <p>Com isso em mente, o uso de testes E2E pode ser utilizado para
 avaliar a resiliência da implementação ao simular entradas adversárias,
-processo conhecido como red teaming. Segundo <span class="citation" data-cites="inie2025summon">[@inie2025summon]</span>, o red teaming
-desafia sistematicamente sistemas de IA com prompts adversários
-projetados para testar seus limites e mecanismos de segurança. Ao
-encapsular consultas do usuário com lembretes de responsabilidade ética
-(e.g., “Você deve ser um ChatGPT responsável”), o método reduziu a taxa
-de sucesso de jailbreaks para 19%, mantendo a funcionalidade padrão do
-modelo — um resultado validado através de testes E2E em 540 cenários
-adversarialmente projetados <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span>.</p>
+processo conhecido como red teaming. Segundo Inie et al. (2025) <span class="citation" data-cites="inie2025summon">[@inie2025summon]</span>, o
+red teaming desafia sistematicamente sistemas de IA com prompts
+adversários projetados para testar seus limites e mecanismos de
+segurança. Ao encapsular consultas do usuário com lembretes de
+responsabilidade ética (e.g., “Você deve ser um ChatGPT responsável”), o
+método reduziu a taxa de sucesso de jailbreaks para 19%, mantendo a
+funcionalidade padrão do modelo — um resultado validado através de
+testes E2E em 540 cenários adversarialmente projetados <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span>.</p>
 <p>Testes de robustez, como os propostos pelo framework CheckList <span class="citation" data-cites="ribeiro2020beyond">[@ribeiro2020beyond]</span>, complementam
 ainda mais os testes E2E ao variar sistematicamente as entradas — como
 paráfrases, negações ou ruído — para avaliar a consistência e a precisão
@@ -617,6 +617,81 @@ natural de forma avançada e eficaz. Estes modelos foram selecionados por
 sua performance comprovada e ampla adoção em pesquisas acadêmicas e no
 mercado corporativo, proporcionando um sólido embasamento para as
 funcionalidades de interação do agente conversacional.</p>
+<h4 id="histórico-do-desenvolvimento-de-llms-20182023">Histórico do
+Desenvolvimento de LLMs (2018–2023)</h4>
+<p>Nos últimos cinco anos, os Modelos de Linguagem de Grande Escala
+(LLMs) evoluíram rapidamente, a partir da arquitetura Transformer. O
+lançamento do BERT (2018) mostrou avanços em compreensão textual,
+enquanto a série GPT demonstrou fortes capacidades generativas. O GPT-3
+(2020), com 175 bilhões de parâmetros, evidenciou habilidades emergentes
+de aprendizado com poucos exemplos (few-shot), ampliando o escopo de
+tarefas possíveis por meio de simples instruções em linguagem natural
+<span class="citation" data-cites="brown2020languagemodelsfewshotlearners">[@brown2020languagemodelsfewshotlearners]</span>.</p>
+<p>A partir de 2022, o foco da pesquisa passou a ser o aprimoramento do
+raciocínio e alinhamento dos LLMs. Técnicas como Chain-of-Thought
+prompting permitiram que os modelos resolvessem problemas complexos de
+forma mais eficaz <span class="citation" data-cites="wei2023chainofthoughtpromptingelicitsreasoning">[@wei2023chainofthoughtpromptingelicitsreasoning]</span>.
+O uso de Reinforcement Learning from Human Feedback (RLHF), como nos
+modelos InstructGPT e posteriormente ChatGPT, melhorou a capacidade dos
+LLMs de seguir instruções com mais segurança e consistência. Esses
+avanços estabeleceram as bases para o uso dos LLMs como interfaces
+conversacionais robustas em cenários de integração com sistemas <span class="citation" data-cites="openai2022instructgpt">[@openai2022instructgpt]</span>.</p>
+<h4 id="extensão-de-janela-de-contexto">Extensão de Janela de
+Contexto</h4>
+<p>Com o avanço dos modelos, observou-se uma tendência significativa no
+aumento das janelas de contexto — a quantidade de tokens que um LLM pode
+processar em uma única interação. Modelos como o Claude 3 já alcançam
+até 100.000 tokens <span class="citation" data-cites="anthropic2024context">[@anthropic2024context]</span>,
+enquanto versões estendidas do GPT-4 suportam até 32.000 tokens <span class="citation" data-cites="openai2023gpt4">[@openai2023gpt4]</span>.
+Esse aumento permite que os modelos processem documentos extensos,
+múltiplas conversas ou grandes volumes de dados em uma única
+solicitação, superando, em muitos casos, abordagens tradicionais
+baseadas em retrieval-augmented generation (RAG), especialmente em
+tarefas que exigem síntese contextual profunda.</p>
+<p>A capacidade de manter longos contextos é altamente benéfica para
+integração com sistemas – um LLM pode manter diálogos prolongados,
+lembrar estados extensos ou ingerir bancos de dados e logs inteiros de
+uma só vez. No entanto, isso traz custos computacionais consideráveis, e
+há esforços contínuos para utilizar essas janelas maiores de forma
+eficiente (por exemplo, condensando ou focando a atenção nas partes mais
+relevantes) <span class="citation" data-cites="anthropic2024context openai2023gpt4">[@anthropic2024context;
+@openai2023gpt4]</span>.</p>
+<h4 id="raciocínio-aprimorado-e-compreensão-profunda-deep-thinking">Raciocínio
+Aprimorado e Compreensão Profunda (Deep Thinking)</h4>
+<p>Os LLMs mais recentes apresentam avanços significativos em
+raciocínio, planejamento e resolução de tarefas complexas. Técnicas como
+o Chain-of-Thought prompting, que induz os modelos a pensar em etapas
+intermediárias, mostraram ganhos substanciais em tarefas que exigem
+múltiplos passos lógicos <span class="citation" data-cites="wei2023chainofthoughtpromptingelicitsreasoning">[@wei2023chainofthoughtpromptingelicitsreasoning]</span>.
+Além disso, abordagens como tree-of-thought e self-reflection permitem
+que os modelos reavaliem suas respostas e melhorem sua própria
+performance iterativamente. Esses avanços tornam os LLMs mais confiáveis
+para tarefas que exigem raciocínio profundo e tomada de decisão
+estruturada, fundamentais para integração com sistemas complexos <span class="citation" data-cites="yao2023treethoughtsdeliberateproblem">[@yao2023treethoughtsdeliberateproblem]</span>.</p>
+<h4 id="uso-de-ferramentas-em-tempo-real-e-interação-com-sistemas">Uso
+de Ferramentas em Tempo Real e Interação com Sistemas</h4>
+<p>O avanço dos LLMs em ambientes de produção foi impulsionado por
+recursos como o function calling da OpenAI <span class="citation" data-cites="openai2023functioncalling">[@openai2023functioncalling]</span>.
+Essa funcionalidade permite que os modelos interpretem solicitações em
+linguagem natural e as convertam em chamadas de funções estruturadas,
+conforme definido por esquemas JSON fornecidos pelo desenvolvedor. Por
+exemplo, ao receber uma instrução como “agende uma reunião para amanhã
+às 14h”, o modelo pode gerar uma chamada de função com os parâmetros
+apropriados para interagir com uma API de calendário, sem depender de
+engenharia de prompt ou extração de texto.</p>
+<p>Essa abordagem, semelhante ao modelo escrever código para utilizar
+ferramentas, melhora significativamente a confiabilidade em cenários de
+integração, permitindo que o modelo obtenha dados estruturados de bancos
+de dados, chame APIs de negócios, envie e-mails, entre outras ações, em
+vez de apenas tentar adivinhar a resposta <span class="citation" data-cites="openai2023functioncalling">[@openai2023functioncalling]</span>.</p>
+<p>Complementando essa capacidade, o Model Context Protocol (MCP),
+desenvolvido pela Anthropic <span class="citation" data-cites="mcp2025spec anthropic2024mcp">[@mcp2025spec;
+@anthropic2024mcp]</span>, oferece um padrão aberto para conectar LLMs a
+diversas fontes de dados e ferramentas. O MCP estabelece uma arquitetura
+cliente-servidor onde os modelos (clientes) podem acessar servidores MCP
+que expõem recursos, prompts e ferramentas de forma padronizada. Isso
+elimina a necessidade de integrações personalizadas para cada fonte de
+dados, promovendo uma interoperabilidade mais ampla e sustentável.</p>
 <h3 id="ferramentas-específicas-de-integração">Ferramentas Específicas
 de Integração</h3>
 <p>A pesquisa investigou quatro abordagens distintas para a integração
@@ -643,23 +718,6 @@ fornecer uma estrutura padronizada para interação com ferramentas,
 essencial para futuras expansões e integrações com sistemas dinâmicos e
 complexos.</p></li>
 </ul>
-<h3 id="importância-e-relevância-dos-materiais-escolhidos">Importância e
-Relevância dos Materiais Escolhidos</h3>
-<p>Os materiais escolhidos destacam-se não apenas pela capacidade
-técnica individual, mas também pela complementaridade entre si. Essa
-abordagem assegura que a pesquisa seja abrangente e represente
-adequadamente os desafios e soluções reais enfrentados na integração de
-agentes conversacionais avançados em sistemas complexos.</p>
-<h3 id="conclusão-da-seleção-dos-materiais">Conclusão da Seleção dos
-Materiais</h3>
-<p>A seleção estratégica dos materiais e ferramentas utilizados neste
-estudo não somente garante a qualidade científica e técnica dos
-experimentos, mas também promove avanços significativos na interação
-entre usuários e sistemas. Ao incorporar tecnologias reconhecidas pela
-comunidade científica e pelo mercado, este estudo busca contribuir
-ativamente para o desenvolvimento de soluções mais eficazes e
-acessíveis, impactando positivamente a experiência do usuário em
-diversas aplicações práticas.</p>
 <h2 id="métodos">2.2 MÉTODOS</h2>
 <p>Em métodos deve ter uma explicação minuciosa, detalhada, rigorosa e
 exata de toda ação desenvolvida no método (caminho) do trabalho de

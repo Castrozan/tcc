@@ -740,11 +740,531 @@
       "id": "1260",
       "name": "New folder",
       "type": "folder"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "date_added": "13388803426324696",
+              "date_last_used": "0",
+              "guid": "1ebb46c7-eb5e-42e3-a92c-07c4e3708d9a",
+              "id": "1275",
+              "name": "Castrozan/tcc: Trabalho de Conclusão de Curso sobre Agentes Conversacionais com IA para Interação Aprimorada em Sistemas",
+              "type": "url",
+              "url": "https://github.com/Castrozan/tcc/tree/master"
+            },
+            {
+              "date_added": "13388803426324861",
+              "date_last_used": "0",
+              "guid": "e4166348-2ac9-4d03-9822-59efb0db5650",
+              "id": "1276",
+              "name": "abnTeX by abntex",
+              "type": "url",
+              "url": "https://www.abntex.net.br/"
+            },
+            {
+              "date_added": "13388803426324952",
+              "date_last_used": "0",
+              "guid": "1ceafccf-78a2-484d-bba7-5937a1f37800",
+              "id": "1277",
+              "name": "glotlabs/gdrive: Google Drive CLI Client",
+              "type": "url",
+              "url": "https://github.com/glotlabs/gdrive/tree/main"
+            }
+          ],
+          "date_added": "13388803426324638",
+          "date_last_used": "0",
+          "date_modified": "13388803426324952",
+          "guid": "2ee7b09a-ea2a-4a43-9017-39f07dcd8870",
+          "id": "1274",
+          "name": "tcc-setup",
+          "type": "folder"
+        }
+      ],
+      "date_added": "13388803426324161",
+      "date_last_used": "0",
+      "date_modified": "13388803426325050",
+      "guid": "7f605e88-ce67-4605-a93f-505d8a1af000",
+      "id": "1273",
+      "name": "New folder",
+      "type": "folder"
+    },
+    {
+      "children": [
+        {
+          "date_added": "13388912131884207",
+          "date_last_used": "0",
+          "guid": "901b7268-60dc-44de-a077-32eadf648b26",
+          "id": "1280",
+          "name": "New Tab",
+          "type": "url",
+          "url": "chrome://newtab/"
+        },
+        {
+          "date_added": "13388912131884354",
+          "date_last_used": "0",
+          "guid": "e154a761-d16d-4d01-a48c-611dd11e7f20",
+          "id": "1281",
+          "name": "tcc-writing - Ferramentas de Integração LLM",
+          "type": "url",
+          "url": "https://chatgpt.com/c/67f9efd1-4e64-800e-acd0-79bb03342080"
+        },
+        {
+          "date_added": "13388912131884478",
+          "date_last_used": "0",
+          "guid": "6d14fb30-fe5f-4d44-93eb-4ca55cff52b4",
+          "id": "1282",
+          "name": "DeepSeek - Into the Unknown",
+          "type": "url",
+          "url": "https://chat.deepseek.com/a/chat/s/671ace25-9c42-4487-badc-ba5ceb2f45a5"
+        },
+        {
+          "date_added": "13388912131884564",
+          "date_last_used": "0",
+          "guid": "4e0f10de-719d-4899-8985-28b12fc489c1",
+          "id": "1283",
+          "name": "YouTube Music",
+          "type": "url",
+          "url": "https://music.youtube.com/watch?v=QI2pZv5PxMI&list=RDAMVMk49I5m1J6Is"
+        },
+        {
+          "date_added": "13388912131884636",
+          "date_last_used": "0",
+          "guid": "f1ed6c53-d60f-4201-a7e7-2286bfe80ac2",
+          "id": "1284",
+          "name": "Can Ferrari's Updates Help Push Them To The Top Of The Grid? | F1 TV Tech Talk - YouTube",
+          "type": "url",
+          "url": "https://www.youtube.com/watch?v=_ngusolRHEc"
+        },
+        {
+          "date_added": "13388912131884731",
+          "date_last_used": "0",
+          "guid": "7471e623-1579-4c6d-a4e8-de3dbf81d997",
+          "id": "1285",
+          "name": "WhatsApp",
+          "type": "url",
+          "url": "https://web.whatsapp.com/"
+        },
+        {
+          "date_added": "13388912131884770",
+          "date_last_used": "0",
+          "guid": "6bec4e27-e885-49fd-b685-e639c4af0648",
+          "id": "1286",
+          "name": "Discord | #cultistas-de-femias-variadas | Padaria Soviética 34/7 (menos sábado)",
+          "type": "url",
+          "url": "https://discord.com/channels/640612380338028604/640612380338028606"
+        },
+        {
+          "date_added": "13388912131884849",
+          "date_last_used": "0",
+          "guid": "043a684a-37fc-4ef8-b786-af4d09df1bfa",
+          "id": "1287",
+          "name": "SATCEDU Portal",
+          "type": "url",
+          "url": "https://www1.satc.edu.br/portais/alunos/index.php/servicos"
+        },
+        {
+          "date_added": "13388912131884906",
+          "date_last_used": "0",
+          "guid": "30df458d-633b-4114-b8e0-3998e3aaec77",
+          "id": "1288",
+          "name": "Google Agenda - Semana de 6 de abril de 2025",
+          "type": "url",
+          "url": "https://calendar.google.com/calendar/u/0/r/week/2025/4/9"
+        },
+        {
+          "date_added": "13388912131884979",
+          "date_last_used": "0",
+          "guid": "63644f61-3f82-4c10-bb52-b95650273303",
+          "id": "1289",
+          "name": "Castrozan/tcc: Trabalho de Conclusão de Curso sobre Agentes Conversacionais com IA para Interação Aprimorada em Sistemas",
+          "type": "url",
+          "url": "https://github.com/Castrozan/tcc"
+        },
+        {
+          "children": [
+            {
+              "date_added": "13388912131885103",
+              "date_last_used": "0",
+              "guid": "7f3d5278-8b16-4817-b25d-1da4cf18e7e3",
+              "id": "1291",
+              "name": "sequelize/sequelize: Feature-rich ORM for modern Node.js and TypeScript, it supports PostgreSQL (with JSON and JSONB support), MySQL, MariaDB, SQLite, MS SQL Server, Snowflake, Oracle DB (v6), DB2 and DB2 for IBM i.",
+              "type": "url",
+              "url": "https://github.com/sequelize/sequelize"
+            },
+            {
+              "date_added": "13388912131885189",
+              "date_last_used": "0",
+              "guid": "eb3a43ce-938a-4bd2-9a2f-09b99c39e61b",
+              "id": "1292",
+              "name": "Getting Started | OpenAPI Documentation",
+              "type": "url",
+              "url": "https://learn.openapis.org/"
+            },
+            {
+              "date_added": "13388912131885236",
+              "date_last_used": "0",
+              "guid": "1abaa659-d218-4307-ae1d-69db048f0d52",
+              "id": "1293",
+              "name": "7 Best and Worst ORM for Node.js in 2023 | EverSQL",
+              "type": "url",
+              "url": "https://www.eversql.com/best-orm-for-node-js/"
+            },
+            {
+              "date_added": "13388912131885315",
+              "date_last_used": "0",
+              "guid": "2c5d9025-a1ac-4053-b405-f60483d45e9e",
+              "id": "1294",
+              "name": "EnterpriseDB Raises the Bar for Postgres Security and Compliance with Transparent Data Encryption | EDB",
+              "type": "url",
+              "url": "https://www.enterprisedb.com/news/enterprisedb-raises-bar-postgres-security-compliance#:~:text=%E2%80%9CMaintaining%20the%20security%20and%20integrity,%E2%80%9D"
+            },
+            {
+              "date_added": "13388912131885387",
+              "date_last_used": "0",
+              "guid": "bf97db1b-c521-4b87-ade2-cc863c5a698e",
+              "id": "1295",
+              "name": "Postgres: Most Admired Database 2023 | EDB",
+              "type": "url",
+              "url": "https://www.enterprisedb.com/blog/postgres-most-admired-database-in-stack-overflow-2023#:~:text=Postgres%20is%20the%20most%20popular,database"
+            }
+          ],
+          "date_added": "13388912131885049",
+          "date_last_used": "0",
+          "date_modified": "13388912131885387",
+          "guid": "b70533d7-8ef8-4aeb-b827-b56cc605ab14",
+          "id": "1290",
+          "name": "tools",
+          "type": "folder"
+        },
+        {
+          "children": [
+            {
+              "date_added": "13388912131885486",
+              "date_last_used": "0",
+              "guid": "09ef427d-01c3-433c-822f-4d38b12ee2d2",
+              "id": "1297",
+              "name": "Specification - Model Context Protocol",
+              "type": "url",
+              "url": "https://modelcontextprotocol.io/specification/2025-03-26/index"
+            },
+            {
+              "date_added": "13388912131885542",
+              "date_last_used": "0",
+              "guid": "b8ac3e6c-1e4d-4067-b2ea-5a40b10f5b3f",
+              "id": "1298",
+              "name": "Function calling and other API updates | OpenAI",
+              "type": "url",
+              "url": "https://openai.com/index/function-calling-and-other-api-updates/"
+            },
+            {
+              "date_added": "13388912131885591",
+              "date_last_used": "0",
+              "guid": "3ef153c4-2dc0-49fc-8453-baa4c01477b1",
+              "id": "1299",
+              "name": "[2201.11903] Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+              "type": "url",
+              "url": "https://arxiv.org/abs/2201.11903#:~:text=demonstrations%20are%20provided%20as%20exemplars,3%20with%20a%20verifier"
+            },
+            {
+              "date_added": "13388912131885655",
+              "date_last_used": "0",
+              "guid": "5bd593f4-2713-410f-a1b5-9934cf7fb286",
+              "id": "1300",
+              "name": "GPT-4 | OpenAI",
+              "type": "url",
+              "url": "https://openai.com/index/gpt-4-research/"
+            },
+            {
+              "date_added": "13388912131885697",
+              "date_last_used": "0",
+              "guid": "bcfe0573-0d29-469d-815a-3004c0ec6d13",
+              "id": "1301",
+              "name": "Introducing 100K Context Windows \\ Anthropic",
+              "type": "url",
+              "url": "https://www.anthropic.com/news/100k-context-windows"
+            },
+            {
+              "date_added": "13388912131885748",
+              "date_last_used": "0",
+              "guid": "d835b217-4a76-4d08-b6c4-b2ae7208f23e",
+              "id": "1302",
+              "name": "Aligning language models to follow instructions | OpenAI",
+              "type": "url",
+              "url": "https://openai.com/index/instruction-following/"
+            },
+            {
+              "date_added": "13388912131885795",
+              "date_last_used": "0",
+              "guid": "2cbdd5fe-ebbb-4815-b00e-1137e80f3c59",
+              "id": "1303",
+              "name": "[2305.10601] Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+              "type": "url",
+              "url": "https://arxiv.org/abs/2305.10601"
+            },
+            {
+              "date_added": "13388912131885843",
+              "date_last_used": "0",
+              "guid": "1547a482-761b-4250-acb7-db85af629dbe",
+              "id": "1304",
+              "name": "2305.10601",
+              "type": "url",
+              "url": "https://arxiv.org/pdf/2305.10601"
+            },
+            {
+              "date_added": "13388912131885886",
+              "date_last_used": "0",
+              "guid": "bebfb183-90bc-40ef-8a4b-0cd98c2176f5",
+              "id": "1305",
+              "name": "[2201.11903] Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+              "type": "url",
+              "url": "https://arxiv.org/abs/2201.11903#:~:text=,parameter"
+            },
+            {
+              "date_added": "13388912131885933",
+              "date_last_used": "0",
+              "guid": "b0418b29-1005-4ec9-b3a7-69bf3c5c3af0",
+              "id": "1306",
+              "name": "[2005.14165] Language Models are Few-Shot Learners",
+              "type": "url",
+              "url": "https://arxiv.org/abs/2005.14165#:~:text=,tuning"
+            },
+            {
+              "date_added": "13388912131885989",
+              "date_last_used": "0",
+              "guid": "5a984da4-6e71-43c3-b377-bcb1a5c1ed25",
+              "id": "1307",
+              "name": "2005.14165",
+              "type": "url",
+              "url": "https://arxiv.org/pdf/2005.14165"
+            },
+            {
+              "date_added": "13388912131886030",
+              "date_last_used": "0",
+              "guid": "e4a204f4-11dd-471d-a7c7-2efd17ef469a",
+              "id": "1308",
+              "name": "NLP tasks - Google Search",
+              "type": "url",
+              "url": "https://www.google.com/search?q=NLP+tasks&sourceid=chrome&ie=UTF-8"
+            },
+            {
+              "date_added": "13388912131886081",
+              "date_last_used": "0",
+              "guid": "8965cf74-5a3d-4e36-ad81-22eb984303c9",
+              "id": "1309",
+              "name": "Two minutes NLP — 33 important NLP tasks explained | by Fabio Chiusano | Generative AI | Medium",
+              "type": "url",
+              "url": "https://medium.com/nlplanet/two-minutes-nlp-33-important-nlp-tasks-explained-31e2caad2b1b"
+            }
+          ],
+          "date_added": "13388912131885447",
+          "date_last_used": "0",
+          "date_modified": "13388912131886081",
+          "guid": "9cabce74-47fd-439d-8bef-eee32011cab0",
+          "id": "1296",
+          "name": "llms",
+          "type": "folder"
+        },
+        {
+          "children": [
+            {
+              "date_added": "13388912131886175",
+              "date_last_used": "0",
+              "guid": "b863f3f5-2cce-412c-a7d1-7798c2b427c2",
+              "id": "1311",
+              "name": "AI 100-2 E2023, Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations | CSRC",
+              "type": "url",
+              "url": "https://csrc.nist.gov/pubs/ai/100/2/e2023/final"
+            },
+            {
+              "date_added": "13388912131886238",
+              "date_last_used": "0",
+              "guid": "ca661b9f-e453-4022-8543-7c43e02b5606",
+              "id": "1312",
+              "name": "Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations",
+              "type": "url",
+              "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2023.pdf"
+            },
+            {
+              "date_added": "13388912131886291",
+              "date_last_used": "0",
+              "guid": "dc97c682-190c-45bd-bcac-321c76da3996",
+              "id": "1313",
+              "name": "[2005.04118] Beyond Accuracy: Behavioral Testing of NLP models with CheckList",
+              "type": "url",
+              "url": "https://arxiv.org/abs/2005.04118"
+            },
+            {
+              "date_added": "13388912131886344",
+              "date_last_used": "0",
+              "guid": "03943feb-fd7b-42b6-89bd-0009e350e061",
+              "id": "1314",
+              "name": "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList",
+              "type": "url",
+              "url": "https://aclanthology.org/2020.acl-main.442.pdf"
+            },
+            {
+              "date_added": "13388912131886395",
+              "date_last_used": "0",
+              "guid": "55599c4d-540a-4e8c-bc95-8c87657daf90",
+              "id": "1315",
+              "name": "LLM01:2025 Prompt Injection - OWASP Top 10 for LLM & Generative AI Security",
+              "type": "url",
+              "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+            },
+            {
+              "date_added": "13388912131886449",
+              "date_last_used": "0",
+              "guid": "12b9c268-e6ae-43ab-94bf-94c15fd64688",
+              "id": "1316",
+              "name": "Defining LLM Red Teaming | NVIDIA Technical Blog",
+              "type": "url",
+              "url": "https://developer.nvidia.com/blog/defining-llm-red-teaming/#:~:text=%2A%20It%E2%80%99s%20limit,to%20respect%20fellow%20practitioners%E2%80%99%20work"
+            },
+            {
+              "date_added": "13388912131886530",
+              "date_last_used": "0",
+              "guid": "2f2e8a3a-ac1b-4ff6-a2f2-6acb6e378411",
+              "id": "1317",
+              "name": "Summon a demon and bind it: A grounded theory of LLM red teaming | PLOS One",
+              "type": "url",
+              "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314658"
+            },
+            {
+              "date_added": "13388912131886587",
+              "date_last_used": "0",
+              "guid": "cec0c65a-dba4-4f29-a86d-888c1d2ec5b3",
+              "id": "1318",
+              "name": "Defending ChatGPT against Jailbreak Attack via Self-Reminder | Research Square",
+              "type": "url",
+              "url": "https://www.researchsquare.com/article/rs-2873090/v1"
+            },
+            {
+              "date_added": "13388912131886642",
+              "date_last_used": "0",
+              "guid": "fe0be689-787a-4cb8-8416-78a05f7a99e1",
+              "id": "1319",
+              "name": "Defending ChatGPT against Jailbreak Attack via Self-Reminder | Research Square",
+              "type": "url",
+              "url": "https://www.researchsquare.com/article/rs-2873090/v1"
+            }
+          ],
+          "date_added": "13388912131886141",
+          "date_last_used": "0",
+          "date_modified": "13388912131886642",
+          "guid": "7c1df4d0-8a32-4a91-85b9-9592b5987748",
+          "id": "1310",
+          "name": "e2e",
+          "type": "folder"
+        },
+        {
+          "children": [
+            {
+              "date_added": "13388912131886718",
+              "date_last_used": "0",
+              "guid": "ac324f84-dc37-4d32-a9b0-cd7b87573bad",
+              "id": "1321",
+              "name": "paper6.pdf",
+              "type": "url",
+              "url": "https://ceur-ws.org/Vol-3722/paper6.pdf#:~:text=Node.js%20,blocking"
+            },
+            {
+              "date_added": "13388912131886763",
+              "date_last_used": "0",
+              "guid": "fc9b622a-529d-4673-b76d-6128c6f14545",
+              "id": "1322",
+              "name": "Selection of Large Language Model for development of Interactive Chat Bot for SaaS Solutions - Archive ouverte HAL",
+              "type": "url",
+              "url": "https://hal.science/hal-04545073v1"
+            },
+            {
+              "date_added": "13388912131886822",
+              "date_last_used": "0",
+              "guid": "883d6dab-e744-4ece-803d-58a3e4504ec1",
+              "id": "1323",
+              "name": "Hugging Face JS libraries",
+              "type": "url",
+              "url": "https://huggingface.co/docs/huggingface.js/en/index"
+            },
+            {
+              "date_added": "13388912131886869",
+              "date_last_used": "0",
+              "guid": "7d772421-2f32-4456-b3b6-8e19a26ab76a",
+              "id": "1324",
+              "name": "Building agents with Large Language Models(LLMs) and Node.js | Red Hat Developer",
+              "type": "url",
+              "url": "https://developers.redhat.com/blog/2024/10/25/building-agents-large-language-modelsllms-and-nodejs#"
+            },
+            {
+              "date_added": "13388912131886922",
+              "date_last_used": "0",
+              "guid": "ac08da2c-c72e-44cd-987d-8a0d523ad51a",
+              "id": "1325",
+              "name": "IBM/ibm-generative-ai-node-sdk: Library that provides convenient access to the Generative AI API from Node.js applications",
+              "type": "url",
+              "url": "https://github.com/IBM/ibm-generative-ai-node-sdk"
+            },
+            {
+              "date_added": "13388912131886988",
+              "date_last_used": "0",
+              "guid": "8945fa9c-a5e4-41dc-8448-339a9bd74290",
+              "id": "1326",
+              "name": "Stream | Node.js v23.11.0 Documentation",
+              "type": "url",
+              "url": "https://nodejs.org/api/stream.html"
+            }
+          ],
+          "date_added": "13388912131886687",
+          "date_last_used": "0",
+          "date_modified": "13388912131886988",
+          "guid": "194ed205-e184-4b89-8420-9f12e29475b2",
+          "id": "1320",
+          "name": "Node",
+          "type": "folder"
+        },
+        {
+          "children": [
+            {
+              "date_added": "13388912131887097",
+              "date_last_used": "0",
+              "guid": "ba8d7beb-5ade-43a0-9105-976c01351305",
+              "id": "1328",
+              "name": "Explore | alphaXiv",
+              "type": "url",
+              "url": "https://www.alphaxiv.org/explore"
+            },
+            {
+              "date_added": "13388912131887141",
+              "date_last_used": "0",
+              "guid": "ccea147e-e4a2-4401-ac4e-6bdf77972dca",
+              "id": "1329",
+              "name": "Daily Papers - Hugging Face",
+              "type": "url",
+              "url": "https://huggingface.co/papers/date/2025-04-11"
+            }
+          ],
+          "date_added": "13388912131887056",
+          "date_last_used": "0",
+          "date_modified": "13388912131887141",
+          "guid": "32064912-6446-48f6-b68d-8116dc4ad397",
+          "id": "1327",
+          "name": "pprExplore",
+          "type": "folder"
+        }
+      ],
+      "date_added": "13388912131883293",
+      "date_last_used": "0",
+      "date_modified": "13388912131887188",
+      "guid": "475f3abd-479f-4c8c-bbc6-dd57e56d60ba",
+      "id": "1279",
+      "name": "New folder",
+      "type": "folder"
     }
   ],
   "date_added": "13387153172399378",
   "date_last_used": "0",
-  "date_modified": "13388554752986721",
+  "date_modified": "13388912131887189",
   "guid": "96f67014-2662-4122-ae00-95c5ced41f89",
   "id": "1176",
   "name": "TCC",

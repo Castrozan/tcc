@@ -298,14 +298,49 @@ aplicações intensivas em IA e integração com APIs externas (Blog 2024).
 
 \subsubsection{Testes End-to-End (e2e)}\label{testes-end-to-end-e2e}
 
-Para validar integralmente o funcionamento dos agentes conversacionais
-propostos, os testes End-to-End foram implementados. Esta metodologia
-permite simular e avaliar a jornada completa dos usuários desde o início
-até a conclusão de tarefas específicas, assegurando que cada abordagem
-de integração seja confiável e funcional em situações reais de uso. A
-utilização de testes e2e é fundamental para a identificação precoce de
-falhas de comunicação e inconsistências no comportamento dos agentes
-conversacionais.
+O Framework de Gerenciamento de Riscos de IA do NIST (Oprea and Vassilev
+2023) destaca a importância de avaliar o desempenho de sistemas de IA de
+forma abrangente, defendendo que testes de integração devem avaliar os
+sistemas de ponta a ponta para identificar erros de integração e
+garantir a precisão das respostas em cenários realistas. Testes
+rigorosos como esses não apenas identificam problemas de integração, mas
+também asseguram às partes interessadas que o sistema se comporta
+conforme o esperado em condições do mundo real.
+
+A injeção de prompt representa um risco significativo em implantações de
+LLMs em nosso cenário, no qual o modelo possui acesso a dados e sistemas
+potencialmente críticos, incluindo, ocasionalmente, conexões diretas com
+dados brutos de banco de dados. O guia de riscos da OWASP (John et al.
+2025) classifica a injeção de prompt como uma ameaça crítica à
+segurança, destacando a necessidade de procedimentos de teste rigorosos
+para garantir que agentes conversacionais baseados em LLMs não revelem
+inadvertidamente dados sensíveis ou contornem restrições do sistema
+quando expostos a entradas maliciosas. Recentemente, (Wu et al. 2023)
+demonstraram que ataques de jailbreak --- um tipo avançado de injeção de
+prompt --- podem burlar as salvaguardas éticas de modelos como o ChatGPT
+em até 67\% dos casos, gerando conteúdos prejudiciais como extorsão e
+desinformação.
+
+Com isso em mente, o uso de testes E2E pode ser utilizado para avaliar a
+resiliência da implementação ao simular entradas adversárias, processo
+conhecido como red teaming. Segundo (Inie, Stray, and Derczynski 2025),
+o red teaming desafia sistematicamente sistemas de IA com prompts
+adversários projetados para testar seus limites e mecanismos de
+segurança. Ao encapsular consultas do usuário com lembretes de
+responsabilidade ética (e.g., ``Você deve ser um ChatGPT responsável''),
+o método reduziu a taxa de sucesso de jailbreaks para 19\%, mantendo a
+funcionalidade padrão do modelo --- um resultado validado através de
+testes E2E em 540 cenários adversarialmente projetados (Wu et al. 2023).
+
+Testes de robustez, como os propostos pelo framework CheckList (Ribeiro
+et al. 2020), complementam ainda mais os testes E2E ao variar
+sistematicamente as entradas --- como paráfrases, negações ou ruído ---
+para avaliar a consistência e a precisão do modelo em diferentes
+cenários. Esse método garante que sistemas baseados em LLM lidem de
+forma confiável com interações diversas dos usuários, atributo essencial
+para manter a confiança dos usuários e a estabilidade operacional,
+especialmente em aplicações críticas de negócios ou voltadas à
+segurança.
 
 \subsubsection{Modelos de Linguagem de Grande Escala
 (LLMs)}\label{modelos-de-linguagem-de-grande-escala-llms}
@@ -455,6 +490,18 @@ and Interactive Techniques}. Vol. 7. 1.
 IBM. 2023. {``IBM Generative AI Node.js SDK.''}
 \url{https://github.com/IBM/ibm-generative-ai-node-sdk}.
 
+\bibitem[\citeproctext]{ref-inie2025summon}
+Inie, Nanna, Jonathan Stray, and Leon Derczynski. 2025. {``Summon a
+Demon and Bind It: A Grounded Theory of LLM Red Teaming.''} \emph{PloS
+One} 20 (1): e0314658.
+\url{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314658}.
+
+\bibitem[\citeproctext]{ref-john2025owasp}
+John, Sotiropoulos, Rosario Ron F Del, Kokuykin Evgeniy, Oakley Helen,
+Habler Idan, Underkoffler Kayla, Huang Ken, et al. 2025. {``OWASP Top 10
+for LLM Apps \& Gen AI Agentic Security Initiative.''} PhD thesis,
+OWASP. \url{https://genai.owasp.org/llmrisk/llm01-prompt-injection}.
+
 \bibitem[\citeproctext]{ref-Kocaballi2019}
 Kocaballi, Ahmet Baki, Juan Carlos Quiroz, Dana Rezazadegan, Shlomo
 Berkovsky, Farah Magrabi, Enrico Coiera, and Liliana Laranjo. 2019.
@@ -473,12 +520,30 @@ International Web for All Conference}.
 Node.js. 2024. {``Streams, Pipelines and WebSocket Support.''}
 \url{https://nodejs.org/api/stream.html}.
 
+\bibitem[\citeproctext]{ref-oprea2023adversarial}
+Oprea, Alina, and Apostol Vassilev. 2023. {``Adversarial Machine
+Learning: A Taxonomy and Terminology of Attacks and Mitigations.''}
+National Institute of Standards; Technology.
+\url{https://csrc.nist.gov/pubs/ai/100/2/e2023/final}.
+
 \bibitem[\citeproctext]{ref-RAPP201849}
 Rapp, Amon, Federica Cena, Romina Castaldo, Roberto Keller, and Maurizio
 Tirassa. 2018. {``Designing Technology for Spatial Needs: Routines,
 Control and Social Competences of People with Autism.''}
 \emph{International Journal of Human-Computer Studies} 120: 49--65.
 https://doi.org/\url{https://doi.org/10.1016/j.ijhcs.2018.07.005}.
+
+\bibitem[\citeproctext]{ref-ribeiro2020beyond}
+Ribeiro, Marco Tulio, Tongshuang Wu, Carlos Guestrin, and Sameer Singh.
+2020. {``Beyond Accuracy: Behavioral Testing of NLP Models with
+CheckList.''} \emph{arXiv Preprint arXiv:2005.04118}.
+\url{https://arxiv.org/abs/2005.04118}.
+
+\bibitem[\citeproctext]{ref-wu2023defending}
+Wu, Fangzhao, Yueqi Xie, Jingwei Yi, Jiawei Shao, Justin Curl, Lingjuan
+Lyu, Qifeng Chen, and Xing Xie. 2023. {``Defending Chatgpt Against
+Jailbreak Attack via Self-Reminder.''}
+\url{https://www.researchsquare.com/article/rs-2873090/v1}.
 
 \bibitem[\citeproctext]{ref-Zhu2025DyT}
 Zhu, Jiachen, Xinlei Chen, Kaiming He, Yann LeCun, and Zhuang Liu. 2025.

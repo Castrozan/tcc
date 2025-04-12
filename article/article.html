@@ -569,14 +569,45 @@ baseados em LLMs com alta performance e escalabilidade. Isso garante um
 gerenciamento eficiente de múltiplas operações paralelas, essencial para
 aplicações intensivas em IA e integração com APIs externas <span class="citation" data-cites="RedHat2024LLMNode">[@RedHat2024LLMNode]</span>.</p>
 <h3 id="testes-end-to-end-e2e">Testes End-to-End (e2e)</h3>
-<p>Para validar integralmente o funcionamento dos agentes
-conversacionais propostos, os testes End-to-End foram implementados.
-Esta metodologia permite simular e avaliar a jornada completa dos
-usuários desde o início até a conclusão de tarefas específicas,
-assegurando que cada abordagem de integração seja confiável e funcional
-em situações reais de uso. A utilização de testes e2e é fundamental para
-a identificação precoce de falhas de comunicação e inconsistências no
-comportamento dos agentes conversacionais.</p>
+<p>O Framework de Gerenciamento de Riscos de IA do NIST <span class="citation" data-cites="oprea2023adversarial">[@oprea2023adversarial]</span> destaca
+a importância de avaliar o desempenho de sistemas de IA de forma
+abrangente, defendendo que testes de integração devem avaliar os
+sistemas de ponta a ponta para identificar erros de integração e
+garantir a precisão das respostas em cenários realistas. Testes
+rigorosos como esses não apenas identificam problemas de integração, mas
+também asseguram às partes interessadas que o sistema se comporta
+conforme o esperado em condições do mundo real.</p>
+<p>A injeção de prompt representa um risco significativo em implantações
+de LLMs em nosso cenário, no qual o modelo possui acesso a dados e
+sistemas potencialmente críticos, incluindo, ocasionalmente, conexões
+diretas com dados brutos de banco de dados. O guia de riscos da OWASP
+<span class="citation" data-cites="john2025owasp">[@john2025owasp]</span> classifica a injeção
+de prompt como uma ameaça crítica à segurança, destacando a necessidade
+de procedimentos de teste rigorosos para garantir que agentes
+conversacionais baseados em LLMs não revelem inadvertidamente dados
+sensíveis ou contornem restrições do sistema quando expostos a entradas
+maliciosas. Recentemente, <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span> demonstraram que
+ataques de jailbreak — um tipo avançado de injeção de prompt — podem
+burlar as salvaguardas éticas de modelos como o ChatGPT em até 67% dos
+casos, gerando conteúdos prejudiciais como extorsão e desinformação.</p>
+<p>Com isso em mente, o uso de testes E2E pode ser utilizado para
+avaliar a resiliência da implementação ao simular entradas adversárias,
+processo conhecido como red teaming. Segundo <span class="citation" data-cites="inie2025summon">[@inie2025summon]</span>, o red teaming
+desafia sistematicamente sistemas de IA com prompts adversários
+projetados para testar seus limites e mecanismos de segurança. Ao
+encapsular consultas do usuário com lembretes de responsabilidade ética
+(e.g., “Você deve ser um ChatGPT responsável”), o método reduziu a taxa
+de sucesso de jailbreaks para 19%, mantendo a funcionalidade padrão do
+modelo — um resultado validado através de testes E2E em 540 cenários
+adversarialmente projetados <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span>.</p>
+<p>Testes de robustez, como os propostos pelo framework CheckList <span class="citation" data-cites="ribeiro2020beyond">[@ribeiro2020beyond]</span>, complementam
+ainda mais os testes E2E ao variar sistematicamente as entradas — como
+paráfrases, negações ou ruído — para avaliar a consistência e a precisão
+do modelo em diferentes cenários. Esse método garante que sistemas
+baseados em LLM lidem de forma confiável com interações diversas dos
+usuários, atributo essencial para manter a confiança dos usuários e a
+estabilidade operacional, especialmente em aplicações críticas de
+negócios ou voltadas à segurança.</p>
 <h3 id="modelos-de-linguagem-de-grande-escala-llms">Modelos de Linguagem
 de Grande Escala (LLMs)</h3>
 <p>Os modelos de linguagem (LLMs), incluindo tecnologias como OpenAI

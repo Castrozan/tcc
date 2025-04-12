@@ -250,9 +250,124 @@ comparação objetiva entre as diferentes abordagens.
 
 \subsection{2.1 MATERIAIS}\label{materiais}
 
-Esta seção deve indicar os recursos utilizados para realizar a pesquisa.
-Deve, portanto, apresentar os materiais utilizados na pesquisa o tamanho
-da amostra e como ela foi determinada.
+Para garantir a rigorosidade científica e a reprodutibilidade dos
+experimentos conduzidos neste estudo, é essencial uma seleção criteriosa
+dos materiais e ferramentas utilizados. Esta seção detalha os recursos
+específicos empregados na condução desta pesquisa, justificando sua
+escolha baseada na eficiência, popularidade, robustez e aplicabilidade
+prática dentro do contexto dos agentes conversacionais e integração de
+sistemas.
+
+\subsubsection{Node.js para Desenvolvimento das Provas de
+Conceito}\label{node.js-para-desenvolvimento-das-provas-de-conceito}
+
+Node.js foi escolhido como plataforma principal para o desenvolvimento
+das provas de conceito devido à sua comprovada eficácia na integração de
+sistemas baseados em inteligência artificial (IA), especialmente com
+agentes conversacionais e Large Language Models (LLMs). A plataforma é
+amplamente adotada devido à sua arquitetura orientada a eventos e
+capacidade de gerenciar eficientemente múltiplas conexões simultâneas,
+essencial para aplicações que exigem respostas rápidas em tempo real
+(Cherednichenko et al. 2024).
+
+O Hugging Face fornece bibliotecas JavaScript específicas compatíveis
+com Node.js, como o \texttt{@huggingface/inference}, permitindo acesso
+direto a mais de 100 mil modelos pré-treinados com suporte a TypeScript.
+Isso simplifica significativamente a integração com IA, destacando a
+robustez técnica e facilidade de adoção do Node.js em aplicações
+modernas (Face 2024).
+
+Grandes empresas também reforçam a relevância de Node.js ao
+disponibilizarem SDKs específicos, como o da IBM para o Watsonx, lançado
+em 2023. Este SDK facilita o uso direto de modelos generativos robustos
+da IBM em aplicações Node.js, destacando sua relevância estratégica no
+ambiente empresarial (IBM 2023).
+
+Adicionalmente, a documentação oficial do Node.js ressalta sua
+capacidade superior de lidar com streaming de dados através de streams e
+pipelines. Essa funcionalidade permite transmitir resultados
+incrementais de IA aos clientes com baixa latência, tornando-o ideal
+para chatbots e serviços em tempo real que dependem de respostas
+imediatas (Node.js 2024).
+
+Por fim, relatórios da Red Hat destacam que o uso eficiente da
+arquitetura assíncrona do Node.js possibilita a criação de agentes
+baseados em LLMs com alta performance e escalabilidade. Isso garante um
+gerenciamento eficiente de múltiplas operações paralelas, essencial para
+aplicações intensivas em IA e integração com APIs externas (Blog 2024).
+
+\subsubsection{Testes End-to-End (e2e)}\label{testes-end-to-end-e2e}
+
+Para validar integralmente o funcionamento dos agentes conversacionais
+propostos, os testes End-to-End foram implementados. Esta metodologia
+permite simular e avaliar a jornada completa dos usuários desde o início
+até a conclusão de tarefas específicas, assegurando que cada abordagem
+de integração seja confiável e funcional em situações reais de uso. A
+utilização de testes e2e é fundamental para a identificação precoce de
+falhas de comunicação e inconsistências no comportamento dos agentes
+conversacionais.
+
+\subsubsection{Modelos de Linguagem de Grande Escala
+(LLMs)}\label{modelos-de-linguagem-de-grande-escala-llms}
+
+Os modelos de linguagem (LLMs), incluindo tecnologias como OpenAI GPT,
+Anthropic e modelos disponibilizados pela Google, são essenciais neste
+estudo devido à sua capacidade de interpretar e gerar linguagem natural
+de forma avançada e eficaz. Estes modelos foram selecionados por sua
+performance comprovada e ampla adoção em pesquisas acadêmicas e no
+mercado corporativo, proporcionando um sólido embasamento para as
+funcionalidades de interação do agente conversacional.
+
+\subsubsection{Ferramentas Específicas de
+Integração}\label{ferramentas-especuxedficas-de-integrauxe7uxe3o}
+
+A pesquisa investigou quatro abordagens distintas para a integração dos
+agentes conversacionais com sistemas computacionais, utilizando
+ferramentas específicas para cada uma:
+
+\begin{itemize}
+\item
+  \textbf{PostgreSQL para Conexão Direta com Banco de Dados:}
+  Selecionado por sua robustez, estabilidade e desempenho em ambientes
+  produtivos, o PostgreSQL permite consultas diretas aos dados brutos,
+  oferecendo uma abordagem direta e eficiente.
+\item
+  \textbf{Sequelize para Integração via ORM:} Este ORM proporciona uma
+  camada adicional de segurança e abstração, facilitando a manutenção e
+  a adaptação da integração ao esquema de dados existente, reduzindo
+  complexidade técnica e aumentando a eficiência operacional.
+\item
+  \textbf{OpenAPI para Integração via API/Swagger:} A utilização da
+  especificação OpenAPI oferece uma interface padronizada e consistente
+  para comunicação com serviços existentes através de APIs, garantindo
+  interoperabilidade e simplificando o desenvolvimento.
+\item
+  \textbf{Model Context Protocol (MCP):} Este protocolo emergente foi
+  explorado devido à sua flexibilidade e capacidade de fornecer uma
+  estrutura padronizada para interação com ferramentas, essencial para
+  futuras expansões e integrações com sistemas dinâmicos e complexos.
+\end{itemize}
+
+\subsubsection{Importância e Relevância dos Materiais
+Escolhidos}\label{importuxe2ncia-e-relevuxe2ncia-dos-materiais-escolhidos}
+
+Os materiais escolhidos destacam-se não apenas pela capacidade técnica
+individual, mas também pela complementaridade entre si. Essa abordagem
+assegura que a pesquisa seja abrangente e represente adequadamente os
+desafios e soluções reais enfrentados na integração de agentes
+conversacionais avançados em sistemas complexos.
+
+\subsubsection{Conclusão da Seleção dos
+Materiais}\label{conclusuxe3o-da-seleuxe7uxe3o-dos-materiais}
+
+A seleção estratégica dos materiais e ferramentas utilizados neste
+estudo não somente garante a qualidade científica e técnica dos
+experimentos, mas também promove avanços significativos na interação
+entre usuários e sistemas. Ao incorporar tecnologias reconhecidas pela
+comunidade científica e pelo mercado, este estudo busca contribuir
+ativamente para o desenvolvimento de soluções mais eficazes e
+acessíveis, impactando positivamente a experiência do usuário em
+diversas aplicações práticas.
 
 \subsection{2.2 MÉTODOS}\label{muxe9todos}
 
@@ -304,10 +419,24 @@ a sua pergunta-problema de pesquisa.
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-RedHat2024LLMNode}
+Blog, Red Hat Developer. 2024. {``Building LLM Agents with Node.js.''}
+\url{https://developers.redhat.com/blog/2024/10/25/building-agents-large-language-modelsllms-and-nodejs}.
+
+\bibitem[\citeproctext]{ref-cherednichenko:hal-04545073}
+Cherednichenko, Olga, Dmytro Sytnikov, Nazarii Romankiv, Nataliia
+Sharonova, and Polina Sytnikova. 2024. {``Selection of Large Language
+Model for Development of Interactive Chat Bot for SaaS Solutions.''} In.
+Vol. 3722. Lviv, Ukraine. \url{https://hal.science/hal-04545073}.
+
 \bibitem[\citeproctext]{ref-Deng2023AMA}
 Deng, Xiang. 2023. {``A More Accessible Web with Natural Language
 Interface.''} \emph{Proceedings of the 20th International Web for All
 Conference}. \url{https://api.semanticscholar.org/CorpusID:258259387}.
+
+\bibitem[\citeproctext]{ref-HuggingFace2024}
+Face, Hugging. 2024. {``JavaScript Libraries for ML Integration.''}
+\url{https://huggingface.co/docs/huggingface.js/}.
 
 \bibitem[\citeproctext]{ref-fast2017irisconversationalagentcomplex}
 Fast, Ethan, Binbin Chen, Julia Mendelsohn, Jonathan Bassen, and Michael
@@ -322,6 +451,10 @@ Co-Solving Task.''} In \emph{Proceedings of the ACM on Computer Graphics
 and Interactive Techniques}. Vol. 7. 1.
 \url{https://www.researchgate.net/publication/335223260_The_Effects_of_Continuous_Conversation_and_Task_Complexity_on_Usability_of_an_AI-Based_Conversational_Agent_in_Smart_Home_Environments}.
 
+\bibitem[\citeproctext]{ref-IBM2023WatsonxSDK}
+IBM. 2023. {``IBM Generative AI Node.js SDK.''}
+\url{https://github.com/IBM/ibm-generative-ai-node-sdk}.
+
 \bibitem[\citeproctext]{ref-Kocaballi2019}
 Kocaballi, Ahmet Baki, Juan Carlos Quiroz, Dana Rezazadegan, Shlomo
 Berkovsky, Farah Magrabi, Enrico Coiera, and Liliana Laranjo. 2019.
@@ -335,6 +468,10 @@ Devine. 2020. {``Accessible Conversational User Interfaces:
 Considerations for Design.''} \emph{Proceedings of the 17th
 International Web for All Conference}.
 \url{https://api.semanticscholar.org/CorpusID:218539971}.
+
+\bibitem[\citeproctext]{ref-Nodejs2024Docs}
+Node.js. 2024. {``Streams, Pipelines and WebSocket Support.''}
+\url{https://nodejs.org/api/stream.html}.
 
 \bibitem[\citeproctext]{ref-RAPP201849}
 Rapp, Amon, Federica Cena, Romina Castaldo, Roberto Keller, and Maurizio

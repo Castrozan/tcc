@@ -526,9 +526,109 @@ implementação, manutenibilidade e experiência do usuário. Os resultados
 serão documentados e analisados de forma sistemática, permitindo uma
 comparação objetiva entre as diferentes abordagens.</p>
 <h2 id="materiais">2.1 MATERIAIS</h2>
-<p>Esta seção deve indicar os recursos utilizados para realizar a
-pesquisa. Deve, portanto, apresentar os materiais utilizados na pesquisa
-o tamanho da amostra e como ela foi determinada.</p>
+<!-- Esta seção deve indicar os recursos utilizados para realizar a
+pesquisa.  Deve, portanto, apresentar os materiais utilizados na
+pesquisa o tamanho da amostra e como ela foi determinada. -->
+<p>Para garantir a rigorosidade científica e a reprodutibilidade dos
+experimentos conduzidos neste estudo, é essencial uma seleção criteriosa
+dos materiais e ferramentas utilizados. Esta seção detalha os recursos
+específicos empregados na condução desta pesquisa, justificando sua
+escolha baseada na eficiência, popularidade, robustez e aplicabilidade
+prática dentro do contexto dos agentes conversacionais e integração de
+sistemas.</p>
+<h3 id="node.js-para-desenvolvimento-das-provas-de-conceito">Node.js
+para Desenvolvimento das Provas de Conceito</h3>
+<p>Node.js foi escolhido como plataforma principal para o
+desenvolvimento das provas de conceito devido à sua comprovada eficácia
+na integração de sistemas baseados em inteligência artificial (IA),
+especialmente com agentes conversacionais e Large Language Models
+(LLMs). A plataforma é amplamente adotada devido à sua arquitetura
+orientada a eventos e capacidade de gerenciar eficientemente múltiplas
+conexões simultâneas, essencial para aplicações que exigem respostas
+rápidas em tempo real <span class="citation" data-cites="cherednichenko:hal-04545073">[@cherednichenko:hal-04545073]</span>.</p>
+<p>O Hugging Face fornece bibliotecas JavaScript específicas compatíveis
+com Node.js, como o <code>@huggingface/inference</code>, permitindo
+acesso direto a mais de 100 mil modelos pré-treinados com suporte a
+TypeScript. Isso simplifica significativamente a integração com IA,
+destacando a robustez técnica e facilidade de adoção do Node.js em
+aplicações modernas <span class="citation" data-cites="HuggingFace2024">[@HuggingFace2024]</span>.</p>
+<p>Grandes empresas também reforçam a relevância de Node.js ao
+disponibilizarem SDKs específicos, como o da IBM para o Watsonx, lançado
+em 2023. Este SDK facilita o uso direto de modelos generativos robustos
+da IBM em aplicações Node.js, destacando sua relevância estratégica no
+ambiente empresarial <span class="citation" data-cites="IBM2023WatsonxSDK">[@IBM2023WatsonxSDK]</span>.</p>
+<p>Adicionalmente, a documentação oficial do Node.js ressalta sua
+capacidade superior de lidar com streaming de dados através de streams e
+pipelines. Essa funcionalidade permite transmitir resultados
+incrementais de IA aos clientes com baixa latência, tornando-o ideal
+para chatbots e serviços em tempo real que dependem de respostas
+imediatas <span class="citation" data-cites="Nodejs2024Docs">[@Nodejs2024Docs]</span>.</p>
+<p>Por fim, relatórios da Red Hat destacam que o uso eficiente da
+arquitetura assíncrona do Node.js possibilita a criação de agentes
+baseados em LLMs com alta performance e escalabilidade. Isso garante um
+gerenciamento eficiente de múltiplas operações paralelas, essencial para
+aplicações intensivas em IA e integração com APIs externas <span class="citation" data-cites="RedHat2024LLMNode">[@RedHat2024LLMNode]</span>.</p>
+<h3 id="testes-end-to-end-e2e">Testes End-to-End (e2e)</h3>
+<p>Para validar integralmente o funcionamento dos agentes
+conversacionais propostos, os testes End-to-End foram implementados.
+Esta metodologia permite simular e avaliar a jornada completa dos
+usuários desde o início até a conclusão de tarefas específicas,
+assegurando que cada abordagem de integração seja confiável e funcional
+em situações reais de uso. A utilização de testes e2e é fundamental para
+a identificação precoce de falhas de comunicação e inconsistências no
+comportamento dos agentes conversacionais.</p>
+<h3 id="modelos-de-linguagem-de-grande-escala-llms">Modelos de Linguagem
+de Grande Escala (LLMs)</h3>
+<p>Os modelos de linguagem (LLMs), incluindo tecnologias como OpenAI
+GPT, Anthropic e modelos disponibilizados pela Google, são essenciais
+neste estudo devido à sua capacidade de interpretar e gerar linguagem
+natural de forma avançada e eficaz. Estes modelos foram selecionados por
+sua performance comprovada e ampla adoção em pesquisas acadêmicas e no
+mercado corporativo, proporcionando um sólido embasamento para as
+funcionalidades de interação do agente conversacional.</p>
+<h3 id="ferramentas-específicas-de-integração">Ferramentas Específicas
+de Integração</h3>
+<p>A pesquisa investigou quatro abordagens distintas para a integração
+dos agentes conversacionais com sistemas computacionais, utilizando
+ferramentas específicas para cada uma:</p>
+<ul>
+<li><p><strong>PostgreSQL para Conexão Direta com Banco de
+Dados:</strong> Selecionado por sua robustez, estabilidade e desempenho
+em ambientes produtivos, o PostgreSQL permite consultas diretas aos
+dados brutos, oferecendo uma abordagem direta e eficiente.</p></li>
+<li><p><strong>Sequelize para Integração via ORM:</strong> Este ORM
+proporciona uma camada adicional de segurança e abstração, facilitando a
+manutenção e a adaptação da integração ao esquema de dados existente,
+reduzindo complexidade técnica e aumentando a eficiência
+operacional.</p></li>
+<li><p><strong>OpenAPI para Integração via API/Swagger:</strong> A
+utilização da especificação OpenAPI oferece uma interface padronizada e
+consistente para comunicação com serviços existentes através de APIs,
+garantindo interoperabilidade e simplificando o
+desenvolvimento.</p></li>
+<li><p><strong>Model Context Protocol (MCP):</strong> Este protocolo
+emergente foi explorado devido à sua flexibilidade e capacidade de
+fornecer uma estrutura padronizada para interação com ferramentas,
+essencial para futuras expansões e integrações com sistemas dinâmicos e
+complexos.</p></li>
+</ul>
+<h3 id="importância-e-relevância-dos-materiais-escolhidos">Importância e
+Relevância dos Materiais Escolhidos</h3>
+<p>Os materiais escolhidos destacam-se não apenas pela capacidade
+técnica individual, mas também pela complementaridade entre si. Essa
+abordagem assegura que a pesquisa seja abrangente e represente
+adequadamente os desafios e soluções reais enfrentados na integração de
+agentes conversacionais avançados em sistemas complexos.</p>
+<h3 id="conclusão-da-seleção-dos-materiais">Conclusão da Seleção dos
+Materiais</h3>
+<p>A seleção estratégica dos materiais e ferramentas utilizados neste
+estudo não somente garante a qualidade científica e técnica dos
+experimentos, mas também promove avanços significativos na interação
+entre usuários e sistemas. Ao incorporar tecnologias reconhecidas pela
+comunidade científica e pelo mercado, este estudo busca contribuir
+ativamente para o desenvolvimento de soluções mais eficazes e
+acessíveis, impactando positivamente a experiência do usuário em
+diversas aplicações práticas.</p>
 <h2 id="métodos">2.2 MÉTODOS</h2>
 <p>Em métodos deve ter uma explicação minuciosa, detalhada, rigorosa e
 exata de toda ação desenvolvida no método (caminho) do trabalho de

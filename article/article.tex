@@ -36,6 +36,21 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
 % definitions for citeproc citations
 \NewDocumentCommand\citeproctext{}{}
 \NewDocumentCommand\citeproc{mm}{%
@@ -531,32 +546,297 @@ acessar recursos sensíveis de forma controlada e auditável (ANTHROPIC,
 
 \subsection{2.2 MÉTODOS}\label{muxe9todos}
 
-Em métodos deve ter uma explicação minuciosa, detalhada, rigorosa e
-exata de toda ação desenvolvida no método (caminho) do trabalho de
-pesquisa. É necessário descrever quais equipamentos serão utilizados e
-todo o procedimento experimental.
+Para garantir a rigorosidade científica e a reprodutibilidade dos
+experimentos conduzidos neste estudo, foi desenvolvida uma interface
+comum de usuário que será utilizada para avaliar todas as abordagens de
+integração. Esta padronização permite uma comparação justa e objetiva
+entre as diferentes implementações, eliminando variáveis relacionadas à
+interface do usuário que poderiam influenciar os resultados.
 
-É a explicação do tipo de pesquisa, do instrumental utilizado
-(softwares, equipamentos, questionários, entrevistas, etc.), do tempo
-previsto, do laboratório, das formas de tabulação e tratamento dos
-dados, enfim, de tudo aquilo que se utilizou ou será utilizado no
-trabalho.
+\subsubsection{2.2.1 Interface Comum de
+Usuário}\label{interface-comum-de-usuuxe1rio}
 
-\textbf{A seguir regras de formatação para o desenvolvimento do artigo:}
+A interface do usuário consiste em uma aplicação web de chat
+minimalista, desenvolvida utilizando React.js e TypeScript. Esta
+interface serve como ponto de entrada único para todas as abordagens de
+integração implementadas, garantindo consistência na experiência do
+usuário e na coleta de métricas.
 
-É de extrema importância realizar uma pesquisa bibliográfica, do tema a
-ser estudado, baseada em periódicos nacionais e internacionais (artigos,
-anais de congressos, revistas especializadas) e também em livros, teses
-e dissertações para direcionar os procedimentos experimentais adotados e
-os resultados e discussões obtidos. Essas referências deveram ser
-citadas ao longo do artigo.
+\paragraph{2.2.1.1 Arquitetura da
+Interface}\label{arquitetura-da-interface}
 
-É importante compreender que cópias de trechos deverão ser feitas de
-acordo com as normas da ABNT, ou seja: citações diretas e/ou indiretas,
-curtas e/ou longas. Cópia de trechos e/ou na íntegra sem os devidos
-créditos é considerado plágio (lei nº 9.610, de 19.02.98, que altera,
-atualiza e consolida a legislação sobre direitos autorais). Não se
-esqueça de nomear a seção.
+A aplicação frontend foi desenvolvida seguindo princípios de arquitetura
+limpa e componentização, consistindo em:
+
+\begin{itemize}
+\tightlist
+\item
+  Interface de chat com histórico de mensagens
+\item
+  Campo de entrada de texto para prompts do usuário
+\item
+  Área de exibição formatada para respostas estruturadas
+\end{itemize}
+
+\paragraph{2.2.1.2 Comunicação com
+Backend}\label{comunicauxe7uxe3o-com-backend}
+
+A comunicação entre a interface e as diferentes implementações de
+backend é padronizada através de uma API REST, que segue as seguintes
+especificações:
+
+\begin{itemize}
+\tightlist
+\item
+  Endpoint único para processamento de mensagens
+\item
+  Formato JSON padronizado para requisições e respostas
+\item
+  Suporte a streaming de respostas via Server-Sent Events
+\item
+  Tratamento uniforme de erros e timeouts
+\end{itemize}
+
+\paragraph{2.2.1.3 Coleta de Métricas via Testes
+E2E}\label{coleta-de-muxe9tricas-via-testes-e2e}
+
+Conforme discutido na seção de materiais, os testes end-to-end (E2E) são
+fundamentais para avaliar o desempenho e a segurança de sistemas
+baseados em LLMs. A interface implementa um framework de testes E2E
+automatizados que coleta métricas consistentes para todas as abordagens,
+incluindo:
+
+\begin{itemize}
+\tightlist
+\item
+  Métricas de Performance
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tempo de resposta do servidor
+  \item
+    Tempo de processamento do LLM
+  \item
+    Latência de rede
+  \end{itemize}
+\item
+  Métricas de Confiabilidade
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Taxa de sucesso das interações
+  \item
+    Frequência de erros
+  \item
+    Consistência das respostas
+  \end{itemize}
+\item
+  Métricas de Segurança
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tentativas de injeção de prompt
+  \item
+    Validação de restrições de acesso
+  \item
+    Conformidade com políticas de dados
+  \end{itemize}
+\item
+  Métricas de Experiência do Usuário
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tempo até primeira resposta
+  \item
+    Qualidade das respostas
+  \item
+    Satisfação do usuário
+  \end{itemize}
+\end{itemize}
+
+Os testes E2E são executados de forma automatizada em ambientes
+controlados, simulando diferentes cenários de uso e condições de carga,
+permitindo uma avaliação objetiva e reproduzível de cada abordagem de
+integração.
+
+Esta padronização da coleta de métricas via testes E2E garante que as
+diferenças observadas entre as abordagens sejam resultado direto das
+suas características de implementação, e não de variações na experiência
+do usuário ou na forma de coleta de dados.
+
+\subsubsection{2.2.2 Conexão Direta com Banco de
+Dados}\label{conexuxe3o-direta-com-banco-de-dados}
+
+A primeira abordagem investigada consiste na implementação de uma
+conexão direta entre o LLM e o banco de dados do sistema alvo. Esta
+seção detalha a arquitetura, implementação e considerações práticas
+desta solução.
+
+\paragraph{2.2.2.1 Arquitetura da
+Solução}\label{arquitetura-da-soluuxe7uxe3o}
+
+A arquitetura proposta para esta abordagem é composta por quatro
+componentes principais: interface do usuário, serviço LLM, conector de
+banco de dados e o banco de dados propriamente dito. A Figura X ilustra
+a arquitetura e o fluxo de comunicação entre estes componentes.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/orm/orm-diagram-approach.jpg}}
+\caption{ORM - Diagrama da Arquitetura}
+\end{figure}
+
+O fluxo de comunicação se inicia com uma solicitação do usuário em
+linguagem natural, que é processada pelo LLM. O modelo, tendo
+conhecimento prévio do esquema do banco de dados, gera consultas SQL
+apropriadas. Estas consultas são executadas no banco de dados, e os
+resultados são novamente interpretados pelo LLM para fornecer uma
+resposta contextualizada ao usuário.
+
+Em casos mais complexos, o sistema pode realizar múltiplas iterações de
+consultas, com o LLM analisando progressivamente os dados até obter
+todas as informações necessárias para uma resposta completa.
+
+\paragraph{2.2.2.2 Componentes de
+Segurança}\label{componentes-de-seguranuxe7a}
+
+A implementação inclui camadas de segurança essenciais: - Sanitização de
+consultas SQL - Controle de acesso em nível de campo - Mascaramento de
+dados sensíveis - Validação de permissões de usuário
+
+\paragraph{2.2.2.3 Estrutura de Metadados}\label{estrutura-de-metadados}
+
+A configuração do sistema é gerenciada através de uma estrutura de
+metadados que define: - Esquema do banco de dados - Regras de acesso -
+Contexto de negócio - Restrições de consulta
+
+\paragraph{2.2.2.4 Implementação da Prova de
+Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito}
+
+A implementação utiliza uma stack tecnológica moderna baseada em
+Node.js, escolhida por sua eficiência e amplo suporte a ferramentas de
+desenvolvimento. Os principais componentes tecnológicos incluem:
+
+\begin{itemize}
+\tightlist
+\item
+  Backend: Node.js
+\item
+  LLM: GPT-3 via API OpenAI
+\item
+  Banco de Dados: PostgreSQL
+\item
+  ORM: Sequelize
+\end{itemize}
+
+\paragraph{2.2.2.5 Desenvolvimento do
+Conector}\label{desenvolvimento-do-conector}
+
+O conector de banco de dados é implementado utilizando o Sequelize ORM,
+que facilita: - Introspection do esquema do banco - Construção dinâmica
+de queries - Gerenciamento de conexões - Validação de dados
+
+\paragraph{2.2.2.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos}
+
+A implementação técnica foca em três aspectos principais:
+
+\paragraph{2.2.2.7 Integração com LLM}\label{integrauxe7uxe3o-com-llm}
+
+O sistema utiliza técnicas avançadas de prompt engineering para: -
+Geração precisa de SQL - Manutenção de contexto do esquema - Otimização
+de consultas - Interpretação de resultados
+
+\paragraph{2.2.2.8 Tratamento de Erros}\label{tratamento-de-erros}
+
+O sistema implementa estratégias robustas para: - Erros de execução de
+queries - Falhas de interpretação do LLM - Timeout de conexões - Dados
+inconsistentes
+
+\paragraph{2.2.2.9 Avaliação e
+Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas}
+
+A avaliação da solução é realizada considerando:
+
+\paragraph{2.2.2.10 Performance}\label{performance}
+
+\begin{itemize}
+\tightlist
+\item
+  Tempo de resposta médio
+\item
+  Latência de processamento LLM
+\item
+  Eficiência de queries
+\end{itemize}
+
+\paragraph{2.2.2.11 Segurança}\label{seguranuxe7a}
+
+\begin{itemize}
+\tightlist
+\item
+  Efetividade do controle de acesso
+\item
+  Prevenção de injeção SQL
+\item
+  Conformidade com práticas de privacidade
+\end{itemize}
+
+\paragraph{2.2.2.12 Custos Operacionais}\label{custos-operacionais}
+
+\begin{itemize}
+\tightlist
+\item
+  Consumo de API do LLM
+\item
+  Recursos de banco de dados
+\item
+  Infraestrutura necessária
+\end{itemize}
+
+\paragraph{2.2.2.13 Considerações
+Práticas}\label{considerauxe7uxf5es-pruxe1ticas}
+
+A implementação revelou diversos aspectos práticos importantes:
+
+\paragraph{2.2.2.14 Desafios}\label{desafios}
+
+\begin{itemize}
+\tightlist
+\item
+  Complexidade de queries dinâmicas
+\item
+  Limitações do LLM
+\item
+  Gestão de estados e contexto
+\end{itemize}
+
+\paragraph{2.2.2.15 Infraestrutura}\label{infraestrutura}
+
+\begin{itemize}
+\tightlist
+\item
+  Requisitos de escalabilidade
+\item
+  Arquitetura de deployment
+\item
+  Monitoramento e logging
+\end{itemize}
+
+\paragraph{2.2.2.16 Manutenção}\label{manutenuxe7uxe3o}
+
+\begin{itemize}
+\tightlist
+\item
+  Atualizações de esquema
+\item
+  Versionamento de modelos
+\item
+  Monitoramento de performance
+\end{itemize}
 
 \section{3 RESULTADOS E DISCUSSÕES}\label{resultados-e-discussuxf5es}
 

@@ -46,7 +46,19 @@ A relevância deste estudo evidencia-se pelo potencial transformador que os agen
 
 <!-- ## Abordagens de Integração para Análise
 
-### 1. Conexão Direta com Banco de Dados
+### 1. Integração via Plugin ORM
+- [ ] Análise de Vantagens:
+  - Aproveita a lógica da aplicação existente
+  - Melhor segurança através das camadas do ORM
+  - Manutenção mais fácil (segue atualizações da aplicação)
+  - Uso mais eficiente de recursos
+- [ ] Análise de Desvantagens:
+  - Específico para linguagem/framework
+  - Requer modificação do código existente
+  - Limitado às capacidades do ORM
+  - Maior complexidade de implementação para desenvolvedores
+
+### 2. Conexão Direta com Banco de Dados
 - [ ] Análise de Vantagens:
   - Acesso direto aos dados brutos
   - Menor latência na recuperação de dados
@@ -59,31 +71,7 @@ A relevância deste estudo evidencia-se pelo potencial transformador que os agen
   - Requer compreensão profunda do esquema
   - Alta manutenção quando o esquema do BD muda
 
-### 2. Integração via Plugin ORM
-- [ ] Análise de Vantagens:
-  - Aproveita a lógica da aplicação existente
-  - Melhor segurança através das camadas do ORM
-  - Manutenção mais fácil (segue atualizações da aplicação)
-  - Uso mais eficiente de recursos
-- [ ] Análise de Desvantagens:
-  - Específico para linguagem/framework
-  - Requer modificação do código existente
-  - Limitado às capacidades do ORM
-  - Maior complexidade de implementação para desenvolvedores
-
-### 3. Integração via API/Swagger
-- [ ] Análise de Vantagens:
-  - Utiliza infraestrutura de API existente
-  - Melhor segurança (camadas de autenticação existentes)
-  - Agnóstico quanto a linguagem/framework
-  - Mais fácil de implementar em sistemas existentes
-- [ ] Análise de Desvantagens:
-  - Maior latência (requisições HTTP)
-  - Sobrecarga de rede
-  - Depende da disponibilidade da API
-  - Pode requerer múltiplas requisições para operações complexas
-
-### 4. Model Context Protocol (MCP)
+### 3. Model Context Protocol (MCP)
 - [ ] Análise de Vantagens:
   - Forma padronizada de definir interações com ferramentas
   - Flexível e extensível
@@ -94,6 +82,18 @@ A relevância deste estudo evidencia-se pelo potencial transformador que os agen
   - Infraestrutura adicional necessária
   - Tecnologia mais recente com menos suporte da comunidade
   - Implementação complexa para ferramentas dinâmicas
+
+### 4. Integração via API/Swagger
+- [ ] Análise de Vantagens:
+  - Utiliza infraestrutura de API existente
+  - Melhor segurança (camadas de autenticação existentes)
+  - Agnóstico quanto a linguagem/framework
+  - Mais fácil de implementar em sistemas existentes
+- [ ] Análise de Desvantagens:
+  - Maior latência (requisições HTTP)
+  - Sobrecarga de rede
+  - Depende da disponibilidade da API
+  - Pode requerer múltiplas requisições para operações complexas
 
 ## Estrutura de Pesquisa
 
@@ -204,7 +204,7 @@ A pesquisa investigou quatro abordagens distintas para a integração dos agente
 
 - **Sequelize para Integração via ORM:** Este ORM foi selecionado como ferramenta ORM devido ao seu amplo uso em aplicações Node.js, sendo uma das bibliotecas mais populares para gerenciamento de banco de dados nessa plataforma, com cerca de 27 mil estrelas no GitHub e mais de meio milhão de repositórios que o utilizam [@sequelize2024]. Empresas reconhecidas, como PayPal e Red Hat, utilizam Sequelize em produção, reforçando sua credibilidade e robustez. Além disso, o uso de Sequelize proporciona segurança adicional ao prevenir automaticamente ataques de SQL injection por meio de queries parametrizadas, oferecendo também suporte para caches e consultas em SQL bruto quando necessário, equilibrando segurança com flexibilidade e desempenho [@eversql2023orms].
 
-- **OpenAPI para Integração via API/Swagger:** foi selecionado devido à sua ampla adoção como padrão da indústria para definição de interfaces RESTful, sendo reconhecido por facilitar a documentação consistente e interoperabilidade entre sistemas. Sua especificação permite descrever de maneira clara e estruturada os contratos das APIs, incluindo esquemas de autenticação como OAuth e chaves de API, essenciais para declarar uniformemente os requisitos de segurança das interfaces dos agentes conversacionais [@OpenAPIInitiative2023; @Postman2023].
+- **OpenAPI para Integração com Swagger:** foi selecionado devido à sua ampla adoção como padrão da indústria para definição de interfaces RESTful, sendo reconhecido por facilitar a documentação consistente e interoperabilidade entre sistemas. Sua especificação permite descrever de maneira clara e estruturada os contratos das APIs, incluindo esquemas de autenticação como OAuth e chaves de API, essenciais para declarar uniformemente os requisitos de segurança das interfaces dos agentes conversacionais [@OpenAPIInitiative2023; @Postman2023].
 
 A relevância do OpenAPI para agentes baseados em LLM reside na possibilidade de fornecer uma descrição estruturada das capacidades disponíveis para o agente. Por meio de uma definição formal e padronizada, os modelos de linguagem podem interpretar diretamente as interfaces, compreendendo quais operações podem ser solicitadas e como realizá-las com segurança e eficiência. Essa abordagem já é aplicada por sistemas como os plugins do ChatGPT, demonstrando sua efetividade para integração direta entre LLMs e APIs externas [@OpenAI2023].
 
@@ -214,6 +214,163 @@ A adoção crescente é impulsionada pela comunidade ativa, o que demonstra o po
 
 ## 2.2 MÉTODOS
 
+Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos conduzidos neste estudo, foi desenvolvida uma interface comum de usuário que será utilizada para avaliar todas as abordagens de integração. Esta padronização permite uma comparação justa e objetiva entre as diferentes implementações, eliminando variáveis relacionadas à interface do usuário que poderiam influenciar os resultados.
+
+### 2.2.1 Interface Comum de Usuário
+
+A interface do usuário consiste em uma aplicação web de chat minimalista, desenvolvida utilizando React.js e TypeScript. Esta interface serve como ponto de entrada único para todas as abordagens de integração implementadas, garantindo consistência na experiência do usuário e na coleta de métricas.
+
+#### 2.2.1.1 Arquitetura da Interface
+
+A aplicação frontend foi desenvolvida seguindo princípios de arquitetura limpa e componentização, consistindo em:
+
+- Interface de chat com histórico de mensagens
+- Campo de entrada de texto para prompts do usuário
+- Área de exibição formatada para respostas estruturadas
+
+#### 2.2.1.2 Comunicação com Backend
+
+A comunicação entre a interface e as diferentes implementações de backend é padronizada através de uma API REST, que segue as seguintes especificações:
+
+- Endpoint único para processamento de mensagens
+- Formato JSON padronizado para requisições e respostas
+- Suporte a streaming de respostas via Server-Sent Events
+- Tratamento uniforme de erros e timeouts
+
+#### 2.2.1.3 Coleta de Métricas via Testes E2E
+
+Conforme discutido na seção de materiais, os testes end-to-end (E2E) são fundamentais para avaliar o desempenho e a segurança de sistemas baseados em LLMs. A interface implementa um framework de testes E2E automatizados que coleta métricas consistentes para todas as abordagens, incluindo:
+
+- Métricas de Performance
+  - Tempo de resposta do servidor
+  - Tempo de processamento do LLM
+  - Latência de rede
+  
+- Métricas de Confiabilidade
+  - Taxa de sucesso das interações
+  - Frequência de erros
+  - Consistência das respostas
+  
+- Métricas de Segurança
+  - Tentativas de injeção de prompt
+  - Validação de restrições de acesso
+  - Conformidade com políticas de dados
+
+- Métricas de Experiência do Usuário
+  - Tempo até primeira resposta
+  - Qualidade das respostas
+  - Satisfação do usuário
+
+Os testes E2E são executados de forma automatizada em ambientes controlados, simulando diferentes cenários de uso e condições de carga, permitindo uma avaliação objetiva e reproduzível de cada abordagem de integração.
+
+Esta padronização da coleta de métricas via testes E2E garante que as diferenças observadas entre as abordagens sejam resultado direto das suas características de implementação, e não de variações na experiência do usuário ou na forma de coleta de dados.
+
+### 2.2.2 Conexão Direta com Banco de Dados
+
+A primeira abordagem investigada consiste na implementação de uma conexão direta entre o LLM e o banco de dados do sistema alvo. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução.
+
+#### 2.2.2.1 Arquitetura da Solução
+
+A arquitetura proposta para esta abordagem é composta por quatro componentes principais: interface do usuário, serviço LLM, conector de banco de dados e o banco de dados propriamente dito. A Figura X ilustra a arquitetura e o fluxo de comunicação entre estes componentes.
+
+![ORM - Diagrama da Arquitetura](images/orm/orm-diagram-approach.jpg)
+
+O fluxo de comunicação se inicia com uma solicitação do usuário em linguagem natural, que é processada pelo LLM. O modelo, tendo conhecimento prévio do esquema do banco de dados, gera consultas SQL apropriadas. Estas consultas são executadas no banco de dados, e os resultados são novamente interpretados pelo LLM para fornecer uma resposta contextualizada ao usuário.
+
+Em casos mais complexos, o sistema pode realizar múltiplas iterações de consultas, com o LLM analisando progressivamente os dados até obter todas as informações necessárias para uma resposta completa.
+
+#### 2.2.2.2 Componentes de Segurança
+
+A implementação inclui camadas de segurança essenciais:
+- Sanitização de consultas SQL
+- Controle de acesso em nível de campo
+- Mascaramento de dados sensíveis
+- Validação de permissões de usuário
+
+#### 2.2.2.3 Estrutura de Metadados
+
+A configuração do sistema é gerenciada através de uma estrutura de metadados que define:
+- Esquema do banco de dados
+- Regras de acesso
+- Contexto de negócio
+- Restrições de consulta
+
+#### 2.2.2.4 Implementação da Prova de Conceito
+
+A implementação utiliza uma stack tecnológica moderna baseada em Node.js, escolhida por sua eficiência e amplo suporte a ferramentas de desenvolvimento. Os principais componentes tecnológicos incluem:
+
+- Backend: Node.js
+- LLM: GPT-3 via API OpenAI
+- Banco de Dados: PostgreSQL
+- ORM: Sequelize
+
+#### 2.2.2.5 Desenvolvimento do Conector
+
+O conector de banco de dados é implementado utilizando o Sequelize ORM, que facilita:
+- Introspection do esquema do banco
+- Construção dinâmica de queries
+- Gerenciamento de conexões
+- Validação de dados
+
+#### 2.2.2.6 Detalhes Técnicos
+
+A implementação técnica foca em três aspectos principais:
+
+#### 2.2.2.7 Integração com LLM
+
+O sistema utiliza técnicas avançadas de prompt engineering para:
+- Geração precisa de SQL
+- Manutenção de contexto do esquema
+- Otimização de consultas
+- Interpretação de resultados
+
+#### 2.2.2.8 Tratamento de Erros
+
+O sistema implementa estratégias robustas para:
+- Erros de execução de queries
+- Falhas de interpretação do LLM
+- Timeout de conexões
+- Dados inconsistentes
+
+#### 2.2.2.9 Avaliação e Métricas
+
+A avaliação da solução é realizada considerando:
+
+#### 2.2.2.10 Performance
+- Tempo de resposta médio
+- Latência de processamento LLM
+- Eficiência de queries
+
+#### 2.2.2.11 Segurança
+- Efetividade do controle de acesso
+- Prevenção de injeção SQL
+- Conformidade com práticas de privacidade
+
+#### 2.2.2.12 Custos Operacionais
+- Consumo de API do LLM
+- Recursos de banco de dados
+- Infraestrutura necessária
+
+#### 2.2.2.13 Considerações Práticas
+
+A implementação revelou diversos aspectos práticos importantes:
+
+#### 2.2.2.14 Desafios
+- Complexidade de queries dinâmicas
+- Limitações do LLM
+- Gestão de estados e contexto
+
+#### 2.2.2.15 Infraestrutura
+- Requisitos de escalabilidade
+- Arquitetura de deployment
+- Monitoramento e logging
+
+#### 2.2.2.16 Manutenção
+- Atualizações de esquema
+- Versionamento de modelos
+- Monitoramento de performance
+
+<!-- 
 Em métodos deve ter uma explicação minuciosa, detalhada, rigorosa e
 exata de toda ação desenvolvida no método (caminho) do trabalho de
 pesquisa. É necessário descrever quais equipamentos serão utilizados e
@@ -239,7 +396,7 @@ acordo com as normas da ABNT, ou seja: citações diretas e/ou indiretas,
 curtas e/ou longas. Cópia de trechos e/ou na íntegra sem os devidos
 créditos é considerado plágio (lei nº 9.610, de 19.02.98, que altera,
 atualiza e consolida a legislação sobre direitos autorais). Não se
-esqueça de nomear a seção.
+esqueça de nomear a seção. -->
 
 # 3 RESULTADOS E DISCUSSÕES
 

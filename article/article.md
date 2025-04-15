@@ -259,35 +259,36 @@ Os testes E2E são executados de forma automatizada em ambientes controlados, si
 
 Esta padronização da coleta de métricas via testes E2E garante que as diferenças observadas entre as abordagens sejam resultado direto das suas características de implementação, e não de variações na experiência do usuário ou na forma de coleta de dados.
 
-### 2.2.2 Conexão Direta com Banco de Dados
+### 2.2.2 Integração via Plugin ORM
 
-A primeira abordagem investigada consiste na implementação de uma conexão direta entre o LLM e o banco de dados do sistema alvo. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução.
+A primeira abordagem investigada consiste na implementação de um plugin ORM que permite ao LLM interagir com o sistema através das camadas de abstração do ORM. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução.
 
 #### 2.2.2.1 Arquitetura da Solução
 
-A arquitetura proposta para esta abordagem é composta por quatro componentes principais: interface do usuário, serviço LLM, conector de banco de dados e o banco de dados propriamente dito. A Figura X ilustra a arquitetura e o fluxo de comunicação entre estes componentes.
+A arquitetura proposta para esta abordagem é composta por quatro componentes principais: interface do usuário, serviço LLM, plugin ORM e o banco de dados. A Figura X ilustra a arquitetura e o fluxo de comunicação entre estes componentes.
 
 ![ORM - Diagrama da Arquitetura](images/orm/orm-diagram-approach.jpg)
 
-O fluxo de comunicação se inicia com uma solicitação do usuário em linguagem natural, que é processada pelo LLM. O modelo, tendo conhecimento prévio do esquema do banco de dados, gera consultas SQL apropriadas. Estas consultas são executadas no banco de dados, e os resultados são novamente interpretados pelo LLM para fornecer uma resposta contextualizada ao usuário.
+O fluxo de comunicação se inicia com uma solicitação do usuário em linguagem natural, que é processada pelo LLM. O modelo, tendo conhecimento prévio dos modelos e relacionamentos definidos no ORM, gera instruções de consulta utilizando a API do ORM. Estas instruções são executadas através do plugin, que utiliza o ORM para realizar as operações no banco de dados de forma segura e otimizada.
 
-Em casos mais complexos, o sistema pode realizar múltiplas iterações de consultas, com o LLM analisando progressivamente os dados até obter todas as informações necessárias para uma resposta completa.
+Em casos mais complexos, o sistema pode realizar múltiplas operações encadeadas, aproveitando os relacionamentos e métodos definidos nos modelos do ORM para obter dados relacionados e realizar análises mais complexas.
 
 #### 2.2.2.2 Componentes de Segurança
 
 A implementação inclui camadas de segurança essenciais:
-- Sanitização de consultas SQL
-- Controle de acesso em nível de campo
-- Mascaramento de dados sensíveis
+- Validação automática de tipos pelo ORM
+- Prevenção de SQL injection
+- Controle de acesso em nível de modelo
+- Sanitização de dados de entrada
 - Validação de permissões de usuário
 
 #### 2.2.2.3 Estrutura de Metadados
 
-A configuração do sistema é gerenciada através de uma estrutura de metadados que define:
-- Esquema do banco de dados
-- Regras de acesso
-- Contexto de negócio
-- Restrições de consulta
+A configuração do sistema é gerenciada através dos modelos do ORM:
+- Definições de modelos e relacionamentos
+- Validações e restrições de campo
+- Hooks e middlewares
+- Configurações de cache
 
 #### 2.2.2.4 Implementação da Prova de Conceito
 
@@ -295,16 +296,17 @@ A implementação utiliza uma stack tecnológica moderna baseada em Node.js, esc
 
 - Backend: Node.js
 - LLM: GPT-3 via API OpenAI
-- Banco de Dados: PostgreSQL
 - ORM: Sequelize
+- Banco de Dados: PostgreSQL
 
-#### 2.2.2.5 Desenvolvimento do Conector
+#### 2.2.2.5 Desenvolvimento do Plugin
 
-O conector de banco de dados é implementado utilizando o Sequelize ORM, que facilita:
-- Introspection do esquema do banco
-- Construção dinâmica de queries
-- Gerenciamento de conexões
-- Validação de dados
+O plugin ORM implementa:
+- Interface de comunicação com o LLM
+- Interpretação de intenções para queries
+- Gerenciamento de transações
+- Sistema de cache
+- Logging e monitoramento
 
 #### 2.2.2.6 Detalhes Técnicos
 
@@ -313,18 +315,18 @@ A implementação técnica foca em três aspectos principais:
 #### 2.2.2.7 Integração com LLM
 
 O sistema utiliza técnicas avançadas de prompt engineering para:
-- Geração precisa de SQL
-- Manutenção de contexto do esquema
+- Interpretação de modelos do ORM
+- Geração de queries complexas
 - Otimização de consultas
-- Interpretação de resultados
+- Gerenciamento de relacionamentos
 
 #### 2.2.2.8 Tratamento de Erros
 
 O sistema implementa estratégias robustas para:
-- Erros de execução de queries
-- Falhas de interpretação do LLM
-- Timeout de conexões
-- Dados inconsistentes
+- Validação de tipos
+- Erros de constraint
+- Timeout de transações
+- Conflitos de concorrência
 
 #### 2.2.2.9 Avaliação e Métricas
 
@@ -332,37 +334,43 @@ A avaliação da solução é realizada considerando:
 
 #### 2.2.2.10 Performance
 - Tempo de resposta médio
-- Latência de processamento LLM
-- Eficiência de queries
+- Eficiência de queries geradas
+- Uso de cache
+- Overhead do ORM
 
 #### 2.2.2.11 Segurança
-- Efetividade do controle de acesso
-- Prevenção de injeção SQL
-- Conformidade com práticas de privacidade
+- Validação de tipos
+- Prevenção de injeção
+- Controle de acesso
+- Auditoria de operações
 
 #### 2.2.2.12 Custos Operacionais
 - Consumo de API do LLM
-- Recursos de banco de dados
-- Infraestrutura necessária
+- Overhead de memória do ORM
+- Custos de manutenção
+- Recursos de infraestrutura
 
 #### 2.2.2.13 Considerações Práticas
 
 A implementação revelou diversos aspectos práticos importantes:
 
 #### 2.2.2.14 Desafios
-- Complexidade de queries dinâmicas
-- Limitações do LLM
-- Gestão de estados e contexto
+- Complexidade dos modelos
+- Mapeamento de relacionamentos
+- Performance em queries complexas
+- Limitações do ORM
 
 #### 2.2.2.15 Infraestrutura
-- Requisitos de escalabilidade
-- Arquitetura de deployment
-- Monitoramento e logging
+- Requisitos de memória
+- Configuração de cache
+- Monitoramento de queries
+- Backup e recuperação
 
 #### 2.2.2.16 Manutenção
-- Atualizações de esquema
+- Atualizações de schema
+- Migrações de banco
 - Versionamento de modelos
-- Monitoramento de performance
+- Documentação do ORM
 
 ### 2.2.3 Integração OpenAPI-MCP
 

@@ -4,10 +4,10 @@ Este repositório contém o desenvolvimento do Trabalho de Conclusão de Curso s
 
 ## 📑 Documentação do Projeto
 
+- [Artigo](article/article.pdf) - Artigo completo do TCC
 - [Pré-Projeto](pre-projeto.md) - Detalhes iniciais do TCC incluindo tema, objetivos e justificativa
 - [Notas de Desenvolvimento](notes.md) - Anotações e ideias sobre o desenvolvimento
 - [Temas Considerados](theme-ideas.md) - Processo de escolha e refinamento do tema
-- [Artigo](article/article.pdf) - Artigo completo do TCC
 - [Citações](article/references.bib) - Referências bibliográficas
 
 ## 🌟 Por que este Workflow?
@@ -15,9 +15,9 @@ Este repositório contém o desenvolvimento do Trabalho de Conclusão de Curso s
 Este TCC foi desenvolvido seguindo um workflow orientado a código e versionamento, com diversas vantagens:
 
 1. **Versionamento Completo**: Todo o conteúdo, tanto do código quanto do texto acadêmico, é versionado com Git, permitindo rastrear o histórico completo de desenvolvimento, experimentações e revisões.
-2. **Escrita em Markdown e LaTeX**: O artigo é escrito em Markdown e compilado para LaTeX, combinando a facilidade de escrita do Markdown com o poder de formatação acadêmica do LaTeX e abnTeX.
-3. **Gestão de Referências com BibTeX**: As citações são gerenciadas em formato BibTeX, garantindo consistência bibliográfica e facilitando a inclusão de novas referências.
-4. **Automação de Conversões**: Scripts automatizam a conversão entre formatos (Markdown → LaTeX → PDF), mantendo a consistência entre o texto fonte e a saída final.
+2. **Escrita em Markdown e LaTeX**: O artigo é escrito em Markdown e compilado para LaTeX, combinando a facilidade de escrita do Markdown com o poder de formatação acadêmica do LaTeX e abnTeX. [Article](article/article.md)
+3. **Gestão de Referências com BibTeX**: As citações são gerenciadas em formato BibTeX, garantindo consistência bibliográfica e facilitando a inclusão de novas referências. [Referências](article/references.bib)
+4. **Automação de Conversões**: Scripts automatizam a conversão entre formatos (Markdown → LaTeX → PDF), mantendo a consistência entre o texto fonte e a saída final. [Makefile](article/Makefile)
 5. **Integração Código-Documentação**: Código e documentação estão no mesmo repositório, permitindo que exemplos práticos no código reflitam diretamente nos conceitos discutidos no texto.
 6. **Reprodutibilidade Acadêmica**: Qualquer pessoa pode clonar o repositório e reproduzir tanto o ambiente de desenvolvimento quanto gerar o documento final com as mesmas ferramentas.
 7. **Colaboração Facilitada**: O formato baseado em texto simples facilita revisões, sugestões e colaborações, mantendo a rastreabilidade de todas as contribuições.

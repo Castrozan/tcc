@@ -332,47 +332,19 @@ O sistema implementa estratégias robustas para:
 
 #### 2.2.2.9 Avaliação e Métricas
 
-A avaliação da solução é realizada considerando:
+Esta abordagem foi avaliada considerando os seguintes aspectos:
 
-#### 2.2.2.10 Performance
-- Tempo de resposta médio
-- Eficiência de queries geradas
-- Uso de cache
-- Overhead do ORM
+- Performance
+- Segurança
+- Custos Operacionais
 
-#### 2.2.2.11 Segurança
-- Validação de tipos
-- Prevenção de injeção
-- Controle de acesso
-- Auditoria de operações
-
-#### 2.2.2.12 Custos Operacionais
-- Consumo de API do LLM
-- Overhead de memória do ORM
-- Custos de manutenção
-- Recursos de infraestrutura
-
-#### 2.2.2.13 Considerações Práticas
+#### 2.2.2.10 Considerações Práticas
 
 A implementação revelou diversos aspectos práticos importantes:
 
-#### 2.2.2.14 Desafios
-- Complexidade dos modelos
-- Mapeamento de relacionamentos
-- Performance em queries complexas
-- Limitações do ORM
-
-#### 2.2.2.15 Infraestrutura
-- Requisitos de memória
-- Configuração de cache
-- Monitoramento de queries
-- Backup e recuperação
-
-#### 2.2.2.16 Manutenção
-- Atualizações de schema
-- Migrações de banco
-- Versionamento de modelos
-- Documentação do ORM
+- Desafios
+- Infraestrutura
+- Manutenção
 
 ### 2.2.3 Integração OpenAPI-MCP
 

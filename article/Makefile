@@ -1,4 +1,5 @@
 # Article Makefile
+# reference: https://gist.github.com/killercup/5917178
 
 SOURCE := article.md
 
@@ -7,9 +8,7 @@ PDF := $(patsubst %.md,%.pdf, $(SOURCE))
 DOCX := $(patsubst %.md,%.docx, $(SOURCE))
 TEX := $(patsubst %.md,%.tex, $(SOURCE))
 
-STYLE := style.css
-# Source: https://gist.github.com/killercup/5917178
-# Make sure you save this in the same directory as shown or change the path.
+STYLE := style/style.css
 
 .PHONY : all
 all : $(HTML) $(PDF) $(DOCX) $(TEX)
@@ -18,18 +17,17 @@ all : $(HTML) $(PDF) $(DOCX) $(TEX)
 	@echo --- Generating HTML ---
 	@pandoc -s --css $(STYLE) --embed-resources --standalone -o $@ $<
 
-# You will need to have the appropriate pdf-engine installed.
 %.pdf : %.md
 	@echo --- Generating PDF ---
-	@pandoc -V papersize:a4 --pdf-engine=xelatex --citeproc --bibliography=references.bib --resource-path=.:./images -o $@ $<
+	@pandoc -V papersize:a4 --pdf-engine=xelatex --citeproc --csl=style/abnt.csl --bibliography=references.bib --resource-path=.:./images -o $@ $<
 
 %.docx : %.md
 	@echo --- Generating DOCX ---
-	@pandoc -o $@ $<
+	@pandoc --citeproc --csl=style/abnt.csl --bibliography=references.bib -o $@ $<
 
 %.tex : %.md
 	@echo --- Generating TEX ---
-	@pandoc -s --citeproc --bibliography=references.bib --resource-path=.:./images -o $@ $<
+	@pandoc -s --citeproc --csl=style/abnt.csl --bibliography=references.bib --resource-path=.:./images -o $@ $<
 
 .PHONY : clean
 clean :

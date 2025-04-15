@@ -175,8 +175,8 @@ para a plena acessibilidade e interação dos usuários com os sistemas
 digitais. Com o aumento da complexidade do frontend e a multiplicidade
 de paradigmas de interação, muitos usuários enfrentam dificuldades
 significativas para utilizar efetivamente as funcionalidades oferecidas
-pelos sistemas computacionais modernos (Rapp et al. 2018) (Kocaballi et
-al. 2019).
+pelos sistemas computacionais modernos (RAPP et al., 2018) (KOCABALLI et
+al., 2019).
 
 Nesse cenário, os agentes conversacionais baseados em inteligência
 artificial emergem como uma alternativa promissora para simplificar a
@@ -186,14 +186,14 @@ natural para ações específicas no sistema.
 
 Estudos recentes têm demonstrado que agentes conversacionais podem
 aprimorar significativamente a experiência do usuário ao simplificar
-interações com sistemas complexos (Fast et al. 2017). Além disso, a
+interações com sistemas complexos (FAST et al., 2017). Além disso, a
 implementação de interfaces baseadas em linguagem natural tem mostrado
 potencial para melhorar a usabilidade em contextos domésticos e
 inteligentes, reduzindo o tempo e o esforço necessários para completar
-tarefas complexas (Guo et al. 2024). Ademais, tais interfaces oferecem
+tarefas complexas (GUO et al., 2024). Ademais, tais interfaces oferecem
 vantagens consideráveis em termos de acessibilidade, permitindo uma
 comunicação mais inclusiva e adaptável a usuários com diferentes
-necessidades especiais (Lister et al. 2020) (Deng 2023).
+necessidades especiais (LISTER et al., 2020) (DENG, 2023).
 
 A problemática central desta pesquisa reside na questão: de que forma um
 agente conversacional baseado em IA pode potencializar a interação entre
@@ -207,7 +207,7 @@ usuários.
 Adicionalmente, trabalhos recentes indicam que avanços na arquitetura de
 modelos de IA, como o uso de transformers sem camadas de normalização,
 podem influenciar positivamente o desempenho e a eficiência desses
-agentes (Zhu et al. 2025).
+agentes (ZHU et al., 2025).
 
 A relevância deste estudo evidencia-se pelo potencial transformador que
 os agentes conversacionais representam para a área de interação
@@ -268,38 +268,38 @@ agentes conversacionais e Large Language Models (LLMs). A plataforma é
 amplamente adotada devido à sua arquitetura orientada a eventos e
 capacidade de gerenciar eficientemente múltiplas conexões simultâneas,
 essencial para aplicações que exigem respostas rápidas em tempo real
-(Cherednichenko et al. 2024).
+(CHEREDNICHENKO et al., 2024).
 
 O Hugging Face fornece bibliotecas JavaScript específicas compatíveis
 com Node.js, como o \texttt{@huggingface/inference}, permitindo acesso
 direto a mais de 100 mil modelos pré-treinados com suporte a TypeScript.
 Isso simplifica significativamente a integração com IA, destacando a
 robustez técnica e facilidade de adoção do Node.js em aplicações
-modernas (Face 2024).
+modernas (FACE, 2024).
 
 Grandes empresas também reforçam a relevância de Node.js ao
 disponibilizarem SDKs específicos, como o da IBM para o Watsonx, lançado
 em 2023. Este SDK facilita o uso direto de modelos generativos robustos
 da IBM em aplicações Node.js, destacando sua relevância estratégica no
-ambiente empresarial (IBM 2023).
+ambiente empresarial (IBM, 2023).
 
 Adicionalmente, a documentação oficial do Node.js ressalta sua
 capacidade superior de lidar com streaming de dados através de streams e
 pipelines. Essa funcionalidade permite transmitir resultados
 incrementais de IA aos clientes com baixa latência, tornando-o ideal
 para chatbots e serviços em tempo real que dependem de respostas
-imediatas (Node.js 2024).
+imediatas (NODE.JS, 2024).
 
 Por fim, relatórios da Red Hat destacam que o uso eficiente da
 arquitetura assíncrona do Node.js possibilita a criação de agentes
 baseados em LLMs com alta performance e escalabilidade. Isso garante um
 gerenciamento eficiente de múltiplas operações paralelas, essencial para
-aplicações intensivas em IA e integração com APIs externas (Blog 2024).
+aplicações intensivas em IA e integração com APIs externas (BLOG, 2024).
 
 \subsubsection{2.1.2 TESTES END-TO-END
 (E2E)}\label{testes-end-to-end-e2e}
 
-O Framework de Gerenciamento de Riscos de IA do NIST (Oprea and Vassilev
+O Framework de Gerenciamento de Riscos de IA do NIST (OPREA; VASSILEV,
 2023) destaca a importância de avaliar o desempenho de sistemas de IA de
 forma abrangente, defendendo que testes de integração devem avaliar os
 sistemas de ponta a ponta para identificar erros de integração e
@@ -311,30 +311,31 @@ conforme o esperado em condições do mundo real.
 A injeção de prompt representa um risco significativo em implantações de
 LLMs em nosso cenário, no qual o modelo possui acesso a dados e sistemas
 potencialmente críticos, incluindo, ocasionalmente, conexões diretas com
-dados brutos de banco de dados. O guia de riscos da OWASP (John et al.
+dados brutos de banco de dados. O guia de riscos da OWASP (JOHN et al.,
 2025) classifica a injeção de prompt como uma ameaça crítica à
 segurança, destacando a necessidade de procedimentos de teste rigorosos
 para garantir que agentes conversacionais baseados em LLMs não revelem
 inadvertidamente dados sensíveis ou contornem restrições do sistema
 quando expostos a entradas maliciosas. Recentemente, Wu et al.~(2023)
-(Wu et al. 2023) demonstraram que ataques de jailbreak --- um tipo
+(WU et al., 2023) demonstraram que ataques de jailbreak --- um tipo
 avançado de injeção de prompt --- podem burlar as salvaguardas éticas de
 modelos como o ChatGPT em até 67\% dos casos, gerando conteúdos
 prejudiciais como extorsão e desinformação.
 
 Com isso em mente, o uso de testes E2E pode ser utilizado para avaliar a
 resiliência da implementação ao simular entradas adversárias, processo
-conhecido como red teaming. Segundo Inie et al.~(2025) (Inie, Stray, and
-Derczynski 2025), o red teaming desafia sistematicamente sistemas de IA
+conhecido como red teaming. Segundo Inie et al.~(2025) (INIE; STRAY;
+DERCZYNSKI, 2025), o red teaming desafia sistematicamente sistemas de IA
 com prompts adversários projetados para testar seus limites e mecanismos
 de segurança. Ao encapsular consultas do usuário com lembretes de
 responsabilidade ética (e.g., ``Você deve ser um ChatGPT responsável''),
 o método reduziu a taxa de sucesso de jailbreaks para 19\%, mantendo a
 funcionalidade padrão do modelo --- um resultado validado através de
-testes E2E em 540 cenários adversarialmente projetados (Wu et al. 2023).
+testes E2E em 540 cenários adversarialmente projetados (WU et al.,
+2023).
 
-Testes de robustez, como os propostos pelo framework CheckList (Ribeiro
-et al. 2020), complementam ainda mais os testes E2E ao variar
+Testes de robustez, como os propostos pelo framework CheckList (RIBEIRO
+et al., 2020), complementam ainda mais os testes E2E ao variar
 sistematicamente as entradas --- como paráfrases, negações ou ruído ---
 para avaliar a consistência e a precisão do modelo em diferentes
 cenários. Esse método garante que sistemas baseados em LLM lidem de
@@ -363,17 +364,18 @@ do BERT (2018) mostrou avanços em compreensão textual, enquanto a série
 GPT demonstrou fortes capacidades generativas. O GPT-3 (2020), com 175
 bilhões de parâmetros, evidenciou habilidades emergentes de aprendizado
 com poucos exemplos (few-shot), ampliando o escopo de tarefas possíveis
-por meio de simples instruções em linguagem natural (Brown et al. 2020).
+por meio de simples instruções em linguagem natural (BROWN et al.,
+2020).
 
 A partir de 2022, o foco da pesquisa passou a ser o aprimoramento do
 raciocínio e alinhamento dos LLMs. Técnicas como Chain-of-Thought
 prompting permitiram que os modelos resolvessem problemas complexos de
-forma mais eficaz (Wei et al. 2023). O uso de Reinforcement Learning
+forma mais eficaz (WEI et al., 2023). O uso de Reinforcement Learning
 from Human Feedback (RLHF), como nos modelos InstructGPT e
 posteriormente ChatGPT, melhorou a capacidade dos LLMs de seguir
 instruções com mais segurança e consistência. Esses avanços
 estabeleceram as bases para o uso dos LLMs como interfaces
-conversacionais robustas em cenários de integração com sistemas (OpenAI
+conversacionais robustas em cenários de integração com sistemas (OPENAI,
 2022).
 
 \paragraph{2.1.3.2 EXTENSÃO DE JANELA DE
@@ -382,8 +384,8 @@ CONTEXTO}\label{extensuxe3o-de-janela-de-contexto}
 Com o avanço dos modelos, observou-se uma tendência significativa no
 aumento das janelas de contexto --- a quantidade de tokens que um LLM
 pode processar em uma única interação. Modelos como o Claude 3 já
-alcançam até 100.000 tokens (Anthropic 2024a), enquanto versões
-estendidas do GPT-4 suportam até 32.000 tokens (OpenAI 2023b). Esse
+alcançam até 100.000 tokens (ANTHROPIC, 2024a), enquanto versões
+estendidas do GPT-4 suportam até 32.000 tokens (OPENAI, 2023a). Esse
 aumento permite que os modelos processem documentos extensos, múltiplas
 conversas ou grandes volumes de dados em uma única solicitação,
 superando, em muitos casos, abordagens tradicionais baseadas em
@@ -396,7 +398,7 @@ lembrar estados extensos ou ingerir bancos de dados e logs inteiros de
 uma só vez. No entanto, isso traz custos computacionais consideráveis, e
 há esforços contínuos para utilizar essas janelas maiores de forma
 eficiente (por exemplo, condensando ou focando a atenção nas partes mais
-relevantes) (Anthropic 2024a; OpenAI 2023b).
+relevantes) (ANTHROPIC, 2024a; OPENAI, 2023a).
 
 \paragraph{2.1.3.3 RACIOCÍNIO APRIMORADO E COMPREENSÃO PROFUNDA (DEEP
 THINKING)}\label{raciocuxednio-aprimorado-e-compreensuxe3o-profunda-deep-thinking}
@@ -405,18 +407,18 @@ Os LLMs mais recentes apresentam avanços significativos em raciocínio,
 planejamento e resolução de tarefas complexas. Técnicas como o
 Chain-of-Thought prompting, que induz os modelos a pensar em etapas
 intermediárias, mostraram ganhos substanciais em tarefas que exigem
-múltiplos passos lógicos (Wei et al. 2023). Além disso, abordagens como
+múltiplos passos lógicos (WEI et al., 2023). Além disso, abordagens como
 tree-of-thought e self-reflection permitem que os modelos reavaliem suas
 respostas e melhorem sua própria performance iterativamente. Esses
 avanços tornam os LLMs mais confiáveis para tarefas que exigem
 raciocínio profundo e tomada de decisão estruturada, fundamentais para
-integração com sistemas complexos (Yao et al. 2023).
+integração com sistemas complexos (YAO et al., 2023).
 
 \paragraph{2.1.3.4 USO DE FERRAMENTAS EM TEMPO REAL E INTERAÇÃO COM
 SISTEMAS}\label{uso-de-ferramentas-em-tempo-real-e-interauxe7uxe3o-com-sistemas}
 
 O avanço dos LLMs em ambientes de produção foi impulsionado por recursos
-como o function calling da OpenAI (OpenAI 2023a). Essa funcionalidade
+como o function calling da OpenAI (OPENAI, 2023b). Essa funcionalidade
 permite que os modelos interpretem solicitações em linguagem natural e
 as convertam em chamadas de funções estruturadas, conforme definido por
 esquemas JSON fornecidos pelo desenvolvedor. Por exemplo, ao receber uma
@@ -429,16 +431,16 @@ Essa abordagem, semelhante ao modelo escrever código para utilizar
 ferramentas, melhora significativamente a confiabilidade em cenários de
 integração, permitindo que o modelo obtenha dados estruturados de bancos
 de dados, chame APIs de negócios, envie e-mails, entre outras ações, em
-vez de apenas tentar adivinhar a resposta (OpenAI 2023a).
+vez de apenas tentar adivinhar a resposta (OPENAI, 2023b).
 
 Complementando essa capacidade, o Model Context Protocol (MCP),
-desenvolvido pela Anthropic (Model Context Protocol Team 2025; Anthropic
-2024b), oferece um padrão aberto para conectar LLMs a diversas fontes de
-dados e ferramentas. O MCP estabelece uma arquitetura cliente-servidor
-onde os modelos (clientes) podem acessar servidores MCP que expõem
-recursos, prompts e ferramentas de forma padronizada. Isso elimina a
-necessidade de integrações personalizadas para cada fonte de dados,
-promovendo uma interoperabilidade mais ampla e sustentável.
+desenvolvido pela Anthropic (ANTHROPIC, 2024b; MODEL CONTEXT PROTOCOL
+TEAM, 2025), oferece um padrão aberto para conectar LLMs a diversas
+fontes de dados e ferramentas. O MCP estabelece uma arquitetura
+cliente-servidor onde os modelos (clientes) podem acessar servidores MCP
+que expõem recursos, prompts e ferramentas de forma padronizada. Isso
+elimina a necessidade de integrações personalizadas para cada fonte de
+dados, promovendo uma interoperabilidade mais ampla e sustentável.
 
 \subsubsection{2.1.4 FERRAMENTAS ESPECÍFICAS DE
 INTEGRAÇÃO}\label{ferramentas-especuxedficas-de-integrauxe7uxe3o}
@@ -454,26 +456,26 @@ ferramentas específicas para cada uma:
   adoção e aceitação pela comunidade de desenvolvedores, evidenciada
   pela pesquisa do Stack Overflow Developer Survey, onde apareceu como o
   banco de dados mais admirado e desejado por desenvolvedores em 2023
-  (EnterpriseDB 2023b). Além disso, décadas de desenvolvimento ativo e
+  (ENTERPRISEDB, 2023a). Além disso, décadas de desenvolvimento ativo e
   testes rigorosos pela comunidade garantem ao PostgreSQL uma reputação
   sólida em termos de integridade dos dados e tolerância a falhas.
   Assim, utilizar PostgreSQL assegura que os dados do agente
   conversacional sejam gerenciados por uma infraestrutura confiável,
   escalável e amplamente reconhecida pela indústria, com vasto suporte
-  operacional disponível (EnterpriseDB 2023b, 2023a).
+  operacional disponível (ENTERPRISEDB, 2023a, 2023b).
 \item
   \textbf{Sequelize para Integração via ORM:} Este ORM foi selecionado
   como ferramenta ORM devido ao seu amplo uso em aplicações Node.js,
   sendo uma das bibliotecas mais populares para gerenciamento de banco
   de dados nessa plataforma, com cerca de 27 mil estrelas no GitHub e
-  mais de meio milhão de repositórios que o utilizam (S. Team 2024).
+  mais de meio milhão de repositórios que o utilizam (TEAM, 2024).
   Empresas reconhecidas, como PayPal e Red Hat, utilizam Sequelize em
   produção, reforçando sua credibilidade e robustez. Além disso, o uso
   de Sequelize proporciona segurança adicional ao prevenir
   automaticamente ataques de SQL injection por meio de queries
   parametrizadas, oferecendo também suporte para caches e consultas em
   SQL bruto quando necessário, equilibrando segurança com flexibilidade
-  e desempenho (E. Team 2023).
+  e desempenho (TEAM, 2023).
 \item
   \textbf{OpenAPI para Integração via API/Swagger:} foi selecionado
   devido à sua ampla adoção como padrão da indústria para definição de
@@ -482,8 +484,8 @@ ferramentas específicas para cada uma:
   permite descrever de maneira clara e estruturada os contratos das
   APIs, incluindo esquemas de autenticação como OAuth e chaves de API,
   essenciais para declarar uniformemente os requisitos de segurança das
-  interfaces dos agentes conversacionais (OpenAPI Initiative 2023; The
-  Postman Team 2023).
+  interfaces dos agentes conversacionais (OPENAPI INITIATIVE, 2023; THE
+  POSTMAN TEAM, 2023).
 \end{itemize}
 
 A relevância do OpenAPI para agentes baseados em LLM reside na
@@ -493,7 +495,7 @@ padronizada, os modelos de linguagem podem interpretar diretamente as
 interfaces, compreendendo quais operações podem ser solicitadas e como
 realizá-las com segurança e eficiência. Essa abordagem já é aplicada por
 sistemas como os plugins do ChatGPT, demonstrando sua efetividade para
-integração direta entre LLMs e APIs externas (OpenAI 2023c).
+integração direta entre LLMs e APIs externas (OPENAI, 2023c).
 
 \begin{itemize}
 \tightlist
@@ -507,7 +509,7 @@ integração direta entre LLMs e APIs externas (OpenAI 2023c).
   entre fevereiro e abril de 2025, o protocolo ganhou tração
   significativa com a criação de diversos servidores prontos para
   PostgreSQL, GitHub, Slack, entre outros, além de SDKs em múltiplas
-  linguagens (Anthropic 2024c; Model Context Protocol Contributors
+  linguagens (ANTHROPIC, 2024c; MODEL CONTEXT PROTOCOL CONTRIBUTORS,
   2024).
 \end{itemize}
 
@@ -516,7 +518,7 @@ o potencial do MCP como um padrão de integração para sistemas baseados
 em LLMs. Sua proposta de ``porta universal'' para conectar agentes a
 ferramentas oferece flexibilidade e segurança --- características
 fundamentais quando agentes com poder de raciocínio, como LLMs, precisam
-acessar recursos sensíveis de forma controlada e auditável (Anthropic
+acessar recursos sensíveis de forma controlada e auditável (ANTHROPIC,
 2024c).
 
 \subsection{2.2 MÉTODOS}\label{muxe9todos}
@@ -568,189 +570,200 @@ a sua pergunta-problema de pesquisa.
 \addcontentsline{toc}{section}{REFERÊNCIAS}
 
 \phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
+\begin{CSLReferences}{0}{1}
 \bibitem[\citeproctext]{ref-anthropic2024context}
-Anthropic. 2024a. {``Anthropic Now Offers 100K Context Windows for
-Claude 3 Models.''} 2024.
-\url{https://www.anthropic.com/news/100k-context-windows}.
+ANTHROPIC. \textbf{Anthropic Now Offers 100K Context Windows for Claude
+3 Models}. Disponível em:
+\textless{}\url{https://www.anthropic.com/news/100k-context-windows}\textgreater.
 
 \bibitem[\citeproctext]{ref-anthropic2024mcp}
----------. 2024b. {``Model Context Protocol (MCP): A Standard for AI
-Context Integration.''} 2024.
-\url{https://www.anthropic.com/news/model-context-protocol}.
+ANTHROPIC. \textbf{Model Context Protocol (MCP): A Standard for AI
+Context Integration}. Disponível em:
+\textless{}\url{https://www.anthropic.com/news/model-context-protocol}\textgreater.
+Acesso em: 12 abr. 2025b.
 
 \bibitem[\citeproctext]{ref-Anthropic2024}
-Anthropic. 2024c. {``{Introducing the Model Context Protocol}.''}
-Anthropic News.
-\url{https://www.anthropic.com/news/model-context-protocol}.
+ANTHROPIC. \textbf{{Introducing the Model Context Protocol}}. Anthropic
+News, nov. c2024. Disponível em:
+\textless{}\url{https://www.anthropic.com/news/model-context-protocol}\textgreater{}
 
 \bibitem[\citeproctext]{ref-RedHat2024LLMNode}
-Blog, Red Hat Developer. 2024. {``Building LLM Agents with Node.js.''}
-\url{https://developers.redhat.com/blog/2024/10/25/building-agents-large-language-modelsllms-and-nodejs}.
+BLOG, R. H. D. \textbf{Building LLM Agents with Node.js}.
+\url{https://developers.redhat.com/blog/2024/10/25/building-agents-large-language-modelsllms-and-nodejs},
+2024.
 
 \bibitem[\citeproctext]{ref-brown2020languagemodelsfewshotlearners}
-Brown, Tom B., Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan,
-Prafulla Dhariwal, Arvind Neelakantan, et al. 2020. {``Language Models
-Are Few-Shot Learners.''} \url{https://arxiv.org/abs/2005.14165}.
+BROWN, T. B. et al. \textbf{Language Models are Few-Shot Learners}.,
+2020. Disponível em:
+\textless{}\url{https://arxiv.org/abs/2005.14165}\textgreater{}
 
 \bibitem[\citeproctext]{ref-cherednichenko:hal-04545073}
-Cherednichenko, Olga, Dmytro Sytnikov, Nazarii Romankiv, Nataliia
-Sharonova, and Polina Sytnikova. 2024. {``Selection of Large Language
-Model for Development of Interactive Chat Bot for SaaS Solutions.''} In.
-Vol. 3722. Lviv, Ukraine. \url{https://hal.science/hal-04545073}.
+CHEREDNICHENKO, O. et al. \textbf{Selection of Large Language Model for
+development of Interactive Chat Bot for SaaS Solutions}. Lviv, Ukraine:
+abr. 2024. Disponível em:
+\textless{}\url{https://hal.science/hal-04545073}\textgreater{}
 
 \bibitem[\citeproctext]{ref-Deng2023AMA}
-Deng, Xiang. 2023. {``A More Accessible Web with Natural Language
-Interface.''} \emph{Proceedings of the 20th International Web for All
-Conference}. \url{https://api.semanticscholar.org/CorpusID:258259387}.
+DENG, X. \href{https://api.semanticscholar.org/CorpusID:258259387}{A
+More Accessible Web with Natural Language Interface}.
+\textbf{Proceedings of the 20th International Web for All Conference},
+2023.
 
 \bibitem[\citeproctext]{ref-enterprisedb2023security}
-EnterpriseDB. 2023a. {``EnterpriseDB Raises the Bar for Postgres
-Security and Compliance.''} 2023.
-\url{https://www.enterprisedb.com/news/enterprisedb-raises-bar-postgres-security-compliance}.
+ENTERPRISEDB. \textbf{EnterpriseDB Raises the Bar for Postgres Security
+and Compliance}. Disponível em:
+\textless{}\url{https://www.enterprisedb.com/news/enterprisedb-raises-bar-postgres-security-compliance}\textgreater.
+Acesso em: 12 abr. 2025b.
 
 \bibitem[\citeproctext]{ref-enterprisedb2023postgresql}
----------. 2023b. {``Postgres Is the Most Admired Database in Stack
-Overflow 2023 Survey.''} 2023.
-\url{https://www.enterprisedb.com/blog/postgres-most-admired-database-in-stack-overflow-2023}.
+ENTERPRISEDB. \textbf{Postgres is the Most Admired Database in Stack
+Overflow 2023 Survey}. Disponível em:
+\textless{}\url{https://www.enterprisedb.com/blog/postgres-most-admired-database-in-stack-overflow-2023}\textgreater.
+Acesso em: 12 abr. 2025a.
 
 \bibitem[\citeproctext]{ref-HuggingFace2024}
-Face, Hugging. 2024. {``JavaScript Libraries for ML Integration.''}
-\url{https://huggingface.co/docs/huggingface.js/}.
+FACE, H. \textbf{JavaScript Libraries for ML Integration}.
+\url{https://huggingface.co/docs/huggingface.js/}, 2024.
 
 \bibitem[\citeproctext]{ref-fast2017irisconversationalagentcomplex}
-Fast, Ethan, Binbin Chen, Julia Mendelsohn, Jonathan Bassen, and Michael
-Bernstein. 2017. {``Iris: A Conversational Agent for Complex Tasks.''}
-\url{https://arxiv.org/abs/1707.05015}.
+FAST, E. et al. \textbf{Iris: A Conversational Agent for Complex
+Tasks}., 2017. Disponível em:
+\textless{}\url{https://arxiv.org/abs/1707.05015}\textgreater{}
 
 \bibitem[\citeproctext]{ref-Guo2024Doppelganger}
-Guo, Siqi, Minsoo Choi, Dominic Kao, and Christos Mousas. 2024.
-{``Collaborating with My Doppelgänger: The Effects of Self-Similar
-Appearance and Voice of a Virtual Character During a Jigsaw Puzzle
-Co-Solving Task.''} In \emph{Proceedings of the ACM on Computer Graphics
-and Interactive Techniques}. Vol. 7. 1.
-\url{https://www.researchgate.net/publication/335223260_The_Effects_of_Continuous_Conversation_and_Task_Complexity_on_Usability_of_an_AI-Based_Conversational_Agent_in_Smart_Home_Environments}.
+GUO, S. et al. \textbf{Collaborating with my Doppelgänger: The Effects
+of Self-similar Appearance and Voice of a Virtual Character during a
+Jigsaw Puzzle Co-solving Task}. Proceedings of the ACM on Computer
+Graphics and Interactive Techniques. \textbf{Anais}...2024. Disponível
+em:
+\textless{}\url{https://www.researchgate.net/publication/335223260_The_Effects_of_Continuous_Conversation_and_Task_Complexity_on_Usability_of_an_AI-Based_Conversational_Agent_in_Smart_Home_Environments}\textgreater{}
 
 \bibitem[\citeproctext]{ref-IBM2023WatsonxSDK}
-IBM. 2023. {``IBM Generative AI Node.js SDK.''}
-\url{https://github.com/IBM/ibm-generative-ai-node-sdk}.
+IBM. \textbf{IBM Generative AI Node.js SDK}.
+\url{https://github.com/IBM/ibm-generative-ai-node-sdk}, 2023.
 
 \bibitem[\citeproctext]{ref-inie2025summon}
-Inie, Nanna, Jonathan Stray, and Leon Derczynski. 2025. {``Summon a
-Demon and Bind It: A Grounded Theory of LLM Red Teaming.''} \emph{PloS
-One} 20 (1): e0314658.
-\url{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314658}.
+INIE, N.; STRAY, J.; DERCZYNSKI, L.
+\href{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314658}{Summon
+a demon and bind it: A grounded theory of LLM red teaming}. \textbf{PloS
+one}, v. 20, n. 1, p. e0314658, 2025.
 
 \bibitem[\citeproctext]{ref-john2025owasp}
-John, Sotiropoulos, Rosario Ron F Del, Kokuykin Evgeniy, Oakley Helen,
-Habler Idan, Underkoffler Kayla, Huang Ken, et al. 2025. {``OWASP Top 10
-for LLM Apps \& Gen AI Agentic Security Initiative.''} PhD thesis,
-OWASP. \url{https://genai.owasp.org/llmrisk/llm01-prompt-injection}.
+JOHN, S. et al.
+\textbf{\href{https://genai.owasp.org/llmrisk/llm01-prompt-injection}{OWASP
+Top 10 for LLM Apps \& Gen AI Agentic Security Initiative}}. tese de
+doutorado---{[}s.l.{]} OWASP, 2025.
 
 \bibitem[\citeproctext]{ref-Kocaballi2019}
-Kocaballi, Ahmet Baki, Juan Carlos Quiroz, Dana Rezazadegan, Shlomo
-Berkovsky, Farah Magrabi, Enrico Coiera, and Liliana Laranjo. 2019.
-{``The Personalization of Conversational Agents in Health Care:
-Systematic Review.''} \emph{J Med Internet Res} 21 (11): e15360.
-\url{https://doi.org/10.2196/15360}.
+KOCABALLI, A. B. et al. \href{https://doi.org/10.2196/15360}{The
+Personalization of Conversational Agents in Health Care: Systematic
+Review}. \textbf{J Med Internet Res}, v. 21, n. 11, p. e15360, 7 nov.
+2019.
 
 \bibitem[\citeproctext]{ref-Lister2020AccessibleCU}
-Lister, Kate, Tim Coughlan, Francisco Iniesto, Nick Freear, and Peter
-Devine. 2020. {``Accessible Conversational User Interfaces:
-Considerations for Design.''} \emph{Proceedings of the 17th
-International Web for All Conference}.
-\url{https://api.semanticscholar.org/CorpusID:218539971}.
+LISTER, K. et al.
+\href{https://api.semanticscholar.org/CorpusID:218539971}{Accessible
+conversational user interfaces: considerations for design}.
+\textbf{Proceedings of the 17th International Web for All Conference},
+2020.
 
 \bibitem[\citeproctext]{ref-MCPDocs2024}
-Model Context Protocol Contributors. 2024. {``{Model Context Protocol
-Documentation - Introduction}.''} Online Documentation.
-\url{https://modelcontextprotocol.io/introduction}.
+MODEL CONTEXT PROTOCOL CONTRIBUTORS. \textbf{{Model Context Protocol
+Documentation - Introduction}}. Online Documentation, 2024. Disponível
+em:
+\textless{}\url{https://modelcontextprotocol.io/introduction}\textgreater{}
 
 \bibitem[\citeproctext]{ref-mcp2025spec}
-Model Context Protocol Team. 2025. {``Model Context Protocol
-Specification.''} Model Context Protocol.
-\url{https://modelcontextprotocol.io/specification/2025-03-26/index}.
+MODEL CONTEXT PROTOCOL TEAM. \textbf{Model Context Protocol
+Specification}. {[}s.l.{]} Model Context Protocol, 26 mar. 2025.
+Disponível em:
+\textless{}\url{https://modelcontextprotocol.io/specification/2025-03-26/index}\textgreater.
+Acesso em: 12 abr. 2025.
 
 \bibitem[\citeproctext]{ref-Nodejs2024Docs}
-Node.js. 2024. {``Streams, Pipelines and WebSocket Support.''}
-\url{https://nodejs.org/api/stream.html}.
+NODE.JS. \textbf{Streams, Pipelines and WebSocket support}.
+\url{https://nodejs.org/api/stream.html}, 2024.
 
 \bibitem[\citeproctext]{ref-openai2022instructgpt}
-OpenAI. 2022. {``Aligning Language Models to Follow Instructions.''}
-OpenAI. \url{https://openai.com/index/instruction-following/}.
-
-\bibitem[\citeproctext]{ref-openai2023functioncalling}
----------. 2023a. {``Function Calling and Other API Updates.''} 2023.
-\url{https://openai.com/index/function-calling-and-other-api-updates/}.
+OPENAI. \textbf{Aligning Language Models to Follow Instructions}.
+{[}s.l.{]} OpenAI, 27 jan. 2022. Disponível em:
+\textless{}\url{https://openai.com/index/instruction-following/}\textgreater.
+Acesso em: 12 abr. 2025.
 
 \bibitem[\citeproctext]{ref-openai2023gpt4}
----------. 2023b. {``GPT-4 Research.''} OpenAI.
-\url{https://openai.com/index/gpt-4-research/}.
+OPENAI. \textbf{GPT-4 Research}. {[}s.l.{]} OpenAI, a2023. Disponível
+em:
+\textless{}\url{https://openai.com/index/gpt-4-research/}\textgreater.
+
+\bibitem[\citeproctext]{ref-openai2023functioncalling}
+OPENAI. \textbf{Function Calling and Other API Updates}. Disponível em:
+\textless{}\url{https://openai.com/index/function-calling-and-other-api-updates/}\textgreater.
+Acesso em: 12 abr. 2025b.
 
 \bibitem[\citeproctext]{ref-OpenAI2023}
-OpenAI. 2023c. {``{ChatGPT plugins}.''} OpenAI Product Blog.
-\url{https://openai.com/blog/chatgpt-plugins}.
+OPENAI. \textbf{{ChatGPT plugins}}. OpenAI Product Blog, mar. c2023.
+Disponível em:
+\textless{}\url{https://openai.com/blog/chatgpt-plugins}\textgreater{}
 
 \bibitem[\citeproctext]{ref-OpenAPIInitiative2023}
-OpenAPI Initiative. 2023. {``{OpenAPI Specification - Getting
-Started}.''} OpenAPI Documentation (openapis.org).
-\url{https://learn.openapis.org/docs/getting-started}.
+OPENAPI INITIATIVE. \textbf{{OpenAPI Specification - Getting Started}}.
+OpenAPI Documentation (openapis.org), 2023. Disponível em:
+\textless{}\url{https://learn.openapis.org/docs/getting-started}\textgreater{}
 
 \bibitem[\citeproctext]{ref-oprea2023adversarial}
-Oprea, Alina, and Apostol Vassilev. 2023. {``Adversarial Machine
-Learning: A Taxonomy and Terminology of Attacks and Mitigations.''}
-National Institute of Standards; Technology.
-\url{https://csrc.nist.gov/pubs/ai/100/2/e2023/final}.
+OPREA, A.; VASSILEV, A. \textbf{Adversarial machine learning: A taxonomy
+and terminology of attacks and mitigations}. {[}s.l.{]} National
+Institute of Standards; Technology, 2023. Disponível em:
+\textless{}\url{https://csrc.nist.gov/pubs/ai/100/2/e2023/final}\textgreater.
 
 \bibitem[\citeproctext]{ref-RAPP201849}
-Rapp, Amon, Federica Cena, Romina Castaldo, Roberto Keller, and Maurizio
-Tirassa. 2018. {``Designing Technology for Spatial Needs: Routines,
-Control and Social Competences of People with Autism.''}
-\emph{International Journal of Human-Computer Studies} 120: 49--65.
-https://doi.org/\url{https://doi.org/10.1016/j.ijhcs.2018.07.005}.
+RAPP, A. et al.
+\href{https://doi.org/10.1016/j.ijhcs.2018.07.005}{Designing technology
+for spatial needs: Routines, control and social competences of people
+with autism}. \textbf{International Journal of Human-Computer Studies},
+v. 120, p. 49--65, 2018.
 
 \bibitem[\citeproctext]{ref-ribeiro2020beyond}
-Ribeiro, Marco Tulio, Tongshuang Wu, Carlos Guestrin, and Sameer Singh.
-2020. {``Beyond Accuracy: Behavioral Testing of NLP Models with
-CheckList.''} \emph{arXiv Preprint arXiv:2005.04118}.
-\url{https://arxiv.org/abs/2005.04118}.
+RIBEIRO, M. T. et al. \href{https://arxiv.org/abs/2005.04118}{Beyond
+accuracy: Behavioral testing of NLP models with CheckList}.
+\textbf{arXiv preprint arXiv:2005.04118}, 2020.
 
 \bibitem[\citeproctext]{ref-eversql2023orms}
-Team, EverSQL. 2023. {``Best ORM for Node.js in 2023: A Comprehensive
-Comparison.''} 2023.
-\url{https://www.eversql.com/best-orm-for-node-js/}.
+TEAM, E. \textbf{Best ORM for Node.js in 2023: A Comprehensive
+Comparison}. Disponível em:
+\textless{}\url{https://www.eversql.com/best-orm-for-node-js/}\textgreater.
+Acesso em: 12 abr. 2025.
 
 \bibitem[\citeproctext]{ref-sequelize2024}
-Team, Sequelize. 2024. {``Sequelize: A Modern TypeScript and Node.js ORM
-for Postgres, MySQL, MariaDB, SQLite and SQL Server.''}
-\url{https://github.com/sequelize/sequelize}.
+TEAM, S. \textbf{Sequelize: A Modern TypeScript and Node.js ORM for
+Postgres, MySQL, MariaDB, SQLite and SQL Server}., 2024. Disponível em:
+\textless{}\url{https://github.com/sequelize/sequelize}\textgreater.
+Acesso em: 12 abr. 2025
 
 \bibitem[\citeproctext]{ref-Postman2023}
-The Postman Team. 2023. {``{What is OpenAPI?}''} Postman Blog.
-\url{https://blog.postman.com/what-is-openapi/}.
+THE POSTMAN TEAM. \textbf{{What is OpenAPI?}} Postman Blog, ago. 2023.
+Disponível em:
+\textless{}\url{https://blog.postman.com/what-is-openapi/}\textgreater{}
 
 \bibitem[\citeproctext]{ref-wei2023chainofthoughtpromptingelicitsreasoning}
-Wei, Jason, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter,
-Fei Xia, Ed Chi, Quoc Le, and Denny Zhou. 2023. {``Chain-of-Thought
-Prompting Elicits Reasoning in Large Language Models.''}
-\url{https://arxiv.org/abs/2201.11903}.
+WEI, J. et al. \textbf{Chain-of-Thought Prompting Elicits Reasoning in
+Large Language Models}., 2023. Disponível em:
+\textless{}\url{https://arxiv.org/abs/2201.11903}\textgreater{}
 
 \bibitem[\citeproctext]{ref-wu2023defending}
-Wu, Fangzhao, Yueqi Xie, Jingwei Yi, Jiawei Shao, Justin Curl, Lingjuan
-Lyu, Qifeng Chen, and Xing Xie. 2023. {``Defending Chatgpt Against
-Jailbreak Attack via Self-Reminder.''}
-\url{https://www.researchsquare.com/article/rs-2873090/v1}.
+WU, F. et al.
+\href{https://www.researchsquare.com/article/rs-2873090/v1}{Defending
+chatgpt against jailbreak attack via self-reminder}. 2023.
 
 \bibitem[\citeproctext]{ref-yao2023treethoughtsdeliberateproblem}
-Yao, Shunyu, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas L. Griffiths,
-Yuan Cao, and Karthik Narasimhan. 2023. {``Tree of Thoughts: Deliberate
-Problem Solving with Large Language Models.''}
-\url{https://arxiv.org/abs/2305.10601}.
+YAO, S. et al. \textbf{Tree of Thoughts: Deliberate Problem Solving with
+Large Language Models}., 2023. Disponível em:
+\textless{}\url{https://arxiv.org/abs/2305.10601}\textgreater{}
 
 \bibitem[\citeproctext]{ref-Zhu2025DyT}
-Zhu, Jiachen, Xinlei Chen, Kaiming He, Yann LeCun, and Zhuang Liu. 2025.
-{``Transformers Without Normalization.''} In \emph{Proceedings of the
-IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}.
+ZHU, J. et al. \textbf{Transformers without Normalization}. Proceedings
+of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
+(CVPR). \textbf{Anais}...2025.
 
 \end{CSLReferences}
 

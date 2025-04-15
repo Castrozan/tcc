@@ -21,9 +21,11 @@ all : $(HTML) $(PDF) $(DOCX) $(TEX)
 	@echo --- Generating PDF ---
 	@pandoc -V papersize:a4 --pdf-engine=xelatex --citeproc --csl=style/abnt.csl --bibliography=references.bib --resource-path=.:./images -o $@ $<
 
+# TODO: Add update the template.docx with actual satc template
+# https://chatgpt.com/share/67fda703-8228-800e-8110-cd975901eb7b
 %.docx : %.md
 	@echo --- Generating DOCX ---
-	@pandoc --citeproc --csl=style/abnt.csl --bibliography=references.bib -o $@ $<
+	@pandoc --citeproc --csl=style/abnt.csl --bibliography=references.bib --reference-doc=style/template.docx -o $@ $<
 
 %.tex : %.md
 	@echo --- Generating TEX ---

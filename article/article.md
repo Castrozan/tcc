@@ -5,7 +5,7 @@ title: "**AGENTE CONVERSACIONAL PARA INTERAÇÃO APRIMORADA EM SISTEMAS**"
 ### Artigo em produção - Checklist de produção
 
 - [ ] Edição do artigo
-  - [ ] Aplicar ABNT
+  - [x] Aplicar ABNT
   - [ ] Aplicar formatação da SATC
 - [ ] Escrita
   - [ ] Resumo
@@ -14,11 +14,13 @@ title: "**AGENTE CONVERSACIONAL PARA INTERAÇÃO APRIMORADA EM SISTEMAS**"
   - [x] Introdução (preciso de umas referências)
   - [ ] Material e métodos
     - [x] Abordagem geral
-    - [ ] Procedimento experimental de cada alternativa
+    - [x] Materiais
+    - [ ] Métodos
+      - [ ] Procedimento experimental de cada alternativa
   - [ ] Resultados e discussão
   - [ ] Considerações finais
   - [ ] Referências
-    - [ ] Formatar ABNT
+    - [x] Formatar ABNT
 
 **Lucas de Castro Zanoni**[^1]
 

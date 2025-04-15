@@ -500,15 +500,15 @@ ferramentas específicas para cada uma:
   SQL bruto quando necessário, equilibrando segurança com flexibilidade
   e desempenho (TEAM, 2023).
 \item
-  \textbf{OpenAPI para Integração via API/Swagger:} foi selecionado
-  devido à sua ampla adoção como padrão da indústria para definição de
-  interfaces RESTful, sendo reconhecido por facilitar a documentação
-  consistente e interoperabilidade entre sistemas. Sua especificação
-  permite descrever de maneira clara e estruturada os contratos das
-  APIs, incluindo esquemas de autenticação como OAuth e chaves de API,
-  essenciais para declarar uniformemente os requisitos de segurança das
-  interfaces dos agentes conversacionais (OPENAPI INITIATIVE, 2023; THE
-  POSTMAN TEAM, 2023).
+  \textbf{OpenAPI para Integração com Swagger:} foi selecionado devido à
+  sua ampla adoção como padrão da indústria para definição de interfaces
+  RESTful, sendo reconhecido por facilitar a documentação consistente e
+  interoperabilidade entre sistemas. Sua especificação permite descrever
+  de maneira clara e estruturada os contratos das APIs, incluindo
+  esquemas de autenticação como OAuth e chaves de API, essenciais para
+  declarar uniformemente os requisitos de segurança das interfaces dos
+  agentes conversacionais (OPENAPI INITIATIVE, 2023; THE POSTMAN TEAM,
+  2023).
 \end{itemize}
 
 A relevância do OpenAPI para agentes baseados em LLM reside na
@@ -668,21 +668,21 @@ diferenças observadas entre as abordagens sejam resultado direto das
 suas características de implementação, e não de variações na experiência
 do usuário ou na forma de coleta de dados.
 
-\subsubsection{2.2.2 Conexão Direta com Banco de
-Dados}\label{conexuxe3o-direta-com-banco-de-dados}
+\subsubsection{2.2.2 Integração via Plugin
+ORM}\label{integrauxe7uxe3o-via-plugin-orm}
 
-A primeira abordagem investigada consiste na implementação de uma
-conexão direta entre o LLM e o banco de dados do sistema alvo. Esta
-seção detalha a arquitetura, implementação e considerações práticas
-desta solução.
+A primeira abordagem investigada consiste na implementação de um plugin
+ORM que permite ao LLM interagir com o sistema através das camadas de
+abstração do ORM. Esta seção detalha a arquitetura, implementação e
+considerações práticas desta solução.
 
 \paragraph{2.2.2.1 Arquitetura da
 Solução}\label{arquitetura-da-soluuxe7uxe3o}
 
 A arquitetura proposta para esta abordagem é composta por quatro
-componentes principais: interface do usuário, serviço LLM, conector de
-banco de dados e o banco de dados propriamente dito. A Figura X ilustra
-a arquitetura e o fluxo de comunicação entre estes componentes.
+componentes principais: interface do usuário, serviço LLM, plugin ORM e
+o banco de dados. A Figura X ilustra a arquitetura e o fluxo de
+comunicação entre estes componentes.
 
 \begin{figure}
 \centering
@@ -692,27 +692,29 @@ a arquitetura e o fluxo de comunicação entre estes componentes.
 
 O fluxo de comunicação se inicia com uma solicitação do usuário em
 linguagem natural, que é processada pelo LLM. O modelo, tendo
-conhecimento prévio do esquema do banco de dados, gera consultas SQL
-apropriadas. Estas consultas são executadas no banco de dados, e os
-resultados são novamente interpretados pelo LLM para fornecer uma
-resposta contextualizada ao usuário.
+conhecimento prévio dos modelos e relacionamentos definidos no ORM, gera
+instruções de consulta utilizando a API do ORM. Estas instruções são
+executadas através do plugin, que utiliza o ORM para realizar as
+operações no banco de dados de forma segura e otimizada.
 
-Em casos mais complexos, o sistema pode realizar múltiplas iterações de
-consultas, com o LLM analisando progressivamente os dados até obter
-todas as informações necessárias para uma resposta completa.
+Em casos mais complexos, o sistema pode realizar múltiplas operações
+encadeadas, aproveitando os relacionamentos e métodos definidos nos
+modelos do ORM para obter dados relacionados e realizar análises mais
+complexas.
 
 \paragraph{2.2.2.2 Componentes de
 Segurança}\label{componentes-de-seguranuxe7a}
 
-A implementação inclui camadas de segurança essenciais: - Sanitização de
-consultas SQL - Controle de acesso em nível de campo - Mascaramento de
-dados sensíveis - Validação de permissões de usuário
+A implementação inclui camadas de segurança essenciais: - Validação
+automática de tipos pelo ORM - Prevenção de SQL injection - Controle de
+acesso em nível de modelo - Sanitização de dados de entrada - Validação
+de permissões de usuário
 
 \paragraph{2.2.2.3 Estrutura de Metadados}\label{estrutura-de-metadados}
 
-A configuração do sistema é gerenciada através de uma estrutura de
-metadados que define: - Esquema do banco de dados - Regras de acesso -
-Contexto de negócio - Restrições de consulta
+A configuração do sistema é gerenciada através dos modelos do ORM: -
+Definições de modelos e relacionamentos - Validações e restrições de
+campo - Hooks e middlewares - Configurações de cache
 
 \paragraph{2.2.2.4 Implementação da Prova de
 Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito}
@@ -728,17 +730,17 @@ desenvolvimento. Os principais componentes tecnológicos incluem:
 \item
   LLM: GPT-3 via API OpenAI
 \item
-  Banco de Dados: PostgreSQL
-\item
   ORM: Sequelize
+\item
+  Banco de Dados: PostgreSQL
 \end{itemize}
 
 \paragraph{2.2.2.5 Desenvolvimento do
-Conector}\label{desenvolvimento-do-conector}
+Plugin}\label{desenvolvimento-do-plugin}
 
-O conector de banco de dados é implementado utilizando o Sequelize ORM,
-que facilita: - Introspection do esquema do banco - Construção dinâmica
-de queries - Gerenciamento de conexões - Validação de dados
+O plugin ORM implementa: - Interface de comunicação com o LLM -
+Interpretação de intenções para queries - Gerenciamento de transações -
+Sistema de cache - Logging e monitoramento
 
 \paragraph{2.2.2.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos}
 
@@ -747,14 +749,13 @@ A implementação técnica foca em três aspectos principais:
 \paragraph{2.2.2.7 Integração com LLM}\label{integrauxe7uxe3o-com-llm}
 
 O sistema utiliza técnicas avançadas de prompt engineering para: -
-Geração precisa de SQL - Manutenção de contexto do esquema - Otimização
-de consultas - Interpretação de resultados
+Interpretação de modelos do ORM - Geração de queries complexas -
+Otimização de consultas - Gerenciamento de relacionamentos
 
 \paragraph{2.2.2.8 Tratamento de Erros}\label{tratamento-de-erros}
 
-O sistema implementa estratégias robustas para: - Erros de execução de
-queries - Falhas de interpretação do LLM - Timeout de conexões - Dados
-inconsistentes
+O sistema implementa estratégias robustas para: - Validação de tipos -
+Erros de constraint - Timeout de transações - Conflitos de concorrência
 
 \paragraph{2.2.2.9 Avaliação e
 Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas}
@@ -768,9 +769,11 @@ A avaliação da solução é realizada considerando:
 \item
   Tempo de resposta médio
 \item
-  Latência de processamento LLM
+  Eficiência de queries geradas
 \item
-  Eficiência de queries
+  Uso de cache
+\item
+  Overhead do ORM
 \end{itemize}
 
 \paragraph{2.2.2.11 Segurança}\label{seguranuxe7a}
@@ -778,11 +781,13 @@ A avaliação da solução é realizada considerando:
 \begin{itemize}
 \tightlist
 \item
-  Efetividade do controle de acesso
+  Validação de tipos
 \item
-  Prevenção de injeção SQL
+  Prevenção de injeção
 \item
-  Conformidade com práticas de privacidade
+  Controle de acesso
+\item
+  Auditoria de operações
 \end{itemize}
 
 \paragraph{2.2.2.12 Custos Operacionais}\label{custos-operacionais}
@@ -792,9 +797,11 @@ A avaliação da solução é realizada considerando:
 \item
   Consumo de API do LLM
 \item
-  Recursos de banco de dados
+  Overhead de memória do ORM
 \item
-  Infraestrutura necessária
+  Custos de manutenção
+\item
+  Recursos de infraestrutura
 \end{itemize}
 
 \paragraph{2.2.2.13 Considerações
@@ -807,11 +814,13 @@ A implementação revelou diversos aspectos práticos importantes:
 \begin{itemize}
 \tightlist
 \item
-  Complexidade de queries dinâmicas
+  Complexidade dos modelos
 \item
-  Limitações do LLM
+  Mapeamento de relacionamentos
 \item
-  Gestão de estados e contexto
+  Performance em queries complexas
+\item
+  Limitações do ORM
 \end{itemize}
 
 \paragraph{2.2.2.15 Infraestrutura}\label{infraestrutura}
@@ -819,11 +828,13 @@ A implementação revelou diversos aspectos práticos importantes:
 \begin{itemize}
 \tightlist
 \item
-  Requisitos de escalabilidade
+  Requisitos de memória
 \item
-  Arquitetura de deployment
+  Configuração de cache
 \item
-  Monitoramento e logging
+  Monitoramento de queries
+\item
+  Backup e recuperação
 \end{itemize}
 
 \paragraph{2.2.2.16 Manutenção}\label{manutenuxe7uxe3o}
@@ -831,12 +842,597 @@ A implementação revelou diversos aspectos práticos importantes:
 \begin{itemize}
 \tightlist
 \item
-  Atualizações de esquema
+  Atualizações de schema
+\item
+  Migrações de banco
 \item
   Versionamento de modelos
 \item
-  Monitoramento de performance
+  Documentação do ORM
 \end{itemize}
+
+\subsubsection{2.2.3 Integração
+OpenAPI-MCP}\label{integrauxe7uxe3o-openapi-mcp}
+
+A terceira abordagem implementa uma solução unificada que combina a
+especificação OpenAPI com o Model Context Protocol (MCP). Esta seção
+detalha a arquitetura, implementação e considerações práticas desta
+solução integrada.
+
+\paragraph{2.2.3.1 Arquitetura da
+Solução}\label{arquitetura-da-soluuxe7uxe3o-1}
+
+A arquitetura proposta para esta abordagem implementa um servidor MCP
+que é gerado a partir de uma definição OpenAPI e que pode ser integrado
+a qualquer sistema que suporte o protocolo MCP. Dessa forma, a
+integração é feita através de uma definição OpenAPI, que é a forma
+padrão de se integrar sistemas através de APIs.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/openapi-mcp/openapi-mcp-diagram-approach.jpg}}
+\caption{OpenAPI-MCP - Diagrama da Arquitetura}
+\end{figure}
+
+A arquitetura desta abordagem é composta por três camadas principais:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Camada de Definição API}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Especificações OpenAPI dos sistemas alvo
+  \item
+    Definições de endpoints e operações
+  \item
+    Esquemas de dados e validação
+  \item
+    Configurações de segurança e autenticação
+  \end{itemize}
+\item
+  \textbf{Camada de Geração MCP}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Gerador automático de servidores MCP
+  \item
+    Mapeamento OpenAPI para MCP
+  \item
+    Geradores de código
+  \end{itemize}
+\item
+  \textbf{Camada de Runtime Cliente MCP}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Servidor MCP gerado
+  \item
+    Cliente MCP (LLM)
+  \item
+    Proxy de requisições REST
+  \item
+    Sistema de cache e otimização
+  \end{itemize}
+\end{enumerate}
+
+\paragraph{2.2.3.2 Fluxo de Operação}\label{fluxo-de-operauxe7uxe3o}
+
+O sistema opera através do seguinte fluxo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Definição das APIs via OpenAPI
+\item
+  Geração automática do servidor MCP
+\item
+  Processamento de prompts do usuário pelo LLM
+\item
+  Tradução de intenções em chamadas MCP using SSE
+\item
+  Processamento das respostas e apresentação ao usuário
+\end{enumerate}
+
+\paragraph{2.2.3.3 Componentes de
+Segurança}\label{componentes-de-seguranuxe7a-1}
+
+A implementação mantém as características de segurança de ambos os
+protocolos:
+
+\begin{itemize}
+\tightlist
+\item
+  Validação de schemas OpenAPI
+\item
+  Autenticação e gestão de permissões para uso do swagger
+\end{itemize}
+
+\paragraph{2.2.3.4 Implementação da Prova de
+Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito-1}
+
+A implementação utiliza as seguintes tecnologias:
+
+\begin{itemize}
+\tightlist
+\item
+  Node.js para o servidor de geração
+\item
+  OpenAPI Tools para parsing de especificações
+\item
+  MCP SDK para geração de servidores
+\end{itemize}
+
+\paragraph{2.2.3.5 Desenvolvimento do
+Gerador}\label{desenvolvimento-do-gerador}
+
+O gerador de servidores MCP implementa:
+
+\begin{itemize}
+\tightlist
+\item
+  Parser de especificações OpenAPI
+\item
+  Mapeamento de tipos OpenAPI para MCP
+\item
+  Geração de código Typescript
+\item
+  Templates de servidores MCP
+\item
+  Sistema de plugins para extensibilidade
+\end{itemize}
+
+\paragraph{2.2.3.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos-1}
+
+A implementação foca em três aspectos principais:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Geração de Código}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Análise estática de especificações
+  \item
+    Geração de tipos Typescript
+  \item
+    Criação de validadores
+  \item
+    Documentação automática
+  \end{itemize}
+\item
+  \textbf{Runtime}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tratamento de erros de chamadas MCP
+  \end{itemize}
+\item
+  \textbf{Integração LLM}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Prompt engineering para uso das ferramentas MCP
+  \item
+    Gerenciamento de contexto
+  \item
+    Otimização de chamadas
+  \item
+    Interpretação de respostas
+  \end{itemize}
+\end{enumerate}
+
+\paragraph{2.2.3.7 Avaliação e
+Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas-1}
+
+A avaliação considera aspectos específicos desta abordagem:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Performance}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tempo de geração de servidores
+  \item
+    Latência de chamadas MCP
+  \item
+    Eficiência de cache
+  \end{itemize}
+\item
+  \textbf{Confiabilidade}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Taxa de sucesso de geração
+  \item
+    Estabilidade do servidor
+  \item
+    Consistência das respostas
+  \end{itemize}
+\item
+  \textbf{Manutenibilidade}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Facilidade de atualização
+  \item
+    Compatibilidade com versões
+  \item
+    Clareza do código gerado
+  \item
+    Documentação automática
+  \end{itemize}
+\end{enumerate}
+
+\paragraph{2.2.3.8 Considerações
+Práticas}\label{considerauxe7uxf5es-pruxe1ticas-1}
+
+A implementação revelou aspectos importantes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Desafios}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Complexidade de mapeamento de tipos
+  \item
+    Manutenção de estado entre chamadas
+  \item
+    Versionamento de APIs
+  \item
+    Performance em grande escala
+  \end{itemize}
+\item
+  \textbf{Infraestrutura}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Requisitos de deployment
+  \item
+    Escalabilidade horizontal
+  \item
+    Monitoramento distribuído
+  \item
+    Backup e recuperação
+  \end{itemize}
+\item
+  \textbf{Manutenção}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Atualizações de especificações
+  \item
+    Regeneração de servidores
+  \item
+    Migração de dados
+  \item
+    Gestão de dependências
+  \end{itemize}
+\end{enumerate}
+
+\subsubsection{2.2.4 Integração via conexão direta com o banco de
+dados}\label{integrauxe7uxe3o-via-conexuxe3o-direta-com-o-banco-de-dados}
+
+A terceira abordagem explora a integração direta entre o LLM e o banco
+de dados, minimizando camadas intermediárias de abstração. Esta
+abordagem oferece máximo controle e performance, mas requer cuidados
+especiais com segurança e validação. Esta seção detalha a arquitetura,
+implementação e considerações práticas desta solução.
+
+\paragraph{2.2.4.1 Arquitetura da
+Solução}\label{arquitetura-da-soluuxe7uxe3o-2}
+
+A arquitetura desta abordagem é intencionalmente minimalista, composta
+por três componentes principais:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Camada de Interface}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Cadastro das conexões com o banco de dados (para que a aplicação
+    possa obter os schemas e executar queries)
+  \item
+    Serviço LLM (para gerar queries, interpretar os dados e gerar
+    respostas)
+  \end{itemize}
+\item
+  \textbf{Camada de Segurança}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sistema de validação de queries (para sanitizar os dados e evitar
+    SQL injection)
+  \end{itemize}
+\item
+  \textbf{Camada de Dados}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Gerenciamento de conexões com o banco de dados (em caso de múltiplos
+    databases, a aplicação deve integrar todos e possibilitar que o LLM
+    escolha qual usar)
+  \item
+    Cache de queries
+  \end{itemize}
+\end{enumerate}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/db/db-diagram-approach.jpg}}
+\caption{DB - Diagrama da Arquitetura}
+\end{figure}
+
+\paragraph{2.2.4.2 Fluxo de Operação}\label{fluxo-de-operauxe7uxe3o-1}
+
+O sistema opera através de um fluxo direto:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Recebimento do prompt do usuário
+\item
+  Análise de intenção pelo LLM
+\item
+  Geração de query SQL
+\item
+  Validação e sanitização
+\item
+  Execução direta no banco
+\item
+  Processamento dos resultados
+\item
+  Formatação da resposta
+\end{enumerate}
+
+\paragraph{2.2.4.3 Componentes de
+Segurança}\label{componentes-de-seguranuxe7a-2}
+
+Dado o acesso direto ao banco, a segurança é crítica:
+
+\begin{itemize}
+\tightlist
+\item
+  Sistema robusto de sanitização SQL
+\item
+  Análise estática de queries
+\item
+  Validação de tipos de dados
+\item
+  Limites de complexidade de query
+\item
+  Timeouts configuráveis
+\end{itemize}
+
+\paragraph{2.2.4.4 Implementação da Prova de
+Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito-2}
+
+A implementação utiliza tecnologias focadas em performance:
+
+\begin{itemize}
+\tightlist
+\item
+  Backend: Node.js
+\item
+  LLM: GPT-3 via API OpenAI
+\item
+  Banco de Dados: PostgreSQL
+\item
+  Driver: node-postgres
+\item
+  Sistema de Cache: Redis
+\end{itemize}
+
+\paragraph{2.2.4.5 Desenvolvimento do
+Conector}\label{desenvolvimento-do-conector}
+
+O conector de banco de dados implementa:
+
+\begin{itemize}
+\tightlist
+\item
+  Pool de conexões otimizado
+\item
+  Sistema de retry inteligente
+\item
+  Sanitização de queries
+\item
+  Cache adaptativo
+\item
+  Logging detalhado
+\item
+  Métricas em tempo real
+\end{itemize}
+
+\paragraph{2.2.4.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos-2}
+
+A implementação foca em três aspectos críticos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Geração de SQL}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Templates de queries otimizadas
+  \item
+    Análise de plano de execução
+  \item
+    Otimização automática
+  \item
+    Validação sintática
+  \end{itemize}
+\item
+  \textbf{Performance}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Connection pooling
+  \item
+    Query caching
+  \item
+    Bulk operations
+  \item
+    Índices automáticos
+  \end{itemize}
+\item
+  \textbf{Segurança}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Análise de injeção SQL
+  \item
+    Validação de schemas
+  \item
+    Rate limiting
+  \item
+    Auditoria de acessos
+  \end{itemize}
+\end{enumerate}
+
+\paragraph{2.2.4.7 Avaliação e
+Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas-2}
+
+A avaliação considera aspectos específicos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Performance}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Latência de queries
+  \item
+    Throughput do sistema
+  \item
+    Uso de recursos
+  \item
+    Hit rate do cache
+  \end{itemize}
+\item
+  \textbf{Segurança}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Taxa de detecção de injeção
+  \item
+    Cobertura de validação
+  \item
+    Eficácia do controle de acesso
+  \item
+    Precisão da auditoria
+  \end{itemize}
+\item
+  \textbf{Confiabilidade}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Taxa de erros
+  \item
+    Tempo de recuperação
+  \item
+    Consistência dos dados
+  \item
+    Disponibilidade do sistema
+  \end{itemize}
+\end{enumerate}
+
+\paragraph{2.2.4.8 Considerações
+Práticas}\label{considerauxe7uxf5es-pruxe1ticas-2}
+
+A implementação revelou aspectos importantes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Desafios}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Complexidade de validação
+  \item
+    Gestão de conexões
+  \item
+    Otimização de queries
+  \item
+    Segurança robusta
+  \end{itemize}
+\item
+  \textbf{Infraestrutura}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Alta disponibilidade
+  \item
+    Backup em tempo real
+  \item
+    Monitoramento intensivo
+  \item
+    Escalabilidade vertical
+  \end{itemize}
+\item
+  \textbf{Manutenção}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Atualizações de schema
+  \item
+    Otimização contínua
+  \item
+    Análise de logs
+  \item
+    Gestão de índices
+  \end{itemize}
+\end{enumerate}
+
+Esta abordagem, embora mais complexa em termos de segurança e
+manutenção, oferece máxima flexibilidade e performance para casos de uso
+específicos onde o controle direto sobre as operações de banco de dados
+é necessário.
 
 \section{3 RESULTADOS E DISCUSSÕES}\label{resultados-e-discussuxf5es}
 

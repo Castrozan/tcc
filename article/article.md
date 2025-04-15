@@ -212,6 +212,8 @@ Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos 
 
 ### 2.2.1 Interface Comum de Usuário
 
+<!-- TODO: add to this the necessity of a default authentication service for integration permission management.
+The app and server should have integrated the same authentication layer so it can be integrated to systems without much friction TODO: add new 2.2.1.4 section to talk about this layer of authentication that should be developed so approaches don't need to handle this -->
 A interface do usuário consiste em uma aplicação web de chat minimalista, desenvolvida utilizando React.js e TypeScript. Esta interface serve como ponto de entrada único para todas as abordagens de integração implementadas, garantindo consistência na experiência do usuário e na coleta de métricas.
 
 #### 2.2.1.1 Arquitetura da Interface
@@ -378,6 +380,10 @@ A terceira abordagem implementa uma solução unificada que combina a especifica
 
 #### 2.2.3.1 Arquitetura da Solução
 
+A arquitetura proposta para esta abordagem implementa um servidor MCP que é gerado a partir de uma definição OpenAPI e que pode ser integrado a qualquer sistema que suporte o protocolo MCP. Dessa forma, a integração é feita através de uma definição OpenAPI, que é a forma padrão de se integrar sistemas através de APIs.
+
+![OpenAPI-MCP - Diagrama da Arquitetura](images/openapi-mcp/openapi-mcp-diagram-approach.jpg)
+
 A arquitetura desta abordagem é composta por três camadas principais:
 
 1. **Camada de Definição API**
@@ -389,16 +395,13 @@ A arquitetura desta abordagem é composta por três camadas principais:
 2. **Camada de Geração MCP**
    - Gerador automático de servidores MCP
    - Mapeamento OpenAPI para MCP
-   - Validadores de conformidade
    - Geradores de código
 
-3. **Camada de Runtime**
+3. **Camada de Runtime Cliente MCP**
    - Servidor MCP gerado
    - Cliente MCP (LLM)
    - Proxy de requisições REST
    - Sistema de cache e otimização
-
-[INSERIR FIGURA - Diagrama da Arquitetura OpenAPI-MCP]
 
 #### 2.2.3.2 Fluxo de Operação
 
@@ -407,19 +410,15 @@ O sistema opera através do seguinte fluxo:
 1. Definição das APIs via OpenAPI
 2. Geração automática do servidor MCP
 3. Processamento de prompts do usuário pelo LLM
-4. Tradução de intenções em chamadas MCP
-5. Conversão de chamadas MCP em requisições REST
-6. Processamento das respostas e apresentação ao usuário
+4. Tradução de intenções em chamadas MCP using SSE
+5. Processamento das respostas e apresentação ao usuário
 
 #### 2.2.3.3 Componentes de Segurança
 
 A implementação mantém as características de segurança de ambos os protocolos:
 
-- Autenticação OAuth2 das APIs originais
 - Validação de schemas OpenAPI
-- Controle de acesso MCP
-- Sanitização de dados
-- Auditoria de chamadas
+- Autenticação e gestão de permissões para uso do swagger
 
 #### 2.2.3.4 Implementação da Prova de Conceito
 
@@ -428,8 +427,6 @@ A implementação utiliza as seguintes tecnologias:
 - Node.js para o servidor de geração
 - OpenAPI Tools para parsing de especificações
 - MCP SDK para geração de servidores
-- TypeScript para tipagem forte
-- Redis para cache de respostas
 
 #### 2.2.3.5 Desenvolvimento do Gerador
 
@@ -437,7 +434,7 @@ O gerador de servidores MCP implementa:
 
 - Parser de especificações OpenAPI
 - Mapeamento de tipos OpenAPI para MCP
-- Geração de código TypeScript
+- Geração de código Typescript
 - Templates de servidores MCP
 - Sistema de plugins para extensibilidade
 
@@ -447,18 +444,15 @@ A implementação foca em três aspectos principais:
 
 1. **Geração de Código**
    - Análise estática de especificações
-   - Geração de tipos TypeScript
+   - Geração de tipos Typescript
    - Criação de validadores
    - Documentação automática
 
 2. **Runtime**
-   - Gerenciamento de conexões
-   - Cache de respostas
-   - Tratamento de erros
-   - Logging e monitoramento
+   - Tratamento de erros de chamadas MCP
 
 3. **Integração LLM**
-   - Prompt engineering para uso de ferramentas
+   - Prompt engineering para uso das ferramentas MCP
    - Gerenciamento de contexto
    - Otimização de chamadas
    - Interpretação de respostas
@@ -470,12 +464,10 @@ A avaliação considera aspectos específicos desta abordagem:
 1. **Performance**
    - Tempo de geração de servidores
    - Latência de chamadas MCP
-   - Overhead de tradução
    - Eficiência de cache
 
 2. **Confiabilidade**
    - Taxa de sucesso de geração
-   - Precisão das traduções
    - Estabilidade do servidor
    - Consistência das respostas
 
@@ -507,33 +499,137 @@ A implementação revelou aspectos importantes:
    - Migração de dados
    - Gestão de dependências
 
-<!-- 
-Em métodos deve ter uma explicação minuciosa, detalhada, rigorosa e
-exata de toda ação desenvolvida no método (caminho) do trabalho de
-pesquisa. É necessário descrever quais equipamentos serão utilizados e
-todo o procedimento experimental.
+### 2.2.4 Integração via conexão direta com o banco de dados
 
-É a explicação do tipo de pesquisa, do instrumental utilizado
-(softwares, equipamentos, questionários, entrevistas, etc.), do tempo
-previsto, do laboratório, das formas de tabulação e tratamento dos
-dados, enfim, de tudo aquilo que se utilizou ou será utilizado no
-trabalho.
+A terceira abordagem explora a integração direta entre o LLM e o banco de dados, minimizando camadas intermediárias de abstração. Esta abordagem oferece máximo controle e performance, mas requer cuidados especiais com segurança e validação. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução.
 
-**A seguir regras de formatação para o desenvolvimento do artigo:**
+#### 2.2.4.1 Arquitetura da Solução
 
-É de extrema importância realizar uma pesquisa bibliográfica, do tema a
-ser estudado, baseada em periódicos nacionais e internacionais (artigos,
-anais de congressos, revistas especializadas) e também em livros, teses
-e dissertações para direcionar os procedimentos experimentais adotados e
-os resultados e discussões obtidos. Essas referências deveram ser
-citadas ao longo do artigo.
+A arquitetura desta abordagem é intencionalmente minimalista, composta por três componentes principais:
 
-É importante compreender que cópias de trechos deverão ser feitas de
-acordo com as normas da ABNT, ou seja: citações diretas e/ou indiretas,
-curtas e/ou longas. Cópia de trechos e/ou na íntegra sem os devidos
-créditos é considerado plágio (lei nº 9.610, de 19.02.98, que altera,
-atualiza e consolida a legislação sobre direitos autorais). Não se
-esqueça de nomear a seção. -->
+1. **Camada de Interface**
+   - Cadastro das conexões com o banco de dados (para que a aplicação possa obter os schemas e executar queries)
+   - Serviço LLM (para gerar queries, interpretar os dados e gerar respostas)
+
+2. **Camada de Segurança**
+   - Sistema de validação de queries (para sanitizar os dados e evitar SQL injection)
+
+3. **Camada de Dados**
+   - Gerenciamento de conexões com o banco de dados (em caso de múltiplos databases, a aplicação deve integrar todos e possibilitar que o LLM escolha qual usar)
+   - Cache de queries
+
+![DB - Diagrama da Arquitetura](images/db/db-diagram-approach.jpg)
+
+#### 2.2.4.2 Fluxo de Operação
+
+O sistema opera através de um fluxo direto:
+
+1. Recebimento do prompt do usuário
+2. Análise de intenção pelo LLM
+3. Geração de query SQL
+4. Validação e sanitização
+5. Execução direta no banco
+6. Processamento dos resultados
+7. Formatação da resposta
+
+#### 2.2.4.3 Componentes de Segurança
+
+Dado o acesso direto ao banco, a segurança é crítica:
+
+- Sistema robusto de sanitização SQL
+- Análise estática de queries
+- Validação de tipos de dados
+- Limites de complexidade de query
+- Timeouts configuráveis
+
+#### 2.2.4.4 Implementação da Prova de Conceito
+
+A implementação utiliza tecnologias focadas em performance:
+
+- Backend: Node.js
+- LLM: GPT-3 via API OpenAI
+- Banco de Dados: PostgreSQL
+- Driver: node-postgres
+- Sistema de Cache: Redis
+
+#### 2.2.4.5 Desenvolvimento do Conector
+
+O conector de banco de dados implementa:
+
+- Pool de conexões otimizado
+- Sistema de retry inteligente
+- Sanitização de queries
+- Cache adaptativo
+- Logging detalhado
+- Métricas em tempo real
+
+#### 2.2.4.6 Detalhes Técnicos
+
+A implementação foca em três aspectos críticos:
+
+1. **Geração de SQL**
+   - Templates de queries otimizadas
+   - Análise de plano de execução
+   - Otimização automática
+   - Validação sintática
+
+2. **Performance**
+   - Connection pooling
+   - Query caching
+   - Bulk operations
+   - Índices automáticos
+
+3. **Segurança**
+   - Análise de injeção SQL
+   - Validação de schemas
+   - Rate limiting
+   - Auditoria de acessos
+
+#### 2.2.4.7 Avaliação e Métricas
+
+A avaliação considera aspectos específicos:
+
+1. **Performance**
+   - Latência de queries
+   - Throughput do sistema
+   - Uso de recursos
+   - Hit rate do cache
+
+2. **Segurança**
+   - Taxa de detecção de injeção
+   - Cobertura de validação
+   - Eficácia do controle de acesso
+   - Precisão da auditoria
+
+3. **Confiabilidade**
+   - Taxa de erros
+   - Tempo de recuperação
+   - Consistência dos dados
+   - Disponibilidade do sistema
+
+#### 2.2.4.8 Considerações Práticas
+
+A implementação revelou aspectos importantes:
+
+1. **Desafios**
+   - Complexidade de validação
+   - Gestão de conexões
+   - Otimização de queries
+   - Segurança robusta
+
+2. **Infraestrutura**
+   - Alta disponibilidade
+   - Backup em tempo real
+   - Monitoramento intensivo
+   - Escalabilidade vertical
+
+3. **Manutenção**
+   - Atualizações de schema
+   - Otimização contínua
+   - Análise de logs
+   - Gestão de índices
+
+Esta abordagem, embora mais complexa em termos de segurança e manutenção, oferece máxima flexibilidade e performance para casos de uso específicos onde o controle direto sobre as operações de banco de dados é necessário.
 
 # 3 RESULTADOS E DISCUSSÕES
 

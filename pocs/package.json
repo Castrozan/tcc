@@ -1,0 +1,59 @@
+{
+  "name": "pocs",
+  "version": "1.0.0",
+  "description": "pocs",
+  "engines": {
+    "npm": ">=10.0.0",
+    "node": ">=22.0.0"
+  },
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "NODE_ENV=production node dist/server.js",
+    "build": "tsc",
+    "dev": "NODE_ENV=development tsx watch src/server.ts",
+    "test": "NODE_ENV=test jest --bail",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --bail --watchAll",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\""
+  },
+  "author": {
+    "name": "Lucas Zanoni",
+    "email": "castro.lucas290@gmail.com",
+    "url": "https://github.com/Castrozan"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-http-proxy": "^2.1.1",
+    "express-validator": "^7.2.1",
+    "redis": "^4.7.0",
+    "@modelcontextprotocol/sdk": "latest",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/express": "^5.0.0",
+    "@types/express-http-proxy": "^1.6.6",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "jest": "^29.7.0",
+    "prettier": "^3.4.2",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.21.0"
+  }
+}

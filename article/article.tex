@@ -107,16 +107,27 @@ SISTEMAS}}
 produção}\label{artigo-em-produuxe7uxe3o---checklist-de-produuxe7uxe3o}
 
 \begin{itemize}
-\tightlist
 \item[$\square$]
   Edição do artigo
 
   \begin{itemize}
   \tightlist
-  \item[$\boxtimes$]
-    Aplicar ABNT
   \item[$\square$]
     Aplicar formatação da SATC
+
+    \begin{itemize}
+    \tightlist
+    \item[$\square$]
+      Definir o template do .docx com o Word
+    \end{itemize}
+  \item[$\square$]
+    Referências
+
+    \begin{itemize}
+    \tightlist
+    \item[$\boxtimes$]
+      Formatação ABNT
+    \end{itemize}
   \end{itemize}
 \item[$\square$]
   Escrita
@@ -124,46 +135,80 @@ produção}\label{artigo-em-produuxe7uxe3o---checklist-de-produuxe7uxe3o}
   \begin{itemize}
   \tightlist
   \item[$\square$]
-    Resumo
-
-    \begin{itemize}
-    \tightlist
-    \item[$\boxtimes$]
-      Esqueleto
-    \item[$\square$]
-      Revisão após finalizar o artigo
-    \end{itemize}
+    Revisão após finalizar o artigo
   \item[$\boxtimes$]
-    Introdução (preciso de umas referências)
+    Resumo
+  \item[$\boxtimes$]
+    Introdução
   \item[$\square$]
     Material e métodos
-
-    \begin{itemize}
-    \tightlist
-    \item[$\boxtimes$]
-      Abordagem geral
-    \item[$\boxtimes$]
-      Materiais
-    \item[$\square$]
-      Métodos
-
-      \begin{itemize}
-      \tightlist
-      \item[$\square$]
-        Procedimento experimental de cada alternativa
-      \end{itemize}
-    \end{itemize}
   \item[$\square$]
     Resultados e discussão
   \item[$\square$]
     Considerações finais
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Material e métodos}\label{material-e-muxe9todos}
+
+\begin{itemize}
+\tightlist
+\item[$\boxtimes$]
+  Abordagem geral
+\item[$\boxtimes$]
+  Materiais
+\item[$\square$]
+  Métodos
+
+  \begin{itemize}
+  \tightlist
   \item[$\square$]
-    Referências
+    Plataforma de avaliação
 
     \begin{itemize}
     \tightlist
-    \item[$\boxtimes$]
-      Formatar ABNT
+    \item[$\square$]
+      Revisão de literatura
+    \item[$\square$]
+      Testes E2E
+    \item[$\square$]
+      Coleta de métricas
+    \end{itemize}
+  \item[$\square$]
+    Procedimento experimental de cada alternativa
+
+    \begin{itemize}
+    \tightlist
+    \item[$\square$]
+      ORM
+
+      \begin{itemize}
+      \tightlist
+      \item[$\square$]
+        Revisão de literatura
+      \item[$\square$]
+        Prova de conceito
+      \end{itemize}
+    \item[$\square$]
+      MCP
+
+      \begin{itemize}
+      \tightlist
+      \item[$\square$]
+        Revisão de literatura
+      \item[$\square$]
+        Prova de conceito
+      \end{itemize}
+    \item[$\square$]
+      Banco de dados
+
+      \begin{itemize}
+      \tightlist
+      \item[$\square$]
+        Revisão de literatura
+      \item[$\square$]
+        Prova de conceito
+      \end{itemize}
     \end{itemize}
   \end{itemize}
 \end{itemize}
@@ -249,19 +294,18 @@ Este trabalho adota uma abordagem metodológica estruturada em múltiplas
 etapas para investigar e avaliar diferentes métodos de integração entre
 agentes conversacionais baseados em LLMs (Large Language Models) e
 sistemas computacionais. A pesquisa se desenvolve através de uma análise
-comparativa de quatro abordagens distintas de integração, cada uma com
+comparativa de três abordagens distintas de integração, cada uma com
 suas características, vantagens e limitações específicas.
 
-O processo investigativo inicia-se com uma revisão sistemática da
-literatura sobre integrações entre LLMs e sistemas, estabelecendo uma
-base teórica sólida para a análise subsequente. Em seguida, são
-exploradas quatro abordagens principais de integração: (1) conexão
-direta com banco de dados, permitindo consultas e manipulações diretas;
-(2) integração via plugins ORM, facilitando o acesso através de camadas
-de abstração existentes; (3) integração via API/Swagger, utilizando
-interfaces padronizadas de comunicação; e (4) integração via Model
-Context Protocol (MCP), explorando um paradigma emergente de comunicação
-entre LLMs e sistemas.
+Serão exploradas três abordagens principais de integração: (1)
+integração via plugins ORM, facilitando o acesso a dados através de
+camadas de abstração existentes; (2) integração via API/Swagger com MCP,
+utilizando interfaces padronizadas de comunicação e explorando um
+paradigma emergente de comunicação entre LLMs e sistemas; (3) conexão
+direta com banco de dados, permitindo consultas e manipulações diretas.
+Para cada abordagem o processo investigativo inicia-se com uma revisão
+sistemática da literatura sobre o estado da arte de cada abordagem,
+estabelecendo uma base teórica sólida para a implementação subsequente.
 
 Para cada abordagem, será desenvolvida uma prova de conceito que
 demonstre sua viabilidade técnica e permita uma avaliação objetiva de
@@ -607,7 +651,6 @@ automatizados que coleta métricas consistentes para todas as abordagens,
 incluindo:
 
 \begin{itemize}
-\tightlist
 \item
   Métricas de Performance
 
@@ -705,16 +748,37 @@ complexas.
 \paragraph{2.2.2.2 Componentes de
 Segurança}\label{componentes-de-seguranuxe7a}
 
-A implementação inclui camadas de segurança essenciais: - Validação
-automática de tipos pelo ORM - Prevenção de SQL injection - Controle de
-acesso em nível de modelo - Sanitização de dados de entrada - Validação
-de permissões de usuário
+A implementação inclui camadas de segurança essenciais:
+
+\begin{itemize}
+\tightlist
+\item
+  Validação automática de tipos pelo ORM
+\item
+  Prevenção de SQL injection
+\item
+  Controle de acesso em nível de modelo
+\item
+  Sanitização de dados de entrada
+\item
+  Validação de permissões de usuário
+\end{itemize}
 
 \paragraph{2.2.2.3 Estrutura de Metadados}\label{estrutura-de-metadados}
 
-A configuração do sistema é gerenciada através dos modelos do ORM: -
-Definições de modelos e relacionamentos - Validações e restrições de
-campo - Hooks e middlewares - Configurações de cache
+A configuração do sistema é gerenciada através dos modelos do ORM:
+
+\begin{itemize}
+\tightlist
+\item
+  Definições de modelos e relacionamentos
+\item
+  Validações e restrições de campo
+\item
+  Hooks e middlewares
+\item
+  Configurações de cache
+\end{itemize}
 
 \paragraph{2.2.2.4 Implementação da Prova de
 Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito}
@@ -738,9 +802,21 @@ desenvolvimento. Os principais componentes tecnológicos incluem:
 \paragraph{2.2.2.5 Desenvolvimento do
 Plugin}\label{desenvolvimento-do-plugin}
 
-O plugin ORM implementa: - Interface de comunicação com o LLM -
-Interpretação de intenções para queries - Gerenciamento de transações -
-Sistema de cache - Logging e monitoramento
+O plugin ORM implementa:
+
+\begin{itemize}
+\tightlist
+\item
+  Interface de comunicação com o LLM
+\item
+  Interpretação de intenções para queries
+\item
+  Gerenciamento de transações
+\item
+  Sistema de cache
+\item
+  Logging e monitoramento
+\end{itemize}
 
 \paragraph{2.2.2.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos}
 
@@ -748,107 +824,64 @@ A implementação técnica foca em três aspectos principais:
 
 \paragraph{2.2.2.7 Integração com LLM}\label{integrauxe7uxe3o-com-llm}
 
-O sistema utiliza técnicas avançadas de prompt engineering para: -
-Interpretação de modelos do ORM - Geração de queries complexas -
-Otimização de consultas - Gerenciamento de relacionamentos
-
-\paragraph{2.2.2.8 Tratamento de Erros}\label{tratamento-de-erros}
-
-O sistema implementa estratégias robustas para: - Validação de tipos -
-Erros de constraint - Timeout de transações - Conflitos de concorrência
-
-\paragraph{2.2.2.9 Avaliação e
-Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas}
-
-A avaliação da solução é realizada considerando:
-
-\paragraph{2.2.2.10 Performance}\label{performance}
+O sistema utiliza técnicas avançadas de prompt engineering para:
 
 \begin{itemize}
 \tightlist
 \item
-  Tempo de resposta médio
+  Interpretação de modelos do ORM
 \item
-  Eficiência de queries geradas
+  Geração de queries complexas
 \item
-  Uso de cache
+  Otimização de consultas
 \item
-  Overhead do ORM
+  Gerenciamento de relacionamentos
 \end{itemize}
 
-\paragraph{2.2.2.11 Segurança}\label{seguranuxe7a}
+\paragraph{2.2.2.8 Tratamento de Erros}\label{tratamento-de-erros}
+
+O sistema implementa estratégias robustas para:
 
 \begin{itemize}
 \tightlist
 \item
   Validação de tipos
 \item
-  Prevenção de injeção
+  Erros de constraint
 \item
-  Controle de acesso
+  Timeout de transações
 \item
-  Auditoria de operações
+  Conflitos de concorrência
 \end{itemize}
 
-\paragraph{2.2.2.12 Custos Operacionais}\label{custos-operacionais}
+\paragraph{2.2.2.9 Avaliação e
+Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas}
+
+Esta abordagem foi avaliada considerando os seguintes aspectos:
 
 \begin{itemize}
 \tightlist
 \item
-  Consumo de API do LLM
+  Performance
 \item
-  Overhead de memória do ORM
+  Segurança
 \item
-  Custos de manutenção
-\item
-  Recursos de infraestrutura
+  Custos Operacionais
 \end{itemize}
 
-\paragraph{2.2.2.13 Considerações
+\paragraph{2.2.2.10 Considerações
 Práticas}\label{considerauxe7uxf5es-pruxe1ticas}
 
 A implementação revelou diversos aspectos práticos importantes:
 
-\paragraph{2.2.2.14 Desafios}\label{desafios}
-
 \begin{itemize}
 \tightlist
 \item
-  Complexidade dos modelos
+  Desafios
 \item
-  Mapeamento de relacionamentos
+  Infraestrutura
 \item
-  Performance em queries complexas
-\item
-  Limitações do ORM
-\end{itemize}
-
-\paragraph{2.2.2.15 Infraestrutura}\label{infraestrutura}
-
-\begin{itemize}
-\tightlist
-\item
-  Requisitos de memória
-\item
-  Configuração de cache
-\item
-  Monitoramento de queries
-\item
-  Backup e recuperação
-\end{itemize}
-
-\paragraph{2.2.2.16 Manutenção}\label{manutenuxe7uxe3o}
-
-\begin{itemize}
-\tightlist
-\item
-  Atualizações de schema
-\item
-  Migrações de banco
-\item
-  Versionamento de modelos
-\item
-  Documentação do ORM
+  Manutenção
 \end{itemize}
 
 \subsubsection{2.2.3 Integração
@@ -878,7 +911,6 @@ A arquitetura desta abordagem é composta por três camadas principais:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textbf{Camada de Definição API}
 
@@ -994,7 +1026,6 @@ A implementação foca em três aspectos principais:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textbf{Geração de Código}
 
@@ -1040,7 +1071,6 @@ A avaliação considera aspectos específicos desta abordagem:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textbf{Performance}
 
@@ -1088,7 +1118,6 @@ A implementação revelou aspectos importantes:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textbf{Desafios}
 
@@ -1150,7 +1179,6 @@ por três componentes principais:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textbf{Camada de Interface}
 
@@ -1280,7 +1308,6 @@ A implementação foca em três aspectos críticos:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textbf{Geração de SQL}
 
@@ -1332,7 +1359,6 @@ A avaliação considera aspectos específicos:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textbf{Performance}
 
@@ -1384,7 +1410,6 @@ A implementação revelou aspectos importantes:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textbf{Desafios}
 
@@ -1484,7 +1509,7 @@ BROWN, T. B. et al. \textbf{Language Models are Few-Shot Learners}.,
 \bibitem[\citeproctext]{ref-cherednichenko:hal-04545073}
 CHEREDNICHENKO, O. et al. \textbf{Selection of Large Language Model for
 development of Interactive Chat Bot for SaaS Solutions}. Lviv, Ukraine:
-abr. 2024. Disponível em:
+2024. Disponível em:
 \textless{}\url{https://hal.science/hal-04545073}\textgreater{}
 
 \bibitem[\citeproctext]{ref-Deng2023AMA}

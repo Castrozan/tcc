@@ -11,10 +11,11 @@ Este diretório contém todos os recursos relacionados ao artigo do Trabalho de 
 - `article.html` - Versão HTML do artigo
 - `references.bib` - Referências bibliográficas em formato BibTeX
 - `Makefile` - Scripts para compilação do artigo em diversos formatos
-- `style.css` - Estilos para a versão HTML
+- `style/` - Arquivos de estilo para as versões do artigo
 - `pandoc-docs.md` - Documentação sobre o uso do Pandoc para conversão de formatos
 
 ### Diretórios
+
 - `images/` - Imagens e figuras utilizadas no artigo
 - `example/` - Exemplos de código e implementações mencionadas no artigo
 
@@ -37,6 +38,9 @@ make html
 
 # Limpar arquivos gerados
 make clean
+
+# Publicar artigo no Google Drive
+make publish
 ```
 
 ## 📝 Estrutura do Artigo
@@ -59,17 +63,17 @@ O artigo segue a estrutura acadêmica tradicional:
 ## 👤 Autor
 
 **Lucas de Castro Zanoni**
+
 - GitHub: [@Castrozan](https://github.com/Castrozan)
 
 ## 🧩 Relação com o Projeto Principal
 
 Este artigo documenta a pesquisa e implementação relacionadas ao MCP Server Manager e os servidores MCP de exemplo que estão implementados na raiz do projeto. Para mais informações sobre a implementação, consulte o [README principal](../README.md) do projeto.
 
-
 ## Recomendações de uso
 
-- Utilize o alias ```alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'``` para compilar o artigo.
-- Utilize o template ```template.tex``` para compilar o artigo.
+- Utilize o alias `alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'` para compilar o artigo.
+- Utilize o template `template.tex` para compilar o artigo.
 - Utilize a sintaxe de tabelas do Markdown para formatar as tabelas.
 - Para equações matemáticas, use o formato fenced math (```math) em vez de tabelas com TeX.
 
@@ -86,7 +90,7 @@ Exemplo de sintaxe de tabela Markdown:
 
 ```markdown
 | Cabeçalho 1 | Cabeçalho 2 |
-|-------------|-------------|
+| ----------- | ----------- |
 | Célula 1    | Célula 2    |
 | Célula 3    | Célula 4    |
 ```
@@ -96,7 +100,7 @@ Exemplo de sintaxe de tabela Markdown:
 Para alguns símbolos matemáticos, use uma abordagem mais simples sem os delimitadores TeX complexos:
 
 ```markdown
-| Símbolo | Unidade | Descrição |
-|---------|---------|-----------|
+| Símbolo | Unidade | Descrição               |
+| ------- | ------- | ----------------------- |
 | ΔT      | [K]     | Variação de temperatura |
 ```

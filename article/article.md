@@ -5,22 +5,38 @@ title: "**AGENTE CONVERSACIONAL PARA INTERAÇÃO APRIMORADA EM SISTEMAS**"
 ### Artigo em produção - Checklist de produção
 
 - [ ] Edição do artigo
-  - [x] Aplicar ABNT
   - [ ] Aplicar formatação da SATC
+    - [ ] Definir o template do .docx com o Word
+  - [ ] Referências
+    - [x] Formatação ABNT
 - [ ] Escrita
-  - [ ] Resumo
-    - [x] Esqueleto
-    - [ ] Revisão após finalizar o artigo
-  - [x] Introdução (preciso de umas referências)
+
+  - [ ] Revisão após finalizar o artigo
+  - [x] Resumo
+  - [x] Introdução
   - [ ] Material e métodos
-    - [x] Abordagem geral
-    - [x] Materiais
-    - [ ] Métodos
-      - [ ] Procedimento experimental de cada alternativa
   - [ ] Resultados e discussão
   - [ ] Considerações finais
-  - [ ] Referências
-    - [x] Formatar ABNT
+
+#### Material e métodos
+
+- [x] Abordagem geral
+- [x] Materiais
+- [ ] Métodos
+  - [ ] Plataforma de avaliação
+    - [ ] Revisão de literatura
+    - [ ] Testes E2E
+    - [ ] Coleta de métricas
+  - [ ] Procedimento experimental de cada alternativa
+    - [ ] ORM
+      - [ ] Revisão de literatura
+      - [ ] Prova de conceito
+    - [ ] MCP
+      - [ ] Revisão de literatura
+      - [ ] Prova de conceito
+    - [ ] Banco de dados
+      - [ ] Revisão de literatura
+      - [ ] Prova de conceito
 
 **Lucas de Castro Zanoni**[^1]
 
@@ -44,95 +60,11 @@ Adicionalmente, trabalhos recentes indicam que avanços na arquitetura de modelo
 
 A relevância deste estudo evidencia-se pelo potencial transformador que os agentes conversacionais representam para a área de interação humano-computador. Ao implementar um sistema intermediário capaz de interpretar linguagem natural e traduzi-la em ações específicas dentro de um sistema, cria-se uma ponte que permite aos usuários interagir de forma mais intuitiva e natural com as tecnologias digitais. Esta abordagem tem o potencial de mitigar as barreiras impostas por interfaces complexas, contribuindo para uma maior inclusão digital e para a melhoria da experiência do usuário em diversos contextos de aplicação.
 
-<!-- ## Abordagens de Integração para Análise
-
-### 1. Integração via Plugin ORM
-- [ ] Análise de Vantagens:
-  - Aproveita a lógica da aplicação existente
-  - Melhor segurança através das camadas do ORM
-  - Manutenção mais fácil (segue atualizações da aplicação)
-  - Uso mais eficiente de recursos
-- [ ] Análise de Desvantagens:
-  - Específico para linguagem/framework
-  - Requer modificação do código existente
-  - Limitado às capacidades do ORM
-  - Maior complexidade de implementação para desenvolvedores
-
-### 2. Integração OpenAPI-MCP
-- [ ] Análise de Vantagens:
-  - Forma padronizada de definir e documentar APIs via OpenAPI
-  - Geração automática de servidores MCP a partir de especificações OpenAPI
-  - Reutilização de documentação API existente
-  - Flexibilidade e extensibilidade do protocolo MCP
-  - Clara separação de responsabilidades
-  - Agnóstico quanto a linguagem/framework
-  - Melhor segurança através de camadas de autenticação existentes
-  - Facilidade de integração com sistemas legados
-- [ ] Análise de Desvantagens:
-  - Necessita infraestrutura adicional para geração e execução dos servidores MCP
-  - Overhead de tradução entre protocolos
-  - Complexidade na manutenção de estados entre chamadas
-  - Tecnologia MCP ainda emergente com suporte limitado
-  - Pode requerer múltiplas requisições para operações complexas
-  - Latência adicional devido às camadas de tradução
-
-### 3. Conexão Direta com Banco de Dados
-- [ ] Análise de Vantagens:
-  - Acesso direto aos dados brutos
-  - Menor latência na recuperação de dados
-  - Sem necessidade de camadas API intermediárias
-  - Controle completo sobre padrões de acesso a dados
-- [ ] Análise de Desvantagens:
-  - Preocupações com segurança no acesso direto ao BD
-  - Necessidade de lidar com múltiplos tipos de BD
-  - Geração complexa de SQL
-  - Requer compreensão profunda do esquema
-  - Alta manutenção quando o esquema do BD muda
-
-## Estrutura de Pesquisa
-
-### 1. Fundamentação Teórica
-- [ ] Revisão de padrões existentes de integração com LLMs
-- [ ] Análise de arquiteturas de integração de sistemas
-- [ ] Considerações de segurança em integrações com IA
-- [ ] Métricas e considerações de desempenho
-
-### 2. Análise de Implementação
-- [ ] Para cada abordagem:
-  - [ ] Design arquitetural
-  - [ ] Considerações de segurança
-  - [ ] Implicações de desempenho
-  - [ ] Complexidade de implementação
-  - [ ] Requisitos de manutenção
-  - [ ] Aspectos de escalabilidade
-
-### 3. Prova de Conceito
-- [ ] Implementação em pequena escala de cada abordagem
-- [ ] Cenário de teste padronizado
-- [ ] Coleta de métricas de desempenho
-- [ ] Análise de segurança
-- [ ] Avaliação da experiência do usuário
-
-### 4. Critérios de Avaliação
-- [ ] Métricas de desempenho
-- [ ] Avaliação de segurança
-- [ ] Complexidade de implementação
-- [ ] Sobrecarga de manutenção
-- [ ] Potencial de escalabilidade
-- [ ] Experiência do usuário
-- [ ] Esforço de integração
-
-### 5. Framework de Comparação
-- [ ] Metodologia de comparação padronizada
-- [ ] Métricas quantitativas
-- [ ] Análise qualitativa
-- [ ] Considerações específicas de casos de uso -->
-
 # 2 PROCEDIMENTO EXPERIMENTAL
 
-Este trabalho adota uma abordagem metodológica estruturada em múltiplas etapas para investigar e avaliar diferentes métodos de integração entre agentes conversacionais baseados em LLMs (Large Language Models) e sistemas computacionais. A pesquisa se desenvolve através de uma análise comparativa de quatro abordagens distintas de integração, cada uma com suas características, vantagens e limitações específicas.
+Este trabalho adota uma abordagem metodológica estruturada em múltiplas etapas para investigar e avaliar diferentes métodos de integração entre agentes conversacionais baseados em LLMs (Large Language Models) e sistemas computacionais. A pesquisa se desenvolve através de uma análise comparativa de três abordagens distintas de integração, cada uma com suas características, vantagens e limitações específicas.
 
-O processo investigativo inicia-se com uma revisão sistemática da literatura sobre integrações entre LLMs e sistemas, estabelecendo uma base teórica sólida para a análise subsequente. Em seguida, são exploradas quatro abordagens principais de integração: (1) conexão direta com banco de dados, permitindo consultas e manipulações diretas; (2) integração via plugins ORM, facilitando o acesso através de camadas de abstração existentes; (3) integração via API/Swagger, utilizando interfaces padronizadas de comunicação; e (4) integração via Model Context Protocol (MCP), explorando um paradigma emergente de comunicação entre LLMs e sistemas.
+Serão exploradas três abordagens principais de integração: (1) integração via plugins ORM, facilitando o acesso a dados através de camadas de abstração existentes; (2) integração via API/Swagger com MCP, utilizando interfaces padronizadas de comunicação e explorando um paradigma emergente de comunicação entre LLMs e sistemas; (3) conexão direta com banco de dados, permitindo consultas e manipulações diretas. Para cada abordagem o processo investigativo inicia-se com uma revisão sistemática da literatura sobre o estado da arte de cada abordagem, estabelecendo uma base teórica sólida para a implementação subsequente.
 
 Para cada abordagem, será desenvolvida uma prova de conceito que demonstre sua viabilidade técnica e permita uma avaliação objetiva de seus aspectos funcionais e não-funcionais. A avaliação seguirá critérios predefinidos, incluindo desempenho, segurança, facilidade de implementação, manutenibilidade e experiência do usuário. Os resultados serão documentados e analisados de forma sistemática, permitindo uma comparação objetiva entre as diferentes abordagens.
 
@@ -214,6 +146,7 @@ Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos 
 
 <!-- TODO: add to this the necessity of a default authentication service for integration permission management.
 The app and server should have integrated the same authentication layer so it can be integrated to systems without much friction TODO: add new 2.2.1.4 section to talk about this layer of authentication that should be developed so approaches don't need to handle this -->
+
 A interface do usuário consiste em uma aplicação web de chat minimalista, desenvolvida utilizando React.js e TypeScript. Esta interface serve como ponto de entrada único para todas as abordagens de integração implementadas, garantindo consistência na experiência do usuário e na coleta de métricas.
 
 #### 2.2.1.1 Arquitetura da Interface
@@ -241,13 +174,12 @@ Conforme discutido na seção de materiais, os testes end-to-end (E2E) são fund
   - Tempo de resposta do servidor
   - Tempo de processamento do LLM
   - Latência de rede
-  
 - Métricas de Confiabilidade
   - Taxa de sucesso das interações
   - Frequência de erros
   - Consistência das respostas
-  
 - Métricas de Segurança
+
   - Tentativas de injeção de prompt
   - Validação de restrições de acesso
   - Conformidade com políticas de dados
@@ -278,6 +210,7 @@ Em casos mais complexos, o sistema pode realizar múltiplas operações encadead
 #### 2.2.2.2 Componentes de Segurança
 
 A implementação inclui camadas de segurança essenciais:
+
 - Validação automática de tipos pelo ORM
 - Prevenção de SQL injection
 - Controle de acesso em nível de modelo
@@ -287,6 +220,7 @@ A implementação inclui camadas de segurança essenciais:
 #### 2.2.2.3 Estrutura de Metadados
 
 A configuração do sistema é gerenciada através dos modelos do ORM:
+
 - Definições de modelos e relacionamentos
 - Validações e restrições de campo
 - Hooks e middlewares
@@ -304,6 +238,7 @@ A implementação utiliza uma stack tecnológica moderna baseada em Node.js, esc
 #### 2.2.2.5 Desenvolvimento do Plugin
 
 O plugin ORM implementa:
+
 - Interface de comunicação com o LLM
 - Interpretação de intenções para queries
 - Gerenciamento de transações
@@ -317,6 +252,7 @@ A implementação técnica foca em três aspectos principais:
 #### 2.2.2.7 Integração com LLM
 
 O sistema utiliza técnicas avançadas de prompt engineering para:
+
 - Interpretação de modelos do ORM
 - Geração de queries complexas
 - Otimização de consultas
@@ -325,6 +261,7 @@ O sistema utiliza técnicas avançadas de prompt engineering para:
 #### 2.2.2.8 Tratamento de Erros
 
 O sistema implementa estratégias robustas para:
+
 - Validação de tipos
 - Erros de constraint
 - Timeout de transações
@@ -359,12 +296,14 @@ A arquitetura proposta para esta abordagem implementa um servidor MCP que é ger
 A arquitetura desta abordagem é composta por três camadas principais:
 
 1. **Camada de Definição API**
+
    - Especificações OpenAPI dos sistemas alvo
    - Definições de endpoints e operações
    - Esquemas de dados e validação
    - Configurações de segurança e autenticação
 
 2. **Camada de Geração MCP**
+
    - Gerador automático de servidores MCP
    - Mapeamento OpenAPI para MCP
    - Geradores de código
@@ -415,12 +354,14 @@ O gerador de servidores MCP implementa:
 A implementação foca em três aspectos principais:
 
 1. **Geração de Código**
+
    - Análise estática de especificações
    - Geração de tipos Typescript
    - Criação de validadores
    - Documentação automática
 
 2. **Runtime**
+
    - Tratamento de erros de chamadas MCP
 
 3. **Integração LLM**
@@ -434,11 +375,13 @@ A implementação foca em três aspectos principais:
 A avaliação considera aspectos específicos desta abordagem:
 
 1. **Performance**
+
    - Tempo de geração de servidores
    - Latência de chamadas MCP
    - Eficiência de cache
 
 2. **Confiabilidade**
+
    - Taxa de sucesso de geração
    - Estabilidade do servidor
    - Consistência das respostas
@@ -454,12 +397,14 @@ A avaliação considera aspectos específicos desta abordagem:
 A implementação revelou aspectos importantes:
 
 1. **Desafios**
+
    - Complexidade de mapeamento de tipos
    - Manutenção de estado entre chamadas
    - Versionamento de APIs
    - Performance em grande escala
 
 2. **Infraestrutura**
+
    - Requisitos de deployment
    - Escalabilidade horizontal
    - Monitoramento distribuído
@@ -480,10 +425,12 @@ A terceira abordagem explora a integração direta entre o LLM e o banco de dado
 A arquitetura desta abordagem é intencionalmente minimalista, composta por três componentes principais:
 
 1. **Camada de Interface**
+
    - Cadastro das conexões com o banco de dados (para que a aplicação possa obter os schemas e executar queries)
    - Serviço LLM (para gerar queries, interpretar os dados e gerar respostas)
 
 2. **Camada de Segurança**
+
    - Sistema de validação de queries (para sanitizar os dados e evitar SQL injection)
 
 3. **Camada de Dados**
@@ -540,12 +487,14 @@ O conector de banco de dados implementa:
 A implementação foca em três aspectos críticos:
 
 1. **Geração de SQL**
+
    - Templates de queries otimizadas
    - Análise de plano de execução
    - Otimização automática
    - Validação sintática
 
 2. **Performance**
+
    - Connection pooling
    - Query caching
    - Bulk operations
@@ -562,12 +511,14 @@ A implementação foca em três aspectos críticos:
 A avaliação considera aspectos específicos:
 
 1. **Performance**
+
    - Latência de queries
    - Throughput do sistema
    - Uso de recursos
    - Hit rate do cache
 
 2. **Segurança**
+
    - Taxa de detecção de injeção
    - Cobertura de validação
    - Eficácia do controle de acesso
@@ -584,12 +535,14 @@ A avaliação considera aspectos específicos:
 A implementação revelou aspectos importantes:
 
 1. **Desafios**
+
    - Complexidade de validação
    - Gestão de conexões
    - Otimização de queries
    - Segurança robusta
 
 2. **Infraestrutura**
+
    - Alta disponibilidade
    - Backup em tempo real
    - Monitoramento intensivo
@@ -622,5 +575,4 @@ a sua pergunta-problema de pesquisa.
 # REFERÊNCIAS
 
 [^1]: Graduando em Engenharia de software no semestre letivo de 2024-2. E-mail: castro.lucas290@gmail.com
-
 [^2]: Professor do Centro Universitário UniSATC E-mail: thyerri.mezzari@satc.edu.br

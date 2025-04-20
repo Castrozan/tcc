@@ -319,39 +319,61 @@ APRIMORADA EM SISTEMAS</strong></h1>
 <h3 id="artigo-em-produção---checklist-de-produção">Artigo em produção -
 Checklist de produção</h3>
 <ul class="task-list">
-<li><label><input type="checkbox"></input>Edição do artigo</label>
+<li><p><label><input type="checkbox"></input>Edição do artigo</label></p>
 <ul class="task-list">
-<li><label><input type="checkbox" checked></input>Aplicar ABNT</label></li>
-<li><label><input type="checkbox"></input>Aplicar formatação da
-SATC</label></li>
+<li><label><input type="checkbox"></input>Aplicar formatação da SATC</label>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Definir o template do .docx com o
+Word</label></li>
 </ul></li>
-<li><label><input type="checkbox"></input>Escrita</label>
+<li><label><input type="checkbox"></input>Referências</label>
 <ul class="task-list">
-<li><label><input type="checkbox"></input>Resumo</label>
+<li><label><input type="checkbox" checked></input>Formatação
+ABNT</label></li>
+</ul></li>
+</ul></li>
+<li><p><label><input type="checkbox"></input>Escrita</label></p>
 <ul class="task-list">
-<li><label><input type="checkbox" checked></input>Esqueleto</label></li>
 <li><label><input type="checkbox"></input>Revisão após finalizar o
 artigo</label></li>
+<li><label><input type="checkbox" checked></input>Resumo</label></li>
+<li><label><input type="checkbox" checked></input>Introdução</label></li>
+<li><label><input type="checkbox"></input>Material e métodos</label></li>
+<li><label><input type="checkbox"></input>Resultados e discussão</label></li>
+<li><label><input type="checkbox"></input>Considerações finais</label></li>
 </ul></li>
-<li><label><input type="checkbox" checked></input>Introdução (preciso de
-umas referências)</label></li>
-<li><label><input type="checkbox"></input>Material e métodos</label>
+</ul>
+<h4 id="material-e-métodos">Material e métodos</h4>
 <ul class="task-list">
 <li><label><input type="checkbox" checked></input>Abordagem
 geral</label></li>
 <li><label><input type="checkbox" checked></input>Materiais</label></li>
 <li><label><input type="checkbox"></input>Métodos</label>
 <ul class="task-list">
-<li><label><input type="checkbox"></input>Procedimento experimental de cada
-alternativa</label></li>
-</ul></li>
-</ul></li>
-<li><label><input type="checkbox"></input>Resultados e discussão</label></li>
-<li><label><input type="checkbox"></input>Considerações finais</label></li>
-<li><label><input type="checkbox"></input>Referências</label>
+<li><label><input type="checkbox"></input>Plataforma de avaliação</label>
 <ul class="task-list">
-<li><label><input type="checkbox" checked></input>Formatar
-ABNT</label></li>
+<li><label><input type="checkbox"></input>Revisão de literatura</label></li>
+<li><label><input type="checkbox"></input>Testes E2E</label></li>
+<li><label><input type="checkbox"></input>Coleta de métricas</label></li>
+</ul></li>
+<li><label><input type="checkbox"></input>Procedimento experimental de cada
+alternativa</label>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>ORM</label>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Revisão de literatura</label></li>
+<li><label><input type="checkbox"></input>Prova de conceito</label></li>
+</ul></li>
+<li><label><input type="checkbox"></input>MCP</label>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Revisão de literatura</label></li>
+<li><label><input type="checkbox"></input>Prova de conceito</label></li>
+</ul></li>
+<li><label><input type="checkbox"></input>Banco de dados</label>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Revisão de literatura</label></li>
+<li><label><input type="checkbox"></input>Prova de conceito</label></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -416,107 +438,24 @@ abordagem tem o potencial de mitigar as barreiras impostas por
 interfaces complexas, contribuindo para uma maior inclusão digital e
 para a melhoria da experiência do usuário em diversos contextos de
 aplicação.</p>
-<!-- ## Abordagens de Integração para Análise
-
-### 1. Integração via Plugin ORM
-- [ ] Análise de Vantagens:
-  - Aproveita a lógica da aplicação existente
-  - Melhor segurança através das camadas do ORM
-  - Manutenção mais fácil (segue atualizações da aplicação)
-  - Uso mais eficiente de recursos
-- [ ] Análise de Desvantagens:
-  - Específico para linguagem/framework
-  - Requer modificação do código existente
-  - Limitado às capacidades do ORM
-  - Maior complexidade de implementação para desenvolvedores
-
-### 2. Integração OpenAPI-MCP
-- [ ] Análise de Vantagens:
-  - Forma padronizada de definir e documentar APIs via OpenAPI
-  - Geração automática de servidores MCP a partir de especificações OpenAPI
-  - Reutilização de documentação API existente
-  - Flexibilidade e extensibilidade do protocolo MCP
-  - Clara separação de responsabilidades
-  - Agnóstico quanto a linguagem/framework
-  - Melhor segurança através de camadas de autenticação existentes
-  - Facilidade de integração com sistemas legados
-- [ ] Análise de Desvantagens:
-  - Necessita infraestrutura adicional para geração e execução dos servidores MCP
-  - Overhead de tradução entre protocolos
-  - Complexidade na manutenção de estados entre chamadas
-  - Tecnologia MCP ainda emergente com suporte limitado
-  - Pode requerer múltiplas requisições para operações complexas
-  - Latência adicional devido às camadas de tradução
-
-### 3. Conexão Direta com Banco de Dados
-- [ ] Análise de Vantagens:
-  - Acesso direto aos dados brutos
-  - Menor latência na recuperação de dados
-  - Sem necessidade de camadas API intermediárias
-  - Controle completo sobre padrões de acesso a dados
-- [ ] Análise de Desvantagens:
-  - Preocupações com segurança no acesso direto ao BD
-  - Necessidade de lidar com múltiplos tipos de BD
-  - Geração complexa de SQL
-  - Requer compreensão profunda do esquema
-  - Alta manutenção quando o esquema do BD muda
-
-## Estrutura de Pesquisa
-
-### 1. Fundamentação Teórica
-- [ ] Revisão de padrões existentes de integração com LLMs
-- [ ] Análise de arquiteturas de integração de sistemas
-- [ ] Considerações de segurança em integrações com IA
-- [ ] Métricas e considerações de desempenho
-
-### 2. Análise de Implementação
-- [ ] Para cada abordagem:
-  - [ ] Design arquitetural
-  - [ ] Considerações de segurança
-  - [ ] Implicações de desempenho
-  - [ ] Complexidade de implementação
-  - [ ] Requisitos de manutenção
-  - [ ] Aspectos de escalabilidade
-
-### 3. Prova de Conceito
-- [ ] Implementação em pequena escala de cada abordagem
-- [ ] Cenário de teste padronizado
-- [ ] Coleta de métricas de desempenho
-- [ ] Análise de segurança
-- [ ] Avaliação da experiência do usuário
-
-### 4. Critérios de Avaliação
-- [ ] Métricas de desempenho
-- [ ] Avaliação de segurança
-- [ ] Complexidade de implementação
-- [ ] Sobrecarga de manutenção
-- [ ] Potencial de escalabilidade
-- [ ] Experiência do usuário
-- [ ] Esforço de integração
-
-### 5. Framework de Comparação
-- [ ] Metodologia de comparação padronizada
-- [ ] Métricas quantitativas
-- [ ] Análise qualitativa
-- [ ] Considerações específicas de casos de uso -->
 <h1 id="procedimento-experimental">2 PROCEDIMENTO EXPERIMENTAL</h1>
 <p>Este trabalho adota uma abordagem metodológica estruturada em
 múltiplas etapas para investigar e avaliar diferentes métodos de
 integração entre agentes conversacionais baseados em LLMs (Large
 Language Models) e sistemas computacionais. A pesquisa se desenvolve
-através de uma análise comparativa de quatro abordagens distintas de
+através de uma análise comparativa de três abordagens distintas de
 integração, cada uma com suas características, vantagens e limitações
 específicas.</p>
-<p>O processo investigativo inicia-se com uma revisão sistemática da
-literatura sobre integrações entre LLMs e sistemas, estabelecendo uma
-base teórica sólida para a análise subsequente. Em seguida, são
-exploradas quatro abordagens principais de integração: (1) conexão
-direta com banco de dados, permitindo consultas e manipulações diretas;
-(2) integração via plugins ORM, facilitando o acesso através de camadas
-de abstração existentes; (3) integração via API/Swagger, utilizando
-interfaces padronizadas de comunicação; e (4) integração via Model
-Context Protocol (MCP), explorando um paradigma emergente de comunicação
-entre LLMs e sistemas.</p>
+<p>Serão exploradas três abordagens principais de integração: (1)
+integração via plugins ORM, facilitando o acesso a dados através de
+camadas de abstração existentes; (2) integração via API/Swagger com MCP,
+utilizando interfaces padronizadas de comunicação e explorando um
+paradigma emergente de comunicação entre LLMs e sistemas; (3) conexão
+direta com banco de dados, permitindo consultas e manipulações diretas.
+Para cada abordagem o processo investigativo inicia-se com uma revisão
+sistemática da literatura sobre o estado da arte de cada abordagem,
+estabelecendo uma base teórica sólida para a implementação
+subsequente.</p>
 <p>Para cada abordagem, será desenvolvida uma prova de conceito que
 demonstre sua viabilidade técnica e permita uma avaliação objetiva de
 seus aspectos funcionais e não-funcionais. A avaliação seguirá critérios
@@ -797,25 +736,25 @@ baseados em LLMs. A interface implementa um framework de testes E2E
 automatizados que coleta métricas consistentes para todas as abordagens,
 incluindo:</p>
 <ul>
-<li>Métricas de Performance
+<li><p>Métricas de Performance</p>
 <ul>
 <li>Tempo de resposta do servidor</li>
 <li>Tempo de processamento do LLM</li>
 <li>Latência de rede</li>
 </ul></li>
-<li>Métricas de Confiabilidade
+<li><p>Métricas de Confiabilidade</p>
 <ul>
 <li>Taxa de sucesso das interações</li>
 <li>Frequência de erros</li>
 <li>Consistência das respostas</li>
 </ul></li>
-<li>Métricas de Segurança
+<li><p>Métricas de Segurança</p>
 <ul>
 <li>Tentativas de injeção de prompt</li>
 <li>Validação de restrições de acesso</li>
 <li>Conformidade com políticas de dados</li>
 </ul></li>
-<li>Métricas de Experiência do Usuário
+<li><p>Métricas de Experiência do Usuário</p>
 <ul>
 <li>Tempo até primeira resposta</li>
 <li>Qualidade das respostas</li>
@@ -856,14 +795,23 @@ encadeadas, aproveitando os relacionamentos e métodos definidos nos
 modelos do ORM para obter dados relacionados e realizar análises mais
 complexas.</p>
 <h4 id="componentes-de-segurança">2.2.2.2 Componentes de Segurança</h4>
-<p>A implementação inclui camadas de segurança essenciais: - Validação
-automática de tipos pelo ORM - Prevenção de SQL injection - Controle de
-acesso em nível de modelo - Sanitização de dados de entrada - Validação
-de permissões de usuário</p>
+<p>A implementação inclui camadas de segurança essenciais:</p>
+<ul>
+<li>Validação automática de tipos pelo ORM</li>
+<li>Prevenção de SQL injection</li>
+<li>Controle de acesso em nível de modelo</li>
+<li>Sanitização de dados de entrada</li>
+<li>Validação de permissões de usuário</li>
+</ul>
 <h4 id="estrutura-de-metadados">2.2.2.3 Estrutura de Metadados</h4>
-<p>A configuração do sistema é gerenciada através dos modelos do ORM: -
-Definições de modelos e relacionamentos - Validações e restrições de
-campo - Hooks e middlewares - Configurações de cache</p>
+<p>A configuração do sistema é gerenciada através dos modelos do
+ORM:</p>
+<ul>
+<li>Definições de modelos e relacionamentos</li>
+<li>Validações e restrições de campo</li>
+<li>Hooks e middlewares</li>
+<li>Configurações de cache</li>
+</ul>
 <h4 id="implementação-da-prova-de-conceito">2.2.2.4 Implementação da
 Prova de Conceito</h4>
 <p>A implementação utiliza uma stack tecnológica moderna baseada em
@@ -877,64 +825,45 @@ desenvolvimento. Os principais componentes tecnológicos incluem:</p>
 </ul>
 <h4 id="desenvolvimento-do-plugin">2.2.2.5 Desenvolvimento do
 Plugin</h4>
-<p>O plugin ORM implementa: - Interface de comunicação com o LLM -
-Interpretação de intenções para queries - Gerenciamento de transações -
-Sistema de cache - Logging e monitoramento</p>
+<p>O plugin ORM implementa:</p>
+<ul>
+<li>Interface de comunicação com o LLM</li>
+<li>Interpretação de intenções para queries</li>
+<li>Gerenciamento de transações</li>
+<li>Sistema de cache</li>
+<li>Logging e monitoramento</li>
+</ul>
 <h4 id="detalhes-técnicos">2.2.2.6 Detalhes Técnicos</h4>
 <p>A implementação técnica foca em três aspectos principais:</p>
 <h4 id="integração-com-llm">2.2.2.7 Integração com LLM</h4>
-<p>O sistema utiliza técnicas avançadas de prompt engineering para: -
-Interpretação de modelos do ORM - Geração de queries complexas -
-Otimização de consultas - Gerenciamento de relacionamentos</p>
-<h4 id="tratamento-de-erros">2.2.2.8 Tratamento de Erros</h4>
-<p>O sistema implementa estratégias robustas para: - Validação de tipos
-- Erros de constraint - Timeout de transações - Conflitos de
-concorrência</p>
-<h4 id="avaliação-e-métricas">2.2.2.9 Avaliação e Métricas</h4>
-<p>A avaliação da solução é realizada considerando:</p>
-<h4 id="performance">2.2.2.10 Performance</h4>
+<p>O sistema utiliza técnicas avançadas de prompt engineering para:</p>
 <ul>
-<li>Tempo de resposta médio</li>
-<li>Eficiência de queries geradas</li>
-<li>Uso de cache</li>
-<li>Overhead do ORM</li>
+<li>Interpretação de modelos do ORM</li>
+<li>Geração de queries complexas</li>
+<li>Otimização de consultas</li>
+<li>Gerenciamento de relacionamentos</li>
 </ul>
-<h4 id="segurança">2.2.2.11 Segurança</h4>
+<h4 id="tratamento-de-erros">2.2.2.8 Tratamento de Erros</h4>
+<p>O sistema implementa estratégias robustas para:</p>
 <ul>
 <li>Validação de tipos</li>
-<li>Prevenção de injeção</li>
-<li>Controle de acesso</li>
-<li>Auditoria de operações</li>
+<li>Erros de constraint</li>
+<li>Timeout de transações</li>
+<li>Conflitos de concorrência</li>
 </ul>
-<h4 id="custos-operacionais">2.2.2.12 Custos Operacionais</h4>
+<h4 id="avaliação-e-métricas">2.2.2.9 Avaliação e Métricas</h4>
+<p>Esta abordagem foi avaliada considerando os seguintes aspectos:</p>
 <ul>
-<li>Consumo de API do LLM</li>
-<li>Overhead de memória do ORM</li>
-<li>Custos de manutenção</li>
-<li>Recursos de infraestrutura</li>
+<li>Performance</li>
+<li>Segurança</li>
+<li>Custos Operacionais</li>
 </ul>
-<h4 id="considerações-práticas">2.2.2.13 Considerações Práticas</h4>
+<h4 id="considerações-práticas">2.2.2.10 Considerações Práticas</h4>
 <p>A implementação revelou diversos aspectos práticos importantes:</p>
-<h4 id="desafios">2.2.2.14 Desafios</h4>
 <ul>
-<li>Complexidade dos modelos</li>
-<li>Mapeamento de relacionamentos</li>
-<li>Performance em queries complexas</li>
-<li>Limitações do ORM</li>
-</ul>
-<h4 id="infraestrutura">2.2.2.15 Infraestrutura</h4>
-<ul>
-<li>Requisitos de memória</li>
-<li>Configuração de cache</li>
-<li>Monitoramento de queries</li>
-<li>Backup e recuperação</li>
-</ul>
-<h4 id="manutenção">2.2.2.16 Manutenção</h4>
-<ul>
-<li>Atualizações de schema</li>
-<li>Migrações de banco</li>
-<li>Versionamento de modelos</li>
-<li>Documentação do ORM</li>
+<li>Desafios</li>
+<li>Infraestrutura</li>
+<li>Manutenção</li>
 </ul>
 <h3 id="integração-openapi-mcp">2.2.3 Integração OpenAPI-MCP</h3>
 <p>A terceira abordagem implementa uma solução unificada que combina a
@@ -955,20 +884,20 @@ Arquitetura</figcaption>
 <p>A arquitetura desta abordagem é composta por três camadas
 principais:</p>
 <ol type="1">
-<li><strong>Camada de Definição API</strong>
+<li><p><strong>Camada de Definição API</strong></p>
 <ul>
 <li>Especificações OpenAPI dos sistemas alvo</li>
 <li>Definições de endpoints e operações</li>
 <li>Esquemas de dados e validação</li>
 <li>Configurações de segurança e autenticação</li>
 </ul></li>
-<li><strong>Camada de Geração MCP</strong>
+<li><p><strong>Camada de Geração MCP</strong></p>
 <ul>
 <li>Gerador automático de servidores MCP</li>
 <li>Mapeamento OpenAPI para MCP</li>
 <li>Geradores de código</li>
 </ul></li>
-<li><strong>Camada de Runtime Cliente MCP</strong>
+<li><p><strong>Camada de Runtime Cliente MCP</strong></p>
 <ul>
 <li>Servidor MCP gerado</li>
 <li>Cliente MCP (LLM)</li>
@@ -1014,18 +943,18 @@ Gerador</h4>
 <h4 id="detalhes-técnicos-1">2.2.3.6 Detalhes Técnicos</h4>
 <p>A implementação foca em três aspectos principais:</p>
 <ol type="1">
-<li><strong>Geração de Código</strong>
+<li><p><strong>Geração de Código</strong></p>
 <ul>
 <li>Análise estática de especificações</li>
 <li>Geração de tipos Typescript</li>
 <li>Criação de validadores</li>
 <li>Documentação automática</li>
 </ul></li>
-<li><strong>Runtime</strong>
+<li><p><strong>Runtime</strong></p>
 <ul>
 <li>Tratamento de erros de chamadas MCP</li>
 </ul></li>
-<li><strong>Integração LLM</strong>
+<li><p><strong>Integração LLM</strong></p>
 <ul>
 <li>Prompt engineering para uso das ferramentas MCP</li>
 <li>Gerenciamento de contexto</li>
@@ -1036,19 +965,19 @@ Gerador</h4>
 <h4 id="avaliação-e-métricas-1">2.2.3.7 Avaliação e Métricas</h4>
 <p>A avaliação considera aspectos específicos desta abordagem:</p>
 <ol type="1">
-<li><strong>Performance</strong>
+<li><p><strong>Performance</strong></p>
 <ul>
 <li>Tempo de geração de servidores</li>
 <li>Latência de chamadas MCP</li>
 <li>Eficiência de cache</li>
 </ul></li>
-<li><strong>Confiabilidade</strong>
+<li><p><strong>Confiabilidade</strong></p>
 <ul>
 <li>Taxa de sucesso de geração</li>
 <li>Estabilidade do servidor</li>
 <li>Consistência das respostas</li>
 </ul></li>
-<li><strong>Manutenibilidade</strong>
+<li><p><strong>Manutenibilidade</strong></p>
 <ul>
 <li>Facilidade de atualização</li>
 <li>Compatibilidade com versões</li>
@@ -1059,21 +988,21 @@ Gerador</h4>
 <h4 id="considerações-práticas-1">2.2.3.8 Considerações Práticas</h4>
 <p>A implementação revelou aspectos importantes:</p>
 <ol type="1">
-<li><strong>Desafios</strong>
+<li><p><strong>Desafios</strong></p>
 <ul>
 <li>Complexidade de mapeamento de tipos</li>
 <li>Manutenção de estado entre chamadas</li>
 <li>Versionamento de APIs</li>
 <li>Performance em grande escala</li>
 </ul></li>
-<li><strong>Infraestrutura</strong>
+<li><p><strong>Infraestrutura</strong></p>
 <ul>
 <li>Requisitos de deployment</li>
 <li>Escalabilidade horizontal</li>
 <li>Monitoramento distribuído</li>
 <li>Backup e recuperação</li>
 </ul></li>
-<li><strong>Manutenção</strong>
+<li><p><strong>Manutenção</strong></p>
 <ul>
 <li>Atualizações de especificações</li>
 <li>Regeneração de servidores</li>
@@ -1092,19 +1021,19 @@ implementação e considerações práticas desta solução.</p>
 <p>A arquitetura desta abordagem é intencionalmente minimalista,
 composta por três componentes principais:</p>
 <ol type="1">
-<li><strong>Camada de Interface</strong>
+<li><p><strong>Camada de Interface</strong></p>
 <ul>
 <li>Cadastro das conexões com o banco de dados (para que a aplicação
 possa obter os schemas e executar queries)</li>
 <li>Serviço LLM (para gerar queries, interpretar os dados e gerar
 respostas)</li>
 </ul></li>
-<li><strong>Camada de Segurança</strong>
+<li><p><strong>Camada de Segurança</strong></p>
 <ul>
 <li>Sistema de validação de queries (para sanitizar os dados e evitar
 SQL injection)</li>
 </ul></li>
-<li><strong>Camada de Dados</strong>
+<li><p><strong>Camada de Dados</strong></p>
 <ul>
 <li>Gerenciamento de conexões com o banco de dados (em caso de múltiplos
 databases, a aplicação deve integrar todos e possibilitar que o LLM
@@ -1161,21 +1090,21 @@ Conector</h4>
 <h4 id="detalhes-técnicos-2">2.2.4.6 Detalhes Técnicos</h4>
 <p>A implementação foca em três aspectos críticos:</p>
 <ol type="1">
-<li><strong>Geração de SQL</strong>
+<li><p><strong>Geração de SQL</strong></p>
 <ul>
 <li>Templates de queries otimizadas</li>
 <li>Análise de plano de execução</li>
 <li>Otimização automática</li>
 <li>Validação sintática</li>
 </ul></li>
-<li><strong>Performance</strong>
+<li><p><strong>Performance</strong></p>
 <ul>
 <li>Connection pooling</li>
 <li>Query caching</li>
 <li>Bulk operations</li>
 <li>Índices automáticos</li>
 </ul></li>
-<li><strong>Segurança</strong>
+<li><p><strong>Segurança</strong></p>
 <ul>
 <li>Análise de injeção SQL</li>
 <li>Validação de schemas</li>
@@ -1186,21 +1115,21 @@ Conector</h4>
 <h4 id="avaliação-e-métricas-2">2.2.4.7 Avaliação e Métricas</h4>
 <p>A avaliação considera aspectos específicos:</p>
 <ol type="1">
-<li><strong>Performance</strong>
+<li><p><strong>Performance</strong></p>
 <ul>
 <li>Latência de queries</li>
 <li>Throughput do sistema</li>
 <li>Uso de recursos</li>
 <li>Hit rate do cache</li>
 </ul></li>
-<li><strong>Segurança</strong>
+<li><p><strong>Segurança</strong></p>
 <ul>
 <li>Taxa de detecção de injeção</li>
 <li>Cobertura de validação</li>
 <li>Eficácia do controle de acesso</li>
 <li>Precisão da auditoria</li>
 </ul></li>
-<li><strong>Confiabilidade</strong>
+<li><p><strong>Confiabilidade</strong></p>
 <ul>
 <li>Taxa de erros</li>
 <li>Tempo de recuperação</li>
@@ -1211,21 +1140,21 @@ Conector</h4>
 <h4 id="considerações-práticas-2">2.2.4.8 Considerações Práticas</h4>
 <p>A implementação revelou aspectos importantes:</p>
 <ol type="1">
-<li><strong>Desafios</strong>
+<li><p><strong>Desafios</strong></p>
 <ul>
 <li>Complexidade de validação</li>
 <li>Gestão de conexões</li>
 <li>Otimização de queries</li>
 <li>Segurança robusta</li>
 </ul></li>
-<li><strong>Infraestrutura</strong>
+<li><p><strong>Infraestrutura</strong></p>
 <ul>
 <li>Alta disponibilidade</li>
 <li>Backup em tempo real</li>
 <li>Monitoramento intensivo</li>
 <li>Escalabilidade vertical</li>
 </ul></li>
-<li><strong>Manutenção</strong>
+<li><p><strong>Manutenção</strong></p>
 <ul>
 <li>Atualizações de schema</li>
 <li>Otimização contínua</li>

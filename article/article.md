@@ -193,11 +193,13 @@ Os testes E2E são executados de forma automatizada em ambientes controlados, si
 
 Esta padronização da coleta de métricas via testes E2E garante que as diferenças observadas entre as abordagens sejam resultado direto das suas características de implementação, e não de variações na experiência do usuário ou na forma de coleta de dados.
 
-### 2.2.2 Integração via Plugin ORM
+## 3. DESENVOLVIMENTO
+
+### 3.1 Integração via Plugin ORM
 
 A primeira abordagem investigada consiste na implementação de um plugin ORM que permite ao LLM interagir com o sistema através das camadas de abstração do ORM. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução.
 
-#### 2.2.2.1 Arquitetura da Solução
+#### 3.1.1 Arquitetura da Solução
 
 A arquitetura proposta para esta abordagem é composta por quatro componentes principais: interface do usuário, serviço LLM, plugin ORM e o banco de dados. A Figura X ilustra a arquitetura e o fluxo de comunicação entre estes componentes.
 
@@ -207,7 +209,7 @@ O fluxo de comunicação se inicia com uma solicitação do usuário em linguage
 
 Em casos mais complexos, o sistema pode realizar múltiplas operações encadeadas, aproveitando os relacionamentos e métodos definidos nos modelos do ORM para obter dados relacionados e realizar análises mais complexas.
 
-#### 2.2.2.2 Componentes de Segurança
+#### 3.1.2 Componentes de Segurança
 
 A implementação inclui camadas de segurança essenciais:
 
@@ -217,7 +219,7 @@ A implementação inclui camadas de segurança essenciais:
 - Sanitização de dados de entrada
 - Validação de permissões de usuário
 
-#### 2.2.2.3 Estrutura de Metadados
+#### 3.1.3 Estrutura de Metadados
 
 A configuração do sistema é gerenciada através dos modelos do ORM:
 
@@ -226,7 +228,7 @@ A configuração do sistema é gerenciada através dos modelos do ORM:
 - Hooks e middlewares
 - Configurações de cache
 
-#### 2.2.2.4 Implementação da Prova de Conceito
+#### 3.1.4 Implementação da Prova de Conceito
 
 A implementação utiliza uma stack tecnológica moderna baseada em Node.js, escolhida por sua eficiência e amplo suporte a ferramentas de desenvolvimento. Os principais componentes tecnológicos incluem:
 
@@ -235,7 +237,7 @@ A implementação utiliza uma stack tecnológica moderna baseada em Node.js, esc
 - ORM: Sequelize
 - Banco de Dados: PostgreSQL
 
-#### 2.2.2.5 Desenvolvimento do Plugin
+#### 3.1.5 Desenvolvimento do Plugin
 
 O plugin ORM implementa:
 
@@ -245,11 +247,11 @@ O plugin ORM implementa:
 - Sistema de cache
 - Logging e monitoramento
 
-#### 2.2.2.6 Detalhes Técnicos
+#### 3.1.6 Detalhes Técnicos
 
 A implementação técnica foca em três aspectos principais:
 
-#### 2.2.2.7 Integração com LLM
+#### 3.1.7 Integração com LLM
 
 O sistema utiliza técnicas avançadas de prompt engineering para:
 
@@ -258,7 +260,7 @@ O sistema utiliza técnicas avançadas de prompt engineering para:
 - Otimização de consultas
 - Gerenciamento de relacionamentos
 
-#### 2.2.2.8 Tratamento de Erros
+#### 3.1.8 Tratamento de Erros
 
 O sistema implementa estratégias robustas para:
 
@@ -267,7 +269,7 @@ O sistema implementa estratégias robustas para:
 - Timeout de transações
 - Conflitos de concorrência
 
-#### 2.2.2.9 Avaliação e Métricas
+#### 3.1.9 Avaliação e Métricas
 
 Esta abordagem foi avaliada considerando os seguintes aspectos:
 
@@ -275,7 +277,7 @@ Esta abordagem foi avaliada considerando os seguintes aspectos:
 - Segurança
 - Custos Operacionais
 
-#### 2.2.2.10 Considerações Práticas
+#### 3.1.10 Considerações Práticas
 
 A implementação revelou diversos aspectos práticos importantes:
 
@@ -283,11 +285,11 @@ A implementação revelou diversos aspectos práticos importantes:
 - Infraestrutura
 - Manutenção
 
-### 2.2.3 Integração OpenAPI-MCP
+### 3.2 Integração OpenAPI-MCP
 
 A terceira abordagem implementa uma solução unificada que combina a especificação OpenAPI com o Model Context Protocol (MCP). Esta seção detalha a arquitetura, implementação e considerações práticas desta solução integrada.
 
-#### 2.2.3.1 Arquitetura da Solução
+#### 3.2.1 Arquitetura da Solução
 
 A arquitetura proposta para esta abordagem implementa um servidor MCP que é gerado a partir de uma definição OpenAPI e que pode ser integrado a qualquer sistema que suporte o protocolo MCP. Dessa forma, a integração é feita através de uma definição OpenAPI, que é a forma padrão de se integrar sistemas através de APIs.
 
@@ -314,7 +316,7 @@ A arquitetura desta abordagem é composta por três camadas principais:
    - Proxy de requisições REST
    - Sistema de cache e otimização
 
-#### 2.2.3.2 Fluxo de Operação
+#### 3.2.2 Fluxo de Operação
 
 O sistema opera através do seguinte fluxo:
 
@@ -324,14 +326,14 @@ O sistema opera através do seguinte fluxo:
 4. Tradução de intenções em chamadas MCP using SSE
 5. Processamento das respostas e apresentação ao usuário
 
-#### 2.2.3.3 Componentes de Segurança
+#### 3.2.3 Componentes de Segurança
 
 A implementação mantém as características de segurança de ambos os protocolos:
 
 - Validação de schemas OpenAPI
 - Autenticação e gestão de permissões para uso do swagger
 
-#### 2.2.3.4 Implementação da Prova de Conceito
+#### 3.2.4 Implementação da Prova de Conceito
 
 A implementação utiliza as seguintes tecnologias:
 
@@ -339,7 +341,7 @@ A implementação utiliza as seguintes tecnologias:
 - OpenAPI Tools para parsing de especificações
 - MCP SDK para geração de servidores
 
-#### 2.2.3.5 Desenvolvimento do Gerador
+#### 3.2.5 Desenvolvimento do Gerador
 
 O gerador de servidores MCP implementa:
 
@@ -349,7 +351,7 @@ O gerador de servidores MCP implementa:
 - Templates de servidores MCP
 - Sistema de plugins para extensibilidade
 
-#### 2.2.3.6 Detalhes Técnicos
+#### 3.2.6 Detalhes Técnicos
 
 A implementação foca em três aspectos principais:
 
@@ -370,7 +372,7 @@ A implementação foca em três aspectos principais:
    - Otimização de chamadas
    - Interpretação de respostas
 
-#### 2.2.3.7 Avaliação e Métricas
+#### 3.2.7 Avaliação e Métricas
 
 A avaliação considera aspectos específicos desta abordagem:
 
@@ -392,7 +394,7 @@ A avaliação considera aspectos específicos desta abordagem:
    - Clareza do código gerado
    - Documentação automática
 
-#### 2.2.3.8 Considerações Práticas
+#### 3.2.8 Considerações Práticas
 
 A implementação revelou aspectos importantes:
 
@@ -416,11 +418,11 @@ A implementação revelou aspectos importantes:
    - Migração de dados
    - Gestão de dependências
 
-### 2.2.4 Integração via conexão direta com o banco de dados
+### 3.3 Integração via conexão direta com o banco de dados
 
 A terceira abordagem explora a integração direta entre o LLM e o banco de dados, minimizando camadas intermediárias de abstração. Esta abordagem oferece máximo controle e performance, mas requer cuidados especiais com segurança e validação. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução.
 
-#### 2.2.4.1 Arquitetura da Solução
+#### 3.3.1 Arquitetura da Solução
 
 A arquitetura desta abordagem é intencionalmente minimalista, composta por três componentes principais:
 
@@ -439,7 +441,7 @@ A arquitetura desta abordagem é intencionalmente minimalista, composta por trê
 
 ![DB - Diagrama da Arquitetura](images/db/db-diagram-approach.jpg)
 
-#### 2.2.4.2 Fluxo de Operação
+#### 3.3.2 Fluxo de Operação
 
 O sistema opera através de um fluxo direto:
 
@@ -451,7 +453,7 @@ O sistema opera através de um fluxo direto:
 6. Processamento dos resultados
 7. Formatação da resposta
 
-#### 2.2.4.3 Componentes de Segurança
+#### 3.3.3 Componentes de Segurança
 
 Dado o acesso direto ao banco, a segurança é crítica:
 
@@ -461,7 +463,7 @@ Dado o acesso direto ao banco, a segurança é crítica:
 - Limites de complexidade de query
 - Timeouts configuráveis
 
-#### 2.2.4.4 Implementação da Prova de Conceito
+#### 3.3.4 Implementação da Prova de Conceito
 
 A implementação utiliza tecnologias focadas em performance:
 
@@ -471,7 +473,7 @@ A implementação utiliza tecnologias focadas em performance:
 - Driver: node-postgres
 - Sistema de Cache: Redis
 
-#### 2.2.4.5 Desenvolvimento do Conector
+#### 3.3.5 Desenvolvimento do Conector
 
 O conector de banco de dados implementa:
 
@@ -482,7 +484,7 @@ O conector de banco de dados implementa:
 - Logging detalhado
 - Métricas em tempo real
 
-#### 2.2.4.6 Detalhes Técnicos
+#### 3.3.6 Detalhes Técnicos
 
 A implementação foca em três aspectos críticos:
 
@@ -506,7 +508,7 @@ A implementação foca em três aspectos críticos:
    - Rate limiting
    - Auditoria de acessos
 
-#### 2.2.4.7 Avaliação e Métricas
+#### 3.3.7 Avaliação e Métricas
 
 A avaliação considera aspectos específicos:
 
@@ -530,7 +532,7 @@ A avaliação considera aspectos específicos:
    - Consistência dos dados
    - Disponibilidade do sistema
 
-#### 2.2.4.8 Considerações Práticas
+#### 3.3.8 Considerações Práticas
 
 A implementação revelou aspectos importantes:
 
@@ -556,13 +558,13 @@ A implementação revelou aspectos importantes:
 
 Esta abordagem, embora mais complexa em termos de segurança e manutenção, oferece máxima flexibilidade e performance para casos de uso específicos onde o controle direto sobre as operações de banco de dados é necessário.
 
-# 3 RESULTADOS E DISCUSSÕES
+# 4 RESULTADOS E DISCUSSÕES
 
 Nos Resultados e Discussões, deve-se apresentar os resultados obtidos no
 Procedimento Experimental e fazer uma discussão e análise sobre os
 mesmos sempre que possível referenciando a literatura pesquisada.
 
-# 4 CONSIDERAÇÕES FINAIS
+# 5 CONSIDERAÇÕES FINAIS
 
 Etapa esta que servirá para você evidenciar as conquistas alcançadas com
 o estudo e indicar as limitações e as reconsiderações. Além disso, você

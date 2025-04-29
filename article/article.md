@@ -140,58 +140,45 @@ A adoção crescente é impulsionada pela comunidade ativa, o que demonstra o po
 
 ## 2.2 MÉTODOS
 
-Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos conduzidos neste estudo, foi desenvolvida uma interface comum de usuário que será utilizada para avaliar todas as abordagens de integração. Esta padronização permite uma comparação justa e objetiva entre as diferentes implementações, eliminando variáveis relacionadas à interface do usuário que poderiam influenciar os resultados.
+Para assegurar a rigorosidade científica e garantir a reprodutibilidade dos experimentos conduzidos neste estudo, foi desenvolvida uma interface padrão comum para avaliar todas as abordagens de integração. Essa padronização viabiliza uma comparação justa e objetiva entre as implementações, minimizando variáveis relacionadas à interface que poderiam interferir nos resultados finais.
 
 ### 2.2.1 Interface Comum de Usuário
 
-<!-- TODO: add to this the necessity of a default authentication service for integration permission management.
-The app and server should have integrated the same authentication layer so it can be integrated to systems without much friction TODO: add new 2.2.1.4 section to talk about this layer of authentication that should be developed so approaches don't need to handle this -->
+A interface comum consiste em uma aplicação web simples de chat, desenvolvida utilizando React.js e TypeScript. A interface foi projetada de forma minimalista, visando uma experiência consistente e objetiva, independentemente da abordagem de integração utilizada.
 
-A interface do usuário consiste em uma aplicação web de chat minimalista, desenvolvida utilizando React.js e TypeScript. Esta interface serve como ponto de entrada único para todas as abordagens de integração implementadas, garantindo consistência na experiência do usuário e na coleta de métricas.
+![Interface do Usuário](images/metodos/user-interface.jpg)
 
 #### 2.2.1.1 Arquitetura da Interface
 
-A aplicação frontend foi desenvolvida seguindo princípios de arquitetura limpa e componentização, consistindo em:
-
-- Interface de chat com histórico de mensagens
-- Campo de entrada de texto para prompts do usuário
-- Área de exibição formatada para respostas estruturadas
+A arquitetura da aplicação frontend segue princípios modernos de desenvolvimento web, incluindo componentes isolados e arquitetura limpa, facilitando a manutenção, evolução e escalabilidade do projeto. Os principais elementos são o histórico de mensagens, exibindo claramente as interações anteriores entre usuário e agente conversacional, o campo de entrada de texto para consultas em linguagem natural, e uma área dedicada para apresentação clara e estruturada das respostas. As mensagens do usuário e do agente são posicionadas em lados opostos para facilitar o entendimento visual das interações.
 
 #### 2.2.1.2 Comunicação com Backend
 
-A comunicação entre a interface e as diferentes implementações de backend é padronizada através de uma API REST, que segue as seguintes especificações:
+A comunicação entre frontend e backend é estabelecida por meio de uma API REST síncrona, simplificando o processo de envio e retorno de mensagens. Cada consulta feita pelo usuário gera uma única requisição ao endpoint `/api/query`. O backend processa integralmente essa requisição utilizando um modelo de linguagem (LLM) e devolve uma resposta formatada em JSON após concluir o processamento, mantendo o fluxo de comunicação claro e previsível.
 
-- Endpoint único para processamento de mensagens
-- Formato JSON padronizado para requisições e respostas
-- Suporte a streaming de respostas via Server-Sent Events
-- Tratamento uniforme de erros e timeouts
+### 2.2.2 Arquitetura e Fluxo de Integração do Sistema
 
-#### 2.2.1.3 Coleta de Métricas via Testes E2E
+A arquitetura do sistema desenvolvido para este estudo envolve múltiplas camadas que trabalham de forma integrada para responder às consultas feitas pelo usuário em linguagem natural. Inicialmente, as consultas são recebidas pela interface web e encaminhadas ao backend, onde o modelo de linguagem executa o processo de análise e interpretação.
 
-Conforme discutido na seção de materiais, os testes end-to-end (E2E) são fundamentais para avaliar o desempenho e a segurança de sistemas baseados em LLMs. A interface implementa um framework de testes E2E automatizados que coleta métricas consistentes para todas as abordagens, incluindo:
+![Arquitetura do Sistema](images/metodos/system-architecture.jpg)
 
-- Métricas de Performance
-  - Tempo de resposta do servidor
-  - Tempo de processamento do LLM
-  - Latência de rede
-- Métricas de Confiabilidade
-  - Taxa de sucesso das interações
-  - Frequência de erros
-  - Consistência das respostas
-- Métricas de Segurança
+O fluxo completo de interação ocorre da seguinte maneira: ao receber uma consulta, o modelo de linguagem interpreta a intenção do usuário e gera uma requisiçao estruturada que é validada antes de ser enviada à camada de integração. Essa camada utiliza diferentes abordagens (ORM, MCP ou conexão direta com o banco de dados) para acessar sistemas backend, como modelos de dados, APIs externas ou bancos de dados diretamente. Após executar a operação solicitada, a resposta é retornada ao modelo de linguagem, que a formata em linguagem natural antes de devolvê-la ao usuário.
 
-  - Tentativas de injeção de prompt
-  - Validação de restrições de acesso
-  - Conformidade com políticas de dados
+![Diagrama de Workflow do Agente](images/metodos/workflow-integration.jpg)
 
-- Métricas de Experiência do Usuário
-  - Tempo até primeira resposta
-  - Qualidade das respostas
-  - Satisfação do usuário
+### 2.2.3 Coleta de Métricas via Testes E2E
 
-Os testes E2E são executados de forma automatizada em ambientes controlados, simulando diferentes cenários de uso e condições de carga, permitindo uma avaliação objetiva e reproduzível de cada abordagem de integração.
+Testes End-to-End (E2E) são essenciais para avaliar não apenas o desempenho e a segurança, mas também a experiência geral do usuário com sistemas integrados a LLMs. Os testes são automatizados, executados regularmente em ambiente controlado para assegurar resultados consistentes e comparáveis.
 
-Esta padronização da coleta de métricas via testes E2E garante que as diferenças observadas entre as abordagens sejam resultado direto das suas características de implementação, e não de variações na experiência do usuário ou na forma de coleta de dados.
+Os testes envolvem:
+- Avaliação detalhada da performance, incluindo tempos totais de resposta, tempo específico do processamento pelo modelo de linguagem e latência da rede.
+- Análise da confiabilidade através da taxa de sucesso das requisições e frequência de erros críticos e não críticos.
+- Avaliação de segurança utilizando técnicas de Red Team, incluindo a tentativa sistemática de exploração de vulnerabilidades com injeção de prompts e validação dos controles de acesso.
+- Mensuração da experiência do usuário, utilizando avaliações qualitativas da clareza das respostas e pesquisas estruturadas de satisfação com escalas Likert.
+
+### 2.2.4 Procedimento Experimental dos Testes
+
+O procedimento experimental foi projetado para reproduzir interações realistas e garantir uma avaliação robusta das abordagens. Primeiramente, um ambiente de testes é configurado automaticamente, carregando cenários predefinidos e controlados. Em seguida, os testes são executados automaticamente, variando desde consultas simples até cenários complexos e ataques adversários simulados. As métricas obtidas são automaticamente registradas para garantir uma coleta padronizada e confiável dos dados. Finalmente, uma análise automatizada gera relatórios detalhados, permitindo uma comparação objetiva e precisa entre as diferentes abordagens implementadas.
 
 ## 3. DESENVOLVIMENTO
 

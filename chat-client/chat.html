@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            background: #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .menu {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .chat-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .user {
+            align-self: flex-end;
+            background: #f1f1f1;
+            color: #555;
+            font-style: italic;
+        }
+
+        .bot {
+            align-self: flex-start;
+            background: #ffffff;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #ffffff;
+            border-top: 1px solid #ffffff;
+        }
+
+        .input-container input {
+            width: 600px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="menu">⋮</div>
+    </header>
+
+    <div class="chat-wrapper">
+        <div class="chat-container">
+            <div class="user message">Qual processo está sendo executado no sistema?</div>
+            <div class="bot message">O processo executado é o #123456 sobre a aprovação do pagamento de compras.</div>
+
+            <div class="user message">Adicione no processo para que eu seja notificado assim que ele acabe</div>
+            <div class="bot message">Claro! Assim que o processo acabar você será notificado via e-mail</div>
+
+            <div class="user message">Me informe via Whatsapp também</div>
+            <div class="bot message">Certo! Você será notificado via Whatsapp também.</div>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <input type="text" placeholder="Ask anything">
+    </div>
+
+</body>
+
+</html>

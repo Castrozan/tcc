@@ -134,21 +134,21 @@ A interface comum consiste em uma aplicação web simples de chat, desenvolvida 
 
 ![Interface do Usuário](images/metodos/user-interface.jpg)
 
-#### 2.2.1.1 Arquitetura da Interface
+#### 2.2.1.1 DESIGN DA INTERFACE
 
-A arquitetura da aplicação frontend segue princípios modernos de desenvolvimento web, incluindo componentes isolados e arquitetura limpa, facilitando a manutenção, evolução e escalabilidade do projeto. Os principais elementos são o histórico de mensagens, exibindo claramente as interações anteriores entre usuário e agente conversacional, o campo de entrada de texto para consultas em linguagem natural, e uma área dedicada para apresentação clara e estruturada das respostas. As mensagens do usuário e do agente são posicionadas em lados opostos para facilitar o entendimento visual das interações.
+A interface é composta por uma seção principal que exibe o histórico de mensagens, onde as interações entre usuário e agente conversacional aparecem de forma intercalada: as mensagens do agente são exibidas à esquerda e as do usuário à direita, facilitando a distinção visual entre os participantes da conversa. Abaixo do histórico, há um campo de entrada de texto que permite ao usuário digitar e enviar novas mensagens. Esse layout possibilita ao usuário acompanhar facilmente todo o histórico da conversa e inserir novos prompts de maneira contínua e intuitiva.
 
 #### 2.2.1.2 Comunicação com Backend
 
-A comunicação entre frontend e backend é estabelecida por meio de uma API REST síncrona, simplificando o processo de envio e retorno de mensagens. Cada consulta feita pelo usuário gera uma única requisição ao endpoint `/api/query`. O backend processa integralmente essa requisição utilizando um modelo de linguagem (LLM) e devolve uma resposta formatada em JSON após concluir o processamento, mantendo o fluxo de comunicação claro e previsível.
+A comunicação entre frontend e backend será estabelecida por meio de uma API REST síncrona, simplificando o processo de envio e retorno de mensagens. Cada consulta feita pelo usuário gerará uma única requisição ao backend que processará integralmente essa requisição utilizando um modelo de linguagem (LLM) e devolverá uma resposta após concluir o processamento, mantendo o fluxo de comunicação claro e previsível.
 
 ### 2.2.2 Arquitetura e Fluxo de Integração do Sistema
 
-A arquitetura do sistema desenvolvido para este estudo envolve múltiplas camadas que trabalham de forma integrada para responder às consultas feitas pelo usuário em linguagem natural. Inicialmente, as consultas são recebidas pela interface web e encaminhadas ao backend, onde o modelo de linguagem executa o processo de análise e interpretação.
+A arquitetura do sistema que será desenvolvida para este estudo envolverá múltiplas camadas que trabalharão de forma integrada para responder às consultas feitas pelo usuário em linguagem natural. Inicialmente, as consultas serão recebidas pela interface web e encaminhadas ao backend, onde o modelo de linguagem executará o processo de análise e interpretação.
 
 ![Arquitetura do Sistema](images/metodos/system-architecture.jpg)
 
-O fluxo completo de interação ocorre da seguinte maneira: ao receber uma consulta, o modelo de linguagem interpreta a intenção do usuário e gera uma requisiçao estruturada que é validada antes de ser enviada à camada de integração. Essa camada utiliza diferentes abordagens (ORM, MCP ou conexão direta com o banco de dados) para acessar sistemas backend, como modelos de dados, APIs externas ou bancos de dados diretamente. Após executar a operação solicitada, a resposta é retornada ao modelo de linguagem, que a formata em linguagem natural antes de devolvê-la ao usuário.
+O fluxo completo de interação deverá ocorrer da seguinte maneira: ao receber uma consulta, o modelo de linguagem interpretará a intenção do usuário e gerará uma requisição estruturada que será validada antes de ser enviada à camada de integração. Essa camada utilizará diferentes abordagens (ORM, MCP ou conexão direta com o banco de dados) para acessar sistemas backend, como modelos de dados, APIs externas ou bancos de dados diretamente. Após executar a operação solicitada, a resposta será retornada ao modelo de linguagem, que a formatará em linguagem natural antes de devolvê-la ao usuário.
 
 ![Diagrama de Workflow do Agente](images/metodos/workflow-integration.jpg)
 
@@ -162,9 +162,11 @@ Os testes envolvem:
 - Avaliação de segurança utilizando técnicas de Red Team, incluindo a tentativa sistemática de exploração de vulnerabilidades com injeção de prompts e validação dos controles de acesso.
 - Mensuração da experiência do usuário, utilizando avaliações qualitativas da clareza das respostas e pesquisas estruturadas de satisfação com escalas Likert.
 
-### 2.2.4 Procedimento Experimental dos Testes
+Os testes E2E são executados de forma automatizada em ambientes controlados, simulando diferentes cenários de uso e condições de carga, permitindo uma avaliação objetiva e reproduzível de cada abordagem de integração.
 
-O procedimento experimental foi projetado para reproduzir interações realistas e garantir uma avaliação robusta das abordagens. Primeiramente, um ambiente de testes é configurado automaticamente, carregando cenários predefinidos e controlados. Em seguida, os testes são executados automaticamente, variando desde consultas simples até cenários complexos e ataques adversários simulados. As métricas obtidas são automaticamente registradas para garantir uma coleta padronizada e confiável dos dados. Finalmente, uma análise automatizada gera relatórios detalhados, permitindo uma comparação objetiva e precisa entre as diferentes abordagens implementadas.
+Esta padronização da coleta de métricas via testes E2E garante que as diferenças observadas entre as abordagens sejam resultado direto das suas características de implementação, e não de variações na experiência do usuário ou na forma de coleta de dados.
+
+Em seguida, os testes são executados automaticamente, variando desde consultas simples até cenários complexos e ataques adversários simulados. As métricas obtidas são automaticamente registradas para garantir uma coleta padronizada e confiável dos dados. Finalmente, uma análise automatizada gera relatórios detalhados, permitindo uma comparação objetiva e precisa entre as diferentes abordagens implementadas.
 
 ## 3. DESENVOLVIMENTO
 

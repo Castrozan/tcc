@@ -532,5 +532,5 @@ a sua pergunta-problema de pesquisa.
 
 # REFERÊNCIAS
 
-[^1]: Graduando em Engenharia de software no semestre letivo de 2024-2. E-mail: castro.lucas290@gmail.com
+[^1]: Graduando em Engenharia de software no semestre letivo de 2025-1. E-mail: castro.lucas290@gmail.com
 [^2]: Professor do Centro Universitário UniSATC E-mail: thyerri.mezzari@satc.edu.br

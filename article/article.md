@@ -7,36 +7,17 @@ title: "**ESTUDO COMPARATIVO DE ESTRATÉGIAS DE INTEGRAÇÃO PARA AGENTES CONVER
 - [ ] Edição do artigo
   - [ ] Aplicar formatação da SATC
     - [ ] Definir o template do .docx com o Word
-  - [ ] Referências
+  - [x] Referências
     - [x] Formatação ABNT
 - [ ] Escrita
-
-  - [ ] Revisão após finalizar o artigo
   - [x] Resumo
   - [x] Introdução
-  - [ ] Material e métodos
+  - [x] Material e métodos
+  - [x] Revisão e entrega parcial
+  - [ ] Desenvolvimento
   - [ ] Resultados e discussão
   - [ ] Considerações finais
-
-#### Material e métodos
-
-- [x] Abordagem geral
-- [x] Materiais
-- [ ] Métodos
-  - [ ] Plataforma de avaliação
-    - [ ] Revisão de literatura
-    - [ ] Testes E2E
-    - [ ] Coleta de métricas
-  - [ ] Procedimento experimental de cada alternativa
-    - [ ] ORM
-      - [ ] Revisão de literatura
-      - [ ] Prova de conceito
-    - [ ] MCP
-      - [ ] Revisão de literatura
-      - [ ] Prova de conceito
-    - [ ] Banco de dados
-      - [ ] Revisão de literatura
-      - [ ] Prova de conceito
+  - [ ] Revisão após finalizar o artigo
 
 **Lucas de Castro Zanoni**[^1]
 

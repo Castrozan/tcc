@@ -91,12 +91,12 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={AGENTE CONVERSACIONAL PARA INTERAÇÃO APRIMORADA EM SISTEMAS},
+  pdftitle={ESTUDO COMPARATIVO DE ESTRATÉGIAS DE INTEGRAÇÃO PARA AGENTES CONVERSACIONAIS BASEADOS EM IA EM SOLUÇÕES WEB},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{\textbf{AGENTE CONVERSACIONAL PARA INTERAÇÃO APRIMORADA EM
-SISTEMAS}}
+\title{\textbf{ESTUDO COMPARATIVO DE ESTRATÉGIAS DE INTEGRAÇÃO PARA
+AGENTES CONVERSACIONAIS BASEADOS EM IA EM SOLUÇÕES WEB}}
 \author{}
 \date{}
 
@@ -107,6 +107,7 @@ SISTEMAS}}
 produção}\label{artigo-em-produuxe7uxe3o---checklist-de-produuxe7uxe3o}
 
 \begin{itemize}
+\tightlist
 \item[$\square$]
   Edição do artigo
 
@@ -120,7 +121,7 @@ produção}\label{artigo-em-produuxe7uxe3o---checklist-de-produuxe7uxe3o}
     \item[$\square$]
       Definir o template do .docx com o Word
     \end{itemize}
-  \item[$\square$]
+  \item[$\boxtimes$]
     Referências
 
     \begin{itemize}
@@ -134,82 +135,22 @@ produção}\label{artigo-em-produuxe7uxe3o---checklist-de-produuxe7uxe3o}
 
   \begin{itemize}
   \tightlist
-  \item[$\square$]
-    Revisão após finalizar o artigo
   \item[$\boxtimes$]
     Resumo
   \item[$\boxtimes$]
     Introdução
-  \item[$\square$]
+  \item[$\boxtimes$]
     Material e métodos
+  \item[$\boxtimes$]
+    Revisão e entrega parcial
+  \item[$\square$]
+    Desenvolvimento
   \item[$\square$]
     Resultados e discussão
   \item[$\square$]
     Considerações finais
-  \end{itemize}
-\end{itemize}
-
-\paragraph{Material e métodos}\label{material-e-muxe9todos}
-
-\begin{itemize}
-\tightlist
-\item[$\boxtimes$]
-  Abordagem geral
-\item[$\boxtimes$]
-  Materiais
-\item[$\square$]
-  Métodos
-
-  \begin{itemize}
-  \tightlist
   \item[$\square$]
-    Plataforma de avaliação
-
-    \begin{itemize}
-    \tightlist
-    \item[$\square$]
-      Revisão de literatura
-    \item[$\square$]
-      Testes E2E
-    \item[$\square$]
-      Coleta de métricas
-    \end{itemize}
-  \item[$\square$]
-    Procedimento experimental de cada alternativa
-
-    \begin{itemize}
-    \tightlist
-    \item[$\square$]
-      ORM
-
-      \begin{itemize}
-      \tightlist
-      \item[$\square$]
-        Revisão de literatura
-      \item[$\square$]
-        Prova de conceito
-      \end{itemize}
-    \item[$\square$]
-      MCP
-
-      \begin{itemize}
-      \tightlist
-      \item[$\square$]
-        Revisão de literatura
-      \item[$\square$]
-        Prova de conceito
-      \end{itemize}
-    \item[$\square$]
-      Banco de dados
-
-      \begin{itemize}
-      \tightlist
-      \item[$\square$]
-        Revisão de literatura
-      \item[$\square$]
-        Prova de conceito
-      \end{itemize}
-    \end{itemize}
+    Revisão após finalizar o artigo
   \end{itemize}
 \end{itemize}
 
@@ -220,20 +161,31 @@ produção}\label{artigo-em-produuxe7uxe3o---checklist-de-produuxe7uxe3o}
 \textbf{Thyerri Fernandes Mezzari}\footnote{Professor do Centro
   Universitário UniSATC E-mail: thyerri.mezzari@satc.edu.br}
 
-Resumo: Este trabalho apresenta o desenvolvimento de um agente
-conversacional baseado em inteligência artificial para aprimorar a
-interação entre usuários e sistemas. Utilizando técnicas avançadas de
-processamento de linguagem natural, o agente proposto visa simplificar a
-comunicação em interfaces complexas, proporcionando uma experiência
-digital unificada e adaptável às necessidades dos usuários. A
-metodologia inclui o desenvolvimento, implementação e avaliação do
-agente em ambientes reais de uso. Os resultados demonstram que a solução
-proposta contribui significativamente para a melhoria da acessibilidade
-e usabilidade dos sistemas, reduzindo barreiras de interação e
-promovendo uma comunicação mais fluida e intuitiva.
+Resumo: Este trabalho apresenta um estudo experimental comparativo de
+abordagens para integração de agentes conversacionais baseados em
+inteligência artificial a soluções web. São investigadas três
+estratégias principais: integração via plugin ORM, integração via
+especificação OpenAPI com o protocolo Model Context Protocol (MCP) e
+conexão direta com banco de dados. Para garantir uma avaliação justa e
+reprodutível, foi desenvolvida uma interface de usuário padronizada e
+definidos critérios objetivos de desempenho, segurança, facilidade de
+implementação e experiência do usuário. A metodologia inclui revisão
+sistemática da literatura, fundamentada em referências acadêmicas, guias
+de segurança (como NIST e OWASP), relatórios de mercado (IBM, Red Hat),
+documentações oficiais de provedores de modelos de linguagem (OpenAI,
+Anthropic) e padrões emergentes de integração (como o MCP). O
+desenvolvimento abrange provas de conceito para cada abordagem e
+aplicação de testes automatizados end-to-end, com ênfase em métricas de
+robustez, segurança (incluindo red teaming e injeção de prompts) e
+usabilidade. O estudo discute os desafios, vantagens e limitações de
+cada alternativa, fornecendo uma análise fundamentada para orientar a
+escolha da melhor solução conforme o contexto de aplicação. Os
+resultados visam contribuir para o avanço da integração segura e
+eficiente de agentes conversacionais em sistemas complexos, promovendo
+acessibilidade, usabilidade e confiabilidade.
 
-\textbf{Palavras-chaves:} agente conversacional, interação, sistema,
-inteligência artificial.
+\textbf{Palavras-chave:} agente conversacional, integração de sistemas,
+inteligência artificial, segurança, usabilidade.
 
 \section{1 INTRODUÇÃO}\label{introduuxe7uxe3o}
 
@@ -243,14 +195,8 @@ para a plena acessibilidade e interação dos usuários com os sistemas
 digitais. Com o aumento da complexidade do frontend e a multiplicidade
 de paradigmas de interação, muitos usuários enfrentam dificuldades
 significativas para utilizar efetivamente as funcionalidades oferecidas
-pelos sistemas computacionais modernos (RAPP et al., 2018) (KOCABALLI et
-al., 2019).
-
-Nesse cenário, os agentes conversacionais baseados em inteligência
-artificial emergem como uma alternativa promissora para simplificar a
-comunicação entre humanos e máquinas, oferecendo uma camada
-intermediária de interação que pode traduzir comandos em linguagem
-natural para ações específicas no sistema.
+pelas soluções web modernas (RAPP et al., 2018) (KOCABALLI et al.,
+2019).
 
 Estudos recentes têm demonstrado que agentes conversacionais podem
 aprimorar significativamente a experiência do usuário ao simplificar
@@ -272,11 +218,6 @@ a curva de aprendizado necessária para a utilização de sistemas
 especializados e tornando-os mais acessíveis para diferentes perfis de
 usuários.
 
-Adicionalmente, trabalhos recentes indicam que avanços na arquitetura de
-modelos de IA, como o uso de transformers sem camadas de normalização,
-podem influenciar positivamente o desempenho e a eficiência desses
-agentes (ZHU et al., 2025).
-
 A relevância deste estudo evidencia-se pelo potencial transformador que
 os agentes conversacionais representam para a área de interação
 humano-computador. Ao implementar um sistema intermediário capaz de
@@ -293,7 +234,7 @@ aplicação.
 Este trabalho adota uma abordagem metodológica estruturada em múltiplas
 etapas para investigar e avaliar diferentes métodos de integração entre
 agentes conversacionais baseados em LLMs (Large Language Models) e
-sistemas computacionais. A pesquisa se desenvolve através de uma análise
+soluções web. A pesquisa se desenvolve através de uma análise
 comparativa de três abordagens distintas de integração, cada uma com
 suas características, vantagens e limitações específicas.
 
@@ -301,11 +242,12 @@ Serão exploradas três abordagens principais de integração: (1)
 integração via plugins ORM, facilitando o acesso a dados através de
 camadas de abstração existentes; (2) integração via API/Swagger com MCP,
 utilizando interfaces padronizadas de comunicação e explorando um
-paradigma emergente de comunicação entre LLMs e sistemas; (3) conexão
-direta com banco de dados, permitindo consultas e manipulações diretas.
-Para cada abordagem o processo investigativo inicia-se com uma revisão
-sistemática da literatura sobre o estado da arte de cada abordagem,
-estabelecendo uma base teórica sólida para a implementação subsequente.
+paradigma emergente de comunicação entre LLMs e o mundo externo; (3)
+conexão direta com banco de dados, permitindo consultas e manipulações
+diretas. Para cada abordagem o processo investigativo inicia-se com uma
+revisão sistemática da literatura sobre o estado da arte de cada
+abordagem, estabelecendo uma base teórica sólida para a implementação
+subsequente.
 
 Para cada abordagem, será desenvolvida uma prova de conceito que
 demonstre sua viabilidade técnica e permita uma avaliação objetiva de
@@ -337,31 +279,11 @@ capacidade de gerenciar eficientemente múltiplas conexões simultâneas,
 essencial para aplicações que exigem respostas rápidas em tempo real
 (CHEREDNICHENKO et al., 2024).
 
-O Hugging Face fornece bibliotecas JavaScript específicas compatíveis
-com Node.js, como o \texttt{@huggingface/inference}, permitindo acesso
-direto a mais de 100 mil modelos pré-treinados com suporte a TypeScript.
-Isso simplifica significativamente a integração com IA, destacando a
-robustez técnica e facilidade de adoção do Node.js em aplicações
-modernas (FACE, 2024).
-
-Grandes empresas também reforçam a relevância de Node.js ao
-disponibilizarem SDKs específicos, como o da IBM para o Watsonx, lançado
-em 2023. Este SDK facilita o uso direto de modelos generativos robustos
-da IBM em aplicações Node.js, destacando sua relevância estratégica no
-ambiente empresarial (IBM, 2023).
-
-Adicionalmente, a documentação oficial do Node.js ressalta sua
-capacidade superior de lidar com streaming de dados através de streams e
-pipelines. Essa funcionalidade permite transmitir resultados
-incrementais de IA aos clientes com baixa latência, tornando-o ideal
-para chatbots e serviços em tempo real que dependem de respostas
-imediatas (NODE.JS, 2024).
-
-Por fim, relatórios da Red Hat destacam que o uso eficiente da
-arquitetura assíncrona do Node.js possibilita a criação de agentes
-baseados em LLMs com alta performance e escalabilidade. Isso garante um
-gerenciamento eficiente de múltiplas operações paralelas, essencial para
-aplicações intensivas em IA e integração com APIs externas (BLOG, 2024).
+Relatórios da Red Hat destacam que o uso eficiente da arquitetura
+assíncrona do Node.js possibilita a criação de agentes baseados em LLMs
+com alta performance e escalabilidade. Isso garante um gerenciamento
+eficiente de múltiplas operações paralelas, essencial para aplicações
+intensivas em IA e integração com APIs externas (BLOG, 2024).
 
 \subsubsection{2.1.2 TESTES END-TO-END
 (E2E)}\label{testes-end-to-end-e2e}
@@ -400,16 +322,6 @@ o método reduziu a taxa de sucesso de jailbreaks para 19\%, mantendo a
 funcionalidade padrão do modelo --- um resultado validado através de
 testes E2E em 540 cenários adversarialmente projetados (WU et al.,
 2023).
-
-Testes de robustez, como os propostos pelo framework CheckList (RIBEIRO
-et al., 2020), complementam ainda mais os testes E2E ao variar
-sistematicamente as entradas --- como paráfrases, negações ou ruído ---
-para avaliar a consistência e a precisão do modelo em diferentes
-cenários. Esse método garante que sistemas baseados em LLM lidem de
-forma confiável com interações diversas dos usuários, atributo essencial
-para manter a confiança dos usuários e a estabilidade operacional,
-especialmente em aplicações críticas de negócios ou voltadas à
-segurança.
 
 \subsubsection{2.1.3 MODELOS DE LINGUAGEM DE GRANDE ESCALA
 (LLMs)}\label{modelos-de-linguagem-de-grande-escala-llms}
@@ -485,20 +397,17 @@ integração com sistemas complexos (YAO et al., 2023).
 SISTEMAS}\label{uso-de-ferramentas-em-tempo-real-e-interauxe7uxe3o-com-sistemas}
 
 O avanço dos LLMs em ambientes de produção foi impulsionado por recursos
-como o function calling da OpenAI (OPENAI, 2023b). Essa funcionalidade
-permite que os modelos interpretem solicitações em linguagem natural e
-as convertam em chamadas de funções estruturadas, conforme definido por
-esquemas JSON fornecidos pelo desenvolvedor. Por exemplo, ao receber uma
-instrução como ``agende uma reunião para amanhã às 14h'', o modelo pode
-gerar uma chamada de função com os parâmetros apropriados para interagir
-com uma API de calendário, sem depender de engenharia de prompt ou
-extração de texto.
-
-Essa abordagem, semelhante ao modelo escrever código para utilizar
-ferramentas, melhora significativamente a confiabilidade em cenários de
-integração, permitindo que o modelo obtenha dados estruturados de bancos
-de dados, chame APIs de negócios, envie e-mails, entre outras ações, em
-vez de apenas tentar adivinhar a resposta (OPENAI, 2023b).
+como o function calling da OpenAI. Essa funcionalidade permite que os
+modelos interpretem solicitações em linguagem natural e as convertam em
+chamadas de funções estruturadas, conforme definido pelo desenvolvedor.
+Por exemplo, ao receber uma instrução como ``agende uma reunião para
+amanhã às 14h'', o modelo pode gerar uma chamada de função com os
+parâmetros apropriados para interagir com uma API de calendário, sem
+depender de engenharia de prompt ou extração de texto (OPENAI, 2023b).
+Essa abordagem, melhora significativamente a confiabilidade em cenários
+de integração, permitindo que o modelo obtenha dados estruturados de
+bancos de dados, chame APIs de negócios, envie e-mails, entre outras
+ações, em vez de apenas tentar adivinhar a resposta (OPENAI, 2023b).
 
 Complementando essa capacidade, o Model Context Protocol (MCP),
 desenvolvido pela Anthropic (ANTHROPIC, 2024b; MODEL CONTEXT PROTOCOL
@@ -513,8 +422,8 @@ dados, promovendo uma interoperabilidade mais ampla e sustentável.
 INTEGRAÇÃO}\label{ferramentas-especuxedficas-de-integrauxe7uxe3o}
 
 A pesquisa investigou quatro abordagens distintas para a integração dos
-agentes conversacionais com sistemas computacionais, utilizando
-ferramentas específicas para cada uma:
+agentes conversacionais com soluções web, utilizando ferramentas
+específicas para cada uma:
 
 \begin{itemize}
 \item
@@ -571,135 +480,117 @@ integração direta entre LLMs e APIs externas (OPENAI, 2023c).
   para integração entre agentes de IA e sistemas externos, com o
   objetivo de padronizar como modelos acessam dados, serviços e
   ferramentas. Ele fornece uma arquitetura clara baseada em clientes e
-  servidores MCP, permitindo que agentes conversem com fontes externas
-  de forma segura, modular e escalável. Desde seu lançamento aberto,
-  entre fevereiro e abril de 2025, o protocolo ganhou tração
-  significativa com a criação de diversos servidores prontos para
-  PostgreSQL, GitHub, Slack, entre outros, além de SDKs em múltiplas
-  linguagens (ANTHROPIC, 2024c; MODEL CONTEXT PROTOCOL CONTRIBUTORS,
-  2024).
+  servidores, permitindo que agentes conversem com fontes externas de
+  forma segura, modular e escalável. Desde seu lançamento aberto, no
+  final de novembro de 2024, o protocolo ganhou tração significativa com
+  a criação de diversos servidores prontos para PostgreSQL, GitHub,
+  Slack, entre outros, além de SDKs em múltiplas linguagens (ANTHROPIC,
+  2024c; MODEL CONTEXT PROTOCOL CONTRIBUTORS, 2024).
 \end{itemize}
 
 A adoção crescente é impulsionada pela comunidade ativa, o que demonstra
 o potencial do MCP como um padrão de integração para sistemas baseados
-em LLMs. Sua proposta de ``porta universal'' para conectar agentes a
-ferramentas oferece flexibilidade e segurança --- características
+em LLMs. Sua proposta de `porta universal' para conectar agentes a
+ferramentas oferece flexibilidade e segurança: características
 fundamentais quando agentes com poder de raciocínio, como LLMs, precisam
 acessar recursos sensíveis de forma controlada e auditável (ANTHROPIC,
 2024c).
 
 \subsection{2.2 MÉTODOS}\label{muxe9todos}
 
-Para garantir a rigorosidade científica e a reprodutibilidade dos
-experimentos conduzidos neste estudo, foi desenvolvida uma interface
-comum de usuário que será utilizada para avaliar todas as abordagens de
-integração. Esta padronização permite uma comparação justa e objetiva
-entre as diferentes implementações, eliminando variáveis relacionadas à
-interface do usuário que poderiam influenciar os resultados.
+Para assegurar a rigorosidade científica e garantir a reprodutibilidade
+dos experimentos conduzidos neste estudo, foi desenvolvida uma interface
+padrão comum para avaliar todas as abordagens de integração. Essa
+padronização viabiliza uma comparação justa e objetiva entre as
+implementações, minimizando variáveis relacionadas à interface que
+poderiam interferir nos resultados finais.
 
 \subsubsection{2.2.1 Interface Comum de
 Usuário}\label{interface-comum-de-usuuxe1rio}
 
-A interface do usuário consiste em uma aplicação web de chat
-minimalista, desenvolvida utilizando React.js e TypeScript. Esta
-interface serve como ponto de entrada único para todas as abordagens de
-integração implementadas, garantindo consistência na experiência do
-usuário e na coleta de métricas.
+A interface comum consiste em uma aplicação web simples de chat,
+desenvolvida utilizando React.js e TypeScript. A interface foi projetada
+de forma minimalista, visando uma experiência consistente e objetiva,
+independentemente da abordagem de integração utilizada.
 
-\paragraph{2.2.1.1 Arquitetura da
-Interface}\label{arquitetura-da-interface}
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/metodos/user-interface.jpg}}
+\caption{Interface do Usuário}
+\end{figure}
 
-A aplicação frontend foi desenvolvida seguindo princípios de arquitetura
-limpa e componentização, consistindo em:
+\paragraph{2.2.1.1 DESIGN DA INTERFACE}\label{design-da-interface}
 
-\begin{itemize}
-\tightlist
-\item
-  Interface de chat com histórico de mensagens
-\item
-  Campo de entrada de texto para prompts do usuário
-\item
-  Área de exibição formatada para respostas estruturadas
-\end{itemize}
+A interface é composta por uma seção principal que exibe o histórico de
+mensagens, onde as interações entre usuário e agente conversacional
+aparecem de forma intercalada: as mensagens do agente são exibidas à
+esquerda e as do usuário à direita, facilitando a distinção visual entre
+os participantes da conversa. Abaixo do histórico, há um campo de
+entrada de texto que permite ao usuário digitar e enviar novas
+mensagens. Esse layout possibilita ao usuário acompanhar facilmente todo
+o histórico da conversa e inserir novos prompts de maneira contínua e
+intuitiva.
 
 \paragraph{2.2.1.2 Comunicação com
 Backend}\label{comunicauxe7uxe3o-com-backend}
 
-A comunicação entre a interface e as diferentes implementações de
-backend é padronizada através de uma API REST, que segue as seguintes
-especificações:
+A comunicação entre frontend e backend será estabelecida por meio de uma
+API REST síncrona, simplificando o processo de envio e retorno de
+mensagens. Cada consulta feita pelo usuário gerará uma única requisição
+ao backend que processará integralmente essa requisição utilizando um
+modelo de linguagem (LLM) e devolverá uma resposta após concluir o
+processamento, mantendo o fluxo de comunicação claro e previsível.
 
-\begin{itemize}
-\tightlist
-\item
-  Endpoint único para processamento de mensagens
-\item
-  Formato JSON padronizado para requisições e respostas
-\item
-  Suporte a streaming de respostas via Server-Sent Events
-\item
-  Tratamento uniforme de erros e timeouts
-\end{itemize}
+\subsubsection{2.2.2 Arquitetura e Fluxo de Integração do
+Sistema}\label{arquitetura-e-fluxo-de-integrauxe7uxe3o-do-sistema}
 
-\paragraph{2.2.1.3 Coleta de Métricas via Testes
+A arquitetura do sistema que será desenvolvida para este estudo
+envolverá múltiplas camadas que trabalharão de forma integrada para
+responder às consultas feitas pelo usuário em linguagem natural.
+Inicialmente, as consultas serão recebidas pela interface web e
+encaminhadas ao backend, onde o modelo de linguagem executará o processo
+de análise e interpretação.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/metodos/system-architecture.jpg}}
+\caption{Arquitetura do Sistema}
+\end{figure}
+
+O fluxo completo de interação deverá ocorrer da seguinte maneira: ao
+receber uma consulta, o modelo de linguagem interpretará a intenção do
+usuário e gerará uma requisição estruturada que será validada antes de
+ser enviada à camada de integração. Essa camada utilizará diferentes
+abordagens (ORM, MCP ou conexão direta com o banco de dados) para
+acessar sistemas backend, como modelos de dados, APIs externas ou bancos
+de dados diretamente. Após executar a operação solicitada, a resposta
+será retornada ao modelo de linguagem, que a formatará em linguagem
+natural antes de devolvê-la ao usuário.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/metodos/workflow-integration.jpg}}
+\caption{Diagrama de Workflow do Agente}
+\end{figure}
+
+\subsubsection{2.2.3 Coleta de Métricas via Testes
 E2E}\label{coleta-de-muxe9tricas-via-testes-e2e}
 
-Conforme discutido na seção de materiais, os testes end-to-end (E2E) são
-fundamentais para avaliar o desempenho e a segurança de sistemas
-baseados em LLMs. A interface implementa um framework de testes E2E
-automatizados que coleta métricas consistentes para todas as abordagens,
-incluindo:
+Testes End-to-End (E2E) são essenciais para avaliar não apenas o
+desempenho e a segurança, mas também a experiência geral do usuário com
+sistemas integrados a LLMs. Os testes são automatizados, executados
+regularmente em ambiente controlado para assegurar resultados
+consistentes e comparáveis.
 
-\begin{itemize}
-\item
-  Métricas de Performance
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Tempo de resposta do servidor
-  \item
-    Tempo de processamento do LLM
-  \item
-    Latência de rede
-  \end{itemize}
-\item
-  Métricas de Confiabilidade
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Taxa de sucesso das interações
-  \item
-    Frequência de erros
-  \item
-    Consistência das respostas
-  \end{itemize}
-\item
-  Métricas de Segurança
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Tentativas de injeção de prompt
-  \item
-    Validação de restrições de acesso
-  \item
-    Conformidade com políticas de dados
-  \end{itemize}
-\item
-  Métricas de Experiência do Usuário
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Tempo até primeira resposta
-  \item
-    Qualidade das respostas
-  \item
-    Satisfação do usuário
-  \end{itemize}
-\end{itemize}
+Os testes envolvem: - Avaliação detalhada da performance, incluindo
+tempos totais de resposta, tempo específico do processamento pelo modelo
+de linguagem e latência da rede. - Análise da confiabilidade através da
+taxa de sucesso das requisições e frequência de erros críticos e não
+críticos. - Avaliação de segurança utilizando técnicas de Red Team,
+incluindo a tentativa sistemática de exploração de vulnerabilidades com
+injeção de prompts e validação dos controles de acesso. - Mensuração da
+experiência do usuário, utilizando avaliações qualitativas da clareza
+das respostas e pesquisas estruturadas de satisfação com escalas Likert.
 
 Os testes E2E são executados de forma automatizada em ambientes
 controlados, simulando diferentes cenários de uso e condições de carga,
@@ -711,7 +602,17 @@ diferenças observadas entre as abordagens sejam resultado direto das
 suas características de implementação, e não de variações na experiência
 do usuário ou na forma de coleta de dados.
 
-\subsubsection{2.2.2 Integração via Plugin
+Em seguida, os testes são executados automaticamente, variando desde
+consultas simples até cenários complexos e ataques adversários
+simulados. As métricas obtidas são automaticamente registradas para
+garantir uma coleta padronizada e confiável dos dados. Finalmente, uma
+análise automatizada gera relatórios detalhados, permitindo uma
+comparação objetiva e precisa entre as diferentes abordagens
+implementadas.
+
+\subsection{3. DESENVOLVIMENTO}\label{desenvolvimento}
+
+\subsubsection{3.1 Integração via Plugin
 ORM}\label{integrauxe7uxe3o-via-plugin-orm}
 
 A primeira abordagem investigada consiste na implementação de um plugin
@@ -719,7 +620,7 @@ ORM que permite ao LLM interagir com o sistema através das camadas de
 abstração do ORM. Esta seção detalha a arquitetura, implementação e
 considerações práticas desta solução.
 
-\paragraph{2.2.2.1 Arquitetura da
+\paragraph{3.1.1 Arquitetura da
 Solução}\label{arquitetura-da-soluuxe7uxe3o}
 
 A arquitetura proposta para esta abordagem é composta por quatro
@@ -745,7 +646,7 @@ encadeadas, aproveitando os relacionamentos e métodos definidos nos
 modelos do ORM para obter dados relacionados e realizar análises mais
 complexas.
 
-\paragraph{2.2.2.2 Componentes de
+\paragraph{3.1.2 Componentes de
 Segurança}\label{componentes-de-seguranuxe7a}
 
 A implementação inclui camadas de segurança essenciais:
@@ -764,7 +665,7 @@ A implementação inclui camadas de segurança essenciais:
   Validação de permissões de usuário
 \end{itemize}
 
-\paragraph{2.2.2.3 Estrutura de Metadados}\label{estrutura-de-metadados}
+\paragraph{3.1.3 Estrutura de Metadados}\label{estrutura-de-metadados}
 
 A configuração do sistema é gerenciada através dos modelos do ORM:
 
@@ -780,7 +681,7 @@ A configuração do sistema é gerenciada através dos modelos do ORM:
   Configurações de cache
 \end{itemize}
 
-\paragraph{2.2.2.4 Implementação da Prova de
+\paragraph{3.1.4 Implementação da Prova de
 Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito}
 
 A implementação utiliza uma stack tecnológica moderna baseada em
@@ -799,7 +700,7 @@ desenvolvimento. Os principais componentes tecnológicos incluem:
   Banco de Dados: PostgreSQL
 \end{itemize}
 
-\paragraph{2.2.2.5 Desenvolvimento do
+\paragraph{3.1.5 Desenvolvimento do
 Plugin}\label{desenvolvimento-do-plugin}
 
 O plugin ORM implementa:
@@ -818,11 +719,11 @@ O plugin ORM implementa:
   Logging e monitoramento
 \end{itemize}
 
-\paragraph{2.2.2.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos}
+\paragraph{3.1.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos}
 
 A implementação técnica foca em três aspectos principais:
 
-\paragraph{2.2.2.7 Integração com LLM}\label{integrauxe7uxe3o-com-llm}
+\paragraph{3.1.7 Integração com LLM}\label{integrauxe7uxe3o-com-llm}
 
 O sistema utiliza técnicas avançadas de prompt engineering para:
 
@@ -838,7 +739,7 @@ O sistema utiliza técnicas avançadas de prompt engineering para:
   Gerenciamento de relacionamentos
 \end{itemize}
 
-\paragraph{2.2.2.8 Tratamento de Erros}\label{tratamento-de-erros}
+\paragraph{3.1.8 Tratamento de Erros}\label{tratamento-de-erros}
 
 O sistema implementa estratégias robustas para:
 
@@ -854,7 +755,7 @@ O sistema implementa estratégias robustas para:
   Conflitos de concorrência
 \end{itemize}
 
-\paragraph{2.2.2.9 Avaliação e
+\paragraph{3.1.9 Avaliação e
 Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas}
 
 Esta abordagem foi avaliada considerando os seguintes aspectos:
@@ -869,7 +770,7 @@ Esta abordagem foi avaliada considerando os seguintes aspectos:
   Custos Operacionais
 \end{itemize}
 
-\paragraph{2.2.2.10 Considerações
+\paragraph{3.1.10 Considerações
 Práticas}\label{considerauxe7uxf5es-pruxe1ticas}
 
 A implementação revelou diversos aspectos práticos importantes:
@@ -884,7 +785,7 @@ A implementação revelou diversos aspectos práticos importantes:
   Manutenção
 \end{itemize}
 
-\subsubsection{2.2.3 Integração
+\subsubsection{3.2 Integração
 OpenAPI-MCP}\label{integrauxe7uxe3o-openapi-mcp}
 
 A terceira abordagem implementa uma solução unificada que combina a
@@ -892,7 +793,7 @@ especificação OpenAPI com o Model Context Protocol (MCP). Esta seção
 detalha a arquitetura, implementação e considerações práticas desta
 solução integrada.
 
-\paragraph{2.2.3.1 Arquitetura da
+\paragraph{3.2.1 Arquitetura da
 Solução}\label{arquitetura-da-soluuxe7uxe3o-1}
 
 A arquitetura proposta para esta abordagem implementa um servidor MCP
@@ -953,7 +854,7 @@ A arquitetura desta abordagem é composta por três camadas principais:
   \end{itemize}
 \end{enumerate}
 
-\paragraph{2.2.3.2 Fluxo de Operação}\label{fluxo-de-operauxe7uxe3o}
+\paragraph{3.2.2 Fluxo de Operação}\label{fluxo-de-operauxe7uxe3o}
 
 O sistema opera através do seguinte fluxo:
 
@@ -972,7 +873,7 @@ O sistema opera através do seguinte fluxo:
   Processamento das respostas e apresentação ao usuário
 \end{enumerate}
 
-\paragraph{2.2.3.3 Componentes de
+\paragraph{3.2.3 Componentes de
 Segurança}\label{componentes-de-seguranuxe7a-1}
 
 A implementação mantém as características de segurança de ambos os
@@ -986,7 +887,7 @@ protocolos:
   Autenticação e gestão de permissões para uso do swagger
 \end{itemize}
 
-\paragraph{2.2.3.4 Implementação da Prova de
+\paragraph{3.2.4 Implementação da Prova de
 Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito-1}
 
 A implementação utiliza as seguintes tecnologias:
@@ -1001,7 +902,7 @@ A implementação utiliza as seguintes tecnologias:
   MCP SDK para geração de servidores
 \end{itemize}
 
-\paragraph{2.2.3.5 Desenvolvimento do
+\paragraph{3.2.5 Desenvolvimento do
 Gerador}\label{desenvolvimento-do-gerador}
 
 O gerador de servidores MCP implementa:
@@ -1020,7 +921,7 @@ O gerador de servidores MCP implementa:
   Sistema de plugins para extensibilidade
 \end{itemize}
 
-\paragraph{2.2.3.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos-1}
+\paragraph{3.2.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos-1}
 
 A implementação foca em três aspectos principais:
 
@@ -1064,7 +965,7 @@ A implementação foca em três aspectos principais:
   \end{itemize}
 \end{enumerate}
 
-\paragraph{2.2.3.7 Avaliação e
+\paragraph{3.2.7 Avaliação e
 Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas-1}
 
 A avaliação considera aspectos específicos desta abordagem:
@@ -1111,7 +1012,7 @@ A avaliação considera aspectos específicos desta abordagem:
   \end{itemize}
 \end{enumerate}
 
-\paragraph{2.2.3.8 Considerações
+\paragraph{3.2.8 Considerações
 Práticas}\label{considerauxe7uxf5es-pruxe1ticas-1}
 
 A implementação revelou aspectos importantes:
@@ -1162,7 +1063,7 @@ A implementação revelou aspectos importantes:
   \end{itemize}
 \end{enumerate}
 
-\subsubsection{2.2.4 Integração via conexão direta com o banco de
+\subsubsection{3.3 Integração via conexão direta com o banco de
 dados}\label{integrauxe7uxe3o-via-conexuxe3o-direta-com-o-banco-de-dados}
 
 A terceira abordagem explora a integração direta entre o LLM e o banco
@@ -1171,7 +1072,7 @@ abordagem oferece máximo controle e performance, mas requer cuidados
 especiais com segurança e validação. Esta seção detalha a arquitetura,
 implementação e considerações práticas desta solução.
 
-\paragraph{2.2.4.1 Arquitetura da
+\paragraph{3.3.1 Arquitetura da
 Solução}\label{arquitetura-da-soluuxe7uxe3o-2}
 
 A arquitetura desta abordagem é intencionalmente minimalista, composta
@@ -1220,7 +1121,7 @@ por três componentes principais:
 \caption{DB - Diagrama da Arquitetura}
 \end{figure}
 
-\paragraph{2.2.4.2 Fluxo de Operação}\label{fluxo-de-operauxe7uxe3o-1}
+\paragraph{3.3.2 Fluxo de Operação}\label{fluxo-de-operauxe7uxe3o-1}
 
 O sistema opera através de um fluxo direto:
 
@@ -1243,7 +1144,7 @@ O sistema opera através de um fluxo direto:
   Formatação da resposta
 \end{enumerate}
 
-\paragraph{2.2.4.3 Componentes de
+\paragraph{3.3.3 Componentes de
 Segurança}\label{componentes-de-seguranuxe7a-2}
 
 Dado o acesso direto ao banco, a segurança é crítica:
@@ -1262,7 +1163,7 @@ Dado o acesso direto ao banco, a segurança é crítica:
   Timeouts configuráveis
 \end{itemize}
 
-\paragraph{2.2.4.4 Implementação da Prova de
+\paragraph{3.3.4 Implementação da Prova de
 Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito-2}
 
 A implementação utiliza tecnologias focadas em performance:
@@ -1281,7 +1182,7 @@ A implementação utiliza tecnologias focadas em performance:
   Sistema de Cache: Redis
 \end{itemize}
 
-\paragraph{2.2.4.5 Desenvolvimento do
+\paragraph{3.3.5 Desenvolvimento do
 Conector}\label{desenvolvimento-do-conector}
 
 O conector de banco de dados implementa:
@@ -1302,7 +1203,7 @@ O conector de banco de dados implementa:
   Métricas em tempo real
 \end{itemize}
 
-\paragraph{2.2.4.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos-2}
+\paragraph{3.3.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos-2}
 
 A implementação foca em três aspectos críticos:
 
@@ -1352,7 +1253,7 @@ A implementação foca em três aspectos críticos:
   \end{itemize}
 \end{enumerate}
 
-\paragraph{2.2.4.7 Avaliação e
+\paragraph{3.3.7 Avaliação e
 Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas-2}
 
 A avaliação considera aspectos específicos:
@@ -1403,7 +1304,7 @@ A avaliação considera aspectos específicos:
   \end{itemize}
 \end{enumerate}
 
-\paragraph{2.2.4.8 Considerações
+\paragraph{3.3.8 Considerações
 Práticas}\label{considerauxe7uxf5es-pruxe1ticas-2}
 
 A implementação revelou aspectos importantes:
@@ -1459,13 +1360,13 @@ manutenção, oferece máxima flexibilidade e performance para casos de uso
 específicos onde o controle direto sobre as operações de banco de dados
 é necessário.
 
-\section{3 RESULTADOS E DISCUSSÕES}\label{resultados-e-discussuxf5es}
+\section{4 RESULTADOS E DISCUSSÕES}\label{resultados-e-discussuxf5es}
 
 Nos Resultados e Discussões, deve-se apresentar os resultados obtidos no
 Procedimento Experimental e fazer uma discussão e análise sobre os
 mesmos sempre que possível referenciando a literatura pesquisada.
 
-\section{4 CONSIDERAÇÕES FINAIS}\label{considerauxe7uxf5es-finais}
+\section{5 CONSIDERAÇÕES FINAIS}\label{considerauxe7uxf5es-finais}
 
 Etapa esta que servirá para você evidenciar as conquistas alcançadas com
 o estudo e indicar as limitações e as reconsiderações. Além disso, você
@@ -1530,10 +1431,6 @@ Overflow 2023 Survey}. Disponível em:
 \textless{}\url{https://www.enterprisedb.com/blog/postgres-most-admired-database-in-stack-overflow-2023}\textgreater.
 Acesso em: 12 abr. 2025a.
 
-\bibitem[\citeproctext]{ref-HuggingFace2024}
-FACE, H. \textbf{JavaScript Libraries for ML Integration}.
-\url{https://huggingface.co/docs/huggingface.js/}, 2024.
-
 \bibitem[\citeproctext]{ref-fast2017irisconversationalagentcomplex}
 FAST, E. et al. \textbf{Iris: A Conversational Agent for Complex
 Tasks}., 2017. Disponível em:
@@ -1546,10 +1443,6 @@ Jigsaw Puzzle Co-solving Task}. Proceedings of the ACM on Computer
 Graphics and Interactive Techniques. \textbf{Anais}...2024. Disponível
 em:
 \textless{}\url{https://www.researchgate.net/publication/335223260_The_Effects_of_Continuous_Conversation_and_Task_Complexity_on_Usability_of_an_AI-Based_Conversational_Agent_in_Smart_Home_Environments}\textgreater{}
-
-\bibitem[\citeproctext]{ref-IBM2023WatsonxSDK}
-IBM. \textbf{IBM Generative AI Node.js SDK}.
-\url{https://github.com/IBM/ibm-generative-ai-node-sdk}, 2023.
 
 \bibitem[\citeproctext]{ref-inie2025summon}
 INIE, N.; STRAY, J.; DERCZYNSKI, L.
@@ -1588,10 +1481,6 @@ Specification}. {[}s.l.{]} Model Context Protocol, 26 mar. 2025.
 Disponível em:
 \textless{}\url{https://modelcontextprotocol.io/specification/2025-03-26/index}\textgreater.
 Acesso em: 12 abr. 2025.
-
-\bibitem[\citeproctext]{ref-Nodejs2024Docs}
-NODE.JS. \textbf{Streams, Pipelines and WebSocket support}.
-\url{https://nodejs.org/api/stream.html}, 2024.
 
 \bibitem[\citeproctext]{ref-openai2022instructgpt}
 OPENAI. \textbf{Aligning Language Models to Follow Instructions}.
@@ -1632,11 +1521,6 @@ for spatial needs: Routines, control and social competences of people
 with autism}. \textbf{International Journal of Human-Computer Studies},
 v. 120, p. 49--65, 2018.
 
-\bibitem[\citeproctext]{ref-ribeiro2020beyond}
-RIBEIRO, M. T. et al. \href{https://arxiv.org/abs/2005.04118}{Beyond
-accuracy: Behavioral testing of NLP models with CheckList}.
-\textbf{arXiv preprint arXiv:2005.04118}, 2020.
-
 \bibitem[\citeproctext]{ref-eversql2023orms}
 TEAM, E. \textbf{Best ORM for Node.js in 2023: A Comprehensive
 Comparison}. Disponível em:
@@ -1668,11 +1552,6 @@ chatgpt against jailbreak attack via self-reminder}. 2023.
 YAO, S. et al. \textbf{Tree of Thoughts: Deliberate Problem Solving with
 Large Language Models}., 2023. Disponível em:
 \textless{}\url{https://arxiv.org/abs/2305.10601}\textgreater{}
-
-\bibitem[\citeproctext]{ref-Zhu2025DyT}
-ZHU, J. et al. \textbf{Transformers without Normalization}. Proceedings
-of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
-(CVPR). \textbf{Anais}...2025.
 
 \end{CSLReferences}
 

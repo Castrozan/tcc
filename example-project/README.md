@@ -1,16 +1,16 @@
-# Documentação **pocs**
+# Documentação **example-project**
 
 ## **Índice**
 
-- [Documentação **pocs**](#documentação-pocs)
-    - [**Índice**](#índice)
-    - [**Visão Geral**](#visão-geral)
-    - [**Funcionamento Geral**](#funcionamento-geral)
-        - [**Diagrama de Sequência**](#diagrama-de-sequência)
-    - [**Demonstração de funcionamento**](#demonstração-de-funcionamento)
-    - [**Execução**](#execução)
-        - [**Requisitos**](#requisitos)
-    - [**Testes**](#testes)
+- [Documentação **example-project**](#documentação-example-project)
+  - [**Índice**](#índice)
+  - [**Visão Geral**](#visão-geral)
+  - [**Funcionamento Geral**](#funcionamento-geral)
+    - [**Diagrama de Sequência**](#diagrama-de-sequência)
+  - [**Demonstração de funcionamento**](#demonstração-de-funcionamento)
+  - [**Execução**](#execução)
+    - [**Requisitos**](#requisitos)
+  - [**Testes**](#testes)
 
 ## **Visão Geral**
 

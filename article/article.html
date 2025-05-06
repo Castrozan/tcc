@@ -339,8 +339,8 @@ ABNT</label></li>
 <li><label><input type="checkbox" checked></input>Introdução</label></li>
 <li><label><input type="checkbox" checked></input>Material e
 métodos</label></li>
-<li><label><input type="checkbox" checked></input>Revisão e entrega
-parcial</label></li>
+<li><label><input type="checkbox" checked></input>Revisão e entrega parcial
+(nota 4.5/5)</label></li>
 <li><label><input type="checkbox"></input>Desenvolvimento</label></li>
 <li><label><input type="checkbox"></input>Resultados e discussão</label></li>
 <li><label><input type="checkbox"></input>Considerações finais</label></li>
@@ -352,26 +352,27 @@ artigo</label></li>
 <p><strong>Thyerri Fernandes Mezzari</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Resumo: Este trabalho apresenta um estudo experimental comparativo de
 abordagens para integração de agentes conversacionais baseados em
-inteligência artificial a soluções web. São investigadas três
+inteligência artificial a soluções <em>web</em>. São investigadas três
 estratégias principais: integração via plugin ORM, integração via
-especificação OpenAPI com o protocolo Model Context Protocol (MCP) e
-conexão direta com banco de dados. Para garantir uma avaliação justa e
-reprodutível, foi desenvolvida uma interface de usuário padronizada e
-definidos critérios objetivos de desempenho, segurança, facilidade de
-implementação e experiência do usuário. A metodologia inclui revisão
-sistemática da literatura, fundamentada em referências acadêmicas, guias
-de segurança (como NIST e OWASP), relatórios de mercado (IBM, Red Hat),
-documentações oficiais de provedores de modelos de linguagem (OpenAI,
-Anthropic) e padrões emergentes de integração (como o MCP). O
-desenvolvimento abrange provas de conceito para cada abordagem e
-aplicação de testes automatizados end-to-end, com ênfase em métricas de
-robustez, segurança (incluindo red teaming e injeção de prompts) e
-usabilidade. O estudo discute os desafios, vantagens e limitações de
-cada alternativa, fornecendo uma análise fundamentada para orientar a
-escolha da melhor solução conforme o contexto de aplicação. Os
-resultados visam contribuir para o avanço da integração segura e
-eficiente de agentes conversacionais em sistemas complexos, promovendo
-acessibilidade, usabilidade e confiabilidade.</p>
+especificação OpenAPI com o protocolo <em>Model Context Protocol</em>
+(MCP) e conexão direta com banco de dados. Para garantir uma avaliação
+justa e reprodutível, foi desenvolvida uma interface de usuário
+padronizada e definidos critérios objetivos de desempenho, segurança,
+facilidade de implementação e experiência do usuário. A metodologia
+inclui revisão sistemática da literatura, fundamentada em referências
+acadêmicas, guias de segurança (como NIST e OWASP), relatórios de
+mercado (IBM, Red Hat), documentações oficiais de provedores de modelos
+de linguagem (OpenAI, Anthropic) e padrões emergentes de integração
+(como o MCP). O desenvolvimento abrange provas de conceito para cada
+abordagem e aplicação de testes automatizados <em>end-to-end</em>, com
+ênfase em métricas de robustez, segurança (incluindo <em>red
+teaming</em> e injeção de <em>prompts</em>) e usabilidade. O estudo
+discute os desafios, vantagens e limitações de cada alternativa,
+fornecendo uma análise fundamentada para orientar a escolha da melhor
+solução conforme o contexto de aplicação. Os resultados visam contribuir
+para o avanço da integração segura e eficiente de agentes
+conversacionais em sistemas complexos, promovendo acessibilidade,
+usabilidade e confiabilidade.</p>
 <p><strong>Palavras-chave:</strong> agente conversacional, integração de
 sistemas, inteligência artificial, segurança, usabilidade.</p>
 <h1 id="introdução">1 INTRODUÇÃO</h1>
@@ -381,10 +382,22 @@ para a plena acessibilidade e interação dos usuários com os sistemas
 digitais. Com o aumento da complexidade do frontend e a multiplicidade
 de paradigmas de interação, muitos usuários enfrentam dificuldades
 significativas para utilizar efetivamente as funcionalidades oferecidas
-pelas soluções web modernas <span class="citation" data-cites="RAPP201849">[@RAPP201849]</span> <span class="citation" data-cites="Kocaballi2019">[@Kocaballi2019]</span>.</p>
-<p>Estudos recentes têm demonstrado que agentes conversacionais podem
-aprimorar significativamente a experiência do usuário ao simplificar
-interações com sistemas complexos <span class="citation" data-cites="fast2017irisconversationalagentcomplex">[@fast2017irisconversationalagentcomplex]</span>.
+pelas soluções web modernas <span class="citation" data-cites="RAPP201849">[@RAPP201849]</span> <span class="citation" data-cites="Kocaballi2019">[@Kocaballi2019]</span>. Nesse contexto, a
+ascensão dos Modelos de Linguagem de Grande Escala (LLMs), como os
+desenvolvidos por OpenAI, Anthropic e Google, tem impulsionado o
+desenvolvimento de agentes conversacionais mais avançados e adaptáveis
+<span class="citation" data-cites="openai2022instructgpt anthropic2024mcp">[@openai2022instructgpt;
+@anthropic2024mcp]</span>. Nos últimos anos, avanços em modelos baseados
+em Transformer, como o BERT (2018), que aprimorou a compreensão textual,
+e o GPT-3 (2020), que ampliou as capacidades generativas e o aprendizado
+com poucos exemplos (<em>few-shot</em>), permitiram que os LLMs
+realizassem tarefas cada vez mais complexas a partir de simples
+instruções em linguagem natural. Esses avanços consolidaram os LLMs como
+interfaces conversacionais robustas e eficazes para integração com
+sistemas.</p>
+<p>Diante desse cenário, estudos recentes têm demonstrado que agentes
+conversacionais podem aprimorar significativamente a experiência do
+usuário ao simplificar interações com sistemas complexos <span class="citation" data-cites="fast2017irisconversationalagentcomplex">[@fast2017irisconversationalagentcomplex]</span>.
 Além disso, a implementação de interfaces baseadas em linguagem natural
 tem mostrado potencial para melhorar a usabilidade em contextos
 domésticos e inteligentes, reduzindo o tempo e o esforço necessários
@@ -392,15 +405,28 @@ para completar tarefas complexas <span class="citation" data-cites="Guo2024Doppe
 tais interfaces oferecem vantagens consideráveis em termos de
 acessibilidade, permitindo uma comunicação mais inclusiva e adaptável a
 usuários com diferentes necessidades especiais <span class="citation" data-cites="Lister2020AccessibleCU">[@Lister2020AccessibleCU]</span>
-<span class="citation" data-cites="Deng2023AMA">[@Deng2023AMA]</span>.</p>
-<p>A problemática central desta pesquisa reside na questão: de que forma
-um agente conversacional baseado em IA pode potencializar a interação
-entre usuários e sistemas, promovendo uma comunicação fluida mesmo em
-ambientes com interfaces complexas? Essa pergunta reflete a necessidade
-crescente de soluções que democratizem o acesso à tecnologia, reduzindo
-a curva de aprendizado necessária para a utilização de sistemas
-especializados e tornando-os mais acessíveis para diferentes perfis de
-usuários.</p>
+<span class="citation" data-cites="Deng2023AMA">[@Deng2023AMA]</span>.
+Para que esses benefícios sejam efetivamente alcançados em soluções web,
+é fundamental avaliar as diferentes estratégias de integração desses
+agentes aos sistemas existentes.</p>
+<p>Nesse sentido, este estudo aborda experimentalmente três estratégias
+distintas para integrar agentes conversacionais baseados em IA a
+sistemas web: integração via plugins ORM, que utilizam camadas de
+abstração para acesso simplificado aos dados; integração por meio de
+APIs seguindo a especificação OpenAPI com o protocolo emergente MCP
+(Model Context Protocol), focado em interfaces padronizadas; e conexão
+direta com banco de dados, permitindo interações sem intermediários
+adicionais. Essas abordagens serão avaliadas comparativamente,
+destacando suas particularidades quanto a desempenho, segurança,
+facilidade de implementação e experiência do usuário.</p>
+<p>Dessa forma, a problemática central desta pesquisa reside na questão:
+de que forma um agente conversacional baseado em IA pode potencializar a
+interação entre usuários e sistemas, promovendo uma comunicação fluida
+mesmo em ambientes com interfaces complexas? Essa pergunta reflete a
+necessidade crescente de soluções que democratizem o acesso à
+tecnologia, reduzindo a curva de aprendizado necessária para a
+utilização de sistemas especializados e tornando-os mais acessíveis para
+diferentes perfis de usuários.</p>
 <p>A relevância deste estudo evidencia-se pelo potencial transformador
 que os agentes conversacionais representam para a área de interação
 humano-computador. Ao implementar um sistema intermediário capaz de
@@ -412,29 +438,29 @@ interfaces complexas, contribuindo para uma maior inclusão digital e
 para a melhoria da experiência do usuário em diversos contextos de
 aplicação.</p>
 <h1 id="procedimento-experimental">2 PROCEDIMENTO EXPERIMENTAL</h1>
-<p>Este trabalho adota uma abordagem metodológica estruturada em
-múltiplas etapas para investigar e avaliar diferentes métodos de
-integração entre agentes conversacionais baseados em LLMs (Large
-Language Models) e soluções web. A pesquisa se desenvolve através de uma
-análise comparativa de três abordagens distintas de integração, cada uma
-com suas características, vantagens e limitações específicas.</p>
-<p>Serão exploradas três abordagens principais de integração: (1)
-integração via plugins ORM, facilitando o acesso a dados através de
-camadas de abstração existentes; (2) integração via API/Swagger com MCP,
-utilizando interfaces padronizadas de comunicação e explorando um
-paradigma emergente de comunicação entre LLMs e o mundo externo; (3)
-conexão direta com banco de dados, permitindo consultas e manipulações
-diretas. Para cada abordagem o processo investigativo inicia-se com uma
-revisão sistemática da literatura sobre o estado da arte de cada
-abordagem, estabelecendo uma base teórica sólida para a implementação
-subsequente.</p>
-<p>Para cada abordagem, será desenvolvida uma prova de conceito que
-demonstre sua viabilidade técnica e permita uma avaliação objetiva de
-seus aspectos funcionais e não-funcionais. A avaliação seguirá critérios
-predefinidos, incluindo desempenho, segurança, facilidade de
-implementação, manutenibilidade e experiência do usuário. Os resultados
-serão documentados e analisados de forma sistemática, permitindo uma
-comparação objetiva entre as diferentes abordagens.</p>
+<p>Este estudo adota uma abordagem experimental estruturada em etapas
+sequenciais para investigar comparativamente as três estratégias de
+integração mencionadas anteriormente: integração via plugins ORM,
+integração por meio de APIs seguindo a especificação OpenAPI com o
+protocolo MCP, e conexão direta com banco de dados. Cada abordagem será
+examinada com base em provas de conceito práticas, desenvolvidas para
+validar sua viabilidade técnica e avaliar objetivamente aspectos
+funcionais e não-funcionais.</p>
+<p>Inicialmente, será conduzida uma revisão sistemática da literatura,
+consolidando conhecimentos científicos sobre cada abordagem e embasando
+teoricamente a fase experimental. Na sequência, cada estratégia será
+implementada e testada por meio de provas de conceito específicas,
+garantindo a padronização das interfaces e condições de avaliação.</p>
+<p>Os critérios de avaliação definidos incluem desempenho, segurança,
+facilidade de implementação, manutenibilidade e experiência do usuário.
+Para assegurar resultados objetivos e comparáveis, os testes incluirão
+análises automatizadas end-to-end, medidas de robustez e segurança (como
+testes de red teaming e proteção contra injeção de prompts) e avaliações
+qualitativas de usabilidade. Os resultados serão sistematicamente
+documentados e analisados, permitindo identificar desafios, vantagens e
+limitações intrínsecas a cada método de integração e facilitando a
+tomada de decisão quanto à abordagem mais adequada para diferentes
+contextos de aplicação.</p>
 <h2 id="materiais">2.1 MATERIAIS</h2>
 <p>Para garantir a rigorosidade científica e a reprodutibilidade dos
 experimentos conduzidos neste estudo, é essencial uma seleção criteriosa
@@ -448,18 +474,19 @@ NODE.JS PARA DESENVOLVIMENTO DAS PROVAS DE CONCEITO</h3>
 <p>Node.js foi escolhido como plataforma principal para o
 desenvolvimento das provas de conceito devido à sua comprovada eficácia
 na integração de sistemas baseados em inteligência artificial (IA),
-especialmente com agentes conversacionais e Large Language Models
-(LLMs). A plataforma é amplamente adotada devido à sua arquitetura
-orientada a eventos e capacidade de gerenciar eficientemente múltiplas
-conexões simultâneas, essencial para aplicações que exigem respostas
-rápidas em tempo real <span class="citation" data-cites="cherednichenko:hal-04545073">[@cherednichenko:hal-04545073]</span>.</p>
-<p>Relatórios da Red Hat destacam que o uso eficiente da arquitetura
-assíncrona do Node.js possibilita a criação de agentes baseados em LLMs
-com alta performance e escalabilidade. Isso garante um gerenciamento
-eficiente de múltiplas operações paralelas, essencial para aplicações
-intensivas em IA e integração com APIs externas <span class="citation" data-cites="RedHat2024LLMNode">[@RedHat2024LLMNode]</span>.</p>
-<h3 id="testes-end-to-end-e2e">2.1.2 TESTES END-TO-END (E2E)</h3>
-<p>O Framework de Gerenciamento de Riscos de IA do NIST <span class="citation" data-cites="oprea2023adversarial">[@oprea2023adversarial]</span> destaca
+especialmente com agentes conversacionais e LLMs. A plataforma é
+amplamente adotada devido à sua arquitetura orientada a eventos e
+capacidade de gerenciar eficientemente múltiplas conexões simultâneas,
+essencial para aplicações que exigem respostas rápidas em tempo real
+<span class="citation" data-cites="cherednichenko:hal-04545073">[@cherednichenko:hal-04545073]</span>.</p>
+<p>Relatórios da <em>Red Hat</em> destacam que o uso eficiente da
+arquitetura assíncrona do Node.js possibilita a criação de agentes
+baseados em LLMs com alta performance e escalabilidade. Isso garante um
+gerenciamento eficiente de múltiplas operações paralelas, essencial para
+aplicações intensivas em IA e integração com APIs externas <span class="citation" data-cites="RedHat2024LLMNode">[@RedHat2024LLMNode]</span>.</p>
+<h3 id="testes-end-to-end-e2e">2.1.2 TESTES <em>END-TO-END</em>
+(E2E)</h3>
+<p>O <em>Framework</em> de Gerenciamento de Riscos de IA do NIST <span class="citation" data-cites="oprea2023adversarial">[@oprea2023adversarial]</span> destaca
 a importância de avaliar o desempenho de sistemas de IA de forma
 abrangente, defendendo que testes de integração devem avaliar os
 sistemas de ponta a ponta para identificar erros de integração e
@@ -467,52 +494,54 @@ garantir a precisão das respostas em cenários realistas. Testes
 rigorosos como esses não apenas identificam problemas de integração, mas
 também asseguram às partes interessadas que o sistema se comporta
 conforme o esperado em condições do mundo real.</p>
-<p>A injeção de prompt representa um risco significativo em implantações
-de LLMs em nosso cenário, no qual o modelo possui acesso a dados e
-sistemas potencialmente críticos, incluindo, ocasionalmente, conexões
-diretas com dados brutos de banco de dados. O guia de riscos da OWASP
-<span class="citation" data-cites="john2025owasp">[@john2025owasp]</span> classifica a injeção
-de prompt como uma ameaça crítica à segurança, destacando a necessidade
-de procedimentos de teste rigorosos para garantir que agentes
-conversacionais baseados em LLMs não revelem inadvertidamente dados
-sensíveis ou contornem restrições do sistema quando expostos a entradas
-maliciosas. Recentemente, Wu et al. (2023) <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span> demonstraram que
-ataques de jailbreak — um tipo avançado de injeção de prompt — podem
-burlar as salvaguardas éticas de modelos como o ChatGPT em até 67% dos
-casos, gerando conteúdos prejudiciais como extorsão e desinformação.</p>
+<p>A injeção de <em>prompt</em> representa um risco significativo em
+implantações de LLMs em nosso cenário, no qual o modelo possui acesso a
+dados e sistemas potencialmente críticos, incluindo, ocasionalmente,
+conexões diretas com dados brutos de banco de dados. O guia de riscos da
+OWASP <span class="citation" data-cites="john2025owasp">[@john2025owasp]</span> classifica a injeção
+de <em>prompt</em> como uma ameaça crítica à segurança, destacando a
+necessidade de procedimentos de teste rigorosos para garantir que
+agentes conversacionais baseados em LLMs não revelem inadvertidamente
+dados sensíveis ou contornem restrições do sistema quando expostos a
+entradas maliciosas. Recentemente, Wu et al. (2023) <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span>
+demonstraram que ataques de <em>jailbreak</em> — um tipo avançado de
+injeção de <em>prompt</em> — podem burlar as salvaguardas éticas de
+modelos como o ChatGPT em até 67% dos casos, gerando conteúdos
+prejudiciais como extorsão e desinformação.</p>
 <p>Com isso em mente, o uso de testes E2E pode ser utilizado para
 avaliar a resiliência da implementação ao simular entradas adversárias,
-processo conhecido como red teaming. Segundo Inie et al. (2025) <span class="citation" data-cites="inie2025summon">[@inie2025summon]</span>, o
-red teaming desafia sistematicamente sistemas de IA com prompts
-adversários projetados para testar seus limites e mecanismos de
-segurança. Ao encapsular consultas do usuário com lembretes de
-responsabilidade ética (e.g., “Você deve ser um ChatGPT responsável”), o
-método reduziu a taxa de sucesso de jailbreaks para 19%, mantendo a
-funcionalidade padrão do modelo — um resultado validado através de
-testes E2E em 540 cenários adversarialmente projetados <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span>.</p>
+processo conhecido como <em>red teaming</em>. Segundo Inie et al. (2025)
+<span class="citation" data-cites="inie2025summon">[@inie2025summon]</span>, o <em>red
+teaming</em> desafia sistematicamente sistemas de IA com
+<em>prompts</em> adversários projetados para testar seus limites e
+mecanismos de segurança. Ao encapsular consultas do usuário com
+lembretes de responsabilidade ética (e.g., “Você deve ser um ChatGPT
+responsável”), o método reduziu a taxa de sucesso de <em>jailbreaks</em>
+para 19%, mantendo a funcionalidade padrão do modelo — um resultado
+validado através de testes E2E em 540 cenários adversarialmente
+projetados <span class="citation" data-cites="wu2023defending">[@wu2023defending]</span>.</p>
 <h3 id="modelos-de-linguagem-de-grande-escala-llms">2.1.3 MODELOS DE
 LINGUAGEM DE GRANDE ESCALA (LLMs)</h3>
-<p>Os modelos de linguagem (LLMs), incluindo tecnologias como OpenAI
-GPT, Anthropic e modelos disponibilizados pela Google, são essenciais
-neste estudo devido à sua capacidade de interpretar e gerar linguagem
-natural de forma avançada e eficaz. Estes modelos foram selecionados por
-sua performance comprovada e ampla adoção em pesquisas acadêmicas e no
-mercado corporativo, proporcionando um sólido embasamento para as
-funcionalidades de interação do agente conversacional.</p>
+<p>Os LLMs, incluindo tecnologias como OpenAI GPT, Anthropic e modelos
+disponibilizados pela Google, são essenciais neste estudo devido à sua
+capacidade de interpretar e gerar linguagem natural de forma avançada e
+eficaz. Estes modelos foram selecionados por sua performance comprovada
+e ampla adoção em pesquisas acadêmicas e no mercado corporativo,
+proporcionando um sólido embasamento para as funcionalidades de
+interação do agente conversacional.</p>
 <h4 id="histórico-do-desenvolvimento-de-llms-20182023">2.1.3.1 HISTÓRICO
 DO DESENVOLVIMENTO DE LLMS (2018–2023)</h4>
-<p>Nos últimos cinco anos, os Modelos de Linguagem de Grande Escala
-(LLMs) evoluíram rapidamente, a partir da arquitetura Transformer. O
-lançamento do BERT (2018) mostrou avanços em compreensão textual,
-enquanto a série GPT demonstrou fortes capacidades generativas. O GPT-3
-(2020), com 175 bilhões de parâmetros, evidenciou habilidades emergentes
-de aprendizado com poucos exemplos (few-shot), ampliando o escopo de
-tarefas possíveis por meio de simples instruções em linguagem natural
-<span class="citation" data-cites="brown2020languagemodelsfewshotlearners">[@brown2020languagemodelsfewshotlearners]</span>.</p>
+<p>Nos últimos cinco anos, os LLMs evoluíram rapidamente, a partir da
+arquitetura Transformer. O lançamento do BERT (2018) mostrou avanços em
+compreensão textual, enquanto a série GPT demonstrou fortes capacidades
+generativas. O GPT-3 (2020), com 175 bilhões de parâmetros, evidenciou
+habilidades emergentes de aprendizado com poucos exemplos
+(<em>few-shot</em>), ampliando o escopo de tarefas possíveis por meio de
+simples instruções em linguagem natural <span class="citation" data-cites="brown2020languagemodelsfewshotlearners">[@brown2020languagemodelsfewshotlearners]</span>.</p>
 <p>A partir de 2022, o foco da pesquisa passou a ser o aprimoramento do
-raciocínio e alinhamento dos LLMs. Técnicas como Chain-of-Thought
-prompting permitiram que os modelos resolvessem problemas complexos de
-forma mais eficaz <span class="citation" data-cites="wei2023chainofthoughtpromptingelicitsreasoning">[@wei2023chainofthoughtpromptingelicitsreasoning]</span>.
+raciocínio e alinhamento dos LLMs. Técnicas como <em>Chain-of-Thought
+prompting</em> permitiram que os modelos resolvessem problemas complexos
+de forma mais eficaz <span class="citation" data-cites="wei2023chainofthoughtpromptingelicitsreasoning">[@wei2023chainofthoughtpromptingelicitsreasoning]</span>.
 O uso de Reinforcement Learning from Human Feedback (RLHF), como nos
 modelos InstructGPT e posteriormente ChatGPT, melhorou a capacidade dos
 LLMs de seguir instruções com mais segurança e consistência. Esses
@@ -542,48 +571,50 @@ relevantes) <span class="citation" data-cites="anthropic2024context openai2023gp
 RACIOCÍNIO APRIMORADO E COMPREENSÃO PROFUNDA (DEEP THINKING)</h4>
 <p>Os LLMs mais recentes apresentam avanços significativos em
 raciocínio, planejamento e resolução de tarefas complexas. Técnicas como
-o Chain-of-Thought prompting, que induz os modelos a pensar em etapas
-intermediárias, mostraram ganhos substanciais em tarefas que exigem
-múltiplos passos lógicos <span class="citation" data-cites="wei2023chainofthoughtpromptingelicitsreasoning">[@wei2023chainofthoughtpromptingelicitsreasoning]</span>.
-Além disso, abordagens como tree-of-thought e self-reflection permitem
-que os modelos reavaliem suas respostas e melhorem sua própria
-performance iterativamente. Esses avanços tornam os LLMs mais confiáveis
-para tarefas que exigem raciocínio profundo e tomada de decisão
-estruturada, fundamentais para integração com sistemas complexos <span class="citation" data-cites="yao2023treethoughtsdeliberateproblem">[@yao2023treethoughtsdeliberateproblem]</span>.</p>
+o <em>Chain-of-Thought prompting</em>, que induz os modelos a pensar em
+etapas intermediárias, mostraram ganhos substanciais em tarefas que
+exigem múltiplos passos lógicos <span class="citation" data-cites="wei2023chainofthoughtpromptingelicitsreasoning">[@wei2023chainofthoughtpromptingelicitsreasoning]</span>.
+Além disso, abordagens como <em>tree-of-thought</em> e
+<em>self-reflection</em> permitem que os modelos reavaliem suas
+respostas e melhorem sua própria performance iterativamente. Esses
+avanços tornam os LLMs mais confiáveis para tarefas que exigem
+raciocínio profundo e tomada de decisão estruturada, fundamentais para
+integração com sistemas complexos <span class="citation" data-cites="yao2023treethoughtsdeliberateproblem">[@yao2023treethoughtsdeliberateproblem]</span>.</p>
 <h4 id="uso-de-ferramentas-em-tempo-real-e-interação-com-sistemas">2.1.3.4
 USO DE FERRAMENTAS EM TEMPO REAL E INTERAÇÃO COM SISTEMAS</h4>
 <p>O avanço dos LLMs em ambientes de produção foi impulsionado por
-recursos como o function calling da OpenAI. Essa funcionalidade permite
-que os modelos interpretem solicitações em linguagem natural e as
-convertam em chamadas de funções estruturadas, conforme definido pelo
+recursos como o <em>function calling</em> da OpenAI. Essa funcionalidade
+permite que os modelos interpretem solicitações em linguagem natural e
+as convertam em chamadas de funções estruturadas, conforme definido pelo
 desenvolvedor. Por exemplo, ao receber uma instrução como “agende uma
 reunião para amanhã às 14h”, o modelo pode gerar uma chamada de função
 com os parâmetros apropriados para interagir com uma API de calendário,
-sem depender de engenharia de prompt ou extração de texto <span class="citation" data-cites="openai2023functioncalling">[@openai2023functioncalling]</span>.
+sem depender de engenharia de <em>prompt</em> ou extração de texto <span class="citation" data-cites="openai2023functioncalling">[@openai2023functioncalling]</span>.
 Essa abordagem, melhora significativamente a confiabilidade em cenários
 de integração, permitindo que o modelo obtenha dados estruturados de
 bancos de dados, chame APIs de negócios, envie e-mails, entre outras
 ações, em vez de apenas tentar adivinhar a resposta <span class="citation" data-cites="openai2023functioncalling">[@openai2023functioncalling]</span>.</p>
-<p>Complementando essa capacidade, o Model Context Protocol (MCP),
-desenvolvido pela Anthropic <span class="citation" data-cites="mcp2025spec anthropic2024mcp">[@mcp2025spec;
+<p>Complementando essa capacidade, o <em>Model Context Protocol</em>
+(MCP), desenvolvido pela Anthropic <span class="citation" data-cites="mcp2025spec anthropic2024mcp">[@mcp2025spec;
 @anthropic2024mcp]</span>, oferece um padrão aberto para conectar LLMs a
 diversas fontes de dados e ferramentas. O MCP estabelece uma arquitetura
 cliente-servidor onde os modelos (clientes) podem acessar servidores MCP
-que expõem recursos, prompts e ferramentas de forma padronizada. Isso
-elimina a necessidade de integrações personalizadas para cada fonte de
-dados, promovendo uma interoperabilidade mais ampla e sustentável.</p>
+que expõem recursos, <em>prompts</em> e ferramentas de forma
+padronizada. Isso elimina a necessidade de integrações personalizadas
+para cada fonte de dados, promovendo uma interoperabilidade mais ampla e
+sustentável.</p>
 <h3 id="ferramentas-específicas-de-integração">2.1.4 FERRAMENTAS
 ESPECÍFICAS DE INTEGRAÇÃO</h3>
 <p>A pesquisa investigou quatro abordagens distintas para a integração
-dos agentes conversacionais com soluções web, utilizando ferramentas
-específicas para cada uma:</p>
+dos agentes conversacionais com soluções <em>web</em>, utilizando
+ferramentas específicas para cada uma:</p>
 <ul>
 <li><p><strong>PostgreSQL para Conexão Direta com Banco de
 Dados:</strong> foi escolhido para a conexão direta com banco de dados
 devido à sua ampla adoção e aceitação pela comunidade de
-desenvolvedores, evidenciada pela pesquisa do Stack Overflow Developer
-Survey, onde apareceu como o banco de dados mais admirado e desejado por
-desenvolvedores em 2023 <span class="citation" data-cites="enterprisedb2023postgresql">[@enterprisedb2023postgresql]</span>.
+desenvolvedores, evidenciada pela pesquisa do <em>Stack Overflow
+Developer Survey</em>, onde apareceu como o banco de dados mais admirado
+e desejado por desenvolvedores em 2023 <span class="citation" data-cites="enterprisedb2023postgresql">[@enterprisedb2023postgresql]</span>.
 Além disso, décadas de desenvolvimento ativo e testes rigorosos pela
 comunidade garantem ao PostgreSQL uma reputação sólida em termos de
 integridade dos dados e tolerância a falhas. Assim, utilizar PostgreSQL
@@ -599,17 +630,17 @@ e mais de meio milhão de repositórios que o utilizam <span class="citation" da
 Empresas reconhecidas, como PayPal e Red Hat, utilizam Sequelize em
 produção, reforçando sua credibilidade e robustez. Além disso, o uso de
 Sequelize proporciona segurança adicional ao prevenir automaticamente
-ataques de SQL injection por meio de queries parametrizadas, oferecendo
-também suporte para caches e consultas em SQL bruto quando necessário,
-equilibrando segurança com flexibilidade e desempenho <span class="citation" data-cites="eversql2023orms">[@eversql2023orms]</span>.</p></li>
+ataques de <em>SQL injection</em> por meio de queries parametrizadas,
+oferecendo também suporte para caches e consultas em SQL bruto quando
+necessário, equilibrando segurança com flexibilidade e desempenho <span class="citation" data-cites="eversql2023orms">[@eversql2023orms]</span>.</p></li>
 <li><p><strong>OpenAPI para Integração com Swagger:</strong> foi
 selecionado devido à sua ampla adoção como padrão da indústria para
-definição de interfaces RESTful, sendo reconhecido por facilitar a
-documentação consistente e interoperabilidade entre sistemas. Sua
-especificação permite descrever de maneira clara e estruturada os
-contratos das APIs, incluindo esquemas de autenticação como OAuth e
-chaves de API, essenciais para declarar uniformemente os requisitos de
-segurança das interfaces dos agentes conversacionais <span class="citation" data-cites="OpenAPIInitiative2023 Postman2023">[@OpenAPIInitiative2023;
+definição de interfaces <em>RESTful</em>, sendo reconhecido por
+facilitar a documentação consistente e interoperabilidade entre
+sistemas. Sua especificação permite descrever de maneira clara e
+estruturada os contratos das APIs, incluindo esquemas de autenticação
+como OAuth e chaves de API, essenciais para declarar uniformemente os
+requisitos de segurança das interfaces dos agentes conversacionais <span class="citation" data-cites="OpenAPIInitiative2023 Postman2023">[@OpenAPIInitiative2023;
 @Postman2023]</span>.</p></li>
 </ul>
 <p>A relevância do OpenAPI para agentes baseados em LLM reside na
@@ -647,10 +678,10 @@ objetiva entre as implementações, minimizando variáveis relacionadas à
 interface que poderiam interferir nos resultados finais.</p>
 <h3 id="interface-comum-de-usuário">2.2.1 Interface Comum de
 Usuário</h3>
-<p>A interface comum consiste em uma aplicação web simples de chat,
-desenvolvida utilizando React.js e TypeScript. A interface foi projetada
-de forma minimalista, visando uma experiência consistente e objetiva,
-independentemente da abordagem de integração utilizada.</p>
+<p>A interface comum consiste em uma aplicação <em>web</em> simples de
+chat, desenvolvida utilizando React.js e TypeScript. A interface foi
+projetada de forma minimalista, visando uma experiência consistente e
+objetiva, independentemente da abordagem de integração utilizada.</p>
 <figure>
 <img role="img" aria-label="Interface do Usuário" src="data:image/jpeg;base64,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R+Odd96Js846K7tryvrABz4Qc+fOzW6e8rZv335Sn4Un+3kOADDVCH8BAAAg4+jRo9lNkyKZTbht27a47bbb4tvf/nZ8+9vfjttuuy22bdsW27dvz55ywkZHR2Pfvn2xYMGC7C5OwMjISPT29uYGVaOjo/G9730vrrnmmikV/EZEvPXWW/G+970vOjs7s7vOeMn3a2BgILvrmJ2JIXlXV1f09fXF0qVLs7vqDAwMxH333Rejo6PZXafU6Oho/Jt/82+qz8JNmzbFtm3bJnVm+sl6ngMATFXCXwAAAMgolUrZTZNix44dERFx77331oSCCxcujFtvvTX2798/qaFHVMKVI0eOCH8n2Ztvvhlz586NRYsWZXdFRMQXv/jFtkK4U+2FF16I+fPnFzb8feedd+L888/P7jpmr7zySmFD8qisBnDRRRed9vp1dnbGqlWrqn9etGhRfPCDH6w55kSdrOc5AMBUNaPkX0AAAABQ47e//e2kBwaDg4Oxbdu2uPXWW3Nng46Ojsa3vvWtuOiii2L16tV1f04MDAzE4cOH4/Of/3x12/bt2+O5556r/rmzs7N6n+Hh4fjOd77TcPnh5D5XXnllHD58OPr7+yMiYs2aNdX7joyMxJ/92Z/FNddcEzt27Ii33367ev2BgYHqORERmzZtqgs90+VLl21kZCTuvffeeOONNyIiYuXKldV6ZfctXrw4vvSlL0VExLe+9a04cOBAREScffbZ8eUvfzm6uroantMs4Mqe06oMGzdujIcffrh6/2R7cp/BwcF48MEHq/si05ZZzdovvS/dblFp04iIK664ojqDM90Wiez1I3OPvDoeb5vljdnk2CVLlsTnP//5hucmhoeHa2akJvsHBwdjx44dNfVLxuW1114bzzzzTM13IN0WSbnSfZZtq1b9li13q3ZKjl+/fn3N9ypb32O9brYu6XokYyK5frZOa9asiQULFtTVMxkP2bKkyzo8PByPPvpofPGLX4xHH300Dhw4UB2T5557brVM2XGanJudZZxth0S2DpNhxowZ8f73vz+7GQCgsGZ+7Wtf+1p2IwAAAExn7777bnbTCfsf/+N/xJw5c+KKK66IWbNmZXfH+Ph4PP/88zE+Ph7Lly+P3/72t/HUU0/Fxz/+8Tj33HMjKsHPT37yk/jwhz8cH/7wh2NkZCTuvvvumD9/fvT29sYnP/nJWLRoUezfvz/+4A/+IDo7O2N4eDgOHz7c8L7JfQ4ePBi/+7u/GzfffHMsWrQo/uIv/iIuvPDCOOuss+K1116Lv/3bv43Dhw/Hn/zJn8Qf/uEfxllnnRXbt2+PF154Ib72ta/Fpz/96Vi0aFFs27atet7o6Gg88MAD8f73v79avve///3xgQ98IN566634+te/HldeeWXcfPPNsWrVqnjsscfigx/8YHzgAx+I73znO/Gxj32suu83v/lNXHjhhfFf/+t/rV7vyiuvjNHR0eju7o7/83/+T831rrzyynj++efj4MGDsXz58my1Iyqh1LGWYenSpfHxj388jhw5Eh/60Ieit7c3Pv7xj8esWbNi+/btsWfPnmp7rFq1Kl544YWaPkwbHByMn/zkJ9Xju7q64l/8i3+R27YdHR3x05/+NC6++OIYHx+PPXv2xIwZM+LAgQPxp3/6p3HFFVfE3/zN38SsWbPiwx/+cEQlSEtfY9WqVTE0NBQf+9jH4qyzzqqr/4m22b/8l/8y/tk/+2fxk5/8JFasWBERUW3DT3/6003PPffcc6th5a233hqf+9znYtWqVfGP//iPsWTJkvi7v/u7+M1vflNt64iI/fv3xy9+8Yv4gz/4g7j00ktjzpw5MT4+HnfccUesXr26Ov63bNkS/+7f/bu4+eab45Of/GTMmTOn5loDAwPxF3/xF/Ef/+N/jM997nNx5ZVXxq9+9av4vd/7vTj33HPryt1OO7322mvx85//PN5666345//8n1e/V48//nj1+3E81200/pMx8YlPfKJa5u3bt8ctt9wSn/vc52LRokUxb968WLp0aSxbtixeeuml6r68Omb7Znh4OPbv3x8vvfRS9PT0xOc+97lqHZ999tlYv359ddurr75aLf/AwEA88sgj1T5N2jZ5hiWGh4fjzjvvjAULFkxq8JuYM2dOdhMAQGFZ9hkAAABOsmTp5XaWWU2WZ85bVji7hHN/f391RmXihRdeiCVLllRnNLZa5vfNN9+Mt99+O1asWFGd5bho0aKYO3duvPXWWxGVJXDffvvt6OnpqZkpuX///prZk0uWLImFCxfGK6+8EhERe/bsiYiI9evXV+4WsWrVqjj33HNj9+7d8dGPfrR6z87Ozpg/f34cPny4rp5dXV3xyU9+sm57Z2dnXHPNNRERsXv37rj66qtrrnfl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jsdkP1sAAKY64S8AAABw2nV0TO6PKPKWxs3KBqrJ/z733HPVYwYGBmqW+22lnVAr++dkaeGnnnoqRivv2x0YGIhf/OIX1aWbs+/UjVT4nJ25md0WmXLl3W94eDh27txZc07WggUL4qc//WksWbKk4QzhqMxYffvtt6vB4cDAQPz6179uGewlAfPf/d3f1YWfnZWZx48//njd0tR5YXo22GynTNl+GR0djR//+MfVNkqHw62ulw1Ro7Ic8uOPP17t07xjBgYGYv/+/TXLIWdly5m02759+2K08k7k3bt3R1T6LBq0Ud627Hcie6/h4eG477774vLLL4+FCxdGZ2U59T179sTIyEhEZfns7du3V8uSXUo7b1vSFulf1pgsk/1sAQCY6vzrBwAAADjtZs6cmd10QprN4kxkA9Wurq648cYb4/HHH68uYXv48OGGQWcSuvX398f27dtzQ63ICdCyf46IWL9+fURE3HLLLdVlmO++++7cd+om8sLDvG155cre7zvf+U5cddVV1f15FixYEGeffXZdMJm08T333BODg4OxcOHCuPrqq+PBBx+Mm266KSIiVqxYUXNOM52dnbmzfiMiFi9eHEuWLKnZltc22WCznTKdf/75MTw8HLfccksMDAzE6OhoPPfcc9U22rZtW9x4443R1dXV8npJP6SX1t6xY0dNn7755pvx9ttvV69x0003xb59++KOO+5oOgv74osvri6znPxiwpo1a+LIkSNxyy23xL333hs9PT0xd+7c6jl5bZS3LfudWLBgQRw4cKDaBvfcc09s2LChuqRzRMTq1atjyZIl8eUvfzluuummuOOOO+KKK66Izs7O3CWs87a188sax2uyny0AAFPdjFKpVMpuBAAAADjV3n777eymwhkdHY1vfetbceWVVzYMlTnzDQ8Px6OPPhp//Md/3DDIHRwcjKeeeiq+9KUv1QSwTK50CA4AMB2Y+QsAAABMCbNmzcpuKpyTOcORqSM7gzZP3juBmVzT4ZkCAJAl/AUAAACmhOkQ1LSzHDVnvrwlldPyludm8k2HZwoAQJbwFwAAAJgSZs6cGR0dxf5RxdKlS6Ovr6/hUsCc+doJdts5hhPT0dHhfb8AwLTknb8AAADAlDE2Nhajo6PZzQDHpLOz08xfAGBaKvav0wIAAABnlFmzZpmtB5yQmTNnCn4BgGlL+AsA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AAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACYi/AAAAAAAAAAmIvwAAAAAAAAAJiL8AAAAAAAAACZT6/X6/OAgAwOth6QUAwKwqlUrFIQAAzpj4CwBwRsYtq/r9vptcAAAwYtIaedwYAACnI/4CAHwPo0uoXq8X7XY72u12dLvd6HQ60ev1otvtjg3CAAAw60qlUlQqlSiXy1GtVqNSqUStVotarRbl8nefVCcIAwCcjvgLAHBCo8umbrcbR0dH0W634+joKCIi5ufno1qtRrlcHt7IqlQqblgBAMCIfr8f3W53+AuTvV4vOp1ONJvNiIiYm5uLWq0Wc3NzUalUht9nXQ0A8HLiLwDAFMWlUrvdjsPDw2i1WlEqlWJ+fn4YfQEAgFcziMDNZjP6/X7U6/VYWFiIWq127DohGABgPPEXAGCM4hKp0+lEo9GIo6OjqNfrsby8fGwXAgAAcLa63W7s7e1Fq9WKubm5WFxcfOGXLkVgAIDjxF8AgILi8qjRaMTh4WGUy+VYWVl54YYTAADw+nQ6ndjd3Y1erxcLCwuxuLh4bF4ABgD4jvgLAPCt4rJosNu30WjEW2+9FfPz88fmAQCAH06z2YwnT57E4uKiXcAAABOIvwDAzBu3HGq1WnFwcBCdTicuXbr0wo0lAADgh9fpdOLx48dRq9ViaWkp6vX6sXkBGACYdeIvADDTxi2Fms1m7O/vR6VSibfeessNJAAAeIP0er14+vRpdLvduHDhwtgn9FjDAwCzSvwFAGbWuGVQs9mMvb29mJ+fj5WVleI0AADwhtjd3Y1msxnLy8sCMADAt8RfAGAmjVsCHR0dDcPv8vJycRoAAHjD7O3tDQPw3NxccVoABgBmTrk4AACQ3bjw22634+DgIKrVqvALAADnxPLyclSr1Tg4OIh2u12cHrv2BwDITPwFAGbKuJs//X4/Go1G9Hq9WF1dLU4DAABvsNXV1ej1etFoNCau9wEAZoX4CwDMjHE3fQbht9lsxttvv+2xcAAAcM6USqW4dOlSNJtNARgAmHniLwAwE8bd7On3+9HpdOLw8DBWV1ejXLY0AgCA86hSqcTFixfj8PAwOp3OxPU/AEB27nACAOmNu8kzGGs0GhERMT8/X7gCAAA4TxYWFiJG1vjj3gcAAGQn/gIAM2dwE6jdbsfh4WFcvHixeAkAAHAOraysxOHhYbTb7YgxAbh4DgCQjfgLAKRWvLkzen5wcBC1Wi3q9fqxawAAgPNpbm4uqtVqHBwcDMemvScAAMhG/AUAZlKn04lWq2XXLwAAJLO6uhqtVis6nU5xCgAgPfEXAEir+Bv9o+fNZjNKpVLUarVj1wAAAOfbYI3fbDaHY9PeGwAAZCL+AgAzp9/vR7vdjvn5+eIUAACQwMLCQrTb7WORtxh8i+cAABmIvwBASsUbOYPzfr8f3W43ms1mLC4uHrsGAADIYWFhIZrNZnS73RfeGwAAZCb+AgDpFW/2tFotj3wGAIDE6vV6lEqlaLVax8aL7w2K5wAA5534CwCkM+kGzmC83W7HwsJCcfpHt3l7IzZubxaH30DbcefmRtz8fLs4MeL5Nefj3wMAQEaDRz/HlPcIAADZiL8AQGrFmzy9Xi+63W7U6/Vj42dp8/ZGbGzcDtkTAAB+PLVaLbrdbvR6vWPjxfcIxXMAgPNM/AUAUpl042Z0vN1uR6VSOTZ/ZrbvxFdbK7GyshX37hYnz6OT7PIdZy2ufnojbnxypTgBAAA/iEqlMtz5G1PeKwAAZCL+AgAzY3Czp9frRbn8epZB23/4OnbXP4pf/3Qltr68E6dNpgAAwNmoVCrDXb/CLwAwK0p9Kx8AIJHRpc3gePS11+vF9vZ2fPDBB69h9+923Ll5K3Z+dSM+ubwZtze+ikvXP42ray9es7k7OF+JK99es3l7I+7E1eFu2e3Pb8atu7uxcvl6fHrt2A8ZGlwzcOza7Ttx89bX8bPrH8XOrTux9cI1z/8uX/+0+PM34/bGnYiPrsSzrzbju58++N4Yft9HT27FneEPvhLXP70az39S8Wd/dz75e57bvL3x3Xysx9VrEXc+j7h645OwjxgAgJPqdDrxzTffxNraWpTL5SiVShERL7wOFM8BAM6j17PlBQDgRzDtd9r6/f6xr9ey8/fuF7G5ux4fXo6IuBIfru/G5hfHP/l38/at2Lx4NW7cuBE3btyI65cvHpsfuns7bt2NuHL9xsTwG7EZXzz5aPizbly/EnH3Vtw+9rjp3di8dS8+HFxzbT12734Wd7YjItbilz9did3/+uPxHcp378VWrMeH//NqfHrjelxZeR59b9w4/nfZvXsr7v3i259742qs727GZy95PPTLvmfz9kbceXYlrg//TZfiq8+HJRgAAE6sUqkc+0XQae8XAACyeA13PQEA3lyTfsv/LGz+aSti/cPh7tQrv1iP2LoX3+Xf7dh5FrHy1k+GI2vXPinsDH4efjc+34r1a8Vdw0VX4pPRz9Rd+2X8bCXi2aPjAXb92siO2csfx5WV3fj6D8+vWbv2Uazvfh1/HPmWzT9txcrlj1++y3b9anxyeXByJT6+PCYkF037nm8/L/nKr0d2Aq9djU+vrQ/OAADgxEbX/MIvADArxF8AIKXiI58Hx4NHP5+9zbi3FbH+i5FkevnDWI+tuDfcibsWV3+1Hrt3b8XGxu2RKDzi2Vdx8/OtWL92YySSTrMZtzc2YmNjIzY2Rh8nPbASl94tjo16vkN5EIOf/ztW4mf/MLU6R8TxiH1SU7/n4U7srvwsfvnyPxoAAE6k1+u9EH7HvVcAAMhC/AUAUvixb9xsf/5VbEXE1ueDELsRGxvPP2d368s73+2GvfzJt497fhZ3NjYmRuDi7t1xtj+/GRsbdyKuDR6j/PwRzad15Rfr3+2+vXsvttY/esmOYwAAyOfHfk8BAHAWxF8AIL3i7t+ztx1//K/d4efiHvu6th5ReKxyRMTatU+ff+btsZ3BEXHxo/j028/uvTn183O/+zNPtkN4issfx5V4/nfc/NPW8d3LP7Qx/1fbj54dHwAAgFN4/e8HAADeHOIvADATXusNn+0/xte7Ex6VfOwzdrfjzu2RXcCTrF09QQBei0sXI3af/H04sv35Z2Me+3wSa/HLn0Z8/Yc7cW9rPT48FpNf/HNem2//rzY/G/k/2r4Tn939Xv8oAAAYfvTL4AsAIDvxFwBIZ9JNndd1w2fzi80pn1W7Fr/86Urs3v3i+eOdn23GrZHHQsekz/ZduxqfXvv284Fvjg/GVz65Gutbd4aPmf4sPvpej32OiFj7h59F3N2MZ5c/juK+3ysfX4mVb/+cyTH6LKzF1U+vx5UY+T/6LOLX19aLFwIAwCsZvC94He8PAAB+TKW+FQ4AkMC4nb2jr/1+P3q9XvR6vbh//378/Oc/H17P8x22N299HT+7/umb93m/d2/HxucRV2988kKYBgCAaf785z/H+++/H+VyOcrlcpRKpSiVShERL7wWjwEAziM7fwEAiO0/fD1l9/KPa/NPWxHrHwq/AACcCXthAIDMxF8AgJm3GV/c3Y31X12NH7f9bsedm7efPx57MPL5zbiztRJXPpZ+AQA4PaEXAJg1HvsMAKQw6bHPo8eDxz5/88038eGHHw6vn2WbtzfizlbEyuXr8em1Hzf9xsjf5zsrceVNfBQ1AADnwr179+L999+PSqUyfOxzfPt4Z499BgAyEn8BgBROGn+73W7cv39f/AUAgBkwiL/Fz/wVfwGArDz2GQA49/wuGwAAcBa8twAAzjvxFwAAAAAAACAB8RcASM9v7wMAAAAAs0D8BQBmwujn/wIAAAAAZCT+AgAAAAAAACQg/gIAAAAAM2fwZCBPCAIAMhF/AQAAAAAAABIQfwEAAAAAAAASEH8BAAAAgJQ80hkAmDXiLwAAAAAAAEAC4i8AAAAAAABAAuIvAAAAAAAAQALiLwAAAAAAAEAC4i8AAAAAAABAAuIvAAAAAAAAQALiLwAAAAAAAEAC4i8AAAAAAABAAuIvAAAAAAAAQALiLwAAAAAAAEAC4i8AAAAAAABAAuIvAAAAAAAAQALiLwAAAAAAAEAC4i8AAAAAAABAAuIvAAAAAAAAQALiLwAAAAAAAEAC4i8AAAAAAABAAuIvAAAAAAAAQALiLwAAAAAAAEAC4i8AAAAAAABAAuIvAAAAAAAAQALiLwAAAAAAAEAC4i8AAAAAAABAAuIvAAAAAAAAQALiLwAAAAAAAEAC4i8AAAAAAABAAuIvAAAAAAAAQALiLwAAAACQUqlUKg4BAKQm/gIAM6Xf7x97BQAAcrLmBwBmkfgLAMyUUqkUpVIput1ucQoAAEik2+3a+QsAzBzxFwCYOZVKJXq9XnEYAABIpNfrRaVSKQ4DAKQm/gIAM6dcLken0ykOAwAAiXQ6nSiXJ9/+tCsYAMho8uoHACCparXqsc8AAJBcp9OJarVaHH6BCAwAZCL+AgAzpVQqRaVSiaOjo+IUAACQyNHRUVQqFXEXAJgp4i8AMBNKpdLwpk+1Wo39/f3iJQAAQCIHBwcn2vkLAJCJ+AsApFf8Tf96vR7dbjdardaxcQAAIIdWqxXdbjfq9XpxCgAgNfEXAJg55XI55ubmotFoFKcAAIAEGo1GzM3NRbl8utufxV8cBQA4b063+gEAOMdGH/1cq9U8+hkAAJLa29uLWq02PBd1AYBZIf4CAOfe97mRMzc3F0dHR9Fut4tTAADAOdZut6PVasXc3NxwbPCLoN/nvQMAwHki/gIAqY27uVMul6NSqUS9Xo/Hjx8XpwEAgHPs8ePHUa/Xo1KpCL4AwMwRfwGAmVQul2NhYSH29vai1WoVpwEAgHPo6Ogo9vb2YmFhYWL4HTcGAJCF+AsAzJTRGz31ej3m5ubi4cOHx64BAADOp0ePHsXc3FzU6/XhmNgLAMwS8RcASGdwc2faTZ7BLoDFxcVoNBrRaDSKlwAAAOfIwcFBNBqNWFxcjFKpFOXy5Fuf094rAACcZ5NXQAAAyRQf+1YqlaJWq8XCwkJsb29Hr9c7dj0AAHA+9Hq9uH//fiwsLES1Wj1x3D3pdQAA54X4CwCk8LKbNqPz5XL52O7gpaWlKJVKcf/+/ej3+yPfBQAAvOn6/X7cv38/KpVKLC0tHdvxO1j7F38RFAAgK/EXAEhv0k2e0RtBFy5ciMPDw3j06FHxMgAA4A328OHDaDQaceHCheH6fvQXPkeNGxuYNgcAcF6IvwBAapNu4Izu/C2Xy1Gr1WJpaSkeP34cT548KV4OAAC8gZ48eRI7Oztx4cKFqNVqx3b4TnovAACQmfgLAKQ07kbP4EbQuK9yuRzz8/OxtLQU29vbAjAAALzhnjx5Etvb27G0tBTz8/NRLpdf2PE7GoNHxwAAshJ/AYCZNRp+B8eLi4uxvLwc29vb8eDBA58BDAAAb5h+vx8PHjyI7e3tWF5ejsXFxRfW9uMicNG4MQCA8078BQDSmHbzZtLcYLxcLkelUhnuAF5ZWYmdnZ3Y2tqKbrdb/DYAAOBH0O124y9/+Uvs7OzEysrKcMfvYC0fJ1j7jzNtDgDgPCn1bWcBABIpLm0G5/1+/4Xj0a9erxfdbjd6vd7wuNVqxcHBQXS73fjggw9ieXn52M8GAAB+OLu7u/HXv/41qtVqLC0tRb1eH0bf0QA82AU8+hWFR0AXY2/xHADgvBJ/AYBUikub0eA7eB331ev1hq+jAbjX68XBwUEcHBzEyspKrK2tRb1eP/ZnAAAAr8/R0VH87W9/i93d3VhaWoqlpaVjsXf0s34nxd9i9C3G3uI5AMB5Jf4CAOmMLm+Kx9Mi8LgAXNwF3Gw2491334333nsvqtXq8GcDAABnq9PpxIMHD+Lhw4cxPz8/drfvScJvFHb9Ds7HHQMAnLVOpxPNZjNarVZ0Op3hR8xVKpWoVqtRr9djfn7+zO41ir8AQDrF5c1o8B28TgrBo9G3eN7r9YYR+OjoKFZWVuKtt96K5eXlM1ucAQDALOt0OrG3txdPnjyJ3d3dmJubG0bf0dBbqVSGwXd0PCKiPPLZv8UAPPo6UDwHADgLnU4n9vf34+joKBYWFqJer0etVotKpRIREd1uN9rtdrRarTg8PIy5ubm4cOHCK99nFH8BgHSKy5vR80nRtxiAizF4cNztdqPf70e73R7+xt7R0VEsLi7G6upqLCwsRK1Wi1qtNnwUnZtJAADwnX6/P/yIlXa7He12Ow4PD+Pp06fRaDRibm5uuAOmVqsNY+/oDt/RXb6TdvyOxt7RNXlxfV48BwB4VY1GI549exbLy8tx4cKF4vRY+/v7sbe3FxcvXozFxcXi9ImJvwBASsUlzmjwHbwWj4tfo9F38Doagwdjg8dCt1qt6Ha70e12h49wmfT3AACAWVIMrIOgW61Wo1KpRKVSibm5ueFumGLcHfd459NE3+Lr6N8DAOAs7e/vx+HhYayurkatVitOT9Vut+Pp06exsLBw4mhcJP4CAGkVlzmjsXfwWjwufo2G3sF5r9eLiHghDg9+1mB+cD5QPAcAgFlSDK2D88FjmkdfB3F3cF4MvcXzYugtng9MOgYAOAuNRiMODg7i0qVLw8c7n1a3242dnZ1YWlr6XjuAxV8AIK3iMmf0fDTWjjse/RqNucUYPDo/LvqOHo87BwCAWTEpvA6Oi/F39GswNml+NPSOOx79cyadAwC8ik6nEw8fPox33nnn1Dt+i9rtdjx69CjefffdU38GsPgLAKRWXOqMRt7ia/G4ODYIv6PnMRJ9B6/F41HFvw8AAMyCcaG1GGcn7QAeXFs8f1n4Hfc6atwYAMD39fTp06hWq9/7cc1F+/v70el0YnV1tTg1lfgLAKRWXOqMnp80ABfPi+MxZtdv8fVlTnodAAC8qU4TU4tRdvA6CL/FoDsp9BbPi987MHo87hwA4FV0Op14/PhxvPfee8WpV/LgwYN4++23T7X7V/wFANIrLndGz4uRthh2X3ZcjL7jjot/PgAAzLLRUDs4Lx6PRuBJgXfS8ehr8XjcOQDAq9rf349erxcrKyvFqWO+/N1v4l//3/Pj9z/5l/iXf3q/eMkxu7u7US6XT7WbWPwFAGZCcclTDLSTXicdF8eK58U/b9IYAADMinHRdVzALZ6Pe510PPpaPJ42BgDwKnZ2dmJxcTHm5+eLUyO+jN//x/vxj//0fkR8Gb/7zb/Hf/u//xL/uFa87jvNZjMajUZcunSpODWR+AsAzIRxS55iuH3Z67ixca8DxfOil80DAMB5dZLAWrymGG/HvY4bG/daPJ42BgDwqv7+97/H22+/HZVKpTg1wZfxu9/8Z/z3f/vn+FVxakS3243Hjx/HT37yk+LUROIvADAzxi17ThuAx72e9BgAAHgxwE4KtsWge9LX4vG0MQCAs7C9vR1ra1O28B5zP37/23+N+F/Td/0OnO5ni78AwIwZt/SZFGuLkXfS67TjomlzAACQ1aTwWhwfF3Bf9jrteNoYAMBZOU2g/fJ3v4n//B//Fv/8UXFmvNP87BB/AYBZNG75UxybFnjHjU07PonTXg8AAG+i00TW4rWTAu602DvtZ0wbAwA4Syd/7PP9+P1v/yPe/z/TH/c84LHPAAAnNGkJNCngnvZ43DkAAPDcuCA7Lu6e9Hjc+aQxAICztrOzE4uLizE/P1+ceiXNZjMajUZcunSpODWR+AsAzKxJy6Di+KTAO+26UZPGAQBg1kyLscW5SaF32nWjJo0DAJy1/f396PV6sbKyUpwquB+//+3/jm8+Odljn3d3d6NcLseFCxeKUxOJvwDATJu0FBo3Pi38ThqLKeMAADBrpgXZcXPTou+ksZgyDgDwOnQ6nXj8+HG89957xamC08XfBw8exNtvvx3VarU4NZH4CwAwJdCOGz/p2MC0OQAAmDXTwuy4uZOODUybAwB4XZ4+fRrVavVUu3Sn2d/fj06nE6urq8WpqcRfAIBvTVsWTZqbNB4vmQMAACaH2tOOx0vmAABet06nEw8fPox33nknarVacfpU2u12PHr0KN59991T7foN8RcA4EUvWx5Nm582BwAAvOhl0fZl83HCawAAXrdGoxEHBwdx6dKlqFQqxekT6Xa7sbOzE0tLS7G4uFicfinxFwBgjJMukU563Tiv8r0AAHAevEqUPcn3nuQaAIAf0v7+fhweHsbq6uqpdwC32+14+vRpLCwsfO/HR4u/AABTnHapdNrrAQCA00fc014PAPBDajQa8ezZs1heXj5xxN3f34+9vb24ePHi99rxOyD+AgCc0Fkvm8765wEAwJvmLCPtWf4sAIDXrdPpxP7+fhwdHcXCwkLU6/Wo1WrDx0F3u91ot9vRarXi8PAw5ubm4sKFC6f+jN8i8RcA4JQsnwAA4Ich+AIA512n04lmsxmtVis6nU50u92IiKhUKlGtVqNer8f8/PwrR98B8RcA4BVZTgEAwNkRfAEAvj/xFwDgNbLUAgCAFwm8AACvh/gLAAAAAAAAkEC5OAAAAAAAAADA+SP+AgAAAAAAACQg/gIAAAAAAAAkIP4CAAAAAAAAJCD+AgAAAAAAACQg/gIAAAAAAAAkIP4CAAAAAAAAJCD+AgAAAAAAACTw/wGol3HWJJ0c2gAAAABJRU5ErkJggg==" alt="Interface do Usuário" />
 <figcaption aria-hidden="true">Interface do Usuário</figcaption>
@@ -663,21 +694,21 @@ esquerda e as do usuário à direita, facilitando a distinção visual entre
 os participantes da conversa. Abaixo do histórico, há um campo de
 entrada de texto que permite ao usuário digitar e enviar novas
 mensagens. Esse layout possibilita ao usuário acompanhar facilmente todo
-o histórico da conversa e inserir novos prompts de maneira contínua e
-intuitiva.</p>
+o histórico da conversa e inserir novos <em>prompts</em> de maneira
+contínua e intuitiva.</p>
 <h4 id="comunicação-com-backend">2.2.1.2 Comunicação com Backend</h4>
 <p>A comunicação entre frontend e backend será estabelecida por meio de
 uma API REST síncrona, simplificando o processo de envio e retorno de
 mensagens. Cada consulta feita pelo usuário gerará uma única requisição
 ao backend que processará integralmente essa requisição utilizando um
-modelo de linguagem (LLM) e devolverá uma resposta após concluir o
-processamento, mantendo o fluxo de comunicação claro e previsível.</p>
+LLM e devolverá uma resposta após concluir o processamento, mantendo o
+fluxo de comunicação claro e previsível.</p>
 <h3 id="arquitetura-e-fluxo-de-integração-do-sistema">2.2.2 Arquitetura
 e Fluxo de Integração do Sistema</h3>
 <p>A arquitetura do sistema que será desenvolvida para este estudo
 envolverá múltiplas camadas que trabalharão de forma integrada para
 responder às consultas feitas pelo usuário em linguagem natural.
-Inicialmente, as consultas serão recebidas pela interface web e
+Inicialmente, as consultas serão recebidas pela interface <em>web</em> e
 encaminhadas ao backend, onde o modelo de linguagem executará o processo
 de análise e interpretação.</p>
 <figure>
@@ -709,14 +740,14 @@ consistentes e comparáveis.</p>
 tempos totais de resposta, tempo específico do processamento pelo modelo
 de linguagem e latência da rede. - Análise da confiabilidade através da
 taxa de sucesso das requisições e frequência de erros críticos e não
-críticos. - Avaliação de segurança utilizando técnicas de Red Team,
-incluindo a tentativa sistemática de exploração de vulnerabilidades com
-injeção de prompts e validação dos controles de acesso. - Mensuração da
-experiência do usuário, utilizando avaliações qualitativas da clareza
-das respostas e pesquisas estruturadas de satisfação com escalas
-Likert.</p>
-<p>Os testes E2E são executados de forma automatizada em ambientes
-controlados, simulando diferentes cenários de uso e condições de carga,
+críticos. - Avaliação de segurança utilizando técnicas de <em>Red
+Team</em>, incluindo a tentativa sistemática de exploração de
+vulnerabilidades com injeção de <em>prompts</em> e validação dos
+controles de acesso. - Mensuração da experiência do usuário, utilizando
+avaliações qualitativas da clareza das respostas e pesquisas
+estruturadas de satisfação com escalas Likert.</p>
+<p>Os testes E2E são executados de forma automatizada em ambiente
+controlado, simulando diferentes cenários de uso e condições de carga,
 permitindo uma avaliação objetiva e reproduzível de cada abordagem de
 integração.</p>
 <p>Esta padronização da coleta de métricas via testes E2E garante que as
@@ -760,7 +791,7 @@ complexas.</p>
 <p>A implementação inclui camadas de segurança essenciais:</p>
 <ul>
 <li>Validação automática de tipos pelo ORM</li>
-<li>Prevenção de SQL injection</li>
+<li>Prevenção de <em>SQL injection</em></li>
 <li>Controle de acesso em nível de modelo</li>
 <li>Sanitização de dados de entrada</li>
 <li>Validação de permissões de usuário</li>
@@ -797,7 +828,8 @@ desenvolvimento. Os principais componentes tecnológicos incluem:</p>
 <h4 id="detalhes-técnicos">3.1.6 Detalhes Técnicos</h4>
 <p>A implementação técnica foca em três aspectos principais:</p>
 <h4 id="integração-com-llm">3.1.7 Integração com LLM</h4>
-<p>O sistema utiliza técnicas avançadas de prompt engineering para:</p>
+<p>O sistema utiliza técnicas avançadas de <em>prompt engineering</em>
+para:</p>
 <ul>
 <li>Interpretação de modelos do ORM</li>
 <li>Geração de queries complexas</li>
@@ -828,9 +860,9 @@ desenvolvimento. Os principais componentes tecnológicos incluem:</p>
 </ul>
 <h3 id="integração-openapi-mcp">3.2 Integração OpenAPI-MCP</h3>
 <p>A terceira abordagem implementa uma solução unificada que combina a
-especificação OpenAPI com o Model Context Protocol (MCP). Esta seção
-detalha a arquitetura, implementação e considerações práticas desta
-solução integrada.</p>
+especificação OpenAPI com o <em>Model Context Protocol (MCP)</em>. Esta
+seção detalha a arquitetura, implementação e considerações práticas
+desta solução integrada.</p>
 <h4 id="arquitetura-da-solução-1">3.2.1 Arquitetura da Solução</h4>
 <p>A arquitetura proposta para esta abordagem implementa um servidor MCP
 que é gerado a partir de uma definição OpenAPI e que pode ser integrado
@@ -871,7 +903,7 @@ principais:</p>
 <ol type="1">
 <li>Definição das APIs via OpenAPI</li>
 <li>Geração automática do servidor MCP</li>
-<li>Processamento de prompts do usuário pelo LLM</li>
+<li>Processamento de <em>prompts</em> do usuário pelo LLM</li>
 <li>Tradução de intenções em chamadas MCP using SSE</li>
 <li>Processamento das respostas e apresentação ao usuário</li>
 </ol>
@@ -916,7 +948,7 @@ Gerador</h4>
 </ul></li>
 <li><p><strong>Integração LLM</strong></p>
 <ul>
-<li>Prompt engineering para uso das ferramentas MCP</li>
+<li><em>Prompt engineering</em> para uso das ferramentas MCP</li>
 <li>Gerenciamento de contexto</li>
 <li>Otimização de chamadas</li>
 <li>Interpretação de respostas</li>
@@ -952,7 +984,7 @@ Gerador</h4>
 <ul>
 <li>Complexidade de mapeamento de tipos</li>
 <li>Manutenção de estado entre chamadas</li>
-<li>Versionamento de APIs</li>
+<li>Versionamento de <em>APIs</em></li>
 <li>Performance em grande escala</li>
 </ul></li>
 <li><p><strong>Infraestrutura</strong></p>
@@ -972,11 +1004,11 @@ Gerador</h4>
 </ol>
 <h3 id="integração-via-conexão-direta-com-o-banco-de-dados">3.3
 Integração via conexão direta com o banco de dados</h3>
-<p>A terceira abordagem explora a integração direta entre o LLM e o
-banco de dados, minimizando camadas intermediárias de abstração. Esta
-abordagem oferece máximo controle e performance, mas requer cuidados
-especiais com segurança e validação. Esta seção detalha a arquitetura,
-implementação e considerações práticas desta solução.</p>
+<p>A terceira abordagem explora a integração direta entre o <em>LLM</em>
+e o banco de dados, minimizando camadas intermediárias de abstração.
+Esta abordagem oferece máximo controle e performance, mas requer
+cuidados especiais com segurança e validação. Esta seção detalha a
+arquitetura, implementação e considerações práticas desta solução.</p>
 <h4 id="arquitetura-da-solução-2">3.3.1 Arquitetura da Solução</h4>
 <p>A arquitetura desta abordagem é intencionalmente minimalista,
 composta por três componentes principais:</p>
@@ -985,19 +1017,19 @@ composta por três componentes principais:</p>
 <ul>
 <li>Cadastro das conexões com o banco de dados (para que a aplicação
 possa obter os schemas e executar queries)</li>
-<li>Serviço LLM (para gerar queries, interpretar os dados e gerar
-respostas)</li>
+<li>Serviço <em>LLM</em> (para gerar queries, interpretar os dados e
+gerar respostas)</li>
 </ul></li>
 <li><p><strong>Camada de Segurança</strong></p>
 <ul>
 <li>Sistema de validação de queries (para sanitizar os dados e evitar
-SQL injection)</li>
+<em>SQL injection</em>)</li>
 </ul></li>
 <li><p><strong>Camada de Dados</strong></p>
 <ul>
 <li>Gerenciamento de conexões com o banco de dados (em caso de múltiplos
-databases, a aplicação deve integrar todos e possibilitar que o LLM
-escolha qual usar)</li>
+databases, a aplicação deve integrar todos e possibilitar que o
+<em>LLM</em> escolha qual usar)</li>
 <li>Cache de queries</li>
 </ul></li>
 </ol>
@@ -1009,8 +1041,8 @@ escolha qual usar)</li>
 <p>O sistema opera através de um fluxo direto:</p>
 <ol type="1">
 <li>Recebimento do prompt do usuário</li>
-<li>Análise de intenção pelo LLM</li>
-<li>Geração de query SQL</li>
+<li>Análise de intenção pelo <em>LLM</em></li>
+<li>Geração de query <em>SQL</em></li>
 <li>Validação e sanitização</li>
 <li>Execução direta no banco</li>
 <li>Processamento dos resultados</li>
@@ -1019,7 +1051,7 @@ escolha qual usar)</li>
 <h4 id="componentes-de-segurança-2">3.3.3 Componentes de Segurança</h4>
 <p>Dado o acesso direto ao banco, a segurança é crítica:</p>
 <ul>
-<li>Sistema robusto de sanitização SQL</li>
+<li>Sistema robusto de sanitização <em>SQL</em></li>
 <li>Análise estática de queries</li>
 <li>Validação de tipos de dados</li>
 <li>Limites de complexidade de query</li>
@@ -1029,8 +1061,8 @@ escolha qual usar)</li>
 Prova de Conceito</h4>
 <p>A implementação utiliza tecnologias focadas em performance:</p>
 <ul>
-<li>Backend: Node.js</li>
-<li>LLM: GPT-3 via API OpenAI</li>
+<li>Backend: <em>Node.js</em></li>
+<li><em>LLM</em>: GPT-3 via <em>API</em> OpenAI</li>
 <li>Banco de Dados: PostgreSQL</li>
 <li>Driver: node-postgres</li>
 <li>Sistema de Cache: Redis</li>
@@ -1049,7 +1081,7 @@ Conector</h4>
 <h4 id="detalhes-técnicos-2">3.3.6 Detalhes Técnicos</h4>
 <p>A implementação foca em três aspectos críticos:</p>
 <ol type="1">
-<li><p><strong>Geração de SQL</strong></p>
+<li><p><strong>Geração de <em>SQL</em></strong></p>
 <ul>
 <li>Templates de queries otimizadas</li>
 <li>Análise de plano de execução</li>
@@ -1065,7 +1097,7 @@ Conector</h4>
 </ul></li>
 <li><p><strong>Segurança</strong></p>
 <ul>
-<li>Análise de injeção SQL</li>
+<li>Análise de injeção <em>SQL</em></li>
 <li>Validação de schemas</li>
 <li>Rate limiting</li>
 <li>Auditoria de acessos</li>
@@ -1142,7 +1174,7 @@ Responda aqui a sua pergunta-problema de pesquisa.</p>
 <hr />
 <ol>
 <li id="fn1"><p>Graduando em Engenharia de software no semestre letivo
-de 2024-2. E-mail: castro.lucas290@gmail.com<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+de 2025-1. E-mail: castro.lucas290@gmail.com<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Professor do Centro Universitário UniSATC E-mail:
 thyerri.mezzari@satc.edu.br<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>

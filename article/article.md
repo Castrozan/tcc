@@ -13,7 +13,7 @@ title: "**ESTUDO COMPARATIVO DE ESTRATÉGIAS DE INTEGRAÇÃO PARA AGENTES CONVER
   - [x] Resumo
   - [x] Introdução
   - [x] Material e métodos
-  - [x] Revisão e entrega parcial
+  - [x] Revisão e entrega parcial (nota 4.5/5)
   - [ ] Desenvolvimento
   - [ ] Resultados e discussão
   - [ ] Considerações finais

@@ -1,0 +1,53 @@
+{
+    "name": "dummy-todo-app",
+    "version": "1.0.0",
+    "description": "A minimal, extensible backend for todo management, following example-project conventions.",
+    "engines": {
+        "npm": ">=10.0.0",
+        "node": ">=22.0.0"
+    },
+    "main": "dist/src/server.js",
+    "type": "module",
+    "scripts": {
+        "start": "NODE_ENV=production node dist/server.js",
+        "build": "tsc",
+        "dev": "NODE_ENV=development tsx watch src/server.ts",
+        "test": "NODE_ENV=test jest --bail",
+        "test:coverage": "jest --coverage",
+        "test:watch": "jest --bail --watchAll",
+        "lint": "eslint ./src",
+        "lint:fix": "eslint ./src --fix",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "format:check": "prettier --check \"src/**/*.ts\""
+    },
+    "author": {
+        "name": "Lucas Zanoni",
+        "email": "castro.lucas290@gmail.com",
+        "url": "https://github.com/Castrozan"
+    },
+    "dependencies": {
+        "dotenv": "^16.5.0",
+        "express": "^4.18.2",
+        "express-validator": "^7.0.1",
+        "pg": "^8.11.3",
+        "sequelize": "^6.32.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.26.0",
+        "@types/express": "^4.17.21",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.30",
+        "@types/supertest": "^2.0.12",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^10.1.2",
+        "jest": "^29.7.0",
+        "prettier": "^3.2.5",
+        "supertest": "^6.3.3",
+        "ts-jest": "^29.3.2",
+        "ts-node": "^10.9.2",
+        "ts-node-dev": "^2.0.0",
+        "tsx": "^4.19.4",
+        "typescript": "^5.4.4",
+        "typescript-eslint": "^8.32.0"
+    }
+}

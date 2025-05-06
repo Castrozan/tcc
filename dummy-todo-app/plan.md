@@ -6,7 +6,7 @@ The Dummy Todo App is a minimal, extensible backend system designed as a blank c
 
 ### Key Principles
 - **Blank Canvas:** The app will not include any business logic or features beyond basic CRUD and relationship management for users, teams, and tasks. This ensures it can be easily extended or adapted for each integration approach.
-- **Modular Structure:** All components (models, routes, controllers, config) will be organized for clarity and easy replacement or extension.
+- **Modular Structure:** All components (models, routes, controllers, config) will be organized by domain for clarity and easy replacement or extension.
 - **Integration-Ready:** The app will include all necessary hooks for ORM, OpenAPI/Swagger, and direct DB access, but will not be opinionated about which is used—this will be determined by the integration experiment.
 - **Seed Data:** The app will include scripts to seed the database with realistic but minimal data for testing and demonstration.
 
@@ -17,11 +17,9 @@ The Dummy Todo App is a minimal, extensible backend system designed as a blank c
 The **example-project** serves as the reference for all code structure, conventions, and best practices. The dummy todo app **must follow** its patterns for:
 
 - **Project structure:**  
-  Use a `src/` directory with subfolders for `orm/`, `config/`, and `tests/`. Organize code into `routes/`, `controllers/`, and `validators/` within each domain (e.g., `src/orm/`).
+  Use a `src/` directory with subfolders for `<domain>/`, `config/`, and `tests/`. Organize code into `routes/`, `controllers/`, and `validators/` within each domain (e.g., `src/<domain>/`).
 - **Server setup:**  
   Use a single entry point (e.g., `src/server.ts`) that loads configuration, sets up Express, and registers routes. Include a health check route (e.g., `/alive`). Use centralized error handling middleware.
-- **Configuration management:**  
-  Use a `ConfigManager` class for reading/writing configuration, with clear interfaces and environment-based paths.
 - **Controllers and routes:**  
   Implement controllers as classes, instantiated with dependencies (e.g., config managers). Register routes in dedicated files, importing controllers and wiring up endpoints.
 - **Validation:**  
@@ -74,11 +72,13 @@ All new code and structure in the dummy todo app should be modeled after the exa
 ## 2. Set Up the Project Structure
 
 - `/src` — Main source directory
-  - `/orm` — Domain logic (models, routes, controllers, validators)
+  - `/example-domain` — Domain logic (models, routes, controllers, validators)
     - `/models` — Sequelize models for User, Team, Task, TeamUser
     - `/routes` — Express routes for API endpoints
     - `/controllers` — Business logic for each resource
     - `/validators` — Request validation logic
+  - `/<domain>`
+    - `...`
   - `/config` — Database config, ConfigManager, environment setup
   - `/tests` — Basic tests for endpoints and DB queries
   - `app-constants.ts` — Shared constants
@@ -97,14 +97,14 @@ All new code and structure in the dummy todo app should be modeled after the exa
 - Provide SQL scripts for schema creation and teardown.
 
 ### b. Sequelize ORM
-- Define models and relationships in `src/orm/models/`.
+- Define models and relationships in `src/<domain>/models/`.
 - Sync models to the database.
 - Provide migration scripts if needed.
 
 ### c. Express API
-- Implement controllers as classes in `src/orm/controllers/`, following the example-project's dependency injection pattern.
-- Define routes in `src/orm/routes/`, importing controllers and wiring up endpoints.
-- Add request validation using `express-validator` in `src/orm/validators/`.
+- Implement controllers as classes in `src/<domain>/controllers/`, following the example-project's dependency injection pattern.
+- Define routes in `src/<domain>/routes/`, importing controllers and wiring up endpoints.
+- Add request validation using `express-validator` in `src/<domain>/validators/`.
 - CRUD endpoints for User, Team, Task.
 - Endpoints for:
   - Adding/removing users to/from teams.
@@ -155,51 +155,6 @@ All new code and structure in the dummy todo app should be modeled after the exa
 - Example API calls.
 - Example SQL queries for direct DB access.
 - Clear instructions for extending the app for each integration approach.
-
----
-
-## Implementation To-Do List
-
-### Project Setup
-- [ ] Scaffold project using the example-project's structure (`src/`, `orm/`, `config/`, etc.).
-- [ ] Set up TypeScript, ESLint, Prettier, and Jest as in the example-project.
-- [ ] Add a health check route (`/alive`).
-
-### Database & ORM
-- [ ] Create PostgreSQL database and SQL schema scripts in `/db`.
-- [ ] Define Sequelize models in `src/orm/models/`.
-- [ ] Set up model relationships and migrations.
-
-### API & Controllers
-- [ ] Implement controllers as classes in `src/orm/controllers/`, following the example-project's dependency injection pattern.
-- [ ] Define routes in `src/orm/routes/`, importing controllers and wiring up endpoints.
-- [ ] Add request validation using `express-validator` in `src/orm/validators/`.
-- [ ] Implement CRUD routes/controllers for User, Team, Task.
-- [ ] Implement endpoints for team membership and task assignment.
-- [ ] Implement endpoints for listing/filtering tasks.
-
-### Configuration
-- [ ] Implement a `ConfigManager` in `src/config/` for environment and app config, following the example-project's approach.
-
-### Swagger/OpenAPI
-- [ ] Create OpenAPI spec in `/swagger`.
-- [ ] Integrate Swagger UI with Express.
-- [ ] Document all endpoints and schemas.
-
-### Direct DB Access
-- [ ] Implement module for running raw SQL queries.
-- [ ] Add example analytics/reporting queries.
-
-### Seed & Test Data
-- [ ] Write seed scripts for dummy data in `/seeders`.
-- [ ] Add Jest/Supertest tests in `src/tests/`.
-
-### Documentation
-- [ ] Write README with setup, usage, and extension instructions.
-- [ ] Add example API calls and SQL queries.
-
-### (Optional) Frontend
-- [ ] Scaffold minimal React app for manual testing.
 
 ---
 

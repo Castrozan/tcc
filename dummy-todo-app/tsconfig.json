@@ -1,0 +1,27 @@
+{
+    "exclude": [
+        "./coverage",
+        "./dist",
+        "jest.config.ts",
+        "babel.config.js",
+        "eslint.config.js"
+    ],
+    "ts-node": {
+        "esm": true,
+        "experimentalSpecifier": true,
+        "files": true
+    },
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "rootDir": "./src",
+        "checkJs": true,
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "skipLibCheck": true
+    }
+}

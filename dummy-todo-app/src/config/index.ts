@@ -8,7 +8,7 @@ const configs: Record<string, Config> = {
         port: Number(process.env.PORT) || 3000
     },
     test: {
-        port: Number(process.env.PORT) || 3001
+        port: Number(process.env.PORT) || 3000
     },
     production: {
         port: Number(process.env.PORT) || 3000

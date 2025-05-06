@@ -1,7 +1,7 @@
 ## Implementation To-Do List
 
 ### Project Setup
-- [x] Scaffold project using the example-project's structure (`src/`, `src/<domain>/`, `config/`, etc.).
+- [x] build the project using the example-project's structure (`src/`, `src/<domain>/`, `config/`, etc.).
 - [x] Set up TypeScript, ESLint, Prettier, and Jest as in the example-project.
 - [x] Add a health check route (`/alive`).
 

@@ -20,11 +20,8 @@ export default async (): Promise<Config> => {
         preset: 'ts-jest/presets/default-esm',
         moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
         testEnvironment: 'node',
-        testMatch: [
-            '**/__tests__/**/*.[jt]s?(x)',
-            '**/?(*.)+(spec|test).[tj]s?(x)',
-            '!**/dist/**'
-        ],
-        collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts', '!src/**/*.test.{ts,tsx}']
+        testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)', '!**/dist/**'],
+        collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts', '!src/**/*.test.{ts,tsx}'],
+        setupFilesAfterEnv: ['<rootDir>/src/tests/setup.ts']
     };
 };

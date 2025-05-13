@@ -1,5 +1,10 @@
 import config from './config/index.js';
 import app from './app.js';
+import { initDatabase } from './config/database.js';
+
+if (process.env.NODE_ENV !== 'test') {
+    initDatabase();
+}
 
 const server = app.listen(config.port, () => {
     console.log(

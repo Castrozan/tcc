@@ -1,10 +1,9 @@
 import request from 'supertest';
-import app from '../app.js';
+import app from '../../app.js';
 
 describe('UserController', () => {
     let createdUserId: number;
 
-    // Test user creation
     it('POST /api/users creates a new user', async () => {
         const res = await request(app).post('/api/users').send({
             name: 'Test User',
@@ -21,7 +20,6 @@ describe('UserController', () => {
         createdUserId = res.body.user.id;
     });
 
-    // Test listing users
     it('GET /api/users returns list of users', async () => {
         const res = await request(app).get('/api/users');
 
@@ -31,7 +29,6 @@ describe('UserController', () => {
         expect(res.body.users.length).toBeGreaterThan(0);
     });
 
-    // Test getting a single user
     it('GET /api/users/:id returns a single user', async () => {
         const res = await request(app).get(`/api/users/${createdUserId}`);
 
@@ -42,7 +39,6 @@ describe('UserController', () => {
         expect(res.body.user.email).toBe('test@example.com');
     });
 
-    // Test updating a user
     it('PUT /api/users/:id updates an existing user', async () => {
         const res = await request(app).put(`/api/users/${createdUserId}`).send({
             name: 'Updated User',
@@ -55,7 +51,6 @@ describe('UserController', () => {
         expect(res.body.user.email).toBe('updated@example.com');
     });
 
-    // Test getting a non-existent user
     it('GET /api/users/:id returns 404 for non-existent user', async () => {
         const res = await request(app).get('/api/users/9999');
 
@@ -63,13 +58,11 @@ describe('UserController', () => {
         expect(res.body.success).toBe(false);
     });
 
-    // Test deleting a user
     it('DELETE /api/users/:id deletes a user', async () => {
         const res = await request(app).delete(`/api/users/${createdUserId}`);
 
         expect(res.status).toBe(204);
 
-        // Verify user is deleted
         const getRes = await request(app).get(`/api/users/${createdUserId}`);
         expect(getRes.status).toBe(404);
     });

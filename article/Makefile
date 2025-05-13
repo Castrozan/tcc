@@ -11,7 +11,8 @@ TEX := $(patsubst %.md,%.tex, $(SOURCE))
 STYLE := style/style.css
 
 .PHONY : all
-all : $(HTML) $(PDF) $(DOCX) $(TEX)
+all : $(PDF) $(DOCX) $(TEX)
+# all : $(HTML) $(PDF) $(DOCX) $(TEX)
 
 %.html : %.md $(STYLE)
 	@echo --- Generating HTML ---

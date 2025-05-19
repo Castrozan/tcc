@@ -1,5 +1,5 @@
 {
-  "name": "api-cepol",
+  "name": "dummy-app",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,15 +14,10 @@
   "dependencies": {
     "@hono/node-server": "^1.8.1",
     "better-sqlite3": "^11.10.0",
-    "@aws-sdk/client-s3": "^3.750.0",
-    "@supabase/supabase-js": "^2.47.1",
     "chanfana": "^2.0.2",
-    "cloudflare-workers": "^0.0.14",
-    "cloudflare-workers-openapi": "file:",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "hono": "^4.4.7",
-    "hono-rate-limiter": "^0.4.2",
     "openapi-typescript": "^7.4.4",
     "pg": "^8.13.1",
     "postgres": "^3.4.5",
@@ -33,11 +28,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
-    "@cloudflare/workers-types": "^4.20241205.0",
-    "@types/express": "^5.0.0",
     "@types/node": "^20.17.9",
-    "@types/service-worker-mock": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "@typescript-eslint/parser": "^8.17.0",
     "eslint": "^9.16.0",

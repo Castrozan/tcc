@@ -2,13 +2,23 @@
 
 import { spawn } from 'child_process';
 import { existsSync } from 'fs';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+// Get the project root (parent of tests directory)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const projectRoot = dirname(__dirname);
+
+// Change to project root directory
+process.chdir(projectRoot);
 
 // Configuration
 const APPROACH = process.env.APPROACH || 'current';
-const TIMEOUT = process.env.TIMEOUT || '180000'; // 3 minutes default for security tests
+const TIMEOUT = process.env.TIMEOUT || '180000'; // 3 minutes default (reduced from 5)
 
-console.log('🔒 Simple Security Test Runner');
-console.log('==============================');
+console.log('🚀 Simple Performance Test Runner');
+console.log('=================================');
 console.log(`📊 Testing approach: ${APPROACH}`);
 console.log(`⏱️  Timeout: ${TIMEOUT}ms`);
 console.log('');
@@ -22,13 +32,14 @@ if (!existsSync('node_modules/@playwright/test')) {
 // Set environment variables
 process.env.APPROACH = APPROACH;
 
-// Run the simplified security test
+// Run the simplified performance test
 const args = [
     'test',
-    'tests/simple-security.spec.js',
+    'tests/performance/performance.spec.js',
     '--project', 'chromium',
     '--timeout', TIMEOUT,
-    '--reporter', 'line'
+    '--reporter', 'line',
+    '--workers', '1' // Force single worker
 ];
 
 console.log(`🎯 Running: npx playwright ${args.join(' ')}`);
@@ -44,18 +55,17 @@ const child = spawn('npx', ['playwright', ...args], {
 });
 
 child.on('error', (error) => {
-    console.error('❌ Failed to start security test:', error.message);
+    console.error('❌ Failed to start test:', error.message);
     process.exit(1);
 });
 
 child.on('close', (code) => {
     console.log('');
     if (code === 0) {
-        console.log('✅ Security tests completed successfully!');
+        console.log('✅ Performance tests completed successfully!');
         console.log('📁 Results saved in test-results/ directory');
-        console.log('🔍 Check the security summary for vulnerabilities');
     } else {
-        console.log(`❌ Security tests failed with exit code ${code}`);
+        console.log(`❌ Tests failed with exit code ${code}`);
     }
     process.exit(code);
 }); 

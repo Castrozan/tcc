@@ -2,6 +2,16 @@
 
 import { spawn } from 'child_process';
 import { existsSync } from 'fs';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+// Get the project root (parent of tests directory)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const projectRoot = dirname(__dirname);
+
+// Change to project root directory
+process.chdir(projectRoot);
 
 // Configuration
 const APPROACH = process.env.APPROACH || 'current';
@@ -25,7 +35,7 @@ process.env.APPROACH = APPROACH;
 // Run the simplified UX test
 const args = [
     'test',
-    'tests/user-experience/simple-ux.spec.js',
+    'tests/user-experience/ux.spec.js',
     '--project', 'chromium',
     '--timeout', TIMEOUT,
     '--reporter', 'line',

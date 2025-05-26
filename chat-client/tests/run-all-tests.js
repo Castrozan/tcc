@@ -2,6 +2,16 @@
 
 import { spawn } from 'child_process';
 import { existsSync } from 'fs';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+
+// Get the project root (parent of tests directory)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const projectRoot = dirname(__dirname);
+
+// Change to project root directory
+process.chdir(projectRoot);
 
 // Configuration
 const APPROACH = process.env.APPROACH || 'current';
@@ -57,11 +67,15 @@ async function main() {
     try {
         // Run performance tests
         console.log('🏃‍♂️ Phase 1: Performance Testing');
-        results.performance = await runTest('Performance', 'run-performance-test.js');
+        results.performance = await runTest('Performance', 'tests/run-performance-test.js');
 
         // Run security tests
         console.log('\n🛡️  Phase 2: Security Testing');
-        results.security = await runTest('Security', 'run-security-test.js');
+        results.security = await runTest('Security', 'tests/run-security-test.js');
+
+        // Run UX tests
+        console.log('\n🎨 Phase 3: UX Testing');
+        results.ux = await runTest('UX', 'tests/run-ux-test.js');
 
         // Summary
         console.log('\n' + '='.repeat(60));
@@ -69,10 +83,11 @@ async function main() {
         console.log('='.repeat(60));
         console.log(`📈 Performance Tests: ${results.performance === 0 ? '✅ PASSED' : '⚠️  ISSUES'}`);
         console.log(`🔒 Security Tests: ${results.security === 0 ? '✅ PASSED' : '⚠️  ISSUES'}`);
+        console.log(`🎨 UX Tests: ${results.ux === 0 ? '✅ PASSED' : '⚠️  ISSUES'}`);
         console.log(`📁 Results saved in test-results/ directory`);
         console.log(`🔍 Approach tested: ${APPROACH}`);
 
-        if (results.performance === 0 && results.security === 0) {
+        if (results.performance === 0 && results.security === 0 && results.ux === 0) {
             console.log('\n🎉 All tests completed successfully!');
             process.exit(0);
         } else {

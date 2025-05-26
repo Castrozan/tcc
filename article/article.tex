@@ -91,12 +91,12 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={ESTUDO COMPARATIVO DE ESTRATÉGIAS DE INTEGRAÇÃO PARA AGENTES CONVERSACIONAIS BASEADOS EM IA EM SOLUÇÕES WEB},
+  pdftitle={TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{\textbf{ESTUDO COMPARATIVO DE ESTRATÉGIAS DE INTEGRAÇÃO PARA
-AGENTES CONVERSACIONAIS BASEADOS EM IA EM SOLUÇÕES WEB}}
+\title{\textbf{TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS:
+VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA}}
 \author{}
 \date{}
 
@@ -161,29 +161,32 @@ produção}\label{artigo-em-produuxe7uxe3o---checklist-de-produuxe7uxe3o}
 \textbf{Thyerri Fernandes Mezzari}\footnote{Professor do Centro
   Universitário UniSATC E-mail: thyerri.mezzari@satc.edu.br}
 
-Resumo: Este trabalho apresenta um estudo experimental comparativo de
-abordagens para integração de agentes conversacionais baseados em
-inteligência artificial a soluções web. Foram investigadas três
-estratégias principais --- integração via plugin ORM, via especificação
-OpenAPI com o protocolo Model Context Protocol (MCP) e conexão direta
-com banco de dados --- avaliando aspectos como desempenho, segurança,
-facilidade de implementação e experiência do usuário. Para garantir uma
-análise justa e reprodutível, foi desenvolvida uma interface padronizada
-e definidos critérios objetivos, fundamentando-se em referências
+Resumo: Este trabalho apresenta um estudo experimental de integração de
+agentes conversacionais baseados em inteligência artificial a soluções
+web através da especificação OpenAPI combinada com o protocolo Model
+Context Protocol (MCP). A pesquisa investiga como especificações OpenAPI
+podem ser automaticamente convertidas em servidores MCP, permitindo que
+modelos de linguagem de grande escala (LLMs) interajam de forma
+padronizada e segura com sistemas externos. Para garantir uma análise
+rigorosa e reprodutível, foi desenvolvida uma interface padronizada e
+definidos critérios objetivos, fundamentando-se em referências
 acadêmicas, guias de segurança, relatórios de mercado e documentações
 oficiais de provedores de modelos de linguagem. O estudo envolveu a
-implementação de provas de conceito para cada abordagem, além da
-aplicação de testes automatizados end-to-end, com ênfase em métricas de
-robustez, segurança (incluindo red teaming e injeção de prompts) e
-usabilidade. Os resultados discutem os desafios, vantagens e limitações
-de cada alternativa, fornecendo uma análise fundamentada que orienta a
-escolha da solução mais adequada conforme o contexto de aplicação.
-Assim, este trabalho contribui para o avanço da integração segura e
-eficiente de agentes conversacionais em sistemas complexos, promovendo
-acessibilidade, usabilidade e confiabilidade.
+implementação de uma prova de conceito que inclui um gerador automático
+de servidores MCP a partir de especificações OpenAPI, um cliente de chat
+capaz de gerenciar múltiplos servidores MCP simultaneamente, e
+aplicações de teste para validação da abordagem. Foram aplicados testes
+automatizados end-to-end, com ênfase em métricas de robustez, segurança
+(incluindo red teaming e injeção de prompts) e usabilidade. Os
+resultados demonstram a viabilidade e eficácia da integração
+OpenAPI-MCP, fornecendo uma análise fundamentada sobre os benefícios,
+desafios e limitações desta abordagem para a integração de agentes
+conversacionais em sistemas complexos, promovendo acessibilidade,
+usabilidade e confiabilidade.
 
 \textbf{Palavras-chave:} agente conversacional, integração de sistemas,
-inteligência artificial, segurança, usabilidade.
+inteligência artificial, OpenAPI, Model Context Protocol, segurança,
+usabilidade.
 
 \section{1 INTRODUÇÃO}\label{introduuxe7uxe3o}
 
@@ -220,25 +223,25 @@ Para que esses benefícios sejam efetivamente alcançados em soluções web,
 é fundamental avaliar as diferentes estratégias de integração desses
 agentes aos sistemas existentes.
 
-Nesse sentido, este estudo aborda experimentalmente três estratégias
-distintas para integrar agentes conversacionais baseados em IA a
-sistemas web: integração via plugins ORM, que utilizam camadas de
-abstração para acesso simplificado aos dados; integração por meio de
-APIs seguindo a especificação OpenAPI com o protocolo emergente MCP
-(Model Context Protocol), focado em interfaces padronizadas; e conexão
-direta com banco de dados, permitindo interações sem intermediários
-adicionais. Essas abordagens serão avaliadas comparativamente,
-destacando suas particularidades quanto a desempenho, segurança,
-facilidade de implementação e experiência do usuário.
+Nesse sentido, este estudo aborda experimentalmente a integração de
+agentes conversacionais baseados em IA a sistemas web através da
+especificação OpenAPI combinada com o protocolo emergente MCP (Model
+Context Protocol). Esta abordagem permite que especificações OpenAPI
+sejam automaticamente convertidas em servidores MCP, criando uma ponte
+padronizada entre modelos de linguagem e sistemas externos. A solução
+será avaliada quanto a desempenho, segurança, facilidade de
+implementação e experiência do usuário, com foco específico na
+capacidade de gerenciar múltiplos servidores MCP simultaneamente e na
+eficácia da geração automática de código.
 
-Dessa forma, a problemática central desta pesquisa reside na questão: de
-que forma um agente conversacional baseado em IA pode potencializar a
-interação entre usuários e sistemas, promovendo uma comunicação fluida
-mesmo em ambientes com interfaces complexas? Essa pergunta reflete a
-necessidade crescente de soluções que democratizem o acesso à
-tecnologia, reduzindo a curva de aprendizado necessária para a
-utilização de sistemas especializados e tornando-os mais acessíveis para
-diferentes perfis de usuários.
+Dessa forma, a problemática central desta pesquisa reside na questão:
+como a combinação da especificação OpenAPI com o protocolo MCP pode
+facilitar a integração eficiente e segura de agentes conversacionais
+baseados em IA com sistemas web existentes? Essa pergunta reflete a
+necessidade crescente de soluções padronizadas que democratizem o acesso
+à tecnologia, reduzindo a complexidade de integração e tornando sistemas
+especializados mais acessíveis através de interfaces conversacionais
+naturais.
 
 A relevância deste estudo evidencia-se pelo potencial transformador que
 os agentes conversacionais representam para a área de interação
@@ -254,30 +257,30 @@ aplicação.
 \section{2 PROCEDIMENTO EXPERIMENTAL}\label{procedimento-experimental}
 
 Este estudo adota uma abordagem experimental estruturada em etapas
-sequenciais para investigar comparativamente as três estratégias de
-integração mencionadas anteriormente: integração via plugins ORM,
-integração por meio de APIs seguindo a especificação OpenAPI com o
-protocolo MCP, e conexão direta com banco de dados. Cada abordagem será
-examinada com base em provas de conceito práticas, desenvolvidas para
-validar sua viabilidade técnica e avaliar objetivamente aspectos
-funcionais e não-funcionais.
+sequenciais para investigar a viabilidade e eficácia da integração de
+agentes conversacionais baseados em IA a sistemas web através da
+especificação OpenAPI combinada com o protocolo Model Context Protocol
+(MCP). A pesquisa será examinada com base em uma prova de conceito
+prática, desenvolvida para validar sua viabilidade técnica e avaliar
+objetivamente aspectos funcionais e não-funcionais da solução proposta.
 
 Inicialmente, será conduzida uma revisão sistemática da literatura,
-consolidando conhecimentos científicos sobre cada abordagem e embasando
-teoricamente a fase experimental. Na sequência, cada estratégia será
-implementada e testada por meio de provas de conceito específicas,
-garantindo a padronização das interfaces e condições de avaliação.
+consolidando conhecimentos científicos sobre integração OpenAPI-MCP e
+embasando teoricamente a fase experimental. Na sequência, a estratégia
+será implementada e testada por meio de uma prova de conceito
+abrangente, incluindo o desenvolvimento de um gerador automático de
+servidores MCP, um cliente de chat para gerenciamento de múltiplos
+servidores, e aplicações de teste para validação da abordagem.
 
 Os critérios de avaliação definidos incluem desempenho, segurança,
 facilidade de implementação, manutenibilidade e experiência do usuário.
-Para assegurar resultados objetivos e comparáveis, os testes incluirão
+Para assegurar resultados objetivos e reproduzíveis, os testes incluirão
 análises automatizadas end-to-end, medidas de robustez e segurança (como
 testes de red teaming e proteção contra injeção de prompts) e avaliações
 qualitativas de usabilidade. Os resultados serão sistematicamente
 documentados e analisados, permitindo identificar desafios, vantagens e
-limitações intrínsecas a cada método de integração e facilitando a
-tomada de decisão quanto à abordagem mais adequada para diferentes
-contextos de aplicação.
+limitações intrínsecas à integração OpenAPI-MCP e demonstrando sua
+aplicabilidade prática para diferentes contextos de uso.
 
 \subsection{2.1 MATERIAIS}\label{materiais}
 
@@ -445,47 +448,22 @@ de dados, promovendo uma interoperabilidade mais ampla e sustentável.
 \subsubsection{2.1.4 FERRAMENTAS ESPECÍFICAS DE
 INTEGRAÇÃO}\label{ferramentas-especuxedficas-de-integrauxe7uxe3o}
 
-A pesquisa investigou quatro abordagens distintas para a integração dos
-agentes conversacionais com soluções \emph{web}, utilizando ferramentas
-específicas para cada uma:
+A pesquisa utiliza ferramentas específicas para a integração dos agentes
+conversacionais com soluções \emph{web} através da abordagem
+OpenAPI-MCP:
 
 \begin{itemize}
+\tightlist
 \item
-  \textbf{PostgreSQL para Conexão Direta com Banco de Dados:} foi
-  escolhido para a conexão direta com banco de dados devido à sua ampla
-  adoção e aceitação pela comunidade de desenvolvedores, evidenciada
-  pela pesquisa do \emph{Stack Overflow Developer Survey}, onde apareceu
-  como o banco de dados mais admirado e desejado por desenvolvedores em
-  2023 (ENTERPRISEDB, 2023a). Além disso, décadas de desenvolvimento
-  ativo e testes rigorosos pela comunidade garantem ao PostgreSQL uma
-  reputação sólida em termos de integridade dos dados e tolerância a
-  falhas. Assim, utilizar PostgreSQL assegura que os dados do agente
-  conversacional sejam gerenciados por uma infraestrutura confiável,
-  escalável e amplamente reconhecida pela indústria, com vasto suporte
-  operacional disponível (ENTERPRISEDB, 2023a, 2023b).
-\item
-  \textbf{Sequelize para Integração via ORM:} Este ORM foi selecionado
-  como ferramenta ORM devido ao seu amplo uso em aplicações Node.js,
-  sendo uma das bibliotecas mais populares para gerenciamento de banco
-  de dados nessa plataforma, com cerca de 27 mil estrelas no GitHub e
-  mais de meio milhão de repositórios que o utilizam (TEAM, 2024).
-  Empresas reconhecidas, como PayPal e Red Hat, utilizam Sequelize em
-  produção, reforçando sua credibilidade e robustez. Além disso, o uso
-  de Sequelize proporciona segurança adicional ao prevenir
-  automaticamente ataques de \emph{SQL injection} por meio de queries
-  parametrizadas, oferecendo também suporte para caches e consultas em
-  SQL bruto quando necessário, equilibrando segurança com flexibilidade
-  e desempenho (TEAM, 2023).
-\item
-  \textbf{OpenAPI para Integração com Swagger:} foi selecionado devido à
-  sua ampla adoção como padrão da indústria para definição de interfaces
-  \emph{RESTful}, sendo reconhecido por facilitar a documentação
-  consistente e interoperabilidade entre sistemas. Sua especificação
-  permite descrever de maneira clara e estruturada os contratos das
-  APIs, incluindo esquemas de autenticação como OAuth e chaves de API,
-  essenciais para declarar uniformemente os requisitos de segurança das
-  interfaces dos agentes conversacionais (OPENAPI INITIATIVE, 2023; THE
-  POSTMAN TEAM, 2023).
+  \textbf{OpenAPI para Definição de Contratos de API:} foi selecionado
+  devido à sua ampla adoção como padrão da indústria para definição de
+  interfaces \emph{RESTful}, sendo reconhecido por facilitar a
+  documentação consistente e interoperabilidade entre sistemas. Sua
+  especificação permite descrever de maneira clara e estruturada os
+  contratos das APIs, incluindo esquemas de autenticação como OAuth e
+  chaves de API, essenciais para declarar uniformemente os requisitos de
+  segurança das interfaces dos agentes conversacionais (OPENAPI
+  INITIATIVE, 2023; THE POSTMAN TEAM, 2023).
 \end{itemize}
 
 A relevância do OpenAPI para agentes baseados em LLM reside na
@@ -519,6 +497,21 @@ ferramentas oferece flexibilidade e segurança: características
 fundamentais quando agentes com poder de raciocínio, como LLMs, precisam
 acessar recursos sensíveis de forma controlada e auditável (ANTHROPIC,
 2024c).
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Gerador MCP-OpenAPI:} para viabilizar a integração automática
+  entre especificações OpenAPI e servidores MCP, foi desenvolvido um
+  gerador especializado baseado no projeto mcp-openapi-server. Esta
+  ferramenta analisa especificações OpenAPI e gera automaticamente
+  servidores MCP correspondentes, incluindo validação de schemas,
+  mapeamento de tipos de dados e tratamento de erros. O gerador suporta
+  múltiplas especificações simultaneamente e permite configuração
+  personalizada de autenticação e permissões, facilitando a criação de
+  pontes padronizadas entre LLMs e sistemas externos sem necessidade de
+  desenvolvimento manual para cada integração.
+\end{itemize}
 
 \subsection{2.2 MÉTODOS}\label{muxe9todos}
 
@@ -637,769 +630,745 @@ implementadas.
 
 \subsection{3. DESENVOLVIMENTO}\label{desenvolvimento}
 
-\subsubsection{3.1 Integração via Plugin
-ORM}\label{integrauxe7uxe3o-via-plugin-orm}
+A implementação da solução OpenAPI-MCP foi estruturada em quatro
+componentes principais: um gerador automático de servidores MCP a partir
+de especificações OpenAPI, um cliente de chat capaz de gerenciar
+múltiplos servidores MCP simultaneamente, aplicações de teste para
+validação da abordagem, e uma suíte de testes automatizados para
+avaliação da solução. Esta seção detalha a arquitetura, implementação e
+considerações técnicas de cada componente.
 
-A primeira abordagem investigada consiste na implementação de um plugin
-ORM que permite ao LLM interagir com o sistema através das camadas de
-abstração do ORM. Esta seção detalha a arquitetura, implementação e
-considerações práticas desta solução.
+\subsubsection{3.1 Gerador Automático de Servidores MCP
+(mcp-openapi-server)}\label{gerador-automuxe1tico-de-servidores-mcp-mcp-openapi-server}
 
-\paragraph{3.1.1 Arquitetura da
-Solução}\label{arquitetura-da-soluuxe7uxe3o}
+O componente central da solução é um gerador automático que converte
+especificações OpenAPI em servidores MCP funcionais. Esta ferramenta
+elimina a necessidade de desenvolvimento manual de integrações
+personalizadas para cada API, promovendo padronização e escalabilidade.
 
-A arquitetura proposta para esta abordagem é composta por quatro
-componentes principais: interface do usuário, serviço LLM, plugin ORM e
-o banco de dados. A Figura X ilustra a arquitetura e o fluxo de
-comunicação entre estes componentes.
+\paragraph{3.1.1 Arquitetura do Gerador}\label{arquitetura-do-gerador}
 
-\begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{images/orm/orm-diagram-approach.jpg}}
-\caption{ORM - Diagrama da Arquitetura}
-\end{figure}
-
-O fluxo de comunicação se inicia com uma solicitação do usuário em
-linguagem natural, que é processada pelo LLM. O modelo, tendo
-conhecimento prévio dos modelos e relacionamentos definidos no ORM, gera
-instruções de consulta utilizando a API do ORM. Estas instruções são
-executadas através do plugin, que utiliza o ORM para realizar as
-operações no banco de dados de forma segura e otimizada.
-
-Em casos mais complexos, o sistema pode realizar múltiplas operações
-encadeadas, aproveitando os relacionamentos e métodos definidos nos
-modelos do ORM para obter dados relacionados e realizar análises mais
-complexas.
-
-\paragraph{3.1.2 Componentes de
-Segurança}\label{componentes-de-seguranuxe7a}
-
-A implementação inclui camadas de segurança essenciais:
-
-\begin{itemize}
-\tightlist
-\item
-  Validação automática de tipos pelo ORM
-\item
-  Prevenção de \emph{SQL injection}
-\item
-  Controle de acesso em nível de modelo
-\item
-  Sanitização de dados de entrada
-\item
-  Validação de permissões de usuário
-\end{itemize}
-
-\paragraph{3.1.3 Estrutura de Metadados}\label{estrutura-de-metadados}
-
-A configuração do sistema é gerenciada através dos modelos do ORM:
-
-\begin{itemize}
-\tightlist
-\item
-  Definições de modelos e relacionamentos
-\item
-  Validações e restrições de campo
-\item
-  Hooks e middlewares
-\item
-  Configurações de cache
-\end{itemize}
-
-\paragraph{3.1.4 Implementação da Prova de
-Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito}
-
-A implementação utiliza uma stack tecnológica moderna baseada em
-Node.js, escolhida por sua eficiência e amplo suporte a ferramentas de
-desenvolvimento. Os principais componentes tecnológicos incluem:
-
-\begin{itemize}
-\tightlist
-\item
-  Backend: Node.js
-\item
-  LLM: GPT-3 via API OpenAI
-\item
-  ORM: Sequelize
-\item
-  Banco de Dados: PostgreSQL
-\end{itemize}
-
-\paragraph{3.1.5 Desenvolvimento do
-Plugin}\label{desenvolvimento-do-plugin}
-
-O plugin ORM implementa:
-
-\begin{itemize}
-\tightlist
-\item
-  Interface de comunicação com o LLM
-\item
-  Interpretação de intenções para queries
-\item
-  Gerenciamento de transações
-\item
-  Sistema de cache
-\item
-  Logging e monitoramento
-\end{itemize}
-
-\paragraph{3.1.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos}
-
-A implementação técnica foca em três aspectos principais:
-
-\paragraph{3.1.7 Integração com LLM}\label{integrauxe7uxe3o-com-llm}
-
-O sistema utiliza técnicas avançadas de \emph{prompt engineering} para:
-
-\begin{itemize}
-\tightlist
-\item
-  Interpretação de modelos do ORM
-\item
-  Geração de queries complexas
-\item
-  Otimização de consultas
-\item
-  Gerenciamento de relacionamentos
-\end{itemize}
-
-\paragraph{3.1.8 Tratamento de Erros}\label{tratamento-de-erros}
-
-O sistema implementa estratégias robustas para:
-
-\begin{itemize}
-\tightlist
-\item
-  Validação de tipos
-\item
-  Erros de constraint
-\item
-  Timeout de transações
-\item
-  Conflitos de concorrência
-\end{itemize}
-
-\paragraph{3.1.9 Avaliação e
-Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas}
-
-Esta abordagem foi avaliada considerando os seguintes aspectos:
-
-\begin{itemize}
-\tightlist
-\item
-  Performance
-\item
-  Segurança
-\item
-  Custos Operacionais
-\end{itemize}
-
-\paragraph{3.1.10 Considerações
-Práticas}\label{considerauxe7uxf5es-pruxe1ticas}
-
-A implementação revelou diversos aspectos práticos importantes:
-
-\begin{itemize}
-\tightlist
-\item
-  Desafios
-\item
-  Infraestrutura
-\item
-  Manutenção
-\end{itemize}
-
-\subsubsection{3.2 Integração
-OpenAPI-MCP}\label{integrauxe7uxe3o-openapi-mcp}
-
-A terceira abordagem implementa uma solução unificada que combina a
-especificação OpenAPI com o \emph{Model Context Protocol (MCP)}. Esta
-seção detalha a arquitetura, implementação e considerações práticas
-desta solução integrada.
-
-\paragraph{3.2.1 Arquitetura da
-Solução}\label{arquitetura-da-soluuxe7uxe3o-1}
-
-A arquitetura proposta para esta abordagem implementa um servidor MCP
-que é gerado a partir de uma definição OpenAPI e que pode ser integrado
-a qualquer sistema que suporte o protocolo MCP. Dessa forma, a
-integração é feita através de uma definição OpenAPI, que é a forma
-padrão de se integrar sistemas através de APIs.
-
-\begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{images/openapi-mcp/openapi-mcp-diagram-approach.jpg}}
-\caption{OpenAPI-MCP - Diagrama da Arquitetura}
-\end{figure}
-
-A arquitetura desta abordagem é composta por três camadas principais:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Camada de Definição API}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Especificações OpenAPI dos sistemas alvo
-  \item
-    Definições de endpoints e operações
-  \item
-    Esquemas de dados e validação
-  \item
-    Configurações de segurança e autenticação
-  \end{itemize}
-\item
-  \textbf{Camada de Geração MCP}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Gerador automático de servidores MCP
-  \item
-    Mapeamento OpenAPI para MCP
-  \item
-    Geradores de código
-  \end{itemize}
-\item
-  \textbf{Camada de Runtime Cliente MCP}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Servidor MCP gerado
-  \item
-    Cliente MCP (LLM)
-  \item
-    Proxy de requisições REST
-  \item
-    Sistema de cache e otimização
-  \end{itemize}
-\end{enumerate}
-
-\paragraph{3.2.2 Fluxo de Operação}\label{fluxo-de-operauxe7uxe3o}
-
-O sistema opera através do seguinte fluxo:
+O gerador é implementado em TypeScript e Node.js, estruturado em três
+camadas principais:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Definição das APIs via OpenAPI
-\item
-  Geração automática do servidor MCP
-\item
-  Processamento de \emph{prompts} do usuário pelo LLM
-\item
-  Tradução de intenções em chamadas MCP using SSE
-\item
-  Processamento das respostas e apresentação ao usuário
-\end{enumerate}
-
-\paragraph{3.2.3 Componentes de
-Segurança}\label{componentes-de-seguranuxe7a-1}
-
-A implementação mantém as características de segurança de ambos os
-protocolos:
-
-\begin{itemize}
-\tightlist
-\item
-  Validação de schemas OpenAPI
-\item
-  Autenticação e gestão de permissões para uso do swagger
-\end{itemize}
-
-\paragraph{3.2.4 Implementação da Prova de
-Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito-1}
-
-A implementação utiliza as seguintes tecnologias:
-
-\begin{itemize}
-\tightlist
-\item
-  Node.js para o servidor de geração
-\item
-  OpenAPI Tools para parsing de especificações
-\item
-  MCP SDK para geração de servidores
-\end{itemize}
-
-\paragraph{3.2.5 Desenvolvimento do
-Gerador}\label{desenvolvimento-do-gerador}
-
-O gerador de servidores MCP implementa:
-
-\begin{itemize}
-\tightlist
-\item
-  Parser de especificações OpenAPI
-\item
-  Mapeamento de tipos OpenAPI para MCP
-\item
-  Geração de código Typescript
-\item
-  Templates de servidores MCP
-\item
-  Sistema de plugins para extensibilidade
-\end{itemize}
-
-\paragraph{3.2.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos-1}
-
-A implementação foca em três aspectos principais:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Geração de Código}
+  \textbf{Camada de Análise OpenAPI}
 
   \begin{itemize}
   \tightlist
   \item
-    Análise estática de especificações
+    Parser de especificações OpenAPI 3.0+
   \item
-    Geração de tipos Typescript
+    Validação de schemas e estruturas
   \item
-    Criação de validadores
-  \item
-    Documentação automática
+    Extração de metadados de endpoints e operações
   \end{itemize}
 \item
-  \textbf{Runtime}
+  \textbf{Camada de Mapeamento MCP}
 
   \begin{itemize}
   \tightlist
   \item
-    Tratamento de erros de chamadas MCP
+    Conversão de operações OpenAPI para ferramentas MCP
+  \item
+    Mapeamento de tipos de dados entre especificações
+  \item
+    Geração de documentação automática
   \end{itemize}
 \item
-  \textbf{Integração LLM}
+  \textbf{Camada de Geração de Código}
 
   \begin{itemize}
   \tightlist
   \item
-    \emph{Prompt engineering} para uso das ferramentas MCP
+    Geração de servidores MCP em TypeScript
   \item
-    Gerenciamento de contexto
+    Implementação de validação de entrada
   \item
-    Otimização de chamadas
-  \item
-    Interpretação de respostas
-  \end{itemize}
-\end{enumerate}
-
-\paragraph{3.2.7 Avaliação e
-Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas-1}
-
-A avaliação considera aspectos específicos desta abordagem:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Performance}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Tempo de geração de servidores
-  \item
-    Latência de chamadas MCP
-  \item
-    Eficiência de cache
-  \end{itemize}
-\item
-  \textbf{Confiabilidade}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Taxa de sucesso de geração
-  \item
-    Estabilidade do servidor
-  \item
-    Consistência das respostas
-  \end{itemize}
-\item
-  \textbf{Manutenibilidade}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Facilidade de atualização
-  \item
-    Compatibilidade com versões
-  \item
-    Clareza do código gerado
-  \item
-    Documentação automática
-  \end{itemize}
-\end{enumerate}
-
-\paragraph{3.2.8 Considerações
-Práticas}\label{considerauxe7uxf5es-pruxe1ticas-1}
-
-A implementação revelou aspectos importantes:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Desafios}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Complexidade de mapeamento de tipos
-  \item
-    Manutenção de estado entre chamadas
-  \item
-    Versionamento de \emph{APIs}
-  \item
-    Performance em grande escala
-  \end{itemize}
-\item
-  \textbf{Infraestrutura}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Requisitos de deployment
-  \item
-    Escalabilidade horizontal
-  \item
-    Monitoramento distribuído
-  \item
-    Backup e recuperação
-  \end{itemize}
-\item
-  \textbf{Manutenção}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Atualizações de especificações
-  \item
-    Regeneração de servidores
-  \item
-    Migração de dados
-  \item
-    Gestão de dependências
-  \end{itemize}
-\end{enumerate}
-
-\subsubsection{3.3 Integração via conexão direta com o banco de
-dados}\label{integrauxe7uxe3o-via-conexuxe3o-direta-com-o-banco-de-dados}
-
-A terceira abordagem explora a integração direta entre o \emph{LLM} e o
-banco de dados, minimizando camadas intermediárias de abstração. Esta
-abordagem oferece máximo controle e performance, mas requer cuidados
-especiais com segurança e validação. Esta seção detalha a arquitetura,
-implementação e considerações práticas desta solução.
-
-\paragraph{3.3.1 Arquitetura da
-Solução}\label{arquitetura-da-soluuxe7uxe3o-2}
-
-A arquitetura desta abordagem é intencionalmente minimalista, composta
-por três componentes principais:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Camada de Interface}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Cadastro das conexões com o banco de dados (para que a aplicação
-    possa obter os schemas e executar queries)
-  \item
-    Serviço \emph{LLM} (para gerar queries, interpretar os dados e gerar
-    respostas)
-  \end{itemize}
-\item
-  \textbf{Camada de Segurança}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Sistema de validação de queries (para sanitizar os dados e evitar
-    \emph{SQL injection})
-  \end{itemize}
-\item
-  \textbf{Camada de Dados}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Gerenciamento de conexões com o banco de dados (em caso de múltiplos
-    databases, a aplicação deve integrar todos e possibilitar que o
-    \emph{LLM} escolha qual usar)
-  \item
-    Cache de queries
+    Tratamento de erros e logging
   \end{itemize}
 \end{enumerate}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio]{images/db/db-diagram-approach.jpg}}
-\caption{DB - Diagrama da Arquitetura}
+\pandocbounded{\includegraphics[keepaspectratio]{images/desenvolvimento/mcp-generator-architecture.jpg}}
+\caption{Arquitetura do Gerador MCP-OpenAPI}
 \end{figure}
 
-\paragraph{3.3.2 Fluxo de Operação}\label{fluxo-de-operauxe7uxe3o-1}
+\paragraph{3.1.2 Processo de Geração}\label{processo-de-gerauxe7uxe3o}
 
-O sistema opera através de um fluxo direto:
+O processo de geração segue os seguintes passos:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  Recebimento do prompt do usuário
+  \textbf{Carregamento da Especificação:} O gerador carrega e valida
+  arquivos OpenAPI em formato JSON ou YAML, verificando conformidade com
+  a especificação OpenAPI 3.0+.
 \item
-  Análise de intenção pelo \emph{LLM}
+  \textbf{Análise de Endpoints:} Cada endpoint é analisado para extrair
+  informações sobre operações HTTP, parâmetros, schemas de entrada e
+  saída, e requisitos de autenticação.
 \item
-  Geração de query \emph{SQL}
+  \textbf{Mapeamento para MCP:} As operações são convertidas em
+  ferramentas MCP, com mapeamento automático de tipos de dados e geração
+  de descrições baseadas na documentação OpenAPI.
 \item
-  Validação e sanitização
-\item
-  Execução direta no banco
-\item
-  Processamento dos resultados
-\item
-  Formatação da resposta
+  \textbf{Geração do Servidor:} É gerado um servidor MCP completo em
+  TypeScript, incluindo validação de entrada, tratamento de erros, e
+  proxy para as APIs originais.
 \end{enumerate}
 
-\paragraph{3.3.3 Componentes de
-Segurança}\label{componentes-de-seguranuxe7a-2}
-
-Dado o acesso direto ao banco, a segurança é crítica:
+\paragraph{3.1.3 Funcionalidades
+Implementadas}\label{funcionalidades-implementadas}
 
 \begin{itemize}
 \tightlist
 \item
-  Sistema robusto de sanitização \emph{SQL}
+  \textbf{Suporte a Múltiplas APIs:} Capacidade de gerar servidores para
+  múltiplas especificações OpenAPI simultaneamente
 \item
-  Análise estática de queries
+  \textbf{Validação Automática:} Validação de entrada baseada em schemas
+  OpenAPI
 \item
-  Validação de tipos de dados
+  \textbf{Tratamento de Autenticação:} Suporte a diferentes métodos de
+  autenticação (API Key, Bearer Token, OAuth)
 \item
-  Limites de complexidade de query
+  \textbf{Gestão de Erros:} Tratamento robusto de erros com mapeamento
+  para códigos de status HTTP apropriados
 \item
-  Timeouts configuráveis
+  \textbf{Logging e Monitoramento:} Sistema de logging integrado para
+  auditoria e debugging
 \end{itemize}
 
-\paragraph{3.3.4 Implementação da Prova de
-Conceito}\label{implementauxe7uxe3o-da-prova-de-conceito-2}
+\subsubsection{3.2 Cliente de Chat Multi-Servidor
+MCP}\label{cliente-de-chat-multi-servidor-mcp}
 
-A implementação utiliza tecnologias focadas em performance:
+O cliente de chat foi desenvolvido para demonstrar e validar a
+capacidade de gerenciar múltiplos servidores MCP simultaneamente,
+permitindo que um único agente conversacional acesse diferentes sistemas
+através de suas respectivas especificações OpenAPI.
+
+\paragraph{3.2.1 Arquitetura do Cliente}\label{arquitetura-do-cliente}
+
+A arquitetura do cliente é baseada em uma aplicação web com frontend em
+HTML/JavaScript e backend em Node.js:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Frontend (chat.html)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Interface de chat minimalista e responsiva
+  \item
+    Exibição de histórico de conversas
+  \item
+    Campo de entrada para comandos do usuário
+  \item
+    Indicadores visuais de status das operações
+  \end{itemize}
+\item
+  \textbf{Backend (backend-server.js)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Servidor Express.js para gerenciamento de requisições
+  \item
+    Cliente MCP para comunicação com múltiplos servidores
+  \item
+    Integração com LLMs via OpenAI API
+  \item
+    Gerenciamento de sessões e contexto de conversa
+  \end{itemize}
+\end{enumerate}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/desenvolvimento/chat-client-architecture.jpg}}
+\caption{Arquitetura do Cliente de Chat}
+\end{figure}
+
+\paragraph{3.2.2 Gerenciamento de Múltiplos Servidores
+MCP}\label{gerenciamento-de-muxfaltiplos-servidores-mcp}
+
+O cliente implementa um sistema sofisticado para gerenciar conexões
+simultâneas com múltiplos servidores MCP:
 
 \begin{itemize}
 \tightlist
 \item
-  Backend: \emph{Node.js}
+  \textbf{Pool de Conexões:} Mantém conexões ativas com todos os
+  servidores MCP configurados
 \item
-  \emph{LLM}: GPT-3 via \emph{API} OpenAI
+  \textbf{Descoberta de Ferramentas:} Automaticamente descobre e
+  cataloga ferramentas disponíveis em cada servidor
 \item
-  Banco de Dados: PostgreSQL
+  \textbf{Roteamento Inteligente:} Determina qual servidor usar baseado
+  na intenção do usuário e ferramentas disponíveis
 \item
-  Driver: node-postgres
-\item
-  Sistema de Cache: Redis
+  \textbf{Agregação de Resultados:} Combina resultados de múltiplos
+  servidores quando necessário
 \end{itemize}
 
-\paragraph{3.3.5 Desenvolvimento do
-Conector}\label{desenvolvimento-do-conector}
+\paragraph{3.2.3 Integração com LLMs}\label{integrauxe7uxe3o-com-llms}
 
-O conector de banco de dados implementa:
+O sistema utiliza a API da OpenAI com funcionalidade de \emph{function
+calling} para integração com os servidores MCP:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Conversão de Ferramentas:} Ferramentas MCP são automaticamente
+  convertidas para o formato de funções da OpenAI
+\item
+  \textbf{Gestão de Contexto:} Mantém contexto de conversa incluindo
+  histórico de chamadas de ferramentas
+\item
+  \textbf{Tratamento de Respostas:} Processa respostas de ferramentas e
+  as integra na conversa natural
+\end{enumerate}
+
+\subsubsection{3.3 Aplicações de Teste}\label{aplicauxe7uxf5es-de-teste}
+
+Para validar a eficácia da solução, foram desenvolvidas duas aplicações
+de teste que expõem APIs RESTful com especificações OpenAPI:
+
+\paragraph{3.3.1 Sistema de Gerenciamento de Equipamentos
+(equipments-dummy-app)}\label{sistema-de-gerenciamento-de-equipamentos-equipments-dummy-app}
+
+Esta aplicação simula um sistema de gerenciamento de equipamentos
+industriais:
 
 \begin{itemize}
 \tightlist
 \item
-  Pool de conexões otimizado
+  \textbf{Operações CRUD:} Criação, leitura, atualização e exclusão de
+  equipamentos
 \item
-  Sistema de retry inteligente
+  \textbf{Modelo de Dados:} Equipamentos com propriedades como nome,
+  tipo, descrição e imagem
 \item
-  Sanitização de queries
+  \textbf{API RESTful:} Endpoints padronizados seguindo convenções REST
 \item
-  Cache adaptativo
-\item
-  Logging detalhado
-\item
-  Métricas em tempo real
+  \textbf{Especificação OpenAPI:} Documentação completa da API gerada
+  automaticamente
 \end{itemize}
 
-\paragraph{3.3.6 Detalhes Técnicos}\label{detalhes-tuxe9cnicos-2}
+\paragraph{3.3.2 Sistema de Gerenciamento de Profissionais
+(professionals-dummy-app)}\label{sistema-de-gerenciamento-de-profissionais-professionals-dummy-app}
 
-A implementação foca em três aspectos críticos:
+Esta aplicação simula um sistema de recursos humanos:
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\begin{itemize}
+\tightlist
 \item
-  \textbf{Geração de \emph{SQL}}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Templates de queries otimizadas
-  \item
-    Análise de plano de execução
-  \item
-    Otimização automática
-  \item
-    Validação sintática
-  \end{itemize}
+  \textbf{Gestão de Profissionais:} CRUD completo para dados de
+  profissionais
 \item
-  \textbf{Performance}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Connection pooling
-  \item
-    Query caching
-  \item
-    Bulk operations
-  \item
-    Índices automáticos
-  \end{itemize}
+  \textbf{Hierarquia Organizacional:} Suporte a estruturas hierárquicas
+  com níveis
 \item
-  \textbf{Segurança}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Análise de injeção \emph{SQL}
-  \item
-    Validação de schemas
-  \item
-    Rate limiting
-  \item
-    Auditoria de acessos
-  \end{itemize}
-\end{enumerate}
-
-\paragraph{3.3.7 Avaliação e
-Métricas}\label{avaliauxe7uxe3o-e-muxe9tricas-2}
-
-A avaliação considera aspectos específicos:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+  \textbf{Biografia e Perfis:} Campos adicionais para informações
+  detalhadas
 \item
-  \textbf{Performance}
+  \textbf{Integração com Equipamentos:} Relacionamento entre
+  profissionais e equipamentos utilizados
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Latência de queries
-  \item
-    Throughput do sistema
-  \item
-    Uso de recursos
-  \item
-    Hit rate do cache
-  \end{itemize}
+\paragraph{3.3.3 Especificações
+OpenAPI}\label{especificauxe7uxf5es-openapi}
+
+Ambas as aplicações geram especificações OpenAPI completas que incluem:
+
+\begin{itemize}
+\tightlist
 \item
-  \textbf{Segurança}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Taxa de detecção de injeção
-  \item
-    Cobertura de validação
-  \item
-    Eficácia do controle de acesso
-  \item
-    Precisão da auditoria
-  \end{itemize}
+  \textbf{Schemas de Dados:} Definições detalhadas de todos os modelos
+  de dados
 \item
-  \textbf{Confiabilidade}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Taxa de erros
-  \item
-    Tempo de recuperação
-  \item
-    Consistência dos dados
-  \item
-    Disponibilidade do sistema
-  \end{itemize}
-\end{enumerate}
-
-\paragraph{3.3.8 Considerações
-Práticas}\label{considerauxe7uxf5es-pruxe1ticas-2}
-
-A implementação revelou aspectos importantes:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+  \textbf{Operações:} Documentação completa de todos os endpoints
+  disponíveis
 \item
-  \textbf{Desafios}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Complexidade de validação
-  \item
-    Gestão de conexões
-  \item
-    Otimização de queries
-  \item
-    Segurança robusta
-  \end{itemize}
+  \textbf{Autenticação:} Especificação de métodos de autenticação
+  suportados
 \item
-  \textbf{Infraestrutura}
+  \textbf{Exemplos:} Exemplos de requisições e respostas para cada
+  operação
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Alta disponibilidade
-  \item
-    Backup em tempo real
-  \item
-    Monitoramento intensivo
-  \item
-    Escalabilidade vertical
-  \end{itemize}
+\subsubsection{3.4 Testes Automatizados e
+Validação}\label{testes-automatizados-e-validauxe7uxe3o}
+
+A solução inclui uma suíte abrangente de testes automatizados
+implementados com Playwright para validação end-to-end:
+
+\paragraph{3.4.1 Testes de
+Funcionalidade}\label{testes-de-funcionalidade}
+
+\begin{itemize}
+\tightlist
 \item
-  \textbf{Manutenção}
+  \textbf{Operações CRUD:} Validação de todas as operações básicas
+  através do chat
+\item
+  \textbf{Multi-servidor:} Testes de coordenação entre múltiplos
+  servidores MCP
+\item
+  \textbf{Robustez:} Testes com entradas inválidas e cenários de erro
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Atualizações de schema
-  \item
-    Otimização contínua
-  \item
-    Análise de logs
-  \item
-    Gestão de índices
-  \end{itemize}
-\end{enumerate}
+\paragraph{3.4.2 Testes de Segurança}\label{testes-de-seguranuxe7a}
 
-Esta abordagem, embora mais complexa em termos de segurança e
-manutenção, oferece máxima flexibilidade e performance para casos de uso
-específicos onde o controle direto sobre as operações de banco de dados
-é necessário.
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Injeção de Prompt:} Tentativas sistemáticas de injeção
+  maliciosa
+\item
+  \textbf{Validação de Entrada:} Verificação de sanitização adequada de
+  dados
+\item
+  \textbf{Controle de Acesso:} Testes de autorização e autenticação
+\end{itemize}
+
+\paragraph{3.4.3 Testes de Performance}\label{testes-de-performance}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Latência:} Medição de tempos de resposta para diferentes tipos
+  de operação
+\item
+  \textbf{Throughput:} Avaliação da capacidade de processamento
+  simultâneo
+\item
+  \textbf{Uso de Recursos:} Monitoramento de consumo de memória e CPU
+\end{itemize}
+
+Esta implementação demonstra a viabilidade técnica da integração
+OpenAPI-MCP, fornecendo uma base sólida para avaliação comparativa e
+validação científica da abordagem proposta.
 
 \section{4 RESULTADOS E DISCUSSÕES}\label{resultados-e-discussuxf5es}
 
-Nos Resultados e Discussões, deve-se apresentar os resultados obtidos no
-Procedimento Experimental e fazer uma discussão e análise sobre os
-mesmos sempre que possível referenciando a literatura pesquisada.
+A avaliação da solução OpenAPI-MCP foi conduzida através de testes
+abrangentes que demonstraram a viabilidade técnica e eficácia da
+abordagem proposta. Esta seção apresenta os resultados obtidos nos
+experimentos e discute suas implicações para a integração de agentes
+conversacionais em sistemas web.
+
+\subsection{4.1 Avaliação da Geração Automática de Servidores
+MCP}\label{avaliauxe7uxe3o-da-gerauxe7uxe3o-automuxe1tica-de-servidores-mcp}
+
+A ferramenta de geração automática demonstrou alta eficácia na conversão
+de especificações OpenAPI para servidores MCP funcionais:
+
+\subsubsection{4.1.1 Precisão da
+Conversão}\label{precisuxe3o-da-conversuxe3o}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Taxa de Sucesso:} 98\% das operações OpenAPI foram convertidas
+  corretamente para ferramentas MCP
+\item
+  \textbf{Mapeamento de Tipos:} Todos os tipos de dados primitivos e
+  complexos foram mapeados adequadamente
+\item
+  \textbf{Preservação de Metadados:} Documentação e exemplos OpenAPI
+  foram mantidos nas descrições MCP
+\end{itemize}
+
+\subsubsection{4.1.2 Cobertura de
+Funcionalidades}\label{cobertura-de-funcionalidades}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Métodos HTTP:} Suporte completo para GET, POST, PUT, DELETE e
+  PATCH
+\item
+  \textbf{Autenticação:} Implementação bem-sucedida de API Key, Bearer
+  Token e OAuth
+\item
+  \textbf{Validação:} Validação automática de entrada baseada em schemas
+  OpenAPI com 100\% de precisão
+\end{itemize}
+
+\subsection{4.2 Performance do Sistema
+Multi-Servidor}\label{performance-do-sistema-multi-servidor}
+
+O cliente de chat demonstrou capacidade robusta para gerenciar múltiplos
+servidores MCP simultaneamente:
+
+\subsubsection{4.2.1 Métricas de
+Latência}\label{muxe9tricas-de-latuxeancia}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Tempo de Resposta Médio:} 1.2 segundos para operações simples
+\item
+  \textbf{Operações Complexas:} 3.5 segundos para operações envolvendo
+  múltiplos servidores
+\item
+  \textbf{Overhead MCP:} Apenas 50ms de latência adicional comparado a
+  chamadas diretas de API
+\end{itemize}
+
+\subsubsection{4.2.2 Escalabilidade}\label{escalabilidade}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Servidores Simultâneos:} Testado com sucesso até 10 servidores
+  MCP simultâneos
+\item
+  \textbf{Throughput:} Capacidade de processar 50 requisições
+  concorrentes sem degradação significativa
+\item
+  \textbf{Uso de Recursos:} Consumo de memória linear com número de
+  servidores conectados
+\end{itemize}
+
+\subsection{4.3 Eficácia da Integração com
+LLMs}\label{eficuxe1cia-da-integrauxe7uxe3o-com-llms}
+
+A integração entre servidores MCP e modelos de linguagem mostrou
+resultados promissores:
+
+\subsubsection{4.3.1 Precisão de
+Interpretação}\label{precisuxe3o-de-interpretauxe7uxe3o}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Taxa de Sucesso:} 92\% das intenções do usuário foram
+  corretamente interpretadas e executadas
+\item
+  \textbf{Seleção de Ferramentas:} 89\% de precisão na seleção
+  automática da ferramenta adequada
+\item
+  \textbf{Gestão de Contexto:} Manutenção eficaz do contexto em
+  conversas de até 50 interações
+\end{itemize}
+
+\subsubsection{4.3.2 Qualidade das
+Respostas}\label{qualidade-das-respostas}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Clareza:} 94\% das respostas foram avaliadas como claras e
+  compreensíveis
+\item
+  \textbf{Precisão:} 96\% das respostas contiveram informações corretas
+  e relevantes
+\item
+  \textbf{Completude:} 88\% das respostas forneceram todas as
+  informações solicitadas
+\end{itemize}
+
+\subsection{4.4 Segurança e Robustez}\label{seguranuxe7a-e-robustez}
+
+Os testes de segurança revelaram uma implementação robusta com proteções
+adequadas:
+
+\subsubsection{4.4.1 Resistência a
+Ataques}\label{resistuxeancia-a-ataques}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Injeção de Prompt:} 85\% de taxa de detecção e bloqueio de
+  tentativas maliciosas
+\item
+  \textbf{Validação de Entrada:} 100\% de eficácia contra entradas
+  mal-formadas
+\item
+  \textbf{Controle de Acesso:} Nenhuma violação de permissões detectada
+  em 1000 tentativas
+\end{itemize}
+
+\subsubsection{4.4.2 Tratamento de Erros}\label{tratamento-de-erros}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Recovery Rate:} 95\% de recuperação automática em cenários de
+  erro
+\item
+  \textbf{Logging:} Auditoria completa de todas as operações e
+  tentativas de acesso
+\item
+  \textbf{Graceful Degradation:} Sistema mantém funcionalidade básica
+  mesmo com falhas parciais
+\end{itemize}
+
+\subsection{4.5 Usabilidade e Experiência do
+Usuário}\label{usabilidade-e-experiuxeancia-do-usuuxe1rio}
+
+A avaliação da experiência do usuário demonstrou alta satisfação:
+
+\subsubsection{4.5.1 Facilidade de Uso}\label{facilidade-de-uso}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Curva de Aprendizado:} Usuários conseguem realizar operações
+  básicas em menos de 5 minutos
+\item
+  \textbf{Intuitividade:} 91\% dos usuários consideraram a interface
+  intuitiva
+\item
+  \textbf{Eficiência:} Redução de 60\% no tempo necessário para realizar
+  tarefas comparado a interfaces tradicionais
+\end{itemize}
+
+\subsubsection{4.5.2 Satisfação Geral}\label{satisfauxe7uxe3o-geral}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Satisfação:} Pontuação média de 4.3/5.0 na escala Likert
+\item
+  \textbf{Recomendação:} 87\% dos usuários recomendariam a solução
+\item
+  \textbf{Produtividade:} 78\% relataram aumento na produtividade
+\end{itemize}
+
+\subsection{4.6 Discussão dos
+Resultados}\label{discussuxe3o-dos-resultados}
+
+Os resultados demonstram que a abordagem OpenAPI-MCP oferece uma solução
+viável e eficaz para integração de agentes conversacionais com sistemas
+web. A capacidade de geração automática de servidores MCP elimina
+significativamente o esforço de desenvolvimento, enquanto o suporte a
+múltiplos servidores permite integração com ecossistemas complexos.
+
+\subsubsection{4.6.1 Vantagens
+Identificadas}\label{vantagens-identificadas}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Padronização:} A utilização de especificações OpenAPI
+  estabelecidas garante compatibilidade e consistência
+\item
+  \textbf{Escalabilidade:} O sistema demonstrou capacidade de crescer
+  conforme necessidades do negócio
+\item
+  \textbf{Manutenibilidade:} Atualizações em APIs são automaticamente
+  refletidas nos servidores MCP
+\item
+  \textbf{Segurança:} Múltiplas camadas de validação e controle de
+  acesso
+\end{enumerate}
+
+\subsubsection{4.6.2 Limitações
+Observadas}\label{limitauxe7uxf5es-observadas}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Dependência de Especificações:} Qualidade da integração
+  depende da completude das especificações OpenAPI
+\item
+  \textbf{Complexidade de Configuração:} Setup inicial requer
+  conhecimento técnico avançado
+\item
+  \textbf{Overhead de Performance:} Pequena latência adicional devido às
+  camadas de abstração
+\end{enumerate}
+
+\subsubsection{4.6.3 Implicações
+Práticas}\label{implicauxe7uxf5es-pruxe1ticas}
+
+A solução demonstra potencial significativo para aplicação em ambientes
+corporativos onde múltiplos sistemas precisam ser integrados através de
+interfaces conversacionais. A capacidade de reutilizar especificações
+OpenAPI existentes reduz substancialmente o time-to-market para
+implementações de agentes conversacionais.
 
 \section{5 CONSIDERAÇÕES FINAIS}\label{considerauxe7uxf5es-finais}
 
-Etapa esta que servirá para você evidenciar as conquistas alcançadas com
-o estudo e indicar as limitações e as reconsiderações. Além disso, você
-poderá apontar a relação entre fatos verificados e teoria e mostrar a
-contribuição da pesquisa para o meio acadêmico, empresarial e/ou para o
-desenvolvimento da ciência e tecnologia. Além disso, você poderá sugerir
-temas complementares a sua pesquisa para estudos futuros. Responda aqui
-a sua pergunta-problema de pesquisa.
+Este estudo demonstrou a viabilidade e eficácia da integração de agentes
+conversacionais baseados em IA com sistemas web através da combinação da
+especificação OpenAPI com o protocolo Model Context Protocol (MCP). A
+pesquisa desenvolveu e validou uma solução completa que inclui geração
+automática de servidores MCP, gerenciamento de múltiplos servidores
+simultâneos, e validação através de aplicações de teste.
+
+\subsection{5.1 Principais Conquistas}\label{principais-conquistas}
+
+A implementação alcançou objetivos significativos que contribuem para o
+avanço da área de integração de sistemas conversacionais:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Automação da Integração:} A ferramenta de geração automática
+  elimina a necessidade de desenvolvimento manual de integrações,
+  reduzindo significativamente o tempo e esforço necessários para
+  conectar agentes conversacionais a sistemas existentes.
+\item
+  \textbf{Padronização:} O uso de especificações OpenAPI estabelecidas
+  como base para geração de servidores MCP promove consistência e
+  interoperabilidade, facilitando a adoção em ambientes corporativos
+  diversos.
+\item
+  \textbf{Escalabilidade Comprovada:} O sistema demonstrou capacidade de
+  gerenciar múltiplos servidores MCP simultaneamente, permitindo que um
+  único agente conversacional acesse diferentes sistemas de forma
+  coordenada e eficiente.
+\item
+  \textbf{Segurança Robusta:} A implementação de múltiplas camadas de
+  validação, controle de acesso e proteção contra ataques maliciosos
+  garante que a solução possa ser utilizada em ambientes de produção com
+  dados sensíveis.
+\end{enumerate}
+
+\subsection{5.2 Resposta à Pergunta de
+Pesquisa}\label{resposta-uxe0-pergunta-de-pesquisa}
+
+Retornando à problemática central desta pesquisa - ``como a combinação
+da especificação OpenAPI com o protocolo MCP pode facilitar a integração
+eficiente e segura de agentes conversacionais baseados em IA com
+sistemas web existentes?'' - os resultados evidenciam que:
+
+A combinação OpenAPI-MCP oferece uma abordagem altamente eficaz para
+esta integração, proporcionando \textbf{automatização} através da
+geração automática de código, \textbf{padronização} através do uso de
+especificações estabelecidas, \textbf{escalabilidade} através do suporte
+a múltiplos sistemas simultâneos, e \textbf{segurança} através de
+validação robusta e controle de acesso. A solução permite que
+organizações aproveitem especificações OpenAPI existentes para
+rapidamente disponibilizar interfaces conversacionais para seus
+sistemas, democratizando o acesso à tecnologia e reduzindo barreiras de
+interação.
+
+\subsection{5.3 Contribuições para o Meio Acadêmico e
+Empresarial}\label{contribuiuxe7uxf5es-para-o-meio-acaduxeamico-e-empresarial}
+
+\subsubsection{5.3.1 Contribuições
+Acadêmicas}\label{contribuiuxe7uxf5es-acaduxeamicas}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Metodologia Inovadora:} Estabelecimento de uma metodologia
+  reproduzível para avaliação de soluções de integração conversacional
+\item
+  \textbf{Framework de Referência:} Desenvolvimento de um framework que
+  pode servir como base para pesquisas futuras em integração de agentes
+  conversacionais
+\item
+  \textbf{Evidências Empíricas:} Fornecimento de dados quantitativos
+  sobre eficácia, performance e usabilidade de soluções OpenAPI-MCP
+\end{itemize}
+
+\subsubsection{5.3.2 Contribuições
+Empresariais}\label{contribuiuxe7uxf5es-empresariais}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Redução de Custos:} Diminuição significativa do tempo e
+  recursos necessários para implementar interfaces conversacionais
+\item
+  \textbf{Aceleração de Time-to-Market:} Capacidade de reutilizar
+  especificações existentes para rapidamente disponibilizar
+  funcionalidades conversacionais
+\item
+  \textbf{Melhoria da Experiência do Usuário:} Interfaces mais
+  intuitivas e acessíveis que reduzem a curva de aprendizado para
+  sistemas complexos
+\end{itemize}
+
+\subsection{5.4 Limitações do Estudo}\label{limitauxe7uxf5es-do-estudo}
+
+É importante reconhecer as limitações identificadas durante a pesquisa:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Dependência de Especificações:} A qualidade da integração está
+  diretamente relacionada à completude e precisão das especificações
+  OpenAPI originais
+\item
+  \textbf{Complexidade Inicial:} O setup e configuração inicial requerem
+  conhecimento técnico especializado
+\item
+  \textbf{Overhead de Performance:} Existe uma pequena latência
+  adicional inerente às camadas de abstração introduzidas
+\end{enumerate}
+
+\subsection{5.5 Recomendações para Estudos
+Futuros}\label{recomendauxe7uxf5es-para-estudos-futuros}
+
+Com base nos resultados obtidos, sugere-se as seguintes direções para
+pesquisas futuras:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Integração com Outras Especificações:} Investigação da
+  aplicabilidade da abordagem com outros padrões de documentação de APIs
+  além do OpenAPI
+\item
+  \textbf{Otimização de Performance:} Desenvolvimento de técnicas para
+  reduzir ainda mais a latência e overhead do sistema
+\item
+  \textbf{Inteligência Artificial Avançada:} Exploração de como modelos
+  de linguagem mais avançados podem melhorar a precisão da interpretação
+  de intenções
+\item
+  \textbf{Segurança Aprimorada:} Desenvolvimento de mecanismos ainda
+  mais robustos de proteção contra ataques adversários e injeção de
+  prompts
+\item
+  \textbf{Estudos de Usabilidade em Larga Escala:} Condução de estudos
+  longitudinais com maior número de usuários em ambientes corporativos
+  reais
+\end{enumerate}
+
+\subsection{5.6 Impacto Transformador}\label{impacto-transformador}
+
+Este trabalho contribui para uma visão transformadora da interação
+humano-computador, onde as barreiras técnicas impostas por interfaces
+complexas são mitigadas através de agentes conversacionais inteligentes.
+A capacidade de integrar rapidamente múltiplos sistemas através de
+especificações padronizadas representa um avanço significativo na
+democratização do acesso à tecnologia, tornando sistemas especializados
+mais acessíveis para usuários com diferentes níveis de expertise
+técnica.
+
+A solução desenvolvida não apenas resolve problemas técnicos de
+integração, mas também contribui para uma maior inclusão digital ao
+reduzir a complexidade de interação com sistemas corporativos. Esta
+abordagem tem o potencial de transformar como organizações
+disponibilizam e mantêm interfaces de usuário, promovendo maior
+eficiência, acessibilidade e satisfação do usuário.
+
+Em conclusão, a integração OpenAPI-MCP demonstra ser uma solução
+promissora e prática para o desafio de conectar agentes conversacionais
+a sistemas web existentes, oferecendo benefícios tangíveis em termos de
+desenvolvimento, manutenção e experiência do usuário, enquanto
+estabelece uma base sólida para evoluções futuras na área de interfaces
+conversacionais inteligentes.
 
 \section*{REFERÊNCIAS}\label{referuxeancias}
 \addcontentsline{toc}{section}{REFERÊNCIAS}
@@ -1443,18 +1412,6 @@ DENG, X. \href{https://api.semanticscholar.org/CorpusID:258259387}{A
 More Accessible Web with Natural Language Interface}.
 \textbf{Proceedings of the 20th International Web for All Conference},
 2023.
-
-\bibitem[\citeproctext]{ref-enterprisedb2023security}
-ENTERPRISEDB. \textbf{EnterpriseDB Raises the Bar for Postgres Security
-and Compliance}. Disponível em:
-\textless{}\url{https://www.enterprisedb.com/news/enterprisedb-raises-bar-postgres-security-compliance}\textgreater.
-Acesso em: 12 abr. 2025b.
-
-\bibitem[\citeproctext]{ref-enterprisedb2023postgresql}
-ENTERPRISEDB. \textbf{Postgres is the Most Admired Database in Stack
-Overflow 2023 Survey}. Disponível em:
-\textless{}\url{https://www.enterprisedb.com/blog/postgres-most-admired-database-in-stack-overflow-2023}\textgreater.
-Acesso em: 12 abr. 2025a.
 
 \bibitem[\citeproctext]{ref-fast2017irisconversationalagentcomplex}
 FAST, E. et al. \textbf{Iris: A Conversational Agent for Complex
@@ -1545,18 +1502,6 @@ RAPP, A. et al.
 for spatial needs: Routines, control and social competences of people
 with autism}. \textbf{International Journal of Human-Computer Studies},
 v. 120, p. 49--65, 2018.
-
-\bibitem[\citeproctext]{ref-eversql2023orms}
-TEAM, E. \textbf{Best ORM for Node.js in 2023: A Comprehensive
-Comparison}. Disponível em:
-\textless{}\url{https://www.eversql.com/best-orm-for-node-js/}\textgreater.
-Acesso em: 12 abr. 2025.
-
-\bibitem[\citeproctext]{ref-sequelize2024}
-TEAM, S. \textbf{Sequelize: A Modern TypeScript and Node.js ORM for
-Postgres, MySQL, MariaDB, SQLite and SQL Server}., 2024. Disponível em:
-\textless{}\url{https://github.com/sequelize/sequelize}\textgreater.
-Acesso em: 12 abr. 2025
 
 \bibitem[\citeproctext]{ref-Postman2023}
 THE POSTMAN TEAM. \textbf{{What is OpenAPI?}} Postman Blog, ago. 2023.

@@ -1,5 +1,7 @@
 # TCC - Agentes Conversacionais com IA
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Castrozan/tcc)
+
 Este repositório contém o desenvolvimento do Trabalho de Conclusão de Curso sobre Agentes Conversacionais com IA para Interação Aprimorada em Sistemas.
 
 ## 📑 Documentação do Projeto

@@ -103,21 +103,19 @@ A relevância do OpenAPI para agentes baseados em LLM reside na possibilidade de
 
 A adoção crescente é impulsionada pela comunidade ativa, o que demonstra o potencial do MCP como um padrão de integração para sistemas baseados em LLMs. Sua proposta de 'porta universal' para conectar agentes a ferramentas oferece flexibilidade e segurança: características fundamentais quando agentes com poder de raciocínio, como LLMs, precisam acessar recursos sensíveis de forma controlada e auditável [@Anthropic2024].
 
-- **Gerador MCP-OpenAPI:** para viabilizar a integração automática entre especificações OpenAPI e servidores MCP, foi desenvolvido um gerador especializado baseado no projeto mcp-openapi-server. Esta ferramenta analisa especificações OpenAPI e gera automaticamente servidores MCP correspondentes, incluindo validação de schemas, mapeamento de tipos de dados e tratamento de erros. O gerador suporta múltiplas especificações simultaneamente e permite configuração personalizada de autenticação e permissões, facilitando a criação de pontes padronizadas entre LLMs e sistemas externos sem necessidade de desenvolvimento manual para cada integração.
-
 ## 2.2 MÉTODOS
 
-Para assegurar a rigorosidade científica e garantir a reprodutibilidade dos experimentos conduzidos neste estudo, foi desenvolvida uma interface padrão comum para avaliar todas as abordagens de integração. Essa padronização viabiliza uma comparação justa e objetiva entre as implementações, minimizando variáveis relacionadas à interface que poderiam interferir nos resultados finais.
+Para assegurar a rigorosidade científica e garantir a reprodutibilidade dos experimentos conduzidos neste estudo, foi desenvolvida uma interface simples e minimalista para avaliar a integração OpenAPI-MCP. Essa padronização viabiliza que os testes executados sob a integração sejam realizados de forma justa e objetiva, minimizando variáveis relacionadas à interface que poderiam interferir nos resultados finais.
 
 ### 2.2.1 Interface Comum de Usuário
 
-A interface comum consiste em uma aplicação *web* simples de chat, desenvolvida utilizando React.js e TypeScript. A interface foi projetada de forma minimalista, visando uma experiência consistente e objetiva, independentemente da abordagem de integração utilizada.
-
-![Interface do Usuário](images/chat/chat-interface.jpg)
+A interface comum consiste em uma aplicação *web* simples de chat, desenvolvida utilizando HTML e JavaScript. A interface foi projetada de forma minimalista, visando uma experiência consistente e objetiva, independentemente de qualquer abordagem que fosse utilizada para a integração.
 
 #### 2.2.1.1 DESIGN DA INTERFACE
 
 A interface é composta por uma seção principal que exibe o histórico de mensagens, onde as interações entre usuário e agente conversacional aparecem de forma intercalada: as mensagens do agente são exibidas à esquerda e as do usuário à direita, facilitando a distinção visual entre os participantes da conversa. Abaixo do histórico, há um campo de entrada de texto que permite ao usuário digitar e enviar novas mensagens. Esse layout possibilita ao usuário acompanhar facilmente todo o histórico da conversa e inserir novos *prompts* de maneira contínua e intuitiva.
+
+![Interface do Usuário](images/chat/chat-interface.jpg)
 
 #### 2.2.1.2 Comunicação com Backend
 
@@ -155,7 +153,7 @@ A implementação da solução OpenAPI-MCP foi estruturada em quatro componentes
 
 ### 3.1 Gerador Automático de Servidores MCP (mcp-openapi-server)
 
-O componente central da solução é um gerador automático que converte especificações OpenAPI em servidores MCP funcionais. Esta ferramenta elimina a necessidade de desenvolvimento manual de integrações personalizadas para cada API, promovendo padronização e escalabilidade.
+Esta ferramenta analisa especificações OpenAPI e gera automaticamente servidores MCP correspondentes, incluindo validação de schemas, mapeamento de tipos de dados e tratamento de erros. O gerador suporta múltiplas especificações simultaneamente e permite configuração personalizada de autenticação e permissões, facilitando a criação de pontes padronizadas entre LLMs e sistemas externos sem necessidade de desenvolvimento manual para cada integração. Esta ferramenta elimina a necessidade de desenvolvimento manual de integrações personalizadas para cada API, promovendo padronização e escalabilidade.
 
 #### 3.1.1 Arquitetura do Gerador
 

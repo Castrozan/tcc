@@ -9,9 +9,9 @@
   - [ ] Write "Considerações Finais"
   - [x] Implement chat mcp client application
   - Implement e2e tests for approaches
-    - [ ] MCP
-    - [ ] ORM
-    - [ ] DB
+    - [ ] Performance
+    - [ ] Security
+    - [ ] Usability
   - [ ] Refactor article to reflect only what was implemented
     - MCP
     - ORM

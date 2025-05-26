@@ -16,7 +16,18 @@ const config = {
         model: 'gpt-4'
     },
     cors: {
-        origin: ['http://127.0.0.1:5500', 'http://localhost:5500'],
+        origin: function (origin, callback) {
+            // Allow requests with no origin (like mobile apps or curl requests)
+            if (!origin) return callback(null, true);
+
+            // Allow any localhost or 127.0.0.1 origin for development
+            if (origin.match(/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/)) {
+                return callback(null, true);
+            }
+
+            // For production, you might want to be more restrictive
+            callback(new Error('Not allowed by CORS'));
+        },
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Content-Type', 'mcp-session-id'],
         credentials: true

@@ -23,9 +23,19 @@ class ChatServer {
         // CORS configuration
         this.app.use((req, res, next) => {
             const origin = req.headers.origin;
-            if (config.cors.origin.includes(origin)) {
+
+            // Use the origin function from config to check if origin is allowed
+            if (typeof config.cors.origin === 'function') {
+                config.cors.origin(origin, (err, allowed) => {
+                    if (!err && allowed) {
+                        res.header('Access-Control-Allow-Origin', origin);
+                    }
+                });
+            } else if (Array.isArray(config.cors.origin) && config.cors.origin.includes(origin)) {
+                // Fallback for array-based configuration
                 res.header('Access-Control-Allow-Origin', origin);
             }
+
             res.header('Access-Control-Allow-Methods', config.cors.methods.join(', '));
             res.header('Access-Control-Allow-Headers', config.cors.allowedHeaders.join(', '));
             res.header('Access-Control-Allow-Credentials', config.cors.credentials.toString());

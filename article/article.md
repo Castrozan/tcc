@@ -113,7 +113,7 @@ Para assegurar a rigorosidade científica e garantir a reprodutibilidade dos exp
 
 A interface comum consiste em uma aplicação *web* simples de chat, desenvolvida utilizando React.js e TypeScript. A interface foi projetada de forma minimalista, visando uma experiência consistente e objetiva, independentemente da abordagem de integração utilizada.
 
-![Interface do Usuário](images/metodos/user-interface.jpg)
+![Interface do Usuário](images/chat/chat-interface.jpg)
 
 #### 2.2.1.1 DESIGN DA INTERFACE
 

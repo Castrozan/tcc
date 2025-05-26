@@ -9,6 +9,7 @@
         "test:diagnostic": "node run-diagnostic-test.js",
         "test:performance": "node run-performance-test.js",
         "test:security": "node run-security-test.js",
+        "test:ux": "node run-ux-test.js",
         "test:all": "node run-all-tests.js",
         "dev": "concurrently --kill-others --kill-signal SIGTERM \"npm run backend\" \"npm run chat\"",
         "backend": "node backend-server.js",

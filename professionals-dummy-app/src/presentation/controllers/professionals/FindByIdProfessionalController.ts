@@ -8,17 +8,6 @@ export class FindByIdProfessionalController extends OpenAPIRoute {
     schema = {
         tags: ['Professionals'],
         summary: 'Retrieve a professional by ID',
-        parameters: [
-            {
-                name: 'id',
-                in: 'path' as const,
-                required: true,
-                schema: {
-                    type: 'integer' as const
-                },
-                description: 'ID of the professional to retrieve'
-            }
-        ],
         request: {
             params: z.object({
                 id: z.number().min(1, { message: 'ID is required' })

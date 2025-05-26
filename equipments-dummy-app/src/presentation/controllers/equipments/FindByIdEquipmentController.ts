@@ -8,17 +8,6 @@ export class FindByIdEquipmentController extends OpenAPIRoute {
     schema = {
         tags: ['Equipments'],
         summary: 'Retrieve an equipment by ID',
-        parameters: [
-            {
-                name: 'id',
-                in: 'path' as const,
-                required: true,
-                schema: {
-                    type: 'integer' as const
-                },
-                description: 'ID of the equipment to retrieve'
-            }
-        ],
         request: {
             params: z.object({
                 id: z.number().min(1, { message: 'ID is required' })

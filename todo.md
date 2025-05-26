@@ -12,7 +12,7 @@
     - ORM
     - DB
   - MCP
-    - [ ] Tweak lib to work with path parameters
+    - [x] Tweak lib to work with path parameters
   - ORM
     - [ ] Change equipments and professionals app to use the buson IA integration
   - DB

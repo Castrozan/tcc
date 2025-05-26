@@ -1,0 +1,15 @@
+{
+    "watch": [
+        "proxy-server.js"
+    ],
+    "ext": "js,json",
+    "ignore": [
+        "node_modules/",
+        "test-results/",
+        "playwright-report/"
+    ],
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "delay": "1000"
+}

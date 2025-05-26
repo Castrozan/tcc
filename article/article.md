@@ -153,101 +153,11 @@ Em seguida, os testes são executados automaticamente, variando desde consultas 
 
 ## 3. DESENVOLVIMENTO
 
-### 3.1 Integração via Plugin ORM
+### 3.1 Integração OpenAPI-MCP
 
-A primeira abordagem investigada consiste na implementação de um plugin ORM que permite ao LLM interagir com o sistema através das camadas de abstração do ORM. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução.
+A abordagem implementa uma solução unificada que combina a especificação OpenAPI com o *Model Context Protocol (MCP)*. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução integrada.
 
 #### 3.1.1 Arquitetura da Solução
-
-A arquitetura proposta para esta abordagem é composta por quatro componentes principais: interface do usuário, serviço LLM, plugin ORM e o banco de dados. A Figura X ilustra a arquitetura e o fluxo de comunicação entre estes componentes.
-
-![ORM - Diagrama da Arquitetura](images/orm/orm-diagram-approach.jpg)
-
-O fluxo de comunicação se inicia com uma solicitação do usuário em linguagem natural, que é processada pelo LLM. O modelo, tendo conhecimento prévio dos modelos e relacionamentos definidos no ORM, gera instruções de consulta utilizando a API do ORM. Estas instruções são executadas através do plugin, que utiliza o ORM para realizar as operações no banco de dados de forma segura e otimizada.
-
-Em casos mais complexos, o sistema pode realizar múltiplas operações encadeadas, aproveitando os relacionamentos e métodos definidos nos modelos do ORM para obter dados relacionados e realizar análises mais complexas.
-
-#### 3.1.2 Componentes de Segurança
-
-A implementação inclui camadas de segurança essenciais:
-
-- Validação automática de tipos pelo ORM
-- Prevenção de *SQL injection*
-- Controle de acesso em nível de modelo
-- Sanitização de dados de entrada
-- Validação de permissões de usuário
-
-#### 3.1.3 Estrutura de Metadados
-
-A configuração do sistema é gerenciada através dos modelos do ORM:
-
-- Definições de modelos e relacionamentos
-- Validações e restrições de campo
-- Hooks e middlewares
-- Configurações de cache
-
-#### 3.1.4 Implementação da Prova de Conceito
-
-A implementação utiliza uma stack tecnológica moderna baseada em Node.js, escolhida por sua eficiência e amplo suporte a ferramentas de desenvolvimento. Os principais componentes tecnológicos incluem:
-
-- Backend: Node.js
-- LLM: GPT-3 via API OpenAI
-- ORM: Sequelize
-- Banco de Dados: PostgreSQL
-
-#### 3.1.5 Desenvolvimento do Plugin
-
-O plugin ORM implementa:
-
-- Interface de comunicação com o LLM
-- Interpretação de intenções para queries
-- Gerenciamento de transações
-- Sistema de cache
-- Logging e monitoramento
-
-#### 3.1.6 Detalhes Técnicos
-
-A implementação técnica foca em três aspectos principais:
-
-#### 3.1.7 Integração com LLM
-
-O sistema utiliza técnicas avançadas de *prompt engineering* para:
-
-- Interpretação de modelos do ORM
-- Geração de queries complexas
-- Otimização de consultas
-- Gerenciamento de relacionamentos
-
-#### 3.1.8 Tratamento de Erros
-
-O sistema implementa estratégias robustas para:
-
-- Validação de tipos
-- Erros de constraint
-- Timeout de transações
-- Conflitos de concorrência
-
-#### 3.1.9 Avaliação e Métricas
-
-Esta abordagem foi avaliada considerando os seguintes aspectos:
-
-- Performance
-- Segurança
-- Custos Operacionais
-
-#### 3.1.10 Considerações Práticas
-
-A implementação revelou diversos aspectos práticos importantes:
-
-- Desafios
-- Infraestrutura
-- Manutenção
-
-### 3.2 Integração OpenAPI-MCP
-
-A terceira abordagem implementa uma solução unificada que combina a especificação OpenAPI com o *Model Context Protocol (MCP)*. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução integrada.
-
-#### 3.2.1 Arquitetura da Solução
 
 A arquitetura proposta para esta abordagem implementa um servidor MCP que é gerado a partir de uma definição OpenAPI e que pode ser integrado a qualquer sistema que suporte o protocolo MCP. Dessa forma, a integração é feita através de uma definição OpenAPI, que é a forma padrão de se integrar sistemas através de APIs.
 
@@ -260,7 +170,6 @@ A arquitetura desta abordagem é composta por três camadas principais:
    - Especificações OpenAPI dos sistemas alvo
    - Definições de endpoints e operações
    - Esquemas de dados e validação
-   - Configurações de segurança e autenticação
 
 2. **Camada de Geração MCP**
 
@@ -272,44 +181,40 @@ A arquitetura desta abordagem é composta por três camadas principais:
    - Servidor MCP gerado
    - Cliente MCP (LLM)
    - Proxy de requisições REST
-   - Sistema de cache e otimização
 
-#### 3.2.2 Fluxo de Operação
+#### 3.1.2 Fluxo de Operação
 
 O sistema opera através do seguinte fluxo:
 
 1. Definição das APIs via OpenAPI
 2. Geração automática do servidor MCP
 3. Processamento de *prompts* do usuário pelo LLM
-4. Tradução de intenções em chamadas MCP using SSE
+4. Tradução de intenções em chamadas MCP usando SSE
 5. Processamento das respostas e apresentação ao usuário
 
-#### 3.2.3 Componentes de Segurança
+#### 3.1.3 Componentes de Segurança
 
 A implementação mantém as características de segurança de ambos os protocolos:
 
 - Validação de schemas OpenAPI
 - Autenticação e gestão de permissões para uso do swagger
 
-#### 3.2.4 Implementação da Prova de Conceito
+#### 3.1.4 Implementação da Prova de Conceito
 
 A implementação utiliza as seguintes tecnologias:
 
-- Node.js para o servidor de geração
+- Node.js para o servidor de geração baseado no projeto mcp-openapi-server
 - OpenAPI Tools para parsing de especificações
 - MCP SDK para geração de servidores
 
-#### 3.2.5 Desenvolvimento do Gerador
+#### 3.1.5 Desenvolvimento do Gerador
 
 O gerador de servidores MCP implementa:
 
-- Parser de especificações OpenAPI
-- Mapeamento de tipos OpenAPI para MCP
-- Geração de código Typescript
-- Templates de servidores MCP
-- Sistema de plugins para extensibilidade
+- Parser de especificações OpenAPI baseado no projeto mcp-openapi-server e mapeamento de tipos OpenAPI para MCP
+- Gestão de servidores MCP configuráveis 
 
-#### 3.2.6 Detalhes Técnicos
+#### 3.1.6 Detalhes Técnicos
 
 A implementação foca em três aspectos principais:
 
@@ -317,101 +222,49 @@ A implementação foca em três aspectos principais:
 
    - Análise estática de especificações
    - Geração de tipos Typescript
-   - Criação de validadores
-   - Documentação automática
 
 2. **Runtime**
 
    - Tratamento de erros de chamadas MCP
 
 3. **Integração LLM**
-   - *Prompt engineering* para uso das ferramentas MCP
+   - Conversão de ferramentas para OpenAI "functions" para uso das ferramentas MCP
    - Gerenciamento de contexto
-   - Otimização de chamadas
    - Interpretação de respostas
 
-#### 3.2.7 Avaliação e Métricas
+### 3.2 Integração MCP via conexão direta com o banco de dados 
 
-A avaliação considera aspectos específicos desta abordagem:
+A terceira abordagem explora a integração via MCP entre o *LLM* e o banco de dados, minimizando camadas intermediárias de abstração. Esta abordagem oferece máximo controle e performance, mas requer cuidados especiais com segurança e validação. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução.
 
-1. **Performance**
-
-   - Tempo de geração de servidores
-   - Latência de chamadas MCP
-   - Eficiência de cache
-
-2. **Confiabilidade**
-
-   - Taxa de sucesso de geração
-   - Estabilidade do servidor
-   - Consistência das respostas
-
-3. **Manutenibilidade**
-   - Facilidade de atualização
-   - Compatibilidade com versões
-   - Clareza do código gerado
-   - Documentação automática
-
-#### 3.2.8 Considerações Práticas
-
-A implementação revelou aspectos importantes:
-
-1. **Desafios**
-
-   - Complexidade de mapeamento de tipos
-   - Manutenção de estado entre chamadas
-   - Versionamento de *APIs*
-   - Performance em grande escala
-
-2. **Infraestrutura**
-
-   - Requisitos de deployment
-   - Escalabilidade horizontal
-   - Monitoramento distribuído
-   - Backup e recuperação
-
-3. **Manutenção**
-   - Atualizações de especificações
-   - Regeneração de servidores
-   - Migração de dados
-   - Gestão de dependências
-
-### 3.3 Integração via conexão direta com o banco de dados
-
-A terceira abordagem explora a integração direta entre o *LLM* e o banco de dados, minimizando camadas intermediárias de abstração. Esta abordagem oferece máximo controle e performance, mas requer cuidados especiais com segurança e validação. Esta seção detalha a arquitetura, implementação e considerações práticas desta solução.
-
-#### 3.3.1 Arquitetura da Solução
+#### 3.2.1 Arquitetura da Solução
 
 A arquitetura desta abordagem é intencionalmente minimalista, composta por três componentes principais:
 
-1. **Camada de Interface**
+1. **Camada de Geração MCP**
 
-   - Cadastro das conexões com o banco de dados (para que a aplicação possa obter os schemas e executar queries)
-   - Serviço *LLM* (para gerar queries, interpretar os dados e gerar respostas)
+   - Gerador de servidores MCP
+   - Mapeamento OpenAPI para MCP
 
-2. **Camada de Segurança**
-
-   - Sistema de validação de queries (para sanitizar os dados e evitar *SQL injection*)
-
-3. **Camada de Dados**
-   - Gerenciamento de conexões com o banco de dados (em caso de múltiplos databases, a aplicação deve integrar todos e possibilitar que o *LLM* escolha qual usar)
-   - Cache de queries
+2. **Camada de Runtime Cliente MCP**
+   - Servidor MCP gerado
+   - Cliente MCP (LLM)
+   - Proxy de requisições REST
 
 ![DB - Diagrama da Arquitetura](images/db/db-diagram-approach.jpg)
 
-#### 3.3.2 Fluxo de Operação
+#### 3.2.2 Fluxo de Operação
 
 O sistema opera através de um fluxo direto:
 
 1. Recebimento do prompt do usuário
 2. Análise de intenção pelo *LLM*
 3. Geração de query *SQL*
-4. Validação e sanitização
+4. Chamada ao servidor MCP
 5. Execução direta no banco
 6. Processamento dos resultados
 7. Formatação da resposta
 
-#### 3.3.3 Componentes de Segurança
+#### 3.2.3 Componentes de Segurança
 
 Dado o acesso direto ao banco, a segurança é crítica:
 
@@ -421,52 +274,36 @@ Dado o acesso direto ao banco, a segurança é crítica:
 - Limites de complexidade de query
 - Timeouts configuráveis
 
-#### 3.3.4 Implementação da Prova de Conceito
+#### 3.2.4 Implementação da Prova de Conceito
 
-A implementação utiliza tecnologias focadas em performance:
+A implementação utiliza as seguintes tecnologias:
 
-- Backend: *Node.js*
-- *LLM*: GPT-3 via *API* OpenAI
-- Banco de Dados: PostgreSQL
-- Driver: node-postgres
-- Sistema de Cache: Redis
+- Node.js para geração de servidores MCP baseado no projeto XXXXX
 
-#### 3.3.5 Desenvolvimento do Conector
-
-O conector de banco de dados implementa:
-
-- Pool de conexões otimizado
-- Sistema de retry inteligente
-- Sanitização de queries
-- Cache adaptativo
-- Logging detalhado
-- Métricas em tempo real
-
-#### 3.3.6 Detalhes Técnicos
+#### 3.2.5 Detalhes Técnicos
 
 A implementação foca em três aspectos críticos:
 
-1. **Geração de *SQL***
+1. **Geração de Código**
 
-   - Templates de queries otimizadas
+   - Geração dos servidores MCP
+
+2. **Geração de SQL e Runtime**
+
    - Análise de plano de execução
    - Otimização automática
    - Validação sintática
 
-2. **Performance**
+3. **Integração LLM**
+   - Conversão de ferramentas para OpenAI "functions" para uso das ferramentas MCP
+   - Gerenciamento de contexto
+   - Interpretação de respostas
 
-   - Connection pooling
-   - Query caching
-   - Bulk operations
-   - Índices automáticos
+Esta abordagem, embora mais complexa em termos de segurança e manutenção, oferece máxima flexibilidade e performance para casos de uso específicos onde o controle direto sobre as operações de banco de dados é necessário.
 
-3. **Segurança**
-   - Análise de injeção *SQL*
-   - Validação de schemas
-   - Rate limiting
-   - Auditoria de acessos
+# 4 RESULTADOS E DISCUSSÕES
 
-#### 3.3.7 Avaliação e Métricas
+## 4.1 Avaliação e Métricas
 
 A avaliação considera aspectos específicos:
 
@@ -484,13 +321,13 @@ A avaliação considera aspectos específicos:
    - Eficácia do controle de acesso
    - Precisão da auditoria
 
-3. **Confiabilidade**
+3. **Usabilidade**
    - Taxa de erros
    - Tempo de recuperação
    - Consistência dos dados
    - Disponibilidade do sistema
 
-#### 3.3.8 Considerações Práticas
+## 4.2 Considerações Práticas de Implementação
 
 A implementação revelou aspectos importantes:
 
@@ -513,10 +350,6 @@ A implementação revelou aspectos importantes:
    - Otimização contínua
    - Análise de logs
    - Gestão de índices
-
-Esta abordagem, embora mais complexa em termos de segurança e manutenção, oferece máxima flexibilidade e performance para casos de uso específicos onde o controle direto sobre as operações de banco de dados é necessário.
-
-# 4 RESULTADOS E DISCUSSÕES
 
 Nos Resultados e Discussões, deve-se apresentar os resultados obtidos no
 Procedimento Experimental e fazer uma discussão e análise sobre os

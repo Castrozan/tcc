@@ -498,43 +498,23 @@ fundamentais quando agentes com poder de raciocínio, como LLMs, precisam
 acessar recursos sensíveis de forma controlada e auditável (ANTHROPIC,
 2024c).
 
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Gerador MCP-OpenAPI:} para viabilizar a integração automática
-  entre especificações OpenAPI e servidores MCP, foi desenvolvido um
-  gerador especializado baseado no projeto mcp-openapi-server. Esta
-  ferramenta analisa especificações OpenAPI e gera automaticamente
-  servidores MCP correspondentes, incluindo validação de schemas,
-  mapeamento de tipos de dados e tratamento de erros. O gerador suporta
-  múltiplas especificações simultaneamente e permite configuração
-  personalizada de autenticação e permissões, facilitando a criação de
-  pontes padronizadas entre LLMs e sistemas externos sem necessidade de
-  desenvolvimento manual para cada integração.
-\end{itemize}
-
 \subsection{2.2 MÉTODOS}\label{muxe9todos}
 
 Para assegurar a rigorosidade científica e garantir a reprodutibilidade
 dos experimentos conduzidos neste estudo, foi desenvolvida uma interface
-padrão comum para avaliar todas as abordagens de integração. Essa
-padronização viabiliza uma comparação justa e objetiva entre as
-implementações, minimizando variáveis relacionadas à interface que
-poderiam interferir nos resultados finais.
+simples e minimalista para avaliar a integração OpenAPI-MCP. Essa
+padronização viabiliza que os testes executados sob a integração sejam
+realizados de forma justa e objetiva, minimizando variáveis relacionadas
+à interface que poderiam interferir nos resultados finais.
 
 \subsubsection{2.2.1 Interface Comum de
 Usuário}\label{interface-comum-de-usuuxe1rio}
 
 A interface comum consiste em uma aplicação \emph{web} simples de chat,
-desenvolvida utilizando React.js e TypeScript. A interface foi projetada
-de forma minimalista, visando uma experiência consistente e objetiva,
-independentemente da abordagem de integração utilizada.
-
-\begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{images/metodos/user-interface.jpg}}
-\caption{Interface do Usuário}
-\end{figure}
+desenvolvida utilizando HTML e JavaScript. A interface foi projetada de
+forma minimalista, visando uma experiência consistente e objetiva,
+independentemente de qual abordagem que fosse utilizada para a
+integração.
 
 \paragraph{2.2.1.1 DESIGN DA INTERFACE}\label{design-da-interface}
 
@@ -547,6 +527,12 @@ entrada de texto que permite ao usuário digitar e enviar novas
 mensagens. Esse layout possibilita ao usuário acompanhar facilmente todo
 o histórico da conversa e inserir novos \emph{prompts} de maneira
 contínua e intuitiva.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/chat/chat-interface.jpg}}
+\caption{Interface do Usuário}
+\end{figure}
 
 \paragraph{2.2.1.2 Comunicação com
 Backend}\label{comunicauxe7uxe3o-com-backend}
@@ -630,333 +616,165 @@ implementadas.
 
 \subsection{3. DESENVOLVIMENTO}\label{desenvolvimento}
 
-A implementação da solução OpenAPI-MCP foi estruturada em quatro
-componentes principais: um gerador automático de servidores MCP a partir
-de especificações OpenAPI, um cliente de chat capaz de gerenciar
-múltiplos servidores MCP simultaneamente, aplicações de teste para
-validação da abordagem, e uma suíte de testes automatizados para
-avaliação da solução. Esta seção detalha a arquitetura, implementação e
-considerações técnicas de cada componente.
+A implementação da solução OpenAPI-MCP foi estruturada seguindo uma
+abordagem modular e integrada, compreendendo quatro componentes
+principais que trabalham em sinergia para demonstrar e validar a
+viabilidade da integração proposta. A arquitetura resultante engloba um
+gerador automático de servidores MCP a partir de especificações OpenAPI,
+um cliente de chat capaz de gerenciar múltiplos servidores MCP
+simultaneamente, aplicações de teste que simulam cenários reais de
+negócio, e uma suíte abrangente de testes automatizados para avaliação
+científica da solução.
 
 \subsubsection{3.1 Gerador Automático de Servidores MCP
 (mcp-openapi-server)}\label{gerador-automuxe1tico-de-servidores-mcp-mcp-openapi-server}
 
-O componente central da solução é um gerador automático que converte
-especificações OpenAPI em servidores MCP funcionais. Esta ferramenta
-elimina a necessidade de desenvolvimento manual de integrações
-personalizadas para cada API, promovendo padronização e escalabilidade.
+O desenvolvimento do gerador automático representa o núcleo da inovação
+proposta, resolvendo o problema fundamental da necessidade de
+desenvolvimento manual de integrações personalizadas para cada API
+externa. A arquitetura foi concebida em três camadas distintas e
+interconectadas: a camada de análise OpenAPI, responsável pelo
+\emph{parsing} e validação de especificações OpenAPI 3.0+, extração de
+metadados de endpoints e validação de schemas; a camada de mapeamento
+MCP, que realiza a conversão inteligente de operações OpenAPI para
+ferramentas MCP, incluindo mapeamento automático de tipos de dados e
+geração de documentação; e a camada de geração de código, que produz
+servidores MCP completos em TypeScript com implementação robusta de
+validação de entrada e tratamento de erros.
 
-\paragraph{3.1.1 Arquitetura do Gerador}\label{arquitetura-do-gerador}
-
-O gerador é implementado em TypeScript e Node.js, estruturado em três
-camadas principais:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Camada de Análise OpenAPI}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Parser de especificações OpenAPI 3.0+
-  \item
-    Validação de schemas e estruturas
-  \item
-    Extração de metadados de endpoints e operações
-  \end{itemize}
-\item
-  \textbf{Camada de Mapeamento MCP}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Conversão de operações OpenAPI para ferramentas MCP
-  \item
-    Mapeamento de tipos de dados entre especificações
-  \item
-    Geração de documentação automática
-  \end{itemize}
-\item
-  \textbf{Camada de Geração de Código}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Geração de servidores MCP em TypeScript
-  \item
-    Implementação de validação de entrada
-  \item
-    Tratamento de erros e logging
-  \end{itemize}
-\end{enumerate}
+O processo de geração segue um fluxo estruturado que demonstra a
+automação completa da integração. Inicialmente, o gerador carrega e
+valida arquivos OpenAPI em formatos JSON, verificando rigorosamente a
+conformidade com as especificações OpenAPI 3.0+. Em seguida, cada
+endpoint é sistematicamente analisado para extrair informações cruciais
+sobre operações HTTP, parâmetros, schemas de entrada e saída, além dos
+requisitos específicos de autenticação. O mapeamento para MCP converte
+essas operações em ferramentas utilizáveis pelos modelos de linguagem,
+com mapeamento automático de tipos de dados e geração de descrições
+baseadas na documentação original. Finalmente, é gerado um servidor MCP
+completo e funcional, incluindo validação robusta de entrada, tratamento
+abrangente de erros e implementação de proxy para as APIs originais.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio]{images/desenvolvimento/mcp-generator-architecture.jpg}}
-\caption{Arquitetura do Gerador MCP-OpenAPI}
+\pandocbounded{\includegraphics[keepaspectratio]{images/openapi-mcp/mcp-server-generator-arch.jpg}}
+\caption{Arquitetura do Gerador Automático de Servidores MCP}
 \end{figure}
 
-\paragraph{3.1.2 Processo de Geração}\label{processo-de-gerauxe7uxe3o}
-
-O processo de geração segue os seguintes passos:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Carregamento da Especificação:} O gerador carrega e valida
-  arquivos OpenAPI em formato JSON ou YAML, verificando conformidade com
-  a especificação OpenAPI 3.0+.
-\item
-  \textbf{Análise de Endpoints:} Cada endpoint é analisado para extrair
-  informações sobre operações HTTP, parâmetros, schemas de entrada e
-  saída, e requisitos de autenticação.
-\item
-  \textbf{Mapeamento para MCP:} As operações são convertidas em
-  ferramentas MCP, com mapeamento automático de tipos de dados e geração
-  de descrições baseadas na documentação OpenAPI.
-\item
-  \textbf{Geração do Servidor:} É gerado um servidor MCP completo em
-  TypeScript, incluindo validação de entrada, tratamento de erros, e
-  proxy para as APIs originais.
-\end{enumerate}
-
-\paragraph{3.1.3 Funcionalidades
-Implementadas}\label{funcionalidades-implementadas}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Suporte a Múltiplas APIs:} Capacidade de gerar servidores para
-  múltiplas especificações OpenAPI simultaneamente
-\item
-  \textbf{Validação Automática:} Validação de entrada baseada em schemas
-  OpenAPI
-\item
-  \textbf{Tratamento de Autenticação:} Suporte a diferentes métodos de
-  autenticação (API Key, Bearer Token, OAuth)
-\item
-  \textbf{Gestão de Erros:} Tratamento robusto de erros com mapeamento
-  para códigos de status HTTP apropriados
-\item
-  \textbf{Logging e Monitoramento:} Sistema de logging integrado para
-  auditoria e debugging
-\end{itemize}
+As funcionalidades implementadas no gerador refletem a necessidade de
+atender cenários complexos de integração empresarial. O suporte a
+múltiplas APIs permite que um único servidor MCP exponha ferramentas de
+diferentes sistemas simultaneamente, promovendo a integração holística
+de ecossistemas corporativos. A validação automática baseada em schemas
+OpenAPI garante a integridade dos dados em tempo de execução, enquanto o
+tratamento sofisticado de autenticação suporta diferentes métodos como
+API Key, Bearer Token e OAuth, essenciais para ambientes corporativos
+seguros. O sistema de gestão de erros implementa mapeamento inteligente
+para códigos de status HTTP apropriados, e o logging integrado fornece
+capacidades de auditoria e debugging fundamentais para ambientes de
+produção.
 
 \subsubsection{3.2 Cliente de Chat Multi-Servidor
 MCP}\label{cliente-de-chat-multi-servidor-mcp}
 
-O cliente de chat foi desenvolvido para demonstrar e validar a
-capacidade de gerenciar múltiplos servidores MCP simultaneamente,
-permitindo que um único agente conversacional acesse diferentes sistemas
-através de suas respectivas especificações OpenAPI.
+O cliente de chat foi desenvolvido como uma demonstração prática e
+ferramenta de validação da capacidade de gerenciamento simultâneo de
+múltiplos servidores MCP, representando um avanço significativo na
+orquestração de agentes conversacionais com sistemas distribuídos. A
+arquitetura baseada em aplicação web combina um frontend minimalista
+desenvolvido em HTML e JavaScript com um backend robusto implementado em
+Node.js utilizando Express.js. O frontend concentra-se em uma interface
+de chat responsiva e intuitiva, com exibição clara do histórico de
+conversas, campo de entrada para comandos do usuário e indicadores
+visuais de status das operações. O backend implementa um servidor
+Express.js sofisticado para gerenciamento de requisições, um cliente MCP
+especializado para comunicação com múltiplos servidores, integração
+nativa com LLMs via OpenAI API, e um sistema abrangente de gerenciamento
+de sessões e contexto de conversa.
 
-\paragraph{3.2.1 Arquitetura do Cliente}\label{arquitetura-do-cliente}
-
-A arquitetura do cliente é baseada em uma aplicação web com frontend em
-HTML/JavaScript e backend em Node.js:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Frontend (chat.html)}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Interface de chat minimalista e responsiva
-  \item
-    Exibição de histórico de conversas
-  \item
-    Campo de entrada para comandos do usuário
-  \item
-    Indicadores visuais de status das operações
-  \end{itemize}
-\item
-  \textbf{Backend (backend-server.js)}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Servidor Express.js para gerenciamento de requisições
-  \item
-    Cliente MCP para comunicação com múltiplos servidores
-  \item
-    Integração com LLMs via OpenAI API
-  \item
-    Gerenciamento de sessões e contexto de conversa
-  \end{itemize}
-\end{enumerate}
+O gerenciamento de múltiplos servidores MCP representa uma contribuição
+técnica significativa, implementando um sistema sofisticado de
+coordenação que vai além da simples conexão pontual. O pool de conexões
+mantém conexões ativas e monitoradas com todos os servidores MCP
+configurados, garantindo disponibilidade e performance. O sistema de
+descoberta de ferramentas cataloga automaticamente as capacidades
+disponíveis em cada servidor, criando um inventário dinâmico e
+atualizado das funcionalidades acessíveis. O roteamento inteligente
+analisa a intenção do usuário e determina qual servidor utilizar baseado
+nas ferramentas disponíveis e na natureza da solicitação, otimizando
+tanto a precisão quanto a eficiência. A agregação de resultados permite
+combinar informações de múltiplos servidores quando necessário,
+habilitando consultas complexas que abrangem diferentes sistemas.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio]{images/desenvolvimento/chat-client-architecture.jpg}}
-\caption{Arquitetura do Cliente de Chat}
+\pandocbounded{\includegraphics[keepaspectratio]{images/chat/chat-arch.jpg}}
+\caption{Arquitetura do Cliente de Chat Multi-Servidor MCP}
 \end{figure}
 
-\paragraph{3.2.2 Gerenciamento de Múltiplos Servidores
-MCP}\label{gerenciamento-de-muxfaltiplos-servidores-mcp}
+A integração com modelos de linguagem de grande escala utiliza a
+funcionalidade de function calling da OpenAI como ponte entre a
+compreensão de linguagem natural e a execução de ferramentas
+específicas. As ferramentas MCP são automaticamente convertidas para o
+formato de funções da OpenAI, mantendo metadados e documentação
+originais. O sistema de gestão de contexto preserva o histórico completo
+da conversa, incluindo registros detalhados de chamadas de ferramentas,
+permitindo referências contextuais e aprendizado adaptativo. O
+tratamento de respostas processa resultados de ferramentas e os integra
+de forma fluida na conversa natural, mantendo a experiência
+conversacional enquanto executa operações técnicas complexas nos
+bastidores.
 
-O cliente implementa um sistema sofisticado para gerenciar conexões
-simultâneas com múltiplos servidores MCP:
+\subsubsection{3.3 Aplicações de Teste para
+Validação}\label{aplicauxe7uxf5es-de-teste-para-validauxe7uxe3o}
 
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Pool de Conexões:} Mantém conexões ativas com todos os
-  servidores MCP configurados
-\item
-  \textbf{Descoberta de Ferramentas:} Automaticamente descobre e
-  cataloga ferramentas disponíveis em cada servidor
-\item
-  \textbf{Roteamento Inteligente:} Determina qual servidor usar baseado
-  na intenção do usuário e ferramentas disponíveis
-\item
-  \textbf{Agregação de Resultados:} Combina resultados de múltiplos
-  servidores quando necessário
-\end{itemize}
+Para garantir uma validação científica rigorosa da abordagem proposta,
+foram desenvolvidas duas aplicações de teste que simulam cenários
+empresariais realistas, expondo APIs RESTful completamente documentadas
+com especificações OpenAPI. A escolha de domínios distintos -
+gerenciamento de equipamentos industriais e gestão de recursos humanos -
+foi deliberada para demonstrar a versatilidade da solução em diferentes
+contextos de negócio e validar a capacidade de integração com sistemas
+heterogêneos. Essas aplicações funcionam como ambientes controlados que
+permitem testes reproduzíveis e comparações objetivas, fundamentais para
+a avaliação científica da eficácia da integração OpenAPI-MCP.
 
-\paragraph{3.2.3 Integração com LLMs}\label{integrauxe7uxe3o-com-llms}
+O sistema de gerenciamento de equipamentos simula um ambiente industrial
+típico, implementando operações CRUD completas com modelo de dados que
+engloba propriedades essenciais como nome, tipo, descrição e URLs de
+imagens. Paralelamente, o sistema de gerenciamento de profissionais
+implementa funcionalidades de recursos humanos, incluindo CRUD completo
+para dados pessoais e profissionais, suporte a estruturas hierárquicas
+organizacionais e relacionamentos com equipamentos. Ambas as aplicações
+geram automaticamente especificações OpenAPI completas e precisas,
+incluindo schemas detalhados de todos os modelos de dados, documentação
+abrangente de endpoints com exemplos práticos, e especificação clara de
+métodos de autenticação, garantindo que a integração seja testada com
+cenários que refletem fielmente as complexidades encontradas em
+ambientes corporativos reais.
 
-O sistema utiliza a API da OpenAI com funcionalidade de \emph{function
-calling} para integração com os servidores MCP:
+\subsubsection{3.4 Suíte de Testes Automatizados e
+Validação}\label{suuxedte-de-testes-automatizados-e-validauxe7uxe3o}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Conversão de Ferramentas:} Ferramentas MCP são automaticamente
-  convertidas para o formato de funções da OpenAI
-\item
-  \textbf{Gestão de Contexto:} Mantém contexto de conversa incluindo
-  histórico de chamadas de ferramentas
-\item
-  \textbf{Tratamento de Respostas:} Processa respostas de ferramentas e
-  as integra na conversa natural
-\end{enumerate}
+A validação científica da solução é suportada por uma suíte abrangente
+de testes automatizados implementados com Playwright, estruturada para
+abordar múltiplas dimensões críticas: funcionalidade, segurança e
+performance. Os testes de funcionalidade validam sistematicamente
+operações CRUD via comandos em linguagem natural e coordenação entre
+múltiplos servidores MCP, enquanto os testes de segurança implementam
+uma abordagem de red teaming com tentativas sistemáticas de injeção
+maliciosa de prompts e verificação de controles de acesso. Os testes de
+performance medem objetivamente latências de resposta, capacidade de
+processamento simultâneo e consumo de recursos computacionais,
+garantindo uma avaliação objetiva, reproduzível e comparável.
 
-\subsubsection{3.3 Aplicações de Teste}\label{aplicauxe7uxf5es-de-teste}
-
-Para validar a eficácia da solução, foram desenvolvidas duas aplicações
-de teste que expõem APIs RESTful com especificações OpenAPI:
-
-\paragraph{3.3.1 Sistema de Gerenciamento de Equipamentos
-(equipments-dummy-app)}\label{sistema-de-gerenciamento-de-equipamentos-equipments-dummy-app}
-
-Esta aplicação simula um sistema de gerenciamento de equipamentos
-industriais:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Operações CRUD:} Criação, leitura, atualização e exclusão de
-  equipamentos
-\item
-  \textbf{Modelo de Dados:} Equipamentos com propriedades como nome,
-  tipo, descrição e imagem
-\item
-  \textbf{API RESTful:} Endpoints padronizados seguindo convenções REST
-\item
-  \textbf{Especificação OpenAPI:} Documentação completa da API gerada
-  automaticamente
-\end{itemize}
-
-\paragraph{3.3.2 Sistema de Gerenciamento de Profissionais
-(professionals-dummy-app)}\label{sistema-de-gerenciamento-de-profissionais-professionals-dummy-app}
-
-Esta aplicação simula um sistema de recursos humanos:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Gestão de Profissionais:} CRUD completo para dados de
-  profissionais
-\item
-  \textbf{Hierarquia Organizacional:} Suporte a estruturas hierárquicas
-  com níveis
-\item
-  \textbf{Biografia e Perfis:} Campos adicionais para informações
-  detalhadas
-\item
-  \textbf{Integração com Equipamentos:} Relacionamento entre
-  profissionais e equipamentos utilizados
-\end{itemize}
-
-\paragraph{3.3.3 Especificações
-OpenAPI}\label{especificauxe7uxf5es-openapi}
-
-Ambas as aplicações geram especificações OpenAPI completas que incluem:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Schemas de Dados:} Definições detalhadas de todos os modelos
-  de dados
-\item
-  \textbf{Operações:} Documentação completa de todos os endpoints
-  disponíveis
-\item
-  \textbf{Autenticação:} Especificação de métodos de autenticação
-  suportados
-\item
-  \textbf{Exemplos:} Exemplos de requisições e respostas para cada
-  operação
-\end{itemize}
-
-\subsubsection{3.4 Testes Automatizados e
-Validação}\label{testes-automatizados-e-validauxe7uxe3o}
-
-A solução inclui uma suíte abrangente de testes automatizados
-implementados com Playwright para validação end-to-end:
-
-\paragraph{3.4.1 Testes de
-Funcionalidade}\label{testes-de-funcionalidade}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Operações CRUD:} Validação de todas as operações básicas
-  através do chat
-\item
-  \textbf{Multi-servidor:} Testes de coordenação entre múltiplos
-  servidores MCP
-\item
-  \textbf{Robustez:} Testes com entradas inválidas e cenários de erro
-\end{itemize}
-
-\paragraph{3.4.2 Testes de Segurança}\label{testes-de-seguranuxe7a}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Injeção de Prompt:} Tentativas sistemáticas de injeção
-  maliciosa
-\item
-  \textbf{Validação de Entrada:} Verificação de sanitização adequada de
-  dados
-\item
-  \textbf{Controle de Acesso:} Testes de autorização e autenticação
-\end{itemize}
-
-\paragraph{3.4.3 Testes de Performance}\label{testes-de-performance}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Latência:} Medição de tempos de resposta para diferentes tipos
-  de operação
-\item
-  \textbf{Throughput:} Avaliação da capacidade de processamento
-  simultâneo
-\item
-  \textbf{Uso de Recursos:} Monitoramento de consumo de memória e CPU
-\end{itemize}
-
-Esta implementação demonstra a viabilidade técnica da integração
-OpenAPI-MCP, fornecendo uma base sólida para avaliação comparativa e
-validação científica da abordagem proposta.
+Esta implementação estabelece uma metodologia de avaliação que pode ser
+replicada por pesquisadores futuros, com coleta automatizada de métricas
+que garante consistência e precisão nos dados. O resultado é uma base
+empírica sólida que suporta tanto a validação científica imediata quanto
+a evolução futura da abordagem proposta, contribuindo para o avanço do
+conhecimento na área de integração de agentes conversacionais em
+sistemas empresariais complexos.
 
 \section{4 RESULTADOS E DISCUSSÕES}\label{resultados-e-discussuxf5es}
 
@@ -997,9 +815,6 @@ Funcionalidades}\label{cobertura-de-funcionalidades}
   \textbf{Métodos HTTP:} Suporte completo para GET, POST, PUT, DELETE e
   PATCH
 \item
-  \textbf{Autenticação:} Implementação bem-sucedida de API Key, Bearer
-  Token e OAuth
-\item
   \textbf{Validação:} Validação automática de entrada baseada em schemas
   OpenAPI com 100\% de precisão
 \end{itemize}
@@ -1032,9 +847,6 @@ Latência}\label{muxe9tricas-de-latuxeancia}
 \item
   \textbf{Servidores Simultâneos:} Testado com sucesso até 10 servidores
   MCP simultâneos
-\item
-  \textbf{Throughput:} Capacidade de processar 50 requisições
-  concorrentes sem degradação significativa
 \item
   \textbf{Uso de Recursos:} Consumo de memória linear com número de
   servidores conectados
@@ -1094,24 +906,6 @@ Ataques}\label{resistuxeancia-a-ataques}
 \item
   \textbf{Validação de Entrada:} 100\% de eficácia contra entradas
   mal-formadas
-\item
-  \textbf{Controle de Acesso:} Nenhuma violação de permissões detectada
-  em 1000 tentativas
-\end{itemize}
-
-\subsubsection{4.4.2 Tratamento de Erros}\label{tratamento-de-erros}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Recovery Rate:} 95\% de recuperação automática em cenários de
-  erro
-\item
-  \textbf{Logging:} Auditoria completa de todas as operações e
-  tentativas de acesso
-\item
-  \textbf{Graceful Degradation:} Sistema mantém funcionalidade básica
-  mesmo com falhas parciais
 \end{itemize}
 
 \subsection{4.5 Usabilidade e Experiência do
@@ -1124,14 +918,11 @@ A avaliação da experiência do usuário demonstrou alta satisfação:
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Curva de Aprendizado:} Usuários conseguem realizar operações
-  básicas em menos de 5 minutos
+  \textbf{Curva de Aprendizado:} Likert
 \item
-  \textbf{Intuitividade:} 91\% dos usuários consideraram a interface
-  intuitiva
+  \textbf{Intuitividade:} Likert
 \item
-  \textbf{Eficiência:} Redução de 60\% no tempo necessário para realizar
-  tarefas comparado a interfaces tradicionais
+  \textbf{Eficiência:} Likert
 \end{itemize}
 
 \subsubsection{4.5.2 Satisfação Geral}\label{satisfauxe7uxe3o-geral}
@@ -1139,11 +930,11 @@ A avaliação da experiência do usuário demonstrou alta satisfação:
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Satisfação:} Pontuação média de 4.3/5.0 na escala Likert
+  \textbf{Satisfação:} Likert
 \item
-  \textbf{Recomendação:} 87\% dos usuários recomendariam a solução
+  \textbf{Recomendação:} Likert
 \item
-  \textbf{Produtividade:} 78\% relataram aumento na produtividade
+  \textbf{Produtividade:} Likert
 \end{itemize}
 
 \subsection{4.6 Discussão dos
@@ -1168,8 +959,8 @@ Identificadas}\label{vantagens-identificadas}
   \textbf{Escalabilidade:} O sistema demonstrou capacidade de crescer
   conforme necessidades do negócio
 \item
-  \textbf{Manutenibilidade:} Atualizações em APIs são automaticamente
-  refletidas nos servidores MCP
+  \textbf{Manutenibilidade:} Alterações nos servidores MCP são
+  refletidas automaticamente nos chats conectados
 \item
   \textbf{Segurança:} Múltiplas camadas de validação e controle de
   acesso
@@ -1184,9 +975,6 @@ Observadas}\label{limitauxe7uxf5es-observadas}
 \item
   \textbf{Dependência de Especificações:} Qualidade da integração
   depende da completude das especificações OpenAPI
-\item
-  \textbf{Complexidade de Configuração:} Setup inicial requer
-  conhecimento técnico avançado
 \item
   \textbf{Overhead de Performance:} Pequena latência adicional devido às
   camadas de abstração
@@ -1209,166 +997,6 @@ especificação OpenAPI com o protocolo Model Context Protocol (MCP). A
 pesquisa desenvolveu e validou uma solução completa que inclui geração
 automática de servidores MCP, gerenciamento de múltiplos servidores
 simultâneos, e validação através de aplicações de teste.
-
-\subsection{5.1 Principais Conquistas}\label{principais-conquistas}
-
-A implementação alcançou objetivos significativos que contribuem para o
-avanço da área de integração de sistemas conversacionais:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Automação da Integração:} A ferramenta de geração automática
-  elimina a necessidade de desenvolvimento manual de integrações,
-  reduzindo significativamente o tempo e esforço necessários para
-  conectar agentes conversacionais a sistemas existentes.
-\item
-  \textbf{Padronização:} O uso de especificações OpenAPI estabelecidas
-  como base para geração de servidores MCP promove consistência e
-  interoperabilidade, facilitando a adoção em ambientes corporativos
-  diversos.
-\item
-  \textbf{Escalabilidade Comprovada:} O sistema demonstrou capacidade de
-  gerenciar múltiplos servidores MCP simultaneamente, permitindo que um
-  único agente conversacional acesse diferentes sistemas de forma
-  coordenada e eficiente.
-\item
-  \textbf{Segurança Robusta:} A implementação de múltiplas camadas de
-  validação, controle de acesso e proteção contra ataques maliciosos
-  garante que a solução possa ser utilizada em ambientes de produção com
-  dados sensíveis.
-\end{enumerate}
-
-\subsection{5.2 Resposta à Pergunta de
-Pesquisa}\label{resposta-uxe0-pergunta-de-pesquisa}
-
-Retornando à problemática central desta pesquisa - ``como a combinação
-da especificação OpenAPI com o protocolo MCP pode facilitar a integração
-eficiente e segura de agentes conversacionais baseados em IA com
-sistemas web existentes?'' - os resultados evidenciam que:
-
-A combinação OpenAPI-MCP oferece uma abordagem altamente eficaz para
-esta integração, proporcionando \textbf{automatização} através da
-geração automática de código, \textbf{padronização} através do uso de
-especificações estabelecidas, \textbf{escalabilidade} através do suporte
-a múltiplos sistemas simultâneos, e \textbf{segurança} através de
-validação robusta e controle de acesso. A solução permite que
-organizações aproveitem especificações OpenAPI existentes para
-rapidamente disponibilizar interfaces conversacionais para seus
-sistemas, democratizando o acesso à tecnologia e reduzindo barreiras de
-interação.
-
-\subsection{5.3 Contribuições para o Meio Acadêmico e
-Empresarial}\label{contribuiuxe7uxf5es-para-o-meio-acaduxeamico-e-empresarial}
-
-\subsubsection{5.3.1 Contribuições
-Acadêmicas}\label{contribuiuxe7uxf5es-acaduxeamicas}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Metodologia Inovadora:} Estabelecimento de uma metodologia
-  reproduzível para avaliação de soluções de integração conversacional
-\item
-  \textbf{Framework de Referência:} Desenvolvimento de um framework que
-  pode servir como base para pesquisas futuras em integração de agentes
-  conversacionais
-\item
-  \textbf{Evidências Empíricas:} Fornecimento de dados quantitativos
-  sobre eficácia, performance e usabilidade de soluções OpenAPI-MCP
-\end{itemize}
-
-\subsubsection{5.3.2 Contribuições
-Empresariais}\label{contribuiuxe7uxf5es-empresariais}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Redução de Custos:} Diminuição significativa do tempo e
-  recursos necessários para implementar interfaces conversacionais
-\item
-  \textbf{Aceleração de Time-to-Market:} Capacidade de reutilizar
-  especificações existentes para rapidamente disponibilizar
-  funcionalidades conversacionais
-\item
-  \textbf{Melhoria da Experiência do Usuário:} Interfaces mais
-  intuitivas e acessíveis que reduzem a curva de aprendizado para
-  sistemas complexos
-\end{itemize}
-
-\subsection{5.4 Limitações do Estudo}\label{limitauxe7uxf5es-do-estudo}
-
-É importante reconhecer as limitações identificadas durante a pesquisa:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Dependência de Especificações:} A qualidade da integração está
-  diretamente relacionada à completude e precisão das especificações
-  OpenAPI originais
-\item
-  \textbf{Complexidade Inicial:} O setup e configuração inicial requerem
-  conhecimento técnico especializado
-\item
-  \textbf{Overhead de Performance:} Existe uma pequena latência
-  adicional inerente às camadas de abstração introduzidas
-\end{enumerate}
-
-\subsection{5.5 Recomendações para Estudos
-Futuros}\label{recomendauxe7uxf5es-para-estudos-futuros}
-
-Com base nos resultados obtidos, sugere-se as seguintes direções para
-pesquisas futuras:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Integração com Outras Especificações:} Investigação da
-  aplicabilidade da abordagem com outros padrões de documentação de APIs
-  além do OpenAPI
-\item
-  \textbf{Otimização de Performance:} Desenvolvimento de técnicas para
-  reduzir ainda mais a latência e overhead do sistema
-\item
-  \textbf{Inteligência Artificial Avançada:} Exploração de como modelos
-  de linguagem mais avançados podem melhorar a precisão da interpretação
-  de intenções
-\item
-  \textbf{Segurança Aprimorada:} Desenvolvimento de mecanismos ainda
-  mais robustos de proteção contra ataques adversários e injeção de
-  prompts
-\item
-  \textbf{Estudos de Usabilidade em Larga Escala:} Condução de estudos
-  longitudinais com maior número de usuários em ambientes corporativos
-  reais
-\end{enumerate}
-
-\subsection{5.6 Impacto Transformador}\label{impacto-transformador}
-
-Este trabalho contribui para uma visão transformadora da interação
-humano-computador, onde as barreiras técnicas impostas por interfaces
-complexas são mitigadas através de agentes conversacionais inteligentes.
-A capacidade de integrar rapidamente múltiplos sistemas através de
-especificações padronizadas representa um avanço significativo na
-democratização do acesso à tecnologia, tornando sistemas especializados
-mais acessíveis para usuários com diferentes níveis de expertise
-técnica.
-
-A solução desenvolvida não apenas resolve problemas técnicos de
-integração, mas também contribui para uma maior inclusão digital ao
-reduzir a complexidade de interação com sistemas corporativos. Esta
-abordagem tem o potencial de transformar como organizações
-disponibilizam e mantêm interfaces de usuário, promovendo maior
-eficiência, acessibilidade e satisfação do usuário.
-
-Em conclusão, a integração OpenAPI-MCP demonstra ser uma solução
-promissora e prática para o desafio de conectar agentes conversacionais
-a sistemas web existentes, oferecendo benefícios tangíveis em termos de
-desenvolvimento, manutenção e experiência do usuário, enquanto
-estabelece uma base sólida para evoluções futuras na área de interfaces
-conversacionais inteligentes.
 
 \section*{REFERÊNCIAS}\label{referuxeancias}
 \addcontentsline{toc}{section}{REFERÊNCIAS}

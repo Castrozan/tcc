@@ -109,7 +109,7 @@ Para assegurar a rigorosidade científica e garantir a reprodutibilidade dos exp
 
 ### 2.2.1 Interface Comum de Usuário
 
-A interface comum consiste em uma aplicação *web* simples de chat, desenvolvida utilizando HTML e JavaScript. A interface foi projetada de forma minimalista, visando uma experiência consistente e objetiva, independentemente de qualquer abordagem que fosse utilizada para a integração.
+A interface comum consiste em uma aplicação *web* simples de chat, desenvolvida utilizando HTML e JavaScript. A interface foi projetada de forma minimalista, visando uma experiência consistente e objetiva, independentemente de qual abordagem que fosse utilizada para a integração.
 
 #### 2.2.1.1 DESIGN DA INTERFACE
 
@@ -149,146 +149,39 @@ Em seguida, os testes são executados automaticamente, variando desde consultas 
 
 ## 3. DESENVOLVIMENTO
 
-A implementação da solução OpenAPI-MCP foi estruturada em quatro componentes principais: um gerador automático de servidores MCP a partir de especificações OpenAPI, um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente, aplicações de teste para validação da abordagem, e uma suíte de testes automatizados para avaliação da solução. Esta seção detalha a arquitetura, implementação e considerações técnicas de cada componente.
+A implementação da solução OpenAPI-MCP foi estruturada seguindo uma abordagem modular e integrada, compreendendo quatro componentes principais que trabalham em sinergia para demonstrar e validar a viabilidade da integração proposta. A arquitetura resultante engloba um gerador automático de servidores MCP a partir de especificações OpenAPI, um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente, aplicações de teste que simulam cenários reais de negócio, e uma suíte abrangente de testes automatizados para avaliação científica da solução.
 
 ### 3.1 Gerador Automático de Servidores MCP (mcp-openapi-server)
 
-Esta ferramenta analisa especificações OpenAPI e gera automaticamente servidores MCP correspondentes, incluindo validação de schemas, mapeamento de tipos de dados e tratamento de erros. O gerador suporta múltiplas especificações simultaneamente e permite configuração personalizada de autenticação e permissões, facilitando a criação de pontes padronizadas entre LLMs e sistemas externos sem necessidade de desenvolvimento manual para cada integração. Esta ferramenta elimina a necessidade de desenvolvimento manual de integrações personalizadas para cada API, promovendo padronização e escalabilidade.
+O desenvolvimento do gerador automático representa o núcleo da inovação proposta, resolvendo o problema fundamental da necessidade de desenvolvimento manual de integrações personalizadas para cada API externa. A arquitetura foi concebida em três camadas distintas e interconectadas: a camada de análise OpenAPI, responsável pelo _parsing_ e validação de especificações OpenAPI 3.0+, extração de metadados de endpoints e validação de schemas; a camada de mapeamento MCP, que realiza a conversão inteligente de operações OpenAPI para ferramentas MCP, incluindo mapeamento automático de tipos de dados e geração de documentação; e a camada de geração de código, que produz servidores MCP completos em TypeScript com implementação robusta de validação de entrada e tratamento de erros.
 
-#### 3.1.1 Arquitetura do Gerador
+O processo de geração segue um fluxo estruturado que demonstra a automação completa da integração. Inicialmente, o gerador carrega e valida arquivos OpenAPI em formatos JSON, verificando rigorosamente a conformidade com as especificações OpenAPI 3.0+. Em seguida, cada endpoint é sistematicamente analisado para extrair informações cruciais sobre operações HTTP, parâmetros, schemas de entrada e saída, além dos requisitos específicos de autenticação. O mapeamento para MCP converte essas operações em ferramentas utilizáveis pelos modelos de linguagem, com mapeamento automático de tipos de dados e geração de descrições baseadas na documentação original. Finalmente, é gerado um servidor MCP completo e funcional, incluindo validação robusta de entrada, tratamento abrangente de erros e implementação de proxy para as APIs originais.
 
-O gerador é implementado em TypeScript e Node.js, estruturado em três camadas principais:
+![Arquitetura do Gerador Automático de Servidores MCP](images/openapi-mcp/mcp-server-generator-arch.jpg)
 
-1. **Camada de Análise OpenAPI**
-   - Parser de especificações OpenAPI 3.0+ 
-   - Validação de schemas e estruturas
-   - Extração de metadados de endpoints e operações
-
-2. **Camada de Mapeamento MCP**
-   - Conversão de operações OpenAPI para ferramentas MCP
-   - Mapeamento de tipos de dados entre especificações
-   - Geração de documentação automática
-
-3. **Camada de Geração de Código**
-   - Geração de servidores MCP em TypeScript
-   - Implementação de validação de entrada
-   - Tratamento de erros e logging
-
-![Arquitetura do Gerador MCP-OpenAPI](images/desenvolvimento/mcp-generator-architecture.jpg)
-
-#### 3.1.2 Processo de Geração
-
-O processo de geração segue os seguintes passos:
-
-1. **Carregamento da Especificação:** O gerador carrega e valida arquivos OpenAPI em formato JSON ou YAML, verificando conformidade com a especificação OpenAPI 3.0+.
-
-2. **Análise de Endpoints:** Cada endpoint é analisado para extrair informações sobre operações HTTP, parâmetros, schemas de entrada e saída, e requisitos de autenticação.
-
-3. **Mapeamento para MCP:** As operações são convertidas em ferramentas MCP, com mapeamento automático de tipos de dados e geração de descrições baseadas na documentação OpenAPI.
-
-4. **Geração do Servidor:** É gerado um servidor MCP completo em TypeScript, incluindo validação de entrada, tratamento de erros, e proxy para as APIs originais.
-
-#### 3.1.3 Funcionalidades Implementadas
-
-- **Suporte a Múltiplas APIs:** Capacidade de gerar servidores para múltiplas especificações OpenAPI simultaneamente
-- **Validação Automática:** Validação de entrada baseada em schemas OpenAPI
-- **Tratamento de Autenticação:** Suporte a diferentes métodos de autenticação (API Key, Bearer Token, OAuth)
-- **Gestão de Erros:** Tratamento robusto de erros com mapeamento para códigos de status HTTP apropriados
-- **Logging e Monitoramento:** Sistema de logging integrado para auditoria e debugging
+As funcionalidades implementadas no gerador refletem a necessidade de atender cenários complexos de integração empresarial. O suporte a múltiplas APIs permite que um único servidor MCP exponha ferramentas de diferentes sistemas simultaneamente, promovendo a integração holística de ecossistemas corporativos. A validação automática baseada em schemas OpenAPI garante a integridade dos dados em tempo de execução, enquanto o tratamento sofisticado de autenticação suporta diferentes métodos como API Key, Bearer Token e OAuth, essenciais para ambientes corporativos seguros. O sistema de gestão de erros implementa mapeamento inteligente para códigos de status HTTP apropriados, e o logging integrado fornece capacidades de auditoria e debugging fundamentais para ambientes de produção.
 
 ### 3.2 Cliente de Chat Multi-Servidor MCP
 
-O cliente de chat foi desenvolvido para demonstrar e validar a capacidade de gerenciar múltiplos servidores MCP simultaneamente, permitindo que um único agente conversacional acesse diferentes sistemas através de suas respectivas especificações OpenAPI.
+O cliente de chat foi desenvolvido como uma demonstração prática e ferramenta de validação da capacidade de gerenciamento simultâneo de múltiplos servidores MCP, representando um avanço significativo na orquestração de agentes conversacionais com sistemas distribuídos. A arquitetura baseada em aplicação web combina um frontend minimalista desenvolvido em HTML e JavaScript com um backend robusto implementado em Node.js utilizando Express.js. O frontend concentra-se em uma interface de chat responsiva e intuitiva, com exibição clara do histórico de conversas, campo de entrada para comandos do usuário e indicadores visuais de status das operações. O backend implementa um servidor Express.js sofisticado para gerenciamento de requisições, um cliente MCP especializado para comunicação com múltiplos servidores, integração nativa com LLMs via OpenAI API, e um sistema abrangente de gerenciamento de sessões e contexto de conversa.
 
-#### 3.2.1 Arquitetura do Cliente
+O gerenciamento de múltiplos servidores MCP representa uma contribuição técnica significativa, implementando um sistema sofisticado de coordenação que vai além da simples conexão pontual. O pool de conexões mantém conexões ativas e monitoradas com todos os servidores MCP configurados, garantindo disponibilidade e performance. O sistema de descoberta de ferramentas cataloga automaticamente as capacidades disponíveis em cada servidor, criando um inventário dinâmico e atualizado das funcionalidades acessíveis. O roteamento inteligente analisa a intenção do usuário e determina qual servidor utilizar baseado nas ferramentas disponíveis e na natureza da solicitação, otimizando tanto a precisão quanto a eficiência. A agregação de resultados permite combinar informações de múltiplos servidores quando necessário, habilitando consultas complexas que abrangem diferentes sistemas.
 
-A arquitetura do cliente é baseada em uma aplicação web com frontend em HTML/JavaScript e backend em Node.js:
+![Arquitetura do Cliente de Chat Multi-Servidor MCP](images/chat/chat-arch.jpg)
 
-1. **Frontend (chat.html)**
-   - Interface de chat minimalista e responsiva
-   - Exibição de histórico de conversas
-   - Campo de entrada para comandos do usuário
-   - Indicadores visuais de status das operações
+A integração com modelos de linguagem de grande escala utiliza a funcionalidade de function calling da OpenAI como ponte entre a compreensão de linguagem natural e a execução de ferramentas específicas. As ferramentas MCP são automaticamente convertidas para o formato de funções da OpenAI, mantendo metadados e documentação originais. O sistema de gestão de contexto preserva o histórico completo da conversa, incluindo registros detalhados de chamadas de ferramentas, permitindo referências contextuais e aprendizado adaptativo. O tratamento de respostas processa resultados de ferramentas e os integra de forma fluida na conversa natural, mantendo a experiência conversacional enquanto executa operações técnicas complexas nos bastidores.
 
-2. **Backend (backend-server.js)**
-   - Servidor Express.js para gerenciamento de requisições
-   - Cliente MCP para comunicação com múltiplos servidores
-   - Integração com LLMs via OpenAI API
-   - Gerenciamento de sessões e contexto de conversa
+### 3.3 Aplicações de Teste para Validação
 
-![Arquitetura do Cliente de Chat](images/desenvolvimento/chat-client-architecture.jpg)
+Para garantir uma validação científica rigorosa da abordagem proposta, foram desenvolvidas duas aplicações de teste que simulam cenários empresariais realistas, expondo APIs RESTful completamente documentadas com especificações OpenAPI. A escolha de domínios distintos - gerenciamento de equipamentos industriais e gestão de recursos humanos - foi deliberada para demonstrar a versatilidade da solução em diferentes contextos de negócio e validar a capacidade de integração com sistemas heterogêneos. Essas aplicações funcionam como ambientes controlados que permitem testes reproduzíveis e comparações objetivas, fundamentais para a avaliação científica da eficácia da integração OpenAPI-MCP.
 
-#### 3.2.2 Gerenciamento de Múltiplos Servidores MCP
+O sistema de gerenciamento de equipamentos simula um ambiente industrial típico, implementando operações CRUD completas com modelo de dados que engloba propriedades essenciais como nome, tipo, descrição e URLs de imagens. Paralelamente, o sistema de gerenciamento de profissionais implementa funcionalidades de recursos humanos, incluindo CRUD completo para dados pessoais e profissionais, suporte a estruturas hierárquicas organizacionais e relacionamentos com equipamentos. Ambas as aplicações geram automaticamente especificações OpenAPI completas e precisas, incluindo schemas detalhados de todos os modelos de dados, documentação abrangente de endpoints com exemplos práticos, e especificação clara de métodos de autenticação, garantindo que a integração seja testada com cenários que refletem fielmente as complexidades encontradas em ambientes corporativos reais.
 
-O cliente implementa um sistema sofisticado para gerenciar conexões simultâneas com múltiplos servidores MCP:
+### 3.4 Suíte de Testes Automatizados e Validação
 
-- **Pool de Conexões:** Mantém conexões ativas com todos os servidores MCP configurados
-- **Descoberta de Ferramentas:** Automaticamente descobre e cataloga ferramentas disponíveis em cada servidor
-- **Roteamento Inteligente:** Determina qual servidor usar baseado na intenção do usuário e ferramentas disponíveis
-- **Agregação de Resultados:** Combina resultados de múltiplos servidores quando necessário
+A validação científica da solução é suportada por uma suíte abrangente de testes automatizados implementados com Playwright, estruturada para abordar múltiplas dimensões críticas: funcionalidade, segurança e performance. Os testes de funcionalidade validam sistematicamente operações CRUD via comandos em linguagem natural e coordenação entre múltiplos servidores MCP, enquanto os testes de segurança implementam uma abordagem de red teaming com tentativas sistemáticas de injeção maliciosa de prompts e verificação de controles de acesso. Os testes de performance medem objetivamente latências de resposta, capacidade de processamento simultâneo e consumo de recursos computacionais, garantindo uma avaliação objetiva, reproduzível e comparável.
 
-#### 3.2.3 Integração com LLMs
-
-O sistema utiliza a API da OpenAI com funcionalidade de *function calling* para integração com os servidores MCP:
-
-1. **Conversão de Ferramentas:** Ferramentas MCP são automaticamente convertidas para o formato de funções da OpenAI
-2. **Gestão de Contexto:** Mantém contexto de conversa incluindo histórico de chamadas de ferramentas
-3. **Tratamento de Respostas:** Processa respostas de ferramentas e as integra na conversa natural
-
-### 3.3 Aplicações de Teste
-
-Para validar a eficácia da solução, foram desenvolvidas duas aplicações de teste que expõem APIs RESTful com especificações OpenAPI:
-
-#### 3.3.1 Sistema de Gerenciamento de Equipamentos (equipments-dummy-app)
-
-Esta aplicação simula um sistema de gerenciamento de equipamentos industriais:
-
-- **Operações CRUD:** Criação, leitura, atualização e exclusão de equipamentos
-- **Modelo de Dados:** Equipamentos com propriedades como nome, tipo, descrição e imagem
-- **API RESTful:** Endpoints padronizados seguindo convenções REST
-- **Especificação OpenAPI:** Documentação completa da API gerada automaticamente
-
-#### 3.3.2 Sistema de Gerenciamento de Profissionais (professionals-dummy-app)
-
-Esta aplicação simula um sistema de recursos humanos:
-
-- **Gestão de Profissionais:** CRUD completo para dados de profissionais
-- **Hierarquia Organizacional:** Suporte a estruturas hierárquicas com níveis
-- **Biografia e Perfis:** Campos adicionais para informações detalhadas
-- **Integração com Equipamentos:** Relacionamento entre profissionais e equipamentos utilizados
-
-#### 3.3.3 Especificações OpenAPI
-
-Ambas as aplicações geram especificações OpenAPI completas que incluem:
-
-- **Schemas de Dados:** Definições detalhadas de todos os modelos de dados
-- **Operações:** Documentação completa de todos os endpoints disponíveis
-- **Autenticação:** Especificação de métodos de autenticação suportados
-- **Exemplos:** Exemplos de requisições e respostas para cada operação
-
-### 3.4 Testes Automatizados e Validação
-
-A solução inclui uma suíte abrangente de testes automatizados implementados com Playwright para validação end-to-end:
-
-#### 3.4.1 Testes de Funcionalidade
-
-- **Operações CRUD:** Validação de todas as operações básicas através do chat
-- **Multi-servidor:** Testes de coordenação entre múltiplos servidores MCP
-- **Robustez:** Testes com entradas inválidas e cenários de erro
-
-#### 3.4.2 Testes de Segurança
-
-- **Injeção de Prompt:** Tentativas sistemáticas de injeção maliciosa
-- **Validação de Entrada:** Verificação de sanitização adequada de dados
-- **Controle de Acesso:** Testes de autorização e autenticação
-
-#### 3.4.3 Testes de Performance
-
-- **Latência:** Medição de tempos de resposta para diferentes tipos de operação
-- **Throughput:** Avaliação da capacidade de processamento simultâneo
-- **Uso de Recursos:** Monitoramento de consumo de memória e CPU
-
-Esta implementação demonstra a viabilidade técnica da integração OpenAPI-MCP, fornecendo uma base sólida para avaliação comparativa e validação científica da abordagem proposta.
+Esta implementação estabelece uma metodologia de avaliação que pode ser replicada por pesquisadores futuros, com coleta automatizada de métricas que garante consistência e precisão nos dados. O resultado é uma base empírica sólida que suporta tanto a validação científica imediata quanto a evolução futura da abordagem proposta, contribuindo para o avanço do conhecimento na área de integração de agentes conversacionais em sistemas empresariais complexos.
 
 # 4 RESULTADOS E DISCUSSÕES
 
@@ -307,7 +200,6 @@ A ferramenta de geração automática demonstrou alta eficácia na conversão de
 ### 4.1.2 Cobertura de Funcionalidades
 
 - **Métodos HTTP:** Suporte completo para GET, POST, PUT, DELETE e PATCH
-- **Autenticação:** Implementação bem-sucedida de API Key, Bearer Token e OAuth
 - **Validação:** Validação automática de entrada baseada em schemas OpenAPI com 100% de precisão
 
 ## 4.2 Performance do Sistema Multi-Servidor
@@ -323,7 +215,6 @@ O cliente de chat demonstrou capacidade robusta para gerenciar múltiplos servid
 ### 4.2.2 Escalabilidade
 
 - **Servidores Simultâneos:** Testado com sucesso até 10 servidores MCP simultâneos
-- **Throughput:** Capacidade de processar 50 requisições concorrentes sem degradação significativa
 - **Uso de Recursos:** Consumo de memória linear com número de servidores conectados
 
 ## 4.3 Eficácia da Integração com LLMs
@@ -350,13 +241,6 @@ Os testes de segurança revelaram uma implementação robusta com proteções ad
 
 - **Injeção de Prompt:** 85% de taxa de detecção e bloqueio de tentativas maliciosas
 - **Validação de Entrada:** 100% de eficácia contra entradas mal-formadas
-- **Controle de Acesso:** Nenhuma violação de permissões detectada em 1000 tentativas
-
-### 4.4.2 Tratamento de Erros
-
-- **Recovery Rate:** 95% de recuperação automática em cenários de erro
-- **Logging:** Auditoria completa de todas as operações e tentativas de acesso
-- **Graceful Degradation:** Sistema mantém funcionalidade básica mesmo com falhas parciais
 
 ## 4.5 Usabilidade e Experiência do Usuário
 
@@ -364,15 +248,15 @@ A avaliação da experiência do usuário demonstrou alta satisfação:
 
 ### 4.5.1 Facilidade de Uso
 
-- **Curva de Aprendizado:** Usuários conseguem realizar operações básicas em menos de 5 minutos
-- **Intuitividade:** 91% dos usuários consideraram a interface intuitiva
-- **Eficiência:** Redução de 60% no tempo necessário para realizar tarefas comparado a interfaces tradicionais
+- **Curva de Aprendizado:** Likert
+- **Intuitividade:** Likert
+- **Eficiência:** Likert
 
 ### 4.5.2 Satisfação Geral
 
-- **Satisfação:** Pontuação média de 4.3/5.0 na escala Likert
-- **Recomendação:** 87% dos usuários recomendariam a solução
-- **Produtividade:** 78% relataram aumento na produtividade
+- **Satisfação:** Likert
+- **Recomendação:** Likert
+- **Produtividade:** Likert
 
 ## 4.6 Discussão dos Resultados
 
@@ -382,14 +266,13 @@ Os resultados demonstram que a abordagem OpenAPI-MCP oferece uma solução viáv
 
 1. **Padronização:** A utilização de especificações OpenAPI estabelecidas garante compatibilidade e consistência
 2. **Escalabilidade:** O sistema demonstrou capacidade de crescer conforme necessidades do negócio
-3. **Manutenibilidade:** Atualizações em APIs são automaticamente refletidas nos servidores MCP
+3. **Manutenibilidade:** Alterações nos servidores MCP são refletidas automaticamente nos chats conectados
 4. **Segurança:** Múltiplas camadas de validação e controle de acesso
 
 ### 4.6.2 Limitações Observadas
 
 1. **Dependência de Especificações:** Qualidade da integração depende da completude das especificações OpenAPI
-2. **Complexidade de Configuração:** Setup inicial requer conhecimento técnico avançado
-3. **Overhead de Performance:** Pequena latência adicional devido às camadas de abstração
+2. **Overhead de Performance:** Pequena latência adicional devido às camadas de abstração
 
 ### 4.6.3 Implicações Práticas
 
@@ -398,64 +281,6 @@ A solução demonstra potencial significativo para aplicação em ambientes corp
 # 5 CONSIDERAÇÕES FINAIS
 
 Este estudo demonstrou a viabilidade e eficácia da integração de agentes conversacionais baseados em IA com sistemas web através da combinação da especificação OpenAPI com o protocolo Model Context Protocol (MCP). A pesquisa desenvolveu e validou uma solução completa que inclui geração automática de servidores MCP, gerenciamento de múltiplos servidores simultâneos, e validação através de aplicações de teste.
-
-## 5.1 Principais Conquistas
-
-A implementação alcançou objetivos significativos que contribuem para o avanço da área de integração de sistemas conversacionais:
-
-1. **Automação da Integração:** A ferramenta de geração automática elimina a necessidade de desenvolvimento manual de integrações, reduzindo significativamente o tempo e esforço necessários para conectar agentes conversacionais a sistemas existentes.
-
-2. **Padronização:** O uso de especificações OpenAPI estabelecidas como base para geração de servidores MCP promove consistência e interoperabilidade, facilitando a adoção em ambientes corporativos diversos.
-
-3. **Escalabilidade Comprovada:** O sistema demonstrou capacidade de gerenciar múltiplos servidores MCP simultaneamente, permitindo que um único agente conversacional acesse diferentes sistemas de forma coordenada e eficiente.
-
-4. **Segurança Robusta:** A implementação de múltiplas camadas de validação, controle de acesso e proteção contra ataques maliciosos garante que a solução possa ser utilizada em ambientes de produção com dados sensíveis.
-
-## 5.2 Resposta à Pergunta de Pesquisa
-
-Retornando à problemática central desta pesquisa - "como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes?" - os resultados evidenciam que:
-
-A combinação OpenAPI-MCP oferece uma abordagem altamente eficaz para esta integração, proporcionando **automatização** através da geração automática de código, **padronização** através do uso de especificações estabelecidas, **escalabilidade** através do suporte a múltiplos sistemas simultâneos, e **segurança** através de validação robusta e controle de acesso. A solução permite que organizações aproveitem especificações OpenAPI existentes para rapidamente disponibilizar interfaces conversacionais para seus sistemas, democratizando o acesso à tecnologia e reduzindo barreiras de interação.
-
-## 5.3 Contribuições para o Meio Acadêmico e Empresarial
-
-### 5.3.1 Contribuições Acadêmicas
-
-- **Metodologia Inovadora:** Estabelecimento de uma metodologia reproduzível para avaliação de soluções de integração conversacional
-- **Framework de Referência:** Desenvolvimento de um framework que pode servir como base para pesquisas futuras em integração de agentes conversacionais
-- **Evidências Empíricas:** Fornecimento de dados quantitativos sobre eficácia, performance e usabilidade de soluções OpenAPI-MCP
-
-### 5.3.2 Contribuições Empresariais
-
-- **Redução de Custos:** Diminuição significativa do tempo e recursos necessários para implementar interfaces conversacionais
-- **Aceleração de Time-to-Market:** Capacidade de reutilizar especificações existentes para rapidamente disponibilizar funcionalidades conversacionais
-- **Melhoria da Experiência do Usuário:** Interfaces mais intuitivas e acessíveis que reduzem a curva de aprendizado para sistemas complexos
-
-## 5.4 Limitações do Estudo
-
-É importante reconhecer as limitações identificadas durante a pesquisa:
-
-1. **Dependência de Especificações:** A qualidade da integração está diretamente relacionada à completude e precisão das especificações OpenAPI originais
-2. **Complexidade Inicial:** O setup e configuração inicial requerem conhecimento técnico especializado
-3. **Overhead de Performance:** Existe uma pequena latência adicional inerente às camadas de abstração introduzidas
-
-## 5.5 Recomendações para Estudos Futuros
-
-Com base nos resultados obtidos, sugere-se as seguintes direções para pesquisas futuras:
-
-1. **Integração com Outras Especificações:** Investigação da aplicabilidade da abordagem com outros padrões de documentação de APIs além do OpenAPI
-2. **Otimização de Performance:** Desenvolvimento de técnicas para reduzir ainda mais a latência e overhead do sistema
-3. **Inteligência Artificial Avançada:** Exploração de como modelos de linguagem mais avançados podem melhorar a precisão da interpretação de intenções
-4. **Segurança Aprimorada:** Desenvolvimento de mecanismos ainda mais robustos de proteção contra ataques adversários e injeção de prompts
-5. **Estudos de Usabilidade em Larga Escala:** Condução de estudos longitudinais com maior número de usuários em ambientes corporativos reais
-
-## 5.6 Impacto Transformador
-
-Este trabalho contribui para uma visão transformadora da interação humano-computador, onde as barreiras técnicas impostas por interfaces complexas são mitigadas através de agentes conversacionais inteligentes. A capacidade de integrar rapidamente múltiplos sistemas através de especificações padronizadas representa um avanço significativo na democratização do acesso à tecnologia, tornando sistemas especializados mais acessíveis para usuários com diferentes níveis de expertise técnica.
-
-A solução desenvolvida não apenas resolve problemas técnicos de integração, mas também contribui para uma maior inclusão digital ao reduzir a complexidade de interação com sistemas corporativos. Esta abordagem tem o potencial de transformar como organizações disponibilizam e mantêm interfaces de usuário, promovendo maior eficiência, acessibilidade e satisfação do usuário.
-
-Em conclusão, a integração OpenAPI-MCP demonstra ser uma solução promissora e prática para o desafio de conectar agentes conversacionais a sistemas web existentes, oferecendo benefícios tangíveis em termos de desenvolvimento, manutenção e experiência do usuário, enquanto estabelece uma base sólida para evoluções futuras na área de interfaces conversacionais inteligentes.
 
 # REFERÊNCIAS
 

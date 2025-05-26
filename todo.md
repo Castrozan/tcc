@@ -1,12 +1,17 @@
 # 25/05
 
 - [x] Do the daily Japanese lesson 
-- [ ] Wash clothes
-- [ ] Wash dishes
+- [x] Wash clothes
+- [x] Wash dishes
 - TCC
   - [ ] Write "Desenvolvimento"
   - [ ] Write "Resultados e Discussões"
   - [ ] Write "Considerações Finais"
+  - [x] Implement chat mcp client application
+  - Implement e2e tests for approaches
+    - [ ] MCP
+    - [ ] ORM
+    - [ ] DB
   - [ ] Refactor article to reflect only what was implemented
     - MCP
     - ORM

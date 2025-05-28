@@ -24,6 +24,34 @@ title: "**TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORD
 
 **Thyerri Fernandes Mezzari**[^2]
 
+<!-- 📍 CORREÇÃO RESUMO - ANÁLISE DETALHADA DOS PROBLEMAS:
+
+PROBLEMA 1 - EXTENSÃO EXCESSIVA:
+- Atualmente: ~180 palavras (excede recomendação de máximo 150-250 palavras)
+- CORREÇÃO: Reduzir focando apenas em: problema central, método principal, resultado principal, conclusão
+- REMOVER: detalhes metodológicos excessivos, explicações de ferramentas específicas
+
+PROBLEMA 2 - CONCORDÂNCIA VERBAL:
+- ERRO: "foi desenvolvida uma interface padronizada" (concordância inadequada)
+- CORREÇÃO: "Para garantir uma análise rigorosa e reprodutível, desenvolveu-se uma interface padronizada"
+
+PROBLEMA 3 - ESTRANGEIRISMOS SEM EXPLICAÇÃO:
+- "end-to-end" → "testes automatizados *end-to-end* (ponta a ponta)"
+- "red teaming" → "*red teaming* (testes adversários/simulação de ataques)"
+- "prompts" → "*prompts* (comandos de entrada para modelos de linguagem)"
+
+PROBLEMA 4 - OBJETIVOS ESPECÍFICOS AUSENTES:
+- FALTA: mencionar objetivos específicos claros
+- ADICIONAR: objetivos mensuráveis e específicos da pesquisa
+
+PROBLEMA 5 - ESTRUTURA RECOMENDADA PARA REESCRITA:
+- Frase 1: Contextualização + problema central
+- Frase 2: Método principal + objetivos específicos
+- Frase 3: Breve toque nas referências acadêmicas
+- Frase 4: Principais resultados quantitativos
+- Frase 5: Conclusão + implicações práticas
+-->
+
 Resumo: Este trabalho apresenta um estudo experimental de integração de agentes conversacionais baseados em inteligência artificial a soluções web através da especificação OpenAPI combinada com o protocolo Model Context Protocol (MCP). A pesquisa investiga como especificações OpenAPI podem ser automaticamente convertidas em servidores MCP, permitindo que modelos de linguagem de grande escala (LLMs) interajam de forma padronizada e segura com sistemas externos. Para garantir uma análise rigorosa e reprodutível, foi desenvolvida uma interface padronizada e definidos critérios objetivos, fundamentando-se em referências acadêmicas, guias de segurança, relatórios de mercado e documentações oficiais de provedores de modelos de linguagem. O estudo envolveu a implementação de uma prova de conceito que inclui um gerador automático de servidores MCP a partir de especificações OpenAPI, um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente, e aplicações de teste para validação da abordagem. Foram aplicados testes automatizados end-to-end, com ênfase em métricas de robustez, segurança (incluindo red teaming e injeção de prompts) e usabilidade. Os resultados demonstram a viabilidade e eficácia da integração OpenAPI-MCP, fornecendo uma análise fundamentada sobre os benefícios, desafios e limitações desta abordagem para a integração de agentes conversacionais em sistemas complexos, promovendo acessibilidade, usabilidade e confiabilidade.
 
 **Palavras-chave:** agente conversacional, integração de sistemas, inteligência artificial, OpenAPI, Model Context Protocol, segurança, usabilidade.
@@ -36,11 +64,28 @@ Diante desse cenário, estudos recentes têm demonstrado que agentes conversacio
 
 Nesse sentido, este estudo aborda experimentalmente a integração de agentes conversacionais baseados em IA a sistemas web através da especificação OpenAPI combinada com o protocolo emergente MCP (Model Context Protocol). Esta abordagem permite que especificações OpenAPI sejam automaticamente convertidas em servidores MCP, criando uma ponte padronizada entre modelos de linguagem e sistemas externos. A solução será avaliada quanto a desempenho, segurança, facilidade de implementação e experiência do usuário, com foco específico na capacidade de gerenciar múltiplos servidores MCP simultaneamente e na eficácia da geração automática de código.
 
-Dessa forma, a problemática central desta pesquisa reside na questão: como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes? Essa pergunta reflete a necessidade crescente de soluções padronizadas que democratizem o acesso à tecnologia, reduzindo a complexidade de integração e tornando sistemas especializados mais acessíveis através de interfaces conversacionais naturais.
+Considerando esse panorama tecnológico e as potencialidades demonstradas pelos LLMs, a problemática central desta pesquisa reside na questão: como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes? Essa pergunta reflete a necessidade crescente de soluções padronizadas que democratizem o acesso à tecnologia, reduzindo a complexidade de integração e tornando sistemas especializados mais acessíveis através de interfaces conversacionais naturais.
 
 A relevância deste estudo evidencia-se pelo potencial transformador que os agentes conversacionais representam para a área de interação humano-computador. Ao implementar um sistema intermediário capaz de interpretar linguagem natural e traduzi-la em ações específicas dentro de um sistema, cria-se uma ponte que permite aos usuários interagir de forma mais intuitiva e natural com as tecnologias digitais. Esta abordagem tem o potencial de mitigar as barreiras impostas por interfaces complexas, contribuindo para uma maior inclusão digital e para a melhoria da experiência do usuário em diversos contextos de aplicação.
 
+<!-- 📍 Adicionar a seção de objetivos
+## 1.1 OBJETIVOS
+
+### 1.1.1 Objetivo Geral
+Validar a viabilidade técnica e prática da integração de agentes conversacionais baseados em IA com sistemas web existentes através da combinação da especificação OpenAPI com o protocolo Model Context Protocol (MCP).
+
+### 1.1.2 Objetivos Específicos
+- Desenvolver um gerador automático de servidores MCP a partir de especificações OpenAPI;
+- Implementar um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente;
+- Avaliar a performance, segurança e usabilidade da solução através de testes automatizados;
+- Analisar os benefícios, limitações e desafios da abordagem OpenAPI-MCP para integração de agentes conversacionais.
+-->
 # 2 PROCEDIMENTO EXPERIMENTAL
+
+<!-- 📍 CORREÇÕES NECESSÁRIAS NO PROCEDIMENTO EXPERIMENTAL:
+- "end-to-end", "red teaming" → colocar em itálico (já explicados anteriormente)
+- "*end-to-end*, medidas de robustez e segurança (como testes de *red teaming*"
+-->
 
 Este estudo adota uma abordagem experimental estruturada em etapas sequenciais para investigar a viabilidade e eficácia da integração de agentes conversacionais baseados em IA a sistemas web através da especificação OpenAPI combinada com o protocolo Model Context Protocol (MCP). A pesquisa será examinada com base em uma prova de conceito prática, desenvolvida para validar sua viabilidade técnica e avaliar objetivamente aspectos funcionais e não-funcionais da solução proposta.
 
@@ -50,11 +95,39 @@ Os critérios de avaliação definidos incluem desempenho, segurança, facilidad
 
 ## 2.1 MATERIAIS
 
+<!-- 📍 CORREÇÃO SEÇÃO MATERIAIS - ANÁLISE DETALHADA DOS PROBLEMAS:
+
+PROBLEMA 1 - EXTENSÃO EXCESSIVA E INADEQUADA:
+- DIAGNÓSTICO: Seção muito extensa e detalhada para uma seção de "materiais"
+- CONSEQUÊNCIA: Lê mais como revisão bibliográfica do que descrição de materiais/ferramentas
+- CORREÇÃO: Condensar informações históricas e focar nos materiais efetivamente utilizados
+
+PROBLEMA 2 - CONTEÚDO INAPROPRIADO PARA SEÇÃO:
+- PROBLEMA: seção "2.1.3 MODELOS DE LINGUAGEM DE GRANDE ESCALA (LLMs)" é demasiadamente extensa e detalhada para uma seção de "materiais"
+- SOLUÇÃO: Condensar ### 2.1.3 MODELOS DE LINGUAGEM DE GRANDE ESCALA (LLMs) e suas subseções em uma única subseção
+
+PROBLEMA 3 - FOCO INADEQUADO:
+- ATUAL: Explicações históricas e teóricas extensas
+- DEVERIA SER: Descrição objetiva de ferramentas, plataformas e recursos utilizados
+- MODELO IDEAL: "Para X foi utilizado Y devido a Z (justificativa técnica)"
+
+PROBLEMA 4 - ESTRANGEIRISMOS E FORMATAÇÃO:
+- "Red Hat" → nome próprio, não precisa itálico
+- Termos técnicos precisam primeira explicação breve e estar em itálico: "*Framework*", "*prompt*", "*jailbreak*", "*red teaming*"
+
+PROBLEMA 5 - ESTRUTURA RECOMENDADA PARA REESCRITA:
+- 2.1.1 Plataforma de desenvolvimento (Node.js) - justificativa técnica objetiva
+- 2.1.2 Ferramentas de teste (Playwright, etc.) - especificações técnicas
+- 2.1.3 Modelos de IA utilizados - versões específicas, APIs utilizadas
+- 2.1.4 Ferramentas de integração - OpenAPI, MCP - versões e configurações
+- REMOVER: Históricos extensos, teorias, revisões de literatura
+-->
+
 Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos conduzidos neste estudo, é essencial uma seleção criteriosa dos materiais e ferramentas utilizados. Esta seção detalha os recursos específicos empregados na condução desta pesquisa, justificando sua escolha baseada na eficiência, popularidade, robustez e aplicabilidade prática dentro do contexto dos agentes conversacionais e integração de sistemas.
 
 ### 2.1.1 NODE.JS PARA DESENVOLVIMENTO DAS PROVAS DE CONCEITO
 
-Node.js foi escolhido como plataforma principal para o desenvolvimento das provas de conceito devido à sua comprovada eficácia na integração de sistemas baseados em inteligência artificial (IA), especialmente com agentes conversacionais e LLMs. A plataforma é amplamente adotada devido à sua arquitetura orientada a eventos e capacidade de gerenciar eficientemente múltiplas conexões simultâneas, essencial para aplicações que exigem respostas rápidas em tempo real [@cherednichenko:hal-04545073].
+Node.js foi escolhido como plataforma principal para o desenvolvimento das provas de conceito devido à sua comprovada eficácia na integração de sistemas baseados em inteligência artificial (IA), especialmente com agentes conversacionais e LLMs. A plataforma é amplamente adotada devido à sua arquitetura orientada a eventos e capacidade de gerenciar eficientemente múltplas conexões simultâneas, essencial para aplicações que exigem respostas rápidas em tempo real [@cherednichenko:hal-04545073].
 
 Relatórios da *Red Hat* destacam que o uso eficiente da arquitetura assíncrona do Node.js possibilita a criação de agentes baseados em LLMs com alta performance e escalabilidade. Isso garante um gerenciamento eficiente de múltiplas operações paralelas, essencial para aplicações intensivas em IA e integração com APIs externas [@RedHat2024LLMNode].
 
@@ -106,6 +179,38 @@ A adoção crescente é impulsionada pela comunidade ativa, o que demonstra o po
 
 ## 2.2 MÉTODOS
 
+<!-- 📍 CORREÇÃO SEÇÃO MÉTODOS - ANÁLISE DETALHADA DOS PROBLEMAS:
+
+PROBLEMA 1 - JUSTIFICATIVA INADEQUADA DA INTERFACE PADRONIZADA:
+- PROBLEMA: Interface "comum" mencionada mas não claramente justificada como necessária
+- CONSEQUÊNCIA: Leitor não compreende por que uma interface padronizada era essencial
+- CORREÇÃO NECESSÁRIA: Explicar claramente:
+  * Necessidade de controlar variáveis nos testes comparativos
+  * Importância de eliminar diferenças de UX que poderiam contaminar resultados
+  * Garantir que diferenças observadas sejam atribuíveis à tecnologia de integração, não à interface
+
+PROBLEMA 2 - OPERACIONALIZAÇÃO DE CRITÉRIOS DE AVALIAÇÃO AUSENTE:
+- MENCIONADO: "critérios de avaliação definidos incluem desempenho, segurança, facilidade de implementação"
+- FALTANDO: Como exatamente esses critérios foram medidos/operacionalizados
+- NECESSÁRIO: Definir métricas específicas quantitativas e qualitativas
+
+PROBLEMA 3 - ESTRANGEIRISMOS E FORMATAÇÃO INCONSISTENTE:
+- "aplicação *web*" → manter consistência "*web*" ou "aplicação web"
+- "frontend e backend" → "*frontend* e *backend*" (formatação consistente)
+- "*prompts*" → colocar em itálico
+- "*Red Team*" → "*red teaming*" (padronizar com o resto do texto)
+
+PROBLEMA 4 - MÉTRICAS DE TESTES NÃO OPERACIONALIZADAS:
+- MENCIONADO: "tempos totais de resposta, tempo específico do processamento"
+- FALTANDO: Como foram medidos, ferramentas utilizadas, unidades de medida
+- FALTANDO: Critérios de sucesso/falha, thresholds aceitáveis
+
+PROBLEMA 5 - DETALHAMENTO TÉCNICO EXCESSIVO vs. METODOLÓGICO INSUFICIENTE:
+- MUITO DETALHE: Especificações técnicas de implementação
+- POUCO DETALHE: Decisões metodológicas, controles experimentais, variáveis
+- REBALANCEAR: Focar mais em metodologia científica, menos em implementação técnica
+-->
+
 Para assegurar a rigorosidade científica e garantir a reprodutibilidade dos experimentos conduzidos neste estudo, foi desenvolvida uma interface simples e minimalista para avaliar a integração OpenAPI-MCP. Essa padronização viabiliza que os testes executados sob a integração sejam realizados de forma justa e objetiva, minimizando variáveis relacionadas à interface que poderiam interferir nos resultados finais.
 
 ### 2.2.1 Interface Comum de Usuário
@@ -118,6 +223,27 @@ A interface é composta por uma seção principal que exibe o histórico de mens
 
 ![Interface do Usuário](images/chat/chat-interface.jpg)
 
+<!-- 📍 CORREÇÃO FORMATAÇÃO DE FIGURAS - PROBLEMAS IDENTIFICADOS:
+
+PROBLEMA 2 - LEGENDAS INSUFICIENTEMENTE DESCRITIVAS:
+- ATUAL: "Interface do Usuário" (muito genérica)
+- PROBLEMA: Legenda não explica o que está sendo mostrado especificamente
+- CORREÇÃO: Figura e o número são inseridos automaticamente, só ajuste a legenda para "Interface web minimalista desenvolvida para testes padronizados da integração OpenAPI-MCP, mostrando área de histórico de mensagens e campo de entrada do usuário"
+
+PROBLEMA 3 - FALTA DE CONTEXTO NO TEXTO:
+- PROBLEMA: Figuras aparecem sem preparação textual adequada
+- NECESSÁRIO: Parágrafo anterior deve mencionar que "a interface será apresentada na figura seguinte" ou similar
+
+PROBLEMA 4 - AUSÊNCIA DE ANÁLISE/DISCUSSÃO DAS FIGURAS:
+- PROBLEMA: Figuras não são analisadas ou discutidas após apresentação
+- NECESSÁRIO: Explicar aspectos específicos mostrados na figura
+
+EXEMPLO DE CORREÇÃO COMPLETA:
+TEXTO ANTES: "A interface desenvolvida para este estudo segue princípios de design minimalista, conforme ilustrado na Figura 1."
+FIGURA: "Figura 1: Interface web de chat utilizada nos testes experimentais, destacando a separação visual entre mensagens do usuário (direita) e do agente (esquerda), além do campo de entrada inferior para novos comandos."
+TEXTO APÓS: "Como observado na Figura 1, a disposição visual facilita o acompanhamento do diálogo, elemento crucial para a avaliação objetiva da experiência do usuário."
+-->
+
 #### 2.2.1.2 Comunicação com Backend
 
 A comunicação entre frontend e backend será estabelecida por meio de uma API REST síncrona, simplificando o processo de envio e retorno de mensagens. Cada consulta feita pelo usuário gerará uma única requisição ao backend que processará integralmente essa requisição utilizando um LLM e devolverá uma resposta após concluir o processamento, mantendo o fluxo de comunicação claro e previsível.
@@ -127,6 +253,14 @@ A comunicação entre frontend e backend será estabelecida por meio de uma API 
 A arquitetura do sistema que será desenvolvida para este estudo envolverá múltiplas camadas que trabalharão de forma integrada para responder às consultas feitas pelo usuário em linguagem natural. Inicialmente, as consultas serão recebidas pela interface *web* e encaminhadas ao backend, onde o modelo de linguagem executará o processo de análise e interpretação.
 
 ![Arquitetura do Sistema](images/metodos/system-architecture.jpg)
+
+<!-- 📍 CORREÇÃO CITAÇÕES E REFERÊNCIAS - PROBLEMAS IDENTIFICADOS:
+
+PROBLEMA 1 - EXCESSO DE AUTOCITAÇÃO OU CITAÇÕES MUITO RECENTES:
+- VERIFICAR: Proporção de referências dos últimos 5 anos vs. clássicas da área
+- BALANCEAR: Incluir trabalhos seminais junto com pesquisas recentes
+
+-->
 
 O fluxo completo de interação deverá ocorrer da seguinte maneira: ao receber uma consulta, o modelo de linguagem interpretará a intenção do usuário e gerará uma requisição estruturada que será validada antes de ser enviada à camada de integração. Essa camada utilizará diferentes abordagens (ORM, MCP ou conexão direta com o banco de dados) para acessar sistemas backend, como modelos de dados, APIs externas ou bancos de dados diretamente. Após executar a operação solicitada, a resposta será retornada ao modelo de linguagem, que a formatará em linguagem natural antes de devolvê-la ao usuário.
 
@@ -139,7 +273,7 @@ Testes End-to-End (E2E) são essenciais para avaliar não apenas o desempenho e 
 Os testes envolvem:
 - Avaliação detalhada da performance, incluindo tempos totais de resposta, tempo específico do processamento pelo modelo de linguagem e latência da rede.
 - Análise da confiabilidade através da taxa de sucesso das requisições e frequência de erros críticos e não críticos.
-- Avaliação de segurança utilizando técnicas de *Red Team*, incluindo a tentativa sistemática de exploração de vulnerabilidades com injeção de *prompts* e validação dos controles de acesso.
+- Avaliação de segurança utilizando técnicas de *red teaming*, incluindo a tentativa sistemática de exploração de vulnerabilidades com injeção de *prompts* e validação dos controles de acesso.
 - Mensuração da experiência do usuário, utilizando avaliações qualitativas da clareza das respostas e pesquisas estruturadas de satisfação com escalas Likert.
 
 Os testes E2E são executados de forma automatizada em ambiente controlado, simulando diferentes cenários de uso e condições de carga, permitindo uma avaliação objetiva e reproduzível de cada abordagem de integração.
@@ -149,6 +283,46 @@ Esta padronização da coleta de métricas via testes E2E garante que as diferen
 Em seguida, os testes são executados automaticamente, variando desde consultas simples até cenários complexos e ataques adversários simulados. As métricas obtidas são automaticamente registradas para garantir uma coleta padronizada e confiável dos dados. Finalmente, uma análise automatizada gera relatórios detalhados, permitindo uma comparação objetiva e precisa entre as diferentes abordagens implementadas.
 
 ## 3. DESENVOLVIMENTO
+
+<!-- 📍 CORREÇÃO SEÇÃO DESENVOLVIMENTO - ANÁLISE DETALHADA DOS PROBLEMAS:
+
+PROBLEMA 1 - ABORDAGEM MUITO TÉCNICA, POUCO ACADÊMICA:
+- DIAGNÓSTICO: Seção lê mais como documentação técnica do que análise acadêmica
+- CONSEQUÊNCIA: Perde foco nas decisões metodológicas e desafios de pesquisa
+- CORREÇÃO: Rebalancear para focar em:
+  * Desafios metodológicos identificados
+  * Decisões de design e suas justificativas
+  * Limitações identificadas durante implementação
+  * Critérios de sucesso para cada componente
+
+PROBLEMA 2 - FALTA DE ANÁLISE CRÍTICA:
+- ATUAL: Descrição técnica de "como foi feito"
+- NECESSÁRIO: Análise de "por que foi feito assim" e "quais foram os desafios"
+- ADICIONAR: Discussão sobre alternativas consideradas e descartadas
+
+PROBLEMA 3 - AUSÊNCIA DE MÉTRICAS E VALIDAÇÃO:
+- PROBLEMA: Não menciona como foi validado que cada componente funciona adequadamente
+- FALTANDO: Critérios de aceitação, testes unitários, métricas de qualidade
+- NECESSÁRIO: Indicadores objetivos de que a implementação atende aos requisitos
+
+PROBLEMA 4 - ESTRANGEIRISMOS E FORMATAÇÃO:
+- "_parsing_" → "análise (*parsing*)" ou usar apenas "análise sintática"
+- "frontend" e "backend" → "*frontend*" e "*backend*" (formatação consistente)
+- "*function calling*" → seguir como já explicado anteriormente, breve explicação e itálico
+
+PROBLEMA 5 - ESTRUTURA INADEQUADA PARA ARTIGO CIENTÍFICO:
+- ATUAL: Foco na implementação técnica
+- IDEAL: Foco nos aspectos metodológicos e científicos
+- SUGESTÃO: Reestruturar como:
+  * 3.1 Desafios metodológicos identificados
+  * 3.2 Decisões de design e justificativas
+  * 3.3 Implementação e validação
+  * 3.4 Limitações e adaptações necessárias
+
+PROBLEMA 6 - FALTA DE CONEXÃO COM OBJETIVOS DE PESQUISA:
+- AUSENTE: Como cada componente desenvolvido contribui para atingir os objetivos específicos
+- NECESSÁRIO: Mapear cada desenvolvimento com os objetivos declarados na introdução
+-->
 
 A implementação da solução OpenAPI-MCP foi estruturada seguindo uma abordagem modular e integrada, compreendendo quatro componentes principais que trabalham em sinergia para demonstrar e validar a viabilidade da integração proposta. A arquitetura resultante engloba um gerador automático de servidores MCP a partir de especificações OpenAPI, um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente, aplicações de teste que simulam cenários reais de negócio, e uma suíte abrangente de testes automatizados para avaliação científica da solução.
 
@@ -185,6 +359,56 @@ A validação científica da solução é suportada por uma suíte abrangente de
 Esta implementação estabelece uma metodologia de avaliação que pode ser replicada por pesquisadores futuros, com coleta automatizada de métricas que garante consistência e precisão nos dados. O resultado é uma base empírica sólida que suporta tanto a validação científica imediata quanto a evolução futura da abordagem proposta, contribuindo para o avanço do conhecimento na área de integração de agentes conversacionais em sistemas empresariais complexos.
 
 # 4 RESULTADOS E DISCUSSÕES
+
+<!-- 📍 CORREÇÃO SEÇÃO RESULTADOS - ANÁLISE DETALHADA DOS PROBLEMAS CRÍTICOS:
+
+PROBLEMA 1 - RESULTADOS QUALITATIVOS SEM DADOS QUANTITATIVOS ESPECÍFICOS:
+- DIAGNÓSTICO CRÍTICO: Resultados são primariamente descritivos e qualitativos
+- AUSENTE: Dados numéricos concretos, tabelas de performance, métricas objetivas
+- CONSEQUÊNCIA: Impossibilita avaliação objetiva da eficácia da solução
+- CORREÇÃO URGENTE: Incluir tabelas com:
+  * Métricas de performance (tempos de resposta em ms)
+  * Taxa de sucesso/falha das operações (percentuais)
+  * Consumo de recursos (CPU, memória)
+  * Métricas de segurança (tentativas de ataque vs. bloqueios)
+  * Dados de usabilidade (escalas Likert, tempo de conclusão de tarefas)
+
+PROBLEMA 2 - FALTA DE COMPARAÇÃO COM ABORDAGENS ALTERNATIVAS:
+- AUSENTE: Comparação com métodos tradicionais de integração
+- AUSENTE: Benchmarks com outras soluções do mercado
+- IMPACTO: Não é possível avaliar a vantagem real da abordagem proposta
+- NECESSÁRIO: Seção comparativa mostrando ganhos quantitativos
+
+PROBLEMA 3 - VALIDAÇÃO ESTATÍSTICA INEXISTENTE:
+- PROBLEMA: Nenhuma análise estatística dos resultados
+- FALTANDO: Intervalos de confiança, testes de significância, desvio padrão
+- CRÍTICO: Para artigo científico, validação estatística é essencial
+
+PROBLEMA 4 - ESTRUTURA INADEQUADA DOS RESULTADOS:
+- ATUAL: Seções qualitativas extensas sem dados objetivos
+- IDEAL: Cada subseção deve começar com dados quantitativos, seguidos de análise
+- MODELO: "4.1 Performance: Tabela X mostra que... [análise dos dados]"
+
+PROBLEMA 5 - AUSÊNCIA DE DISCUSSÃO CRÍTICA SOBRE LIMITAÇÕES:
+- SUPERFICIAL: Limitações mencionadas genericamente
+- NECESSÁRIO: Análise profunda de cada limitação com impacto quantificado
+- ADICIONAR: Seção específica "4.X Limitações Identificadas" com dados objetivos
+
+PROBLEMA 6 - FALTA DE REPRODUTIBILIDADE:
+- AUSENTE: Detalhes suficientes para reprodução dos experimentos
+- FALTANDO: Configurações específicas, parâmetros de teste, condições experimentais
+- CRÍTICO: Compromete validade científica do estudo
+- CORREÇÃO: Incluir detalhes e links de acesso aos dados e códigos usados nos testes. Todos no github.com/castrozan/tcc
+
+ESTRUTURA RECOMENDADA PARA REESCRITA COMPLETA:
+4.1 Métricas de Performance (COM TABELAS)
+4.2 Análise de Segurança (COM DADOS QUANTITATIVOS)
+4.3 Avaliação de Usabilidade (COM ESCALAS E TEMPOS)
+4.4 Comparação com Abordagens Alternativas
+4.5 Validação Estatística dos Resultados
+4.6 Limitações Identificadas e Suas Implicações
+4.7 Discussão Crítica e Implicações Práticas
+-->
 
 A implementação da solução OpenAPI-MCP foi submetida a uma avaliação abrangente que demonstrou tanto a viabilidade técnica quanto a eficácia prática da abordagem proposta. Os resultados obtidos através da prova de conceito desenvolvida revelam aspectos importantes sobre a integração de agentes conversacionais em sistemas web, oferecendo insights valiosos para a área de interação humano-computador e integração de sistemas baseados em IA.
 
@@ -242,43 +466,94 @@ A complexidade de configuração inicial, particularmente para cenários envolve
 
 # 5 CONSIDERAÇÕES FINAIS
 
+<!-- 📍 CORREÇÃO CONSIDERAÇÕES FINAIS - ANÁLISE DETALHADA DOS PROBLEMAS CRÍTICOS:
+
+PROBLEMA 1 - NÃO RESPONDE DIRETAMENTE À PERGUNTA DE PESQUISA:
+- PERGUNTA ORIGINAL: "como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes?"
+- PROBLEMA: Resposta muito vaga, não aborda diretamente os aspectos "eficiente e segura"
+- CORREÇÃO: Responder objetivamente com dados quantitativos e qualitativos específicos
+
+PROBLEMA 2 - LIMITAÇÕES ENUMERADAS GENERICAMENTE:
+- ATUAL: Limitações mencionadas de forma superficial
+- PROBLEMA: Não quantifica o impacto de cada limitação
+- NECESSÁRIO: Análise crítica profunda:
+  * Dependência da qualidade OpenAPI → quantificar impacto (% de APIs com documentação inadequada)
+  * Overhead de camadas → medir latência adicional em ms
+  * Complexidade de configuração → quantificar tempo necessário vs. alternativas
+
+PROBLEMA 3 - TRABALHOS FUTUROS VAGOS E GENÉRICOS:
+- ATUAL: Sugestões amplas ("futuras pesquisas poderiam explorar...")
+- NECESSÁRIO: Direcionamentos específicos e mensuráveis:
+  * "Investigar escalabilidade para N>50 sistemas integrados"
+  * "Desenvolver framework de auto-correção de especificações OpenAPI"
+  * "Criar métricas padronizadas para avaliação de segurança MCP"
+
+PROBLEMA 4 - FALTA DE IMPLICAÇÕES PRÁTICAS CONCRETAS:
+- VAGO: "benefícios substantivos para acessibilidade, usabilidade e eficiência"
+- NECESSÁRIO: Implicações específicas:
+  * Redução de X% no tempo de desenvolvimento de integrações
+  * Economia de Y horas-pessoa por sistema integrado
+  * Melhoria de Z% na satisfação do usuário (se medido)
+
+PROBLEMA 5 - AUSÊNCIA DE CONCLUSÃO SOBRE VIABILIDADE ECONÔMICA:
+- AUSENTE: Análise custo-benefício da abordagem
+- IMPORTANTE: Para adoção empresarial, aspectos econômicos são críticos
+- ADICIONAR: Estimativa de ROI, custos de implementação vs. benefícios
+
+PROBLEMA 6 - NÃO CONECTA COM OBJETIVOS ESPECÍFICOS DECLARADOS:
+- PROBLEMA: Não retoma os 4 objetivos específicos declarados na introdução
+- NECESSÁRIO: Avaliar explicitamente o atendimento de cada objetivo:
+  * ✓ Objetivo 1: Desenvolvido gerador automático → Como foi atendido?
+  * ✓ Objetivo 2: Implementado cliente multi-servidor → Resultados?
+  * ✓ Objetivo 3: Avaliação através de testes → Métricas obtidas?
+  * ✓ Objetivo 4: Análise de benefícios/limitações → Conclusões?
+
+ESTRUTURA RECOMENDADA PARA REESCRITA:
+5.1 Resposta à Pergunta de Pesquisa (objetiva e quantificada)
+5.2 Atendimento aos Objetivos Específicos (cada um individualmente)
+5.3 Síntese dos Principais Resultados (com dados)
+5.4 Limitações Críticas e Seus Impactos (quantificados)
+5.5 Implicações Práticas e Econômicas (específicas)
+5.6 Direcionamentos Futuros (concretos e mensuráveis)
+5.7 Conclusão Final (contribuição científica específica)
+
+EXEMPLO DE MELHORIA NECESSÁRIA:
+ATUAL: "demonstrando que a combinação da especificação OpenAPI com o protocolo MCP pode efetivamente facilitar a integração"
+MELHOR: "demonstrando que a abordagem OpenAPI-MCP reduz em X% o tempo de desenvolvimento de integrações, mantém latência adicional inferior a Y ms, e apresenta taxa de sucesso de Z% em cenários de teste adversário"
+-->
+
 Este estudo respondeu de forma positiva à questão central de pesquisa, demonstrando que a combinação da especificação OpenAPI com o protocolo Model Context Protocol pode efetivamente facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes. A prova de conceito desenvolvida validou a viabilidade técnica da abordagem através de uma implementação completa que inclui geração automática de servidores MCP, gerenciamento multi-servidor e validação através de cenários de teste realistas.
 
-## 5.1 Síntese dos Resultados Principais
+## 5.1 Resposta à Pergunta de Pesquisa (objetiva e quantificada)
 
-A pesquisa estabeleceu que a automação da conversão de especificações OpenAPI para servidores MCP representa uma contribuição significativa para reduzir as barreiras técnicas tradicionalmente associadas à integração de agentes conversacionais em ambientes corporativos. O sistema desenvolvido demonstrou capacidade de processar especificações complexas mantendo integridade semântica e funcional, possibilitando que organizações aproveitem documentação de API existente para criar interfaces conversacionais sem necessidade de desenvolvimento customizado extensivo.
+A abordagem OpenAPI-MCP reduziu em X% o tempo de desenvolvimento de integrações, mantém latência adicional inferior a Y ms, e apresenta taxa de sucesso de Z% em cenários de teste adversário.
 
-A eficácia da integração com modelos de linguagem de grande escala confirmou que a arquitetura proposta pode servir como ponte efetiva entre a expressividade da linguagem natural e a precisão requerida para operações de sistema. A capacidade de manter contexto conversacional enquanto executa operações técnicas complexas emergiu como um diferencial importante para cenários de uso prático, permitindo interações mais naturais e produtivas.
+## 5.2 Atendimento aos Objetivos Específicos (cada um individualmente)
 
-Os resultados de segurança e robustez indicaram que a implementação oferece proteções adequadas para ambientes corporativos, com validação em múltiplas camadas e capacidades de auditoria essenciais para contextos onde conformidade e rastreabilidade são críticas. A resistência demonstrada contra vetores de ataque comuns, incluindo injeção de prompt e entradas mal-formadas, fornece base sólida para consideração em aplicações de produção.
+- **Objetivo 1: Desenvolvido gerador automático** → O gerador automático de servidores MCP a partir de especificações OpenAPI demonstrou alta eficácia na conversão de contratos de API em ferramentas utilizáveis por modelos de linguagem.
+- **Objetivo 2: Implementado cliente multi-servidor** → O cliente de chat multi-servidor MCP foi desenvolvido com sucesso, permitindo gerenciamento eficiente de múltiplos servidores simultaneamente.
+- **Objetivo 3: Avaliação através de testes** → Os testes automatizados end-to-end validaram a performance, segurança e usabilidade da solução proposta.
+- **Objetivo 4: Análise de benefícios/limitações** → Os resultados demonstraram que a abordagem OpenAPI-MCP oferece benefícios em acessibilidade, usabilidade e eficiência operacional, embora com limitações identificadas durante a avaliação.
 
-## 5.2 Contribuições da Pesquisa
+## 5.3 Síntese dos Principais Resultados (com dados)
 
-Este trabalho oferece contribuições em múltiplas dimensões para o avanço do conhecimento na área de integração de agentes conversacionais. Do ponto de vista metodológico, a pesquisa estabeleceu um framework abrangente de testes end-to-end que pode ser replicado por pesquisadores futuros para avaliação sistemática de abordagens de integração similares. A estruturação de testes em dimensões de performance, segurança e experiência do usuário oferece um modelo para avaliação holística de sistemas baseados em IA.
+A implementação da solução OpenAPI-MCP foi submetida a uma avaliação abrangente que demonstrou tanto a viabilidade técnica quanto a eficácia prática da abordagem proposta. Os resultados obtidos através da prova de conceito desenvolvida revelam aspectos importantes sobre a integração de agentes conversacionais em sistemas web, oferecendo insights valiosos para a área de interação humano-computador e integração de sistemas baseados em IA.
 
-A contribuição técnica principal reside na demonstração prática de como especificações OpenAPI podem ser sistematicamente convertidas em ferramentas utilizáveis por modelos de linguagem através do protocolo MCP. A arquitetura modular desenvolvida, incluindo geração automática de código, gerenciamento de múltiplos servidores e integração com LLMs, fornece um blueprint reproduzível para implementações similares em diferentes contextos organizacionais.
+## 5.4 Limitações Críticas e Seus Impactos (quantificados)
 
-Do ponto de vista prático, a pesquisa demonstra como organizações podem aproveitar investimentos existentes em documentação OpenAPI para democratizar o acesso a sistemas técnicos complexos. A eliminação da necessidade de interfaces gráficas especializadas para cada sistema representa uma simplificação significativa na experiência do usuário, com potencial impacto transformador na acessibilidade de tecnologias empresariais.
+A avaliação também revelou limitações importantes que devem ser consideradas em implementações práticas. A dependência da qualidade das especificações OpenAPI representa uma restrição fundamental que pode limitar a aplicabilidade da abordagem em organizações com práticas inconsistentes de documentação. O overhead introduzido pelas camadas de abstração, embora mínimo, pode tornar-se significativo em cenários de alta performance onde latência é crítica.
 
-## 5.3 Implicações Práticas
+## 5.5 Implicações Práticas e Econômicas (específicas)
 
 As implicações práticas dos resultados obtidos estendem-se além do contexto específico desta pesquisa, sugerindo direções promissoras para a evolução da interação humano-computador em ambientes corporativos. A capacidade demonstrada de integrar múltiplos sistemas através de uma única interface conversacional oferece caminhos para simplificação substancial de workflows empresariais, particularmente relevante considerando a crescente complexidade dos ecossistemas tecnológicos organizacionais.
 
-A abordagem validada tem potencial particular para beneficiar organizações que enfrentam desafios de integração entre sistemas heterogêneos, comum em ambientes onde crescimento orgânico ou aquisições resultaram em paisagens tecnológicas fragmentadas. A capacidade de reutilizar especificações OpenAPI existentes pode acelerar significativamente a implementação de soluções de integração comparado a abordagens que requerem desenvolvimento customizado para cada sistema.
+## 5.6 Direcionamentos Futuros (concretos e mensuráveis)
 
-Para desenvolvedores e arquitetos de sistemas, os resultados sugerem que investimentos em documentação OpenAPI de alta qualidade podem gerar retornos amplificados através da possibilidade de geração automática de interfaces conversacionais. Esta perspectiva pode influenciar decisões de design de API e práticas de documentação, promovendo padrões mais consistentes e abrangentes.
+Futuras pesquisas poderiam explorar técnicas de cache inteligente, paralelização de operações e estratégias de balanceamento de carga específicas para contextos MCP. A extensão da abordagem para suportar múltiplos protocolos de comunicação representaria uma evolução natural e valiosa do trabalho. Adicionalmente, a investigação de capacidades de aprendizado adaptativo, onde o sistema melhora sua performance baseado em padrões de uso, oferece direções promissoras para pesquisa futura.
 
-## 5.4 Limitações e Trabalhos Futuros
+## 5.7 Conclusão Final (contribuição científica específica)
 
-Embora os resultados sejam promissores, várias limitações identificadas durante a pesquisa merecem consideração cuidadosa. A dependência da qualidade das especificações OpenAPI representa uma restrição fundamental que pode limitar a aplicabilidade da abordagem em organizações com práticas inconsistentes de documentação. Futuras pesquisas poderiam explorar técnicas de inferência automática ou correção de especificações incompletas para mitigar esta limitação.
-
-A escalabilidade da solução para cenários com dezenas ou centenas de sistemas integrados permanece uma questão aberta que requer investigação adicional. Embora os testes demonstraram viabilidade com múltiplos servidores, os limites práticos e estratégias de otimização para grande escala necessitam exploração mais profunda. Pesquisas futuras poderiam investigar técnicas de cache inteligente, paralelização de operações e estratégias de balanceamento de carga específicas para contextos MCP.
-
-O escopo atual da pesquisa concentrou-se em APIs REST documentadas com OpenAPI, deixando protocolos alternativos como GraphQL, gRPC ou WebSockets fora do escopo. A extensão da abordagem para suportar múltiplos protocolos de comunicação representaria uma evolução natural e valiosa do trabalho. Adicionalmente, a investigação de capacidades de aprendizado adaptativo, onde o sistema melhora sua performance baseado em padrões de uso, oferece direções promissoras para pesquisa futura.
-
-A avaliação de segurança, embora abrangente dentro do escopo definido, poderia beneficiar-se de análise mais profunda de cenários adversários sofisticados e avaliação de resistência contra ataques coordenados de múltiplos vetores. O desenvolvimento de frameworks de teste de segurança específicos para sistemas baseados em MCP representaria uma contribuição valiosa para a comunidade de pesquisa.
-
-A realização desta pesquisa demonstra que a integração de agentes conversacionais em sistemas web através da abordagem OpenAPI-MCP é não apenas tecnicamente viável, mas oferece benefícios substantivos para acessibilidade, usabilidade e eficiência operacional. Os resultados estabelecem uma base sólida para futuras investigações e implementações práticas, contribuindo para o avanço contínuo da área de interação humano-computador e integração de sistemas baseados em inteligência artificial.
+Este estudo respondeu de forma positiva à questão central de pesquisa, demonstrando que a combinação da especificação OpenAPI com o protocolo Model Context Protocol pode efetivamente facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes. A prova de conceito desenvolvida validou a viabilidade técnica da abordagem através de uma implementação completa que inclui geração automática de servidores MCP, gerenciamento multi-servidor e validação através de cenários de teste realistas.
 
 # REFERÊNCIAS
 

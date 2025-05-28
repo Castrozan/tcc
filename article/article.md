@@ -76,6 +76,31 @@ Inicialmente, será conduzida uma revisão sistemática da literatura, consolida
 
 Para assegurar resultados objetivos e reproduzíveis, os testes serão automatizados utilizando testes *end-to-end*, aplicando medidas de robustez e segurança (como testes de *red teaming* e proteção contra injeção de *prompts*) e avaliações qualitativas de usabilidade. Os resultados serão sistematicamente documentados e analisados, permitindo identificar desafios, vantagens e limitações intrínsecas à integração OpenAPI-MCP e demonstrando sua aplicabilidade prática para diferentes contextos de uso.
 
+<!-- 📍 CORREÇÃO FORMATAÇÃO DE FIGURAS - PROBLEMAS IDENTIFICADOS:
+PROBLEMA 1 - LEGENDAS INSUFICIENTEMENTE DESCRITIVAS:
+- ATUAL: "Interface do Usuário" (muito genérica)
+- PROBLEMA: Legenda não explica o que está sendo mostrado especificamente
+- CORREÇÃO: Figura e o número são inseridos automaticamente, só ajuste a legenda para "Interface web minimalista 
+desenvolvida para testes padronizados da integração OpenAPI-MCP, mostrando área de histórico de mensagens e campo 
+de entrada do usuário"
+
+PROBLEMA 2 - FALTA DE CONTEXTO NO TEXTO:
+- PROBLEMA: Figuras aparecem sem preparação textual adequada
+- NECESSÁRIO: Parágrafo anterior deve mencionar que "a interface será apresentada na figura seguinte" ou similar
+
+PROBLEMA 3 - AUSÊNCIA DE ANÁLISE/DISCUSSÃO DAS FIGURAS:
+- PROBLEMA: Figuras não são analisadas ou discutidas após apresentação
+- NECESSÁRIO: Explicar aspectos específicos mostrados na figura
+
+EXEMPLO DE CORREÇÃO COMPLETA:
+TEXTO ANTES: "A interface desenvolvida para este estudo segue princípios de design minimalista, conforme 
+ilustrado na Figura 1."
+FIGURA: "Figura 1: Interface web de chat utilizada nos testes experimentais, destacando a separação visual entre 
+mensagens do usuário (direita) e do agente (esquerda), além do campo de entrada inferior para novos comandos."
+TEXTO APÓS: "Como observado na Figura 1, a disposição visual facilita o acompanhamento do diálogo, elemento 
+crucial para a avaliação objetiva da experiência do usuário."
+-->
+
 ## 2.1 MATERIAIS
 
 Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos conduzidos neste estudo, foram selecionadas ferramentas específicas baseadas em critérios de robustez, popularidade acadêmica e aplicabilidade prática para desenvolvimento da prova de conceito.

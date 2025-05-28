@@ -68,18 +68,6 @@ Considerando esse panorama tecnológico e as potencialidades demonstradas pelos 
 
 A relevância deste estudo evidencia-se pelo potencial transformador que os agentes conversacionais representam para a área de interação humano-computador. Ao implementar um sistema intermediário capaz de interpretar linguagem natural e traduzi-la em ações específicas dentro de um sistema, cria-se uma ponte que permite aos usuários interagir de forma mais intuitiva e natural com as tecnologias digitais. Esta abordagem tem o potencial de mitigar as barreiras impostas por interfaces complexas, contribuindo para uma maior inclusão digital e para a melhoria da experiência do usuário em diversos contextos de aplicação.
 
-<!-- 📍 Adicionar a seção de objetivos
-## 1.1 OBJETIVOS
-
-### 1.1.1 Objetivo Geral
-Validar a viabilidade técnica e prática da integração de agentes conversacionais baseados em IA com sistemas web existentes através da combinação da especificação OpenAPI com o protocolo Model Context Protocol (MCP).
-
-### 1.1.2 Objetivos Específicos
-- Desenvolver um gerador automático de servidores MCP a partir de especificações OpenAPI;
-- Implementar um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente;
-- Avaliar a performance, segurança e usabilidade da solução através de testes automatizados;
-- Analisar os benefícios, limitações e desafios da abordagem OpenAPI-MCP para integração de agentes conversacionais.
--->
 # 2 PROCEDIMENTO EXPERIMENTAL
 
 <!-- 📍 CORREÇÕES NECESSÁRIAS NO PROCEDIMENTO EXPERIMENTAL:
@@ -89,9 +77,9 @@ Validar a viabilidade técnica e prática da integração de agentes conversacio
 
 Este estudo adota uma abordagem experimental estruturada em etapas sequenciais para investigar a viabilidade e eficácia da integração de agentes conversacionais baseados em IA a sistemas web através da especificação OpenAPI combinada com o protocolo Model Context Protocol (MCP). A pesquisa será examinada com base em uma prova de conceito prática, desenvolvida para validar sua viabilidade técnica e avaliar objetivamente aspectos funcionais e não-funcionais da solução proposta.
 
-Inicialmente, será conduzida uma revisão sistemática da literatura, consolidando conhecimentos científicos sobre integração OpenAPI-MCP e embasando teoricamente a fase experimental. Na sequência, a estratégia será implementada e testada por meio de uma prova de conceito abrangente, incluindo o desenvolvimento de um gerador automático de servidores MCP, um cliente de chat para gerenciamento de múltiplos servidores, e aplicações de teste para validação da abordagem.
+Inicialmente, será conduzida uma revisão sistemática da literatura, consolidando conhecimentos científicos sobre integração OpenAPI-MCP e embasando teoricamente a fase experimental. Na sequência, a estratégia será implementada e testada por meio de uma prova de conceito abrangente, incluindo a) o desenvolvimento de um gerador automático de servidores MCP, b) um cliente de chat para gerenciamento de múltiplos servidores, c) aplicações de teste de ponta a ponta para validação da abordagem e d) geração de métricas de avaliação para medir desempenho, segurança, facilidade de implementação, manutenibilidade e experiência do usuário. 
 
-Os critérios de avaliação definidos incluem desempenho, segurança, facilidade de implementação, manutenibilidade e experiência do usuário. Para assegurar resultados objetivos e reproduzíveis, os testes incluirão análises automatizadas end-to-end, medidas de robustez e segurança (como testes de red teaming e proteção contra injeção de prompts) e avaliações qualitativas de usabilidade. Os resultados serão sistematicamente documentados e analisados, permitindo identificar desafios, vantagens e limitações intrínsecas à integração OpenAPI-MCP e demonstrando sua aplicabilidade prática para diferentes contextos de uso.
+Para assegurar resultados objetivos e reproduzíveis, os testes serão automatizados utilizando testes end-to-end, aplicando medidas de robustez e segurança (como testes de red teaming e proteção contra injeção de prompts) e avaliações qualitativas de usabilidade. Os resultados serão sistematicamente documentados e analisados, permitindo identificar desafios, vantagens e limitações intrínsecas à integração OpenAPI-MCP e demonstrando sua aplicabilidade prática para diferentes contextos de uso.
 
 ## 2.1 MATERIAIS
 

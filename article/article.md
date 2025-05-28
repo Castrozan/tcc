@@ -24,34 +24,6 @@ title: "**TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORD
 
 **Thyerri Fernandes Mezzari**[^2]
 
-<!-- 📍 CORREÇÃO RESUMO - ANÁLISE DETALHADA DOS PROBLEMAS:
-
-PROBLEMA 1 - EXTENSÃO EXCESSIVA:
-- Atualmente: ~180 palavras (excede recomendação de máximo 150-250 palavras)
-- CORREÇÃO: Reduzir focando apenas em: problema central, método principal, resultado principal, conclusão
-- REMOVER: detalhes metodológicos excessivos, explicações de ferramentas específicas
-
-PROBLEMA 2 - CONCORDÂNCIA VERBAL:
-- ERRO: "foi desenvolvida uma interface padronizada" (concordância inadequada)
-- CORREÇÃO: "Para garantir uma análise rigorosa e reprodutível, desenvolveu-se uma interface padronizada"
-
-PROBLEMA 3 - ESTRANGEIRISMOS SEM EXPLICAÇÃO:
-- "end-to-end" → "testes automatizados *end-to-end* (ponta a ponta)"
-- "red teaming" → "*red teaming* (testes adversários/simulação de ataques)"
-- "prompts" → "*prompts* (comandos de entrada para modelos de linguagem)"
-
-PROBLEMA 4 - OBJETIVOS ESPECÍFICOS AUSENTES:
-- FALTA: mencionar objetivos específicos claros
-- ADICIONAR: objetivos mensuráveis e específicos da pesquisa
-
-PROBLEMA 5 - ESTRUTURA RECOMENDADA PARA REESCRITA:
-- Frase 1: Contextualização + problema central
-- Frase 2: Método principal + objetivos específicos
-- Frase 3: Breve toque nas referências acadêmicas
-- Frase 4: Principais resultados quantitativos
-- Frase 5: Conclusão + implicações práticas
--->
-
 Resumo: Este trabalho apresenta um estudo experimental preliminar de integração de agentes conversacionais baseados em inteligência artificial a soluções web através da especificação OpenAPI combinada com o protocolo Model Context Protocol (MCP). A pesquisa investiga inicialmente como especificações OpenAPI podem ser automaticamente convertidas em servidores MCP, permitindo que modelos de linguagem de grande escala (LLMs) interajam de forma padronizada e segura com sistemas externos. Para garantir uma análise rigorosa e reprodutível, foi desenvolvida uma interface padronizada e definidos critérios objetivos, fundamentando-se em referências acadêmicas, guias de segurança, relatórios de mercado e documentações oficiais de provedores de modelos de linguagem. O estudo envolveu a implementação de uma prova de conceito que inclui um gerador automático de servidores MCP a partir de especificações OpenAPI, um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente, e aplicações de teste para validação da abordagem. Foram aplicados testes automatizados *end-to-end*, com ênfase em métricas de robustez, segurança (incluindo *red teaming* e injeção de *prompts*) e usabilidade dentro do escopo experimental definido. Os resultados indicam a viabilidade técnica inicial e eficácia da integração OpenAPI-MCP nos cenários testados, fornecendo uma análise fundamentada sobre os benefícios, desafios e limitações desta abordagem para a integração de agentes conversacionais em sistemas complexos. A pesquisa estabelece evidências preliminares convincentes sobre a possibilidade de grandes avanços na facilitação da integração entre sistemas existentes e LLMs, promovendo maior acessibilidade, usabilidade e democratização do acesso a tecnologias complexas, justificando investigações mais aprofundadas para validação em escala maior.
 
 **Palavras-chave:** agente conversacional, integração de sistemas, inteligência artificial, OpenAPI, Model Context Protocol, segurança, usabilidade.

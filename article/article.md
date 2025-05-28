@@ -100,43 +100,11 @@ Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos 
 
 ## 2.2 MÉTODOS
 
-<!-- 📍 CORREÇÃO SEÇÃO MÉTODOS - ANÁLISE DETALHADA DOS PROBLEMAS:
+Para assegurar a validade científica e a reprodutibilidade dos experimentos, foi fundamental estabelecer um controle rigoroso das variáveis experimentais. A implementação de uma interface padronizada constitui elemento metodológico essencial para eliminar diferenças de experiência do usuário que poderiam contaminar os resultados experimentais. Esta padronização garante que as diferenças observadas no desempenho sejam atribuíveis exclusivamente às tecnologias de integração testadas (OpenAPI-MCP), e não a variações na interface ou design de interação. Sem este controle experimental, seria impossível determinar se melhorias na usabilidade decorrem da abordagem proposta ou de fatores externos relacionados ao design da interface.
 
-PROBLEMA 1 - JUSTIFICATIVA INADEQUADA DA INTERFACE PADRONIZADA:
-- PROBLEMA: Interface "comum" mencionada mas não claramente justificada como necessária
-- CONSEQUÊNCIA: Leitor não compreende por que uma interface padronizada era essencial
-- CORREÇÃO NECESSÁRIA: Explicar claramente:
-  * Necessidade de controlar variáveis nos testes comparativos
-  * Importância de eliminar diferenças de UX que poderiam contaminar resultados
-  * Garantir que diferenças observadas sejam atribuíveis à tecnologia de integração, não à interface
+### 2.2.1 Interface Padronizada de Usuário
 
-PROBLEMA 2 - OPERACIONALIZAÇÃO DE CRITÉRIOS DE AVALIAÇÃO AUSENTE:
-- MENCIONADO: "critérios de avaliação definidos incluem desempenho, segurança, facilidade de implementação"
-- FALTANDO: Como exatamente esses critérios foram medidos/operacionalizados
-- NECESSÁRIO: Definir métricas específicas quantitativas e qualitativas
-
-PROBLEMA 3 - ESTRANGEIRISMOS E FORMATAÇÃO INCONSISTENTE:
-- "aplicação *web*" → manter consistência "*web*" ou "aplicação web"
-- "frontend e backend" → "*frontend* e *backend*" (formatação consistente)
-- "*prompts*" → colocar em itálico
-- "*Red Team*" → "*red teaming*" (padronizar com o resto do texto)
-
-PROBLEMA 4 - MÉTRICAS DE TESTES NÃO OPERACIONALIZADAS:
-- MENCIONADO: "tempos totais de resposta, tempo específico do processamento"
-- FALTANDO: Como foram medidos, ferramentas utilizadas, unidades de medida
-- FALTANDO: Critérios de sucesso/falha, thresholds aceitáveis
-
-PROBLEMA 5 - DETALHAMENTO TÉCNICO EXCESSIVO vs. METODOLÓGICO INSUFICIENTE:
-- MUITO DETALHE: Especificações técnicas de implementação
-- POUCO DETALHE: Decisões metodológicas, controles experimentais, variáveis
-- REBALANCEAR: Focar mais em metodologia científica, menos em implementação técnica
--->
-
-Para assegurar a rigorosidade científica e garantir a reprodutibilidade dos experimentos conduzidos neste estudo, foi desenvolvida uma interface simples e minimalista para avaliar a integração OpenAPI-MCP. Essa padronização viabiliza que os testes executados sob a integração sejam realizados de forma justa e objetiva, minimizando variáveis relacionadas à interface que poderiam interferir nos resultados finais.
-
-### 2.2.1 Interface Comum de Usuário
-
-A interface comum consiste em uma aplicação *web* simples de chat, desenvolvida utilizando HTML e JavaScript. A interface foi projetada de forma minimalista, visando uma experiência consistente e objetiva, independentemente de qual abordagem que fosse utilizada para a integração.
+A interface comum consiste em uma aplicação web simples de chat, desenvolvida utilizando HTML e JavaScript. A interface foi projetada de forma minimalista, visando uma experiência consistente e objetiva, independentemente da abordagem utilizada para a integração.
 
 #### 2.2.1.1 DESIGN DA INTERFACE
 
@@ -144,64 +112,35 @@ A interface é composta por uma seção principal que exibe o histórico de mens
 
 ![Interface do Usuário](images/chat/chat-interface.jpg)
 
-<!-- 📍 CORREÇÃO FORMATAÇÃO DE FIGURAS - PROBLEMAS IDENTIFICADOS:
+#### 2.2.1.2 Comunicação com *Backend*
 
-PROBLEMA 2 - LEGENDAS INSUFICIENTEMENTE DESCRITIVAS:
-- ATUAL: "Interface do Usuário" (muito genérica)
-- PROBLEMA: Legenda não explica o que está sendo mostrado especificamente
-- CORREÇÃO: Figura e o número são inseridos automaticamente, só ajuste a legenda para "Interface web minimalista desenvolvida para testes padronizados da integração OpenAPI-MCP, mostrando área de histórico de mensagens e campo de entrada do usuário"
+A comunicação entre *frontend* e *backend* será estabelecida por meio de uma API REST síncrona, simplificando o processo de envio e retorno de mensagens. Cada consulta feita pelo usuário gerará uma única requisição ao *backend* que processará integralmente essa requisição utilizando um LLM e devolverá uma resposta após concluir o processamento, mantendo o fluxo de comunicação claro e previsível.
 
-PROBLEMA 3 - FALTA DE CONTEXTO NO TEXTO:
-- PROBLEMA: Figuras aparecem sem preparação textual adequada
-- NECESSÁRIO: Parágrafo anterior deve mencionar que "a interface será apresentada na figura seguinte" ou similar
+### 2.2.2 Critérios de Avaliação e Operacionalização de Métricas
 
-PROBLEMA 4 - AUSÊNCIA DE ANÁLISE/DISCUSSÃO DAS FIGURAS:
-- PROBLEMA: Figuras não são analisadas ou discutidas após apresentação
-- NECESSÁRIO: Explicar aspectos específicos mostrados na figura
+Para garantir uma avaliação científica rigorosa, foram definidos critérios objetivos de avaliação com métricas específicas quantitativas e qualitativas, operacionalizados através de instrumentação técnica precisa e metodologias de coleta padronizadas.
 
-EXEMPLO DE CORREÇÃO COMPLETA:
-TEXTO ANTES: "A interface desenvolvida para este estudo segue princípios de design minimalista, conforme ilustrado na Figura 1."
-FIGURA: "Figura 1: Interface web de chat utilizada nos testes experimentais, destacando a separação visual entre mensagens do usuário (direita) e do agente (esquerda), além do campo de entrada inferior para novos comandos."
-TEXTO APÓS: "Como observado na Figura 1, a disposição visual facilita o acompanhamento do diálogo, elemento crucial para a avaliação objetiva da experiência do usuário."
--->
+Os critérios de desempenho compreendem quatro métricas fundamentais. O tempo de resposta total é medido em milissegundos utilizando timestamps precisos via Performance API do navegador, fornecendo dados objetivos sobre a latência percebida pelo usuário final. A taxa de sucesso de operações é calculada como percentual de requisições bem-sucedidas versus falhas, com categorização sistemática de tipos de erro para identificação de padrões de falha. O *throughput* é quantificado como número de operações processadas por segundo em cenários de carga controlada, permitindo avaliação da capacidade de processamento simultâneo.
 
-#### 2.2.1.2 Comunicação com Backend
+Os critérios de segurança focam na robustez contra ataques adversários e validação de entrada. A resistência a injeção de *prompts* é mensurada como percentual de tentativas maliciosas bloqueadas durante testes de *red teaming*, implementados conforme o Framework de Gerenciamento de Riscos de IA do NIST [@oprea2023adversarial] e as diretrizes da OWASP [@john2025owasp], considerando que injeções de *prompt* representam ameaças críticas em sistemas LLM com acesso a dados sensíveis.
 
-A comunicação entre frontend e backend será estabelecida por meio de uma API REST síncrona, simplificando o processo de envio e retorno de mensagens. Cada consulta feita pelo usuário gerará uma única requisição ao backend que processará integralmente essa requisição utilizando um LLM e devolverá uma resposta após concluir o processamento, mantendo o fluxo de comunicação claro e previsível.
+Os critérios de usabilidade abrangem tanto aspectos quantitativos quanto qualitativos da experiência do usuário. O tempo de conclusão de tarefas é medido para operações CRUD padrão executadas via linguagem natural, proporcionando métricas objetivas de eficiência operacional. A curva de aprendizado é quantificada pelo número de tentativas necessárias para usuários completarem tarefas específicas, indicando a intuitividade da interface conversacional.
 
-### 2.2.2 Arquitetura e Fluxo de Integração do Sistema
+### 2.2.3 Arquitetura e Fluxo de Integração do Sistema
 
 A arquitetura do sistema que será desenvolvida para este estudo envolverá múltiplas camadas que trabalharão de forma integrada para responder às consultas feitas pelo usuário em linguagem natural. Inicialmente, as consultas serão recebidas pela interface *web* e encaminhadas ao backend, onde o modelo de linguagem executará o processo de análise e interpretação.
 
 ![Arquitetura do Sistema](images/metodos/system-architecture.jpg)
 
-<!-- 📍 CORREÇÃO CITAÇÕES E REFERÊNCIAS - PROBLEMAS IDENTIFICADOS:
-
-PROBLEMA 1 - EXCESSO DE AUTOCITAÇÃO OU CITAÇÕES MUITO RECENTES:
-- VERIFICAR: Proporção de referências dos últimos 5 anos vs. clássicas da área
-- BALANCEAR: Incluir trabalhos seminais junto com pesquisas recentes
-
--->
-
-O fluxo completo de interação deverá ocorrer da seguinte maneira: ao receber uma consulta, o modelo de linguagem interpretará a intenção do usuário e gerará uma requisição estruturada que será validada antes de ser enviada à camada de integração. Essa camada utilizará diferentes abordagens (ORM, MCP ou conexão direta com o banco de dados) para acessar sistemas backend, como modelos de dados, APIs externas ou bancos de dados diretamente. Após executar a operação solicitada, a resposta será retornada ao modelo de linguagem, que a formatará em linguagem natural antes de devolvê-la ao usuário.
+O fluxo completo de interação deverá ocorrer da seguinte maneira: ao receber uma consulta, o modelo de linguagem interpretará a intenção do usuário e utilizará a implementação de client MCP para utilizar as ferramentas geradas pelo gerador de ferramentas MCP (servers) para acessar sistemas *backend* via API REST conforme a especificação OpenAPI. Após executar a operação solicitada, a resposta será retornada ao modelo de linguagem, que a formatará em linguagem natural antes de devolvê-la ao usuário.
 
 ![Diagrama de Workflow do Agente](images/metodos/workflow-integration.jpg)
 
-### 2.2.3 Coleta de Métricas via Testes *E2E*
+### 2.2.5 Metodologia de Testes Automatizados *End-to-End*
 
-Testes *End-to-End* (E2E) são essenciais para avaliar não apenas o desempenho e a segurança, mas também a experiência geral do usuário com sistemas integrados a LLMs. Os testes são automatizados, executados regularmente em ambiente controlado para assegurar resultados consistentes e comparáveis.
+A instrumentação e coleta de dados foram implementadas através de um conjunto integrado de ferramentas especializadas para garantir precisão e abrangência na captura de métricas. O Playwright Test Framework foi configurado para capturar métricas de performance via Performance API, proporcionando medições precisas de latência e throughput em condições reais de uso.
 
-Os testes envolvem:
-- Avaliação detalhada da performance, incluindo tempos totais de resposta, tempo específico do processamento pelo modelo de linguagem e latência da rede.
-- Análise da confiabilidade através da taxa de sucesso das requisições e frequência de erros críticos e não críticos.
-- Avaliação de segurança utilizando técnicas de *red teaming*, incluindo a tentativa sistemática de exploração de vulnerabilidades com injeção de *prompts* e validação dos controles de acesso.
-- Mensuração da experiência do usuário, utilizando avaliações qualitativas da clareza das respostas e pesquisas estruturadas de satisfação com escalas Likert.
-
-Os testes E2E são executados de forma automatizada em ambiente controlado, simulando diferentes cenários de uso e condições de carga, permitindo uma avaliação objetiva e reproduzível de cada abordagem de integração.
-
-Esta padronização da coleta de métricas via testes E2E garante que as diferenças observadas entre as abordagens sejam resultado direto das suas características de implementação, e não de variações na experiência do usuário ou na forma de coleta de dados.
-
-Em seguida, os testes são executados automaticamente, variando desde consultas simples até cenários complexos e ataques adversários simulados. As métricas obtidas são automaticamente registradas para garantir uma coleta padronizada e confiável dos dados. Finalmente, uma análise automatizada gera relatórios detalhados, permitindo uma comparação objetiva e precisa entre as diferentes abordagens implementadas.
+Esta metodologia de testes automatizados pretende garantir que os dados sejam resultado direto das características de implementação, e não de variações na experiência do usuário ou na forma de coleta de dados. A instrumentação detalhada permite análise reproduzível e comparação objetiva entre diferentes estratégias de integração, estabelecendo uma base empírica sólida para as conclusões científicas da pesquisa.
 
 ## 3. DESENVOLVIMENTO
 
@@ -249,7 +188,7 @@ A implementação da solução OpenAPI-MCP foi estruturada seguindo uma abordage
 
 ### 3.1 Gerador Automático de Servidores MCP (mcp-openapi-server)
 
-O desenvolvimento do gerador automático representa o núcleo da inovação proposta, resolvendo o problema fundamental da necessidade de desenvolvimento manual de integrações personalizadas para cada API externa. A arquitetura foi concebida em três camadas distintas e interconectadas: a camada de análise OpenAPI, responsável pelo _parsing_ e validação de especificações OpenAPI 3.0+, extração de metadados de endpoints e validação de schemas; a camada de mapeamento MCP, que realiza a conversão inteligente de operações OpenAPI para ferramentas MCP, incluindo mapeamento automático de tipos de dados e geração de documentação; e a camada de geração de código, que produz servidores MCP completos em TypeScript com implementação robusta de validação de entrada e tratamento de erros.
+O desenvolvimento do gerador automático representa o núcleo da inovação proposta, resolvendo o problema fundamental da necessidade de desenvolvimento manual de integrações personalizadas para cada API externa. A arquitetura foi concebida em três camadas distintas e interconectadas: a camada de análise OpenAPI, responsável pela análise sintática (*parsing*) e validação de especificações OpenAPI 3.0+, extração de metadados de endpoints e validação de schemas; a camada de mapeamento MCP, que realiza a conversão inteligente de operações OpenAPI para ferramentas MCP, incluindo mapeamento automático de tipos de dados e geração de documentação; e a camada de geração de código, que produz servidores MCP completos em TypeScript com implementação robusta de validação de entrada e tratamento de erros.
 
 O processo de geração segue um fluxo estruturado que demonstra a automação completa da integração. Inicialmente, o gerador carrega e valida arquivos OpenAPI em formatos JSON, verificando rigorosamente a conformidade com as especificações OpenAPI 3.0+. Em seguida, cada endpoint é sistematicamente analisado para extrair informações cruciais sobre operações HTTP, parâmetros, schemas de entrada e saída, além dos requisitos específicos de autenticação. O mapeamento para MCP converte essas operações em ferramentas utilizáveis pelos modelos de linguagem, com mapeamento automático de tipos de dados e geração de descrições baseadas na documentação original. Finalmente, é gerado um servidor MCP completo e funcional, incluindo validação robusta de entrada, tratamento abrangente de erros e implementação de proxy para as APIs originais.
 

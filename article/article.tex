@@ -125,13 +125,13 @@ implementação de uma prova de conceito que inclui um gerador automático
 de servidores MCP a partir de especificações OpenAPI, um cliente de chat
 capaz de gerenciar múltiplos servidores MCP simultaneamente, e
 aplicações de teste para validação da abordagem. Foram aplicados testes
-automatizados end-to-end, com ênfase em métricas de robustez, segurança
-(incluindo red teaming e injeção de prompts) e usabilidade. Os
-resultados demonstram a viabilidade e eficácia da integração
-OpenAPI-MCP, fornecendo uma análise fundamentada sobre os benefícios,
-desafios e limitações desta abordagem para a integração de agentes
-conversacionais em sistemas complexos, promovendo acessibilidade,
-usabilidade e confiabilidade.
+automatizados \emph{end-to-end}, com ênfase em métricas de robustez,
+segurança (incluindo \emph{red teaming} e injeção de \emph{prompts}) e
+usabilidade. Os resultados demonstram a viabilidade e eficácia da
+integração OpenAPI-MCP, fornecendo uma análise fundamentada sobre os
+benefícios, desafios e limitações desta abordagem para a integração de
+agentes conversacionais em sistemas complexos, promovendo
+acessibilidade, usabilidade e confiabilidade.
 
 \textbf{Palavras-chave:} agente conversacional, integração de sistemas,
 inteligência artificial, OpenAPI, Model Context Protocol, segurança,
@@ -149,7 +149,7 @@ pelas soluções web modernas (RAPP et al., 2018) (KOCABALLI et al.,
 2019). Nesse contexto, a ascensão dos Modelos de Linguagem de Grande
 Escala (LLMs), como os desenvolvidos por OpenAI, Anthropic e Google, tem
 impulsionado o desenvolvimento de agentes conversacionais mais avançados
-e adaptáveis (ANTHROPIC, 2024a; OPENAI, 2022). Nos últimos anos, avanços
+e adaptáveis (ANTHROPIC, 2024; OPENAI, 2022). Nos últimos anos, avanços
 em modelos baseados em Transformer, como o BERT (2018), que aprimorou a
 compreensão textual, e o GPT-3 (2020), que ampliou as capacidades
 generativas e o aprendizado com poucos exemplos (\emph{few-shot}),
@@ -218,253 +218,110 @@ Inicialmente, será conduzida uma revisão sistemática da literatura,
 consolidando conhecimentos científicos sobre integração OpenAPI-MCP e
 embasando teoricamente a fase experimental. Na sequência, a estratégia
 será implementada e testada por meio de uma prova de conceito
-abrangente, incluindo o desenvolvimento de um gerador automático de
-servidores MCP, um cliente de chat para gerenciamento de múltiplos
-servidores, e aplicações de teste para validação da abordagem.
+abrangente, incluindo a) o desenvolvimento de um gerador automático de
+servidores MCP, b) um cliente de chat para gerenciamento de múltiplos
+servidores, c) aplicações de teste de ponta a ponta para validação da
+abordagem e d) geração de métricas de avaliação para medir desempenho,
+segurança, facilidade de implementação, manutenibilidade e experiência
+do usuário.
 
-Os critérios de avaliação definidos incluem desempenho, segurança,
-facilidade de implementação, manutenibilidade e experiência do usuário.
-Para assegurar resultados objetivos e reproduzíveis, os testes incluirão
-análises automatizadas end-to-end, medidas de robustez e segurança (como
-testes de red teaming e proteção contra injeção de prompts) e avaliações
-qualitativas de usabilidade. Os resultados serão sistematicamente
-documentados e analisados, permitindo identificar desafios, vantagens e
-limitações intrínsecas à integração OpenAPI-MCP e demonstrando sua
-aplicabilidade prática para diferentes contextos de uso.
+Para assegurar resultados objetivos e reproduzíveis, os testes serão
+automatizados utilizando testes \emph{end-to-end}, aplicando medidas de
+robustez e segurança (como testes de \emph{red teaming} e proteção
+contra injeção de \emph{prompts}) e avaliações qualitativas de
+usabilidade. Os resultados serão sistematicamente documentados e
+analisados, permitindo identificar desafios, vantagens e limitações
+intrínsecas à integração OpenAPI-MCP e demonstrando sua aplicabilidade
+prática para diferentes contextos de uso.
 
 \subsection{2.1 MATERIAIS}\label{materiais}
 
 Para garantir a rigorosidade científica e a reprodutibilidade dos
-experimentos conduzidos neste estudo, é essencial uma seleção criteriosa
-dos materiais e ferramentas utilizados. Esta seção detalha os recursos
-específicos empregados na condução desta pesquisa, justificando sua
-escolha baseada na eficiência, popularidade, robustez e aplicabilidade
-prática dentro do contexto dos agentes conversacionais e integração de
-sistemas.
+experimentos conduzidos neste estudo, foram selecionadas ferramentas
+específicas baseadas em critérios de robustez, popularidade acadêmica e
+aplicabilidade prática para desenvolvimento da prova de conceito.
 
-\subsubsection{2.1.1 NODE.JS PARA DESENVOLVIMENTO DAS PROVAS DE
-CONCEITO}\label{node.js-para-desenvolvimento-das-provas-de-conceito}
+\subsubsection{2.1.1 PLATAFORMA DE
+DESENVOLVIMENTO}\label{plataforma-de-desenvolvimento}
 
-Node.js foi escolhido como plataforma principal para o desenvolvimento
-das provas de conceito devido à sua comprovada eficácia na integração de
-sistemas baseados em inteligência artificial (IA), especialmente com
-agentes conversacionais e LLMs. A plataforma é amplamente adotada devido
-à sua arquitetura orientada a eventos e capacidade de gerenciar
-eficientemente múltplas conexões simultâneas, essencial para aplicações
-que exigem respostas rápidas em tempo real (CHEREDNICHENKO et al.,
-2024).
+\textbf{Node.js (versão 20+)} foi selecionado como plataforma principal
+devido à sua arquitetura assíncrona orientada a eventos, essencial para
+aplicações que requerem processamento simultâneo de múltiplas
+requisições e integração eficiente com APIs de modelos de linguagem. A
+escolha foi fundamentada na comprovada capacidade da plataforma para
+gerenciar operações intensivas de IA e sua ampla adoção em projetos de
+integração com LLMs (BLOG, 2024; CHEREDNICHENKO et al., 2024).
 
-Relatórios da \emph{Red Hat} destacam que o uso eficiente da arquitetura
-assíncrona do Node.js possibilita a criação de agentes baseados em LLMs
-com alta performance e escalabilidade. Isso garante um gerenciamento
-eficiente de múltiplas operações paralelas, essencial para aplicações
-intensivas em IA e integração com APIs externas (BLOG, 2024).
+\subsubsection{2.1.2 FERRAMENTAS DE TESTE E
+VALIDAÇÃO}\label{ferramentas-de-teste-e-validauxe7uxe3o}
 
-\subsubsection{\texorpdfstring{2.1.2 TESTES \emph{END-TO-END}
-(E2E)}{2.1.2 TESTES END-TO-END (E2E)}}\label{testes-end-to-end-e2e}
+\textbf{Playwright} foi utilizado para implementação de testes
+automatizados \emph{end-to-end} (E2E), permitindo simulação precisa de
+interações do usuário e validação de funcionalidades em ambiente
+controlado. Para avaliação de segurança, foram implementadas técnicas de
+\emph{red teaming} - testes adversários sistemáticos que simulam ataques
+de injeção de \emph{prompts} e tentativas de \emph{jailbreak}. O
+\emph{Framework} de Gerenciamento de Riscos de IA do NIST (OPREA;
+VASSILEV, 2023) e as diretrizes da OWASP (JOHN et al., 2025) orientaram
+a definição dos cenários de teste, considerando que injeções de
+\emph{prompt} representam ameaças críticas em sistemas LLM com acesso a
+dados sensíveis.
 
-O \emph{Framework} de Gerenciamento de Riscos de IA do NIST (OPREA;
-VASSILEV, 2023) destaca a importância de avaliar o desempenho de
-sistemas de IA de forma abrangente, defendendo que testes de integração
-devem avaliar os sistemas de ponta a ponta para identificar erros de
-integração e garantir a precisão das respostas em cenários realistas.
-Testes rigorosos como esses não apenas identificam problemas de
-integração, mas também asseguram às partes interessadas que o sistema se
-comporta conforme o esperado em condições do mundo real.
+\subsubsection{2.1.3 MODELOS DE LINGUAGEM
+UTILIZADOS}\label{modelos-de-linguagem-utilizados}
 
-A injeção de \emph{prompt} representa um risco significativo em
-implantações de LLMs em nosso cenário, no qual o modelo possui acesso a
-dados e sistemas potencialmente críticos, incluindo, ocasionalmente,
-conexões diretas com dados brutos de banco de dados. O guia de riscos da
-OWASP (JOHN et al., 2025) classifica a injeção de \emph{prompt} como uma
-ameaça crítica à segurança, destacando a necessidade de procedimentos de
-teste rigorosos para garantir que agentes conversacionais baseados em
-LLMs não revelem inadvertidamente dados sensíveis ou contornem
-restrições do sistema quando expostos a entradas maliciosas.
-Recentemente, Wu et al.~(2023) (WU et al., 2023) demonstraram que
-ataques de \emph{jailbreak} --- um tipo avançado de injeção de
-\emph{prompt} --- podem burlar as salvaguardas éticas de modelos como o
-ChatGPT em até 67\% dos casos, gerando conteúdos prejudiciais como
-extorsão e desinformação.
+\textbf{OpenAI GPT-4} foi selecionado como modelo principal devido às
+suas capacidades avançadas de \emph{function calling} - funcionalidade
+que permite interpretação de linguagem natural e conversão automática em
+chamadas de funções estruturadas. Modelos desta família suportam janelas
+de contexto extensas (até 32.000 tokens no GPT-4) (OPENAI, 2023a),
+essenciais para manter conversas prolongadas e processar especificações
+OpenAPI complexas. A seleção baseou-se na performance comprovada em
+cenários de integração com sistemas externos e na disponibilidade de
+APIs robustas para desenvolvimento (OPENAI, 2023b).
 
-Com isso em mente, o uso de testes E2E pode ser utilizado para avaliar a
-resiliência da implementação ao simular entradas adversárias, processo
-conhecido como \emph{red teaming}. Segundo Inie et al.~(2025) (INIE;
-STRAY; DERCZYNSKI, 2025), o \emph{red teaming} desafia sistematicamente
-sistemas de IA com \emph{prompts} adversários projetados para testar
-seus limites e mecanismos de segurança. Ao encapsular consultas do
-usuário com lembretes de responsabilidade ética (e.g., ``Você deve ser
-um ChatGPT responsável''), o método reduziu a taxa de sucesso de
-\emph{jailbreaks} para 19\%, mantendo a funcionalidade padrão do modelo
---- um resultado validado através de testes E2E em 540 cenários
-adversarialmente projetados (WU et al., 2023).
+\subsubsection{2.1.4 FERRAMENTAS DE
+INTEGRAÇÃO}\label{ferramentas-de-integrauxe7uxe3o}
 
-\subsubsection{2.1.3 MODELOS DE LINGUAGEM DE GRANDE ESCALA
-(LLMs)}\label{modelos-de-linguagem-de-grande-escala-llms}
+\textbf{OpenAPI 3.0+} foi utilizado como especificação padrão para
+definição de contratos de API, proporcionando documentação estruturada e
+interoperabilidade entre sistemas. Sua ampla adoção como padrão da
+indústria e capacidade de descrever esquemas de autenticação (OAuth, API
+Key, Bearer Token) tornam-no adequado para integração com agentes
+conversacionais (OPENAPI INITIATIVE, 2023).
 
-Os LLMs, incluindo tecnologias como OpenAI GPT, Anthropic e modelos
-disponibilizados pela Google, são essenciais neste estudo devido à sua
-capacidade de interpretar e gerar linguagem natural de forma avançada e
-eficaz. Estes modelos foram selecionados por sua performance comprovada
-e ampla adoção em pesquisas acadêmicas e no mercado corporativo,
-proporcionando um sólido embasamento para as funcionalidades de
-interação do agente conversacional.
-
-\paragraph{2.1.3.1 HISTÓRICO DO DESENVOLVIMENTO DE LLMS
-(2018--2023)}\label{histuxf3rico-do-desenvolvimento-de-llms-20182023}
-
-Nos últimos cinco anos, os LLMs evoluíram rapidamente, a partir da
-arquitetura Transformer. O lançamento do BERT (2018) mostrou avanços em
-compreensão textual, enquanto a série GPT demonstrou fortes capacidades
-generativas. O GPT-3 (2020), com 175 bilhões de parâmetros, evidenciou
-habilidades emergentes de aprendizado com poucos exemplos
-(\emph{few-shot}), ampliando o escopo de tarefas possíveis por meio de
-simples instruções em linguagem natural (BROWN et al., 2020).
-
-A partir de 2022, o foco da pesquisa passou a ser o aprimoramento do
-raciocínio e alinhamento dos LLMs. Técnicas como \emph{Chain-of-Thought
-prompting} permitiram que os modelos resolvessem problemas complexos de
-forma mais eficaz (WEI et al., 2023). O uso de Reinforcement Learning
-from Human Feedback (RLHF), como nos modelos InstructGPT e
-posteriormente ChatGPT, melhorou a capacidade dos LLMs de seguir
-instruções com mais segurança e consistência. Esses avanços
-estabeleceram as bases para o uso dos LLMs como interfaces
-conversacionais robustas em cenários de integração com sistemas (OPENAI,
-2022).
-
-\paragraph{2.1.3.2 EXTENSÃO DE JANELA DE
-CONTEXTO}\label{extensuxe3o-de-janela-de-contexto}
-
-Com o avanço dos modelos, observou-se uma tendência significativa no
-aumento das janelas de contexto --- a quantidade de tokens que um LLM
-pode processar em uma única interação. Modelos como o Claude 3 já
-alcançam até 100.000 tokens (ANTHROPIC, 2024b), enquanto versões
-estendidas do GPT-4 suportam até 32.000 tokens (OPENAI, 2023a). Esse
-aumento permite que os modelos processem documentos extensos, múltiplas
-conversas ou grandes volumes de dados em uma única solicitação,
-superando, em muitos casos, abordagens tradicionais baseadas em
-retrieval-augmented generation (RAG), especialmente em tarefas que
-exigem síntese contextual profunda.
-
-A capacidade de manter longos contextos é altamente benéfica para
-integração com sistemas -- um LLM pode manter diálogos prolongados,
-lembrar estados extensos ou ingerir bancos de dados e logs inteiros de
-uma só vez. No entanto, isso traz custos computacionais consideráveis, e
-há esforços contínuos para utilizar essas janelas maiores de forma
-eficiente (por exemplo, condensando ou focando a atenção nas partes mais
-relevantes) (ANTHROPIC, 2024b; OPENAI, 2023a).
-
-\paragraph{2.1.3.3 RACIOCÍNIO APRIMORADO E COMPREENSÃO PROFUNDA (DEEP
-THINKING)}\label{raciocuxednio-aprimorado-e-compreensuxe3o-profunda-deep-thinking}
-
-Os LLMs mais recentes apresentam avanços significativos em raciocínio,
-planejamento e resolução de tarefas complexas. Técnicas como o
-\emph{Chain-of-Thought prompting}, que induz os modelos a pensar em
-etapas intermediárias, mostraram ganhos substanciais em tarefas que
-exigem múltiplos passos lógicos (WEI et al., 2023). Além disso,
-abordagens como \emph{tree-of-thought} e \emph{self-reflection} permitem
-que os modelos reavaliem suas respostas e melhorem sua própria
-performance iterativamente. Esses avanços tornam os LLMs mais confiáveis
-para tarefas que exigem raciocínio profundo e tomada de decisão
-estruturada, fundamentais para integração com sistemas complexos (YAO et
-al., 2023).
-
-\paragraph{2.1.3.4 USO DE FERRAMENTAS EM TEMPO REAL E INTERAÇÃO COM
-SISTEMAS}\label{uso-de-ferramentas-em-tempo-real-e-interauxe7uxe3o-com-sistemas}
-
-O avanço dos LLMs em ambientes de produção foi impulsionado por recursos
-como o \emph{function calling} da OpenAI. Essa funcionalidade permite
-que os modelos interpretem solicitações em linguagem natural e as
-convertam em chamadas de funções estruturadas, conforme definido pelo
-desenvolvedor. Por exemplo, ao receber uma instrução como ``agende uma
-reunião para amanhã às 14h'', o modelo pode gerar uma chamada de função
-com os parâmetros apropriados para interagir com uma API de calendário,
-sem depender de engenharia de \emph{prompt} ou extração de texto
-(OPENAI, 2023b). Essa abordagem, melhora significativamente a
-confiabilidade em cenários de integração, permitindo que o modelo
-obtenha dados estruturados de bancos de dados, chame APIs de negócios,
-envie e-mails, entre outras ações, em vez de apenas tentar adivinhar a
-resposta (OPENAI, 2023b).
-
-Complementando essa capacidade, o \emph{Model Context Protocol} (MCP),
-desenvolvido pela Anthropic (ANTHROPIC, 2024a; MODEL CONTEXT PROTOCOL
-TEAM, 2025), oferece um padrão aberto para conectar LLMs a diversas
-fontes de dados e ferramentas. O MCP estabelece uma arquitetura
-cliente-servidor onde os modelos (clientes) podem acessar servidores MCP
-que expõem recursos, \emph{prompts} e ferramentas de forma padronizada.
-Isso elimina a necessidade de integrações personalizadas para cada fonte
-de dados, promovendo uma interoperabilidade mais ampla e sustentável.
-
-\subsubsection{2.1.4 FERRAMENTAS ESPECÍFICAS DE
-INTEGRAÇÃO}\label{ferramentas-especuxedficas-de-integrauxe7uxe3o}
-
-A pesquisa utiliza ferramentas específicas para a integração dos agentes
-conversacionais com soluções \emph{web} através da abordagem
-OpenAPI-MCP:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{OpenAPI para Definição de Contratos de API:} foi selecionado
-  devido à sua ampla adoção como padrão da indústria para definição de
-  interfaces \emph{RESTful}, sendo reconhecido por facilitar a
-  documentação consistente e interoperabilidade entre sistemas. Sua
-  especificação permite descrever de maneira clara e estruturada os
-  contratos das APIs, incluindo esquemas de autenticação como OAuth e
-  chaves de API, essenciais para declarar uniformemente os requisitos de
-  segurança das interfaces dos agentes conversacionais (OPENAPI
-  INITIATIVE, 2023; THE POSTMAN TEAM, 2023).
-\end{itemize}
-
-A relevância do OpenAPI para agentes baseados em LLM reside na
-possibilidade de fornecer uma descrição estruturada das capacidades
-disponíveis para o agente. Por meio de uma definição formal e
-padronizada, os modelos de linguagem podem interpretar diretamente as
-interfaces, compreendendo quais operações podem ser solicitadas e como
-realizá-las com segurança e eficiência. Essa abordagem já é aplicada por
-sistemas como os plugins do ChatGPT, demonstrando sua efetividade para
-integração direta entre LLMs e APIs externas (OPENAI, 2023c).
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Model Context Protocol (MCP):} é um padrão aberto emergente
-  para integração entre agentes de IA e sistemas externos, com o
-  objetivo de padronizar como modelos acessam dados, serviços e
-  ferramentas. Ele fornece uma arquitetura clara baseada em clientes e
-  servidores, permitindo que agentes conversem com fontes externas de
-  forma segura, modular e escalável. Desde seu lançamento aberto, no
-  final de novembro de 2024, o protocolo ganhou tração significativa com
-  a criação de diversos servidores prontos para PostgreSQL, GitHub,
-  Slack, entre outros, além de SDKs em múltiplas linguagens (ANTHROPIC,
-  2024c; MODEL CONTEXT PROTOCOL CONTRIBUTORS, 2024).
-\end{itemize}
-
-A adoção crescente é impulsionada pela comunidade ativa, o que demonstra
-o potencial do MCP como um padrão de integração para sistemas baseados
-em LLMs. Sua proposta de `porta universal' para conectar agentes a
-ferramentas oferece flexibilidade e segurança: características
-fundamentais quando agentes com poder de raciocínio, como LLMs, precisam
-acessar recursos sensíveis de forma controlada e auditável (ANTHROPIC,
-2024c).
+\textbf{Model Context Protocol (MCP)} foi implementado como protocolo de
+comunicação entre modelos de linguagem e sistemas externos. Desenvolvido
+pela Anthropic e lançado como padrão aberto em novembro de 2024, o MCP
+oferece arquitetura cliente-servidor padronizada que elimina a
+necessidade de integrações personalizadas para cada fonte de dados
+(ANTHROPIC, 2024; MODEL CONTEXT PROTOCOL CONTRIBUTORS, 2024). O advento
+deste protocolo possibilitou a interface de comunicação padronizada
+entre modelos de linguagem e sistemas externos, facilitando a integração
+e a interoperabilidade entre diferentes fontes de dados e modelos de
+linguagem.
 
 \subsection{2.2 MÉTODOS}\label{muxe9todos}
 
-Para assegurar a rigorosidade científica e garantir a reprodutibilidade
-dos experimentos conduzidos neste estudo, foi desenvolvida uma interface
-simples e minimalista para avaliar a integração OpenAPI-MCP. Essa
-padronização viabiliza que os testes executados sob a integração sejam
-realizados de forma justa e objetiva, minimizando variáveis relacionadas
-à interface que poderiam interferir nos resultados finais.
+Para assegurar a validade científica e a reprodutibilidade dos
+experimentos, foi fundamental estabelecer um controle rigoroso das
+variáveis experimentais. A implementação de uma interface padronizada
+constitui elemento metodológico essencial para eliminar diferenças de
+experiência do usuário que poderiam contaminar os resultados
+experimentais. Esta padronização garante que as diferenças observadas no
+desempenho sejam atribuíveis exclusivamente às tecnologias de integração
+testadas (OpenAPI-MCP), e não a variações na interface ou design de
+interação. Sem este controle experimental, seria impossível determinar
+se melhorias na usabilidade decorrem da abordagem proposta ou de fatores
+externos relacionados ao design da interface.
 
-\subsubsection{2.2.1 Interface Comum de
-Usuário}\label{interface-comum-de-usuuxe1rio}
+\subsubsection{2.2.1 Interface Padronizada de
+Usuário}\label{interface-padronizada-de-usuuxe1rio}
 
-A interface comum consiste em uma aplicação \emph{web} simples de chat,
+A interface comum consiste em uma aplicação web simples de chat,
 desenvolvida utilizando HTML e JavaScript. A interface foi projetada de
 forma minimalista, visando uma experiência consistente e objetiva,
-independentemente de qual abordagem que fosse utilizada para a
-integração.
+independentemente da abordagem utilizada para a integração.
 
 \paragraph{2.2.1.1 DESIGN DA INTERFACE}\label{design-da-interface}
 
@@ -484,17 +341,53 @@ contínua e intuitiva.
 \caption{Interface do Usuário}
 \end{figure}
 
-\paragraph{2.2.1.2 Comunicação com
-Backend}\label{comunicauxe7uxe3o-com-backend}
+\paragraph{\texorpdfstring{2.2.1.2 Comunicação com
+\emph{Backend}}{2.2.1.2 Comunicação com Backend}}\label{comunicauxe7uxe3o-com-backend}
 
-A comunicação entre frontend e backend será estabelecida por meio de uma
-API REST síncrona, simplificando o processo de envio e retorno de
-mensagens. Cada consulta feita pelo usuário gerará uma única requisição
-ao backend que processará integralmente essa requisição utilizando um
-LLM e devolverá uma resposta após concluir o processamento, mantendo o
-fluxo de comunicação claro e previsível.
+A comunicação entre \emph{frontend} e \emph{backend} será estabelecida
+por meio de uma API REST síncrona, simplificando o processo de envio e
+retorno de mensagens. Cada consulta feita pelo usuário gerará uma única
+requisição ao \emph{backend} que processará integralmente essa
+requisição utilizando um LLM e devolverá uma resposta após concluir o
+processamento, mantendo o fluxo de comunicação claro e previsível.
 
-\subsubsection{2.2.2 Arquitetura e Fluxo de Integração do
+\subsubsection{2.2.2 Critérios de Avaliação e Operacionalização de
+Métricas}\label{crituxe9rios-de-avaliauxe7uxe3o-e-operacionalizauxe7uxe3o-de-muxe9tricas}
+
+Para garantir uma avaliação científica rigorosa, foram definidos
+critérios objetivos de avaliação com métricas específicas quantitativas
+e qualitativas, operacionalizados através de instrumentação técnica
+precisa e metodologias de coleta padronizadas.
+
+Os critérios de desempenho compreendem quatro métricas fundamentais. O
+tempo de resposta total é medido em milissegundos utilizando timestamps
+precisos via Performance API do navegador, fornecendo dados objetivos
+sobre a latência percebida pelo usuário final. A taxa de sucesso de
+operações é calculada como percentual de requisições bem-sucedidas
+versus falhas, com categorização sistemática de tipos de erro para
+identificação de padrões de falha. O \emph{throughput} é quantificado
+como número de operações processadas por segundo em cenários de carga
+controlada, permitindo avaliação da capacidade de processamento
+simultâneo.
+
+Os critérios de segurança focam na robustez contra ataques adversários e
+validação de entrada. A resistência a injeção de \emph{prompts} é
+mensurada como percentual de tentativas maliciosas bloqueadas durante
+testes de \emph{red teaming}, implementados conforme o Framework de
+Gerenciamento de Riscos de IA do NIST (OPREA; VASSILEV, 2023) e as
+diretrizes da OWASP (JOHN et al., 2025), considerando que injeções de
+\emph{prompt} representam ameaças críticas em sistemas LLM com acesso a
+dados sensíveis.
+
+Os critérios de usabilidade abrangem tanto aspectos quantitativos quanto
+qualitativos da experiência do usuário. O tempo de conclusão de tarefas
+é medido para operações CRUD padrão executadas via linguagem natural,
+proporcionando métricas objetivas de eficiência operacional. A curva de
+aprendizado é quantificada pelo número de tentativas necessárias para
+usuários completarem tarefas específicas, indicando a intuitividade da
+interface conversacional.
+
+\subsubsection{2.2.3 Arquitetura e Fluxo de Integração do
 Sistema}\label{arquitetura-e-fluxo-de-integrauxe7uxe3o-do-sistema}
 
 A arquitetura do sistema que será desenvolvida para este estudo
@@ -512,13 +405,12 @@ de análise e interpretação.
 
 O fluxo completo de interação deverá ocorrer da seguinte maneira: ao
 receber uma consulta, o modelo de linguagem interpretará a intenção do
-usuário e gerará uma requisição estruturada que será validada antes de
-ser enviada à camada de integração. Essa camada utilizará diferentes
-abordagens (ORM, MCP ou conexão direta com o banco de dados) para
-acessar sistemas backend, como modelos de dados, APIs externas ou bancos
-de dados diretamente. Após executar a operação solicitada, a resposta
-será retornada ao modelo de linguagem, que a formatará em linguagem
-natural antes de devolvê-la ao usuário.
+usuário e utilizará a implementação de client MCP para utilizar as
+ferramentas geradas pelo gerador de ferramentas MCP (servers) para
+acessar sistemas \emph{backend} via API REST conforme a especificação
+OpenAPI. Após executar a operação solicitada, a resposta será retornada
+ao modelo de linguagem, que a formatará em linguagem natural antes de
+devolvê-la ao usuário.
 
 \begin{figure}
 \centering
@@ -526,43 +418,22 @@ natural antes de devolvê-la ao usuário.
 \caption{Diagrama de Workflow do Agente}
 \end{figure}
 
-\subsubsection{2.2.3 Coleta de Métricas via Testes
-E2E}\label{coleta-de-muxe9tricas-via-testes-e2e}
+\subsubsection{\texorpdfstring{2.2.5 Metodologia de Testes Automatizados
+\emph{End-to-End}}{2.2.5 Metodologia de Testes Automatizados End-to-End}}\label{metodologia-de-testes-automatizados-end-to-end}
 
-Testes End-to-End (E2E) são essenciais para avaliar não apenas o
-desempenho e a segurança, mas também a experiência geral do usuário com
-sistemas integrados a LLMs. Os testes são automatizados, executados
-regularmente em ambiente controlado para assegurar resultados
-consistentes e comparáveis.
+A instrumentação e coleta de dados foram implementadas através de um
+conjunto integrado de ferramentas especializadas para garantir precisão
+e abrangência na captura de métricas. O Playwright Test Framework foi
+configurado para capturar métricas de performance via Performance API,
+proporcionando medições precisas de latência e throughput em condições
+reais de uso.
 
-Os testes envolvem: - Avaliação detalhada da performance, incluindo
-tempos totais de resposta, tempo específico do processamento pelo modelo
-de linguagem e latência da rede. - Análise da confiabilidade através da
-taxa de sucesso das requisições e frequência de erros críticos e não
-críticos. - Avaliação de segurança utilizando técnicas de \emph{red
-teaming}, incluindo a tentativa sistemática de exploração de
-vulnerabilidades com injeção de \emph{prompts} e validação dos controles
-de acesso. - Mensuração da experiência do usuário, utilizando avaliações
-qualitativas da clareza das respostas e pesquisas estruturadas de
-satisfação com escalas Likert.
-
-Os testes E2E são executados de forma automatizada em ambiente
-controlado, simulando diferentes cenários de uso e condições de carga,
-permitindo uma avaliação objetiva e reproduzível de cada abordagem de
-integração.
-
-Esta padronização da coleta de métricas via testes E2E garante que as
-diferenças observadas entre as abordagens sejam resultado direto das
-suas características de implementação, e não de variações na experiência
-do usuário ou na forma de coleta de dados.
-
-Em seguida, os testes são executados automaticamente, variando desde
-consultas simples até cenários complexos e ataques adversários
-simulados. As métricas obtidas são automaticamente registradas para
-garantir uma coleta padronizada e confiável dos dados. Finalmente, uma
-análise automatizada gera relatórios detalhados, permitindo uma
-comparação objetiva e precisa entre as diferentes abordagens
-implementadas.
+Esta metodologia de testes automatizados pretende garantir que os dados
+sejam resultado direto das características de implementação, e não de
+variações na experiência do usuário ou na forma de coleta de dados. A
+instrumentação detalhada permite análise reproduzível e comparação
+objetiva entre diferentes estratégias de integração, estabelecendo uma
+base empírica sólida para as conclusões científicas da pesquisa.
 
 \subsection{3. DESENVOLVIMENTO}\label{desenvolvimento}
 
@@ -583,12 +454,12 @@ O desenvolvimento do gerador automático representa o núcleo da inovação
 proposta, resolvendo o problema fundamental da necessidade de
 desenvolvimento manual de integrações personalizadas para cada API
 externa. A arquitetura foi concebida em três camadas distintas e
-interconectadas: a camada de análise OpenAPI, responsável pelo
-\emph{parsing} e validação de especificações OpenAPI 3.0+, extração de
-metadados de endpoints e validação de schemas; a camada de mapeamento
-MCP, que realiza a conversão inteligente de operações OpenAPI para
-ferramentas MCP, incluindo mapeamento automático de tipos de dados e
-geração de documentação; e a camada de geração de código, que produz
+interconectadas: a camada de análise OpenAPI, responsável pela análise
+sintática (\emph{parsing}) e validação de especificações OpenAPI 3.0+,
+extração de metadados de endpoints e validação de schemas; a camada de
+mapeamento MCP, que realiza a conversão inteligente de operações OpenAPI
+para ferramentas MCP, incluindo mapeamento automático de tipos de dados
+e geração de documentação; e a camada de geração de código, que produz
 servidores MCP completos em TypeScript com implementação robusta de
 validação de entrada e tratamento de erros.
 
@@ -712,11 +583,12 @@ abordar múltiplas dimensões críticas: funcionalidade, segurança e
 performance. Os testes de funcionalidade validam sistematicamente
 operações CRUD via comandos em linguagem natural e coordenação entre
 múltiplos servidores MCP, enquanto os testes de segurança implementam
-uma abordagem de red teaming com tentativas sistemáticas de injeção
-maliciosa de prompts e verificação de controles de acesso. Os testes de
-performance medem objetivamente latências de resposta, capacidade de
-processamento simultâneo e consumo de recursos computacionais,
-garantindo uma avaliação objetiva, reproduzível e comparável.
+uma abordagem de \emph{red teaming} com tentativas sistemáticas de
+injeção maliciosa de \emph{prompts} e verificação de controles de
+acesso. Os testes de performance medem objetivamente latências de
+resposta, capacidade de processamento simultâneo e consumo de recursos
+computacionais, garantindo uma avaliação objetiva, reproduzível e
+comparável.
 
 Esta implementação estabelece uma metodologia de avaliação que pode ser
 replicada por pesquisadores futuros, com coleta automatizada de métricas
@@ -836,13 +708,13 @@ valiosa para democratizar o acesso a sistemas técnicos complexos.
 \subsection{4.4 Robustez e Segurança da
 Implementação}\label{robustez-e-seguranuxe7a-da-implementauxe7uxe3o}
 
-A avaliação de segurança, conduzida através de técnicas de red teaming e
-testes automatizados de adversário, revelou uma implementação com
-proteções adequadas contra vetores de ataque comuns. O sistema
-demonstrou resistência significativa a tentativas de injeção de prompt,
-com mecanismos de validação em múltiplas camadas que detectam e
-bloqueiam tentativas maliciosas de manipulação do comportamento do
-modelo.
+A avaliação de segurança, conduzida através de técnicas de \emph{red
+teaming} e testes automatizados de adversário, revelou uma implementação
+com proteções adequadas contra vetores de ataque comuns. O sistema
+demonstrou resistência significativa a tentativas de injeção de
+\emph{prompt}, com mecanismos de validação em múltiplas camadas que
+detectam e bloqueiam tentativas maliciosas de manipulação do
+comportamento do modelo.
 
 A implementação de validação de entrada baseada em schemas OpenAPI
 provou-se eficaz contra entradas mal-formadas, proporcionando uma
@@ -965,7 +837,7 @@ individualmente)}\label{atendimento-aos-objetivos-especuxedficos-cada-um-individ
   gerenciamento eficiente de múltiplos servidores simultaneamente.
 \item
   \textbf{Objetivo 3: Avaliação através de testes} → Os testes
-  automatizados end-to-end validaram a performance, segurança e
+  automatizados \emph{end-to-end} validaram a performance, segurança e
   usabilidade da solução proposta.
 \item
   \textbf{Objetivo 4: Análise de benefícios/limitações} → Os resultados
@@ -1036,31 +908,16 @@ multi-servidor e validação através de cenários de teste realistas.
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{0}{1}
-\bibitem[\citeproctext]{ref-anthropic2024context}
-ANTHROPIC. \textbf{Anthropic Now Offers 100K Context Windows for Claude
-3 Models}. Disponível em:
-\textless{}\url{https://www.anthropic.com/news/100k-context-windows}\textgreater.
-
 \bibitem[\citeproctext]{ref-anthropic2024mcp}
 ANTHROPIC. \textbf{Model Context Protocol (MCP): A Standard for AI
 Context Integration}. Disponível em:
 \textless{}\url{https://www.anthropic.com/news/model-context-protocol}\textgreater.
-Acesso em: 12 abr. 2025a.
-
-\bibitem[\citeproctext]{ref-Anthropic2024}
-ANTHROPIC. \textbf{{Introducing the Model Context Protocol}}. Anthropic
-News, nov. c2024. Disponível em:
-\textless{}\url{https://www.anthropic.com/news/model-context-protocol}\textgreater{}
+Acesso em: 12 abr. 2025.
 
 \bibitem[\citeproctext]{ref-RedHat2024LLMNode}
 BLOG, R. H. D. \textbf{Building LLM Agents with Node.js}.
 \url{https://developers.redhat.com/blog/2024/10/25/building-agents-large-language-modelsllms-and-nodejs},
 2024.
-
-\bibitem[\citeproctext]{ref-brown2020languagemodelsfewshotlearners}
-BROWN, T. B. et al. \textbf{Language Models are Few-Shot Learners}.,
-2020. Disponível em:
-\textless{}\url{https://arxiv.org/abs/2005.14165}\textgreater{}
 
 \bibitem[\citeproctext]{ref-cherednichenko:hal-04545073}
 CHEREDNICHENKO, O. et al. \textbf{Selection of Large Language Model for
@@ -1087,12 +944,6 @@ Graphics and Interactive Techniques. \textbf{Anais}...2024. Disponível
 em:
 \textless{}\url{https://www.researchgate.net/publication/335223260_The_Effects_of_Continuous_Conversation_and_Task_Complexity_on_Usability_of_an_AI-Based_Conversational_Agent_in_Smart_Home_Environments}\textgreater{}
 
-\bibitem[\citeproctext]{ref-inie2025summon}
-INIE, N.; STRAY, J.; DERCZYNSKI, L.
-\href{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314658}{Summon
-a demon and bind it: A grounded theory of LLM red teaming}. \textbf{PloS
-one}, v. 20, n. 1, p. e0314658, 2025.
-
 \bibitem[\citeproctext]{ref-john2025owasp}
 JOHN, S. et al.
 \textbf{\href{https://genai.owasp.org/llmrisk/llm01-prompt-injection}{OWASP
@@ -1118,13 +969,6 @@ Documentation - Introduction}}. Online Documentation, 2024. Disponível
 em:
 \textless{}\url{https://modelcontextprotocol.io/introduction}\textgreater{}
 
-\bibitem[\citeproctext]{ref-mcp2025spec}
-MODEL CONTEXT PROTOCOL TEAM. \textbf{Model Context Protocol
-Specification}. {[}s.l.{]} Model Context Protocol, 26 mar. 2025.
-Disponível em:
-\textless{}\url{https://modelcontextprotocol.io/specification/2025-03-26/index}\textgreater.
-Acesso em: 12 abr. 2025.
-
 \bibitem[\citeproctext]{ref-openai2022instructgpt}
 OPENAI. \textbf{Aligning Language Models to Follow Instructions}.
 {[}s.l.{]} OpenAI, 27 jan. 2022. Disponível em:
@@ -1140,11 +984,6 @@ em:
 OPENAI. \textbf{Function Calling and Other API Updates}. Disponível em:
 \textless{}\url{https://openai.com/index/function-calling-and-other-api-updates/}\textgreater.
 Acesso em: 12 abr. 2025b.
-
-\bibitem[\citeproctext]{ref-OpenAI2023}
-OPENAI. \textbf{{ChatGPT plugins}}. OpenAI Product Blog, mar. c2023.
-Disponível em:
-\textless{}\url{https://openai.com/blog/chatgpt-plugins}\textgreater{}
 
 \bibitem[\citeproctext]{ref-OpenAPIInitiative2023}
 OPENAPI INITIATIVE. \textbf{{OpenAPI Specification - Getting Started}}.
@@ -1163,26 +1002,6 @@ RAPP, A. et al.
 for spatial needs: Routines, control and social competences of people
 with autism}. \textbf{International Journal of Human-Computer Studies},
 v. 120, p. 49--65, 2018.
-
-\bibitem[\citeproctext]{ref-Postman2023}
-THE POSTMAN TEAM. \textbf{{What is OpenAPI?}} Postman Blog, ago. 2023.
-Disponível em:
-\textless{}\url{https://blog.postman.com/what-is-openapi/}\textgreater{}
-
-\bibitem[\citeproctext]{ref-wei2023chainofthoughtpromptingelicitsreasoning}
-WEI, J. et al. \textbf{Chain-of-Thought Prompting Elicits Reasoning in
-Large Language Models}., 2023. Disponível em:
-\textless{}\url{https://arxiv.org/abs/2201.11903}\textgreater{}
-
-\bibitem[\citeproctext]{ref-wu2023defending}
-WU, F. et al.
-\href{https://www.researchsquare.com/article/rs-2873090/v1}{Defending
-chatgpt against jailbreak attack via self-reminder}. 2023.
-
-\bibitem[\citeproctext]{ref-yao2023treethoughtsdeliberateproblem}
-YAO, S. et al. \textbf{Tree of Thoughts: Deliberate Problem Solving with
-Large Language Models}., 2023. Disponível em:
-\textless{}\url{https://arxiv.org/abs/2305.10601}\textgreater{}
 
 \end{CSLReferences}
 

@@ -2,24 +2,6 @@
 title: "**TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA**"
 ---
 
-
-<!-- ### Artigo em produção - Checklist de produção
-
-- [ ] Edição do artigo
-  - [ ] Aplicar formatação da SATC
-    - [ ] Definir o template do .docx com o Word
-  - [x] Referências
-    - [x] Formatação ABNT
-- [ ] Escrita
-  - [x] Resumo
-  - [x] Introdução
-  - [x] Material e métodos
-  - [x] Revisão e entrega parcial (nota 4.5/5)
-  - [x] Desenvolvimento
-  - [x] Resultados e discussão
-  - [x] Considerações finais
-  - [ ] Revisão após finalizar o artigo -->
-
 **Lucas de Castro Zanoni**[^1]
 
 **Thyerri Fernandes Mezzari**[^2]
@@ -78,7 +60,7 @@ Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos 
 
 Para assegurar a validade científica e a reprodutibilidade dos experimentos, foi fundamental estabelecer um controle rigoroso das variáveis experimentais. A implementação de uma interface padronizada constitui elemento metodológico essencial para eliminar diferenças de experiência do usuário que poderiam contaminar os resultados experimentais. Esta padronização garante que as diferenças observadas no desempenho sejam atribuíveis exclusivamente às tecnologias de integração testadas (OpenAPI-MCP), e não a variações na interface ou design de interação. Sem este controle experimental, seria impossível determinar se melhorias na usabilidade decorrem da abordagem proposta ou de fatores externos relacionados ao design da interface.
 
-### 2.2.1 Interface Padronizada de Usuário
+### 2.2.1 INTERFACE PADRONIZADA DE USUÁRIO
 
 A interface comum consiste em uma aplicação web simples de chat, desenvolvida utilizando HTML e JavaScript. A interface foi projetada de forma minimalista, visando uma experiência consistente e objetiva, independentemente da abordagem utilizada para a integração.
 
@@ -90,11 +72,11 @@ A interface é composta por uma seção principal que exibe o histórico de mens
 
 A disposição visual apresentada na Figura 1 facilita o acompanhamento do diálogo, elemento crucial para a avaliação objetiva da experiência do usuário durante os testes experimentais. A separação clara entre mensagens do usuário e do agente permite identificação imediata do fluxo conversacional, enquanto o design minimalista elimina variáveis de confusão relacionadas à interface que poderiam comprometer a validade dos resultados.
 
-#### 2.2.1.2 Comunicação com *Backend*
+#### 2.2.1.2 COMUNICAÇÃO COM *BACKEND*
 
 A comunicação entre *frontend* e *backend* será estabelecida por meio de uma API REST síncrona, simplificando o processo de envio e retorno de mensagens. Cada consulta feita pelo usuário gerará uma única requisição ao *backend* que processará integralmente essa requisição utilizando um LLM e devolverá uma resposta após concluir o processamento, mantendo o fluxo de comunicação claro e previsível.
 
-### 2.2.2 Critérios de Avaliação e Operacionalização de Métricas
+### 2.2.2 CRITÉRIOS DE AVALIAÇÃO E OPERACIONALIZAÇÃO DE MÉTRICAS
 
 Para garantir uma avaliação científica rigorosa, foram definidos critérios objetivos de avaliação com métricas específicas quantitativas e qualitativas, operacionalizados através de instrumentação técnica precisa e metodologias de coleta padronizadas.
 
@@ -104,7 +86,7 @@ Os critérios de segurança focam na robustez contra ataques adversários e vali
 
 Os critérios de usabilidade abrangem tanto aspectos quantitativos quanto qualitativos da experiência do usuário. O tempo de conclusão de tarefas é medido para operações CRUD padrão executadas via linguagem natural, proporcionando métricas objetivas de eficiência operacional. A curva de aprendizado é quantificada pelo número de tentativas necessárias para usuários completarem tarefas específicas, indicando a intuitividade da interface conversacional.
 
-### 2.2.3 Arquitetura e Fluxo de Integração do Sistema
+### 2.2.3 ARQUITETURA E FLUXO DE INTEGRAÇÃO DO SISTEMA
 
 A arquitetura do sistema desenvolvida para este estudo envolve múltiplas camadas que trabalham de forma integrada para responder às consultas feitas pelo usuário em linguagem natural. Inicialmente, as consultas serão recebidas pela interface *web* e encaminhadas ao *backend*, onde o modelo de linguagem executará o processo de análise e interpretação.
 
@@ -118,7 +100,7 @@ O fluxo completo de interação deverá ocorrer da seguinte maneira: ao receber 
 
 O fluxo apresentado na Figura 3 demonstra a sequência metodológica que permite validação experimental da hipótese central da pesquisa. Cada etapa do workflow representa um ponto de medição onde métricas específicas podem ser coletadas, desde a latência de interpretação até a precisão da conversão de intenções em operações estruturadas.
 
-### 2.2.5 Metodologia de Testes Automatizados *End-to-End*
+### 2.2.5 METODOLOGIA DE TESTES AUTOMATIZADOS *END-TO-END*
 
 A instrumentação e coleta de dados foram implementadas através de um conjunto integrado de ferramentas especializadas para garantir precisão e abrangência na captura de métricas. O Playwright Test Framework foi configurado para capturar métricas de performance via Performance API, proporcionando medições precisas de latência e throughput em condições reais de uso.
 
@@ -128,11 +110,11 @@ Esta metodologia de testes automatizados pretende garantir que os dados sejam re
 
 A implementação da solução OpenAPI-MCP foi estruturada seguindo uma abordagem modular e integrada, compreendendo quatro componentes principais que trabalham em sinergia para demonstrar e validar a viabilidade da integração proposta. A arquitetura resultante engloba um gerador automático de servidores MCP a partir de especificações OpenAPI, um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente, aplicações de teste que simulam cenários reais de negócio, e uma suíte abrangente de testes automatizados para avaliação científica da solução.
 
-### 3.1 Desafios Metodológicos e Decisões de Design
+### 3.1 DESAFIOS METODOLÓGICOS E DECISÕES DE DESIGN
 
 O desenvolvimento da solução OpenAPI-MCP enfrentou desafios metodológicos fundamentais que exigiram decisões de design específicas para viabilizar a validação da hipótese de pesquisa. O principal desafio metodológico identificado reside na padronização de integrações heterogêneas de APIs, problema que tradicionalmente demanda desenvolvimento manual extensivo e customizado para cada sistema [@OpenAPIInitiative2023]. Esta problemática constitui uma barreira significativa para a democratização de agentes conversacionais em ambientes corporativos, onde a diversidade de sistemas e protocolos de comunicação impede a implementação escalável de interfaces conversacionais.
 
-#### 3.1.1 Gerador Automático de Servidores MCP: Abordagem Metodológica
+#### 3.1.1 GERADOR AUTOMÁTICO DE SERVIDORES MCP: ABORDAGEM METODOLÓGICA
 
 Para abordar o desafio de padronização, foi desenvolvido um gerador automático de servidores MCP que representa o núcleo metodológico da contribuição científica proposta. A concepção desta ferramenta surge da necessidade de validar experimentalmente se especificações OpenAPI existentes podem ser sistematicamente convertidas em ferramentas utilizáveis por modelos de linguagem, eliminando a necessidade de desenvolvimento manual recorrente.
 
@@ -140,7 +122,7 @@ A arquitetura metodológica foi estruturada em três camadas funcionais para gar
 
 Esta abordagem metodológica atende diretamente ao primeiro objetivo específico da pesquisa - *desenvolver um gerador automático de servidores MCP* - ao estabelecer um processo sistemático e reproduzível para conversão de especificações API em ferramentas de agentes conversacionais. A escolha da arquitetura em camadas fundamenta-se na necessidade de criar um processo de validação controlado, onde cada etapa pode ser independentemente verificada e os resultados podem ser objetivamente mensurados.
 
-#### 3.1.2 Coordenação Multi-Servidor: Desafio de Orquestração Distribuída
+#### 3.1.2 COORDENAÇÃO MULTI-SERVIDOR: DESAFIO DE ORQUESTRAÇÃO DISTRIBUÍDA
 
 O segundo desafio metodológico identificado relaciona-se à coordenação eficiente de múltiplos servidores MCP simultaneamente, problema que se enquadra teoricamente no domínio de sistemas distribuídos e coordenação de agentes [@anthropic2024mcp]. A complexidade emerge da necessidade de manter conexões ativas, descobrir dinamicamente capacidades disponíveis e rotear solicitações baseadas na análise semântica da intenção do usuário, tudo isso preservando a experiência conversacional natural.
 
@@ -150,11 +132,11 @@ A estratégia de coordenação multi-servidor implementa três mecanismos metodo
 
 A integração com modelos de linguagem através da funcionalidade de *function calling* da OpenAI estabelece uma ponte metodológica entre compreensão de linguagem natural e execução de ferramentas específicas. Esta abordagem permite validação experimental da hipótese de que agentes conversacionais podem efetivamente interpretar intenções complexas e traduzi-las em operações precisas em sistemas *backend*, constituindo elemento central para avaliação da usabilidade e eficácia da solução proposta.
 
-### 3.2 Fundamentação Tecnológica e Metodológica
+### 3.2 FUNDAMENTAÇÃO TECNOLÓGICA E METODOLÓGICA
 
 As decisões tecnológicas para implementação da prova de conceito foram fundamentadas em critérios de rigor científico, reprodutibilidade e adequação aos objetivos de pesquisa, segundo o detalhamento da seção de MATERIAIS. A seleção do Node.js como plataforma de desenvolvimento, do Playwright para testes automatizados *end-to-end* e do OpenAI GPT-4 para integração com modelos de linguagem baseou-se em sua comprovada capacidade para suportar a metodologia experimental proposta, permitindo validação objetiva da viabilidade da integração OpenAPI-MCP através de uma prova de conceito robusta e reproduzível.
 
-### 3.3 Gerador Automático de Servidores MCP (mcp-openapi-server)
+### 3.3 GERADOR AUTOMÁTICO DE SERVIDORES MCP (MCP-OPENAPI-SERVER)
 
 O gerador automático de servidores MCP representa a materialização metodológica do primeiro objetivo específico da pesquisa, constituindo a ferramenta central para validação da hipótese de que especificações OpenAPI podem ser sistematicamente convertidas em interfaces utilizáveis por agentes conversacionais. A abordagem metodológica adotada fundamenta-se na premissa de que a automação da geração de servidores elimina a variabilidade humana no processo de integração, permitindo avaliação objetiva da eficácia da conversão OpenAPI-MCP.
 
@@ -162,7 +144,7 @@ A estrutura metodológica implementada segue um processo sistemático de três e
 
 Esta metodologia de geração automática permite validação experimental controlada, onde cada especificação OpenAPI processada constitui um caso de teste independente para avaliação da eficácia da conversão. O suporte implementado para múltiplos esquemas de autenticação (API Key, Bearer Token, OAuth) e todos os métodos HTTP fundamentais (GET, POST, PUT, DELETE, PATCH) garante cobertura abrangente dos cenários de integração típicos encontrados em ambientes corporativos reais, essencial para validação da aplicabilidade prática da abordagem proposta.
 
-### 3.4 Cliente de Chat Multi-Servidor MCP
+### 3.4 CLIENTE DE CHAT MULTI-SERVIDOR MCP
 
 O cliente de chat multi-servidor constitui a implementação metodológica do segundo objetivo específico da pesquisa, desenvolvido como ferramenta de validação experimental para demonstrar a viabilidade prática da orquestração simultânea de múltiplos servidores MCP em ambiente conversacional. A concepção metodológica desta ferramenta fundamenta-se na necessidade de criar um ambiente controlado onde a capacidade de coordenação entre sistemas distribuídos possa ser sistematicamente testada e avaliada.
 
@@ -172,13 +154,13 @@ A estratégia de coordenação multi-servidor implementa três mecanismos metodo
 
 A integração com modelos de linguagem através da funcionalidade de *function calling* da OpenAI estabelece uma ponte metodológica entre compreensão de linguagem natural e execução de ferramentas específicas. Esta abordagem permite validação experimental da hipótese de que agentes conversacionais podem efetivamente interpretar intenções complexas e traduzi-las em operações precisas em sistemas *backend*, constituindo elemento central para avaliação da usabilidade e eficácia da solução proposta.
 
-### 3.5 Estratégia de Validação Experimental através de Aplicações de Teste
+### 3.5 ESTRATÉGIA DE VALIDAÇÃO EXPERIMENTAL ATRAVÉS DE APLICAÇÕES DE TESTE
 
 Para garantir rigor científico na validação da abordagem proposta, foram desenvolvidas aplicações de teste que simulam cenários empresariais realistas, atendendo ao terceiro objetivo específico da pesquisa - *avaliar a solução através de testes sistemáticos*. A estratégia metodológica fundamenta-se na utilização de domínios de negócio distintos - gerenciamento de equipamentos industriais e gestão de recursos humanos - para demonstrar a versatilidade e aplicabilidade geral da integração OpenAPI-MCP em contextos heterogêneos.
 
 A escolha metodológica por aplicações que exponham APIs RESTful completamente documentadas com especificações OpenAPI permite criar um ambiente controlado onde variáveis experimentais podem ser sistematicamente manipuladas e resultados objetivamente mensurados. Esta abordagem experimental garante que a validação ocorra em condições que refletem fielmente as complexidades encontradas em ambientes corporativos reais, sem comprometer a reprodutibilidade e controle necessários para avaliação científica rigorosa.
 
-### 3.6 Metodologia de Validação Automatizada
+### 3.6 METODOLOGIA DE VALIDAÇÃO AUTOMATIZADA
 
 A validação científica da solução implementa uma metodologia de testes automatizados estruturada para abordar múltiplas dimensões críticas da pesquisa: funcionalidade, segurança e usabilidade.
 
@@ -190,7 +172,7 @@ Tendo estabelecido a fundamentação metodológica e implementado os componentes
 
 A implementação da solução OpenAPI-MCP foi submetida a uma avaliação experimental abrangente através de testes automatizados *end-to-end*, fornecendo dados quantitativos objetivos que demonstram tanto a viabilidade técnica quanto a eficácia prática da abordagem proposta. Os resultados obtidos através da validação experimental desenvolvida oferecem evidências mensuráveis sobre a integração de agentes conversacionais baseados em IA em sistemas web, estabelecendo uma base empírica sólida para avaliação da solução.
 
-## 4.1 Métricas de Performance
+## 4.1 MÉTRICAS DE PERFORMANCE
 
 A Tabela 1 apresenta as métricas de performance obtidas durante os testes automatizados da implementação, demonstrando indicadores iniciais de viabilidade operacional do sistema OpenAPI-MCP em condições controladas.
 
@@ -207,7 +189,7 @@ Os resultados indicam que a abordagem OpenAPI-MCP apresenta performance variáve
 
 Os dados obtidos sugerem que a integração OpenAPI-MCP é tecnicamente viável para cenários onde a precisão é prioritária em relação à velocidade consistente, fornecendo evidências iniciais promissoras para o desenvolvimento de soluções mais robustas.
 
-## 4.2 Eficácia da Geração Automática de Servidores MCP
+## 4.2 EFICÁCIA DA GERAÇÃO AUTOMÁTICA DE SERVIDORES MCP
 
 A Tabela 2 demonstra a capacidade do sistema de converter especificações OpenAPI em servidores MCP funcionais, validando o núcleo tecnológico da abordagem proposta.
 
@@ -221,7 +203,7 @@ A Tabela 2 demonstra a capacidade do sistema de converter especificações OpenA
 
 A análise confirma que a conversão automática OpenAPI→MCP preserva integralmente a funcionalidade dos sistemas originais, permitindo acesso completo através de interface conversacional. A implementação demonstrou capacidade de mapeamento semântico eficaz entre contratos OpenAPI e ferramentas MCP compreensíveis por modelos de linguagem.
 
-## 4.3 Avaliação de Experiência do Usuário
+## 4.3 AVALIAÇÃO DE EXPERIÊNCIA DO USUÁRIO
 
 A Tabela 3 apresenta os resultados quantitativos da avaliação de experiência do usuário, obtidos através de 13 cenários de teste estruturados com métricas padronizadas.
 
@@ -238,7 +220,7 @@ A Tabela 3 apresenta os resultados quantitativos da avaliação de experiência 
 
 Os resultados indicam experiência do usuário satisfatória, com pontuação geral de 4,0 em escala de 1 a 5. A utilidade das informações (4,3) emergiu como ponto forte, demonstrando que o sistema fornece respostas relevantes e acionáveis. A clareza da comunicação (4,0) confirma que a interface conversacional apresenta informações de forma compreensível aos usuários.
 
-## 4.4 Análise de Segurança
+## 4.4 ANÁLISE DE SEGURANÇA
 
 A Tabela 4 apresenta os resultados dos testes de segurança adversários, conduzidos através de 16 cenários de ataque estruturados em 4 categorias principais.
 
@@ -258,7 +240,7 @@ A análise de segurança revela que a implementação OpenAPI-MCP demonstra prot
 
 Os resultados obtidos fornecem evidências iniciais encorajadoras sobre a capacidade de proteção básica da abordagem OpenAPI-MCP, estabelecendo uma base promissora para desenvolvimento de medidas de segurança mais robustas em implementações futuras.
 
-## 4.5 Funcionalidade do Sistema Multi-Servidor
+## 4.5 FUNCIONALIDADE DO SISTEMA MULTI-SERVIDOR
 
 A Tabela 5 apresenta os resultados da coordenação multi-servidor durante os testes experimentais, validando a capacidade de orquestração distribuída da solução.
 
@@ -274,7 +256,7 @@ A Tabela 5 apresenta os resultados da coordenação multi-servidor durante os te
 
 Os resultados confirmam que o sistema consegue coordenar múltiplos servidores MCP simultaneamente, mantendo descoberta automática de ferramentas e roteamento inteligente de solicitações. A capacidade de agregação de dados entre sistemas diferentes foi validada através de consultas que requereram informações de ambos os domínios testados (equipamentos e profissionais).
 
-## 4.6 Validação Experimental
+## 4.6 VALIDAÇÃO EXPERIMENTAL
 
 Os resultados apresentados indicam que a abordagem OpenAPI-MCP é tecnicamente viável e operacionalmente eficaz para integração de agentes conversacionais baseados em IA com sistemas web existentes dentro do escopo experimental testado:
 
@@ -287,13 +269,11 @@ Os resultados apresentados indicam que a abordagem OpenAPI-MCP é tecnicamente v
 
 A validação experimental demonstra preliminarmente que a especificação OpenAPI pode ser sistematicamente convertida em ferramentas utilizáveis por modelos de linguagem através do protocolo MCP, reduzindo significativamente a necessidade de desenvolvimento manual recorrente para cada nova integração nos cenários testados. A validação experimental inicial confirma que a abordagem oferece uma solução promissora para democratização de acesso a sistemas técnicos complexos através de interfaces conversacionais naturais, estabelecendo evidências convincentes sobre a possibilidade de grandes avanços na integração entre sistemas existentes e LLMs.
 
-**Reprodutibilidade:** Todos os testes e dados estão disponíveis no repositório público github.com/castrozan/tcc, incluindo scripts de automação, configurações de ambiente e datasets utilizados nos experimentos, garantindo reprodutibilidade completa dos resultados obtidos.
-
 # 5 CONSIDERAÇÕES FINAIS
 
 Este estudo respondeu de forma positiva à questão central de pesquisa, demonstrando que a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração de agentes conversacionais baseados em IA com sistemas web existentes, dentro do escopo experimental testado. A validação experimental desenvolvida validou a viabilidade técnica da abordagem através de uma implementação funcional que incluiu geração automática de servidores MCP, gerenciamento coordenado de múltiplos servidores e validação através de cenários de teste controlados.
 
-## 5.1 Resposta à Pergunta de Pesquisa 
+## 5.1 RESPOSTA À PERGUNTA DE PESQUISA 
 
 A pergunta central de pesquisa - *"como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes?"* - foi respondida preliminarmente através de evidências quantitativas obtidas na validação experimental, estabelecendo indicadores iniciais promissores sobre a viabilidade da abordagem proposta.
 
@@ -303,31 +283,31 @@ Quanto aos aspectos de segurança, os resultados demonstraram proteção adequad
 
 No que concerne à integração funcional, o escopo experimental revelou coordenação eficiente entre sistemas simultâneos com eficácia completa, descoberta automática total das ferramentas disponíveis e roteamento inteligente preciso para todas as consultas direcionadas, como detalhado na Seção 4.5. A experiência do usuário foi avaliada positivamente, obtendo pontuação satisfatória nos cenários testados, segundo os dados da Seção 4.3.
 
-## 5.2 Contribuições Científicas
+## 5.2 CONTRIBUIÇÕES CIENTÍFICAS
 
 A validação experimental confirma que a abordagem OpenAPI-MCP oferece uma solução tecnicamente viável para os cenários testados, estabelecendo evidências experimentais convincentes sobre a possibilidade de grandes avanços na facilitação da integração entre sistemas existentes e LLMs. Os resultados quantitativos obtidos (100% taxa de sucesso nas conversões, 4,0/5,0 satisfação do usuário, proteção completa contra vetores básicos de ataque testados) fornecem evidências empíricas iniciais de eficácia funcional que justificam otimismo quanto ao potencial da abordagem.
 
 A contribuição científica principal reside na demonstração inicial de viabilidade conceitual e no estabelecimento de uma metodologia reproduzível para avaliação de integrações similares, criando uma base sólida para desenvolvimentos futuros. Esta pesquisa comprova que a integração entre especificações OpenAPI e o protocolo MCP constitui uma solução viável para transformar APIs tradicionais em interfaces acessíveis a agentes baseados em LLMs, oferecendo um caminho claro para a democratização tecnológica.
 
-## 5.3 Limitações do Estudo
+## 5.3 LIMITAÇÕES DO ESTUDO
 
 A aplicabilidade prática em larga escala está condicionada às limitações identificadas durante a validação experimental. A variabilidade significativa de performance (336% de variação nos tempos de resposta) constitui uma limitação relevante que deve ser considerada em implementações futuras, evidenciando a necessidade de otimizações adicionais para ambientes com requisitos rigorosos de latência.
 
 O escopo restrito de validação experimental (2 servidores MCP, 21 operações totais, cenários controlados) representa uma limitação fundamental que impede generalização ampla dos resultados para ambientes empresariais complexos. Os testes de segurança abrangeram exclusivamente ataques básicos e cenários fundamentais, não incluindo ameaças avançadas, ataques persistentes sofisticados ou cenários de engenharia social complexos, implicando que implementações em ambientes de produção críticos requerem avaliação de segurança mais abrangente e rigorosa.
 
-## 5.4 Implicações Práticas
+## 5.4 IMPLICAÇÕES PRÁTICAS
 
 A abordagem OpenAPI-MCP oferece uma direção promissora para democratização do acesso a sistemas técnicos complexos, representando um avanço significativo na redução da complexidade tradicionalmente associada à integração de agentes conversacionais em ambientes empresariais. Os resultados estabelecem evidências preliminares robustas de que é possível simplificar drasticamente o processo de criação de interfaces conversacionais para sistemas existentes, eliminando grande parte da necessidade de desenvolvimento customizado manual.
 
 A integração demonstrou-se tecnicamente viável para cenários onde a precisão é prioritária em relação à velocidade consistente, fornecendo evidências iniciais promissoras para o desenvolvimento de soluções mais robustas. O sistema conseguiu coordenar múltiplos servidores MCP simultaneamente, mantendo descoberta automática de ferramentas e roteamento inteligente de solicitações, validando a aplicabilidade prática da orquestração distribuída em ambiente conversacional.
 
-## 5.5 Trabalhos Futuros
+## 5.5 TRABALHOS FUTUROS
 
 Embora sejam necessárias expansões do escopo experimental e refinamentos técnicos antes de implementações empresariais de larga escala, os fundamentos estabelecidos demonstram inequivocamente a possibilidade de grandes avanços na área, justificando investimentos adicionais em pesquisa e desenvolvimento para exploração completa do potencial da abordagem proposta.
 
 Investigações futuras devem abordar as limitações identificadas através de: (1) otimização de performance para redução da variabilidade de latência; (2) expansão da validação experimental para ambientes empresariais de maior escala e complexidade; (3) desenvolvimento de avaliações de segurança mais abrangentes, incluindo ameaças avançadas e cenários de ataque sofisticados; (4) análise de escalabilidade para coordenação de dezenas ou centenas de servidores MCP simultâneos; (5) desenvolvimento de métricas mais rigorosas para avaliação da experiência do usuário em contextos organizacionais diversificados.
 
-## 5.6 Conclusão
+## 5.6 CONCLUSÃO
 
 A validação experimental inicial confirma que a abordagem oferece uma solução promissora para democratização de acesso a sistemas técnicos complexos através de interfaces conversacionais naturais, estabelecendo evidências convincentes sobre a possibilidade de grandes avanços na integração entre sistemas existentes e LLMs. **Reprodutibilidade:** Todos os testes e dados estão disponíveis no repositório público github.com/castrozan/tcc, incluindo scripts de automação, configurações de ambiente e datasets utilizados nos experimentos, garantindo reprodutibilidade completa dos resultados obtidos.
 
@@ -335,5 +315,5 @@ Os fundamentos metodológicos e técnicos estabelecidos nesta pesquisa criam uma
 
 # REFERÊNCIAS
 
-[^1]: Graduando em Engenharia de software no semestre letivo de 2025-1. E-mail: castro.lucas290@gmail.com
+[^1]: Graduando em Engenharia de software no semestre de 2025-1. E-mail: castro.lucas290@gmail.com
 [^2]: Professor do Centro Universitário UniSATC E-mail: thyerri.mezzari@satc.edu.br

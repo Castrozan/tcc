@@ -185,8 +185,11 @@ class SimpleUXMetrics {
             mkdirSync('test-results', { recursive: true });
         }
 
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const filename = `test-results/ux-${this.results.approach}-${timestamp}.json`;
+        // Generate unique timestamp with milliseconds and random component
+        const now = new Date();
+        const timestamp = now.toISOString().replace(/[:.]/g, '-');
+        const randomId = Math.random().toString(36).substring(2, 8);
+        const filename = `test-results/ux-${this.results.approach}-${timestamp}-${randomId}.json`;
 
         const finalResults = {
             ...this.results,

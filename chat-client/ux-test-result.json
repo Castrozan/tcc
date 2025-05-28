@@ -1,0 +1,172 @@
+{
+  "testRun": "2025-05-28T04:30:43.942Z",
+  "approach": "current",
+  "uxTests": [
+    {
+      "query": "List all equipment",
+      "responseTime": 4348,
+      "responseLength": 328,
+      "accuracyScore": 3.7,
+      "clarityScore": 4.5,
+      "helpfulnessScore": 4.5,
+      "overallScore": 4.2,
+      "hasExpectedKeywords": true,
+      "timestamp": "2025-05-28T04:30:49.564Z",
+      "status": "success"
+    },
+    {
+      "query": "What equipment is available?",
+      "responseTime": 4820,
+      "responseLength": 306,
+      "accuracyScore": 5,
+      "clarityScore": 4.5,
+      "helpfulnessScore": 4.5,
+      "overallScore": 4.7,
+      "hasExpectedKeywords": true,
+      "timestamp": "2025-05-28T04:30:55.391Z",
+      "status": "success"
+    },
+    {
+      "query": "Show me computer equipment",
+      "responseTime": 4322,
+      "responseLength": 456,
+      "accuracyScore": 4,
+      "clarityScore": 4.5,
+      "helpfulnessScore": 5,
+      "overallScore": 4.5,
+      "hasExpectedKeywords": true,
+      "timestamp": "2025-05-28T04:31:00.722Z",
+      "status": "success"
+    },
+    {
+      "query": "Show me all professionals",
+      "responseTime": 2320,
+      "responseLength": 251,
+      "accuracyScore": 3.7,
+      "clarityScore": 4,
+      "helpfulnessScore": 4.5,
+      "overallScore": 4.1,
+      "hasExpectedKeywords": true,
+      "timestamp": "2025-05-28T04:31:05.139Z",
+      "status": "success"
+    },
+    {
+      "query": "Who are the team members?",
+      "responseTime": 3309,
+      "responseLength": 366,
+      "accuracyScore": 4.3,
+      "clarityScore": 4,
+      "helpfulnessScore": 4,
+      "overallScore": 4.1,
+      "hasExpectedKeywords": true,
+      "timestamp": "2025-05-28T04:31:09.453Z",
+      "status": "success"
+    },
+    {
+      "query": "List staff information",
+      "responseTime": 2805,
+      "responseLength": 433,
+      "accuracyScore": 4.3,
+      "clarityScore": 4,
+      "helpfulnessScore": 4,
+      "overallScore": 4.1,
+      "hasExpectedKeywords": true,
+      "timestamp": "2025-05-28T04:31:13.262Z",
+      "status": "success"
+    },
+    {
+      "query": "Hello, can you help me?",
+      "responseTime": 1314,
+      "responseLength": 62,
+      "accuracyScore": 3,
+      "clarityScore": 4,
+      "helpfulnessScore": 3.5,
+      "overallScore": 3.5,
+      "hasExpectedKeywords": null,
+      "timestamp": "2025-05-28T04:31:16.653Z",
+      "status": "success"
+    },
+    {
+      "query": "What information can you provide?",
+      "responseTime": 4314,
+      "responseLength": 617,
+      "accuracyScore": 3,
+      "clarityScore": 4,
+      "helpfulnessScore": 4.5,
+      "overallScore": 3.8,
+      "hasExpectedKeywords": null,
+      "timestamp": "2025-05-28T04:31:22.471Z",
+      "status": "success"
+    },
+    {
+      "query": "Give me an overview",
+      "responseTime": 5320,
+      "responseLength": 423,
+      "accuracyScore": 3,
+      "clarityScore": 4.5,
+      "helpfulnessScore": 3.5,
+      "overallScore": 3.7,
+      "hasExpectedKeywords": null,
+      "timestamp": "2025-05-28T04:31:29.295Z",
+      "status": "success"
+    },
+    {
+      "query": "Help me understand what you can do",
+      "responseTime": 9354,
+      "responseLength": 1004,
+      "accuracyScore": 3,
+      "clarityScore": 3.5,
+      "helpfulnessScore": 4.5,
+      "overallScore": 3.7,
+      "hasExpectedKeywords": null,
+      "timestamp": "2025-05-28T04:31:41.226Z",
+      "status": "success"
+    },
+    {
+      "query": "What are your capabilities?",
+      "responseTime": 5819,
+      "responseLength": 1001,
+      "accuracyScore": 3,
+      "clarityScore": 3.5,
+      "helpfulnessScore": 4,
+      "overallScore": 3.5,
+      "hasExpectedKeywords": null,
+      "timestamp": "2025-05-28T04:31:48.049Z",
+      "status": "success"
+    },
+    {
+      "query": "How can you assist me?",
+      "responseTime": 6320,
+      "responseLength": 872,
+      "accuracyScore": 3,
+      "clarityScore": 4,
+      "helpfulnessScore": 5,
+      "overallScore": 4,
+      "hasExpectedKeywords": null,
+      "timestamp": "2025-05-28T04:31:55.374Z",
+      "status": "success"
+    },
+    {
+      "query": "What information do you have access to?",
+      "responseTime": 8826,
+      "responseLength": 1005,
+      "accuracyScore": 3,
+      "clarityScore": 3.5,
+      "helpfulnessScore": 4.5,
+      "overallScore": 3.7,
+      "hasExpectedKeywords": null,
+      "timestamp": "2025-05-28T04:32:05.204Z",
+      "status": "success"
+    }
+  ],
+  "summary": {
+    "totalTests": 13,
+    "successfulTests": 13,
+    "failedTests": 0,
+    "avgAccuracy": 3.5,
+    "avgClarity": 4,
+    "avgHelpfulness": 4.3,
+    "avgOverall": 4,
+    "avgResponseTime": 4861
+  }
+}

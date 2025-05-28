@@ -1,0 +1,87 @@
+{
+  "testRun": "2025-05-28T04:33:13.957Z",
+  "approach": "current",
+  "queries": [
+    {
+      "query": "Hello",
+      "sendTime": 15,
+      "totalResponseTime": 1335,
+      "actualProcessingTime": 1291,
+      "responseLength": 34,
+      "timestamp": "2025-05-28T04:33:16.550Z",
+      "status": "success"
+    },
+    {
+      "query": "List equipment",
+      "sendTime": 10,
+      "totalResponseTime": 4819,
+      "actualProcessingTime": 4795,
+      "responseLength": 342,
+      "timestamp": "2025-05-28T04:33:22.376Z",
+      "status": "success"
+    },
+    {
+      "query": "Show professionals",
+      "sendTime": 12,
+      "totalResponseTime": 1810,
+      "actualProcessingTime": 1787,
+      "responseLength": 186,
+      "timestamp": "2025-05-28T04:33:25.191Z",
+      "status": "success"
+    },
+    {
+      "query": "Help",
+      "sendTime": 11,
+      "totalResponseTime": 5823,
+      "actualProcessingTime": 5800,
+      "responseLength": 886,
+      "timestamp": "2025-05-28T04:33:32.020Z",
+      "status": "success"
+    },
+    {
+      "query": "List equipment 1",
+      "sendTime": 11,
+      "totalResponseTime": 5329,
+      "actualProcessingTime": 5305,
+      "responseLength": 360,
+      "timestamp": "2025-05-28T04:33:39.429Z",
+      "status": "success"
+    },
+    {
+      "query": "List equipment 2",
+      "sendTime": 8,
+      "totalResponseTime": 3309,
+      "actualProcessingTime": 3292,
+      "responseLength": 196,
+      "timestamp": "2025-05-28T04:33:44.241Z",
+      "status": "success"
+    },
+    {
+      "query": "Overview of equipment?",
+      "sendTime": 10,
+      "totalResponseTime": 5324,
+      "actualProcessingTime": 5301,
+      "responseLength": 318,
+      "timestamp": "2025-05-28T04:33:52.139Z",
+      "status": "success"
+    },
+    {
+      "query": "Team structure info",
+      "sendTime": 10,
+      "totalResponseTime": 2309,
+      "actualProcessingTime": 2289,
+      "responseLength": 177,
+      "timestamp": "2025-05-28T04:33:56.452Z",
+      "status": "success"
+    }
+  ],
+  "summary": {
+    "totalQueries": 8,
+    "successfulQueries": 8,
+    "failedQueries": 0,
+    "avgResponseTime": 3757,
+    "minResponseTime": 1335,
+    "maxResponseTime": 5823,
+    "avgResponseLength": 312
+  }
+}

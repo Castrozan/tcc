@@ -36,44 +36,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -332,9 +294,8 @@ escolha foi fundamentada na comprovada capacidade da plataforma para
 gerenciar operações intensivas de IA e sua ampla adoção em projetos de
 integração com LLMs (CHEREDNICHENKO et al., 2024; REDHAT, 2024).
 
-\subsubsection{2.1.2 FERRAMENTAS DE TESTE E VALIDAÇÃO (problematic,
-write more about
-playwright)}\label{ferramentas-de-teste-e-validauxe7uxe3o-problematic-write-more-about-playwright}
+\subsubsection{2.1.2 FERRAMENTAS DE TESTE E
+VALIDAÇÃO}\label{ferramentas-de-teste-e-validauxe7uxe3o}
 
 \textbf{Playwright} foi utilizado para implementação de testes
 automatizados \emph{end-to-end} (E2E), permitindo simulação realista e
@@ -474,16 +435,14 @@ aprendizado é quantificada pelo número de tentativas necessárias para
 usuários completarem tarefas específicas, indicando a intuitividade da
 interface conversacional.
 
-\subsubsection{2.2.3 ARQUITETURA E FLUXO DE INTEGRAÇÃO DO SISTEMA
-(problematic, confuse and
-disconnect)}\label{arquitetura-e-fluxo-de-integrauxe7uxe3o-do-sistema-problematic-confuse-and-disconnect}
+\subsubsection{2.2.3 ARQUITETURA E FLUXO DE INTEGRAÇÃO DO
+SISTEMA}\label{arquitetura-e-fluxo-de-integrauxe7uxe3o-do-sistema}
 
 A arquitetura do sistema desenvolvida para este estudo envolve múltiplas
 camadas que trabalham de forma integrada para responder às consultas
-feitas pelo usuário em linguagem natural. Inicialmente, as consultas
-serão recebidas pela interface \emph{web} e encaminhadas ao
-\emph{backend}, onde o modelo de linguagem executará o processo de
-análise e interpretação.
+feitas pelo usuário em linguagem natural. Este metodologia é essencial
+para a validação experimental da hipótese de pesquisa e é ilustrada na
+Figura 2.
 
 \begin{figure}
 \centering
@@ -494,20 +453,20 @@ servidores MCP gerados automaticamente e APIs de sistemas externos}
 \end{figure}
 
 Como observado na Figura 2, a arquitetura modular permite isolamento de
-responsabilidades e facilita a instrumentação necessária para coleta de
-métricas durante os experimentos. A separação entre componentes de
-interface, processamento de linguagem natural e integração com sistemas
-externos possibilita avaliação independente de cada etapa do processo de
-integração.
+responsabilidades em um ecossistema de serviços e aplicações
+distribuidas. A separação entre componentes de interface, processamento
+de linguagem natural e integração com sistemas externos possibilita
+manupulação de cada componente de forma independente, permitindo a
+instrumentação necessária para manutenção de um ambiente de produção.
 
 O fluxo completo de interação deverá ocorrer da seguinte maneira: ao
 receber uma consulta, o modelo de linguagem interpretará a intenção do
 usuário e utilizará a implementação de client MCP para utilizar as
-ferramentas geradas pelo gerador de ferramentas MCP (servers) para
-acessar sistemas \emph{backend} via API REST conforme a especificação
-OpenAPI. Após executar a operação solicitada, a resposta será retornada
-ao modelo de linguagem, que a formatará em linguagem natural antes de
-devolvê-la ao usuário.
+ferramentas geradas pelo gerador de ferramentas MCP para acessar
+sistemas \emph{backend} via API REST conforme a especificação OpenAPI.
+Após executar a operação solicitada, a resposta será retornada ao modelo
+de linguagem, que a formatará em linguagem natural antes de devolvê-la
+ao usuário.
 
 \begin{figure}
 \centering
@@ -519,22 +478,19 @@ conversacionais}
 \end{figure}
 
 O fluxo apresentado na Figura 3 demonstra a sequência metodológica que
-permite validação experimental da hipótese central da pesquisa. Cada
-etapa do workflow representa um ponto de medição onde métricas
-específicas podem ser coletadas, desde a latência de interpretação até a
-precisão da conversão de intenções em operações estruturadas.
+permite validação experimental da hipótese central da pesquisa.
 
 \subsection{3. DESENVOLVIMENTO}\label{desenvolvimento}
 
-A implementação da solução OpenAPI-MCP foi estruturada seguindo uma
-abordagem modular e integrada, compreendendo quatro componentes
-principais que trabalham em sinergia para demonstrar e validar a
-viabilidade da integração proposta. A arquitetura resultante engloba um
-gerador automático de servidores MCP a partir de especificações OpenAPI,
-um cliente de chat capaz de gerenciar múltiplos servidores MCP
-simultaneamente, aplicações de teste que simulam cenários reais de
-negócio, e uma suíte abrangente de testes automatizados para avaliação
-científica da solução.
+Conforme a metodologia estabelecida, a implementação da solução
+OpenAPI-MCP foi estruturada seguindo uma abordagem modular e integrada,
+compreendendo quatro componentes principais que trabalham em sinergia
+para demonstrar e validar a viabilidade da integração proposta. A
+arquitetura resultante engloba um gerador automático de servidores MCP a
+partir de especificações OpenAPI, um cliente de chat capaz de gerenciar
+múltiplos servidores MCP simultaneamente, aplicações de teste que
+simulam cenários reais de negócio, e uma suíte abrangente de testes
+automatizados para avaliação científica da solução.
 
 \subsubsection{3.1 DESAFIOS METODOLÓGICOS E DECISÕES DE
 DESIGN}\label{desafios-metodoluxf3gicos-e-decisuxf5es-de-design}
@@ -547,8 +503,8 @@ heterogêneas de APIs, problema que tradicionalmente demanda
 desenvolvimento manual extensivo e customizado para cada sistema
 (OPENAPI INITIATIVE, 2023). Esta problemática constitui uma barreira
 significativa para a democratização de agentes conversacionais em
-ambientes corporativos, onde a diversidade de sistemas e protocolos de
-comunicação impede a implementação escalável de interfaces
+sistemas web já existentes, onde a diversidade de sistemas e protocolos
+de comunicação impede a implementação escalável de interfaces
 conversacionais.
 
 \subsubsection{3.2 GERADOR AUTOMÁTICO DE SERVIDORES
@@ -564,7 +520,7 @@ desenvolvimento manual recorrente.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio]{images/development/mcp-generator-architecture.jpg}}
+\pandocbounded{\includegraphics[keepaspectratio]{images/desenvolvimento/mcp-generator-architecture.jpg}}
 \caption{Arquitetura do Gerador Automático de Servidores MCP mostrando
 as três camadas funcionais: Análise Sintática, Mapeamento Semântico e
 Geração de Ferramentas MCP}
@@ -602,62 +558,28 @@ que as ferramentas geradas estejam no formato válido para o protocolo
 MCP e tenham todos os parâmetros necessários para a execução correta da
 operação pelo modelo de linguagem.
 
-\textbf{Exemplo de Conversão OpenAPI-MCP:}
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/openapi-mcp/snippet-openapi-path-spec.jpg}}
+\caption{Exemplo de especificação OpenAPI 3.0+ para um endpoint de busca
+de equipamento por ID}
+\end{figure}
 
-Especificação OpenAPI original:
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/openapi-mcp/mcp-tool-format.jpg}}
+\caption{Exemplo de ferramenta MCP gerada a partir de uma especificação
+OpenAPI}
+\end{figure}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{paths}\KeywordTok{:}
-\AttributeTok{  }\FunctionTok{/api/equipment/\{id\}}\KeywordTok{:}
-\AttributeTok{    }\FunctionTok{get}\KeywordTok{:}
-\AttributeTok{      }\FunctionTok{operationId}\KeywordTok{:}\AttributeTok{ getEquipmentById}
-\AttributeTok{      }\FunctionTok{summary}\KeywordTok{:}\AttributeTok{ Retrieve equipment by ID}
-\AttributeTok{      }\FunctionTok{parameters}\KeywordTok{:}
-\AttributeTok{        }\KeywordTok{{-}}\AttributeTok{ }\FunctionTok{name}\KeywordTok{:}\AttributeTok{ id}
-\AttributeTok{          }\FunctionTok{in}\KeywordTok{:}\AttributeTok{ path}
-\AttributeTok{          }\FunctionTok{required}\KeywordTok{:}\AttributeTok{ }\CharTok{true}
-\AttributeTok{          }\FunctionTok{schema}\KeywordTok{:}
-\AttributeTok{            }\FunctionTok{type}\KeywordTok{:}\AttributeTok{ string}
-\AttributeTok{      }\FunctionTok{responses}\KeywordTok{:}
-\AttributeTok{        }\FunctionTok{200}\KeywordTok{:}
-\AttributeTok{          }\FunctionTok{description}\KeywordTok{:}\AttributeTok{ Equipment details}
-\AttributeTok{          }\FunctionTok{content}\KeywordTok{:}
-\AttributeTok{            }\FunctionTok{application/json}\KeywordTok{:}
-\AttributeTok{              }\FunctionTok{schema}\KeywordTok{:}
-\AttributeTok{                }\FunctionTok{$ref}\KeywordTok{:}\AttributeTok{ }\StringTok{\textquotesingle{}\#/components/schemas/Equipment\textquotesingle{}}
-\end{Highlighting}
-\end{Shaded}
-
-Ferramenta MCP gerada automaticamente:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{\{}
-  \DataTypeTok{"name"}\FunctionTok{:} \StringTok{"getEquipmentById"}\FunctionTok{,}
-  \DataTypeTok{"description"}\FunctionTok{:} \StringTok{"Retrieve equipment by ID"}\FunctionTok{,}
-  \DataTypeTok{"inputSchema"}\FunctionTok{:} \FunctionTok{\{}
-    \DataTypeTok{"type"}\FunctionTok{:} \StringTok{"object"}\FunctionTok{,}
-    \DataTypeTok{"properties"}\FunctionTok{:} \FunctionTok{\{}
-      \DataTypeTok{"id"}\FunctionTok{:} \FunctionTok{\{}
-        \DataTypeTok{"type"}\FunctionTok{:} \StringTok{"string"}\FunctionTok{,}
-        \DataTypeTok{"description"}\FunctionTok{:} \StringTok{"id parameter"}\FunctionTok{,}
-        \DataTypeTok{"x{-}parameter{-}location"}\FunctionTok{:} \StringTok{"path"}
-      \FunctionTok{\}}
-    \FunctionTok{\},}
-    \DataTypeTok{"required"}\FunctionTok{:} \OtherTok{[}\StringTok{"id"}\OtherTok{]}
-  \FunctionTok{\}}
-\FunctionTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-O processo de conversão mantém a integridade semântica da operação,
-preservando informações essenciais como localização de parâmetros,
-permitindo que o sistema de roteamento direcione corretamente os valores
-durante a execução. Esta estrutura permite que o modelo de linguagem
-compreenda precisamente quais parâmetros são esperados e como devem ser
-formatados, permitindo a escolha e uso das funções corretas a partir de
-instruções em linguagem natural.
+Como pode ser observado na Figura 5 e na Figura 6, o processo de
+conversão mantém a integridade semântica da operação, preservando
+informações essenciais como localização de parâmetros, permitindo que o
+sistema de roteamento direcione corretamente os valores durante a
+execução. Esta estrutura permite que o modelo de linguagem compreenda
+precisamente quais parâmetros são esperados e como devem ser formatados,
+permitindo a escolha e uso das funções corretas a partir de instruções
+em linguagem natural.
 
 \subsubsection{3.3 COORDENAÇÃO MULTI-SERVIDOR: DESAFIO DE ORQUESTRAÇÃO
 DISTRIBUÍDA}\label{coordenauxe7uxe3o-multi-servidor-desafio-de-orquestrauxe7uxe3o-distribuuxedda}
@@ -670,9 +592,8 @@ ativas, descobrir dinamicamente capacidades disponíveis e rotear
 solicitações baseadas na análise semântica da intenção do usuário, tudo
 isso preservando a experiência conversacional natural.
 
-\subsubsection{3.4 CLIENTE DE CHAT MULTI-SERVIDOR MCP (TODO: add a image
-to reduce
-text)}\label{cliente-de-chat-multi-servidor-mcp-todo-add-a-image-to-reduce-text}
+\subsubsection{3.4 CLIENTE DE CHAT MULTI-SERVIDOR
+MCP}\label{cliente-de-chat-multi-servidor-mcp}
 
 O cliente de chat multi-servidor constitui a implementação metodológica
 do segundo objetivo específico da pesquisa, desenvolvido como ferramenta
@@ -714,49 +635,21 @@ A integração com modelos de linguagem através da funcionalidade de
 permitindo que o GPT-4 possa utilizar dinamicamente as ferramentas MCP
 disponíveis:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{// Exemplo simplificado de integração e conversão de ferramentas MCP para formato OpenAI}
-\FunctionTok{convertMCPToolsToOpenAI}\NormalTok{(mcpTools) \{}
-  \ControlFlowTok{return}\NormalTok{ mcpTools}\OperatorTok{.}\FunctionTok{map}\NormalTok{(tool }\KeywordTok{=\textgreater{}}\NormalTok{ (\{}
-    \DataTypeTok{type}\OperatorTok{:} \StringTok{\textquotesingle{}function\textquotesingle{}}\OperatorTok{,}
-    \KeywordTok{function}\OperatorTok{:}\NormalTok{ \{}
-      \DataTypeTok{name}\OperatorTok{:}\NormalTok{ tool}\OperatorTok{.}\AttributeTok{name}\OperatorTok{,}
-      \DataTypeTok{description}\OperatorTok{:}\NormalTok{ tool}\OperatorTok{.}\AttributeTok{description}\OperatorTok{,}
-      \DataTypeTok{parameters}\OperatorTok{:}\NormalTok{ tool}\OperatorTok{.}\AttributeTok{inputSchema}
-\NormalTok{    \}}
-\NormalTok{  \}))}\OperatorTok{;}
-\NormalTok{\}}
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/chat/snippets-code-functions.jpg}}
+\caption{Trechos de código exemplo de integração com modelos de
+linguagem e geração de funções no padrão OpenAI}
+\end{figure}
 
-\CommentTok{// Processamento de mensagem com detecção automática de necessidade de ferramentas}
-\KeywordTok{async} \FunctionTok{processUserMessage}\NormalTok{(sessionId}\OperatorTok{,}\NormalTok{ userMessage) \{}
-  \KeywordTok{const}\NormalTok{ tools }\OperatorTok{=} \ControlFlowTok{await} \KeywordTok{this}\OperatorTok{.}\AttributeTok{mcpClientManager}\OperatorTok{.}\FunctionTok{getTools}\NormalTok{(sessionId)}\OperatorTok{;}
-  \KeywordTok{const}\NormalTok{ openaiTools }\OperatorTok{=} \KeywordTok{this}\OperatorTok{.}\FunctionTok{convertMCPToolsToOpenAI}\NormalTok{(tools) }\OperatorTok{||} \KeywordTok{undefined}\OperatorTok{;}
-  
-  \KeywordTok{const}\NormalTok{ response }\OperatorTok{=} \ControlFlowTok{await} \KeywordTok{this}\OperatorTok{.}\AttributeTok{openai}\OperatorTok{.}\AttributeTok{chat}\OperatorTok{.}\AttributeTok{completions}\OperatorTok{.}\FunctionTok{create}\NormalTok{(\{}
-    \DataTypeTok{model}\OperatorTok{:} \StringTok{\textquotesingle{}gpt{-}4\textquotesingle{}}\OperatorTok{,}
-    \DataTypeTok{messages}\OperatorTok{:}\NormalTok{ conversation}\OperatorTok{,}
-    \DataTypeTok{tools}\OperatorTok{:}\NormalTok{ openaiTools}\OperatorTok{,}
-    \DataTypeTok{tool\_choice}\OperatorTok{:} \StringTok{\textquotesingle{}auto\textquotesingle{}}  \CommentTok{// Permite ao modelo decidir quando usar ferramentas}
-\NormalTok{  \})}\OperatorTok{;}
-  
-  \ControlFlowTok{if}\NormalTok{ (response}\OperatorTok{.}\AttributeTok{choices}\NormalTok{[}\DecValTok{0}\NormalTok{]}\OperatorTok{.}\AttributeTok{message}\OperatorTok{.}\AttributeTok{tool\_calls}\NormalTok{) \{}
-    \ControlFlowTok{return} \ControlFlowTok{await} \KeywordTok{this}\OperatorTok{.}\FunctionTok{handleToolCalls}\NormalTok{(sessionId}\OperatorTok{,}\NormalTok{ response}\OperatorTok{.}\AttributeTok{choices}\NormalTok{[}\DecValTok{0}\NormalTok{]}\OperatorTok{.}\AttributeTok{message}\NormalTok{)}\OperatorTok{;}
-\NormalTok{  \}}
-  
-  \ControlFlowTok{return}\NormalTok{ response}\OperatorTok{.}\AttributeTok{choices}\NormalTok{[}\DecValTok{0}\NormalTok{]}\OperatorTok{.}\AttributeTok{message}\OperatorTok{.}\AttributeTok{content}\OperatorTok{;}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
+Este mecanismo exemplificado na Figura 7 permite que o modelo de
+linguagem analise a intenção do usuário e automaticamente determine
+quais ferramentas utilizar, executando chamadas precisas às APIs
+subjacentes sem necessidade de programação explícita de fluxos
+conversacionais.
 
-Este mecanismo permite que o modelo de linguagem analise a intenção do
-usuário e automaticamente determine quais ferramentas utilizar,
-executando chamadas precisas às APIs subjacentes sem necessidade de
-programação explícita de fluxos conversacionais.
-
-\paragraph{3.4.2 CONFIGURAÇÃO MULTI-SERVIDOR (TODO: add a image to
-reduce
-text)}\label{configurauxe7uxe3o-multi-servidor-todo-add-a-image-to-reduce-text}
+\paragraph{3.4.2 CONFIGURAÇÃO
+MULTI-SERVIDOR}\label{configurauxe7uxe3o-multi-servidor}
 
 A arquitetura de configuração para gerenciamento de múltiplos servidores
 MCP foi concebida para proporcionar flexibilidade operacional através de
@@ -767,15 +660,23 @@ premissa de que ambientes empresariais requerem adaptabilidade contínua
 para acomodar mudanças nos requisitos de integração e na disponibilidade
 de sistemas externos.
 
-O mecanismo implementado permite que usuários especifiquem comandos de
-execução e variáveis de ambiente através de interface gráfica intuitiva,
-facilitando a integração de novos serviços à medida que são descobertos
-ou desenvolvidos. A arquitetura suporta visualização em tempo real do
-estado dos servidores ativos, possibilitando monitoramento contínuo da
-saúde do sistema e identificação proativa de potenciais problemas de
-conectividade. Parâmetros específicos de configuração, incluindo URLs de
-especificações OpenAPI e endereços base das APIs, podem ser ajustados
-dinamicamente, proporcionando adaptabilidade às mudanças em ambientes de
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/chat/chat-server-configuration.jpg}}
+\caption{Configuração do cliente de chat possibilitando a adição de
+novos servidores MCP}
+\end{figure}
+
+O mecanismo implementado conforme ilustrado na Figura 8 permite que
+usuários especifiquem comandos de execução e variáveis de ambiente
+através de interface gráfica intuitiva, facilitando a integração de
+novos serviços à medida que são descobertos ou desenvolvidos. A
+arquitetura suporta visualização em tempo real do estado dos servidores
+ativos, possibilitando monitoramento contínuo da saúde do sistema e
+identificação proativa de potenciais problemas de conectividade.
+Parâmetros específicos de configuração, incluindo URLs de especificações
+OpenAPI e endereços base das APIs, podem ser ajustados dinamicamente,
+proporcionando adaptabilidade às mudanças em ambientes de
 desenvolvimento e produção.
 
 O paradigma de descoberta incremental facilita a evolução orgânica do

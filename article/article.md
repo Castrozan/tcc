@@ -120,55 +120,17 @@ Esta abordagem metodológica atende diretamente ao primeiro objetivo específico
 
 A conversão preserva a semântica completa da operação OpenAPI, incluindo parâmetros de caminho, consulta, cabeçalho e corpo da requisição. O sistema realiza resolução automática de esquemas complexos para garantir que as ferramentas geradas estejam no formato válido para o protocolo MCP e tenham todos os parâmetros necessários para a execução correta da operação pelo modelo de linguagem.
 
-**Exemplo de Conversão OpenAPI-MCP:**
+![Exemplo de especificação OpenAPI 3.0+ para um endpoint de busca de equipamento por ID](images/openapi-mcp/snippet-openapi-path-spec.jpg)
 
-Especificação OpenAPI original:
-```yaml
-paths:
-  /api/equipment/{id}:
-    get:
-      operationId: getEquipmentById
-      summary: Retrieve equipment by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Equipment details
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Equipment'
-```
+![Exemplo de ferramenta MCP gerada a partir de uma especificação OpenAPI](images/openapi-mcp/mcp-tool-format.jpg)
 
-Ferramenta MCP gerada automaticamente:
-```json
-{
-  "name": "getEquipmentById",
-  "description": "Retrieve equipment by ID",
-  "inputSchema": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": "string",
-        "description": "id parameter",
-        "x-parameter-location": "path"
-      }
-    },
-    "required": ["id"]
-  }
-}
-```
-O processo de conversão mantém a integridade semântica da operação, preservando informações essenciais como localização de parâmetros, permitindo que o sistema de roteamento direcione corretamente os valores durante a execução. Esta estrutura permite que o modelo de linguagem compreenda precisamente quais parâmetros são esperados e como devem ser formatados, permitindo a escolha e uso das funções corretas a partir de instruções em linguagem natural.
+Como pode ser observado na Figura 5 e na Figura 6, o processo de conversão mantém a integridade semântica da operação, preservando informações essenciais como localização de parâmetros, permitindo que o sistema de roteamento direcione corretamente os valores durante a execução. Esta estrutura permite que o modelo de linguagem compreenda precisamente quais parâmetros são esperados e como devem ser formatados, permitindo a escolha e uso das funções corretas a partir de instruções em linguagem natural.
 
 ### 3.3 COORDENAÇÃO MULTI-SERVIDOR: DESAFIO DE ORQUESTRAÇÃO DISTRIBUÍDA
 
 O segundo desafio metodológico identificado relaciona-se à coordenação eficiente de múltiplos servidores MCP simultaneamente, problema que se enquadra teoricamente no domínio de sistemas distribuídos e coordenação de agentes. A complexidade emerge da necessidade de manter conexões ativas, descobrir dinamicamente capacidades disponíveis e rotear solicitações baseadas na análise semântica da intenção do usuário, tudo isso preservando a experiência conversacional natural.
 
-### 3.4 CLIENTE DE CHAT MULTI-SERVIDOR MCP (TODO: add a image to reduce text)
+### 3.4 CLIENTE DE CHAT MULTI-SERVIDOR MCP
 
 O cliente de chat multi-servidor constitui a implementação metodológica do segundo objetivo específico da pesquisa, desenvolvido como ferramenta de validação experimental para demonstrar a viabilidade prática da orquestração simultânea de múltiplos servidores MCP em ambiente conversacional. A concepção metodológica desta ferramenta fundamenta-se na necessidade de criar um ambiente controlado onde a capacidade de coordenação entre sistemas distribuídos possa ser sistematicamente testada e avaliada.
 
@@ -182,46 +144,17 @@ Nest cenário é necessário a integração com o modelo de linguagem que pode s
 
 A integração com modelos de linguagem através da funcionalidade de *function calling* constitui elemento central da arquitetura, permitindo que o GPT-4 possa utilizar dinamicamente as ferramentas MCP disponíveis:
 
-```javascript
-// Exemplo simplificado de integração e conversão de ferramentas MCP para formato OpenAI
-convertMCPToolsToOpenAI(mcpTools) {
-  return mcpTools.map(tool => ({
-    type: 'function',
-    function: {
-      name: tool.name,
-      description: tool.description,
-      parameters: tool.inputSchema
-    }
-  }));
-}
+![Trechos de código exemplo de integração com modelos de linguagem e geração de funções no padrão OpenAI](images/chat/snippets-code-functions.jpg)
 
-// Processamento de mensagem com detecção automática de necessidade de ferramentas
-async processUserMessage(sessionId, userMessage) {
-  const tools = await this.mcpClientManager.getTools(sessionId);
-  const openaiTools = this.convertMCPToolsToOpenAI(tools) || undefined;
-  
-  const response = await this.openai.chat.completions.create({
-    model: 'gpt-4',
-    messages: conversation,
-    tools: openaiTools,
-    tool_choice: 'auto'  // Permite ao modelo decidir quando usar ferramentas
-  });
-  
-  if (response.choices[0].message.tool_calls) {
-    return await this.handleToolCalls(sessionId, response.choices[0].message);
-  }
-  
-  return response.choices[0].message.content;
-}
-```
+Este mecanismo exemplificado na Figura 7 permite que o modelo de linguagem analise a intenção do usuário e automaticamente determine quais ferramentas utilizar, executando chamadas precisas às APIs subjacentes sem necessidade de programação explícita de fluxos conversacionais.
 
-Este mecanismo permite que o modelo de linguagem analise a intenção do usuário e automaticamente determine quais ferramentas utilizar, executando chamadas precisas às APIs subjacentes sem necessidade de programação explícita de fluxos conversacionais.
-
-#### 3.4.2 CONFIGURAÇÃO MULTI-SERVIDOR (TODO: add a image to reduce text)
+#### 3.4.2 CONFIGURAÇÃO MULTI-SERVIDOR
 
 A arquitetura de configuração para gerenciamento de múltiplos servidores MCP foi concebida para proporcionar flexibilidade operacional através de mecanismos dinâmicos de adição e remoção de servidores, eliminando a necessidade de reinicialização do sistema durante modificações na topologia de serviços. Esta abordagem metodológica fundamenta-se na premissa de que ambientes empresariais requerem adaptabilidade contínua para acomodar mudanças nos requisitos de integração e na disponibilidade de sistemas externos.
 
-O mecanismo implementado permite que usuários especifiquem comandos de execução e variáveis de ambiente através de interface gráfica intuitiva, facilitando a integração de novos serviços à medida que são descobertos ou desenvolvidos. A arquitetura suporta visualização em tempo real do estado dos servidores ativos, possibilitando monitoramento contínuo da saúde do sistema e identificação proativa de potenciais problemas de conectividade. Parâmetros específicos de configuração, incluindo URLs de especificações OpenAPI e endereços base das APIs, podem ser ajustados dinamicamente, proporcionando adaptabilidade às mudanças em ambientes de desenvolvimento e produção.
+![Configuração do cliente de chat possibilitando a adição de novos servidores MCP](images/chat/chat-server-configuration.jpg)
+
+O mecanismo implementado conforme ilustrado na Figura 8 permite que usuários especifiquem comandos de execução e variáveis de ambiente através de interface gráfica intuitiva, facilitando a integração de novos serviços à medida que são descobertos ou desenvolvidos. A arquitetura suporta visualização em tempo real do estado dos servidores ativos, possibilitando monitoramento contínuo da saúde do sistema e identificação proativa de potenciais problemas de conectividade. Parâmetros específicos de configuração, incluindo URLs de especificações OpenAPI e endereços base das APIs, podem ser ajustados dinamicamente, proporcionando adaptabilidade às mudanças em ambientes de desenvolvimento e produção.
 
 O paradigma de descoberta incremental facilita a evolução orgânica do sistema, onde novos serviços podem ser integrados progressivamente conforme demandas emergem. O isolamento de falhas implementado garante que problemas em servidores individuais não comprometam a operação global do sistema, aumentando a resiliência da solução. Estas características combinadas resultam em experiência do usuário aprimorada, onde a complexidade técnica é abstraída através de interface visual que facilita a compreensão e o gerenciamento efetivo da arquitetura multi-servidor.
 

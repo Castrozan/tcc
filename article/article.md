@@ -44,7 +44,7 @@ Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos 
 
 ### 2.1.2 FERRAMENTAS DE TESTE E VALIDAÇÃO (problematic, write more about playwright)
 
-**Playwright** foi utilizado para implementação de testes automatizados *end-to-end* (E2E), permitindo simulação precisa de interações do usuário e validação de funcionalidades em ambiente controlado.
+**Playwright** foi utilizado para implementação de testes automatizados *end-to-end* (E2E), permitindo simulação realista e precisa das interações do usuário, com suporte abrangente aos principais navegadores (Chromium, Firefox e WebKit) em diferentes plataformas. A ferramenta é destacada por oferecer execução paralela e isolada de testes, gravação automática de interações para facilitar o desenvolvimento e depuração, e espera automática de elementos para reduzir testes instáveis [@guia2023playwright].
 
 ### 2.1.3 MODELOS DE LINGUAGEM UTILIZADOS
 

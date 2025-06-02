@@ -39,6 +39,7 @@ IMPORTANT: do no write text just review and create the plan
 
 ------------------------------------------------------------------------------------------------
 
+article/todos-review-lastday.md article/article.
 
-
+Reviwe this files. Take them into context and be ready to start implementing the plan definde by the todos. We gonna implement the first ones 
 

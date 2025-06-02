@@ -285,7 +285,17 @@ A validação experimental confirma que a abordagem OpenAPI-MCP oferece soluçã
 
 # GLOSSÁRIO
 
+**BERT (Bidirectional Encoder Representations from Transformers)**: Modelo de linguagem desenvolvido pelo Google em 2018, baseado em arquitetura transformer bidirecional, que revolucionou a compreensão textual ao processar contexto em ambas as direções simultaneamente.
+
+**Context Window (Janela de Contexto)**: Limitação técnica dos modelos de linguagem que define o número máximo de tokens que podem ser processados simultaneamente em uma única interação, influenciando diretamente a capacidade de manter conversas prolongadas e processar documentos extensos.
+
+**Descoberta Automática de Ferramentas**: Processo pelo qual o sistema identifica dinamicamente as funcionalidades disponíveis em servidores MCP conectados, criando um inventário em tempo real das capacidades acessíveis para coordenação inteligente.
+
+**Few-shot Learning**: Paradigma de aprendizado de máquina onde modelos conseguem realizar tarefas novas com poucos exemplos de treinamento, característica fundamental dos LLMs modernos que permite adaptação rápida a novos domínios.
+
 **Function Calling**: Funcionalidade avançada de LLMs que permite converter instruções em linguagem natural em chamadas de funções estruturadas, habilitando a execução automática de operações em sistemas externos.
+
+**Jailbreak**: Técnica de manipulação de modelos de linguagem através de prompts elaborados para contornar limitações de segurança e filtros internos, forçando o modelo a produzir conteúdo normalmente restrito.
 
 **LLM (Large Language Model)**: Modelos de linguagem de grande escala baseados em arquiteturas transformer, capazes de compreender e gerar texto em linguagem natural com alta qualidade.
 
@@ -293,9 +303,15 @@ A validação experimental confirma que a abordagem OpenAPI-MCP oferece soluçã
 
 **OpenAPI**: Especificação padrão da indústria para documentação de APIs RESTful, permitindo descrição estruturada de endpoints, parâmetros, esquemas de dados e métodos de autenticação em formato legível por máquina.
 
+**Orquestração Distribuída**: Coordenação inteligente de múltiplos serviços ou componentes distribuídos em rede, gerenciando comunicação, descoberta de serviços e balanceamento de carga para manter funcionalidade coesa do sistema.
+
 **Prompt Injection**: Técnica de ataque onde entradas maliciosas são inseridas em prompts para manipular o comportamento do modelo de linguagem, potencialmente expondo dados sensíveis ou executando ações não autorizadas.
 
 **Red Teaming**: Metodologia de teste de segurança que simula ataques adversários para identificar vulnerabilidades em sistemas, adaptada para contextos de IA para avaliar robustez contra manipulação.
+
+**Roteamento Inteligente**: Mecanismo que utiliza análise contextual e semântica para determinar automaticamente qual servidor ou serviço deve processar uma solicitação específica, baseado nas capacidades disponíveis e na natureza da requisição.
+
+**Transformer**: Arquitetura de rede neural introduzida em 2017 que revolucionou o processamento de linguagem natural através de mecanismos de atenção, servindo como base para modelos modernos como BERT, GPT e seus sucessores.
 
 # REFERÊNCIAS
 

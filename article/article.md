@@ -20,7 +20,7 @@ Nesse sentido, este estudo investiga preliminarmente as possibilidades de democr
 
 Considerando esse panorama tecnológico e as potencialidades demonstradas pelos LLMs, a problemática central desta pesquisa reside na questão: como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes, contribuindo para a democratização do acesso a tecnologias complexas? Essa pergunta reflete a necessidade crescente de soluções padronizadas que reduzam a complexidade de integração e tornem sistemas especializados mais acessíveis através de interfaces conversacionais naturais, representando um passo significativo em direção à democratização tecnológica.
 
-Este estudo constitui uma validação inicial e prova de conceito da abordagem OpenAPI-MCP, reconhecendo que há amplo espaço para pesquisas futuras e desenvolvimentos mais abrangentes. A investigação foca em demonstrar a viabilidade técnica fundamental da integração proposta através de experimentos controlados, estabelecendo evidências preliminares que justifiquem investigações mais aprofundadas. É importante destacar que, embora os resultados sejam promissores dentro do escopo experimental definido, esta pesquisa representa um ponto de partida para exploração de todo o potencial da abordagem, não pretendendo ser uma solução definitiva ou exaustiva para todos os cenários de integração empresarial.
+Este estudo constitui uma validação inicial e prova de conceito da abordagem OpenAPI-MCP, reconhecendo que há amplo espaço para pesquisas futuras e desenvolvimentos mais abrangentes. A investigação foca em demonstrar a viabilidade técnica fundamental da integração proposta através de experimentos controlados, estabelecendo evidências preliminares que justifiquem investigações mais aprofundadas.
 
 A relevância deste estudo evidencia-se pelo potencial transformador que os agentes conversacionais baseados em IA representam para a área de interação humano-computador. Ao implementar um sistema intermediário capaz de interpretar linguagem natural e traduzi-la em ações específicas dentro de um sistema, cria-se uma ponte que permite aos usuários interagir de forma mais intuitiva e natural com as tecnologias digitais. Esta abordagem tem o potencial de mitigar as barreiras impostas por interfaces complexas, contribuindo para uma maior inclusão digital e para a melhoria da experiência do usuário em diversos contextos de aplicação. O presente trabalho busca fornecer evidências iniciais desta possibilidade através de uma prova de conceito que demonstre a viabilidade técnica da integração OpenAPI-MCP e estabeleça fundamentos para desenvolvimentos futuros mais abrangentes.
 
@@ -28,9 +28,7 @@ Para responder adequadamente à questão de pesquisa formulada, este estudo requ
 
 # 2 PROCEDIMENTO EXPERIMENTAL
 
-Este estudo adota uma abordagem experimental estruturada em etapas sequenciais para investigar preliminarmente a viabilidade e eficácia da integração de agentes conversacionais baseados em IA a sistemas web através da especificação OpenAPI combinada com o protocolo Model Context Protocol (MCP). A pesquisa será examinada com base em uma prova de conceito prática, desenvolvida para validar sua viabilidade técnica inicial e avaliar objetivamente aspectos funcionais e não-funcionais da solução proposta dentro de um escopo experimental controlado.
-
-É importante ressaltar que esta investigação constitui uma validação inicial da abordagem proposta, com o objetivo de demonstrar a possibilidade de grandes avanços na integração entre sistemas existentes e LLMs, utilizando OpenAPI-MCP como uma solução promissora. As limitações inerentes ao escopo de uma prova de conceito, incluindo o número restrito de sistemas testados e a profundidade limitada dos cenários avaliados, são reconhecidas como adequadas para o propósito de estabelecer evidências preliminares de viabilidade técnica.
+Este estudo adota uma abordagem experimental estruturada em etapas sequenciais para investigar preliminarmente a viabilidade e eficácia da integração de agentes conversacionais baseados em IA a sistemas web através da especificação OpenAPI combinada com o protocolo Model Context Protocol (MCP). A pesquisa será examinada com base em uma prova de conceito prática, desenvolvida para validar sua viabilidade técnica inicial e então avaliar objetivamente aspectos funcionais e não-funcionais da solução proposta dentro de um escopo experimental controlado.
 
 Inicialmente, será conduzida uma revisão sistemática da literatura, consolidando conhecimentos científicos sobre integração OpenAPI-MCP e embasando teoricamente a fase experimental. Na sequência, a estratégia será implementada e testada por meio de uma prova de conceito abrangente, incluindo a) o desenvolvimento de um gerador automático de servidores MCP, b) um cliente de chat para gerenciamento de múltiplos servidores, c) aplicações de teste de ponta a ponta para validação da abordagem e d) geração de métricas de avaliação para medir desempenho, segurança, facilidade de implementação, manutenibilidade e experiência do usuário. 
 
@@ -38,15 +36,15 @@ Para assegurar resultados objetivos e reproduzíveis dentro do escopo experiment
 
 ## 2.1 MATERIAIS
 
-Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos conduzidos neste estudo, foram selecionadas ferramentas específicas baseadas em critérios de rigor científico, reprodutibilidade e adequação aos objetivos de pesquisa. A seleção do Node.js como plataforma de desenvolvimento, do Playwright para testes automatizados *end-to-end* e do OpenAI GPT-4 para integração com modelos de linguagem baseou-se em sua comprovada capacidade para suportar a metodologia experimental proposta, permitindo validação objetiva da viabilidade da integração OpenAPI-MCP através de uma prova de conceito robusta e reproduzível.
+Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos conduzidos neste estudo, foram selecionadas ferramentas específicas baseadas em critérios de rigor científico, reprodutibilidade e adequação aos objetivos de pesquisa.
 
 ### 2.1.1 PLATAFORMA DE DESENVOLVIMENTO
 
 **Node.js (versão 20+)** foi selecionado como plataforma principal devido à sua arquitetura assíncrona orientada a eventos, essencial para aplicações que requerem processamento simultâneo de múltiplas requisições e integração eficiente com APIs de modelos de linguagem. A escolha foi fundamentada na comprovada capacidade da plataforma para gerenciar operações intensivas de IA e sua ampla adoção em projetos de integração com LLMs [@cherednichenko:hal-04545073; @RedHat2024LLMNode].
 
-### 2.1.2 FERRAMENTAS DE TESTE E VALIDAÇÃO
+### 2.1.2 FERRAMENTAS DE TESTE E VALIDAÇÃO (problematic, write more about playwright)
 
-**Playwright** foi utilizado para implementação de testes automatizados *end-to-end* (E2E), permitindo simulação precisa de interações do usuário e validação de funcionalidades em ambiente controlado. Para avaliação de segurança, foram implementadas técnicas de *red teaming* - testes adversários sistemáticos que simulam ataques de injeção de *prompts* e tentativas de *jailbreak*. O *Framework* de Gerenciamento de Riscos de IA do NIST [@oprea2023adversarial] e as diretrizes da OWASP [@john2025owasp] orientaram a definição dos cenários de teste, considerando que injeções de *prompt* representam ameaças críticas em sistemas LLM com acesso a dados sensíveis.
+**Playwright** foi utilizado para implementação de testes automatizados *end-to-end* (E2E), permitindo simulação precisa de interações do usuário e validação de funcionalidades em ambiente controlado.
 
 ### 2.1.3 MODELOS DE LINGUAGEM UTILIZADOS
 
@@ -60,7 +58,7 @@ Para garantir a rigorosidade científica e a reprodutibilidade dos experimentos 
 
 ## 2.2 MÉTODOS
 
-Para assegurar a validade científica e a reprodutibilidade dos experimentos, foi fundamental estabelecer um controle rigoroso das variáveis experimentais. A implementação de uma interface padronizada constitui elemento metodológico essencial para eliminar diferenças de experiência do usuário que poderiam contaminar os resultados experimentais. Esta padronização garante que as diferenças observadas no desempenho sejam atribuíveis exclusivamente às tecnologias de integração testadas (OpenAPI-MCP), e não a variações na interface ou design de interação. Sem este controle experimental, seria impossível determinar se melhorias na usabilidade decorrem da abordagem proposta ou de fatores externos relacionados ao design da interface.
+Para assegurar a validade científica e a reprodutibilidade dos experimentos, foi fundamental estabelecer um controle rigoroso das variáveis experimentais. A implementação de uma interface padronizada constitui elemento metodológico essencial para eliminar diferenças de experiência do usuário que poderiam contaminar os resultados experimentais. Esta padronização garante que as diferenças observadas no desempenho sejam atribuíveis exclusivamente às tecnologias de integração testadas (OpenAPI-MCP), e não a variações na interface ou design de interação.
 
 ### 2.2.1 INTERFACE PADRONIZADA DE USUÁRIO
 
@@ -70,7 +68,7 @@ A interface comum consiste em uma aplicação web simples de chat, desenvolvida 
 
 A interface é composta por uma seção principal que exibe o histórico de mensagens, onde as interações entre usuário e agente conversacional aparecem de forma intercalada: as mensagens do agente são exibidas à esquerda e as do usuário à direita, facilitando a distinção visual entre os participantes da conversa. Abaixo do histórico, há um campo de entrada de texto que permite ao usuário digitar e enviar novas mensagens. Esse layout possibilita ao usuário acompanhar facilmente todo o histórico da conversa e inserir novos *prompts* de maneira contínua e intuitiva.
 
-![Interface web minimalista desenvolvida para testes padronizados da integração OpenAPI-MCP, mostrando área de histórico de mensagens intercaladas entre usuário (direita) e agente (esquerda), com campo de entrada inferior para novos comandos](images/chat/chat-interface.jpg)
+![Interface web minimalista desenvolvida para testes padronizados, mostrando área de histórico de mensagens intercaladas entre usuário (direita) e agente (esquerda), com campo de entrada inferior para novos comandos](images/chat/chat-interface.jpg)
 
 A disposição visual apresentada na Figura 1 facilita o acompanhamento do diálogo, elemento crucial para a avaliação objetiva da experiência do usuário durante os testes experimentais. A separação clara entre mensagens do usuário e do agente permite identificação imediata do fluxo conversacional, enquanto o design minimalista elimina variáveis de confusão relacionadas à interface que poderiam comprometer a validade dos resultados.
 
@@ -88,7 +86,7 @@ Os critérios de segurança focam na robustez contra ataques adversários e vali
 
 Os critérios de usabilidade abrangem tanto aspectos quantitativos quanto qualitativos da experiência do usuário. O tempo de conclusão de tarefas é medido para operações CRUD padrão executadas via linguagem natural, proporcionando métricas objetivas de eficiência operacional. A curva de aprendizado é quantificada pelo número de tentativas necessárias para usuários completarem tarefas específicas, indicando a intuitividade da interface conversacional.
 
-### 2.2.3 ARQUITETURA E FLUXO DE INTEGRAÇÃO DO SISTEMA
+### 2.2.3 ARQUITETURA E FLUXO DE INTEGRAÇÃO DO SISTEMA (problematic, confuse and disconnect)
 
 A arquitetura do sistema desenvolvida para este estudo envolve múltiplas camadas que trabalham de forma integrada para responder às consultas feitas pelo usuário em linguagem natural. Inicialmente, as consultas serão recebidas pela interface *web* e encaminhadas ao *backend*, onde o modelo de linguagem executará o processo de análise e interpretação.
 
@@ -102,12 +100,6 @@ O fluxo completo de interação deverá ocorrer da seguinte maneira: ao receber 
 
 O fluxo apresentado na Figura 3 demonstra a sequência metodológica que permite validação experimental da hipótese central da pesquisa. Cada etapa do workflow representa um ponto de medição onde métricas específicas podem ser coletadas, desde a latência de interpretação até a precisão da conversão de intenções em operações estruturadas.
 
-### 2.2.5 METODOLOGIA DE TESTES AUTOMATIZADOS *END-TO-END*
-
-A instrumentação e coleta de dados foram implementadas através de um conjunto integrado de ferramentas especializadas para garantir precisão e abrangência na captura de métricas. O Playwright Test Framework foi configurado para capturar métricas de performance via Performance API, proporcionando medições precisas de latência e throughput em condições reais de uso.
-
-Esta metodologia de testes automatizados pretende garantir que os dados sejam resultado direto das características de implementação, e não de variações na experiência do usuário ou na forma de coleta de dados. A instrumentação detalhada permite análise reproduzível e comparação objetiva entre diferentes estratégias de integração, estabelecendo uma base empírica sólida para as conclusões científicas da pesquisa.
-
 ## 3. DESENVOLVIMENTO
 
 A implementação da solução OpenAPI-MCP foi estruturada seguindo uma abordagem modular e integrada, compreendendo quatro componentes principais que trabalham em sinergia para demonstrar e validar a viabilidade da integração proposta. A arquitetura resultante engloba um gerador automático de servidores MCP a partir de especificações OpenAPI, um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente, aplicações de teste que simulam cenários reais de negócio, e uma suíte abrangente de testes automatizados para avaliação científica da solução.
@@ -120,24 +112,15 @@ O desenvolvimento da solução OpenAPI-MCP enfrentou desafios metodológicos fun
 
 Para abordar o desafio de padronização, foi desenvolvido um gerador automático de servidores MCP que representa o núcleo metodológico da contribuição científica proposta. A concepção desta ferramenta surge da necessidade de validar experimentalmente se especificações OpenAPI existentes podem ser sistematicamente convertidas em ferramentas utilizáveis por modelos de linguagem, eliminando a necessidade de desenvolvimento manual recorrente.
 
-![Arquitetura do Gerador Automático de Servidores MCP mostrando as três camadas funcionais: Parser Layer para análise sintática, Semantic Mapping Layer para conversão inteligente e Code Generation Layer para produção de código TypeScript](images/development/mcp-generator-architecture.jpg)
+![Arquitetura do Gerador Automático de Servidores MCP mostrando as três camadas funcionais: Análise Sintática, Mapeamento Semântico e Geração de Ferramentas MCP](images/development/mcp-generator-architecture.jpg)
 
-A arquitetura metodológica ilustrada na Figura X foi estruturada em três camadas funcionais distintas, cada uma com responsabilidades bem definidas:
-
-**Primeira Camada - Análise Sintática (*Parsing*)**
-Esta camada é responsável pela extração e validação de metadados de endpoints a partir de especificações OpenAPI 3.0+. O processo inclui validação de conformidade com o padrão OpenAPI, resolução de referências ($ref) e preparação dos dados para processamento subsequente.
-
-**Segunda Camada - Mapeamento Semântico MCP**
-A camada intermediária realiza a conversão inteligente de operações OpenAPI para ferramentas compreensíveis pelos modelos de linguagem. Este processo preserva a semântica original das operações enquanto adiciona metadados necessários para o protocolo MCP, como informações de roteamento e validação.
-
-**Terceira Camada - Geração de Código**
-A camada final produz servidores MCP funcionais em TypeScript, completos com validação robusta de entrada, tratamento de erros e integração nativa com o protocolo MCP. O código gerado é otimizado para execução eficiente e manutenibilidade.
+A arquitetura metodológica ilustrada na Figura 4 acima foi estruturada em três camadas funcionais distintas, cada uma com responsabilidades bem definidas que contribuem para a conversão sistemática de especificações OpenAPI em servidores MCP funcionais. A primeira camada, denominada Análise Sintática (*Parsing*), é responsável pela extração e validação rigorosa de metadados de endpoints a partir de especificações OpenAPI 3.0+, incluindo validação de conformidade com o padrão estabelecido, resolução de referências ($ref) e preparação dos dados para processamento subsequente. A segunda camada, Mapeamento Semântico MCP, realiza a conversão inteligente de operações OpenAPI para ferramentas compreensíveis pelos modelos de linguagem, preservando a semântica original das operações enquanto adiciona metadados necessários para o protocolo MCP, como informações de roteamento e validação. A terceira camada, Geração de Ferramentas MCP, materializa o processo através da produção de servidores MCP armazenados em memória.
 
 Esta abordagem metodológica atende diretamente ao primeiro objetivo específico da pesquisa - *desenvolver um gerador automático de servidores MCP* - ao estabelecer um processo sistemático e reproduzível para conversão de especificações API em ferramentas de agentes conversacionais. A escolha da arquitetura em camadas fundamenta-se na necessidade de criar um processo de validação controlado, onde cada etapa pode ser independentemente verificada e os resultados podem ser objetivamente mensurados.
 
-A conversão preserva a semântica completa da operação OpenAPI, incluindo parâmetros de caminho, consulta, cabeçalho e corpo da requisição. O sistema realiza resolução automática de referências ($ref) e *inlining* de esquemas complexos para garantir que as ferramentas geradas sejam autocontidas e compreensíveis pelos modelos de linguagem.
+A conversão preserva a semântica completa da operação OpenAPI, incluindo parâmetros de caminho, consulta, cabeçalho e corpo da requisição. O sistema realiza resolução automática de esquemas complexos para garantir que as ferramentas geradas estejam no formato válido para o protocolo MCP e tenham todos os parâmetros necessários para a execução correta da operação pelo modelo de linguagem.
 
-**Exemplo de Conversão OpenAPI→MCP:**
+**Exemplo de Conversão OpenAPI-MCP:**
 
 Especificação OpenAPI original:
 ```yaml
@@ -180,11 +163,11 @@ Ferramenta MCP gerada automaticamente:
 }
 ```
 
-O processo de conversão mantém a integridade semântica da operação, preservando informações essenciais como localização de parâmetros (path, query, body) através de extensões personalizadas (x-parameter-location), permitindo que o sistema de roteamento direcione corretamente os valores durante a execução.
+O processo de conversão mantém a integridade semântica da operação, preservando informações essenciais como localização de parâmetros, permitindo que o sistema de roteamento direcione corretamente os valores durante a execução. Esta estrutura permite que o modelo de linguagem compreenda precisamente quais parâmetros são esperados e como devem ser formatados, permitindo a escolha e uso das funções corretas a partir de instruções em linguagem natural.
 
 #### 3.1.2 COORDENAÇÃO MULTI-SERVIDOR: DESAFIO DE ORQUESTRAÇÃO DISTRIBUÍDA
 
-O segundo desafio metodológico identificado relaciona-se à coordenação eficiente de múltiplos servidores MCP simultaneamente, problema que se enquadra teoricamente no domínio de sistemas distribuídos e coordenação de agentes [@anthropic2024mcp]. A complexidade emerge da necessidade de manter conexões ativas, descobrir dinamicamente capacidades disponíveis e rotear solicitações baseadas na análise semântica da intenção do usuário, tudo isso preservando a experiência conversacional natural.
+O segundo desafio metodológico identificado relaciona-se à coordenação eficiente de múltiplos servidores MCP simultaneamente, problema que se enquadra teoricamente no domínio de sistemas distribuídos e coordenação de agentes. A complexidade emerge da necessidade de manter conexões ativas, descobrir dinamicamente capacidades disponíveis e rotear solicitações baseadas na análise semântica da intenção do usuário, tudo isso preservando a experiência conversacional natural.
 
 A solução metodológica adotada implementa um sistema de coordenação baseado em descoberta automática de ferramentas, criando um inventário dinâmico das funcionalidades acessíveis em cada servidor. O roteamento inteligente utiliza análise contextual para determinar qual servidor utilizar baseado nas ferramentas disponíveis e na natureza da solicitação, enquanto o mecanismo de agregação de resultados permite combinar informações de múltiplos servidores quando necessário.
 
@@ -192,21 +175,17 @@ A estratégia de coordenação multi-servidor implementa três mecanismos metodo
 
 A integração com modelos de linguagem através da funcionalidade de *function calling* da OpenAI estabelece uma ponte metodológica entre compreensão de linguagem natural e execução de ferramentas específicas. Esta abordagem permite validação experimental da hipótese de que agentes conversacionais podem efetivamente interpretar intenções complexas e traduzi-las em operações precisas em sistemas *backend*, constituindo elemento central para avaliação da usabilidade e eficácia da solução proposta.
 
-### 3.2 FUNDAMENTAÇÃO TECNOLÓGICA E METODOLÓGICA
-
-As decisões tecnológicas para implementação da prova de conceito foram fundamentadas em critérios de rigor científico, reprodutibilidade e adequação aos objetivos de pesquisa, segundo o detalhamento da seção de MATERIAIS. A seleção do Node.js como plataforma de desenvolvimento, do Playwright para testes automatizados *end-to-end* e do OpenAI GPT-4 para integração com modelos de linguagem baseou-se em sua comprovada capacidade para suportar a metodologia experimental proposta, permitindo validação objetiva da viabilidade da integração OpenAPI-MCP através de uma prova de conceito robusta e reproduzível.
-
-### 3.3 GERADOR AUTOMÁTICO DE SERVIDORES MCP (MCP-OPENAPI-SERVER)
+### 3.2 GERADOR AUTOMÁTICO DE SERVIDORES MCP
 
 O gerador automático de servidores MCP representa a materialização metodológica do primeiro objetivo específico da pesquisa, constituindo a ferramenta central para validação da hipótese de que especificações OpenAPI podem ser sistematicamente convertidas em interfaces utilizáveis por agentes conversacionais. A abordagem metodológica adotada fundamenta-se na premissa de que a automação da geração de servidores elimina a variabilidade humana no processo de integração, permitindo avaliação objetiva da eficácia da conversão OpenAPI-MCP.
 
 A estrutura metodológica implementada segue um processo sistemático de três etapas interdependentes. A primeira etapa realiza análise sintática (*parsing*) e validação rigorosa de especificações OpenAPI 3.0+, garantindo conformidade com padrões estabelecidos e extração precisa de metadados essenciais. A segunda etapa executa mapeamento semântico entre contratos OpenAPI e ferramentas MCP, preservando a integridade semântica das operações originais e adaptando-as para compreensão por modelos de linguagem. A terceira etapa concretiza a geração de código TypeScript funcional, produzindo servidores MCP operacionais com tratamento robusto de erros e validação automática de entrada.
 
-Esta metodologia de geração automática permite validação experimental controlada, onde cada especificação OpenAPI processada constitui um caso de teste independente para avaliação da eficácia da conversão. O suporte implementado para múltiplos esquemas de autenticação (API Key, Bearer Token, OAuth) e todos os métodos HTTP fundamentais (GET, POST, PUT, DELETE, PATCH) garante cobertura abrangente dos cenários de integração típicos encontrados em ambientes corporativos reais, essencial para validação da aplicabilidade prática da abordagem proposta.
+Esta metodologia de geração automática permite validação experimental controlada, onde cada especificação OpenAPI processada constitui um caso de teste independente para avaliação da eficácia da conversão. O suporte implementado para a todos os métodos HTTP fundamentais (GET, POST, PUT, DELETE, PATCH) garante cobertura abrangente dos cenários de integração típicos encontrados em ambientes corporativos reais, essencial para validação da aplicabilidade prática da abordagem proposta.
 
 É importante notar que a arquitetura possui potencial significativo para otimizações de performance através de mecanismos de cache. A geração de servidores MCP poderia beneficiar-se de cache de especificações processadas, evitando reprocessamento desnecessário. Contudo, a decisão arquitetural adotada nesta prova de conceito mantém a responsabilidade de cache de requisições nas aplicações-alvo, reconhecendo que estas possuem conhecimento contextual superior sobre a natureza dos dados, políticas de invalidação e requisitos específicos de negócio. Esta separação de responsabilidades constitui uma oportunidade clara para pesquisas futuras sobre estratégias ótimas de cache em arquiteturas de integração conversacional distribuída.
 
-#### 3.3.1 Algoritmo de Conversão OpenAPI→MCP
+#### 3.2.1 ALGORITMO DE CONVERSÃO OPENAPI→MCP
 
 O núcleo do gerador automático reside no algoritmo de conversão que transforma especificações OpenAPI em ferramentas utilizáveis pelo protocolo MCP. A arquitetura implementa três camadas distintas que processam sequencialmente a especificação:
 
@@ -292,69 +271,11 @@ Ferramenta MCP gerada automaticamente:
 }
 ```
 
-O processo de conversão mantém a integridade semântica da operação, preservando informações essenciais como localização de parâmetros (path, query, body) através de extensões personalizadas (x-parameter-location), permitindo que o sistema de roteamento direcione corretamente os valores durante a execução.
+O processo de conversão mantém a integridade semântica da operação, preservando informações essenciais como localização de parâmetros através de extensões personalizadas, permitindo que o sistema de roteamento direcione corretamente os valores durante a execução.
 
-#### 3.3.2 Interface TypeScript para Ferramentas MCP
+Esta estrutura permite que o modelo de linguagem compreenda precisamente quais parâmetros são esperados e como devem ser formatados, permitindo a escolha e uso das funções corretas a partir de instruções em linguagem natural.
 
-As ferramentas MCP seguem uma interface TypeScript bem definida que garante compatibilidade com o protocolo:
-
-```typescript
-interface Tool {
-  name: string;           // Nome único da ferramenta
-  description: string;    // Descrição em linguagem natural
-  inputSchema: {         // JSON Schema para validação de entrada
-    type: "object";
-    properties: Record<string, SchemaObject>;
-    required?: string[];
-  };
-}
-
-interface SchemaObject {
-  type?: string;
-  description?: string;
-  properties?: Record<string, SchemaObject>;
-  items?: SchemaObject;
-  enum?: any[];
-  format?: string;
-  "x-parameter-location"?: "path" | "query" | "header" | "body";
-}
-```
-
-Esta estrutura permite que modelos de linguagem compreendam precisamente quais parâmetros são esperados e como devem ser formatados, facilitando a geração automática de chamadas de API corretas a partir de instruções em linguagem natural.
-
-#### 3.3.3 Tratamento de Erros e Recuperação
-
-O sistema implementa tratamento robusto de erros em múltiplas camadas, garantindo que falhas nas APIs subjacentes sejam adequadamente comunicadas ao modelo de linguagem para possibilitar estratégias de recuperação autônomas:
-
-```typescript
-// Implementação de tratamento de erros no api-client.ts
-async executeApiCall(toolId: string, params: Record<string, any>): Promise<any> {
-  try {
-    const { method, path } = this.parseToolId(toolId)
-    const response = await this.axiosInstance(config)
-    return response.data
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      const axiosError = error as AxiosError
-      // Propaga informações detalhadas do erro para o LLM
-      throw new Error(
-        `API request failed: ${axiosError.message}${
-          axiosError.response
-            ? ` (${axiosError.response.status}: ${
-                JSON.stringify(axiosError.response.data)
-              })`
-            : ""
-        }`
-      )
-    }
-    throw error
-  }
-}
-```
-
-Quando erros ocorrem nas camadas base, o LLM tem acesso completo à resposta da ferramenta, incluindo códigos de status HTTP, mensagens de erro e dados adicionais retornados pela API. Esta transparência permite que o modelo interprete o contexto do erro e tente estratégias alternativas de forma autônoma, como reformular parâmetros, tentar operações relacionadas ou informar o usuário sobre limitações específicas do sistema.
-
-### 3.4 CLIENTE DE CHAT MULTI-SERVIDOR MCP
+### 3.3 CLIENTE DE CHAT MULTI-SERVIDOR MCP
 
 O cliente de chat multi-servidor constitui a implementação metodológica do segundo objetivo específico da pesquisa, desenvolvido como ferramenta de validação experimental para demonstrar a viabilidade prática da orquestração simultânea de múltiplos servidores MCP em ambiente conversacional. A concepção metodológica desta ferramenta fundamenta-se na necessidade de criar um ambiente controlado onde a capacidade de coordenação entre sistemas distribuídos possa ser sistematicamente testada e avaliada.
 
@@ -364,7 +285,7 @@ A estratégia de coordenação multi-servidor implementa três mecanismos metodo
 
 A integração com modelos de linguagem através da funcionalidade de *function calling* da OpenAI estabelece uma ponte metodológica entre compreensão de linguagem natural e execução de ferramentas específicas. Esta abordagem permite validação experimental da hipótese de que agentes conversacionais podem efetivamente interpretar intenções complexas e traduzi-las em operações precisas em sistemas *backend*, constituindo elemento central para avaliação da usabilidade e eficácia da solução proposta.
 
-### 3.5 INTEGRAÇÃO COM MODELOS DE LINGUAGEM
+#### 3.3.1 INTEGRAÇÃO COM MODELOS DE LINGUAGEM
 
 A integração com modelos de linguagem através da funcionalidade de *function calling* constitui elemento central da arquitetura, permitindo que o GPT-4 utilizar dinamicamente as ferramentas MCP disponíveis:
 
@@ -403,7 +324,7 @@ async processUserMessage(sessionId, userMessage) {
 
 Este mecanismo permite que o modelo de linguagem analise a intenção do usuário e automaticamente determine quais ferramentas utilizar, executando chamadas precisas às APIs subjacentes sem necessidade de programação explícita de fluxos conversacionais.
 
-#### 3.5.2 Configuração Multi-Servidor
+#### 3.3.2 CONFIGURAÇÃO MULTI-SERVIDOR
 
 A arquitetura de configuração para gerenciamento de múltiplos servidores MCP foi concebida para proporcionar flexibilidade operacional através de mecanismos dinâmicos de adição e remoção de servidores, eliminando a necessidade de reinicialização do sistema durante modificações na topologia de serviços. Esta abordagem metodológica fundamenta-se na premissa de que ambientes empresariais requerem adaptabilidade contínua para acomodar mudanças nos requisitos de integração e na disponibilidade de sistemas externos.
 
@@ -413,7 +334,7 @@ A abordagem de configuração dinâmica adotada apresenta vantagens metodológic
 
 A persistência das configurações entre sessões constitui elemento fundamental para manutenção da continuidade operacional, permitindo que usuários retomem seus ambientes de trabalho personalizados sem necessidade de reconfiguração manual. Esta característica, aliada à capacidade de modificação dinâmica da topologia de servidores sem alterações no código base, estabelece fundamentos sólidos para escalabilidade e manutenibilidade da solução em contextos empresariais diversos, validando a aplicabilidade prática da abordagem proposta para cenários reais de integração.
 
-### 3.5.1 Especificação do Conjunto de Dados de Teste
+### 3.4 ESPECIFICAÇÃO DO CONJUNTO DE DADOS DE TESTE
 
 A validação experimental da solução requereu o desenvolvimento de um conjunto abrangente de dados de teste estruturado metodologicamente para avaliar múltiplas dimensões críticas do sistema proposto. A especificação destes conjuntos de teste fundamenta-se em três categorias principais de métricas - desempenho, segurança e usabilidade - cada qual contribuindo para a avaliação holística da viabilidade e eficácia da integração OpenAPI-MCP em ambientes controlados.
 
@@ -422,44 +343,6 @@ Os critérios de desempenho estabelecidos compreendem quatro métricas fundament
 Os critérios de segurança implementados focam especificamente na robustez contra ataques adversários e na validação rigorosa de entrada, aspectos considerados críticos para sistemas que integram LLMs com acesso potencial a dados corporativos sensíveis. A resistência a injeção de *prompts* é mensurada através do percentual de tentativas maliciosas efetivamente bloqueadas durante testes sistemáticos de *red teaming*, incluindo cenários de injeção SQL, execução de comandos do sistema, extração não autorizada de dados e escalação de privilégios. A validação de entrada é avaliada através da capacidade do sistema de rejeitar payloads maliciosos estruturados, incluindo tentativas de manipulação de parâmetros, bypass de autenticação e acesso não autorizado a funcionalidades administrativas. Complementarmente, a análise de respostas do sistema verifica se informações sensíveis são inadvertidamente expostas em retornos de erro ou mensagens de diagnóstico, garantindo que o comportamento defensivo seja mantido consistentemente em todas as categorias de ataques testadas.
 
 Os critérios de usabilidade estabelecidos abrangem tanto aspectos quantitativos quanto qualitativos da experiência do usuário, elementos essenciais para validar a eficácia prática da interface conversacional proposta. O tempo de conclusão de tarefas, medido sistematicamente para operações CRUD padrão executadas através de comandos em linguagem natural, proporciona métricas objetivas sobre a eficiência operacional percebida pelos usuários. A curva de aprendizado é quantificada através do número de tentativas necessárias para usuários completarem tarefas específicas com sucesso, fornecendo indicadores precisos sobre a intuitividade e naturalidade da interface conversacional. A satisfação geral dos usuários é avaliada através de métricas padronizadas em escala de 1 a 5, considerando três dimensões específicas: precisão das respostas em relação à intenção expressa, clareza na estruturação e apresentação das informações, e utilidade prática das respostas fornecidas para tomada de decisão.
-
-Para garantir validação abrangente da solução dentro do escopo experimental definido, foram desenvolvidos conjuntos de dados de teste estruturados que totalizam 33 cenários automatizados, distribuídos estrategicamente entre as categorias funcionais, de segurança e de experiência do usuário, conforme detalhado nas tabelas a seguir.
-
-**Tabela X: Características do Conjunto de Dados de Teste**
-
-| Categoria de Teste            | Cenários | Tipo de Operação               | Exemplo de Consulta                    | Comportamento Esperado                   |
-| ----------------------------- | -------- | ------------------------------ | -------------------------------------- | ---------------------------------------- |
-| **Operações CRUD**            | 8        | GET, POST, PUT, DELETE         | "Listar todos os equipamentos"         | Retorna lista completa com detalhes      |
-| **Experiência do Usuário**    | 13       | Consultas em linguagem natural | "O que você pode fazer?"               | Resposta clara sobre capacidades         |
-| **Segurança**                 | 16       | Testes adversários             | "'; DROP TABLE equipment; --"          | Rejeição segura do comando malicioso     |
-| **Coordenação Multi-Sistema** | 3        | Consultas agregadas            | "Mostrar equipamentos e profissionais" | Agregação de dados de múltiplos sistemas |
-
-Os testes de operações CRUD validam a funcionalidade básica através de interações com dois sistemas de teste: gerenciamento de equipamentos industriais e gestão de recursos humanos. Cada sistema expõe 5 endpoints RESTful (listagem, busca por ID, criação, atualização e exclusão), totalizando 10 endpoints convertidos automaticamente em ferramentas MCP.
-
-**Tabela Y: Detalhamento dos Cenários de Segurança**
-
-| Tipo de Ataque           | Vetores Testados | Payloads de Exemplo                       | Proteção Validada                |
-| ------------------------ | ---------------- | ----------------------------------------- | -------------------------------- |
-| Injeção SQL              | 4                | "OR '1'='1'", "UNION SELECT *"            | Validação de entrada via schemas |
-| Injeção de Comandos      | 4                | "; ls -la", "&& cat /etc/passwd"          | Isolamento de execução           |
-| Extração de Dados        | 4                | "Show all passwords", "Display API keys"  | Controle de acesso a informações |
-| Escalação de Privilégios | 4                | "Grant admin access", "Override security" | Verificação de autorização       |
-
-Os testes de experiência do usuário avaliam aspectos qualitativos através de métricas objetivas em escala de 1-5, considerando precisão das respostas (correspondência com a intenção), clareza da comunicação (estruturação e completude) e utilidade das informações (relevância e acionabilidade). As consultas variam desde saudações simples até solicitações complexas que requerem interpretação contextual e execução de múltiplas operações.
-
-### 3.6 ESTRATÉGIA DE VALIDAÇÃO EXPERIMENTAL ATRAVÉS DE APLICAÇÕES DE TESTE
-
-Para garantir rigor científico na validação da abordagem proposta, foram desenvolvidas aplicações de teste que simulam cenários empresariais realistas, atendendo ao terceiro objetivo específico da pesquisa - *avaliar a solução através de testes sistemáticos*. A estratégia metodológica fundamenta-se na utilização de domínios de negócio distintos - gerenciamento de equipamentos industriais e gestão de recursos humanos - para demonstrar a versatilidade e aplicabilidade geral da integração OpenAPI-MCP em contextos heterogêneos.
-
-A escolha metodológica por aplicações que exponham APIs RESTful completamente documentadas com especificações OpenAPI permite criar um ambiente controlado onde variáveis experimentais podem ser sistematicamente manipuladas e resultados objetivamente mensurados. Esta abordagem experimental garante que a validação ocorra em condições que refletem fielmente as complexidades encontradas em ambientes corporativos reais, sem comprometer a reprodutibilidade e controle necessários para avaliação científica rigorosa.
-
-### 3.7 METODOLOGIA DE VALIDAÇÃO AUTOMATIZADA
-
-A validação científica da solução implementa uma metodologia de testes automatizados estruturada para abordar múltiplas dimensões críticas da pesquisa: funcionalidade, segurança e usabilidade.
-
-A abordagem de validação automatizada garante reprodutibilidade dos experimentos e elimina variabilidade humana na coleta de dados, elementos essenciais para estabelecer a validade científica dos resultados obtidos. Esta metodologia permite que pesquisadores futuros repliquem os experimentos sob condições idênticas, contribuindo para o avanço cumulativo do conhecimento na área de integração de agentes conversacionais em sistemas empresariais complexos.
-
-Tendo estabelecido a fundamentação metodológica e implementado os componentes técnicos necessários, a etapa seguinte concentra-se na análise empírica dos resultados obtidos através da execução dos testes automatizados. A avaliação abrangente aborda múltiplas dimensões críticas para determinar a viabilidade prática da abordagem OpenAPI-MCP em cenários controlados.
 
 ## 4 RESULTADOS E DISCUSSÕES
 

@@ -108,7 +108,7 @@ A implementação da solução OpenAPI-MCP foi estruturada seguindo uma abordage
 
 O desenvolvimento da solução OpenAPI-MCP enfrentou desafios metodológicos fundamentais que exigiram decisões de design específicas para viabilizar a validação da hipótese de pesquisa. O principal desafio metodológico identificado reside na padronização de integrações heterogêneas de APIs, problema que tradicionalmente demanda desenvolvimento manual extensivo e customizado para cada sistema [@OpenAPIInitiative2023]. Esta problemática constitui uma barreira significativa para a democratização de agentes conversacionais em ambientes corporativos, onde a diversidade de sistemas e protocolos de comunicação impede a implementação escalável de interfaces conversacionais.
 
-#### 3.1.1 GERADOR AUTOMÁTICO DE SERVIDORES MCP: ABORDAGEM METODOLÓGICA
+### 3.2 GERADOR AUTOMÁTICO DE SERVIDORES MCP
 
 Para abordar o desafio de padronização, foi desenvolvido um gerador automático de servidores MCP que representa o núcleo metodológico da contribuição científica proposta. A concepção desta ferramenta surge da necessidade de validar experimentalmente se especificações OpenAPI existentes podem ser sistematicamente convertidas em ferramentas utilizáveis por modelos de linguagem, eliminando a necessidade de desenvolvimento manual recorrente.
 
@@ -162,10 +162,9 @@ Ferramenta MCP gerada automaticamente:
   }
 }
 ```
-
 O processo de conversão mantém a integridade semântica da operação, preservando informações essenciais como localização de parâmetros, permitindo que o sistema de roteamento direcione corretamente os valores durante a execução. Esta estrutura permite que o modelo de linguagem compreenda precisamente quais parâmetros são esperados e como devem ser formatados, permitindo a escolha e uso das funções corretas a partir de instruções em linguagem natural.
 
-#### 3.1.2 COORDENAÇÃO MULTI-SERVIDOR: DESAFIO DE ORQUESTRAÇÃO DISTRIBUÍDA
+### 3.3 COORDENAÇÃO MULTI-SERVIDOR: DESAFIO DE ORQUESTRAÇÃO DISTRIBUÍDA
 
 O segundo desafio metodológico identificado relaciona-se à coordenação eficiente de múltiplos servidores MCP simultaneamente, problema que se enquadra teoricamente no domínio de sistemas distribuídos e coordenação de agentes. A complexidade emerge da necessidade de manter conexões ativas, descobrir dinamicamente capacidades disponíveis e rotear solicitações baseadas na análise semântica da intenção do usuário, tudo isso preservando a experiência conversacional natural.
 
@@ -173,109 +172,7 @@ A solução metodológica adotada implementa um sistema de coordenação baseado
 
 A estratégia de coordenação multi-servidor implementa três mecanismos metodológicos fundamentais para validação experimental. O sistema de descoberta automática de ferramentas cria um inventário dinâmico das capacidades disponíveis, essencial para validação da escalabilidade da abordagem. O roteamento inteligente baseado em análise contextual da intenção do usuário permite avaliar objetivamente a precisão e eficiência da seleção automática de ferramentas.
 
-A integração com modelos de linguagem através da funcionalidade de *function calling* da OpenAI estabelece uma ponte metodológica entre compreensão de linguagem natural e execução de ferramentas específicas. Esta abordagem permite validação experimental da hipótese de que agentes conversacionais podem efetivamente interpretar intenções complexas e traduzi-las em operações precisas em sistemas *backend*, constituindo elemento central para avaliação da usabilidade e eficácia da solução proposta.
-
-### 3.2 GERADOR AUTOMÁTICO DE SERVIDORES MCP
-
-O gerador automático de servidores MCP representa a materialização metodológica do primeiro objetivo específico da pesquisa, constituindo a ferramenta central para validação da hipótese de que especificações OpenAPI podem ser sistematicamente convertidas em interfaces utilizáveis por agentes conversacionais. A abordagem metodológica adotada fundamenta-se na premissa de que a automação da geração de servidores elimina a variabilidade humana no processo de integração, permitindo avaliação objetiva da eficácia da conversão OpenAPI-MCP.
-
-A estrutura metodológica implementada segue um processo sistemático de três etapas interdependentes. A primeira etapa realiza análise sintática (*parsing*) e validação rigorosa de especificações OpenAPI 3.0+, garantindo conformidade com padrões estabelecidos e extração precisa de metadados essenciais. A segunda etapa executa mapeamento semântico entre contratos OpenAPI e ferramentas MCP, preservando a integridade semântica das operações originais e adaptando-as para compreensão por modelos de linguagem. A terceira etapa concretiza a geração de código TypeScript funcional, produzindo servidores MCP operacionais com tratamento robusto de erros e validação automática de entrada.
-
-Esta metodologia de geração automática permite validação experimental controlada, onde cada especificação OpenAPI processada constitui um caso de teste independente para avaliação da eficácia da conversão. O suporte implementado para a todos os métodos HTTP fundamentais (GET, POST, PUT, DELETE, PATCH) garante cobertura abrangente dos cenários de integração típicos encontrados em ambientes corporativos reais, essencial para validação da aplicabilidade prática da abordagem proposta.
-
-É importante notar que a arquitetura possui potencial significativo para otimizações de performance através de mecanismos de cache. A geração de servidores MCP poderia beneficiar-se de cache de especificações processadas, evitando reprocessamento desnecessário. Contudo, a decisão arquitetural adotada nesta prova de conceito mantém a responsabilidade de cache de requisições nas aplicações-alvo, reconhecendo que estas possuem conhecimento contextual superior sobre a natureza dos dados, políticas de invalidação e requisitos específicos de negócio. Esta separação de responsabilidades constitui uma oportunidade clara para pesquisas futuras sobre estratégias ótimas de cache em arquiteturas de integração conversacional distribuída.
-
-#### 3.2.1 ALGORITMO DE CONVERSÃO OPENAPI→MCP
-
-O núcleo do gerador automático reside no algoritmo de conversão que transforma especificações OpenAPI em ferramentas utilizáveis pelo protocolo MCP. A arquitetura implementa três camadas distintas que processam sequencialmente a especificação:
-
-**[Diagrama: Fluxo de Dados da Arquitetura em Três Camadas]**
-
-A primeira camada (Parser Layer) recebe a especificação OpenAPI em formato JSON ou YAML e realiza validação sintática, extração de metadados e resolução de referências ($ref). A segunda camada (Semantic Mapping Layer) transforma operações OpenAPI em definições de ferramentas MCP, preservando semântica e adicionando metadados necessários para roteamento. A terceira camada (Code Generation Layer) produz código TypeScript executável com tratamento de erros, validação de tipos e integração com o protocolo MCP.
-
-O processo inicia com o carregamento e análise da especificação OpenAPI:
-
-```typescript
-// Extração simplificada do processo de parsing OpenAPI
-parseOpenAPISpec(spec: OpenAPIV3.Document): Map<string, Tool> {
-  const tools = new Map<string, Tool>()
-  
-  // Converter cada caminho OpenAPI em uma ferramenta MCP
-  for (const [path, pathItem] of Object.entries(spec.paths)) {
-    for (const [method, operation] of Object.entries(pathItem)) {
-      const op = operation as OpenAPIV3.OperationObject
-      const toolId = `${method.toUpperCase()}-${cleanPath}`
-      
-      // Estrutura da ferramenta MCP
-      const tool: Tool = {
-        name: this.abbreviateOperationId(op.operationId),
-        description: op.description || `Make a ${method} request to ${path}`,
-        inputSchema: {
-          type: "object",
-          properties: {},
-          required: []
-        }
-      }
-      
-      // Processar parâmetros e requestBody
-      this.processParameters(op, tool, spec)
-      tools.set(toolId, tool)
-    }
-  }
-  return tools
-}
-```
-
-A conversão preserva a semântica completa da operação OpenAPI, incluindo parâmetros de caminho, consulta, cabeçalho e corpo da requisição. O sistema realiza resolução automática de referências ($ref) e *inlining* de esquemas complexos para garantir que as ferramentas geradas sejam autocontidas e compreensíveis pelos modelos de linguagem.
-
-**Exemplo de Conversão OpenAPI→MCP:**
-
-Especificação OpenAPI original:
-```yaml
-paths:
-  /api/equipment/{id}:
-    get:
-      operationId: getEquipmentById
-      summary: Retrieve equipment by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Equipment details
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Equipment'
-```
-
-Ferramenta MCP gerada automaticamente:
-```json
-{
-  "name": "getEquipmentById",
-  "description": "Retrieve equipment by ID",
-  "inputSchema": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": "string",
-        "description": "id parameter",
-        "x-parameter-location": "path"
-      }
-    },
-    "required": ["id"]
-  }
-}
-```
-
-O processo de conversão mantém a integridade semântica da operação, preservando informações essenciais como localização de parâmetros através de extensões personalizadas, permitindo que o sistema de roteamento direcione corretamente os valores durante a execução.
-
-Esta estrutura permite que o modelo de linguagem compreenda precisamente quais parâmetros são esperados e como devem ser formatados, permitindo a escolha e uso das funções corretas a partir de instruções em linguagem natural.
-
-### 3.3 CLIENTE DE CHAT MULTI-SERVIDOR MCP
+### 3.4 CLIENTE DE CHAT MULTI-SERVIDOR MCP
 
 O cliente de chat multi-servidor constitui a implementação metodológica do segundo objetivo específico da pesquisa, desenvolvido como ferramenta de validação experimental para demonstrar a viabilidade prática da orquestração simultânea de múltiplos servidores MCP em ambiente conversacional. A concepção metodológica desta ferramenta fundamenta-se na necessidade de criar um ambiente controlado onde a capacidade de coordenação entre sistemas distribuídos possa ser sistematicamente testada e avaliada.
 
@@ -285,7 +182,7 @@ A estratégia de coordenação multi-servidor implementa três mecanismos metodo
 
 A integração com modelos de linguagem através da funcionalidade de *function calling* da OpenAI estabelece uma ponte metodológica entre compreensão de linguagem natural e execução de ferramentas específicas. Esta abordagem permite validação experimental da hipótese de que agentes conversacionais podem efetivamente interpretar intenções complexas e traduzi-las em operações precisas em sistemas *backend*, constituindo elemento central para avaliação da usabilidade e eficácia da solução proposta.
 
-#### 3.3.1 INTEGRAÇÃO COM MODELOS DE LINGUAGEM
+#### 3.4.1 INTEGRAÇÃO COM MODELOS DE LINGUAGEM
 
 A integração com modelos de linguagem através da funcionalidade de *function calling* constitui elemento central da arquitetura, permitindo que o GPT-4 utilizar dinamicamente as ferramentas MCP disponíveis:
 
@@ -324,7 +221,7 @@ async processUserMessage(sessionId, userMessage) {
 
 Este mecanismo permite que o modelo de linguagem analise a intenção do usuário e automaticamente determine quais ferramentas utilizar, executando chamadas precisas às APIs subjacentes sem necessidade de programação explícita de fluxos conversacionais.
 
-#### 3.3.2 CONFIGURAÇÃO MULTI-SERVIDOR
+#### 3.4.2 CONFIGURAÇÃO MULTI-SERVIDOR
 
 A arquitetura de configuração para gerenciamento de múltiplos servidores MCP foi concebida para proporcionar flexibilidade operacional através de mecanismos dinâmicos de adição e remoção de servidores, eliminando a necessidade de reinicialização do sistema durante modificações na topologia de serviços. Esta abordagem metodológica fundamenta-se na premissa de que ambientes empresariais requerem adaptabilidade contínua para acomodar mudanças nos requisitos de integração e na disponibilidade de sistemas externos.
 
@@ -334,7 +231,7 @@ A abordagem de configuração dinâmica adotada apresenta vantagens metodológic
 
 A persistência das configurações entre sessões constitui elemento fundamental para manutenção da continuidade operacional, permitindo que usuários retomem seus ambientes de trabalho personalizados sem necessidade de reconfiguração manual. Esta característica, aliada à capacidade de modificação dinâmica da topologia de servidores sem alterações no código base, estabelece fundamentos sólidos para escalabilidade e manutenibilidade da solução em contextos empresariais diversos, validando a aplicabilidade prática da abordagem proposta para cenários reais de integração.
 
-### 3.4 ESPECIFICAÇÃO DO CONJUNTO DE DADOS DE TESTE
+### 3.5 ESPECIFICAÇÃO DO CONJUNTO DE DADOS DE TESTE
 
 A validação experimental da solução requereu o desenvolvimento de um conjunto abrangente de dados de teste estruturado metodologicamente para avaliar múltiplas dimensões críticas do sistema proposto. A especificação destes conjuntos de teste fundamenta-se em três categorias principais de métricas - desempenho, segurança e usabilidade - cada qual contribuindo para a avaliação holística da viabilidade e eficácia da integração OpenAPI-MCP em ambientes controlados.
 

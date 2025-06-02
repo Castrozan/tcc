@@ -547,8 +547,8 @@ ambientes corporativos, onde a diversidade de sistemas e protocolos de
 comunicação impede a implementação escalável de interfaces
 conversacionais.
 
-\paragraph{3.1.1 GERADOR AUTOMÁTICO DE SERVIDORES MCP: ABORDAGEM
-METODOLÓGICA}\label{gerador-automuxe1tico-de-servidores-mcp-abordagem-metodoluxf3gica}
+\subsubsection{3.2 GERADOR AUTOMÁTICO DE SERVIDORES
+MCP}\label{gerador-automuxe1tico-de-servidores-mcp}
 
 Para abordar o desafio de padronização, foi desenvolvido um gerador
 automático de servidores MCP que representa o núcleo metodológico da
@@ -655,8 +655,9 @@ compreenda precisamente quais parâmetros são esperados e como devem ser
 formatados, permitindo a escolha e uso das funções corretas a partir de
 instruções em linguagem natural.
 
-\paragraph{3.1.2 COORDENAÇÃO MULTI-SERVIDOR: DESAFIO DE ORQUESTRAÇÃO
-DISTRIBUÍDA}\label{coordenauxe7uxe3o-multi-servidor-desafio-de-orquestrauxe7uxe3o-distribuuxedda}
+\subsubsection{3.3 COORDENAÇÃO MULTI-SERVIDOR: DESAFIO DE ORQUESTRAÇÃO
+DISTRIBUÍDA (TODO: add a image to reduce
+text)}\label{coordenauxe7uxe3o-multi-servidor-desafio-de-orquestrauxe7uxe3o-distribuuxedda-todo-add-a-image-to-reduce-text}
 
 O segundo desafio metodológico identificado relaciona-se à coordenação
 eficiente de múltiplos servidores MCP simultaneamente, problema que se
@@ -666,195 +667,9 @@ ativas, descobrir dinamicamente capacidades disponíveis e rotear
 solicitações baseadas na análise semântica da intenção do usuário, tudo
 isso preservando a experiência conversacional natural.
 
-A solução metodológica adotada implementa um sistema de coordenação
-baseado em descoberta automática de ferramentas, criando um inventário
-dinâmico das funcionalidades acessíveis em cada servidor. O roteamento
-inteligente utiliza análise contextual para determinar qual servidor
-utilizar baseado nas ferramentas disponíveis e na natureza da
-solicitação, enquanto o mecanismo de agregação de resultados permite
-combinar informações de múltiplos servidores quando necessário.
-
-A estratégia de coordenação multi-servidor implementa três mecanismos
-metodológicos fundamentais para validação experimental. O sistema de
-descoberta automática de ferramentas cria um inventário dinâmico das
-capacidades disponíveis, essencial para validação da escalabilidade da
-abordagem. O roteamento inteligente baseado em análise contextual da
-intenção do usuário permite avaliar objetivamente a precisão e
-eficiência da seleção automática de ferramentas.
-
-A integração com modelos de linguagem através da funcionalidade de
-\emph{function calling} da OpenAI estabelece uma ponte metodológica
-entre compreensão de linguagem natural e execução de ferramentas
-específicas. Esta abordagem permite validação experimental da hipótese
-de que agentes conversacionais podem efetivamente interpretar intenções
-complexas e traduzi-las em operações precisas em sistemas
-\emph{backend}, constituindo elemento central para avaliação da
-usabilidade e eficácia da solução proposta.
-
-\subsubsection{3.2 GERADOR AUTOMÁTICO DE SERVIDORES
-MCP}\label{gerador-automuxe1tico-de-servidores-mcp}
-
-O gerador automático de servidores MCP representa a materialização
-metodológica do primeiro objetivo específico da pesquisa, constituindo a
-ferramenta central para validação da hipótese de que especificações
-OpenAPI podem ser sistematicamente convertidas em interfaces utilizáveis
-por agentes conversacionais. A abordagem metodológica adotada
-fundamenta-se na premissa de que a automação da geração de servidores
-elimina a variabilidade humana no processo de integração, permitindo
-avaliação objetiva da eficácia da conversão OpenAPI-MCP.
-
-A estrutura metodológica implementada segue um processo sistemático de
-três etapas interdependentes. A primeira etapa realiza análise sintática
-(\emph{parsing}) e validação rigorosa de especificações OpenAPI 3.0+,
-garantindo conformidade com padrões estabelecidos e extração precisa de
-metadados essenciais. A segunda etapa executa mapeamento semântico entre
-contratos OpenAPI e ferramentas MCP, preservando a integridade semântica
-das operações originais e adaptando-as para compreensão por modelos de
-linguagem. A terceira etapa concretiza a geração de código TypeScript
-funcional, produzindo servidores MCP operacionais com tratamento robusto
-de erros e validação automática de entrada.
-
-Esta metodologia de geração automática permite validação experimental
-controlada, onde cada especificação OpenAPI processada constitui um caso
-de teste independente para avaliação da eficácia da conversão. O suporte
-implementado para a todos os métodos HTTP fundamentais (GET, POST, PUT,
-DELETE, PATCH) garante cobertura abrangente dos cenários de integração
-típicos encontrados em ambientes corporativos reais, essencial para
-validação da aplicabilidade prática da abordagem proposta.
-
-É importante notar que a arquitetura possui potencial significativo para
-otimizações de performance através de mecanismos de cache. A geração de
-servidores MCP poderia beneficiar-se de cache de especificações
-processadas, evitando reprocessamento desnecessário. Contudo, a decisão
-arquitetural adotada nesta prova de conceito mantém a responsabilidade
-de cache de requisições nas aplicações-alvo, reconhecendo que estas
-possuem conhecimento contextual superior sobre a natureza dos dados,
-políticas de invalidação e requisitos específicos de negócio. Esta
-separação de responsabilidades constitui uma oportunidade clara para
-pesquisas futuras sobre estratégias ótimas de cache em arquiteturas de
-integração conversacional distribuída.
-
-\paragraph{3.2.1 ALGORITMO DE CONVERSÃO
-OPENAPI→MCP}\label{algoritmo-de-conversuxe3o-openapimcp}
-
-O núcleo do gerador automático reside no algoritmo de conversão que
-transforma especificações OpenAPI em ferramentas utilizáveis pelo
-protocolo MCP. A arquitetura implementa três camadas distintas que
-processam sequencialmente a especificação:
-
-\textbf{{[}Diagrama: Fluxo de Dados da Arquitetura em Três Camadas{]}}
-
-A primeira camada (Parser Layer) recebe a especificação OpenAPI em
-formato JSON ou YAML e realiza validação sintática, extração de
-metadados e resolução de referências (\$ref). A segunda camada (Semantic
-Mapping Layer) transforma operações OpenAPI em definições de ferramentas
-MCP, preservando semântica e adicionando metadados necessários para
-roteamento. A terceira camada (Code Generation Layer) produz código
-TypeScript executável com tratamento de erros, validação de tipos e
-integração com o protocolo MCP.
-
-O processo inicia com o carregamento e análise da especificação OpenAPI:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{// Extração simplificada do processo de parsing OpenAPI}
-\FunctionTok{parseOpenAPISpec}\NormalTok{(spec}\OperatorTok{:}\NormalTok{ OpenAPIV3}\OperatorTok{.}\AttributeTok{Document}\NormalTok{)}\OperatorTok{:} \BuiltInTok{Map}\OperatorTok{\textless{}}\DataTypeTok{string}\OperatorTok{,}\NormalTok{ Tool}\OperatorTok{\textgreater{}}\NormalTok{ \{}
-  \KeywordTok{const}\NormalTok{ tools }\OperatorTok{=} \KeywordTok{new} \BuiltInTok{Map}\OperatorTok{\textless{}}\DataTypeTok{string}\OperatorTok{,}\NormalTok{ Tool}\OperatorTok{\textgreater{}}\NormalTok{()}
-  
-  \CommentTok{// Converter cada caminho OpenAPI em uma ferramenta MCP}
-  \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{const}\NormalTok{ [path}\OperatorTok{,}\NormalTok{ pathItem] }\KeywordTok{of} \BuiltInTok{Object}\OperatorTok{.}\FunctionTok{entries}\NormalTok{(spec}\OperatorTok{.}\AttributeTok{paths}\NormalTok{)) \{}
-    \ControlFlowTok{for}\NormalTok{ (}\KeywordTok{const}\NormalTok{ [method}\OperatorTok{,}\NormalTok{ operation] }\KeywordTok{of} \BuiltInTok{Object}\OperatorTok{.}\FunctionTok{entries}\NormalTok{(pathItem)) \{}
-      \KeywordTok{const}\NormalTok{ op }\OperatorTok{=}\NormalTok{ operation }\ImportTok{as}\NormalTok{ OpenAPIV3}\OperatorTok{.}\AttributeTok{OperationObject}
-      \KeywordTok{const}\NormalTok{ toolId }\OperatorTok{=} \VerbatimStringTok{\textasciigrave{}}\SpecialCharTok{$\{}\NormalTok{method}\OperatorTok{.}\FunctionTok{toUpperCase}\NormalTok{()}\SpecialCharTok{\}}\VerbatimStringTok{{-}}\SpecialCharTok{$\{}\NormalTok{cleanPath}\SpecialCharTok{\}}\VerbatimStringTok{\textasciigrave{}}
-      
-      \CommentTok{// Estrutura da ferramenta MCP}
-      \KeywordTok{const}\NormalTok{ tool}\OperatorTok{:}\NormalTok{ Tool }\OperatorTok{=}\NormalTok{ \{}
-\NormalTok{        name}\OperatorTok{:} \KeywordTok{this}\OperatorTok{.}\FunctionTok{abbreviateOperationId}\NormalTok{(op}\OperatorTok{.}\AttributeTok{operationId}\NormalTok{)}\OperatorTok{,}
-\NormalTok{        description}\OperatorTok{:}\NormalTok{ op}\OperatorTok{.}\AttributeTok{description} \OperatorTok{||} \VerbatimStringTok{\textasciigrave{}Make a }\SpecialCharTok{$\{}\NormalTok{method}\SpecialCharTok{\}}\VerbatimStringTok{ request to }\SpecialCharTok{$\{}\NormalTok{path}\SpecialCharTok{\}}\VerbatimStringTok{\textasciigrave{}}\OperatorTok{,}
-\NormalTok{        inputSchema}\OperatorTok{:}\NormalTok{ \{}
-\NormalTok{          type}\OperatorTok{:} \StringTok{"object"}\OperatorTok{,}
-\NormalTok{          properties}\OperatorTok{:}\NormalTok{ \{\}}\OperatorTok{,}
-\NormalTok{          required}\OperatorTok{:}\NormalTok{ []}
-\NormalTok{        \}}
-\NormalTok{      \}}
-      
-      \CommentTok{// Processar parâmetros e requestBody}
-      \KeywordTok{this}\OperatorTok{.}\FunctionTok{processParameters}\NormalTok{(op}\OperatorTok{,}\NormalTok{ tool}\OperatorTok{,}\NormalTok{ spec)}
-\NormalTok{      tools}\OperatorTok{.}\FunctionTok{set}\NormalTok{(toolId}\OperatorTok{,}\NormalTok{ tool)}
-\NormalTok{    \}}
-\NormalTok{  \}}
-  \ControlFlowTok{return}\NormalTok{ tools}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-A conversão preserva a semântica completa da operação OpenAPI, incluindo
-parâmetros de caminho, consulta, cabeçalho e corpo da requisição. O
-sistema realiza resolução automática de referências (\$ref) e
-\emph{inlining} de esquemas complexos para garantir que as ferramentas
-geradas sejam autocontidas e compreensíveis pelos modelos de linguagem.
-
-\textbf{Exemplo de Conversão OpenAPI→MCP:}
-
-Especificação OpenAPI original:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{paths}\KeywordTok{:}
-\AttributeTok{  }\FunctionTok{/api/equipment/\{id\}}\KeywordTok{:}
-\AttributeTok{    }\FunctionTok{get}\KeywordTok{:}
-\AttributeTok{      }\FunctionTok{operationId}\KeywordTok{:}\AttributeTok{ getEquipmentById}
-\AttributeTok{      }\FunctionTok{summary}\KeywordTok{:}\AttributeTok{ Retrieve equipment by ID}
-\AttributeTok{      }\FunctionTok{parameters}\KeywordTok{:}
-\AttributeTok{        }\KeywordTok{{-}}\AttributeTok{ }\FunctionTok{name}\KeywordTok{:}\AttributeTok{ id}
-\AttributeTok{          }\FunctionTok{in}\KeywordTok{:}\AttributeTok{ path}
-\AttributeTok{          }\FunctionTok{required}\KeywordTok{:}\AttributeTok{ }\CharTok{true}
-\AttributeTok{          }\FunctionTok{schema}\KeywordTok{:}
-\AttributeTok{            }\FunctionTok{type}\KeywordTok{:}\AttributeTok{ string}
-\AttributeTok{      }\FunctionTok{responses}\KeywordTok{:}
-\AttributeTok{        }\FunctionTok{200}\KeywordTok{:}
-\AttributeTok{          }\FunctionTok{description}\KeywordTok{:}\AttributeTok{ Equipment details}
-\AttributeTok{          }\FunctionTok{content}\KeywordTok{:}
-\AttributeTok{            }\FunctionTok{application/json}\KeywordTok{:}
-\AttributeTok{              }\FunctionTok{schema}\KeywordTok{:}
-\AttributeTok{                }\FunctionTok{$ref}\KeywordTok{:}\AttributeTok{ }\StringTok{\textquotesingle{}\#/components/schemas/Equipment\textquotesingle{}}
-\end{Highlighting}
-\end{Shaded}
-
-Ferramenta MCP gerada automaticamente:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{\{}
-  \DataTypeTok{"name"}\FunctionTok{:} \StringTok{"getEquipmentById"}\FunctionTok{,}
-  \DataTypeTok{"description"}\FunctionTok{:} \StringTok{"Retrieve equipment by ID"}\FunctionTok{,}
-  \DataTypeTok{"inputSchema"}\FunctionTok{:} \FunctionTok{\{}
-    \DataTypeTok{"type"}\FunctionTok{:} \StringTok{"object"}\FunctionTok{,}
-    \DataTypeTok{"properties"}\FunctionTok{:} \FunctionTok{\{}
-      \DataTypeTok{"id"}\FunctionTok{:} \FunctionTok{\{}
-        \DataTypeTok{"type"}\FunctionTok{:} \StringTok{"string"}\FunctionTok{,}
-        \DataTypeTok{"description"}\FunctionTok{:} \StringTok{"id parameter"}\FunctionTok{,}
-        \DataTypeTok{"x{-}parameter{-}location"}\FunctionTok{:} \StringTok{"path"}
-      \FunctionTok{\}}
-    \FunctionTok{\},}
-    \DataTypeTok{"required"}\FunctionTok{:} \OtherTok{[}\StringTok{"id"}\OtherTok{]}
-  \FunctionTok{\}}
-\FunctionTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-O processo de conversão mantém a integridade semântica da operação,
-preservando informações essenciais como localização de parâmetros
-através de extensões personalizadas, permitindo que o sistema de
-roteamento direcione corretamente os valores durante a execução.
-
-Esta estrutura permite que o modelo de linguagem compreenda precisamente
-quais parâmetros são esperados e como devem ser formatados, permitindo a
-escolha e uso das funções corretas a partir de instruções em linguagem
-natural.
-
-\subsubsection{3.3 CLIENTE DE CHAT MULTI-SERVIDOR
-MCP}\label{cliente-de-chat-multi-servidor-mcp}
+\subsubsection{3.4 CLIENTE DE CHAT MULTI-SERVIDOR MCP (TODO: add a image
+to reduce
+text)}\label{cliente-de-chat-multi-servidor-mcp-todo-add-a-image-to-reduce-text}
 
 O cliente de chat multi-servidor constitui a implementação metodológica
 do segundo objetivo específico da pesquisa, desenvolvido como ferramenta
@@ -875,34 +690,30 @@ experimentais. O \emph{backend}, implementado em Node.js com Express.js,
 concentra a lógica de coordenação e instrumentação necessária para o
 comportamento do sistema.
 
-A estratégia de coordenação multi-servidor implementa três mecanismos
-metodológicos fundamentais para validação experimental. O sistema de
-descoberta automática de ferramentas cria um inventário dinâmico das
-capacidades disponíveis, essencial para validação da escalabilidade da
-abordagem. O roteamento inteligente baseado em análise contextual da
-intenção do usuário permite avaliar objetivamente a precisão e
-eficiência da seleção automática de ferramentas.
+A solução metodológica adotada implementa um sistema de coordenação
+baseado em descoberta automática de ferramentas, criando um inventário
+dinâmico das funcionalidades acessíveis em cada servidor. O roteamento
+inteligente utiliza análise contextual para determinar qual servidor
+utilizar baseado nas ferramentas disponíveis e na natureza da
+solicitação, enquanto o mecanismo de agregação de resultados permite
+combinar informações de múltiplos servidores quando necessário.
 
-A integração com modelos de linguagem através da funcionalidade de
-\emph{function calling} da OpenAI estabelece uma ponte metodológica
-entre compreensão de linguagem natural e execução de ferramentas
-específicas. Esta abordagem permite validação experimental da hipótese
-de que agentes conversacionais podem efetivamente interpretar intenções
-complexas e traduzi-las em operações precisas em sistemas
-\emph{backend}, constituindo elemento central para avaliação da
-usabilidade e eficácia da solução proposta.
+Nest cenário é necessário a integração com o modelo de linguagem que
+pode ser realizada através da funcionalidade de \emph{function calling}
+da OpenAI estabelecendo uma ponte metodológica entre compreensão de
+linguagem natural e execução de ferramentas específicas.
 
-\paragraph{3.3.1 INTEGRAÇÃO COM MODELOS DE
+\paragraph{3.4.1 INTEGRAÇÃO COM MODELOS DE
 LINGUAGEM}\label{integrauxe7uxe3o-com-modelos-de-linguagem}
 
 A integração com modelos de linguagem através da funcionalidade de
 \emph{function calling} constitui elemento central da arquitetura,
-permitindo que o GPT-4 utilizar dinamicamente as ferramentas MCP
+permitindo que o GPT-4 possa utilizar dinamicamente as ferramentas MCP
 disponíveis:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{// Conversão de ferramentas MCP para formato OpenAI}
+\CommentTok{// Exemplo simplificado de integração e conversão de ferramentas MCP para formato OpenAI}
 \FunctionTok{convertMCPToolsToOpenAI}\NormalTok{(mcpTools) \{}
   \ControlFlowTok{return}\NormalTok{ mcpTools}\OperatorTok{.}\FunctionTok{map}\NormalTok{(tool }\KeywordTok{=\textgreater{}}\NormalTok{ (\{}
     \DataTypeTok{type}\OperatorTok{:} \StringTok{\textquotesingle{}function\textquotesingle{}}\OperatorTok{,}
@@ -940,8 +751,9 @@ usuário e automaticamente determine quais ferramentas utilizar,
 executando chamadas precisas às APIs subjacentes sem necessidade de
 programação explícita de fluxos conversacionais.
 
-\paragraph{3.3.2 CONFIGURAÇÃO
-MULTI-SERVIDOR}\label{configurauxe7uxe3o-multi-servidor}
+\paragraph{3.4.2 CONFIGURAÇÃO MULTI-SERVIDOR (TODO: add a image to
+reduce
+text)}\label{configurauxe7uxe3o-multi-servidor-todo-add-a-image-to-reduce-text}
 
 A arquitetura de configuração para gerenciamento de múltiplos servidores
 MCP foi concebida para proporcionar flexibilidade operacional através de
@@ -963,32 +775,17 @@ especificações OpenAPI e endereços base das APIs, podem ser ajustados
 dinamicamente, proporcionando adaptabilidade às mudanças em ambientes de
 desenvolvimento e produção.
 
-A abordagem de configuração dinâmica adotada apresenta vantagens
-metodológicas significativas quando comparada a alternativas baseadas em
-arquivos de configuração estática. A flexibilidade operacional obtida
-permite que usuários adaptem o ambiente às necessidades específicas de
-seus contextos organizacionais sem requerer conhecimento técnico
-profundo sobre a arquitetura subjacente. O paradigma de descoberta
-incremental facilita a evolução orgânica do sistema, onde novos serviços
-podem ser integrados progressivamente conforme demandas emergem. O
-isolamento de falhas implementado garante que problemas em servidores
-individuais não comprometam a operação global do sistema, aumentando a
-resiliência da solução. Estas características combinadas resultam em
-experiência do usuário aprimorada, onde a complexidade técnica é
-abstraída através de interface visual que facilita a compreensão e o
-gerenciamento efetivo da arquitetura multi-servidor.
+O paradigma de descoberta incremental facilita a evolução orgânica do
+sistema, onde novos serviços podem ser integrados progressivamente
+conforme demandas emergem. O isolamento de falhas implementado garante
+que problemas em servidores individuais não comprometam a operação
+global do sistema, aumentando a resiliência da solução. Estas
+características combinadas resultam em experiência do usuário
+aprimorada, onde a complexidade técnica é abstraída através de interface
+visual que facilita a compreensão e o gerenciamento efetivo da
+arquitetura multi-servidor.
 
-A persistência das configurações entre sessões constitui elemento
-fundamental para manutenção da continuidade operacional, permitindo que
-usuários retomem seus ambientes de trabalho personalizados sem
-necessidade de reconfiguração manual. Esta característica, aliada à
-capacidade de modificação dinâmica da topologia de servidores sem
-alterações no código base, estabelece fundamentos sólidos para
-escalabilidade e manutenibilidade da solução em contextos empresariais
-diversos, validando a aplicabilidade prática da abordagem proposta para
-cenários reais de integração.
-
-\subsubsection{3.4 ESPECIFICAÇÃO DO CONJUNTO DE DADOS DE
+\subsubsection{3.5 ESPECIFICAÇÃO DO CONJUNTO DE DADOS DE
 TESTE}\label{especificauxe7uxe3o-do-conjunto-de-dados-de-teste}
 
 A validação experimental da solução requereu o desenvolvimento de um
@@ -1130,54 +927,14 @@ viável para cenários onde a precisão é prioritária em relação à
 velocidade consistente, fornecendo evidências iniciais promissoras para
 o desenvolvimento de soluções mais robustas.
 
-\subsection{4.2 EFICÁCIA DA GERAÇÃO AUTOMÁTICA DE SERVIDORES
-MCP}\label{eficuxe1cia-da-gerauxe7uxe3o-automuxe1tica-de-servidores-mcp}
-
-A Tabela 2 demonstra a capacidade do sistema de converter especificações
-OpenAPI em servidores MCP funcionais, validando o núcleo tecnológico da
-abordagem proposta.
-
-\textbf{Tabela 2: Resultados da Conversão OpenAPI→MCP}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1981}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3113}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1792}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3113}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Aspecto Testado
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Implementado
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Taxa de Sucesso (\%)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Observações
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Métodos HTTP & 5 (GET, POST, PUT, DELETE, PATCH) & 100 & Cobertura
-completa CRUD \\
-Sistemas Integrados & 2 & 100 & Equipamentos e Profissionais \\
-Endpoints Convertidos & 10 & 100 & Conversão automática bem-sucedida \\
-\end{longtable}
-
-A análise confirma que a conversão automática OpenAPI→MCP preserva
-integralmente a funcionalidade dos sistemas originais, permitindo acesso
-completo através de interface conversacional. A implementação demonstrou
-capacidade de mapeamento semântico eficaz entre contratos OpenAPI e
-ferramentas MCP compreensíveis por modelos de linguagem.
-
-\subsection{4.3 AVALIAÇÃO DE EXPERIÊNCIA DO
+\subsection{4.2 AVALIAÇÃO DE EXPERIÊNCIA DO
 USUÁRIO}\label{avaliauxe7uxe3o-de-experiuxeancia-do-usuuxe1rio}
 
-A Tabela 3 apresenta os resultados quantitativos da avaliação de
+A Tabela 2 apresenta os resultados quantitativos da avaliação de
 experiência do usuário, obtidos através de 13 cenários de teste
 estruturados com métricas padronizadas.
 
-\textbf{Tabela 3: Métricas de Experiência do Usuário (Escala 1-5)}
+\textbf{Tabela 2: Métricas de Experiência do Usuário (Escala 1-5)}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3125}}
@@ -1214,13 +971,13 @@ relevantes e acionáveis. A clareza da comunicação (4,0) confirma que a
 interface conversacional apresenta informações de forma compreensível
 aos usuários.
 
-\subsection{4.4 ANÁLISE DE SEGURANÇA}\label{anuxe1lise-de-seguranuxe7a}
+\subsection{4.3 ANÁLISE DE SEGURANÇA}\label{anuxe1lise-de-seguranuxe7a}
 
-A Tabela 4 apresenta os resultados dos testes de segurança adversários,
+A Tabela 3 apresenta os resultados dos testes de segurança adversários,
 conduzidos através de 16 cenários de ataque estruturados em 4 categorias
 principais.
 
-\textbf{Tabela 4: Resultados dos Testes de Segurança}
+\textbf{Tabela 3: Resultados dos Testes de Segurança}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3333}}
@@ -1259,48 +1016,42 @@ mais abrangentes sejam necessários para validação completa.
 
 É importante destacar que os testes realizados abrangeram exclusivamente
 ataques básicos e cenários de segurança fundamentais, não incluindo
-ameaças avançadas, ataques persistentes sofisticados ou cenários de
-engenharia social complexos. Esta limitação na cobertura dos testes de
-segurança implica que implementações em ambientes de produção críticos
-requerem avaliação de segurança mais abrangente e rigorosa para garantir
-proteção adequada contra vetores de ataque mais elaborados.
-
-Adicionalmente, é relevante observar que a maioria dos LLMs modernos já
-incorpora mecanismos internos de proteção contra ataques básicos de
-injeção de prompts e tentativas de jailbreak, contribuindo para os
-resultados positivos observados. Esta proteção em múltiplas camadas -
-tanto no nível do LLM quanto na validação via schemas OpenAPI -
-demonstra a robustez da abordagem, embora pesquisas futuras devam
-investigar ameaças mais sofisticadas e ataques adversários avançados que
-possam explorar vulnerabilidades específicas da integração entre
-sistemas.
+ameaças avançadas, ataques persistentes sofisticados. Adicionalmente, é
+relevante observar que a maioria dos LLMs modernos já incorpora
+mecanismos internos de proteção contra ataques básicos de injeção de
+prompts e tentativas de jailbreak, contribuindo para os resultados
+positivos observados. Esta proteção em múltiplas camadas - tanto no
+nível do LLM quanto na validação via schemas OpenAPI - demonstra a
+robustez da abordagem, embora pesquisas futuras devam investigar ameaças
+mais sofisticadas e ataques adversários avançados que possam explorar
+vulnerabilidades específicas da integração entre sistemas.
 
 Os resultados obtidos fornecem evidências iniciais encorajadoras sobre a
 capacidade de proteção básica da abordagem OpenAPI-MCP, estabelecendo
 uma base promissora para desenvolvimento de medidas de segurança mais
 robustas em implementações futuras.
 
-\subsection{4.5 FUNCIONALIDADE DO SISTEMA
-MULTI-SERVIDOR}\label{funcionalidade-do-sistema-multi-servidor}
+\subsection{4.4 EFICÁCIA DA GERAÇÃO AUTOMÁTICA DE SERVIDORES
+MCP}\label{eficuxe1cia-da-gerauxe7uxe3o-automuxe1tica-de-servidores-mcp}
 
-A Tabela 5 apresenta os resultados da coordenação multi-servidor durante
-os testes experimentais, validando a capacidade de orquestração
-distribuída da solução.
+A Tabela 4 demonstra a capacidade do sistema de converter especificações
+OpenAPI em servidores MCP funcionais, validando o núcleo tecnológico da
+abordagem proposta.
 
-\textbf{Tabela 5: Resultados da Coordenação Multi-Servidor}
+\textbf{Tabela 4: Resultados da Conversão OpenAPI→MCP}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2889}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2111}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3667}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1981}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3113}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1792}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3113}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Funcionalidade
+Aspecto Testado
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Resultado Alcançado
+Implementado
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Eficácia (\%)
+Taxa de Sucesso (\%)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Observações
 \end{minipage} \\
@@ -1308,23 +1059,19 @@ Observações
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Servidores MCP Simultâneos & 2 & 100 & Equipamentos + Profissionais \\
-Ferramentas Descobertas & 10 & 100 & Detecção automática completa \\
-Roteamento Inteligente & 13/13 consultas & 100 & Seleção correta de
-servidor \\
-Consultas Multi-Sistema & 3 & 100 & Agregação de dados funcionando \\
-Disponibilidade Parcial & Testado & 100 & Funcionamento com falhas
-parciais \\
+Métodos HTTP & 5 (GET, POST, PUT, DELETE, PATCH) & 100 & Cobertura
+completa CRUD \\
+Sistemas Integrados & 2 & 100 & Equipamentos e Profissionais \\
+Endpoints Convertidos & 10 & 100 & Conversão automática bem-sucedida \\
 \end{longtable}
 
-Os resultados confirmam que o sistema consegue coordenar múltiplos
-servidores MCP simultaneamente, mantendo descoberta automática de
-ferramentas e roteamento inteligente de solicitações. A capacidade de
-agregação de dados entre sistemas diferentes foi validada através de
-consultas que requereram informações de ambos os domínios testados
-(equipamentos e profissionais).
+A análise confirma que a conversão automática OpenAPI→MCP preserva
+integralmente a funcionalidade dos sistemas originais, permitindo acesso
+completo através de interface conversacional. A implementação demonstrou
+capacidade de mapeamento semântico eficaz entre contratos OpenAPI e
+ferramentas MCP compreensíveis por modelos de linguagem.
 
-\subsection{4.6 VALIDAÇÃO
+\subsection{4.5 VALIDAÇÃO
 EXPERIMENTAL}\label{validauxe7uxe3o-experimental}
 
 Os resultados apresentados indicam que a abordagem OpenAPI-MCP é
@@ -1333,16 +1080,11 @@ conversacionais baseados em IA com sistemas web existentes dentro do
 escopo experimental testado:
 
 \textbf{Conversão Automática OpenAPI→MCP:} 100\% dos casos testados
-(10/10 endpoints)\\
-\textbf{Gerenciamento Multi-Servidor:} 2 servidores coordenados
-simultaneamente com 100\% eficácia\\
-\textbf{Integração LLM:} Taxa de sucesso de 100\% na interpretação de
-intenções (13/13 consultas)\\
-\textbf{Robustez Operacional:} Sistema mantém funcionalidade durante
-cenários de falha testados\\
+(10/10 endpoints) \textbf{Robustez Operacional:} Sistema mantém
+funcionalidade durante cenários de falha e alta carga
 \textbf{Segurança:} 100\% de proteção contra 16 vetores de ataque
-básicos testados\\
-\textbf{Experiência do Usuário:} Pontuação 4,0/5,0 em satisfação geral
+básicos testados \textbf{Experiência do Usuário:} Pontuação 4,0/5,0 em
+satisfação geral
 
 A validação experimental demonstra preliminarmente que a especificação
 OpenAPI pode ser sistematicamente convertida em ferramentas utilizáveis
@@ -1401,12 +1143,12 @@ performance (336\% nos tempos de resposta) e o escopo restrito (2
 servidores MCP, 21 operações, cenários controlados) impedem
 generalização ampla para ambientes empresariais complexos. Os testes de
 segurança abrangeram apenas ataques básicos, não incluindo ameaças
-avançadas ou engenharia social sofisticada.
+sofisticadas.
 
 Investigações futuras devem abordar: (1) otimização de performance e
 estratégias de cache; (2) expansão da validação para ambientes
 empresariais de maior escala; (3) avaliações de segurança contra ameaças
-avançadas; (4) análise de escalabilidade para dezenas ou centenas de
+sofisticadas; (4) análise de escalabilidade para dezenas ou centenas de
 servidores MCP simultâneos; (5) desenvolvimento de métricas rigorosas
 para contextos organizacionais diversos; (6) estudos comparativos com
 outras abordagens de integração; (7) análise custo-benefício para

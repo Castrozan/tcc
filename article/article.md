@@ -217,15 +217,13 @@ async processUserMessage(sessionId, userMessage) {
 
 Este mecanismo permite que o modelo de linguagem analise a intenção do usuário e automaticamente determine quais ferramentas utilizar, executando chamadas precisas às APIs subjacentes sem necessidade de programação explícita de fluxos conversacionais.
 
-#### 3.4.2 CONFIGURAÇÃO MULTI-SERVIDOR
+#### 3.4.2 CONFIGURAÇÃO MULTI-SERVIDOR (TODO: add a image to reduce text)
 
 A arquitetura de configuração para gerenciamento de múltiplos servidores MCP foi concebida para proporcionar flexibilidade operacional através de mecanismos dinâmicos de adição e remoção de servidores, eliminando a necessidade de reinicialização do sistema durante modificações na topologia de serviços. Esta abordagem metodológica fundamenta-se na premissa de que ambientes empresariais requerem adaptabilidade contínua para acomodar mudanças nos requisitos de integração e na disponibilidade de sistemas externos.
 
 O mecanismo implementado permite que usuários especifiquem comandos de execução e variáveis de ambiente através de interface gráfica intuitiva, facilitando a integração de novos serviços à medida que são descobertos ou desenvolvidos. A arquitetura suporta visualização em tempo real do estado dos servidores ativos, possibilitando monitoramento contínuo da saúde do sistema e identificação proativa de potenciais problemas de conectividade. Parâmetros específicos de configuração, incluindo URLs de especificações OpenAPI e endereços base das APIs, podem ser ajustados dinamicamente, proporcionando adaptabilidade às mudanças em ambientes de desenvolvimento e produção.
 
-A abordagem de configuração dinâmica adotada apresenta vantagens metodológicas significativas quando comparada a alternativas baseadas em arquivos de configuração estática. A flexibilidade operacional obtida permite que usuários adaptem o ambiente às necessidades específicas de seus contextos organizacionais sem requerer conhecimento técnico profundo sobre a arquitetura subjacente. O paradigma de descoberta incremental facilita a evolução orgânica do sistema, onde novos serviços podem ser integrados progressivamente conforme demandas emergem. O isolamento de falhas implementado garante que problemas em servidores individuais não comprometam a operação global do sistema, aumentando a resiliência da solução. Estas características combinadas resultam em experiência do usuário aprimorada, onde a complexidade técnica é abstraída através de interface visual que facilita a compreensão e o gerenciamento efetivo da arquitetura multi-servidor.
-
-A persistência das configurações entre sessões constitui elemento fundamental para manutenção da continuidade operacional, permitindo que usuários retomem seus ambientes de trabalho personalizados sem necessidade de reconfiguração manual. Esta característica, aliada à capacidade de modificação dinâmica da topologia de servidores sem alterações no código base, estabelece fundamentos sólidos para escalabilidade e manutenibilidade da solução em contextos empresariais diversos, validando a aplicabilidade prática da abordagem proposta para cenários reais de integração.
+O paradigma de descoberta incremental facilita a evolução orgânica do sistema, onde novos serviços podem ser integrados progressivamente conforme demandas emergem. O isolamento de falhas implementado garante que problemas em servidores individuais não comprometam a operação global do sistema, aumentando a resiliência da solução. Estas características combinadas resultam em experiência do usuário aprimorada, onde a complexidade técnica é abstraída através de interface visual que facilita a compreensão e o gerenciamento efetivo da arquitetura multi-servidor.
 
 ### 3.5 ESPECIFICAÇÃO DO CONJUNTO DE DADOS DE TESTE
 
@@ -260,25 +258,11 @@ Os resultados indicam que a abordagem OpenAPI-MCP apresenta performance variáve
 
 Os dados obtidos sugerem que a integração OpenAPI-MCP é tecnicamente viável para cenários onde a precisão é prioritária em relação à velocidade consistente, fornecendo evidências iniciais promissoras para o desenvolvimento de soluções mais robustas.
 
-## 4.2 EFICÁCIA DA GERAÇÃO AUTOMÁTICA DE SERVIDORES MCP
+## 4.2 AVALIAÇÃO DE EXPERIÊNCIA DO USUÁRIO
 
-A Tabela 2 demonstra a capacidade do sistema de converter especificações OpenAPI em servidores MCP funcionais, validando o núcleo tecnológico da abordagem proposta.
+A Tabela 2 apresenta os resultados quantitativos da avaliação de experiência do usuário, obtidos através de 13 cenários de teste estruturados com métricas padronizadas.
 
-**Tabela 2: Resultados da Conversão OpenAPI→MCP**
-
-| Aspecto Testado       | Implementado                      | Taxa de Sucesso (%) | Observações                       |
-| --------------------- | --------------------------------- | ------------------- | --------------------------------- |
-| Métodos HTTP          | 5 (GET, POST, PUT, DELETE, PATCH) | 100                 | Cobertura completa CRUD           |
-| Sistemas Integrados   | 2                                 | 100                 | Equipamentos e Profissionais      |
-| Endpoints Convertidos | 10                                | 100                 | Conversão automática bem-sucedida |
-
-A análise confirma que a conversão automática OpenAPI→MCP preserva integralmente a funcionalidade dos sistemas originais, permitindo acesso completo através de interface conversacional. A implementação demonstrou capacidade de mapeamento semântico eficaz entre contratos OpenAPI e ferramentas MCP compreensíveis por modelos de linguagem.
-
-## 4.3 AVALIAÇÃO DE EXPERIÊNCIA DO USUÁRIO
-
-A Tabela 3 apresenta os resultados quantitativos da avaliação de experiência do usuário, obtidos através de 13 cenários de teste estruturados com métricas padronizadas.
-
-**Tabela 3: Métricas de Experiência do Usuário (Escala 1-5)**
+**Tabela 2: Métricas de Experiência do Usuário (Escala 1-5)**
 
 | Métrica de UX             | Pontuação Média | Desvio | Observações                        |
 | ------------------------- | --------------- | ------ | ---------------------------------- |
@@ -291,11 +275,11 @@ A Tabela 3 apresenta os resultados quantitativos da avaliação de experiência 
 
 Os resultados indicam experiência do usuário satisfatória, com pontuação geral de 4,0 em escala de 1 a 5. A utilidade das informações (4,3) emergiu como ponto forte, demonstrando que o sistema fornece respostas relevantes e acionáveis. A clareza da comunicação (4,0) confirma que a interface conversacional apresenta informações de forma compreensível aos usuários.
 
-## 4.4 ANÁLISE DE SEGURANÇA
+## 4.3 ANÁLISE DE SEGURANÇA
 
-A Tabela 4 apresenta os resultados dos testes de segurança adversários, conduzidos através de 16 cenários de ataque estruturados em 4 categorias principais.
+A Tabela 3 apresenta os resultados dos testes de segurança adversários, conduzidos através de 16 cenários de ataque estruturados em 4 categorias principais.
 
-**Tabela 4: Resultados dos Testes de Segurança**
+**Tabela 3: Resultados dos Testes de Segurança**
 
 | Categoria de Ataque  | Tentativas | Bloqueados | Taxa de Proteção (%) |
 | -------------------- | ---------- | ---------- | -------------------- |
@@ -307,38 +291,32 @@ A Tabela 4 apresenta os resultados dos testes de segurança adversários, conduz
 
 A análise de segurança revela que a implementação OpenAPI-MCP demonstra proteção básica inicial satisfatória contra os vetores de ataque fundamentais testados. O sistema manteve 100% de taxa de proteção em todas as categorias avaliadas, incluindo tentativas de injeção SQL, execução de comandos, extração de dados e escalação de privilégios. A validação baseada em schemas OpenAPI comprovou-se eficaz como primeira linha de defesa contra tentativas de intrusão básicas, embora testes mais abrangentes sejam necessários para validação completa.
 
-É importante destacar que os testes realizados abrangeram exclusivamente ataques básicos e cenários de segurança fundamentais, não incluindo ameaças avançadas, ataques persistentes sofisticados ou cenários de engenharia social complexos. Esta limitação na cobertura dos testes de segurança implica que implementações em ambientes de produção críticos requerem avaliação de segurança mais abrangente e rigorosa para garantir proteção adequada contra vetores de ataque mais elaborados.
-
-Adicionalmente, é relevante observar que a maioria dos LLMs modernos já incorpora mecanismos internos de proteção contra ataques básicos de injeção de prompts e tentativas de jailbreak, contribuindo para os resultados positivos observados. Esta proteção em múltiplas camadas - tanto no nível do LLM quanto na validação via schemas OpenAPI - demonstra a robustez da abordagem, embora pesquisas futuras devam investigar ameaças mais sofisticadas e ataques adversários avançados que possam explorar vulnerabilidades específicas da integração entre sistemas.
+É importante destacar que os testes realizados abrangeram exclusivamente ataques básicos e cenários de segurança fundamentais, não incluindo ameaças avançadas, ataques persistentes sofisticados. Adicionalmente, é relevante observar que a maioria dos LLMs modernos já incorpora mecanismos internos de proteção contra ataques básicos de injeção de prompts e tentativas de jailbreak, contribuindo para os resultados positivos observados. Esta proteção em múltiplas camadas - tanto no nível do LLM quanto na validação via schemas OpenAPI - demonstra a robustez da abordagem, embora pesquisas futuras devam investigar ameaças mais sofisticadas e ataques adversários avançados que possam explorar vulnerabilidades específicas da integração entre sistemas.
 
 Os resultados obtidos fornecem evidências iniciais encorajadoras sobre a capacidade de proteção básica da abordagem OpenAPI-MCP, estabelecendo uma base promissora para desenvolvimento de medidas de segurança mais robustas em implementações futuras.
 
-## 4.5 FUNCIONALIDADE DO SISTEMA MULTI-SERVIDOR
+## 4.4 EFICÁCIA DA GERAÇÃO AUTOMÁTICA DE SERVIDORES MCP
 
-A Tabela 5 apresenta os resultados da coordenação multi-servidor durante os testes experimentais, validando a capacidade de orquestração distribuída da solução.
+A Tabela 4 demonstra a capacidade do sistema de converter especificações OpenAPI em servidores MCP funcionais, validando o núcleo tecnológico da abordagem proposta.
 
-**Tabela 5: Resultados da Coordenação Multi-Servidor**
+**Tabela 4: Resultados da Conversão OpenAPI→MCP**
 
-| Funcionalidade             | Resultado Alcançado | Eficácia (%) | Observações                       |
-| -------------------------- | ------------------- | ------------ | --------------------------------- |
-| Servidores MCP Simultâneos | 2                   | 100          | Equipamentos + Profissionais      |
-| Ferramentas Descobertas    | 10                  | 100          | Detecção automática completa      |
-| Roteamento Inteligente     | 13/13 consultas     | 100          | Seleção correta de servidor       |
-| Consultas Multi-Sistema    | 3                   | 100          | Agregação de dados funcionando    |
-| Disponibilidade Parcial    | Testado             | 100          | Funcionamento com falhas parciais |
+| Aspecto Testado       | Implementado                      | Taxa de Sucesso (%) | Observações                       |
+| --------------------- | --------------------------------- | ------------------- | --------------------------------- |
+| Métodos HTTP          | 5 (GET, POST, PUT, DELETE, PATCH) | 100                 | Cobertura completa CRUD           |
+| Sistemas Integrados   | 2                                 | 100                 | Equipamentos e Profissionais      |
+| Endpoints Convertidos | 10                                | 100                 | Conversão automática bem-sucedida |
 
-Os resultados confirmam que o sistema consegue coordenar múltiplos servidores MCP simultaneamente, mantendo descoberta automática de ferramentas e roteamento inteligente de solicitações. A capacidade de agregação de dados entre sistemas diferentes foi validada através de consultas que requereram informações de ambos os domínios testados (equipamentos e profissionais).
+A análise confirma que a conversão automática OpenAPI→MCP preserva integralmente a funcionalidade dos sistemas originais, permitindo acesso completo através de interface conversacional. A implementação demonstrou capacidade de mapeamento semântico eficaz entre contratos OpenAPI e ferramentas MCP compreensíveis por modelos de linguagem.
 
-## 4.6 VALIDAÇÃO EXPERIMENTAL
+## 4.5 VALIDAÇÃO EXPERIMENTAL
 
 Os resultados apresentados indicam que a abordagem OpenAPI-MCP é tecnicamente viável e operacionalmente eficaz para integração de agentes conversacionais baseados em IA com sistemas web existentes dentro do escopo experimental testado:
 
-**Conversão Automática OpenAPI→MCP:** 100% dos casos testados (10/10 endpoints)  
-**Gerenciamento Multi-Servidor:** 2 servidores coordenados simultaneamente com 100% eficácia  
-**Integração LLM:** Taxa de sucesso de 100% na interpretação de intenções (13/13 consultas)  
-**Robustez Operacional:** Sistema mantém funcionalidade durante cenários de falha testados  
-**Segurança:** 100% de proteção contra 16 vetores de ataque básicos testados  
-**Experiência do Usuário:** Pontuação 4,0/5,0 em satisfação geral  
+**Conversão Automática OpenAPI→MCP:** 100% dos casos testados (10/10 endpoints)
+**Robustez Operacional:** Sistema mantém funcionalidade durante cenários de falha e alta carga
+**Segurança:** 100% de proteção contra 16 vetores de ataque básicos testados
+**Experiência do Usuário:** Pontuação 4,0/5,0 em satisfação geral
 
 A validação experimental demonstra preliminarmente que a especificação OpenAPI pode ser sistematicamente convertida em ferramentas utilizáveis por modelos de linguagem através do protocolo MCP, reduzindo significativamente a necessidade de desenvolvimento manual recorrente para cada nova integração nos cenários testados. A validação experimental inicial confirma que a abordagem oferece uma solução promissora para democratização de acesso a sistemas técnicos complexos através de interfaces conversacionais naturais, estabelecendo evidências convincentes sobre a possibilidade de grandes avanços na integração entre sistemas existentes e LLMs.
 
@@ -356,9 +334,9 @@ A contribuição científica principal reside na demonstração de viabilidade c
 
 ## 5.2 LIMITAÇÕES E TRABALHOS FUTUROS
 
-A aplicabilidade em larga escala está condicionada às limitações identificadas durante validação experimental. A variabilidade de performance (336% nos tempos de resposta) e o escopo restrito (2 servidores MCP, 21 operações, cenários controlados) impedem generalização ampla para ambientes empresariais complexos. Os testes de segurança abrangeram apenas ataques básicos, não incluindo ameaças avançadas ou engenharia social sofisticada.
+A aplicabilidade em larga escala está condicionada às limitações identificadas durante validação experimental. A variabilidade de performance (336% nos tempos de resposta) e o escopo restrito (2 servidores MCP, 21 operações, cenários controlados) impedem generalização ampla para ambientes empresariais complexos. Os testes de segurança abrangeram apenas ataques básicos, não incluindo ameaças sofisticadas.
 
-Investigações futuras devem abordar: (1) otimização de performance e estratégias de cache; (2) expansão da validação para ambientes empresariais de maior escala; (3) avaliações de segurança contra ameaças avançadas; (4) análise de escalabilidade para dezenas ou centenas de servidores MCP simultâneos; (5) desenvolvimento de métricas rigorosas para contextos organizacionais diversos; (6) estudos comparativos com outras abordagens de integração; (7) análise custo-benefício para implantação empresarial; (8) suporte para GraphQL e outras especificações de API.
+Investigações futuras devem abordar: (1) otimização de performance e estratégias de cache; (2) expansão da validação para ambientes empresariais de maior escala; (3) avaliações de segurança contra ameaças sofisticadas; (4) análise de escalabilidade para dezenas ou centenas de servidores MCP simultâneos; (5) desenvolvimento de métricas rigorosas para contextos organizacionais diversos; (6) estudos comparativos com outras abordagens de integração; (7) análise custo-benefício para implantação empresarial; (8) suporte para GraphQL e outras especificações de API.
 
 Este trabalho estabelece as bases para pesquisas futuras, demonstrando que limitações atuais representam oportunidades claras de desenvolvimento, não impedimentos fundamentais à abordagem.
 

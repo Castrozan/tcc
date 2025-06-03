@@ -144,37 +144,65 @@ graph TB
 - npm ou yarn
 - Git
 
-### ⚡ Instalação Rápida
+### ⚠️ **Compatibilidade do Sistema**
+Este projeto foi desenvolvido e testado em **Nix OS**. Para outros sistemas operacionais:
+
+- **Linux/macOS**: Deve funcionar sem modificações
+- **Windows**: Pode requerer ajustes nos scripts de teste
+- **Playwright**: Execute `npx playwright install` se os testes E2E falharem
+- **Caminhos específicos**: Alguns scripts contêm caminhos específicos do Nix que podem precisar ser ajustados
+
+### ⚡ **Instalação Rápida**
 
 ```bash
 # 1. Clone o repositório
 git clone https://github.com/Castrozan/TCC.git
 cd TCC
 
-# 2. Configure o ambiente
-npm install
-
-# 3. Inicie o MCP Server Manager
+# 2. Inicie o gerador MCP OpenAPI
 cd mcp-openapi-server
 npm install
 npm run build
 
-# 4. Inicie o cliente de chat
+# 3. Inicie o cliente de chat
 cd ../chat-client
 npm install
 npm run dev
+# Acesse: http://localhost:5500
+
+# 4. (Opcional) Execute aplicações de teste
+cd ../equipments-dummy-app
+npm install
+npm run dev
+# API disponível em: http://localhost:3000
+
+cd ../professionals-dummy-app
+npm install  
+npm run dev
+# API disponível em: http://localhost:3001
 ```
 
-### 🧪 Executando os Testes
+### 🧪 **Executando os Testes**
 
 ```bash
 # Testes E2E do cliente de chat
 cd chat-client
+npm install
 npm test
 
-# Testes do servidor MCP
+# ⚠️ NOTA: Os testes podem requerer configuração específica do ambiente
+# Se você estiver usando Nix, os caminhos do Playwright já estão configurados
+# Para outros sistemas, veja: https://playwright.dev/docs/installation
+
+# Testes unitários do servidor MCP
 cd ../mcp-openapi-server
 npm test
+
+# Testes específicos do cliente de chat
+cd ../chat-client
+npm run test:performance  # Testes de performance
+npm run test:security     # Testes de segurança
+npm run test:ux          # Testes de experiência do usuário
 ```
 
 ---
@@ -293,6 +321,10 @@ make apply-claude-config
 TCC/
 ├── 📄 README.md                     # Este arquivo
 ├── 📄 pre-projeto.md                # Proposta inicial da pesquisa
+├── 📄 CITATION.md                   # Formatos de citação
+├── 📄 DOCUMENTATION_INDEX.md        # Índice completo da documentação
+├── 📄 QUICK_START.md                # Guias de início rápido
+├── 📄 RESEARCH_SUMMARY.md           # Resumo executivo da pesquisa
 ├── 🛠️ Makefile                     # Comandos de automação
 │
 ├── 📚 article/                      # Documentação acadêmica
@@ -303,7 +335,7 @@ TCC/
 │   └── ⚙️ Makefile                 # Compilação LaTeX
 │
 ├── 🤖 mcp-openapi-server/          # Gerador automático MCP
-│   ├── 📦 package.json
+│   ├── 📦 package.json             # Dependências e scripts
 │   ├── 🔧 src/                     # Código fonte
 │   ├── 🧪 test/                    # Testes unitários
 │   └── 📖 README.md                # Documentação técnica
@@ -311,11 +343,17 @@ TCC/
 ├── 💬 chat-client/                  # Cliente multi-servidor
 │   ├── 🌐 chat.html                # Interface web
 │   ├── ⚙️ backend-server.js        # Servidor backend
-│   ├── 🧪 tests/                   # Testes E2E
+│   ├── 📦 package.json             # Scripts específicos do sistema
+│   ├── 🧪 tests/                   # Testes E2E (Playwright)
 │   └── 📊 test-results/            # Resultados experimentais
 │
 ├── 🏭 equipments-dummy-app/         # App teste - Equipamentos
-├── 👥 professionals-dummy-app/      # App teste - Profissionais
+│   ├── 📦 package.json             # Scripts e dependências
+│   └── 🔧 src/                     # API REST Hono.js + TypeScript
+│
+├── 👥 professionals-dummy-app/      # App teste - Profissionais  
+│   ├── 📦 package.json             # Scripts e dependências
+│   └── 🔧 src/                     # API REST Hono.js + TypeScript
 │
 └── 🔖 bookmarks/                    # Pesquisa organizada
     ├── 📚 bookmarks.json           # Links de referência
@@ -384,3 +422,39 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 ✅ **Pesquisa Completa** | ✅ **Implementação Funcional** | ✅ **Validação Experimental** | ✅ **Documentação Acadêmica**
 
 > *"Esta pesquisa estabelece evidências preliminares convincentes sobre a possibilidade de grandes avanços na facilitação da integração entre sistemas existentes e LLMs, promovendo maior acessibilidade, usabilidade e democratização do acesso a tecnologias complexas."*
+
+---
+
+## 🚧 **Solução de Problemas**
+
+### **❗ Erro nos Testes E2E**
+```bash
+# Se receber erro sobre Playwright
+npx playwright install
+
+# Se ainda falhar, execute manualmente:
+cd chat-client
+npx playwright test --project chromium --timeout 10000
+```
+
+### **❗ Comandos npm não encontrados**
+```bash
+# Verifique se está no diretório correto de cada componente
+# Cada pasta tem seu próprio package.json:
+cd mcp-openapi-server  # Para o gerador MCP
+cd chat-client         # Para o cliente de chat  
+cd equipments-dummy-app     # Para API de equipamentos
+cd professionals-dummy-app  # Para API de profissionais
+```
+
+### **❗ Portas já em uso**
+- **Cliente de chat**: http://localhost:5500
+- **API equipamentos**: http://localhost:3000  
+- **API profissionais**: http://localhost:3001
+
+Se alguma porta estiver ocupada, termine os processos ou ajuste as configurações nos arquivos de cada componente.
+
+### **❗ Problemas específicos do sistema**
+- **Nix OS**: Configuração otimizada, deve funcionar sem modificações
+- **Linux/macOS**: Instale dependências com `npm install` em cada diretório
+- **Windows**: Pode precisar de WSL ou ajustes nos scripts de teste

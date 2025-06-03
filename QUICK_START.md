@@ -43,19 +43,24 @@ npx @ivotoby/openapi-mcp-server \
 
 #### 🛠️ **Instalação Local (10 min)**
 ```bash
-# 1. Instale dependências
+# 1. Clone e navegue para o projeto
+git clone https://github.com/Castrozan/TCC.git
 cd TCC
-npm install
 
-# 2. Teste o gerador MCP
+# 2. Configure o gerador MCP
 cd mcp-openapi-server
+npm install
 npm run build
-npm test
 
-# 3. Execute o cliente de chat
+# 3. Configure e execute o cliente de chat
 cd ../chat-client
+npm install
 npm run dev
 # Acesse: http://localhost:5500
+
+# ⚠️ NOTA IMPORTANTE: Alguns comandos podem ser específicos do sistema
+# Os testes estão configurados para Nix. Para outros sistemas, 
+# instale o Playwright: npx playwright install
 ```
 
 #### 🧪 **Desenvolvimento Completo (30 min)**
@@ -80,12 +85,23 @@ npm run dev
 git clone https://github.com/Castrozan/TCC.git
 cd TCC
 
-# 2. Execute testes automatizados
+# 2. Configure e execute testes automatizados
 cd chat-client
 npm install
-npm test  # Testes E2E com Playwright
 
-# 3. Veja os dados coletados
+# Para sistemas Nix (configuração atual):
+npm test
+
+# Para outros sistemas, primeiro instale o Playwright:
+# npx playwright install
+# Depois execute: npx playwright test --project chromium --timeout 10000
+
+# 3. Execute testes específicos
+npm run test:performance   # Testes de performance
+npm run test:security      # Testes de segurança  
+npm run test:ux           # Testes de experiência do usuário
+
+# 4. Veja os dados coletados
 ls test-results/
 cat performance-test-result.json
 cat ux-test-result.json  
@@ -155,7 +171,13 @@ npx @ivotoby/openapi-mcp-server \
 🔬 **Primeiro estudo sistemático** de integração OpenAPI-MCP com validação experimental rigorosa.
 
 ### **❓ "Posso usar em produção?"**
-⚠️ **Prova de conceito**: Validado em cenários controlados. Para produção, considere limitações identificadas.
+⚠️ **Prova de conceito**: Validado em cenários controlados. Para produção, considere limitações identificadas e requisitos específicos do seu ambiente.
+
+### **❓ "Os comandos funcionam em qualquer sistema?"**
+⚠️ **Configuração específica**: Os testes estão configurados para Nix OS. Para outros sistemas:
+- Instale Node.js 20+
+- Execute `npx playwright install` antes dos testes E2E
+- Alguns caminhos podem precisar ser ajustados
 
 ### **❓ "Como citar este trabalho?"**
 📚 **BibTeX Format**:

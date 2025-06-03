@@ -83,12 +83,15 @@
 | **Versionamento** | Git            | Todo o projeto                           | `git commit`      |
 
 ### 🧪 **Validação Experimental**
-| Teste            | Ferramenta       | Comando    | Resultados                                 |
-| ---------------- | ---------------- | ---------- | ------------------------------------------ |
-| **E2E Frontend** | Playwright       | `npm test` | [test-results/](chat-client/test-results/) |
-| **Unitários**    | Jest/Vitest      | `npm test` | Console output                             |
-| **Performance**  | Performance API  | Automático | JSON logs                                  |
-| **Segurança**    | Red team scripts | Manual     | Security logs                              |
+| Teste             | Ferramenta       | Comando                             | Resultados                                 |
+| ----------------- | ---------------- | ----------------------------------- | ------------------------------------------ |
+| **E2E Frontend**  | Playwright       | `npm test` (⚠️ Configurado para Nix) | [test-results/](chat-client/test-results/) |
+| **Performance**   | Custom scripts   | `npm run test:performance`          | JSON logs                                  |
+| **Segurança**     | Red team scripts | `npm run test:security`             | Security logs                              |
+| **UX**            | Custom scripts   | `npm run test:ux`                   | UX metrics                                 |
+| **Unitários MCP** | Vitest           | `npm test`                          | Console output                             |
+
+**⚠️ Nota sobre Testes**: Os testes E2E estão configurados para sistemas Nix. Para outros sistemas, instale o Playwright com `npx playwright install` antes de executar.
 
 ---
 
@@ -122,12 +125,10 @@
 ## 📚 **Recursos de Pesquisa**
 
 ### 🔖 **Material de Referência**
-| Recurso            | Descrição                            | Link                                       |
-| ------------------ | ------------------------------------ | ------------------------------------------ |
-| **Bookmarks**      | Links organizados da pesquisa        | [bookmarks.json](bookmarks/bookmarks.json) |
-| **Notas**          | Anotações durante desenvolvimento    | [notes.md](notes.md)                       |
-| **Ideias de Tema** | Processo de escolha do tema          | [theme-ideas.md](theme-ideas.md)           |
-| **Citação**        | Formatos para referenciar o trabalho | [CITATION.md](CITATION.md)                 |
+| Recurso       | Descrição                            | Link                                       |
+| ------------- | ------------------------------------ | ------------------------------------------ |
+| **Bookmarks** | Links organizados da pesquisa        | [bookmarks.json](bookmarks/bookmarks.json) |
+| **Citação**   | Formatos para referenciar o trabalho | [CITATION.md](CITATION.md)                 |
 
 ### 🌐 **Links Externos Importantes**
 | Recurso           | Descrição                         | URL                                                   |
@@ -167,17 +168,24 @@
 
 ### 🔧 **Comandos Essenciais**
 ```bash
-# Instalação completa
-git clone https://github.com/Castrozan/TCC.git && cd TCC && npm install
+# Instalação completa do projeto
+git clone https://github.com/Castrozan/TCC.git && cd TCC
 
-# Executar servidor MCP
-cd mcp-openapi-server && npm run dev
+# Executar gerador MCP OpenAPI
+cd mcp-openapi-server && npm install && npm run build
 
 # Executar cliente de chat
-cd chat-client && npm run dev
+cd ../chat-client && npm install && npm run dev
 
-# Executar todos os testes
-npm run test:all
+# Executar aplicações de teste
+cd ../equipments-dummy-app && npm install && npm run dev    # Porta 3000
+cd ../professionals-dummy-app && npm install && npm run dev # Porta 3001
+
+# Executar testes (sistema Nix - para outros, veja notas acima)
+cd ../chat-client && npm test
+
+# ⚠️ IMPORTANTE: Não há package.json raiz - cada componente deve ser 
+# configurado individualmente conforme mostrado acima
 ```
 
 ---

@@ -58,15 +58,36 @@ Este TCC investiga como **especificações OpenAPI podem ser automaticamente con
 
 ```mermaid
 graph TB
-    A[Interface Web] --> B[Cliente Chat Multi-Servidor]
-    B --> C[Modelo GPT-4]
-    C --> D[Gerador MCP Automático]
-    D --> E[Servidores MCP]
-    E --> F[APIs Sistemas Externos]
+    UI[Interface do Usuário]
+    CI[Chat Interface]
+    AC[Agente Conversacional]
+    LLM[LLM]
+    AI[Analisador de Intenção]
+    VR[Validador de Requisição]
+    FR[Formatador de Resposta]
     
-    G[Especificação OpenAPI] --> D
-    H[Testes E2E] --> B
-    I[Validação Segurança] --> B
+    CamInt[Camada de Integração]
+    MCP[Servidor MCP]
+    
+    Backend[Sistemas de Backend]
+    APIs[APIs Externas]
+    
+    UI --> CI
+    CI --> AC
+    AC -.-> |Consulta do Usuário| LLM
+    LLM -.-> |Resposta em Linguagem Natural| AC
+    LLM --> |Intenção Estruturada| AI
+    AI --> VR
+    VR -.-> |Requisição Validada| CamInt
+    LLM --> |Resposta Formatada| FR
+    FR --> AC
+    
+    CamInt --> MCP
+    MCP --> |Requisição HTTP| Backend
+    Backend --> APIs
+    APIs -.-> |Resultado da Operação| Backend
+    Backend -.-> MCP
+    MCP -.-> CamInt
 ```
 
 ### 🧩 Componentes Principais

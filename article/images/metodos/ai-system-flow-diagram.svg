@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="700" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- White Background -->
+  <rect x="0" y="0" width="1100" height="700" fill="#ffffff"/>
+  
+  <!-- Component Headers -->
+  <g id="headers">
+    <!-- User -->
+    <rect x="50" y="30" width="120" height="60" fill="#ffffff" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="110" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Usuário</text>
+    
+    <!-- Chat Interface -->
+    <rect x="220" y="30" width="160" height="60" fill="#f8f9fa" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="300" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Chat Interface</text>
+    
+    <!-- Large Language Model -->
+    <rect x="430" y="30" width="180" height="60" fill="#e9ecef" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="520" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">LLM</text>
+    
+    <!-- Integration Layer -->
+    <rect x="660" y="30" width="160" height="60" fill="#dee2e6" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="740" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Camada de Integração</text>
+    
+    <!-- Backend Systems -->
+    <rect x="870" y="30" width="160" height="60" fill="#f8f9fa" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="950" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Sistemas de Backend</text>
+  </g>
+  
+  <!-- Vertical Lines -->
+  <g id="lifelines">
+    <line x1="110" y1="90" x2="110" y2="620" stroke="#666666" stroke-width="1"/>
+    <line x1="300" y1="90" x2="300" y2="620" stroke="#666666" stroke-width="1"/>
+    <line x1="520" y1="90" x2="520" y2="620" stroke="#666666" stroke-width="1"/>
+    <line x1="740" y1="90" x2="740" y2="620" stroke="#666666" stroke-width="1"/>
+    <line x1="950" y1="90" x2="950" y2="620" stroke="#666666" stroke-width="1"/>
+  </g>
+  
+  <!-- Flow Arrows and Labels -->
+  <g id="flow">
+    <!-- Direct Connection: User to Chat Interface -->
+    <path d="M 110 110 L 300 110" stroke="#000000" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="205" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#000000">Solicitação em linguagem natural</text>
+    
+    <!-- 2. Forward query -->
+    <path d="M 310 170 L 510 170" stroke="#000000" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="410" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#000000">Encaminhar mensagem</text>
+    
+    <!-- 3. Process intent (self-loop) -->
+    <path d="M 530 210 Q 580 210 580 240 Q 580 270 530 270" stroke="#000000" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="590" y="240" font-family="Arial, sans-serif" font-size="11" fill="#000000">Processar intenção</text>
+    
+    <!-- 4. Send structured request -->
+    <path d="M 530 320 L 730 320" stroke="#000000" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="630" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#000000">Enviar requisição estruturada</text>
+    
+    <!-- 5. Execute operation -->
+    <path d="M 750 360 L 940 360" stroke="#000000" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="845" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#000000">Executar operação</text>
+    
+    <!-- 6. Return result -->
+    <path d="M 940 400 L 750 400" stroke="#000000" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="845" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#000000">Retornar resultado</text>
+    
+    <!-- 7. Format response -->
+    <path d="M 730 440 L 530 440" stroke="#000000" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="630" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#000000">Formatar resposta</text>
+    
+    <!-- 8. Generate natural language response -->
+    <path d="M 510 480 L 310 480" stroke="#000000" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="410" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#000000">Resposta em linguagem natural</text>
+    
+    <!-- 9. Display response -->
+    <path d="M 290 520 L 120 520" stroke="#000000" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="205" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#000000">Exibir resposta</text>
+  </g>
+  
+  <!-- Bottom Component References -->
+  <g id="bottom-headers">
+    <!-- User -->
+    <rect x="50" y="630" width="120" height="60" fill="#ffffff" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="110" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Usuário</text>
+    
+    <!-- Chat Interface -->
+    <rect x="220" y="630" width="160" height="60" fill="#f8f9fa" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="300" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Chat Interface</text>
+    
+    <!-- Large Language Model -->
+    <rect x="430" y="630" width="180" height="60" fill="#e9ecef" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="520" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">LLM</text>
+    
+    <!-- Integration Layer -->
+    <rect x="660" y="630" width="160" height="60" fill="#dee2e6" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="740" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Camada de Integração</text>
+    
+    <!-- Backend Systems -->
+    <rect x="870" y="630" width="160" height="60" fill="#f8f9fa" stroke="#000000" stroke-width="1" rx="8"/>
+    <text x="950" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">Sistemas de Backend</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000000" />
+    </marker>
+  </defs>
+  
+</svg> 

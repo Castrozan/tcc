@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="800" fill="white"/>
+  
+  <!-- User Interface Layer -->
+  <rect x="350" y="40" width="300" height="100" fill="#f8f9fa" stroke="black" stroke-width="1"/>
+  <text x="500" y="25" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">Interface do Usuário</text>
+  
+  <!-- Chat Interface -->
+  <rect x="400" y="70" width="200" height="40" fill="white" stroke="black" stroke-width="1"/>
+  <text x="500" y="95" text-anchor="middle" font-family="Arial" font-size="12">Chat Interface</text>
+  
+  <!-- Conversational Agent Layer -->
+  <rect x="150" y="180" width="700" height="250" fill="#e9ecef" stroke="black" stroke-width="1"/>
+  <text x="400" y="170" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">Agente Conversacional</text>
+  
+  <!-- Large Language Model -->
+  <rect x="350" y="210" width="240" height="40" fill="white" stroke="black" stroke-width="1"/>
+  <text x="470" y="235" text-anchor="middle" font-family="Arial" font-size="12">LLM</text>
+  
+  <!-- Intent Parser -->
+  <rect x="370" y="280" width="160" height="40" fill="white" stroke="black" stroke-width="1"/>
+  <text x="450" y="305" text-anchor="middle" font-family="Arial" font-size="12">Analisador de Intenção</text>
+  
+  <!-- Request Validator -->
+  <rect x="360" y="350" width="180" height="40" fill="white" stroke="black" stroke-width="1"/>
+  <text x="450" y="375" text-anchor="middle" font-family="Arial" font-size="12">Validador de Requisição</text>
+  
+  <!-- Response Formatter -->
+  <rect x="650" y="300" width="180" height="40" fill="white" stroke="black" stroke-width="1"/>
+  <text x="740" y="325" text-anchor="middle" font-family="Arial" font-size="12">Formatador de Resposta</text>
+  
+  <!-- Integration Layer -->
+  <rect x="350" y="480" width="300" height="80" fill="#dee2e6" stroke="black" stroke-width="1"/>
+  <text x="400" y="465" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">Camada de Integração</text>
+  
+  <!-- MCP Server -->
+  <rect x="440" y="500" width="120" height="40" fill="white" stroke="black" stroke-width="1"/>
+  <text x="500" y="525" text-anchor="middle" font-family="Arial" font-size="12">Servidor MCP</text>
+  
+  <!-- Backend Systems Layer -->
+  <rect x="350" y="600" width="300" height="100" fill="#f8f9fa" stroke="black" stroke-width="1"/>
+  <text x="400" y="585" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">Sistemas de Backend</text>
+
+  <!-- External APIs -->
+  <rect x="430" y="630" width="140" height="40" fill="white" stroke="black" stroke-width="1"/>
+  <text x="500" y="655" text-anchor="middle" font-family="Arial" font-size="12">APIs Externas</text>
+  
+  <!-- Arrows connecting existing structures -->
+  
+  <!-- User to Chat Interface -->
+  <text x="390" y="155" font-family="Arial" font-size="10">Consulta do Usuário</text>
+  
+  <!-- Chat Interface to LLM -->
+  <line x1="500" y1="110" x2="470" y2="210" stroke="black" stroke-width="1" marker-end="url(#arrowhead)"/>
+  
+  <!-- LLM to Intent Parser -->
+  <line x1="450" y1="250" x2="450" y2="280" stroke="black" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="470" y="265" font-family="Arial" font-size="10">Intenção Estruturada</text>
+  
+  <!-- Intent Parser to Request Validator -->
+  <line x1="450" y1="320" x2="450" y2="350" stroke="black" stroke-width="1" marker-end="url(#arrowhead)"/>
+  
+  <!-- Request Validator to MCP Server -->
+  <line x1="460" y1="390" x2="500" y2="500" stroke="black" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="490" y="445" font-family="Arial" font-size="10">Requisição Validada</text>
+  
+  <!-- MCP Server to External APIs -->
+  <line x1="500" y1="540" x2="500" y2="630" stroke="black" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="502" y="585" font-family="Arial" font-size="10">Requisição HTTP</text>
+  
+  <!-- External APIs back to Response Formatter -->
+  <line x1="570" y1="630" x2="650" y2="320" stroke="black" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="620" y="475" font-family="Arial" font-size="10">Resultado da Operação</text>
+  
+  <!-- Response Formatter to LLM -->
+  <line x1="650" y1="320" x2="570" y2="250" stroke="black" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="620" y="285" font-family="Arial" font-size="10">Resposta Formatada</text>
+  
+  <!-- LLM to Chat Interface -->
+  <line x1="520" y1="210" x2="520" y2="110" stroke="black" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="530" y="155" font-family="Arial" font-size="10">Resposta em Linguagem Natural</text>
+  
+</svg> 

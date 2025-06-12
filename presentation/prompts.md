@@ -18,6 +18,8 @@ Ok, great. Now lets work on slide: 2
 
 Go through the article again in the section related to this slide and read it again. After reading and understanding its purpose, adjust the slide definition to better suit the objectives of the presentation and the guidelines.
 
+Slides that should have a image should not have bullet points, only the image
+
 ------------------------------------------------------------------------------------------------
 
 Great, lets just add the references in the ABNT style to the bullet points related to what should be said so it has the correct theoretical embasement. Get the citations in the article file for the current section.

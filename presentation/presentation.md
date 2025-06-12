@@ -184,9 +184,11 @@
 - **Content (bullet points, images, tables, etc.):**
   - ![Diagrama da arquitetura de alto nível](images/metodos/system-architecture.jpg)
 - **Why:**
-  - Introduz visualmente a arquitetura principal, facilitando a compreensão da audiência.
+  - Demonstra visualmente como os componentes da solução OpenAPI-MCP se integram para formar um sistema coeso, facilitando a compreensão da audiência sobre a complexidade técnica e a elegância da solução proposta.
 - **Speech script:**
-  - 
+  - A arquitetura geral do nosso sistema foi projetada seguindo princípios de modularidade e separação de responsabilidades para garantir escalabilidade e manutenibilidade. Como podemos observar no diagrama, nossa solução é estruturada em múltiplas camadas que trabalham de forma integrada para responder às consultas feitas pelo usuário em linguagem natural. O fluxo de dados inicia na interface web minimalista, desenvolvida especificamente para nossos testes experimentais, que captura as consultas do usuário e as encaminha para o backend implementado em Node.js. Este backend atua como orquestrador central, gerenciando a comunicação com o modelo de linguagem GPT-4, que por sua vez utiliza sua capacidade de function calling para interpretar a intenção do usuário e determinar quais ferramentas MCP devem ser utilizadas. Os servidores MCP, gerados automaticamente a partir das especificações OpenAPI, servem como ponte padronizada entre o modelo de linguagem e os sistemas externos, executando as operações solicitadas via APIs REST conforme as especificações OpenAPI originais. A arquitetura modular permite isolamento completo de responsabilidades, onde cada componente pode ser instrumentado, testado e mantido de forma independente, facilitando tanto o desenvolvimento quanto a operação em ambiente de produção. Esta separação é fundamental para nossa validação experimental, pois permite controle rigoroso das variáveis e coleta objetiva de métricas de performance, segurança e usabilidade em cada camada do sistema.
+- **Speech instructions:**
+  - Referir-se ao diagrama durante toda a explicação, apontando para os componentes conforme mencionados. Enfatizar "modularidade" e "separação de responsabilidades" como princípios arquiteturais fundamentais. Pausar após descrever cada camada do fluxo de dados para dar clareza. Destacar "function calling" e "especificações OpenAPI" como tecnologias-chave. Enfatizar "validação experimental" para conectar com os objetivos da pesquisa.
 
 ### **Slide 11: Gerador Automático MCP**
 - **Title**

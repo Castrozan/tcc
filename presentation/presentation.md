@@ -242,12 +242,14 @@
 - **Title**
   - Exemplo de Conversão OpenAPI→MCP
 - **Content (bullet points, images, tables, etc.):**
-  - ![Especificação OpenAPI](images/openapi-mcp/snippet-openapi-path-spec.jpg)
-  - ![Ferramenta MCP correspondente](images/openapi-mcp/mcp-tool-format.jpg)
+  - ![Exemplo de especificação OpenAPI 3.0+ para um endpoint de busca de equipamento por ID](images/openapi-mcp/snippet-openapi-path-spec.jpg)
+  - ![Exemplo de ferramenta MCP gerada a partir de uma especificação OpenAPI](images/openapi-mcp/mcp-tool-format.jpg)
 - **Why:**
-  - Demonstração visual concreta do processo de conversão automática.
+  - Demonstra visualmente e concretamente como o processo de conversão automática preserva a integridade semântica da operação OpenAPI original, mostrando a transformação sistemática de contratos de API em ferramentas compreensíveis por modelos de linguagem através do mapeamento preciso de parâmetros, esquemas e metadados.
 - **Speech script:**
-  - 
+  - Para demonstrar concretamente como nossa abordagem funciona na prática, apresentamos um exemplo real de conversão OpenAPI para MCP utilizando um endpoint de busca de equipamento por ID. Na primeira imagem, observamos a especificação OpenAPI original que define um endpoint GET para recuperar informações de um equipamento específico. Esta especificação inclui elementos fundamentais como o parâmetro de caminho 'id' do tipo número, validações de entrada que exigem um ID mínimo de 1, e esquemas de resposta detalhados que definem a estrutura dos dados retornados, incluindo campos como id, name, description, imageUrl, createdAt e type. A especificação também define diferentes códigos de resposta HTTP, como 200 para sucesso, 400 para falha na recuperação e 500 para erros de servidor, cada um com seus respectivos esquemas de dados. Na segunda imagem, vemos a ferramenta MCP correspondente gerada automaticamente pelo nosso sistema. O processo de conversão preservou completamente a semântica da operação original, transformando a especificação OpenAPI em uma ferramenta estruturada que o modelo de linguagem pode compreender e utilizar. A ferramenta MCP mantém informações essenciais como o nome da operação, descrição clara da funcionalidade, e o esquema de entrada que especifica precisamente quais parâmetros são esperados e como devem ser formatados. Esta estrutura permite que o modelo de linguagem GPT-4 compreenda exatamente quais parâmetros são necessários, como devem ser validados, e qual formato de resposta esperar, habilitando a escolha e uso corretos da função a partir de instruções em linguagem natural. O processo de conversão realizou resolução automática de esquemas complexos, garantindo que a ferramenta gerada estivesse no formato válido para o protocolo MCP e contivesse todos os parâmetros necessários para execução correta da operação. Como podemos observar, o sistema de roteamento pode direcionar corretamente os valores durante a execução, mantendo total fidelidade à especificação original enquanto torna a funcionalidade acessível através de interface conversacional natural.
+- **Speech instructions:**
+  - Referir-se constantemente às duas imagens, apontando para elementos específicos conforme mencionados. Enfatizar "concretamente" e "exemplo real" para destacar a natureza prática da demonstração. Pausar após descrever cada imagem ("primeira imagem", "segunda imagem") para dar clareza. Destacar "preservou completamente a semântica" como garantia técnica fundamental. Apontar para campos específicos nas imagens conforme mencionados (id, name, description, etc.). Enfatizar "resolução automática" e "total fidelidade" como características técnicas centrais da conversão.
 
 ### **Slide 16: Resultados de Performance**
 - **Title**

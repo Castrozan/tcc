@@ -21,10 +21,12 @@ Go through the article again in the section related to this slide and read it ag
 Make sure to add the speech script with what should i say to present the slide. This should be a semi technical presentation. 
 Each slide should take around 1 minute to speak about, but a group of slides can be talked briefly and the time for each one can be distributed for it to fit as a hole.
 
-Instructions on how should i say certain words and how should i say them should be present if needed in parenthesis after the sentence. You can add another optional field to the slide definition bellow "speech script" with "speech instructions" to centralize this. add it to the guidelines on the beginning of the file as well
-
 ------------------------------------------------------------------------------------------------
 
 Great, lets just add the references in the ABNT style to the bullet points related to what should be said so it has the correct theoretical embasement. Get the citations in the article file for the current section.
+
+------------------------------------------------------------------------------------------------
+
+Again, we need any references in this slide? we may not need, figure out if is needed and which based on the article.
 
 ------------------------------------------------------------------------------------------------

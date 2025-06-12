@@ -70,15 +70,17 @@
   - Objetivos
 - **Content (bullet points, images, tables, etc.):**
   - **Objetivo Geral:**
-    - Avaliar a viabilidade técnica da abordagem OpenAPI-MCP para integração de IA;
+    - Investigar viabilidade técnica da abordagem OpenAPI-MCP para democratizar o acesso a sistemas WEB através de agentes conversacionais baseados em IA;
   - **Objetivos Específicos:**
-    - Desenvolver gerador automático de servidores MCP;
-    - Implementar cliente de chat multi-servidor MCP;
-    - Avaliar desempenho, segurança e usabilidade da abordagem experimentalmente.
+    - Desenvolver um gerador automático de servidores MCP a partir de especificações OpenAPI 3.0+;
+    - Implementar um client LLM chat capaz de gerenciar múltiplos servidores simultaneamente;
+    - Validar experimentalmente a integração através de métricas de desempenho, segurança e usabilidade;
 - **Why:**
-  - Fornece visão estruturada e concisa dos objetivos, orientando claramente as expectativas da audiência.
+  - Define claramente o escopo da pesquisa, estabelece objetivos mensuráveis e específicos, e demonstra a estrutura metodológica para validação experimental da hipótese central.
 - **Speech script:**
-  - 
+  - Nossa pesquisa possui um objetivo geral ambicioso de investigar a viabilidade técnica da abordagem OpenAPI-MCP para democratizar o acesso a sistemas WEB. Esta democratização ocorre através da criação de agentes conversacionais baseados em inteligência artificial que permitem aos usuários interagir com sistemas complexos usando linguagem natural. Para alcançar este objetivo geral, definimos quatro objetivos específicos estruturados. Primeiro, desenvolver um gerador automático de servidores MCP a partir de especificações OpenAPI, eliminando a necessidade de desenvolvimento manual recorrente. Segundo, implementar um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente, demonstrando a viabilidade da orquestração distribuída. Terceiro, validar experimentalmente a integração através de métricas rigorosas de desempenho, segurança e usabilidade, garantindo avaliação científica objetiva. Por fim, estabelecer evidências preliminares convincentes que justifiquem investigações futuras mais aprofundadas, reconhecendo que este é um estudo inicial de validação conceitual que abrirá caminho para pesquisas mais abrangentes.
+- **Speech instructions:**
+  - Enfatizar "democratização" e "linguagem natural" como conceitos centrais. Pausar brevemente após cada objetivo específico numerado. Destacar "evidências preliminares" para contextualizar o escopo inicial da pesquisa.
 
 ### **Slide 4: Abordagem Teórica**
 - **Title**

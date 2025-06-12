@@ -118,12 +118,17 @@
 - **Title**
   - OpenAPI
 - **Content (bullet points, images, tables, etc.):**
-  - Padrão de documentação e interoperabilidade;
-  - Esquemas de segurança e autenticação.
+  - **Padrão da Indústria:** Especificação OpenAPI 3.0+ amplamente adotada para documentação estruturada de APIs RESTful (OpenAPI Initiative, 2023);
+  - **Interoperabilidade:** Facilita integração entre sistemas heterogêneos através de contratos de interface padronizados;
+  - **Esquemas de Segurança:** Suporte nativo para OAuth, API Key e Bearer Token, essencial para agentes conversacionais;
+  - **Documentação Estruturada:** Formato legível por máquina que permite geração automática de ferramentas de integração;
+  - **Base da Conversão:** Fundamento técnico para transformação automática em servidores MCP funcionais.
 - **Why:**
-  - 
+  - Demonstra por que OpenAPI é a escolha técnica ideal para a pesquisa, destacando características específicas que viabilizam a conversão automática para MCP e integração com agentes conversacionais.
 - **Speech script:**
-  - 
+  - A especificação OpenAPI representa um dos pilares fundamentais da nossa abordagem de integração. A OpenAPI ou mais conhecido Swagger, consolidou-se como padrão da indústria para documentação estruturada de APIs RESTful, sendo amplamente adotada por empresas e desenvolvedores globalmente. Sua importância para nossa pesquisa reside em características técnicas específicas que a tornam ideal para integração com agentes conversacionais. Primeiro, OpenAPI oferece interoperabilidade excepcional, facilitando a integração entre sistemas heterogêneos através de contratos de interface padronizados que definem precisamente como diferentes sistemas podem se comunicar. Segundo, sua documentação estruturada em formato legível por máquina permite geração automática de ferramentas de integração, característica fundamental que viabiliza nosso gerador automático de servidores MCP. Por fim, OpenAPI serve como base técnica sólida para a conversão automática que desenvolvemos, onde especificações existentes são sistematicamente transformadas em servidores MCP funcionais, eliminando desenvolvimento manual recorrente.
+- **Speech instructions:**
+  - Enfatizar "padrão da indústria" para destacar a legitimidade técnica. Pausar após enumerar cada característica ("Primeiro", "Segundo", "Por fim") para estruturar claramente os benefícios. Destacar "geração automática" como conceito central da pesquisa.
 
 ### **Slide 7: Model Context Protocol**
 - **Title**

@@ -291,14 +291,18 @@
 - **Title**
   - Discussão e Contribuições
 - **Content (bullet points, images, tables, etc.):**
-  - Conversão automática eficaz (100% endpoints);
-  - Segurança básica robusta;
-  - Experiência do usuário satisfatória;
-  - Limitações destacadas: variabilidade desempenho, escala pequena.
+  - **Validação da Hipótese Central:** Conversão automática OpenAPI→MCP demonstrou 100% de eficácia (10/10 endpoints), confirmando viabilidade técnica da abordagem;
+  - **Contribuição Científica Principal:** Primeira validação experimental sistemática da integração OpenAPI-MCP com metodologia reproduzível e métricas objetivas;
+  - **Resultados Operacionais:** Taxa de sucesso de 100% em todas as dimensões testadas - performance, segurança básica e experiência do usuário (4,0/5,0);
+  - **Democratização Tecnológica:** Eliminação do desenvolvimento manual recorrente através de geração automática de ferramentas MCP;
+  - **Limitações Identificadas:** Variabilidade de performance (336%), escopo experimental restrito (2 servidores MCP) e testes de segurança limitados a ataques básicos;
+  - **Base para Pesquisas Futuras:** Framework estabelecido para validação de integrações similares e direções claras para desenvolvimentos mais abrangentes.
 - **Why:**
-  - Consolida claramente os achados, preparando a audiência para considerações finais.
+  - Consolida os principais achados experimentais e contribuições científicas da pesquisa, destacando tanto os sucessos quanto as limitações identificadas, preparando a audiência para as considerações finais e demonstrando transparência científica sobre o escopo e aplicabilidade dos resultados.
 - **Speech script:**
-  - 
+  - Nossa pesquisa alcançou resultados significativos que confirmam a viabilidade da abordagem OpenAPI-MCP e estabelecem contribuições científicas importantes para a área. Primeiro, validamos nossa hipótese central de forma categórica: a conversão automática de especificações OpenAPI em servidores MCP demonstrou 100% de eficácia, com todos os 10 endpoints testados sendo convertidos com sucesso, confirmando que é possível eliminar o desenvolvimento manual recorrente tradicionalmente necessário para cada nova integração. Nossa contribuição científica principal reside em ser a primeira validação experimental sistemática da integração OpenAPI-MCP, estabelecendo uma metodologia reproduzível com métricas objetivas que pode servir como base para pesquisas futuras na área. Os resultados operacionais foram consistentemente positivos: alcançamos taxa de sucesso de 100% em todas as dimensões críticas testadas, incluindo performance operacional, segurança básica contra 16 vetores de ataque fundamentais, e experiência do usuário com pontuação satisfatória de 4,0 em escala de 1 a 5. Demonstramos concretamente o potencial de democratização tecnológica através da eliminação do desenvolvimento manual recorrente, onde nossa geração automática de ferramentas MCP permite que sistemas existentes se tornem acessíveis via interfaces conversacionais naturais sem necessidade de programação customizada. No entanto, é fundamental destacar as limitações identificadas durante nossa validação experimental. A variabilidade de performance, com 336% de variação nos tempos de resposta, indica necessidade de otimizações futuras para ambientes com requisitos rigorosos de latência. Nosso escopo experimental foi deliberadamente restrito a 2 servidores MCP e cenários controlados, impedindo generalização ampla para ambientes empresariais complexos. Adicionalmente, nossos testes de segurança abrangeram apenas ataques básicos, não incluindo ameaças sofisticadas que poderiam explorar vulnerabilidades específicas da integração. Apesar dessas limitações, estabelecemos uma base sólida para pesquisas futuras, criando um framework validado para avaliação de integrações similares e identificando direções claras para desenvolvimentos mais abrangentes que abordem as limitações atuais e expandam a aplicabilidade da abordagem.
+- **Speech instructions:**
+  - Enfatizar "100% de eficácia" e "primeira validação experimental sistemática" para destacar as contribuições principais. Pausar após cada ponto principal ("Primeiro", "Nossa contribuição", "Os resultados", "Demonstramos", "No entanto") para dar estrutura clara. Destacar "democratização tecnológica" como impacto prático importante. Enfatizar "limitações identificadas" para mostrar transparência científica. Destacar "336% de variação" como limitação específica quantificada. Enfatizar "base sólida para pesquisas futuras" para mostrar o valor duradouro da contribuição.
 
 ### **Slide 20: Considerações Finais**
 - **Title**

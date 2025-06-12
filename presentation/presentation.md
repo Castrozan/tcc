@@ -44,9 +44,9 @@
 - **Why:**
   - Apresentação padrão para identificar claramente o tópico e participantes.
 - **Speech script:**
-  - 
+  - Bom dia a todos. É com grande satisfação que apresento meu Trabalho de Conclusão de Curso intitulado "Transformando APIs em Interfaces Conversacionais: Validação da Abordagem OpenAPI-MCP para Agentes Baseados em IA". Meu nome é Lucas de Castro Zanoni, sou graduando em Engenharia de Software aqui no Centro Universitário UniSATC, em Criciúma. Este trabalho foi desenvolvido sob a orientação do Professor Fernandes Mezzari, a quem agradeço pelo apoio e direcionamento durante toda esta jornada de pesquisa. Hoje irei apresentar os resultados de uma investigação experimental que explora como podemos democratizar o acesso a sistemas técnicos complexos através de interfaces conversacionais naturais, utilizando a combinação inovadora entre especificações OpenAPI e o protocolo Model Context Protocol. Esta pesquisa representa não apenas a culminação dos meus estudos em Engenharia de Software, mas também uma contribuição científica para a área de integração entre inteligência artificial e sistemas web existentes.
 - **Speech instructions:**
-  - 
+  - Cumprimentar a banca e audiência com tom respeitoso e confiante. Pausar após apresentar o título para dar ênfase. Falar o próprio nome claramente e agradecer ao orientador de forma sincera. Enfatizar "democratizar o acesso" e "interfaces conversacionais naturais" como conceitos centrais. Concluir com tom de expectativa positiva para a apresentação.
 
 ### **Slide 2: Introdução**
 - **Title**
@@ -352,4 +352,6 @@
 - **Why:**
   - Duplicação do slide de capa para formalidade acadêmica padrão.
 - **Speech script:**
-  - 
+  - Chegamos ao final desta apresentação, onde demonstramos que a integração OpenAPI-MCP representa uma solução viável e promissora para democratizar o acesso a sistemas técnicos complexos através de interfaces conversacionais naturais. Nossa validação experimental confirmou a hipótese central da pesquisa, estabelecendo evidências científicas sólidas sobre a viabilidade técnica desta abordagem inovadora. Gostaria de agradecer novamente ao Professor Fernandes Mezzari pela orientação fundamental durante todo este processo, ao Centro Universitário UniSATC pelo suporte institucional, e a todos os presentes pela atenção dispensada. Esta pesquisa abre portas para uma transformação fundamental na forma como usuários interagem com tecnologias complexas, tornando-as acessíveis através de conversação natural. Estou à disposição para responder às perguntas da banca examinadora e discutir os aspectos técnicos e científicos apresentados. Muito obrigado pela atenção de todos.
+- **Speech instructions:**
+  - Iniciar com tom de conclusão satisfatória. Enfatizar "democratizar o acesso" e "interfaces conversacionais naturais" como conquistas principais. Pausar após "evidências científicas sólidas" para dar ênfase. Agradecer de forma sincera e específica ao orientador e instituição. Destacar "transformação fundamental" como impacto futuro. Concluir com disponibilidade respeitosa para perguntas e agradecimento final caloroso.

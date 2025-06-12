@@ -14,11 +14,11 @@ Slides that do not have enough information already set in the plan to fill all r
 
 ------------------------------------------------------------------------------------------------
 
-Ok, great. Now lets work on slide: 2
+Ok, great. Now lets work on slide: 11
 
 Go through the article again in the section related to this slide and read it again. After reading and understanding its purpose, adjust the slide definition to better suit the objectives of the presentation and the guidelines.
 
-Slides that should have a image should not have bullet points, only the image
+Slides that should have a image should not have bullet points, only the image. You should chose between images or bullet points
 
 ------------------------------------------------------------------------------------------------
 

@@ -206,11 +206,13 @@
 - **Title**
   - Cliente Multi-servidor MCP
 - **Content (bullet points, images, tables, etc.):**
-  - ![Diagrama mostrando descoberta dinâmica de servidores](images/chat/chat-server-configuration.jpg)
+  - ![Configuração do cliente de chat possibilitando a adição de novos servidores MCP](images/chat/chat-server-configuration.jpg)
 - **Why:**
-  - Esclarece a complexidade de forma prática e compreensível.
+  - Demonstra visualmente a implementação metodológica do segundo objetivo específico da pesquisa, mostrando como a orquestração simultânea de múltiplos servidores MCP é viabilizada através de descoberta automática, roteamento inteligente e configuração dinâmica em ambiente conversacional.
 - **Speech script:**
-  - 
+  - O cliente de chat multi-servidor representa a implementação metodológica do nosso segundo objetivo específico, desenvolvido como ferramenta de validação experimental para demonstrar a viabilidade prática da orquestração simultânea de múltiplos servidores MCP em ambiente conversacional. Como podemos observar na interface de configuração, enfrentamos um desafio metodológico fundamental relacionado à coordenação eficiente de múltiplos servidores MCP simultaneamente, problema que se enquadra teoricamente no domínio de sistemas distribuídos e coordenação de agentes. A complexidade emergiu da necessidade de manter conexões ativas, descobrir dinamicamente capacidades disponíveis e rotear solicitações baseadas na análise semântica da intenção do usuário, tudo isso preservando a experiência conversacional natural. Nossa solução metodológica implementou um sistema de coordenação baseado em descoberta automática de ferramentas, criando um inventário dinâmico das funcionalidades acessíveis em cada servidor. O roteamento inteligente utiliza análise contextual para determinar qual servidor utilizar baseado nas ferramentas disponíveis e na natureza da solicitação, enquanto o mecanismo de agregação de resultados permite combinar informações de múltiplos servidores quando necessário. A arquitetura de configuração foi concebida para proporcionar flexibilidade operacional através de mecanismos dinâmicos de adição e remoção de servidores, eliminando a necessidade de reinicialização do sistema durante modificações na topologia de serviços. Como ilustrado na interface, usuários podem especificar comandos de execução e variáveis de ambiente através de interface gráfica intuitiva, facilitando a integração de novos serviços à medida que são descobertos ou desenvolvidos. A arquitetura suporta visualização em tempo real do estado dos servidores ativos, possibilitando monitoramento contínuo da saúde do sistema e identificação proativa de potenciais problemas de conectividade.
+- **Speech instructions:**
+  - Referir-se constantemente à interface de configuração mostrada no diagrama. Enfatizar "segundo objetivo específico" para conectar com os objetivos da pesquisa. Pausar após "sistemas distribuídos e coordenação de agentes" para destacar a complexidade teórica. Destacar "descoberta automática" e "roteamento inteligente" como inovações técnicas centrais. Enfatizar "flexibilidade operacional" e "dinâmicos" para mostrar as vantagens práticas da solução. Apontar para elementos específicos da interface conforme mencionados.
 
 ### **Slide 13: Interface Experimental**
 - **Title**

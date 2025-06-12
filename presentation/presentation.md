@@ -86,14 +86,17 @@
 - **Title**
   - Abordagem Teórica
 - **Content (bullet points, images, tables, etc.):**
-  - Interfaces conversacionais e LLMs (OpenAI, Anthropic, 2022-2024);
-  - Especificação OpenAPI (OpenAPI Initiative, 2023);
-  - Model Context Protocol (Anthropic, 2024);
-  - Testes de segurança e usabilidade (NIST, OWASP, 2023-2025).
+  - **Interfaces Conversacionais:** Teoria de interação humano-computador e usabilidade (KOCABALLI et al., 2019; LISTER et al., 2020);
+  - **Modelos de Linguagem:** Arquitetura Transformer e function calling (OPENAI, 2023; ANTHROPIC, 2024);
+  - **Padronização de APIs:** Especificação OpenAPI 3.0+ para interoperabilidade (OpenAPI Initiative, 2023);
+  - **Protocolo MCP:** Comunicação padronizada entre LLMs e sistemas externos (ANTHROPIC, 2024);
+  - **Avaliação Experimental:** Frameworks de segurança e testes end-to-end (NIST, 2023; OWASP, 2025).
 - **Why:**
-  - Lista claramente os conceitos teóricos que fundamentam a pesquisa de forma breve e focada.
+  - Estabelece fundamentos teóricos sólidos que sustentam a pesquisa, demonstrando conhecimento das principais teorias e frameworks relevantes para validação científica da abordagem proposta.
 - **Speech script:**
-  - 
+  - Nossa pesquisa fundamenta-se em cinco pilares teóricos principais que convergem para viabilizar a integração OpenAPI-MCP. Primeiro, nos baseamos na teoria de interfaces conversacionais e interação humano-computador, conforme estudado por Kocaballi e Lister, que demonstraram como essas interfaces podem melhorar significativamente a usabilidade e acessibilidade de sistemas complexos. Segundo, utilizamos os avanços em modelos de linguagem baseados na arquitetura Transformer, especialmente as capacidades de function calling desenvolvidas pela OpenAI e Anthropic, que permitem conversão automática de linguagem natural em chamadas de função estruturadas. Terceiro, adotamos a especificação OpenAPI como padrão para documentação e interoperabilidade de APIs, amplamente reconhecida pela indústria como solução robusta para contratos de interface. Quarto, implementamos o Model Context Protocol, um padrão emergente desenvolvido pela Anthropic que estabelece comunicação padronizada entre modelos de linguagem e sistemas externos, eliminando integrações customizadas. Por fim, aplicamos frameworks estabelecidos de avaliação experimental, incluindo diretrizes de segurança do NIST e OWASP para testes de robustez, além de metodologias de testes end-to-end que garantem validação científica rigorosa dos resultados obtidos.
+- **Speech instructions:**
+  - Enfatizar cada "pilar teórico" numerado para estruturar claramente a fundamentação. Pausar brevemente após mencionar cada framework/autor para dar credibilidade. Destacar "convergem" para mostrar integração teórica.
 
 ### **Slide 5: LLMs e Interfaces Conversacionais**
 - **Title**

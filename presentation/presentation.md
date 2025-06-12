@@ -325,11 +325,20 @@
 - **Title**
   - Referências Bibliográficas
 - **Content (bullet points, images, tables, etc.):**
-  - 
+  - ANTHROPIC. **Model Context Protocol (MCP): A Standard for AI Context Integration**. 2024. Disponível em: <https://www.anthropic.com/news/model-context-protocol>. Acesso em: 12 abr. 2025;
+  - DENG, X. A More Accessible Web with Natural Language Interface. **Proceedings of the 20th International Web for All Conference**, 2023;
+  - FAST, E. et al. **Iris: A Conversational Agent for Complex Tasks**. 2017. Disponível em: <https://arxiv.org/abs/1707.05015>. Acesso em: 15 jan. 2025;
+  - GUO, S. et al. Collaborating with my Doppelgänger: The Effects of Self-similar Appearance and Voice of a Virtual Character during a Jigsaw Puzzle Co-solving Task. **Proceedings of the ACM on Computer Graphics and Interactive Techniques**, 2024;
+  - KOCABALLI, A. B. et al. The Personalization of Conversational Agents in Health Care: Systematic Review. **Journal of Medical Internet Research**, v. 21, n. 11, p. e15360, 2019;
+  - LISTER, K. et al. Accessible conversational user interfaces: considerations for design. **Proceedings of the 17th International Web for All Conference**, 2020;
+  - OPENAI. **GPT-4 Technical Report**. 2023. Disponível em: <https://arxiv.org/abs/2303.08774>. Acesso em: 10 jan. 2025;
+  - RAPP, A. et al. Designing technology for spatial needs: Routines, control and social competences of people with autism. **International Journal of Human-Computer Studies**, v. 120, p. 49-65, 2018.
 - **Why:**
-  - Demonstra rigor acadêmico adequado sem sobrecarregar a audiência.
+  - Demonstra rigor acadêmico através da apresentação das principais referências bibliográficas que fundamentaram a pesquisa, seguindo padrões ABNT e destacando a base científica sólida do trabalho sem sobrecarregar a audiência com todas as referências.
 - **Speech script:**
-  - 
+  - Nossa pesquisa fundamentou-se em uma base bibliográfica sólida e diversificada, que abrange desde os fundamentos teóricos até as tecnologias mais recentes na área. Destacamos aqui as principais referências que sustentaram nosso trabalho. A documentação oficial da Anthropic sobre o Model Context Protocol foi fundamental para compreender este protocolo emergente que tornou nossa pesquisa possível. Os trabalhos de Deng e Lister forneceram insights essenciais sobre acessibilidade e interfaces conversacionais, demonstrando como essas tecnologias podem democratizar o acesso a sistemas complexos. A pesquisa de Fast e colaboradores sobre o Iris foi pioneira em demonstrar como agentes conversacionais podem lidar com tarefas complexas, inspirando nossa abordagem metodológica. O estudo de Guo trouxe perspectivas importantes sobre interação humano-computador em ambientes inteligentes, enquanto Kocaballi forneceu evidências sobre personalização de agentes conversacionais em contextos de saúde. A investigação de Rapp sobre necessidades espaciais e tecnologia ofereceu insights valiosos sobre como diferentes usuários interagem com sistemas digitais. Por fim, a documentação técnica da OpenAI sobre o GPT-4 foi essencial para compreender as capacidades de function calling que viabilizaram nossa integração. Estas referências, formatadas segundo as normas ABNT, representam a base científica que sustenta nossas conclusões e demonstra o rigor acadêmico de nossa investigação.
+- **Speech instructions:**
+  - Enfatizar "base bibliográfica sólida e diversificada" para destacar o rigor acadêmico. Pausar brevemente após mencionar cada grupo de autores para dar clareza. Destacar "Anthropic", "OpenAI" e outros nomes de organizações para mostrar a relevância das fontes. Enfatizar "normas ABNT" para destacar o padrão acadêmico brasileiro. Concluir com "rigor acadêmico" para reforçar a qualidade científica.
 
 ### **Slide 22: Capa Final**
 - **Title**

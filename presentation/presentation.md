@@ -23,6 +23,8 @@
       - Why the content is important.
     - **Speech script:**
       - Speech script for the slide.
+    - **Speech instructions:**
+      - Instructions on pronunciation, emphasis, timing, and delivery guidance.
 - Bullet points should be in the following format (ending with semicolon and the last with a dot):
   - Sub-bullet point 1;
   - Sub-bullet point 2;
@@ -43,20 +45,25 @@
   - Apresentação padrão para identificar claramente o tópico e participantes.
 - **Speech script:**
   - 
+- **Speech instructions:**
+  - 
 
 ### **Slide 2: Introdução**
 - **Title**
   - Introdução
 - **Content (bullet points, images, tables, etc.):**
-  - Crescente complexidade de interfaces digitais;
-  - Dificuldade dos usuários em interagir com sistemas web;
-  - Ascensão de modelos de linguagem (LLMs);
-  - Pergunta de pesquisa: "Como a combinação OpenAPI e MCP pode facilitar a integração de agentes conversacionais baseados em IA com sistemas web existentes?";
-  - Metodologia científica experimental.
+  - **Contexto:** Crescente complexidade das interfaces digitais modernas;
+  - **Problema:** Barreiras de acessibilidade e usabilidade para usuários;
+  - **Oportunidade:** Ascensão dos modelos de linguagem (LLMs) como GPT-4;
+  - **Potencial:** Interfaces conversacionais naturais para democratização tecnológica;
+  - **Pergunta de pesquisa:** "Como a combinação OpenAPI e MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes?";
+  - **Abordagem:** Validação experimental através de prova de conceito.
 - **Why:**
-  - Estabelece contexto claro, justifica relevância, e explicita a pergunta de pesquisa e abordagem metodológica.
+  - Estabelece o contexto do problema, justifica a relevância da pesquisa, apresenta a oportunidade tecnológica e define claramente a pergunta de pesquisa e metodologia.
 - **Speech script:**
-  - 
+  - Vivemos em uma era de crescente complexidade nas interfaces digitais. Os sistemas web modernos, embora poderosos, frequentemente criam barreiras significativas para os usuários, dificultando o acesso pleno às suas funcionalidades. Paralelamente, testemunhamos uma revolução com a ascensão dos modelos de linguagem de grande escala, como o GPT-4, que consolidaram interfaces conversacionais como uma realidade robusta e eficaz. Esta convergência abre uma oportunidade única para democratizar o acesso a tecnologias complexas através de interfaces naturais em linguagem humana. Nossa pergunta central de pesquisa é: como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes? Para responder a esta questão, desenvolvemos uma abordagem experimental rigorosa através de uma prova de conceito que validará a viabilidade técnica desta integração.
+- **Speech instructions:**
+  - Enfatizar "crescente complexidade" e "barreiras significativas" para destacar o problema. Pausar brevemente após "GPT-4" para dar ênfase à tecnologia. Falar "OpenAPI" como "Open A-P-I" e "MCP" como "M-C-P". Aumentar o tom na pergunta de pesquisa para destacar sua importância.
 
 ### **Slide 3: Objetivos**
 - **Title**

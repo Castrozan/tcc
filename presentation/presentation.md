@@ -228,13 +228,15 @@
 
 ### **Slide 14: Workflow da Interação**
 - **Title**
-  - Workflow da Interação
+  - Workflow da Interação (vídeo?)
 - **Content (bullet points, images, tables, etc.):**
-  - ![Diagrama do workflow de integração](images/metodos/workflow-integration.jpg)
+  - ![Diagrama de workflow detalhado mostrando o processo de interpretação de linguagem natural, conversão em chamadas de função via MCP, execução de operações em sistemas backend e formatação de respostas conversacionais](images/metodos/workflow-integration.jpg)
 - **Why:**
-  - Ajuda a audiência a compreender claramente como o sistema opera.
+  - Demonstra visualmente a sequência metodológica essencial para validação experimental da hipótese central da pesquisa, mostrando como múltiplas camadas trabalham de forma integrada para responder às consultas do usuário em linguagem natural através do fluxo completo de interpretação, conversão, execução e formatação.
 - **Speech script:**
-  - 
+  - O workflow da interação representa a sequência metodológica que permite a validação experimental da nossa hipótese central de pesquisa. Como podemos observar no diagrama, o sistema foi desenvolvido com múltiplas camadas que trabalham de forma integrada para responder às consultas feitas pelo usuário em linguagem natural. O fluxo completo de interação ocorre da seguinte maneira: ao receber uma consulta através da interface web padronizada, o modelo de linguagem GPT-4 interpreta a intenção do usuário utilizando suas capacidades avançadas de compreensão de linguagem natural. Em seguida, o modelo utiliza a implementação do cliente MCP para acessar dinamicamente as ferramentas geradas pelo nosso gerador automático de servidores MCP. Estas ferramentas, convertidas automaticamente a partir das especificações OpenAPI, permitem que o modelo de linguagem execute operações precisas nos sistemas backend via API REST, mantendo total conformidade com as especificações OpenAPI originais. Após executar a operação solicitada nos sistemas externos, a resposta é retornada ao modelo de linguagem, que então a processa e formata em linguagem natural compreensível antes de devolvê-la ao usuário através da interface conversacional. Este fluxo demonstra como nossa abordagem OpenAPI-MCP cria uma ponte padronizada entre a compreensão de linguagem natural e a execução de operações técnicas específicas, eliminando a necessidade de desenvolvimento manual recorrente para cada nova integração. A arquitetura modular permite isolamento completo de responsabilidades, onde cada componente pode ser instrumentado, testado e mantido de forma independente, facilitando tanto o desenvolvimento quanto a operação em ambiente de produção. Esta separação é fundamental para nossa validação experimental, pois permite controle rigoroso das variáveis e coleta objetiva de métricas de performance, segurança e usabilidade em cada etapa do processo de integração.
+- **Speech instructions:**
+  - Referir-se constantemente ao diagrama de workflow, seguindo o fluxo das setas conforme descrito. Enfatizar "sequência metodológica" e "validação experimental" para conectar com os objetivos da pesquisa. Pausar após cada etapa principal do fluxo ("interpreta", "utiliza", "executa", "formata") para dar clareza ao processo. Destacar "ponte padronizada" e "eliminando desenvolvimento manual" como benefícios centrais da abordagem. Apontar para cada camada do sistema conforme mencionada no diagrama. Enfatizar "controle rigoroso das variáveis" para conectar com a metodologia científica.
 
 ### **Slide 15: Exemplo de Conversão OpenAPI→MCP**
 - **Title**

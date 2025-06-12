@@ -166,13 +166,17 @@
 - **Title**
   - Metodologia
 - **Content (bullet points, images, tables, etc.):**
-  - Revisão sistemática da literatura;
-  - Desenvolvimento experimental estruturado (POC);
-  - Testes automatizados para métricas objetivas.
+  - **Abordagem Experimental:** Estruturada em etapas sequenciais para validação da viabilidade técnica OpenAPI-MCP;
+  - **Revisão Sistemática:** Consolidação de conhecimentos científicos sobre integração OpenAPI-MCP;
+  - **Prova de Conceito:** Desenvolvimento de gerador automático MCP, cliente multi-servidor e aplicações de teste;
+  - **Validação Rigorosa:** Testes automatizados end-to-end com Playwright para métricas objetivas e reproduzíveis;
+  - **Critérios Científicos:** Avaliação de desempenho, segurança (red teaming) e usabilidade em ambiente controlado.
 - **Why:**
-  - Delineia claramente o rigor metodológico sem repetir detalhes já apresentados.
+  - Estabelece o rigor metodológico científico necessário para validação experimental da hipótese, demonstrando como a pesquisa garante resultados objetivos e reproduzíveis através de instrumentação técnica precisa.
 - **Speech script:**
-  - 
+  - Nossa metodologia foi estruturada para garantir rigor científico e reprodutibilidade dos resultados experimentais. Adotamos uma abordagem experimental estruturada em etapas sequenciais, começando com uma revisão sistemática da literatura para consolidar conhecimentos científicos sobre integração OpenAPI-MCP e embasar teoricamente nossa fase experimental. O núcleo da metodologia consistiu no desenvolvimento de uma prova de conceito abrangente, incluindo quatro componentes principais: primeiro, um gerador automático de servidores MCP a partir de especificações OpenAPI; segundo, um cliente de chat capaz de gerenciar múltiplos servidores simultaneamente; terceiro, aplicações de teste de ponta a ponta para validação da abordagem; e quarto, geração de métricas de avaliação para medir desempenho, segurança e experiência do usuário. Para assegurar resultados objetivos e reproduzíveis, implementamos validação rigorosa através de testes automatizados end-to-end utilizando Playwright, permitindo simulação realista das interações do usuário com coleta automática de dados. Estabelecemos critérios científicos específicos para avaliação em três dimensões críticas: desempenho através de métricas de tempo de resposta e taxa de sucesso, segurança através de testes de red teaming, e usabilidade através de métricas quantitativas e qualitativas em escala padronizada. Esta metodologia buscou estabelecer indicadores iniciais da eficácia da abordagem dentro de um escopo experimental controlado, reconhecendo que validações mais abrangentes serão necessárias para confirmação definitiva em ambientes empresariais complexos.
+- **Speech instructions:**
+  - Enfatizar "rigor científico" e "reprodutibilidade" como pilares metodológicos fundamentais. Pausar após enumerar cada componente da prova de conceito ("primeiro", "segundo", "terceiro", "quarto") para dar clareza estrutural. Destacar "Playwright" como ferramentas e frameworks reconhecidos. Enfatizar "escopo experimental controlado" para contextualizar as limitações do estudo.
 
 ### **Slide 10: Arquitetura Geral**
 - **Title**

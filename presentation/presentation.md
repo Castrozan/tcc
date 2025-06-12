@@ -279,16 +279,13 @@
 - **Title**
   - Resultados de Usabilidade
 - **Content (bullet points, images, tables, etc.):**
-  | Métrica         | Pontuação |
-  | --------------- | --------- |
-  | Precisão        | 3.5       |
-  | Clareza         | 4.0       |
-  | Utilidade       | 4.3       |
-  | Pontuação geral | 4.0       |
+  - ![Tabela 2: Métricas de Experiência do Usuário (Escala 1-5) mostrando precisão das respostas (3,5±0,5), clareza da comunicação (4,0±0,3), utilidade das informações (4,3±0,4), pontuação geral (4,0±0,3), taxa de sucesso 100% (13/13) e tempo médio de resposta 4.861ms±2.400](images/resultados/tabela-usabilidade.jpg)
 - **Why:**
-  - Mostra avaliação empírica clara de métricas focadas no usuário.
+  - Apresenta evidências quantitativas objetivas da experiência do usuário através de 13 cenários de teste estruturados com métricas padronizadas, demonstrando que a interface conversacional OpenAPI-MCP proporcionou experiência satisfatória com pontuação geral de 4,0/5,0 e destacando a utilidade das informações (4,3) como ponto forte da solução.
 - **Speech script:**
-  - 
+  - A avaliação de experiência do usuário constituiu uma dimensão fundamental da nossa validação experimental, conduzida através de 13 cenários de teste estruturados com métricas padronizadas em escala de 1 a 5. Como podemos observar na Tabela 2, os resultados indicaram experiência do usuário satisfatória, com pontuação geral de 4,0 em escala de 1 a 5, demonstrando que nossa interface conversacional OpenAPI-MCP efetivamente atendeu às expectativas dos usuários. A análise detalhada das métricas revela aspectos importantes sobre a qualidade da interação. A precisão das respostas obteve pontuação de 3,5 com desvio de ±0,5, indicando interpretação correta das intenções dos usuários na maioria dos casos, embora com espaço para melhorias na compreensão de consultas mais complexas. A clareza da comunicação alcançou 4,0 com desvio de ±0,3, confirmando que a interface conversacional apresentou informações de forma bem estruturada e compreensível aos usuários. O destaque principal foi a utilidade das informações, que emergiu como ponto forte com pontuação de 4,3 e desvio de ±0,4, demonstrando que o sistema forneceu respostas relevantes e acionáveis que efetivamente auxiliaram os usuários em suas tarefas. A taxa de sucesso manteve-se em 100%, com todas as 13 consultas sendo respondidas adequadamente, validando a robustez operacional da solução. O tempo médio de resposta foi de 4.861 milissegundos com desvio de ±2.400, indicando responsividade adequada embora com variabilidade que reflete a complexidade das consultas processadas. Estes resultados confirmam que a abordagem OpenAPI-MCP não apenas demonstrou viabilidade técnica, mas também proporcionou experiência do usuário satisfatória, estabelecendo evidências empíricas sobre a eficácia prática da interface conversacional para democratização do acesso a sistemas técnicos complexos.
+- **Speech instructions:**
+  - Referir-se constantemente à tabela mostrada na imagem, apontando para métricas específicas conforme mencionadas. Enfatizar "13 cenários de teste estruturados" e "métricas padronizadas" para destacar o rigor metodológico. Pausar após mencionar cada métrica principal (precisão, clareza, utilidade) para dar clareza. Destacar "4,3 para utilidade das informações" como ponto forte principal. Enfatizar "100% de taxa de sucesso" para mostrar robustez. Destacar "experiência satisfatória" e "4,0/5,0" como resultado geral positivo. Enfatizar "evidências empíricas" para conectar com a validação científica.
 
 ### **Slide 19: Discussão e Contribuições**
 - **Title**

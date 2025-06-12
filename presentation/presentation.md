@@ -150,12 +150,17 @@
 - **Title**
   - Critérios de Segurança e Usabilidade
 - **Content (bullet points, images, tables, etc.):**
-  - Red teaming e prompt injection;
-  - Testes end-to-end com Playwright.
+  - **Segurança - Red Teaming:** Testes adversários incluindo SQL injection, command injection, data extraction e privilege escalation (NIST, 2023; OWASP, 2025);
+  - **Resistência a Prompt Injection:** Mensuração de tentativas maliciosas bloqueadas durante testes sistemáticos de segurança;
+  - **Usabilidade Quantitativa:** Tempo de conclusão de tarefas CRUD via linguagem natural e curva de aprendizado;
+  - **Usabilidade Qualitativa:** Precisão, clareza e utilidade das respostas em escala 1-5;
+  - **Testes End-to-End:** Playwright para automação e coleta objetiva de métricas reproduzíveis.
 - **Why:**
-  - 
+  - Estabelece os critérios científicos rigorosos para validação experimental, demonstrando como aspectos críticos de segurança e experiência do usuário são mensurados objetivamente para garantir validade científica dos resultados.
 - **Speech script:**
-  - 
+  - Para garantir validação experimental rigorosa, estabelecemos critérios objetivos de avaliação em duas dimensões críticas: segurança e usabilidade. Na dimensão de segurança, implementamos uma abordagem abrangente de red teaming baseada nos frameworks do NIST e OWASP, reconhecidos internacionalmente como padrões para avaliação de segurança em sistemas de IA. Nossos testes adversários incluem quatro categorias principais: SQL injection para testar robustez contra manipulação de banco de dados, command injection para verificar proteção contra execução de comandos do sistema, data extraction para avaliar resistência à extração não autorizada de informações sensíveis, e privilege escalation para validar proteção contra tentativas de elevação de privilégios. Especial atenção foi dada à resistência a prompt injection, uma ameaça crítica específica para sistemas LLM, onde mensuramos o percentual de tentativas maliciosas efetivamente bloqueadas. Na dimensão de usabilidade, adotamos métricas tanto quantitativas quanto qualitativas. Quantitativamente, medimos tempo de conclusão de tarefas CRUD executadas via linguagem natural e analisamos a curva de aprendizado dos usuários. Qualitativamente, avaliamos três aspectos fundamentais em escala de 1 a 5: precisão das respostas em relação à intenção do usuário, clareza na estruturação das informações, e utilidade prática para tomada de decisão. Toda essa instrumentação é operacionalizada através de testes end-to-end automatizados com Playwright, garantindo coleta objetiva e reproduzível de métricas que fundamentam cientificamente nossas conclusões.
+- **Speech instructions:**
+  - Enfatizar "validação experimental rigorosa" e "critérios objetivos" para destacar o rigor científico. Pausar após enumerar cada categoria de ataque para dar clareza. Destacar "NIST e OWASP" como autoridades reconhecidas. Enfatizar "reproduzível" como característica essencial da metodologia científica.
 
 ### **Slide 9: Metodologia**
 - **Title**

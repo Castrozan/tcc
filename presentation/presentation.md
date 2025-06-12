@@ -1,3 +1,35 @@
+# Presentation Plan
+
+## Editor guidelines
+- This should be a exact copy of the content in the powerpoint presentation, so only content that should be in the presentation should be here.
+- The presentation should be in portuguese.
+- The presentation should be in the ABNT format.
+- Slide definitions should be in the following format:
+  - **Slide number: title**
+    - **Title**
+      - Title of the slide.
+    - **Content (bullet points, images, tables, etc.):**
+      - Bullet points example:
+        - Sub-bullet point 1;
+        - Sub-bullet point 2;
+        - Sub-bullet point 3.
+      - Images example:
+        - ![Image description](images/image.png)
+      - Tables example:
+        | Header 1 | Header 2 |
+        | -------- | -------- |
+        | Data 1   | Data 2   |
+    - **Why:**
+      - Why the content is important.
+    - **Speech script:**
+      - Speech script for the slide.
+- Bullet points should be in the following format (ending with semicolon and the last with a dot):
+  - Sub-bullet point 1;
+  - Sub-bullet point 2;
+  - Sub-bullet point 3.
+
+## Presentation
+
 ### **Slide 1: Cover Slide**
 
 * **Content:**
@@ -15,9 +47,9 @@
 
 * **Content (bullet points only):**
 
-  * Crescente complexidade de interfaces digitais.
-  * Dificuldade dos usuários em interagir com sistemas web.
-  * Ascensão de modelos de linguagem (LLMs).
+  * Crescente complexidade de interfaces digitais;
+  * Dificuldade dos usuários em interagir com sistemas web;
+  * Ascensão de modelos de linguagem (LLMs);
   * Pergunta de pesquisa:
 
     * “Como a combinação OpenAPI e MCP pode facilitar a integração de agentes conversacionais baseados em IA com sistemas web existentes?”
@@ -36,8 +68,8 @@
     * Avaliar a viabilidade técnica da abordagem OpenAPI-MCP para integração de IA.
   * **Objetivos Específicos:**
 
-    * Desenvolver gerador automático de servidores MCP.
-    * Implementar cliente de chat multi-servidor MCP.
+    * Desenvolver gerador automático de servidores MCP;
+    * Implementar cliente de chat multi-servidor MCP;
     * Avaliar desempenho, segurança e usabilidade da abordagem experimentalmente.
 
 * **Why:** Provides a structured, concise overview of your goals, guiding audience expectations clearly.
@@ -48,9 +80,9 @@
 
 * **Content (bullet points):**
 
-  * Interfaces conversacionais e LLMs (\[OpenAI, Anthropic, 2022-2024]).
-  * Especificação OpenAPI (\[OpenAPI Initiative, 2023]).
-  * Model Context Protocol (Anthropic, 2024).
+  * Interfaces conversacionais e LLMs (\[OpenAI, Anthropic, 2022-2024]);
+  * Especificação OpenAPI (\[OpenAPI Initiative, 2023]);
+  * Model Context Protocol (Anthropic, 2024);
   * Testes de segurança e usabilidade (\[NIST, OWASP, 2023-2025]).
 
 * **Why:** Clearly lists theoretical concepts underpinning the research; brief and focused.
@@ -61,22 +93,22 @@
 
 * **Slide 5 (LLMs e Interfaces Conversacionais):**
 
-  * Avanço dos modelos (GPT-4, function calling, contexto expandido).
+  * Avanço dos modelos (GPT-4, function calling, contexto expandido);
   * Impacto na interação humano-computador.
 
 * **Slide 6 (OpenAPI):**
 
-  * Padrão de documentação e interoperabilidade.
+  * Padrão de documentação e interoperabilidade;
   * Esquemas de segurança e autenticação.
 
 * **Slide 7 (Model Context Protocol):**
 
-  * Padrão aberto de comunicação padronizada.
+  * Padrão aberto de comunicação padronizada;
   * Cliente-servidor para modelos de linguagem.
 
 * **Slide 8 (Critérios de Segurança e Usabilidade):**
 
-  * Red teaming e prompt injection.
+  * Red teaming e prompt injection;
   * Testes end-to-end com Playwright.
 
 * **Why:** Organizes key theoretical information into clear and manageable segments.
@@ -87,8 +119,8 @@
 
 * **Content (concise bullets):**
 
-  * Revisão sistemática da literatura.
-  * Desenvolvimento experimental estruturado (POC).
+  * Revisão sistemática da literatura;
+  * Desenvolvimento experimental estruturado (POC);
   * Testes automatizados para métricas objetivas.
 
 * **Why:** Clearly outlines your methodological rigor without repeating previous details.
@@ -169,9 +201,9 @@
 
 * **Content:**
 
-  * Conversão automática eficaz (100% endpoints).
-  * Segurança básica robusta.
-  * Experiência do usuário satisfatória.
+  * Conversão automática eficaz (100% endpoints);
+  * Segurança básica robusta;
+  * Experiência do usuário satisfatória;
   * Limitações destacadas: variabilidade desempenho, escala pequena.
 
 * **Speech:** Summarize overall strengths and limitations, highlighting your main contribution.
@@ -184,9 +216,9 @@
 
 * **Content (bullets):**
 
-  * Pergunta de pesquisa validada positivamente.
-  * Conversão OpenAPI→MCP promissora e eficaz.
-  * Democratização tecnológica via interfaces conversacionais.
+  * Pergunta de pesquisa validada positivamente;
+  * Conversão OpenAPI→MCP promissora e eficaz;
+  * Democratização tecnológica via interfaces conversacionais;
   * Necessidade futura de testes mais abrangentes.
 
 * **Why:** Reiterates key results and reinforces your main message succinctly.
@@ -204,13 +236,3 @@
 ### **Slide 22: Final Slide (Cover repeated)**
 
 * Duplicate Slide 1 for standard academic formality.
-
----
-
-### **General Image Notes:**
-
-* All images should be clear, visually appealing, and simple enough to be quickly understood.
-* Always explain briefly the visuals to connect clearly to your spoken points.
-* Images must directly support your spoken narrative.
-
-This comprehensive plan clearly outlines exactly what each slide must contain, the reason behind each element, and detailed guidance on integrating visual and spoken content effectively.

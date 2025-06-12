@@ -134,12 +134,17 @@
 - **Title**
   - Model Context Protocol (MCP)
 - **Content (bullet points, images, tables, etc.):**
-  - Padrão aberto de comunicação padronizada;
-  - Cliente-servidor para modelos de linguagem.
+  - **Padrão Aberto:** Desenvolvido pela Anthropic e lançado em novembro de 2024 como protocolo de comunicação padronizada (ANTHROPIC, 2024);
+  - **Arquitetura Cliente-Servidor:** Conecta servidores MCP a clientes (aplicações de chat) que gerenciam a integração com LLMs;
+  - **Conversão de Ferramentas:** Cliente converte ferramentas MCP para funcionalidade de function calling dos modelos de linguagem;
+  - **Interoperabilidade:** Facilita integração entre diferentes fontes de dados e aplicações cliente sem desenvolvimento customizado;
+  - **Fundamento da Pesquisa:** Base técnica que viabiliza a conversão automática OpenAPI→MCP e coordenação multi-servidor.
 - **Why:**
-  - 
+  - Explica o protocolo MCP como inovação recente que tornou possível a abordagem da pesquisa, destacando como sua arquitetura padronizada resolve o problema histórico de integrações customizadas entre chats com LLMs e sistemas externos.
 - **Speech script:**
-  - 
+  - O Model Context Protocol representa uma inovação fundamental que tornou nossa pesquisa possível. Desenvolvido pela Anthropic e lançado como padrão aberto em novembro de 2024, o MCP surgiu para resolver um problema histórico na integração de aplicações conversacionais com sistemas externos. Antes do MCP, cada integração entre uma aplicação cliente e uma fonte de dados externa requeria desenvolvimento customizado específico de funções, criando barreiras significativas para a integração com sistemas. O MCP introduz uma arquitetura cliente-servidor padronizada onde servidores MCP se conectam a clientes - em nosso caso, a aplicação de chat - que gerenciam a integração com os modelos de linguagem. O cliente é responsável por converter as ferramentas MCP para a funcionalidade de function calling dos LLMs, criando uma ponte padronizada entre sistemas externos e capacidades conversacionais. Esta arquitetura é revolucionária porque permite que qualquer aplicação cliente compatível possa interagir com qualquer servidor MCP sem modificações específicas, facilitando a integração entre diferentes fontes de dados e aplicações sem necessidade de desenvolvimento customizado para cada combinação. Para nossa pesquisa, o MCP serve como fundamento técnico essencial que viabiliza tanto a conversão automática de especificações OpenAPI em servidores MCP funcionais quanto a coordenação eficiente de múltiplos servidores simultaneamente através de nossa aplicação cliente.
+- **Speech instructions:**
+  - Enfatizar "novembro de 2024" para destacar o quão recente e inovador é o protocolo. Pausar após "problema histórico" para dar ênfase ao desafio que o MCP resolve. Destacar "aplicação cliente" e "conversão de ferramentas" como conceitos centrais da arquitetura.
 
 ### **Slide 8: Critérios de Segurança e Usabilidade**
 - **Title**

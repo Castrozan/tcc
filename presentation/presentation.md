@@ -102,12 +102,17 @@
 - **Title**
   - LLMs e Interfaces Conversacionais
 - **Content (bullet points, images, tables, etc.):**
-  - Avanço dos modelos (GPT-4, function calling, contexto expandido);
-  - Impacto na interação humano-computador.
+  - **Evolução Tecnológica:** BERT (2018) para compreensão textual, GPT-3 (2020) para capacidades generativas e few-shot learning;
+  - **Arquitetura Transformer:** Base tecnológica que revolucionou o processamento de linguagem natural;
+  - **Function Calling:** Conversão automática de linguagem natural em chamadas de funções estruturadas (GPT-4);
+  - **Contexto Expandido:** Janelas de até 32.000 tokens para conversas prolongadas e processamento complexo;
+  - **Interface Robusta:** Consolidação como interfaces conversacionais eficazes para integração com sistemas.
 - **Why:**
-  - 
+  - Apresenta a evolução histórica e as capacidades técnicas fundamentais dos LLMs que tornam possível a abordagem OpenAPI-MCP, demonstrando como avanços específicos habilitaram interfaces conversacionais robustas.
 - **Speech script:**
-  - 
+  - Os modelos de linguagem de grande escala passaram por uma evolução revolucionária nos últimos anos. O BERT, desenvolvido pelo Google em 2018, revolucionou a compreensão textual através de sua arquitetura transformer bidirecional, processando contexto em ambas as direções simultaneamente. O GPT-3, lançado em 2020, ampliou dramaticamente as capacidades generativas e introduziu o paradigma de aprendizado com poucos exemplos, conhecido como few-shot learning. Estas inovações baseiam-se na arquitetura Transformer, que se tornou a base tecnológica que revolucionou todo o processamento de linguagem natural. O GPT-4 trouxe uma capacidade fundamental para nossa pesquisa: o function calling, que permite conversão automática de instruções em linguagem natural em chamadas de funções estruturadas. Esta funcionalidade é essencial para nossa integração OpenAPI-MCP. Além disso, os modelos modernos suportam janelas de contexto expandido de até 32 mil tokens, permitindo manter conversas prolongadas e processar especificações OpenAPI complexas. Esses avanços consolidaram os LLMs como interfaces conversacionais robustas e eficazes, capazes de servir como ponte natural entre usuários e sistemas técnicos complexos.
+- **Speech instructions:**
+  - Enfatizar as datas (2018, 2020) para mostrar progressão temporal. Destacar "function calling" como conceito técnico crucial. Pausar após "Transformer" para dar ênfase à importância da arquitetura.
 
 ### **Slide 6: OpenAPI**
 - **Title**

@@ -18,9 +18,6 @@ Ok, great. Now lets work on slide: 2
 
 Go through the article again in the section related to this slide and read it again. After reading and understanding its purpose, adjust the slide definition to better suit the objectives of the presentation and the guidelines.
 
-Make sure to add the speech script with what should i say to present the slide. This should be a semi technical presentation. 
-Each slide should take around 1 minute to speak about, but a group of slides can be talked briefly and the time for each one can be distributed for it to fit as a hole.
-
 ------------------------------------------------------------------------------------------------
 
 Great, lets just add the references in the ABNT style to the bullet points related to what should be said so it has the correct theoretical embasement. Get the citations in the article file for the current section.

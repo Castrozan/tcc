@@ -255,15 +255,13 @@
 - **Title**
   - Resultados de Performance
 - **Content (bullet points, images, tables, etc.):**
-  | Métrica                | Valor      |
-  | ---------------------- | ---------- |
-  | Tempo médio resposta   | ~3.7s      |
-  | Taxa sucesso           | 100%       |
-  | Tamanho médio resposta | ~312 chars |
+  - ![Tabela 1: Métricas de Performance - Implementação OpenAPI-MCP mostrando tempo médio de resposta de 3.757ms, taxa de sucesso de 100%, 8 consultas processadas e tamanho médio de resposta de 312 caracteres, com variação de 1.335-5.823ms demonstrando performance variável mas funcional](images/resultados/tabela-performance.jpg)
 - **Why:**
-  - Apresentação clara dos resultados principais e transparência sobre limitações.
+  - Apresenta evidências quantitativas objetivas da viabilidade operacional do sistema OpenAPI-MCP, demonstrando transparência científica sobre tanto os sucessos quanto as limitações identificadas durante a validação experimental.
 - **Speech script:**
-  - 
+  - Os resultados de performance obtidos através de testes automatizados end-to-end forneceram evidências quantitativas objetivas sobre a viabilidade operacional do sistema OpenAPI-MCP em condições controladas. Como podemos observar na Tabela 1, nossa validação experimental processou 8 consultas diversificadas, alcançando uma taxa de sucesso de 100%, demonstrando que todas as operações foram completadas com êxito. O tempo médio de resposta foi de 3.757 milissegundos, incluindo todo o processamento do modelo de linguagem GPT-4, desde a interpretação da consulta até a formatação da resposta final. O tamanho médio das respostas foi de 312 caracteres, indicando que o sistema forneceu informações completas e estruturadas aos usuários. No entanto, é fundamental destacar uma limitação relevante identificada: a variação significativa de tempo de resposta, que oscilou entre 1.335 milissegundos e 5.823 milissegundos, representando uma variabilidade de 336%. Esta variabilidade refletiu principalmente a complexidade das consultas processadas e o tempo de processamento do modelo de linguagem, não indicando necessariamente instabilidade do sistema de integração. É importante contextualizar estes resultados dentro do escopo de uma prova de conceito experimental, onde o foco principal residiu em demonstrar a viabilidade técnica da abordagem proposta. A variabilidade de performance observada foi esperada e aceitável nesta fase inicial de validação. Os dados obtidos sugeriram que a integração OpenAPI-MCP é tecnicamente viável para cenários onde a precisão é prioritária em relação à velocidade consistente, fornecendo evidências iniciais promissoras para o desenvolvimento de soluções mais robustas. Otimizações de performance, incluindo estratégias de cache e memorização de respostas frequentes, representam oportunidades claras para trabalhos futuros.
+- **Speech instructions:**
+  - Referir-se constantemente à tabela mostrada na imagem, apontando para métricas específicas conforme mencionadas. Enfatizar "evidências quantitativas objetivas" para destacar o rigor científico. Pausar após mencionar cada métrica principal (taxa de sucesso, tempo médio, tamanho médio) para dar clareza. Destacar "limitação relevante" ao mencionar a variabilidade para mostrar transparência científica. Enfatizar "336%" para mostrar a magnitude da variação. Destacar "prova de conceito experimental" para contextualizar adequadamente o escopo. Enfatizar "precisão prioritária" como característica identificada da solução.
 
 ### **Slide 17: Resultados de Segurança**
 - **Title**

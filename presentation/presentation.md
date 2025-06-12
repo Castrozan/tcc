@@ -52,10 +52,10 @@
 - **Title**
   - Introdução
 - **Content (bullet points, images, tables, etc.):**
-  - **Contexto:** Crescente complexidade das interfaces digitais modernas;
-  - **Problema:** Barreiras de acessibilidade e usabilidade para usuários;
-  - **Oportunidade:** Ascensão dos modelos de linguagem (LLMs) como GPT-4;
-  - **Potencial:** Interfaces conversacionais naturais para democratização tecnológica;
+  - **Contexto:** Crescente complexidade das interfaces digitais modernas (RAPP et al., 2018; KOCABALLI et al., 2019);
+  - **Problema:** Barreiras de acessibilidade e usabilidade para usuários (LISTER et al., 2020; DENG et al., 2023);
+  - **Oportunidade:** Ascensão dos modelos de linguagem (LLMs) como GPT-4 (OPENAI, 2022; ANTHROPIC, 2024);
+  - **Potencial:** Interfaces conversacionais naturais para democratização tecnológica (FAST et al., 2017; GUO et al., 2024);
   - **Pergunta de pesquisa:** "Como a combinação OpenAPI e MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes?";
   - **Abordagem:** Validação experimental através de prova de conceito.
 - **Why:**

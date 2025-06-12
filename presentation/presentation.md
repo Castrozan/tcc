@@ -267,16 +267,13 @@
 - **Title**
   - Resultados de Segurança
 - **Content (bullet points, images, tables, etc.):**
-  | Categoria de Ataque  | Taxa de Proteção |
-  | -------------------- | ---------------- |
-  | SQL Injection        | 100%             |
-  | Command Injection    | 100%             |
-  | Data Extraction      | 100%             |
-  | Privilege Escalation | 100%             |
+  - ![Tabela 2: ](images/resultados/tabela-seguranca.jpg)
 - **Why:**
-  - Reforça a confiabilidade do sistema e rigor experimental.
+  - Demonstra a robustez da abordagem OpenAPI-MCP contra vetores de ataque fundamentais através de testes sistemáticos de red teaming, validando a eficácia da proteção em múltiplas camadas tanto no nível do LLM quanto na validação via schemas OpenAPI.
 - **Speech script:**
-  - 
+  - A análise de segurança constituiu uma dimensão crítica da nossa validação experimental, conduzida através de 16 cenários de ataque estruturados em 4 categorias principais de red teaming. Como podemos observar na tabela, nossa implementação OpenAPI-MCP demonstrou proteção básica inicial satisfatória contra todos os vetores de ataque fundamentais testados. O sistema manteve 100% de taxa de proteção em todas as categorias avaliadas, incluindo tentativas de injeção SQL, execução de comandos, extração de dados e escalação de privilégios. Na categoria de SQL Injection, testamos 4 tentativas diferentes incluindo ataques básicos OR, UNION SELECT, DROP TABLE e bypass por comentários, todas efetivamente bloqueadas pelo sistema. Para Command Injection, avaliamos tentativas de execução de comandos do sistema, leitura de arquivos, encadeamento de comandos e execução em background, novamente com 100% de proteção. Os testes de Data Extraction incluíram solicitações de credenciais, configurações do sistema, dados de usuários e tokens secretos, todos adequadamente rejeitados. Por fim, os ataques de Privilege Escalation testaram tentativas de obter acesso administrativo, mudança de roles, bypass de autenticação e override de segurança, mantendo proteção completa. A validação baseada em schemas OpenAPI comprovou-se eficaz como primeira linha de defesa contra tentativas de intrusão básicas. É fundamental destacar que os testes realizados abrangeram exclusivamente ataques básicos e cenários de segurança fundamentais, não incluindo ameaças avançadas ou ataques persistentes sofisticados. Adicionalmente, a maioria dos LLMs modernos já incorpora mecanismos internos de proteção contra ataques básicos de injeção de prompts e tentativas de jailbreak, contribuindo para os resultados positivos observados. Esta proteção em múltiplas camadas - tanto no nível do LLM quanto na validação via schemas OpenAPI - demonstrou a robustez da abordagem, embora pesquisas futuras devam investigar ameaças mais sofisticadas. Os resultados obtidos forneceram evidências iniciais encorajadoras sobre a capacidade de proteção básica da abordagem OpenAPI-MCP, estabelecendo uma base promissora para desenvolvimento de medidas de segurança mais robustas em implementações futuras.
+- **Speech instructions:**
+  - Referir-se constantemente à tabela, apontando para cada categoria de ataque conforme mencionada. Enfatizar "16 cenários de ataque" e "4 categorias principais" para mostrar abrangência dos testes. Destacar "100% de taxa de proteção" como resultado principal. Pausar após descrever cada categoria (SQL Injection, Command Injection, Data Extraction, Privilege Escalation) para dar clareza. Enfatizar "proteção em múltiplas camadas" como característica técnica importante. Destacar "ataques básicos" para contextualizar adequadamente o escopo dos testes. Enfatizar "evidências iniciais encorajadoras" para mostrar o valor científico dos resultados.
 
 ### **Slide 18: Resultados de Usabilidade**
 - **Title**

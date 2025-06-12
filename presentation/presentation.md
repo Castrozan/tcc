@@ -30,209 +30,269 @@
 
 ## Presentation
 
-### **Slide 1: Cover Slide**
-
-* **Content:**
-
-  * Title: **TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA**
-  * Orientando: **Lucas de Castro Zanoni**
-  * Orientador: **Prof. Fernandes Mezzari**
-  * Logo of your course and UniSATC.
-
-* **Why:** Standard introduction to clearly identify your topic and participants.
-
----
+### **Slide 1: Capa**
+- **Title**
+  - TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA
+- **Content (bullet points, images, tables, etc.):**
+  - Orientando: Lucas de Castro Zanoni;
+  - Orientador: Prof. Fernandes Mezzari;
+  - Centro Universitário UniSATC;
+  - Criciúma;
+  - 2025.
+- **Why:**
+  - Apresentação padrão para identificar claramente o tópico e participantes.
+- **Speech script:**
+  - 
 
 ### **Slide 2: Introdução**
-
-* **Content (bullet points only):**
-
-  * Crescente complexidade de interfaces digitais;
-  * Dificuldade dos usuários em interagir com sistemas web;
-  * Ascensão de modelos de linguagem (LLMs);
-  * Pergunta de pesquisa:
-
-    * “Como a combinação OpenAPI e MCP pode facilitar a integração de agentes conversacionais baseados em IA com sistemas web existentes?”
-  * Metodologia científica experimental.
-
-* **Why:** Sets clear context, justifies relevance, and explicitly states the research question and methodological approach.
-
----
+- **Title**
+  - Introdução
+- **Content (bullet points, images, tables, etc.):**
+  - Crescente complexidade de interfaces digitais;
+  - Dificuldade dos usuários em interagir com sistemas web;
+  - Ascensão de modelos de linguagem (LLMs);
+  - Pergunta de pesquisa: "Como a combinação OpenAPI e MCP pode facilitar a integração de agentes conversacionais baseados em IA com sistemas web existentes?";
+  - Metodologia científica experimental.
+- **Why:**
+  - Estabelece contexto claro, justifica relevância, e explicita a pergunta de pesquisa e abordagem metodológica.
+- **Speech script:**
+  - 
 
 ### **Slide 3: Objetivos**
-
-* **Content (bullet points only):**
-
-  * **Objetivo Geral:**
-
-    * Avaliar a viabilidade técnica da abordagem OpenAPI-MCP para integração de IA.
-  * **Objetivos Específicos:**
-
-    * Desenvolver gerador automático de servidores MCP;
-    * Implementar cliente de chat multi-servidor MCP;
-    * Avaliar desempenho, segurança e usabilidade da abordagem experimentalmente.
-
-* **Why:** Provides a structured, concise overview of your goals, guiding audience expectations clearly.
-
----
+- **Title**
+  - Objetivos
+- **Content (bullet points, images, tables, etc.):**
+  - **Objetivo Geral:**
+    - Avaliar a viabilidade técnica da abordagem OpenAPI-MCP para integração de IA;
+  - **Objetivos Específicos:**
+    - Desenvolver gerador automático de servidores MCP;
+    - Implementar cliente de chat multi-servidor MCP;
+    - Avaliar desempenho, segurança e usabilidade da abordagem experimentalmente.
+- **Why:**
+  - Fornece visão estruturada e concisa dos objetivos, orientando claramente as expectativas da audiência.
+- **Speech script:**
+  - 
 
 ### **Slide 4: Abordagem Teórica**
+- **Title**
+  - Abordagem Teórica
+- **Content (bullet points, images, tables, etc.):**
+  - Interfaces conversacionais e LLMs (OpenAI, Anthropic, 2022-2024);
+  - Especificação OpenAPI (OpenAPI Initiative, 2023);
+  - Model Context Protocol (Anthropic, 2024);
+  - Testes de segurança e usabilidade (NIST, OWASP, 2023-2025).
+- **Why:**
+  - Lista claramente os conceitos teóricos que fundamentam a pesquisa de forma breve e focada.
+- **Speech script:**
+  - 
 
-* **Content (bullet points):**
+### **Slide 5: LLMs e Interfaces Conversacionais**
+- **Title**
+  - LLMs e Interfaces Conversacionais
+- **Content (bullet points, images, tables, etc.):**
+  - Avanço dos modelos (GPT-4, function calling, contexto expandido);
+  - Impacto na interação humano-computador.
+- **Why:**
+  - 
+- **Speech script:**
+  - 
 
-  * Interfaces conversacionais e LLMs (\[OpenAI, Anthropic, 2022-2024]);
-  * Especificação OpenAPI (\[OpenAPI Initiative, 2023]);
-  * Model Context Protocol (Anthropic, 2024);
-  * Testes de segurança e usabilidade (\[NIST, OWASP, 2023-2025]).
+### **Slide 6: OpenAPI**
+- **Title**
+  - OpenAPI
+- **Content (bullet points, images, tables, etc.):**
+  - Padrão de documentação e interoperabilidade;
+  - Esquemas de segurança e autenticação.
+- **Why:**
+  - 
+- **Speech script:**
+  - 
 
-* **Why:** Clearly lists theoretical concepts underpinning the research; brief and focused.
+### **Slide 7: Model Context Protocol**
+- **Title**
+  - Model Context Protocol (MCP)
+- **Content (bullet points, images, tables, etc.):**
+  - Padrão aberto de comunicação padronizada;
+  - Cliente-servidor para modelos de linguagem.
+- **Why:**
+  - 
+- **Speech script:**
+  - 
 
----
-
-### **Slides 5-8: Fundamentação Teórica**
-
-* **Slide 5 (LLMs e Interfaces Conversacionais):**
-
-  * Avanço dos modelos (GPT-4, function calling, contexto expandido);
-  * Impacto na interação humano-computador.
-
-* **Slide 6 (OpenAPI):**
-
-  * Padrão de documentação e interoperabilidade;
-  * Esquemas de segurança e autenticação.
-
-* **Slide 7 (Model Context Protocol):**
-
-  * Padrão aberto de comunicação padronizada;
-  * Cliente-servidor para modelos de linguagem.
-
-* **Slide 8 (Critérios de Segurança e Usabilidade):**
-
-  * Red teaming e prompt injection;
-  * Testes end-to-end com Playwright.
-
-* **Why:** Organizes key theoretical information into clear and manageable segments.
-
----
+### **Slide 8: Critérios de Segurança e Usabilidade**
+- **Title**
+  - Critérios de Segurança e Usabilidade
+- **Content (bullet points, images, tables, etc.):**
+  - Red teaming e prompt injection;
+  - Testes end-to-end com Playwright.
+- **Why:**
+  - 
+- **Speech script:**
+  - 
 
 ### **Slide 9: Metodologia**
+- **Title**
+  - Metodologia
+- **Content (bullet points, images, tables, etc.):**
+  - Revisão sistemática da literatura;
+  - Desenvolvimento experimental estruturado (POC);
+  - Testes automatizados para métricas objetivas.
+- **Why:**
+  - Delineia claramente o rigor metodológico sem repetir detalhes já apresentados.
+- **Speech script:**
+  - 
 
-* **Content (concise bullets):**
+### **Slide 10: Arquitetura Geral**
+- **Title**
+  - Arquitetura Geral
+- **Content (bullet points, images, tables, etc.):**
+  - ![Diagrama da arquitetura de alto nível](images/metodos/system-architecture.jpg)
+- **Why:**
+  - Introduz visualmente a arquitetura principal, facilitando a compreensão da audiência.
+- **Speech script:**
+  - 
 
-  * Revisão sistemática da literatura;
-  * Desenvolvimento experimental estruturado (POC);
-  * Testes automatizados para métricas objetivas.
+### **Slide 11: Gerador Automático MCP**
+- **Title**
+  - Gerador Automático MCP
+- **Content (bullet points, images, tables, etc.):**
+  - ![Diagrama da arquitetura de geração MCP](images/desenvolvimento/mcp-generator-architecture.jpg)
+- **Why:**
+  - Destaca claramente sua contribuição única.
+- **Speech script:**
+  - 
 
-* **Why:** Clearly outlines your methodological rigor without repeating previous details.
+### **Slide 12: Cliente Multi-servidor MCP**
+- **Title**
+  - Cliente Multi-servidor MCP
+- **Content (bullet points, images, tables, etc.):**
+  - ![Diagrama mostrando descoberta dinâmica de servidores](images/chat/chat-server-configuration.jpg)
+- **Why:**
+  - Esclarece a complexidade de forma prática e compreensível.
+- **Speech script:**
+  - 
 
----
+### **Slide 13: Interface Experimental**
+- **Title**
+  - Interface Experimental
+- **Content (bullet points, images, tables, etc.):**
+  - ![Screenshot da interface de chat](images/chat/chat-interface.jpg)
+- **Why:**
+  - Enfatiza visualmente a padronização experimental.
+- **Speech script:**
+  - 
 
-### **Slides 10-15: Desenvolvimento e Análise**
+### **Slide 14: Workflow da Interação**
+- **Title**
+  - Workflow da Interação
+- **Content (bullet points, images, tables, etc.):**
+  - ![Diagrama do workflow de integração](images/metodos/workflow-integration.jpg)
+- **Why:**
+  - Ajuda a audiência a compreender claramente como o sistema opera.
+- **Speech script:**
+  - 
 
-**Slide 10: Arquitetura Geral**
-
-* **Image:** High-level architecture diagram.
-* **Speech:** Briefly explain the roles of frontend, backend, MCP servers, GPT-4, and external APIs.
-* **Why:** Visually introduces the main architecture, easing audience comprehension.
-
-**Slide 11: Gerador Automático MCP**
-
-* **Image:** Diagram of MCP generation architecture (Parser → Semantic Mapping → Tool Generation).
-* **Speech:** Summarize steps of automatic generation and its significance for scalability.
-* **Why:** Highlights your unique contribution clearly.
-
-**Slide 12: Cliente Multi-servidor MCP**
-
-* **Image:** Diagram showing dynamic server discovery and request routing.
-* **Speech:** Explain briefly why dynamic coordination matters practically.
-* **Why:** Clarifies complexity in a practical, understandable way.
-
-**Slide 13: Interface Experimental**
-
-* **Image:** Screenshot of chat interface used in experiments.
-* **Speech:** Mention simplicity and consistency of interface as critical for fair tests.
-* **Why:** Visually emphasizes experimental standardization.
-
-**Slide 14: Workflow da Interação**
-
-* **Image:** Workflow integration diagram showing user → LLM → MCP server → API and back.
-* **Speech:** Briefly walk audience through typical request-response flow.
-* **Why:** Helps audience grasp clearly how your system operates.
-
-**Slide 15: Exemplo de conversão OpenAPI→MCP**
-
-* **Image:** Side-by-side snippet of OpenAPI specification and corresponding MCP tool.
-* **Speech:** Explain the conversion’s clarity and preservation of API semantics.
-* **Why:** Concrete visual demonstration of automatic conversion process.
-
----
+### **Slide 15: Exemplo de Conversão OpenAPI→MCP**
+- **Title**
+  - Exemplo de Conversão OpenAPI→MCP
+- **Content (bullet points, images, tables, etc.):**
+  - ![Especificação OpenAPI](images/openapi-mcp/snippet-openapi-path-spec.jpg)
+  - ![Ferramenta MCP correspondente](images/openapi-mcp/mcp-tool-format.jpg)
+- **Why:**
+  - Demonstração visual concreta do processo de conversão automática.
+- **Speech script:**
+  - 
 
 ### **Slide 16: Resultados de Performance**
+- **Title**
+  - Resultados de Performance
+- **Content (bullet points, images, tables, etc.):**
+  | Métrica                | Valor      |
+  | ---------------------- | ---------- |
+  | Tempo médio resposta   | ~3.7s      |
+  | Taxa sucesso           | 100%       |
+  | Tamanho médio resposta | ~312 chars |
+- **Why:**
+  - Apresentação clara dos resultados principais e transparência sobre limitações.
+- **Speech script:**
+  - 
 
-* **Content (Table simplified):**
-
-  * Tempo médio resposta: \~3.7s, Taxa sucesso: 100%, Tamanho médio resposta: \~312 chars.
-* **Speech:** Mention briefly performance variability, suggesting future optimization.
-* **Why:** Clear presentation of key results and transparent about limitations.
-
----
-
-### **Slide 17: Resultados Segurança**
-
-* **Content (table):**
-
-  * SQL Injection, Command Injection, Data Extraction, Privilege Escalation – 100% bloqueado.
-* **Speech:** Highlight robustness of initial security measures and potential further testing.
-* **Why:** Reinforces your system’s trustworthiness and experimental rigor.
-
----
+### **Slide 17: Resultados de Segurança**
+- **Title**
+  - Resultados de Segurança
+- **Content (bullet points, images, tables, etc.):**
+  | Categoria de Ataque  | Taxa de Proteção |
+  | -------------------- | ---------------- |
+  | SQL Injection        | 100%             |
+  | Command Injection    | 100%             |
+  | Data Extraction      | 100%             |
+  | Privilege Escalation | 100%             |
+- **Why:**
+  - Reforça a confiabilidade do sistema e rigor experimental.
+- **Speech script:**
+  - 
 
 ### **Slide 18: Resultados de Usabilidade**
-
-* **Content:**
-
-  * Precisão (3.5), Clareza (4.0), Utilidade (4.3), Pontuação geral (4.0).
-* **Speech:** Briefly note overall satisfactory user experience and areas of potential improvement.
-* **Why:** Shows clear empirical evaluation of user-focused metrics.
-
----
+- **Title**
+  - Resultados de Usabilidade
+- **Content (bullet points, images, tables, etc.):**
+  | Métrica         | Pontuação |
+  | --------------- | --------- |
+  | Precisão        | 3.5       |
+  | Clareza         | 4.0       |
+  | Utilidade       | 4.3       |
+  | Pontuação geral | 4.0       |
+- **Why:**
+  - Mostra avaliação empírica clara de métricas focadas no usuário.
+- **Speech script:**
+  - 
 
 ### **Slide 19: Discussão e Contribuições**
-
-* **Content:**
-
-  * Conversão automática eficaz (100% endpoints);
-  * Segurança básica robusta;
-  * Experiência do usuário satisfatória;
-  * Limitações destacadas: variabilidade desempenho, escala pequena.
-
-* **Speech:** Summarize overall strengths and limitations, highlighting your main contribution.
-
-* **Why:** Clearly consolidates your findings, preparing audience for final thoughts.
-
----
+- **Title**
+  - Discussão e Contribuições
+- **Content (bullet points, images, tables, etc.):**
+  - Conversão automática eficaz (100% endpoints);
+  - Segurança básica robusta;
+  - Experiência do usuário satisfatória;
+  - Limitações destacadas: variabilidade desempenho, escala pequena.
+- **Why:**
+  - Consolida claramente os achados, preparando a audiência para considerações finais.
+- **Speech script:**
+  - 
 
 ### **Slide 20: Considerações Finais**
-
-* **Content (bullets):**
-
-  * Pergunta de pesquisa validada positivamente;
-  * Conversão OpenAPI→MCP promissora e eficaz;
-  * Democratização tecnológica via interfaces conversacionais;
-  * Necessidade futura de testes mais abrangentes.
-
-* **Why:** Reiterates key results and reinforces your main message succinctly.
-
----
+- **Title**
+  - Considerações Finais
+- **Content (bullet points, images, tables, etc.):**
+  - Pergunta de pesquisa validada positivamente;
+  - Conversão OpenAPI→MCP promissora e eficaz;
+  - Democratização tecnológica via interfaces conversacionais;
+  - Necessidade futura de testes mais abrangentes.
+- **Why:**
+  - Reitera resultados principais e reforça a mensagem central de forma sucinta.
+- **Speech script:**
+  - 
 
 ### **Slide 21: Referências Bibliográficas**
+- **Title**
+  - Referências Bibliográficas
+- **Content (bullet points, images, tables, etc.):**
+  - 
+- **Why:**
+  - Demonstra rigor acadêmico adequado sem sobrecarregar a audiência.
+- **Speech script:**
+  - 
 
-* **Content:** ABNT-formatted references (top \~4-5 most critical references).
-
-* **Why:** Demonstrates proper academic rigor without overwhelming the audience.
-
----
-
-### **Slide 22: Final Slide (Cover repeated)**
-
-* Duplicate Slide 1 for standard academic formality.
+### **Slide 22: Capa Final**
+- **Title**
+  - TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA
+- **Content (bullet points, images, tables, etc.):**
+  - Orientando: Lucas de Castro Zanoni;
+  - Orientador: Prof. Fernandes Mezzari;
+  - Centro Universitário UniSATC;
+  - Criciúma;
+  - 2025.
+- **Why:**
+  - Duplicação do slide de capa para formalidade acadêmica padrão.
+- **Speech script:**
+  - 

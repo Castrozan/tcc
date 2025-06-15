@@ -30,7 +30,7 @@
   - Sub-bullet point 2;
   - Sub-bullet point 3.
 
-## Presentation
+# Presentation
 
 ### **Slide 1: Capa**
 - **Title**
@@ -98,6 +98,8 @@
 - **Speech instructions:**
   - Enfatizar cada "pilar teórico" numerado para estruturar claramente a fundamentação. Pausar brevemente após mencionar cada framework/autor para dar credibilidade. Destacar "convergem" para mostrar integração teórica.
 
+## Fundamentação Teórica
+
 ### **Slide 5: LLMs e Interfaces Conversacionais**
 - **Title**
   - LLMs e Interfaces Conversacionais
@@ -146,22 +148,6 @@
 - **Speech instructions:**
   - Enfatizar "novembro de 2024" para destacar o quão recente e inovador é o protocolo. Pausar após "problema histórico" para dar ênfase ao desafio que o MCP resolve. Destacar "aplicação cliente" e "conversão de ferramentas" como conceitos centrais da arquitetura.
 
-### **Slide 8: Critérios de Segurança e Usabilidade**
-- **Title**
-  - Critérios de Segurança e Usabilidade
-- **Content (bullet points, images, tables, etc.):**
-  - **Segurança - Red Teaming:** Testes adversários incluindo SQL injection, command injection, data extraction e privilege escalation (NIST, 2023; OWASP, 2025);
-  - **Resistência a Prompt Injection:** Mensuração de tentativas maliciosas bloqueadas durante testes sistemáticos de segurança;
-  - **Usabilidade Quantitativa:** Tempo de conclusão de tarefas CRUD via linguagem natural e curva de aprendizado;
-  - **Usabilidade Qualitativa:** Precisão, clareza e utilidade das respostas em escala 1-5;
-  - **Testes End-to-End:** Playwright para automação e coleta objetiva de métricas reproduzíveis.
-- **Why:**
-  - Estabelece os critérios científicos rigorosos para validação experimental, demonstrando como aspectos críticos de segurança e experiência do usuário são mensurados objetivamente para garantir validade científica dos resultados.
-- **Speech script:**
-  - Para garantir validação experimental rigorosa, estabelecemos critérios objetivos de avaliação em duas dimensões críticas: segurança e usabilidade. Na dimensão de segurança, implementamos uma abordagem abrangente de red teaming baseada nos frameworks do NIST e OWASP, reconhecidos internacionalmente como padrões para avaliação de segurança em sistemas de IA. Nossos testes adversários incluem quatro categorias principais: SQL injection para testar robustez contra manipulação de banco de dados, command injection para verificar proteção contra execução de comandos do sistema, data extraction para avaliar resistência à extração não autorizada de informações sensíveis, e privilege escalation para validar proteção contra tentativas de elevação de privilégios. Especial atenção foi dada à resistência a prompt injection, uma ameaça crítica específica para sistemas LLM, onde mensuramos o percentual de tentativas maliciosas efetivamente bloqueadas. Na dimensão de usabilidade, adotamos métricas tanto quantitativas quanto qualitativas. Quantitativamente, medimos tempo de conclusão de tarefas CRUD executadas via linguagem natural e analisamos a curva de aprendizado dos usuários. Qualitativamente, avaliamos três aspectos fundamentais em escala de 1 a 5: precisão das respostas em relação à intenção do usuário, clareza na estruturação das informações, e utilidade prática para tomada de decisão. Toda essa instrumentação é operacionalizada através de testes end-to-end automatizados com Playwright, garantindo coleta objetiva e reproduzível de métricas que fundamentam cientificamente nossas conclusões.
-- **Speech instructions:**
-  - Enfatizar "validação experimental rigorosa" e "critérios objetivos" para destacar o rigor científico. Pausar após enumerar cada categoria de ataque para dar clareza. Destacar "NIST e OWASP" como autoridades reconhecidas. Enfatizar "reproduzível" como característica essencial da metodologia científica.
-
 ### **Slide 9: Metodologia**
 - **Title**
   - Metodologia
@@ -177,6 +163,8 @@
   - Nossa metodologia foi estruturada para garantir rigor científico e reprodutibilidade dos resultados experimentais. Adotamos uma abordagem experimental estruturada em etapas sequenciais, começando com uma revisão sistemática da literatura para consolidar conhecimentos científicos sobre integração OpenAPI-MCP e embasar teoricamente nossa fase experimental. O núcleo da metodologia consistiu no desenvolvimento de uma prova de conceito abrangente, incluindo quatro componentes principais: primeiro, um gerador automático de servidores MCP a partir de especificações OpenAPI; segundo, um cliente de chat capaz de gerenciar múltiplos servidores simultaneamente; terceiro, aplicações de teste de ponta a ponta para validação da abordagem; e quarto, geração de métricas de avaliação para medir desempenho, segurança e experiência do usuário. Para assegurar resultados objetivos e reproduzíveis, implementamos validação rigorosa através de testes automatizados end-to-end utilizando Playwright, permitindo simulação realista das interações do usuário com coleta automática de dados. Estabelecemos critérios científicos específicos para avaliação em três dimensões críticas: desempenho através de métricas de tempo de resposta e taxa de sucesso, segurança através de testes de red teaming, e usabilidade através de métricas quantitativas e qualitativas em escala padronizada. Esta metodologia buscou estabelecer indicadores iniciais da eficácia da abordagem dentro de um escopo experimental controlado, reconhecendo que validações mais abrangentes serão necessárias para confirmação definitiva em ambientes empresariais complexos.
 - **Speech instructions:**
   - Enfatizar "rigor científico" e "reprodutibilidade" como pilares metodológicos fundamentais. Pausar após enumerar cada componente da prova de conceito ("primeiro", "segundo", "terceiro", "quarto") para dar clareza estrutural. Destacar "Playwright" como ferramentas e frameworks reconhecidos. Enfatizar "escopo experimental controlado" para contextualizar as limitações do estudo.
+
+## Desenvolvimento
 
 ### **Slide 10: Arquitetura Geral**
 - **Title**
@@ -303,6 +291,8 @@
   - Chegamos ao final desta apresentação com resultados que confirmam de forma categórica nossa hipótese central de pesquisa. A pergunta que norteou todo nosso trabalho - "Como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes?" - foi respondida positivamente através de evidências quantitativas robustas obtidas em nossa validação experimental. Confirmamos a viabilidade técnica da abordagem de forma inequívoca: nossa conversão automática OpenAPI para MCP alcançou 100% de eficácia, com todos os 10 endpoints testados sendo convertidos com sucesso, confirmando que é possível eliminar completamente o desenvolvimento manual recorrente tradicionalmente necessário para cada nova integração. Nossa contribuição científica principal reside em ser a primeira validação experimental sistemática da integração OpenAPI-MCP, estabelecendo uma metodologia reproduzível com métricas objetivas que servirá como base para pesquisas futuras na área. Demonstramos concretamente o potencial de democratização tecnológica: através de interfaces conversacionais naturais, conseguimos tornar sistemas técnicos complexos acessíveis a usuários que podem interagir com eles usando simplesmente linguagem natural, eliminando barreiras tradicionais de complexidade técnica. É fundamental reconhecer as limitações identificadas durante nossa pesquisa, mantendo transparência científica. A variabilidade de performance de 336% nos tempos de resposta indica necessidade de otimizações futuras, nosso escopo experimental foi deliberadamente restrito para validação inicial, e nossos testes de segurança abrangeram apenas ataques básicos, requerendo avaliações mais abrangentes contra ameaças sofisticadas. Apesar dessas limitações, estabelecemos uma base sólida e promissora para pesquisas futuras. Criamos fundamentos metodológicos e técnicos que abrem caminho para investigações em maior escala, desenvolvimento de otimizações de performance e validação em ambientes empresariais complexos. Esta pesquisa representa um avanço significativo na integração entre sistemas existentes e modelos de linguagem, abrindo portas para uma transformação fundamental na forma como usuários interagem com tecnologias complexas, tornando-as acessíveis através de conversação natural.
 - **Speech instructions:**
   - Enfatizar "confirmam de forma categórica" para destacar a solidez dos resultados. Pausar após a pergunta de pesquisa para dar ênfase. Destacar "100% de eficácia" e "primeira validação experimental sistemática" como conquistas principais. Enfatizar "democratização tecnológica" como impacto transformador. Destacar "transparência científica" ao abordar limitações. Enfatizar "base sólida e promissora" para mostrar o valor duradouro da contribuição. Concluir com tom inspirador sobre "transformação fundamental".
+
+## Considerações Finais
 
 ### **Slide 20: Considerações Finais**
 - **Title**

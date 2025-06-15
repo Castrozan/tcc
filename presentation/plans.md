@@ -10,14 +10,7 @@ For each, you will see: (A) goal, (B) concrete actions, (C) expected deliverable
 -------------------------------------------------------------------
 Section III – Guideline Gap Analysis
 -------------------------------------------------------------------
-1. Slide Count & Allocation  
-   A. Goal  Respect max-slide limits per guideline.  
-   B. Action  
-      • Merge current Slides 16 & 17 into single “Resultados Técnicos” (Performance + Segurança).  
-   C. Deliverable  Revised slide list (22 total, dev+analysis ≤ 8).  
-   D. Owner  Me (draft outline) → you approve.
-
-2. Bullet Grammar & Brevity  
+1. Bullet Grammar & Brevity  
    A. Goal  All sub-bullets end with semicolon; last ends with period; ≤ 15 words.  
    B. Action  Run pass on each slide, rewriting long bullets & correcting punctuation.  
    C. Deliverable  Cleaned markdown for `presentation.md`.  
@@ -45,9 +38,11 @@ Section VI – Next-Step Checklist Implementation
 2. Execute bullet clean-up & punctuation standardisation.  
 
 -------------------------------------------------------------------
-Sequence & Timeline (suggested)
+Sequence & Timeline
 -------------------------------------------------------------------
 Step 1 – Approve this action plan.  
 Step 2 – I update slide outline & markdown structure (no deep content yet).  
-Step 3 – I perform content edits, bullet shortening, table merges, reference formatting.  
-Step 4 – Final polishing, rehearsal metrics.
+Step 3 – Ask for review.
+Step 4 – I perform content edits, bullet shortening, table merges, reference formatting.  
+Step 5 – Ask for review.
+Step 6 – Final polishing, rehearsal metrics.

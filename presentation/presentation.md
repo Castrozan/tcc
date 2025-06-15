@@ -80,7 +80,7 @@
 - **Speech script:**
   - Nossa pesquisa possui um objetivo geral ambicioso de investigar a viabilidade técnica da abordagem OpenAPI-MCP para democratizar o acesso a sistemas WEB. Esta democratização ocorre através da criação de agentes conversacionais baseados em inteligência artificial que permitem aos usuários interagir com sistemas complexos usando linguagem natural. Para alcançar este objetivo geral, definimos quatro objetivos específicos estruturados. Primeiro, desenvolver um gerador automático de servidores MCP a partir de especificações OpenAPI, eliminando a necessidade de desenvolvimento manual recorrente. Segundo, implementar um cliente de chat capaz de gerenciar múltiplos servidores MCP simultaneamente, demonstrando a viabilidade da orquestração distribuída. Terceiro, validar experimentalmente a integração através de métricas rigorosas de desempenho, segurança e usabilidade, garantindo avaliação científica objetiva. Por fim, estabelecer evidências preliminares convincentes que justifiquem investigações futuras mais aprofundadas, reconhecendo que este é um estudo inicial de validação conceitual que abrirá caminho para pesquisas mais abrangentes.
 - **Speech instructions:**
-  - Enfatizar "democratização" e "linguagem natural" como conceitos centrais. Pausar brevemente após cada objetivo específico numerado. Destacar "evidências preliminares" para contextualizar o escopo inicial da pesquisa.
+  - Enfatizar "democratizar" e "linguagem natural" como conceitos centrais. Pausar brevemente após cada objetivo específico numerado. Destacar "evidências preliminares" para contextualizar o escopo inicial da pesquisa.
 
 ### **Slide 4: Abordagem Teórica**
 - **Title**
@@ -148,7 +148,7 @@
 - **Speech instructions:**
   - Enfatizar "novembro de 2024" para destacar o quão recente e inovador é o protocolo. Pausar após "problema histórico" para dar ênfase ao desafio que o MCP resolve. Destacar "aplicação cliente" e "conversão de ferramentas" como conceitos centrais da arquitetura.
 
-### **Slide 9: Metodologia**
+### **Slide 8: Metodologia**
 - **Title**
   - Metodologia
 - **Content (bullet points, images, tables, etc.):**
@@ -166,7 +166,7 @@
 
 ## Desenvolvimento
 
-### **Slide 10: Arquitetura Geral**
+### **Slide 9: Arquitetura Geral**
 - **Title**
   - Arquitetura Geral
 - **Content (bullet points, images, tables, etc.):**
@@ -178,7 +178,7 @@
 - **Speech instructions:**
   - Referir-se ao diagrama durante toda a explicação, apontando para os componentes conforme mencionados. Enfatizar "modularidade" e "separação de responsabilidades" como princípios arquiteturais fundamentais. Pausar após descrever cada camada do fluxo de dados para dar clareza. Destacar "function calling" e "especificações OpenAPI" como tecnologias-chave. Enfatizar "validação experimental" para conectar com os objetivos da pesquisa.
 
-### **Slide 11: Gerador Automático MCP**
+### **Slide 10: Gerador Automático MCP**
 - **Title**
   - Gerador Automático MCP
 - **Content (bullet points, images, tables, etc.):**
@@ -190,7 +190,7 @@
 - **Speech instructions:**
   - Referir-se constantemente ao diagrama, apontando para cada camada conforme mencionada. Enfatizar "núcleo metodológico" e "contribuição científica" para destacar a importância. Pausar após descrever cada camada ("primeira camada", "segunda camada", "terceira camada") para dar clareza estrutural. Destacar "sistemático e reproduzível" como características científicas fundamentais. Pronunciar "dollar-ref" em inglês para "$ref". Enfatizar "integridade semântica" como garantia técnica crucial.
 
-### **Slide 12: Cliente Multi-servidor MCP**
+### **Slide 11: Cliente Multi-servidor MCP**
 - **Title**
   - Cliente Multi-servidor MCP
 - **Content (bullet points, images, tables, etc.):**
@@ -202,7 +202,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à interface de configuração mostrada no diagrama. Enfatizar "segundo objetivo específico" para conectar com os objetivos da pesquisa. Pausar após "sistemas distribuídos e coordenação de agentes" para destacar a complexidade teórica. Destacar "descoberta automática" e "roteamento inteligente" como inovações técnicas centrais. Enfatizar "flexibilidade operacional" e "dinâmicos" para mostrar as vantagens práticas da solução. Apontar para elementos específicos da interface conforme mencionados.
 
-### **Slide 13: Interface Experimental**
+### **Slide 12: Interface Experimental**
 - **Title**
   - Interface Experimental
 - **Content (bullet points, images, tables, etc.):**
@@ -214,7 +214,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à interface mostrada na imagem, apontando para elementos específicos conforme mencionados. Enfatizar "elemento metodológico essencial" e "validade científica" para destacar a importância metodológica. Pausar após "variáveis experimentais" para dar ênfase ao rigor científico. Destacar "padronização" e "minimalista" como princípios de design científico. Apontar para a separação visual entre mensagens do usuário (direita) e agente (esquerda) conforme descrito. Enfatizar "instrumentação científica precisa" para conectar com os objetivos de validação experimental.
 
-### **Slide 14: Workflow da Interação**
+### **Slide 13: Workflow da Interação**
 - **Title**
   - Workflow da Interação (vídeo?)
 - **Content (bullet points, images, tables, etc.):**
@@ -226,7 +226,7 @@
 - **Speech instructions:**
   - Referir-se constantemente ao diagrama de workflow, seguindo o fluxo das setas conforme descrito. Enfatizar "sequência metodológica" e "validação experimental" para conectar com os objetivos da pesquisa. Pausar após cada etapa principal do fluxo ("interpreta", "utiliza", "executa", "formata") para dar clareza ao processo. Destacar "ponte padronizada" e "eliminando desenvolvimento manual" como benefícios centrais da abordagem. Apontar para cada camada do sistema conforme mencionada no diagrama. Enfatizar "controle rigoroso das variáveis" para conectar com a metodologia científica.
 
-### **Slide 15: Exemplo de Conversão OpenAPI→MCP**
+### **Slide 14: Exemplo de Conversão OpenAPI→MCP**
 - **Title**
   - Exemplo de Conversão OpenAPI→MCP
 - **Content (bullet points, images, tables, etc.):**
@@ -239,7 +239,7 @@
 - **Speech instructions:**
   - Referir-se constantemente às duas imagens, apontando para elementos específicos conforme mencionados. Enfatizar "concretamente" e "exemplo real" para destacar a natureza prática da demonstração. Pausar após descrever cada imagem ("primeira imagem", "segunda imagem") para dar clareza. Destacar "preservou completamente a semântica" como garantia técnica fundamental. Apontar para campos específicos nas imagens conforme mencionados (id, name, description, etc.). Enfatizar "resolução automática" e "total fidelidade" como características técnicas centrais da conversão.
 
-### **Slide 16: Resultados de Performance**
+### **Slide 15: Resultados Técnicos**
 - **Title**
   - Resultados de Performance
 - **Content (bullet points, images, tables, etc.):**
@@ -250,6 +250,18 @@
   - Os resultados de performance obtidos através de testes automatizados end-to-end forneceram evidências quantitativas objetivas sobre a viabilidade operacional do sistema OpenAPI-MCP em condições controladas. Como podemos observar na Tabela 1, nossa validação experimental processou 8 consultas diversificadas, alcançando uma taxa de sucesso de 100%, demonstrando que todas as operações foram completadas com êxito. O tempo médio de resposta foi de 3.757 milissegundos, incluindo todo o processamento do modelo de linguagem GPT-4, desde a interpretação da consulta até a formatação da resposta final. O tamanho médio das respostas foi de 312 caracteres, indicando que o sistema forneceu informações completas e estruturadas aos usuários. No entanto, é fundamental destacar uma limitação relevante identificada: a variação significativa de tempo de resposta, que oscilou entre 1.335 milissegundos e 5.823 milissegundos, representando uma variabilidade de 336%. Esta variabilidade refletiu principalmente a complexidade das consultas processadas e o tempo de processamento do modelo de linguagem, não indicando necessariamente instabilidade do sistema de integração. É importante contextualizar estes resultados dentro do escopo de uma prova de conceito experimental, onde o foco principal residiu em demonstrar a viabilidade técnica da abordagem proposta. A variabilidade de performance observada foi esperada e aceitável nesta fase inicial de validação. Os dados obtidos sugeriram que a integração OpenAPI-MCP é tecnicamente viável para cenários onde a precisão é prioritária em relação à velocidade consistente, fornecendo evidências iniciais promissoras para o desenvolvimento de soluções mais robustas. Otimizações de performance, incluindo estratégias de cache e memorização de respostas frequentes, representam oportunidades claras para trabalhos futuros.
 - **Speech instructions:**
   - Referir-se constantemente à tabela mostrada na imagem, apontando para métricas específicas conforme mencionadas. Enfatizar "evidências quantitativas objetivas" para destacar o rigor científico. Pausar após mencionar cada métrica principal (taxa de sucesso, tempo médio, tamanho médio) para dar clareza. Destacar "limitação relevante" ao mencionar a variabilidade para mostrar transparência científica. Enfatizar "336%" para mostrar a magnitude da variação. Destacar "prova de conceito experimental" para contextualizar adequadamente o escopo. Enfatizar "precisão prioritária" como característica identificada da solução.
+
+### **Slide 16: Resultados de Usabilidade**
+- **Title**
+  - Resultados de Usabilidade
+- **Content (bullet points, images, tables, etc.):**
+  - ![Tabela 2: Métricas de Experiência do Usuário (Escala 1-5) mostrando precisão das respostas (3,5±0,5), clareza da comunicação (4,0±0,3), utilidade das informações (4,3±0,4), pontuação geral (4,0±0,3), taxa de sucesso 100% (13/13) e tempo médio de resposta 4.861ms±2.400](images/resultados/tabela-usabilidade.jpg)
+- **Why:**
+  - Apresenta evidências quantitativas objetivas da experiência do usuário através de 13 cenários de teste estruturados com métricas padronizadas, demonstrando que a interface conversacional OpenAPI-MCP proporcionou experiência satisfatória com pontuação geral de 4,0/5,0 e destacando a utilidade das informações (4,3) como ponto forte da solução.
+- **Speech script:**
+  - A avaliação de experiência do usuário constituiu uma dimensão fundamental da nossa validação experimental, conduzida através de 13 cenários de teste estruturados com métricas padronizadas em escala de 1 a 5. Como podemos observar na Tabela 2, os resultados indicaram experiência do usuário satisfatória, com pontuação geral de 4,0 em escala de 1 a 5, demonstrando que nossa interface conversacional OpenAPI-MCP efetivamente atendeu às expectativas dos usuários. A análise detalhada das métricas revela aspectos importantes sobre a qualidade da interação. A precisão das respostas obteve pontuação de 3,5 com desvio de ±0,5, indicando interpretação correta das intenções dos usuários na maioria dos casos, embora com espaço para melhorias na compreensão de consultas mais complexas. A clareza da comunicação alcançou 4,0 com desvio de ±0,3, confirmando que a interface conversacional apresentou informações de forma bem estruturada e compreensível aos usuários. O destaque principal foi a utilidade das informações, que emergiu como ponto forte com pontuação de 4,3 e desvio de ±0,4, demonstrando que o sistema forneceu respostas relevantes e acionáveis que efetivamente auxiliaram os usuários em suas tarefas. A taxa de sucesso manteve-se em 100%, com todas as 13 consultas sendo respondidas adequadamente, validando a robustez operacional da solução. O tempo médio de resposta foi de 4.861 milissegundos com desvio de ±2.400, indicando responsividade adequada embora com variabilidade que reflete a complexidade das consultas processadas. Estes resultados confirmam que a abordagem OpenAPI-MCP não apenas demonstrou viabilidade técnica, mas também proporcionou experiência do usuário satisfatória, estabelecendo evidências empíricas sobre a eficácia prática da interface conversacional para democratização do acesso a sistemas técnicos complexos.
+- **Speech instructions:**
+  - Referir-se constantemente à tabela mostrada na imagem, apontando para métricas específicas conforme mencionadas. Enfatizar "13 cenários de teste estruturados" e "métricas padronizadas" para destacar o rigor metodológico. Pausar após mencionar cada métrica principal (precisão, clareza, utilidade) para dar clareza. Destacar "4,3 para utilidade das informações" como ponto forte principal. Enfatizar "100% de taxa de sucesso" para mostrar robustez. Destacar "experiência satisfatória" e "4,0/5,0" como resultado geral positivo. Enfatizar "evidências empíricas" para conectar com a validação científica.
 
 ### **Slide 17: Resultados de Segurança**
 - **Title**
@@ -263,19 +275,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à tabela, apontando para cada categoria de ataque conforme mencionada. Enfatizar "16 cenários de ataque" e "4 categorias principais" para mostrar abrangência dos testes. Destacar "100% de taxa de proteção" como resultado principal. Pausar após descrever cada categoria (SQL Injection, Command Injection, Data Extraction, Privilege Escalation) para dar clareza. Enfatizar "proteção em múltiplas camadas" como característica técnica importante. Destacar "ataques básicos" para contextualizar adequadamente o escopo dos testes. Enfatizar "evidências iniciais encorajadoras" para mostrar o valor científico dos resultados.
 
-### **Slide 18: Resultados de Usabilidade**
-- **Title**
-  - Resultados de Usabilidade
-- **Content (bullet points, images, tables, etc.):**
-  - ![Tabela 2: Métricas de Experiência do Usuário (Escala 1-5) mostrando precisão das respostas (3,5±0,5), clareza da comunicação (4,0±0,3), utilidade das informações (4,3±0,4), pontuação geral (4,0±0,3), taxa de sucesso 100% (13/13) e tempo médio de resposta 4.861ms±2.400](images/resultados/tabela-usabilidade.jpg)
-- **Why:**
-  - Apresenta evidências quantitativas objetivas da experiência do usuário através de 13 cenários de teste estruturados com métricas padronizadas, demonstrando que a interface conversacional OpenAPI-MCP proporcionou experiência satisfatória com pontuação geral de 4,0/5,0 e destacando a utilidade das informações (4,3) como ponto forte da solução.
-- **Speech script:**
-  - A avaliação de experiência do usuário constituiu uma dimensão fundamental da nossa validação experimental, conduzida através de 13 cenários de teste estruturados com métricas padronizadas em escala de 1 a 5. Como podemos observar na Tabela 2, os resultados indicaram experiência do usuário satisfatória, com pontuação geral de 4,0 em escala de 1 a 5, demonstrando que nossa interface conversacional OpenAPI-MCP efetivamente atendeu às expectativas dos usuários. A análise detalhada das métricas revela aspectos importantes sobre a qualidade da interação. A precisão das respostas obteve pontuação de 3,5 com desvio de ±0,5, indicando interpretação correta das intenções dos usuários na maioria dos casos, embora com espaço para melhorias na compreensão de consultas mais complexas. A clareza da comunicação alcançou 4,0 com desvio de ±0,3, confirmando que a interface conversacional apresentou informações de forma bem estruturada e compreensível aos usuários. O destaque principal foi a utilidade das informações, que emergiu como ponto forte com pontuação de 4,3 e desvio de ±0,4, demonstrando que o sistema forneceu respostas relevantes e acionáveis que efetivamente auxiliaram os usuários em suas tarefas. A taxa de sucesso manteve-se em 100%, com todas as 13 consultas sendo respondidas adequadamente, validando a robustez operacional da solução. O tempo médio de resposta foi de 4.861 milissegundos com desvio de ±2.400, indicando responsividade adequada embora com variabilidade que reflete a complexidade das consultas processadas. Estes resultados confirmam que a abordagem OpenAPI-MCP não apenas demonstrou viabilidade técnica, mas também proporcionou experiência do usuário satisfatória, estabelecendo evidências empíricas sobre a eficácia prática da interface conversacional para democratização do acesso a sistemas técnicos complexos.
-- **Speech instructions:**
-  - Referir-se constantemente à tabela mostrada na imagem, apontando para métricas específicas conforme mencionadas. Enfatizar "13 cenários de teste estruturados" e "métricas padronizadas" para destacar o rigor metodológico. Pausar após mencionar cada métrica principal (precisão, clareza, utilidade) para dar clareza. Destacar "4,3 para utilidade das informações" como ponto forte principal. Enfatizar "100% de taxa de sucesso" para mostrar robustez. Destacar "experiência satisfatória" e "4,0/5,0" como resultado geral positivo. Enfatizar "evidências empíricas" para conectar com a validação científica.
-
-### **Slide 19: Discussão e Contribuições**
+### **Slide 18: Discussão e Contribuições**
 - **Title**
   - Discussão e Contribuições
 - **Content (bullet points, images, tables, etc.):**
@@ -294,7 +294,7 @@
 
 ## Considerações Finais
 
-### **Slide 20: Considerações Finais**
+### **Slide 19: Considerações Finais**
 - **Title**
   - Considerações Finais
 - **Content (bullet points, images, tables, etc.):**
@@ -311,7 +311,7 @@
 - **Speech instructions:**
   - Enfatizar "confirmam de forma categórica" para destacar a solidez dos resultados. Pausar após a pergunta de pesquisa para dar ênfase. Destacar "100% de eficácia" e "primeira validação experimental sistemática" como conquistas principais. Enfatizar "democratização tecnológica" como impacto transformador. Destacar "transparência científica" ao abordar limitações. Enfatizar "base sólida e promissora" para mostrar o valor duradouro da contribuição. Concluir com tom inspirador sobre "transformação fundamental".
 
-### **Slide 21: Referências Bibliográficas**
+### **Slide 20: Referências Bibliográficas**
 - **Title**
   - Referências Bibliográficas
 - **Content (bullet points, images, tables, etc.):**
@@ -330,7 +330,7 @@
 - **Speech instructions:**
   - Enfatizar "base bibliográfica sólida e diversificada" para destacar o rigor acadêmico. Pausar brevemente após mencionar cada grupo de autores para dar clareza. Destacar "Anthropic", "OpenAI" e outros nomes de organizações para mostrar a relevância das fontes. Enfatizar "normas ABNT" para destacar o padrão acadêmico brasileiro. Concluir com "rigor acadêmico" para reforçar a qualidade científica.
 
-### **Slide 22: Capa Final**
+### **Slide 21: Capa Final**
 - **Title**
   - TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA
 - **Content (bullet points, images, tables, etc.):**

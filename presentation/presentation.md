@@ -44,7 +44,7 @@
 - **Speech instructions:**
   - Cumprimentar a banca e audiência com tom respeitoso e confiante. Pausar após apresentar o título para dar ênfase. Falar o próprio nome claramente e agradecer ao orientador de forma sincera. Enfatizar "democratizar o acesso" e "interfaces conversacionais naturais" como conceitos centrais. Concluir com tom de expectativa positiva para a apresentação.
 
-### **Slide 2: Introdução**
+### **Slide 2: Introdução - Contexto e Problema**
 - **Title**
   - Introdução
 - **Content (bullet points, images, tables, etc.):**
@@ -52,16 +52,26 @@
   - **Problema:** Barreiras de acessibilidade e usabilidade para usuários (LISTER et al., 2020; DENG et al., 2023);
   - **Oportunidade:** Ascensão dos modelos de linguagem (LLMs) como GPT-4 (OPENAI, 2022; ANTHROPIC, 2024);
   - **Potencial:** Interfaces conversacionais naturais para democratização tecnológica (FAST et al., 2017; GUO et al., 2024);
-  - **Pergunta de pesquisa:** "Como a combinação OpenAPI e MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes?";
-  - **Metodologia:** Validação experimental através de prova de conceito.
 - **Why:**
-  - Estabelece o contexto do problema, justifica a relevância da pesquisa, apresenta a oportunidade tecnológica e define claramente a pergunta de pesquisa e metodologia.
+  - Estabelece o contexto do problema e justifica a relevância da pesquisa, apresentando a oportunidade tecnológica atual.
 - **Speech script:**
-  - Como investigado por Rapp, vivemos em uma era de crescente complexidade nas interfaces digitais, onde os sistemas web modernos, embora poderosos, frequentemente criam barreiras significativas para os usuários, especialmente aqueles com necessidades especiais ou menor proficiência tecnológica. Conforme demonstrado por Lister e seus colegas, essas interfaces apresentam desafios significativos de acessibilidade, enquanto Deng destaca como a crescente complexidade da web dificulta o acesso pleno às suas funcionalidades. Paralelamente, hoje testemunhamos uma revolução com a ascensão das interfaces de conversação com inteligencias artificiais, como o Chat GPT e outros que todos utilizamos, que consolidaram interfaces conversacionais como uma realidade robusta e eficaz. Como evidenciado por Fast e sua equipe, agentes conversacionais podem transformar tarefas complexas em interações naturais, e Guo demonstrou como estes sistemas podem melhorar significativamente a usabilidade em ambientes inteligentes. Esta convergência abre uma oportunidade única para democratizar o acesso a tecnologias complexas através de interfaces naturais em linguagem humana, que pode ser condensada na pergunta central desta pesquisa: como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes? Para responder a esta questão, desenvolvemos uma abordagem experimental rigorosa através de uma prova de conceito que vai validar a viabilidade técnica desta integração.
+  - Como investigado por Rapp, vivemos em uma era de crescente complexidade nas interfaces digitais, onde os sistemas web modernos, embora poderosos, frequentemente criam barreiras significativas para os usuários, especialmente aqueles com necessidades especiais ou menor proficiência tecnológica. Conforme demonstrado por Lister e seus colegas, essas interfaces apresentam desafios significativos de acessibilidade, enquanto Deng destaca como a crescente complexidade da web dificulta o acesso pleno às suas funcionalidades. Paralelamente, hoje testemunhamos uma revolução com a ascensão das interfaces de conversação com inteligências artificiais, como o Chat GPT e outros que todos utilizamos, que consolidaram interfaces conversacionais como uma realidade robusta e eficaz. Como evidenciado por Fast e sua equipe, agentes conversacionais podem transformar tarefas complexas em interações naturais, e Guo demonstrou como estes sistemas podem melhorar significativamente a usabilidade em ambientes inteligentes. Esta convergência abre uma oportunidade única para democratizar o acesso a tecnologias complexas através de interfaces naturais em linguagem humana.
 - **Speech instructions:**
-  - Enfatizar "crescente complexidade" e "barreiras significativas" para destacar o problema. Pausar brevemente após mencionar cada autor para dar credibilidade às afirmações. Aumentar o tom na pergunta de pesquisa para destacar sua importância. Pronunciar os nomes dos autores claramente em ingles.
+  - Enfatizar "crescente complexidade" e "barreiras significativas" para destacar o problema. Pausar brevemente após mencionar cada autor para dar credibilidade às afirmações. Pronunciar os nomes dos autores claramente. Concluir com tom inspirador sobre a "oportunidade única".
 
-### **Slide 3: Objetivos**
+### **Slide 3: Introdução - Pergunta de Pesquisa**
+- **Title**
+  - Introdução
+- **Content (bullet points, images, tables, etc.):**
+  - Como a combinação OpenAPI e MCP pode facilitar a integração de agentes conversacionais baseados em IA com sistemas web existentes?
+- **Why:**
+  - Apresenta claramente a pergunta central da pesquisa, dando foco e destaque necessário para que a audiência compreenda o objetivo principal do estudo.
+- **Speech script:**
+  - Esta convergência de oportunidades nos leva à pergunta central desta pesquisa: "Como a combinação da especificação OpenAPI com o protocolo MCP pode facilitar a integração eficiente e segura de agentes conversacionais baseados em IA com sistemas web existentes?" Esta questão condensa o desafio fundamental que buscamos resolver: criar uma ponte padronizada entre sistemas existentes e a nova geração de interfaces conversacionais, democratizando o acesso a sistemas complexos ou não. Para responder a esta questão, desenvolvemos uma abordagem experimental rigorosa através de uma prova de conceito que vai validar a viabilidade técnica desta integração.
+- **Speech instructions:**
+  - Pausar antes de apresentar a pergunta para criar expectativa. Ler a pergunta de pesquisa de forma clara e pausada, enfatizando "OpenAPI", "MCP" e "agentes conversacionais". Aumentar o tom na pergunta para destacar sua importância. Enfatizar "prova de conceito" como metodologia de validação.
+
+### **Slide 4: Objetivos**
 - **Title**
   - Objetivos
 - **Content (bullet points, images, tables, etc.):**
@@ -78,7 +88,7 @@
 - **Speech instructions:**
   - Enfatizar "democratizar" e "linguagem natural" como conceitos centrais. Pausar brevemente após cada objetivo específico numerado.
 
-### **Slide 4: Abordagem Teórica**
+### **Slide 5: Abordagem Teórica**
 - **Title**
   - Abordagem Teórica
 - **Content (bullet points, images, tables, etc.):**
@@ -96,7 +106,7 @@
 
 ## Fundamentação Teórica
 
-### **Slide 5: LLMs e Interfaces Conversacionais**
+### **Slide 6: LLMs e Interfaces Conversacionais**
 - **Title**
   - LLMs e Interfaces Conversacionais
 - **Content (bullet points, images, tables, etc.):**
@@ -112,7 +122,7 @@
 - **Speech instructions:**
   - Enfatizar as datas (2018, 2020) para mostrar progressão temporal. Destacar "function calling" como conceito técnico crucial. Pausar após "Transformer" para dar ênfase à importância da arquitetura.
 
-### **Slide 6: OpenAPI**
+### **Slide 7: OpenAPI**
 - **Title**
   - OpenAPI
 - **Content (bullet points, images, tables, etc.):**
@@ -128,7 +138,7 @@
 - **Speech instructions:**
   - Enfatizar "padrão da indústria" para destacar a legitimidade técnica. Pausar após enumerar cada característica ("Primeiro", "Segundo", "Por fim") para estruturar claramente os benefícios. Destacar "geração automática" como conceito central da pesquisa.
 
-### **Slide 7: Model Context Protocol**
+### **Slide 8: Model Context Protocol**
 - **Title**
   - Model Context Protocol (MCP)
 - **Content (bullet points, images, tables, etc.):**
@@ -144,7 +154,7 @@
 - **Speech instructions:**
   - Enfatizar "novembro de 2024" para destacar o quão recente e inovador é o protocolo. Pausar após "problema histórico" para dar ênfase ao desafio que o MCP resolve. Destacar "aplicação cliente" e "conversão de ferramentas" como conceitos centrais da arquitetura.
 
-### **Slide 8: Metodologia**
+### **Slide 9: Metodologia**
 - **Title**
   - Metodologia
 - **Content (bullet points, images, tables, etc.):**
@@ -162,7 +172,7 @@
 
 ## Desenvolvimento
 
-### **Slide 9: Arquitetura Geral**
+### **Slide 10: Arquitetura Geral**
 - **Title**
   - Arquitetura Geral
 - **Content (bullet points, images, tables, etc.):**
@@ -174,7 +184,7 @@
 - **Speech instructions:**
   - Referir-se ao diagrama durante toda a explicação, apontando para os componentes conforme mencionados. Enfatizar "modularidade" e "separação de responsabilidades" como princípios arquiteturais fundamentais. Pausar após descrever cada camada do fluxo de dados para dar clareza. Destacar "function calling" e "especificações OpenAPI" como tecnologias-chave.
 
-### **Slide 10: Gerador Automático MCP**
+### **Slide 11: Gerador Automático MCP**
 - **Title**
   - Gerador Automático MCP
 - **Content (bullet points, images, tables, etc.):**
@@ -186,7 +196,7 @@
 - **Speech instructions:**
   - Referir-se constantemente ao diagrama, apontando para cada camada conforme mencionada. Enfatizar "núcleo metodológico" e "contribuição científica" para destacar a importância. Pausar após descrever cada camada ("primeira camada", "segunda camada", "terceira camada") para dar clareza estrutural. Destacar "sistemático e reproduzível" como características científicas fundamentais.
 
-### **Slide 11: Cliente Multi-servidor MCP**
+### **Slide 12: Cliente Multi-servidor MCP**
 - **Title**
   - Cliente Multi-servidor MCP
 - **Content (bullet points, images, tables, etc.):**
@@ -198,7 +208,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à interface de configuração mostrada no diagrama. Enfatizar "segundo objetivo específico" para conectar com os objetivos da pesquisa. Pausar após "sistemas distribuídos e coordenação de agentes" para destacar a complexidade teórica. Destacar "descoberta automática" e "roteamento inteligente" como inovações técnicas centrais. Enfatizar "flexibilidade operacional" e "dinâmicos" para mostrar as vantagens práticas da solução. Apontar para elementos específicos da interface conforme mencionados.
 
-### **Slide 12: Interface Experimental**
+### **Slide 13: Interface Experimental**
 - **Title**
   - Interface Experimental
 - **Content (bullet points, images, tables, etc.):**
@@ -210,7 +220,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à interface mostrada na imagem, apontando para elementos específicos conforme mencionados. Enfatizar "elemento metodológico essencial" e "validade científica" para destacar a importância metodológica. Pausar após "variáveis experimentais" para dar ênfase ao rigor científico. Destacar "padronização" e "minimalista" como princípios de design científico. Apontar para a separação visual entre mensagens do usuário (direita) e agente (esquerda) conforme descrito. Enfatizar "instrumentação científica precisa" para conectar com os objetivos de validação experimental.
 
-### **Slide 13: Demonstração do Sistema**
+### **Slide 14: Demonstração do Sistema**
 - **Title**
   - Demonstração do Sistema
 - **Content (bullet points, images, tables, etc.):**
@@ -229,7 +239,7 @@
 - **Speech instructions:**
   - Permitir que o GIF rode completamente sem interrupção inicialmente, depois comentar as seções conforme se repetem. Enfatizar "cenário real de desenvolvimento" para mostrar aplicabilidade prática. Pausar após executar o serviço no terminal para destacar a importância deste passo. Destacar "facilidade de integração" e "sem reinicialização" como vantagens técnicas centrais. Enfatizar "npm start" como comando familiar aos desenvolvedores. Concluir com ênfase em "resolve problemas reais" para conectar com impacto prático.
 
-### **Slide 14: Exemplo de Conversão OpenAPI→MCP**
+### **Slide 15: Exemplo de Conversão OpenAPI→MCP**
 - **Title**
   - Exemplo de Conversão OpenAPI→MCP
 - **Content (bullet points, images, tables, etc.):**
@@ -242,7 +252,7 @@
 - **Speech instructions:**
   - Referir-se constantemente às duas imagens, apontando para elementos específicos conforme mencionados. Enfatizar "concretamente" e "exemplo real" para destacar a natureza prática da demonstração. Pausar após descrever cada imagem ("primeira imagem", "segunda imagem") para dar clareza. Destacar "preservou completamente a semântica" como garantia técnica fundamental. Enfatizar "resolução automática" e "total fidelidade" como características técnicas centrais da conversão.
 
-### **Slide 15: Resultados Técnicos**
+### **Slide 16: Resultados Técnicos**
 - **Title**
   - Resultados de Performance
 - **Content (bullet points, images, tables, etc.):**
@@ -254,7 +264,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à tabela mostrada na imagem, apontando para métricas específicas conforme mencionadas. Enfatizar "evidências quantitativas objetivas" para destacar o rigor científico. Pausar após mencionar cada métrica principal (taxa de sucesso, tempo médio, tamanho médio) para dar clareza. Destacar "limitação relevante" ao mencionar a variabilidade para mostrar transparência científica. Enfatizar "336%" para mostrar a magnitude da variação. Destacar "prova de conceito experimental" para contextualizar adequadamente o escopo. Enfatizar "precisão prioritária" como característica identificada da solução.
 
-### **Slide 16: Resultados de Usabilidade**
+### **Slide 17: Resultados de Usabilidade**
 - **Title**
   - Resultados de Usabilidade
 - **Content (bullet points, images, tables, etc.):**
@@ -266,7 +276,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à tabela mostrada na imagem, apontando para métricas específicas conforme mencionadas. Enfatizar "13 cenários de teste estruturados" e "métricas padronizadas" para destacar o rigor metodológico. Pausar após mencionar cada métrica principal (precisão, clareza, utilidade) para dar clareza. Destacar "4,3 para utilidade das informações" como ponto forte principal. Enfatizar "100% de taxa de sucesso" para mostrar robustez. Destacar "experiência satisfatória" e "4,0/5,0" como resultado geral positivo. Enfatizar "evidências empíricas" para conectar com a validação científica.
 
-### **Slide 17: Resultados de Segurança**
+### **Slide 18: Resultados de Segurança**
 - **Title**
   - Resultados de Segurança
 - **Content (bullet points, images, tables, etc.):**
@@ -278,7 +288,9 @@
 - **Speech instructions:**
   - Referir-se constantemente à tabela, apontando para cada categoria de ataque conforme mencionada. Enfatizar "16 cenários de ataque" e "4 categorias principais" para mostrar abrangência dos testes. Destacar "100% de taxa de proteção" como resultado principal. Pausar após descrever cada categoria (SQL Injection, Command Injection, Data Extraction, Privilege Escalation) para dar clareza. Enfatizar "proteção em múltiplas camadas" como característica técnica importante. Destacar "ataques básicos" para contextualizar adequadamente o escopo dos testes. Enfatizar "evidências iniciais encorajadoras" para mostrar o valor científico dos resultados.
 
-### **Slide 18: Considerações Finais**
+## Considerações Finais
+
+### **Slide 19: Considerações Finais**
 - **Title**
   - Considerações Finais
 - **Content (bullet points, images, tables, etc.):**
@@ -295,7 +307,7 @@
 - **Speech instructions:**
   - Enfatizar "confirmam de forma categórica" para destacar a solidez dos resultados. Pausar após a pergunta de pesquisa para dar ênfase. Destacar "100% de eficácia" e "primeira validação experimental sistemática" como conquistas principais. Enfatizar "democratização tecnológica" como impacto transformador. Destacar "transparência científica" ao abordar limitações. Enfatizar "base sólida e promissora" para mostrar o valor duradouro da contribuição. Concluir com tom inspirador sobre "transformação fundamental".
 
-### **Slide 19: Referências Bibliográficas**
+### **Slide 20: Referências Bibliográficas**
 - **Title**
   - Referências Bibliográficas
 - **Content (bullet points, images, tables, etc.):**
@@ -314,7 +326,7 @@
 - **Speech instructions:**
   - Enfatizar "base bibliográfica sólida e diversificada" para destacar o rigor acadêmico. Pausar brevemente após mencionar cada grupo de autores para dar clareza. Destacar "Anthropic", "OpenAI" e outros nomes de organizações para mostrar a relevância das fontes.
 
-### **Slide 20: Capa Final**
+### **Slide 21: Capa Final**
 - **Title**
   - TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA
 - **Content (bullet points, images, tables, etc.):**

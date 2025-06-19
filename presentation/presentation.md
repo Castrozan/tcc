@@ -172,11 +172,10 @@
 - **Title**
   - Metodologia
 - **Content (bullet points, images, tables, etc.):**
-  - **Abordagem Experimental:** Estruturada em etapas sequenciais para validação da viabilidade técnica OpenAPI-MCP;
   - **Revisão Sistemática:** Consolidação de conhecimentos científicos sobre integração OpenAPI-MCP;
   - **Prova de Conceito:** Desenvolvimento de gerador automático MCP, cliente multi-servidor e aplicações de teste;
-  - **Validação Rigorosa:** Testes automatizados end-to-end com Playwright para métricas objetivas e reproduzíveis;
-  - **Critérios Científicos:** Avaliação de desempenho, segurança (red teaming) e usabilidade em ambiente controlado.
+  - **Validação Rigorosa:** Testes automatizados end-to-end com Playwright para métricas reproduzíveis sob usabilidade;
+  - **Critérios Científicos:** Avaliação de desempenho, segurança e usabilidade.
 - **Why:**
   - Estabelece o rigor metodológico científico necessário para validação experimental da hipótese, demonstrando como a pesquisa garante resultados objetivos e reproduzíveis através de instrumentação técnica precisa.
 - **Speech script:**

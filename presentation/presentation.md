@@ -9,9 +9,10 @@
     - **Title**
       - Title of the slide.
     - **Content (bullet points, images, tables, etc.):**
-      - Bullet points example:
+      - Bullet points example: (max 4 bullet points)
         - Sub-bullet point 1;
         - Sub-bullet point 2;
+        - Sub-bullet point 3;
         - Sub-bullet point 3.
       - Images/Tables example:
         - ![Image description](images/image.png)
@@ -151,7 +152,23 @@
 - **Speech instructions:**
   - Enfatizar "novembro de 2024" para destacar o quão recente e inovador é o protocolo. Pausar após "problema histórico" para dar ênfase ao desafio que o MCP resolve. Destacar "aplicação cliente" e "conversão de ferramentas" como conceitos centrais da arquitetura.
 
-### **Slide 9: Metodologia**
+### **Slide 9: Critérios de Segurança e Usabilidade**
+- **Title**
+  - Critérios de Segurança e Usabilidade
+- **Content (bullet points, images, tables, etc.):**
+  - **Segurança - Red Teaming:** Testes adversários incluindo SQL injection, command injection, data extraction e privilege escalation (NIST, 2023; OWASP, 2025);
+  - **Resistência a Prompt Injection:** Mensuração de tentativas maliciosas bloqueadas durante testes sistemáticos de segurança;
+  - **Usabilidade Quantitativa:** Tempo de conclusão de tarefas CRUD via linguagem natural e curva de aprendizado;
+  - **Usabilidade Qualitativa:** Precisão, clareza e utilidade das respostas em escala 1-5;
+  - **Testes End-to-End:** Playwright para automação e coleta objetiva de métricas reproduzíveis.
+- **Why:**
+  - Estabelece os critérios científicos rigorosos para validação experimental, demonstrando como aspectos críticos de segurança e experiência do usuário são mensurados objetivamente para garantir validade científica dos resultados.
+- **Speech script:**
+  - Para garantir validação experimental rigorosa, estabelecemos critérios objetivos de avaliação em duas dimensões críticas: segurança e usabilidade. Na dimensão de segurança, implementamos uma abordagem abrangente de red teaming baseada nos frameworks do NIST e OWASP, reconhecidos internacionalmente como padrões para avaliação de segurança em sistemas de IA. Nossos testes adversários incluem quatro categorias principais: SQL injection para testar robustez contra manipulação de banco de dados, command injection para verificar proteção contra execução de comandos do sistema, data extraction para avaliar resistência à extração não autorizada de informações sensíveis, e privilege escalation para validar proteção contra tentativas de elevação de privilégios. Especial atenção foi dada à resistência a prompt injection, uma ameaça crítica específica para sistemas LLM, onde mensuramos o percentual de tentativas maliciosas efetivamente bloqueadas. Na dimensão de usabilidade, adotamos métricas tanto quantitativas quanto qualitativas. Quantitativamente, medimos tempo de conclusão de tarefas CRUD executadas via linguagem natural e analisamos a curva de aprendizado dos usuários. Qualitativamente, avaliamos três aspectos fundamentais em escala de 1 a 5: precisão das respostas em relação à intenção do usuário, clareza na estruturação das informações, e utilidade prática para tomada de decisão. Toda essa instrumentação é operacionalizada através de testes end-to-end automatizados com Playwright, garantindo coleta objetiva e reproduzível de métricas que fundamentam cientificamente nossas conclusões.
+- **Speech instructions:**
+  - Enfatizar "validação experimental rigorosa" e "critérios objetivos" para destacar o rigor científico. Pausar após enumerar cada categoria de ataque para dar clareza. Destacar "NIST e OWASP" como autoridades reconhecidas. Enfatizar "reproduzível" como característica essencial da metodologia científica.
+
+### **Slide 10: Metodologia**
 - **Title**
   - Metodologia
 - **Content (bullet points, images, tables, etc.):**
@@ -169,7 +186,7 @@
 
 ## Desenvolvimento
 
-### **Slide 10: Arquitetura Geral**
+### **Slide 11: Arquitetura Geral**
 - **Title**
   - Arquitetura Geral
 - **Content (bullet points, images, tables, etc.):**
@@ -181,7 +198,7 @@
 - **Speech instructions:**
   - Referir-se ao diagrama durante toda a explicação, apontando para os componentes conforme mencionados. Enfatizar "modularidade" e "separação de responsabilidades" como princípios arquiteturais fundamentais. Pausar após descrever cada camada do fluxo de dados para dar clareza. Destacar "function calling" e "especificações OpenAPI" como tecnologias-chave.
 
-### **Slide 11: Gerador Automático MCP**
+### **Slide 12: Gerador Automático MCP**
 - **Title**
   - Gerador Automático MCP
 - **Content (bullet points, images, tables, etc.):**
@@ -193,7 +210,7 @@
 - **Speech instructions:**
   - Referir-se constantemente ao diagrama, apontando para cada camada conforme mencionada. Enfatizar "núcleo metodológico" e "contribuição científica" para destacar a importância. Pausar após descrever cada camada ("primeira camada", "segunda camada", "terceira camada") para dar clareza estrutural. Destacar "sistemático e reproduzível" como características científicas fundamentais.
 
-### **Slide 12: Cliente Multi-servidor MCP**
+### **Slide 13: Cliente Multi-servidor MCP**
 - **Title**
   - Cliente Multi-servidor MCP
 - **Content (bullet points, images, tables, etc.):**
@@ -205,7 +222,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à interface de configuração mostrada no diagrama. Enfatizar "segundo objetivo específico" para conectar com os objetivos da pesquisa. Pausar após "sistemas distribuídos e coordenação de agentes" para destacar a complexidade teórica. Destacar "descoberta automática" e "roteamento inteligente" como inovações técnicas centrais. Enfatizar "flexibilidade operacional" e "dinâmicos" para mostrar as vantagens práticas da solução. Apontar para elementos específicos da interface conforme mencionados.
 
-### **Slide 13: Interface Experimental**
+### **Slide 14: Interface Experimental**
 - **Title**
   - Interface Experimental
 - **Content (bullet points, images, tables, etc.):**
@@ -217,7 +234,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à interface mostrada na imagem, apontando para elementos específicos conforme mencionados. Enfatizar "elemento metodológico essencial" e "validade científica" para destacar a importância metodológica. Pausar após "variáveis experimentais" para dar ênfase ao rigor científico. Destacar "padronização" e "minimalista" como princípios de design científico. Apontar para a separação visual entre mensagens do usuário (direita) e agente (esquerda) conforme descrito. Enfatizar "instrumentação científica precisa" para conectar com os objetivos de validação experimental.
 
-### **Slide 14: Demonstração do Sistema**
+### **Slide 15: Demonstração do Sistema**
 - **Title**
   - Demonstração do Sistema
 - **Content (bullet points, images, tables, etc.):**
@@ -236,7 +253,7 @@
 - **Speech instructions:**
   - Permitir que o GIF rode completamente sem interrupção inicialmente, depois comentar as seções conforme se repetem. Enfatizar "cenário real de desenvolvimento" para mostrar aplicabilidade prática. Pausar após executar o serviço no terminal para destacar a importância deste passo. Destacar "facilidade de integração" e "sem reinicialização" como vantagens técnicas centrais. Enfatizar "npm start" como comando familiar aos desenvolvedores. Concluir com ênfase em "resolve problemas reais" para conectar com impacto prático.
 
-### **Slide 15: Exemplo de Conversão OpenAPI→MCP**
+### **Slide 16: Exemplo de Conversão OpenAPI→MCP**
 - **Title**
   - Exemplo de Conversão OpenAPI→MCP
 - **Content (bullet points, images, tables, etc.):**
@@ -249,7 +266,7 @@
 - **Speech instructions:**
   - Referir-se constantemente às duas imagens, apontando para elementos específicos conforme mencionados. Enfatizar "concretamente" e "exemplo real" para destacar a natureza prática da demonstração. Pausar após descrever cada imagem ("primeira imagem", "segunda imagem") para dar clareza. Destacar "preservou completamente a semântica" como garantia técnica fundamental. Enfatizar "resolução automática" e "total fidelidade" como características técnicas centrais da conversão.
 
-### **Slide 16: Resultados Técnicos**
+### **Slide 17: Resultados Técnicos**
 - **Title**
   - Resultados de Performance
 - **Content (bullet points, images, tables, etc.):**
@@ -261,7 +278,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à tabela mostrada na imagem, apontando para métricas específicas conforme mencionadas. Enfatizar "evidências quantitativas objetivas" para destacar o rigor científico. Pausar após mencionar cada métrica principal (taxa de sucesso, tempo médio, tamanho médio) para dar clareza. Destacar "limitação relevante" ao mencionar a variabilidade para mostrar transparência científica. Enfatizar "336%" para mostrar a magnitude da variação. Destacar "prova de conceito experimental" para contextualizar adequadamente o escopo. Enfatizar "precisão prioritária" como característica identificada da solução.
 
-### **Slide 17: Resultados de Usabilidade**
+### **Slide 18: Resultados de Usabilidade**
 - **Title**
   - Resultados de Usabilidade
 - **Content (bullet points, images, tables, etc.):**
@@ -273,7 +290,7 @@
 - **Speech instructions:**
   - Referir-se constantemente à tabela mostrada na imagem, apontando para métricas específicas conforme mencionadas. Enfatizar "13 cenários de teste estruturados" e "métricas padronizadas" para destacar o rigor metodológico. Pausar após mencionar cada métrica principal (precisão, clareza, utilidade) para dar clareza. Destacar "4,3 para utilidade das informações" como ponto forte principal. Enfatizar "100% de taxa de sucesso" para mostrar robustez. Destacar "experiência satisfatória" e "4,0/5,0" como resultado geral positivo. Enfatizar "evidências empíricas" para conectar com a validação científica.
 
-### **Slide 18: Resultados de Segurança**
+### **Slide 19: Resultados de Segurança**
 - **Title**
   - Resultados de Segurança
 - **Content (bullet points, images, tables, etc.):**
@@ -287,7 +304,7 @@
 
 ## Considerações Finais
 
-### **Slide 19: Considerações Finais**
+### **Slide 20: Considerações Finais**
 - **Title**
   - Considerações Finais
 - **Content (bullet points, images, tables, etc.):**
@@ -304,7 +321,7 @@
 - **Speech instructions:**
   - Enfatizar "confirmam de forma categórica" para destacar a solidez dos resultados. Pausar após a pergunta de pesquisa para dar ênfase. Destacar "100% de eficácia" e "primeira validação experimental sistemática" como conquistas principais. Enfatizar "democratização tecnológica" como impacto transformador. Destacar "transparência científica" ao abordar limitações. Enfatizar "base sólida e promissora" para mostrar o valor duradouro da contribuição. Concluir com tom inspirador sobre "transformação fundamental".
 
-### **Slide 20: Referências Bibliográficas**
+### **Slide 21: Referências Bibliográficas**
 - **Title**
   - Referências Bibliográficas
 - **Content (bullet points, images, tables, etc.):**
@@ -323,7 +340,7 @@
 - **Speech instructions:**
   - Enfatizar "base bibliográfica sólida e diversificada" para destacar o rigor acadêmico. Pausar brevemente após mencionar cada grupo de autores para dar clareza. Destacar "Anthropic", "OpenAI" e outros nomes de organizações para mostrar a relevância das fontes.
 
-### **Slide 21: Capa Final**
+### **Slide 22: Capa Final**
 - **Title**
   - TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA
 - **Content (bullet points, images, tables, etc.):**

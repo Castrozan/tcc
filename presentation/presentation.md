@@ -128,7 +128,7 @@
   - **Padrão da Indústria:** Especificação OpenAPI 3.0+ amplamente adotada para documentação de APIs (OpenAPI, 2023);
   - **Esquemas de Segurança:** Suporte nativo para OAuth, API Key e Bearer Token, essencial para agentes conversacionais;
   - **Documentação Estruturada:** Formato legível por máquina;
-  - **Base da Conversão:** Fundamento técnico para transformação automática em servidores MCP funcionais.
+  - **Interoperabilidade**: Porta de conexão e documentação entre o mundo externo e sistemas WEB.
 - **Why:**
   - Demonstra por que OpenAPI é a escolha técnica ideal para a pesquisa, destacando características específicas que viabilizam a conversão automática para MCP e integração com agentes conversacionais.
 - **Speech script:**
@@ -140,11 +140,10 @@
 - **Title**
   - Model Context Protocol (MCP)
 - **Content (bullet points, images, tables, etc.):**
-  - **Padrão Aberto:** Desenvolvido pela Anthropic e lançado em novembro de 2024 como protocolo de comunicação padronizada (ANTHROPIC, 2024);
+  - **Padrão Aberto:** Introduzido pela Anthropic em novembro de 2024 como protocolo de comunicação (ANTHROPIC, 2024);
   - **Arquitetura Cliente-Servidor:** Conecta servidores a clientes que gerenciam a integração com LLMs;
   - **Conversão de Ferramentas:** Cliente converte ferramentas MCP para funcionalidade de function calling dos modelos de linguagem;
-  - **Interoperabilidade:** Facilita integração entre diferentes fontes de dados e aplicações cliente sem desenvolvimento customizado;
-  - **Fundamento da Pesquisa:** Base técnica que viabiliza a conversão automática OpenAPI→MCP e coordenação multi-servidor.
+  - **Interoperabilidade:** Porta de conexão entre o mundo externo e sistemas de Inteligência artificia.
 - **Why:**
   - Explica o protocolo MCP como inovação recente que tornou possível a abordagem da pesquisa, destacando como sua arquitetura padronizada resolve o problema histórico de integrações customizadas entre chats com LLMs e sistemas externos.
 - **Speech script:**

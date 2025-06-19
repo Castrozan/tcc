@@ -76,11 +76,11 @@
   - Objetivos
 - **Content (bullet points, images, tables, etc.):**
   - **Objetivo Geral:**
-    - Investigar viabilidade técnica da abordagem OpenAPI-MCP para democratizar o acesso a sistemas WEB através de agentes conversacionais baseados em IA;
+    - Investigar viabilidade técnica da abordagem OpenAPI-MCP para democratizar o acesso a sistemas WEB através de agentes conversacionais baseados em IA.
   - **Objetivos Específicos:**
     - Desenvolver um gerador automático de servidores MCP a partir de especificações OpenAPI 3.0+;
     - Implementar um client LLM chat capaz de gerenciar múltiplos servidores simultaneamente;
-    - Validar experimentalmente a integração através de métricas de desempenho, segurança e usabilidade;
+    - Validar experimentalmente a integração através de métricas de desempenho, segurança e usabilidade.
 - **Why:**
   - Define claramente o escopo da pesquisa, estabelece objetivos mensuráveis e específicos, e demonstra a estrutura metodológica para validação experimental da hipótese central.
 - **Speech script:**

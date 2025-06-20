@@ -32,7 +32,7 @@
 ### **Slide 1: Capa**
 - **Title**
   - TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - Orientando: Lucas de Castro Zanoni;
   - Orientador: Prof. Thyerri Fernandes Mezzari;
   - Centro Universitário UniSATC;
@@ -48,7 +48,7 @@
 ### **Slide 2: Introdução - Contexto e Problema**
 - **Title**
   - Introdução
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Contexto:** Crescente complexidade das interfaces digitais modernas (RAPP et al., 2018; KOCABALLI et al., 2019);
   - **Problema:** Barreiras de acessibilidade e usabilidade para usuários (LISTER et al., 2020; DENG et al., 2023);
   - **Oportunidade:** Ascensão dos modelos de linguagem (LLMs) como GPT-4 (OPENAI, 2022; ANTHROPIC, 2024);
@@ -63,7 +63,7 @@
 ### **Slide 3: Introdução - Pergunta de Pesquisa**
 - **Title**
   - Introdução
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - Como a combinação OpenAPI e MCP pode facilitar a integração de agentes conversacionais baseados em IA com sistemas web existentes?
 - **Why:**
   - Apresenta claramente a pergunta central da pesquisa, dando foco e destaque necessário para que a audiência compreenda o objetivo principal do estudo.
@@ -75,7 +75,7 @@
 ### **Slide 4: Objetivos**
 - **Title**
   - Objetivos
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Objetivo Geral:**
     - Investigar viabilidade técnica da abordagem OpenAPI-MCP para democratizar o acesso a sistemas WEB através de agentes conversacionais baseados em IA.
   - **Objetivos Específicos:**
@@ -92,7 +92,7 @@
 ### **Slide 5: Abordagem Teórica**
 - **Title**
   - Abordagem Teórica
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Interfaces Conversacionais:** Teoria de interação humano-computador e usabilidade (KOCABALLI et al., 2019; LISTER et al., 2020);
   - **Modelos de Linguagem:** Arquitetura Transformer e function calling (OPENAI, 2023; ANTHROPIC, 2024);
   - **Padronização de APIs:** Especificação OpenAPI 3.0+ para interoperabilidade (OpenAPI Initiative, 2023);
@@ -110,7 +110,7 @@
 ### **Slide 6: LLMs e Interfaces Conversacionais**
 - **Title**
   - LLMs e Interfaces Conversacionais
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Evolução Tecnológica:** BERT (2018) para compreensão textual, GPT-3 (2020) para capacidades generativas;
   - **Arquitetura Transformer:** Base tecnológica que revolucionou o processamento de linguagem natural;
   - **Function Calling:** Conversão automática de linguagem natural em chamadas de funções estruturadas (GPT-4);
@@ -125,7 +125,7 @@
 ### **Slide 7: OpenAPI**
 - **Title**
   - OpenAPI
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Padrão da Indústria:** Especificação OpenAPI 3.0+ amplamente adotada para documentação de APIs (OpenAPI, 2023);
   - **Esquemas de Segurança:** Suporte nativo para OAuth, API Key e Bearer Token, essencial para agentes conversacionais;
   - **Documentação Estruturada:** Formato legível por máquina;
@@ -140,7 +140,7 @@
 ### **Slide 8: Model Context Protocol**
 - **Title**
   - Model Context Protocol (MCP)
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Padrão Aberto:** Introduzido pela Anthropic em novembro de 2024 como protocolo de comunicação (ANTHROPIC, 2024);
   - **Arquitetura Cliente-Servidor:** Conecta servidores a clientes que gerenciam a integração com LLMs;
   - **Conversão de Ferramentas:** Cliente converte ferramentas MCP para funcionalidade de function calling dos modelos de linguagem;
@@ -155,7 +155,7 @@
 ### **Slide 9: Critérios de Segurança e Usabilidade**
 - **Title**
   - Critérios de Segurança e Usabilidade
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Segurança - Red Teaming:** Testes adversários incluindo SQL injection, command injection, data extraction e privilege escalation (NIST, 2023; OWASP, 2025);
   - **Resistência a Prompt Injection:** Mensuração de tentativas maliciosas bloqueadas durante testes sistemáticos de segurança;
   - **Usabilidade Quantitativa:** Tempo de conclusão de tarefas CRUD via linguagem natural e curva de aprendizado;
@@ -171,7 +171,7 @@
 ### **Slide 10: Metodologia**
 - **Title**
   - Metodologia
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Revisão Sistemática:** Consolidação de conhecimentos científicos sobre integração OpenAPI-MCP;
   - **Prova de Conceito:** Desenvolvimento de gerador automático MCP, cliente multi-servidor e aplicações de teste;
   - **Validação Rigorosa:** Testes automatizados end-to-end com Playwright para métricas reproduzíveis sob usabilidade;
@@ -188,8 +188,8 @@
 ### **Slide 11: Arquitetura Geral**
 - **Title**
   - Arquitetura Geral
-- **Content (bullet points, images, tables, etc.):**
-  - ![Diagrama da arquitetura de alto nível](images/metodos/system-architecture.jpg)
+- **Content**
+  - ![Diagrama da arquitetura de alto nível](images/system-architecture.jpg)
 - **Why:**
   - Demonstra visualmente como os componentes da solução OpenAPI-MCP se integram para formar um sistema coeso, facilitando a compreensão da audiência sobre a complexidade técnica e a elegância da solução proposta.
 - **Speech script:**
@@ -200,8 +200,8 @@
 ### **Slide 12: Gerador Automático MCP**
 - **Title**
   - Gerador Automático MCP
-- **Content (bullet points, images, tables, etc.):**
-  - ![Diagrama da arquitetura de geração MCP](images/desenvolvimento/mcp-generator-architecture.jpg)
+- **Content**
+  - ![Diagrama da arquitetura de geração MCP](images/mcp-generator-architecture.jpg)
 - **Why:**
   - Demonstra visualmente o núcleo metodológico da contribuição científica proposta, mostrando como especificações OpenAPI são sistematicamente convertidas em servidores MCP funcionais através de três camadas funcionais bem definidas.
 - **Speech script:**
@@ -212,8 +212,8 @@
 ### **Slide 13: Cliente Multi-servidor MCP**
 - **Title**
   - Cliente Multi-servidor MCP
-- **Content (bullet points, images, tables, etc.):**
-  - ![Configuração do cliente de chat possibilitando a adição de novos servidores MCP](images/chat/chat-server-configuration.jpg)
+- **Content**
+  - ![Configuração do cliente de chat possibilitando a adição de novos servidores MCP](images/chat-server-configuration.jpg)
 - **Why:**
   - Demonstra visualmente a implementação metodológica do segundo objetivo específico da pesquisa, mostrando como a orquestração simultânea de múltiplos servidores MCP é viabilizada através de descoberta automática, roteamento inteligente e configuração dinâmica em ambiente conversacional.
 - **Speech script:**
@@ -224,8 +224,8 @@
 ### **Slide 14: Interface Experimental**
 - **Title**
   - Interface Experimental
-- **Content (bullet points, images, tables, etc.):**
-  - ![Interface web minimalista desenvolvida para testes padronizados, mostrando área de histórico de mensagens intercaladas entre usuário (direita) e agente (esquerda), com campo de entrada inferior para novos comandos](images/chat/chat-interface.jpg)
+- **Content**
+  - ![Interface web minimalista desenvolvida para testes padronizados, mostrando área de histórico de mensagens intercaladas entre usuário (direita) e agente (esquerda), com campo de entrada inferior para novos comandos](images/chat-interface.jpg)
 - **Why:**
   - Demonstra visualmente o elemento metodológico essencial para controle rigoroso das variáveis experimentais, mostrando como a padronização da interface elimina diferenças de experiência do usuário que poderiam contaminar os resultados e garantir que as diferenças observadas sejam atribuíveis exclusivamente às tecnologias de integração testadas.
 - **Speech script:**
@@ -236,7 +236,7 @@
 ### **Slide 15: Demonstração do Sistema**
 - **Title**
   - Demonstração do Sistema
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Demonstração Completa do Workflow:**
     - ![GIF completo mostrando: 1) Equipamento existente no Swagger, 2) Consulta conversacional sobre equipamento, 3) Modificação do nome via chat, 4) Verificação de persistência no Swagger, 5) Execução de novo serviço no terminal, 6) Adição dinâmica de servidor MCP de profissionais, 7) Consulta por profissional, 8) Exclusão via chat, 9) Confirmação no Swagger](gifs/complete-workflow-demo.gif)
   - **Fluxo Demonstrado:**
@@ -255,9 +255,9 @@
 ### **Slide 16: Exemplo de Conversão OpenAPI→MCP**
 - **Title**
   - Exemplo de Conversão OpenAPI→MCP
-- **Content (bullet points, images, tables, etc.):**
-  - ![Exemplo de especificação OpenAPI 3.0+ para um endpoint de busca de equipamento por ID](images/openapi-mcp/snippet-openapi-path-spec.jpg)
-  - ![Exemplo de ferramenta MCP gerada a partir de uma especificação OpenAPI](images/openapi-mcp/mcp-tool-format.jpg)
+- **Content**
+  - ![Exemplo de especificação OpenAPI 3.0+ para um endpoint de busca de equipamento por ID](images/snippet-openapi-path-spec.jpg)
+  - ![Exemplo de ferramenta MCP gerada a partir de uma especificação OpenAPI](images/mcp-tool-format.jpg)
 - **Why:**
   - Demonstra visualmente e concretamente como o processo de conversão automática preserva a integridade semântica da operação OpenAPI original, mostrando a transformação sistemática de contratos de API em ferramentas compreensíveis por modelos de linguagem através do mapeamento preciso de parâmetros, esquemas e metadados.
 - **Speech script:**
@@ -268,8 +268,8 @@
 ### **Slide 17: Resultados Técnicos**
 - **Title**
   - Resultados de Performance
-- **Content (bullet points, images, tables, etc.):**
-  - ![Tabela 1: Métricas de Performance - Implementação OpenAPI-MCP mostrando tempo médio de resposta de 3.757ms, taxa de sucesso de 100%, 8 consultas processadas e tamanho médio de resposta de 312 caracteres, com variação de 1.335-5.823ms demonstrando performance variável mas funcional](images/resultados/tabela-performance.jpg)
+- **Content**
+  - ![Tabela 1: Métricas de Performance - Implementação OpenAPI-MCP mostrando tempo médio de resposta de 3.757ms, taxa de sucesso de 100%, 8 consultas processadas e tamanho médio de resposta de 312 caracteres, com variação de 1.335-5.823ms demonstrando performance variável mas funcional](images/tabela-performance.jpg)
 - **Why:**
   - Apresenta evidências quantitativas objetivas da viabilidade operacional do sistema OpenAPI-MCP, demonstrando transparência científica sobre tanto os sucessos quanto as limitações identificadas durante a validação experimental.
 - **Speech script:**
@@ -280,8 +280,8 @@
 ### **Slide 18: Resultados de Usabilidade**
 - **Title**
   - Resultados de Usabilidade
-- **Content (bullet points, images, tables, etc.):**
-  - ![Tabela 2: Métricas de Experiência do Usuário (Escala 1-5) mostrando precisão das respostas (3,5±0,5), clareza da comunicação (4,0±0,3), utilidade das informações (4,3±0,4), pontuação geral (4,0±0,3), taxa de sucesso 100% (13/13) e tempo médio de resposta 4.861ms±2.400](images/resultados/tabela-usabilidade.jpg)
+- **Content**
+  - ![Tabela 2: Métricas de Experiência do Usuário (Escala 1-5) mostrando precisão das respostas (3,5±0,5), clareza da comunicação (4,0±0,3), utilidade das informações (4,3±0,4), pontuação geral (4,0±0,3), taxa de sucesso 100% (13/13) e tempo médio de resposta 4.861ms±2.400](images/tabela-usabilidade.jpg)
 - **Why:**
   - Apresenta evidências quantitativas objetivas da experiência do usuário através de 13 cenários de teste estruturados com métricas padronizadas, demonstrando que a interface conversacional OpenAPI-MCP proporcionou experiência satisfatória com pontuação geral de 4,0/5,0 e destacando a utilidade das informações (4,3) como ponto forte da solução.
 - **Speech script:**
@@ -292,8 +292,8 @@
 ### **Slide 19: Resultados de Segurança**
 - **Title**
   - Resultados de Segurança
-- **Content (bullet points, images, tables, etc.):**
-  - ![Tabela 2: ](images/resultados/tabela-seguranca.jpg)
+- **Content**
+  - ![Tabela 3: ](images/tabela-seguranca.jpg)
 - **Why:**
   - Demonstra a robustez da abordagem OpenAPI-MCP contra vetores de ataque fundamentais através de testes sistemáticos de red teaming, validando a eficácia da proteção em múltiplas camadas tanto no nível do LLM quanto na validação via schemas OpenAPI.
 - **Speech script:**
@@ -306,7 +306,7 @@
 ### **Slide 20: Considerações Finais**
 - **Title**
   - Considerações Finais
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - **Pergunta de Pesquisa Respondida:** "Como a combinação OpenAPI-MCP pode facilitar integração eficiente e segura?" - Validada positivamente através de evidências quantitativas;
   - **Viabilidade Técnica Confirmada:** Conversão automática OpenAPI→MCP alcançou 100% de sucesso (10/10 endpoints), eliminando desenvolvimento manual recorrente;
   - **Contribuição Científica:** Primeira validação experimental sistemática da integração OpenAPI-MCP com metodologia reproduzível e métricas objetivas;
@@ -323,7 +323,7 @@
 ### **Slide 21: Referências Bibliográficas**
 - **Title**
   - Referências Bibliográficas
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - ANTHROPIC. **Model Context Protocol (MCP): A Standard for AI Context Integration**. 2024. Disponível em: <https://www.anthropic.com/news/model-context-protocol>. Acesso em: 12 abr. 2025;
   - DENG, X. A More Accessible Web with Natural Language Interface. **Proceedings of the 20th International Web for All Conference**, 2023;
   - FAST, E. et al. **Iris: A Conversational Agent for Complex Tasks**. 2017. Disponível em: <https://arxiv.org/abs/1707.05015>. Acesso em: 15 jan. 2025;
@@ -342,7 +342,7 @@
 ### **Slide 22: Capa Final**
 - **Title**
   - TRANSFORMANDO APIS EM INTERFACES CONVERSACIONAIS: VALIDAÇÃO DA ABORDAGEM OPENAPI-MCP PARA AGENTES BASEADOS EM IA
-- **Content (bullet points, images, tables, etc.):**
+- **Content**
   - Orientando: Lucas de Castro Zanoni;
   - Orientador: Prof. Thyerri Fernandes Mezzari;
   - Centro Universitário UniSATC;

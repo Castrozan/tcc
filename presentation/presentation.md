@@ -1,7 +1,7 @@
 # Presentation Plan
 
 ## Editor guidelines
-- This should be a exact copy of the content in the powerpoint presentation, so only content that should be in the presentation should be here.
+- This should be a exact copy of the content in the PowerPoint presentation, so only content that should be in the presentation should be here.
 - The presentation should be in portuguese.
 - The presentation should have the ABNT format.
 - Slide definitions should be in the following format:
@@ -16,10 +16,6 @@
         - Sub-bullet point 3.
       - Images/Tables example:
         - ![Image description](images/image.png)
-      - Tables example:
-        | Header 1 | Header 2 |
-        | -------- | -------- |
-        | Data 1   | Data 2   |
     - **Why:**
       - Why the content is important.
     - **Speech script:**
@@ -310,7 +306,6 @@
   - **Pergunta de Pesquisa Respondida:** "Como a combinação OpenAPI-MCP pode facilitar integração eficiente e segura?" - Validada positivamente através de evidências quantitativas;
   - **Viabilidade Técnica Confirmada:** Conversão automática OpenAPI→MCP alcançou 100% de sucesso (10/10 endpoints), eliminando desenvolvimento manual recorrente;
   - **Contribuição Científica:** Primeira validação experimental sistemática da integração OpenAPI-MCP com metodologia reproduzível e métricas objetivas;
-  - **Democratização Tecnológica:** Interfaces conversacionais naturais tornam sistemas técnicos complexos acessíveis através de linguagem natural;
   - **Limitações Identificadas:** Variabilidade de performance (336%), escopo experimental restrito e necessidade de testes de segurança mais abrangentes;
   - **Direções Futuras:** Base sólida estabelecida para pesquisas em maior escala, otimizações de performance e validação empresarial.
 - **Why:**

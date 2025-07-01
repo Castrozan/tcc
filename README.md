@@ -7,6 +7,24 @@
 > **Autor:** Lucas de Castro Zanoni | **Orientador:** Thyerri Fernandes Mezzari  
 > **Instituição:** Centro Universitário UniSATC
 
+## 🤖 Como Funciona o Sistema?
+
+Este projeto permite que **modelos de linguagem (LLMs)** interajam com **APIs REST existentes** de forma natural, como se estivessem conversando com um humano. 
+
+O sistema funciona assim:
+
+* O usuário escreve algo como “quero buscar o equipamento 123”.
+* O modelo de linguagem entende a intenção.
+* A intenção é convertida pelo modelo de linguagem em chamadas de função.
+* A chamada de função é convertida em chamada de ferramentas MCP.
+* O cliente via protocolo MCP chama as ferramentas correspondentes a intenção do usuároo.
+* Nos servidores MCP a chamada é transformada em uma requisição HTTP real com base na especificação SWAGGER da aplicação destino.
+* A resposta da API é formatada e enviada de volta ao modelo de linguagem que interpreta e responde, como se fosse um bate-papo.
+
+### 🎥 Demonstração em Vídeo
+
+> [![](./demonstracao.mp4)](./demonstracao.mp4)
+
 ## 📖 Navegação Rápida
 
 | 🎯 **Seu Objetivo**          | 📋 **Comece Aqui**                                                      | ⏱️ **Tempo** |

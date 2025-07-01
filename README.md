@@ -23,7 +23,9 @@ O sistema funciona assim:
 
 ### 🎥 Demonstração em Vídeo
 
-<video src="demonstracao.mp4" controls style="max-width: 100%; height: auto;">
+[demonstracao.mp4](https://github.com/user-attachments/assets/37c8237f-6cad-467e-9adf-053319d673b0)
+
+<video src="https://github.com/user-attachments/assets/37c8237f-6cad-467e-9adf-053319d673b0" controls style="max-width: 100%; height: auto;">
   Seu navegador não suporta o vídeo.  
   <a href="demonstracao.mp4">Clique aqui para baixar o vídeo</a>.
 </video>

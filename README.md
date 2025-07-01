@@ -23,7 +23,10 @@ O sistema funciona assim:
 
 ### 🎥 Demonstração em Vídeo
 
-> ![demonstracao](./demonstracao.mp4)
+<video src="demonstracao.mp4" controls style="max-width: 100%; height: auto;">
+  Seu navegador não suporta o vídeo.  
+  <a href="demonstracao.mp4">Clique aqui para baixar o vídeo</a>.
+</video>
 
 ## 📖 Navegação Rápida
 

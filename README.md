@@ -1,6 +1,6 @@
 # TCC - Transformando APIs em Interfaces Conversacionais
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Castrozan/tcc)   <-- Converse com o projeto aqui
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Castrozan/tcc)  <-- Converse com o projeto
 
 > **Validação da Abordagem OpenAPI-MCP para Agentes Baseados em IA**  
 > *Trabalho de Conclusão de Curso - Engenharia de Software*  

@@ -9,10 +9,6 @@
 
 ## 🤖 Como Funciona o Sistema?
 
-Este projeto permite que **modelos de linguagem (LLMs)** interajam com **APIs REST existentes** de forma natural, como se estivessem conversando com um humano. 
-
-O sistema funciona assim:
-
 * O usuário escreve algo como “quero buscar o equipamento 123”.
 * O modelo de linguagem entende a intenção.
 * A intenção é convertida pelo modelo de linguagem em chamadas de função.
@@ -21,9 +17,7 @@ O sistema funciona assim:
 * Nos servidores MCP a chamada é transformada em uma requisição HTTP real com base na especificação SWAGGER da aplicação destino.
 * A resposta da API é formatada e enviada de volta ao modelo de linguagem que interpreta e responde, como se fosse um bate-papo.
 
-### 🎥 Demonstração em Vídeo
-
-[demonstracao.mp4](https://github.com/user-attachments/assets/37c8237f-6cad-467e-9adf-053319d673b0)
+## 🎥 Demonstração
 
 <video src="https://github.com/user-attachments/assets/37c8237f-6cad-467e-9adf-053319d673b0" controls style="max-width: 100%; height: auto;">
   Seu navegador não suporta o vídeo.  

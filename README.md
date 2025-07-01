@@ -23,7 +23,7 @@ O sistema funciona assim:
 
 ### 🎥 Demonstração em Vídeo
 
-> [![](./demonstracao.mp4)](./demonstracao.mp4)
+> ![demonstracao](./demonstracao.mp4)
 
 ## 📖 Navegação Rápida
 

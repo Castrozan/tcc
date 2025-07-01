@@ -1,11 +1,28 @@
 # TCC - Transformando APIs em Interfaces Conversacionais
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Castrozan/tcc)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Castrozan/tcc)  <-- Converse com o projeto
 
 > **Validação da Abordagem OpenAPI-MCP para Agentes Baseados em IA**  
 > *Trabalho de Conclusão de Curso - Engenharia de Software*  
 > **Autor:** Lucas de Castro Zanoni | **Orientador:** Thyerri Fernandes Mezzari  
 > **Instituição:** Centro Universitário UniSATC
+
+## 🤖 Como Funciona o Sistema?
+
+* O usuário escreve algo como “quero buscar o equipamento 123”.
+* O modelo de linguagem entende a intenção.
+* A intenção é convertida pelo modelo de linguagem em chamadas de função.
+* A chamada de função é convertida em chamada de ferramentas MCP.
+* O cliente via protocolo MCP chama as ferramentas correspondentes a intenção do usuároo.
+* Nos servidores MCP a chamada é transformada em uma requisição HTTP real com base na especificação SWAGGER da aplicação destino.
+* A resposta da API é formatada e enviada de volta ao modelo de linguagem que interpreta e responde, como se fosse um bate-papo.
+
+## 🎥 Demonstração
+
+<video src="https://github.com/user-attachments/assets/37c8237f-6cad-467e-9adf-053319d673b0" controls style="max-width: 100%; height: auto;">
+  Seu navegador não suporta o vídeo.  
+  <a href="demonstracao.mp4">Clique aqui para baixar o vídeo</a>.
+</video>
 
 ## 📖 Navegação Rápida
 

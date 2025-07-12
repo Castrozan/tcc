@@ -29,6 +29,7 @@
     "inspect": "node -r dotenv/config ./scripts/inspect.js",
     "inspect-watch": "node ./scripts/inspect-watch.js",
     "start": "node bin/mcp-server.js",
+    "start-tcc": "npm run start -- --api-base-url http://localhost:3002 --openapi-spec http://localhost:3002/openapi.json --transport http --port 3001",
     "test": "vitest run --config vitest.config.ts",
     "test:watch": "vitest watch --config vitest.config.ts"
   },

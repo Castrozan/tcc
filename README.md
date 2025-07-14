@@ -154,154 +154,6 @@ graph TB
 
 ---
 
-## 🚀 Começando
-
-### 📋 Pré-requisitos
-- Node.js 20+
-- npm ou yarn
-- Git
-
-### ⚠️ **Compatibilidade do Sistema**
-Este projeto foi desenvolvido e testado em **Nix OS**. Para outros sistemas operacionais:
-
-- **Linux/macOS**: Deve funcionar sem modificações
-- **Windows**: Pode requerer ajustes nos scripts de teste
-- **Playwright**: Execute `npx playwright install` se os testes E2E falharem
-- **Caminhos específicos**: Alguns scripts contêm caminhos específicos do Nix que podem precisar ser ajustados
-
-### ⚡ **Instalação Rápida**
-
-```bash
-# 1. Clone o repositório
-git clone https://github.com/Castrozan/TCC.git
-cd TCC
-
-# 2. Inicie o gerador MCP OpenAPI
-cd mcp-openapi-server
-npm install
-npm run build
-
-# 3. Inicie o cliente de chat
-cd ../chat-client
-npm install
-npm run dev
-# Acesse: http://localhost:5500
-
-# 4. (Opcional) Execute aplicações de teste
-cd ../equipments-dummy-app
-npm install
-npm run dev
-# API disponível em: http://localhost:3000
-
-cd ../professionals-dummy-app
-npm install  
-npm run dev
-# API disponível em: http://localhost:3001
-```
-
-### 🧪 **Executando os Testes**
-
-```bash
-# Testes E2E do cliente de chat
-cd chat-client
-npm install
-npm test
-
-# ⚠️ NOTA: Os testes podem requerer configuração específica do ambiente
-# Se você estiver usando Nix, os caminhos do Playwright já estão configurados
-# Para outros sistemas, veja: https://playwright.dev/docs/installation
-
-# Testes unitários do servidor MCP
-cd ../mcp-openapi-server
-npm test
-
-# Testes específicos do cliente de chat
-cd ../chat-client
-npm run test:performance  # Testes de performance
-npm run test:security     # Testes de segurança
-npm run test:ux          # Testes de experiência do usuário
-```
-
----
-
-## 🛠️ Uso Prático
-
-### 1. **Gerando Servidores MCP Automaticamente**
-
-```bash
-# Via NPX (recomendado)
-npx @ivotoby/openapi-mcp-server \
-  --api-base-url https://api.exemplo.com \
-  --openapi-spec https://api.exemplo.com/openapi.json \
-  --headers "Authorization:Bearer token123"
-
-# Modo HTTP para clientes web
-npx @ivotoby/openapi-mcp-server \
-  --transport http \
-  --port 3000
-```
-
-### 2. **Configurando Cliente de Chat**
-- Acesse `http://localhost:5500` após iniciar o cliente
-- Configure novos servidores MCP via interface gráfica
-- Execute comandos em linguagem natural
-
-### 3. **Integrando com Claude Desktop**
-
-```json
-{
-  "mcpServers": {
-    "openapi": {
-      "command": "npx",
-      "args": ["-y", "@ivotoby/openapi-mcp-server"],
-      "env": {
-        "API_BASE_URL": "https://api.exemplo.com",
-        "OPENAPI_SPEC_PATH": "https://api.exemplo.com/openapi.json"
-      }
-    }
-  }
-}
-```
-
----
-
-## 📊 Resultados de Pesquisa
-
-### 🎯 Performance Validada
-- **100% de conversão** OpenAPI → MCP bem-sucedida
-- **Tempo médio de resposta**: 3.757ms (variação controlada)
-- **Taxa de sucesso**: 100% em cenários testados
-
-### 🔒 Segurança Comprovada
-- **Proteção contra ataques básicos**: 100% eficácia
-- **Validação de entrada**: Schemas OpenAPI como primeira linha de defesa
-- **Resistência a prompt injection**: Testes de red teaming aprovados
-
-### 😊 Experiência do Usuário
-- **Satisfação geral**: 4.0/5.0
-- **Utilidade das informações**: 4.3/5.0
-- **Clareza da comunicação**: 4.0/5.0
-
----
-
-## 🔮 Trabalhos Futuros
-
-### 🎯 Próximos Passos Identificados
-1. **Otimização de Performance**: Implementar cache inteligente e estratégias de otimização
-2. **Validação Empresarial**: Testes em ambientes de produção de larga escala
-3. **Segurança Avançada**: Avaliar ameaças sofisticadas e ataques persistentes
-4. **Escalabilidade**: Coordenação de dezenas/centenas de servidores MCP
-5. **Comparação**: Estudos comparativos com outras abordagens de integração
-6. **Especificações Adicionais**: Suporte para GraphQL e outros padrões
-
-### 🌟 Impacto Esperado
-- **Democratização Tecnológica**: Acesso simplificado a sistemas complexos
-- **Redução de Complexidade**: Eliminação de desenvolvimento manual recorrente
-- **Inclusão Digital**: Interfaces mais acessíveis e intuitivas
-- **Inovação Empresarial**: Facilitação de adoção de IA conversacional
-
----
-
 ## 🔄 Workflow de Desenvolvimento Acadêmico
 
 ### 📝 Por que este Workflow?
@@ -315,20 +167,6 @@ Este TCC foi desenvolvido seguindo um **workflow orientado a código e versionam
 5. **🔧 Integração**: Código e documentação no mesmo repositório
 6. **🔁 Reprodutibilidade**: Qualquer pessoa pode reproduzir o ambiente
 7. **👥 Colaboração**: Formato texto facilita revisões e sugestões
-
-### 🛠️ Comandos Úteis
-
-```bash
-# Gerar o artigo em PDF
-cd article
-make pdf
-
-# Salvar bookmarks de pesquisa
-make save-bookmarks
-
-# Aplicar configuração do Claude
-make apply-claude-config
-```
 
 ---
 
@@ -379,23 +217,6 @@ TCC/
 
 ---
 
-## 🏅 Reconhecimentos
-
-### 📈 Métricas do Projeto
-- **⭐ Contribuição Científica**: Validação inicial OpenAPI-MCP
-- **🔬 Rigor Metodológico**: Framework experimental reproduzível
-- **💻 Implementação Técnica**: 4 componentes funcionais integrados
-- **📊 Validação Empírica**: Dados quantitativos objetivos
-- **🌟 Inovação**: Primeira validação sistemática da abordagem
-
-### 🎓 Contexto Acadêmico
-- **Curso**: Engenharia de Software
-- **Modalidade**: Trabalho de Conclusão de Curso (TCC)
-- **Área**: Inteligência Artificial + Engenharia de Software
-- **Abordagem**: Pesquisa experimental aplicada
-
----
-
 ## 📚 Citação Acadêmica
 
 ### 📄 **BibTeX Format**
@@ -419,59 +240,15 @@ TCC/
 ## 👤 Autor & Contato
 
 **Lucas de Castro Zanoni**  
-📧 castro.lucas290@gmail.com  
+📧 castro [dot] lucas290 [at] gmail [dot] com  
 🐙 [@Castrozan](https://github.com/Castrozan)  
 🎓 Graduando em Engenharia de Software - UniSATC
 
 **Orientador**: Prof. Thyerri Fernandes Mezzari  
-📧 thyerri.mezzari@satc.edu.br
+📧 thyerri [dot] mezzari [at] satc [dot] edu [dot] br
 
 ---
 
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
-
----
-
-## 🚀 Status do Projeto
-
-✅ **Pesquisa Completa** | ✅ **Implementação Funcional** | ✅ **Validação Experimental** | ✅ **Documentação Acadêmica**
-
-> *"Esta pesquisa estabelece evidências preliminares convincentes sobre a possibilidade de grandes avanços na facilitação da integração entre sistemas existentes e LLMs, promovendo maior acessibilidade, usabilidade e democratização do acesso a tecnologias complexas."*
-
----
-
-## 🚧 **Solução de Problemas**
-
-### **❗ Erro nos Testes E2E**
-```bash
-# Se receber erro sobre Playwright
-npx playwright install
-
-# Se ainda falhar, execute manualmente:
-cd chat-client
-npx playwright test --project chromium --timeout 10000
-```
-
-### **❗ Comandos npm não encontrados**
-```bash
-# Verifique se está no diretório correto de cada componente
-# Cada pasta tem seu próprio package.json:
-cd mcp-openapi-server  # Para o gerador MCP
-cd chat-client         # Para o cliente de chat  
-cd equipments-dummy-app     # Para API de equipamentos
-cd professionals-dummy-app  # Para API de profissionais
-```
-
-### **❗ Portas já em uso**
-- **Cliente de chat**: http://localhost:5500
-- **API equipamentos**: http://localhost:3000  
-- **API profissionais**: http://localhost:3001
-
-Se alguma porta estiver ocupada, termine os processos ou ajuste as configurações nos arquivos de cada componente.
-
-### **❗ Problemas específicos do sistema**
-- **Nix OS**: Configuração otimizada, deve funcionar sem modificações
-- **Linux/macOS**: Instale dependências com `npm install` em cada diretório
-- **Windows**: Pode precisar de WSL ou ajustes nos scripts de teste

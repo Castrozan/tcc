@@ -162,25 +162,9 @@ npx @ivotoby/openapi-mcp-server \
 
 ---
 
-## 🤔 **Dúvidas Frequentes**
+### 📚 **Como citar este trabalho?**
 
-### **❓ "É só um protótipo ou funciona de verdade?"**
-✅ **Funciona**: 100% dos testes automatizados passam, APIs reais integradas, métricas objetivas coletadas.
-
-### **❓ "Qual o diferencial científico?"**
-🔬 **Primeiro estudo sistemático** de integração OpenAPI-MCP com validação experimental rigorosa.
-
-### **❓ "Posso usar em produção?"**
-⚠️ **Prova de conceito**: Validado em cenários controlados. Para produção, considere limitações identificadas e requisitos específicos do seu ambiente.
-
-### **❓ "Os comandos funcionam em qualquer sistema?"**
-⚠️ **Configuração específica**: Os testes estão configurados para Nix OS. Para outros sistemas:
-- Instale Node.js 20+
-- Execute `npx playwright install` antes dos testes E2E
-- Alguns caminhos podem precisar ser ajustados
-
-### **❓ "Como citar este trabalho?"**
-📚 **BibTeX Format**:
+**BibTeX Format**:
 ```bibtex
 @mastersthesis{zanoni2025openapi,
   title = {Transformando APIs em Interfaces Conversacionais: Validação da Abordagem OpenAPI-MCP para Agentes Baseados em IA},

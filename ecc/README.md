@@ -33,7 +33,10 @@ Para transformar a pesquisa acadêmica em um empreendimento viável, está sendo
 ### Proposta de Valor
 Automatizar a criação de interfaces conversacionais para sistemas existentes, eliminando 90% do código customizado tradicionalmente necessário para integrar APIs com assistentes de IA.
 
-📋 Para detalhes completos da metodologia de validação: [Validação AI-Centric](validacao/validacao-AI-centric.md)
+### 🚀 Produto: ChatBridge
+**ChatBridge** é o nome comercial da plataforma que transforma APIs existentes em interfaces conversacionais, permitindo que usuários interajam com sistemas complexos através de linguagem natural.
+
+📋 Para detalhes completos da metodologia de validação: [Validação](validacao/validacao.md)
 
 ---
 

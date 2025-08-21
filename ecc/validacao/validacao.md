@@ -1,6 +1,7 @@
 # 📋 VALIDAÇÃO DO PROBLEMA & SOLUÇÃO
 
-## Ideia de Negócio: **Plataforma de Integração Conversacional para APIs via MCP/OpenAPI**
+## Ideia de Negócio: **ChatBridge**
+*Plataforma que transforma APIs em interfaces conversacionais através de automação MCP/OpenAPI*
 
 ---
 

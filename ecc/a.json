@@ -1,0 +1,50 @@
+{
+    "_id": {
+        "$oid": "56e1870c0806wfs6f2453d3ee8f"
+    },
+    "user": "lucas.zanoni",
+    "system": {
+        "$numberLong": "63"
+    },
+    "admin": true,
+    "createAt": {
+        "$date": "2025-08-21T14:39:08.989Z"
+    },
+    "createBy": "lucas.zanoni",
+    "permissions": [
+        {
+            "id": "TurmaPageMapping",
+            "revokedOperations": [
+                "editar"
+            ]
+        },
+        {
+            "id": "EnturmacaoPageMapping",
+            "revokedOperations": [
+                "excluir"
+            ]
+        },
+        {
+            "id": "MatriculaPageMapping",
+            "revokedOperations": [
+                "movimentar"
+            ]
+        },
+        {
+            "id": "VagaPageMapping"
+        }
+    ],
+    "context": {
+        "licenseContext": {
+            "database": {
+                "$numberLong": "1"
+            },
+            "entity": {
+                "$numberLong": "2"
+            },
+            "hash": "ZGF0YWJhc2UFDSGDGSD6NDA4NyxlbnRpdHk6Nzc3"
+        },
+        "currentHash": "ZGF0YWJhc2U6NDA4NFSDFSDFSDFyxlbnRpdHk6Nzc3"
+    },
+    "userName": "Lucas Zanoni"
+}

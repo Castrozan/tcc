@@ -1,186 +1,186 @@
-Perfect — I read through all three materials and here’s a full breakdown for your **ECC pitch** and a **detailed 5-minute roteiro (script)** following the structure from the examples and your project’s documentation.
+Perfeito — Eu li os três materiais e aqui está um detalhamento completo para o seu **pitch ECC** e um **roteiro detalhado de 5 minutos** seguindo a estrutura dos exemplos e da documentação do seu projeto.
 
 ---
 
-## 🧩 **Your Project Summary (from Entregas ECC)**
+## 🧩 **Resumo do Seu Projeto (das Entregas ECC)**
 
-**Theme:** Conversational AI Integration Platform
-**Problem:**
-Companies already have REST APIs but face long and complex integration cycles when adding conversational AI. Each system integration can take months, resulting in fragmented user experiences.
+**Tema:** Plataforma de Integração de IA Conversacional
+**Problema:**
+As empresas já possuem APIs REST, mas enfrentam ciclos de integração longos e complexos ao adicionar IA conversacional. Cada integração de sistema pode levar meses, resultando em experiências de usuário fragmentadas.
 
-**Solution:**
-A platform that automatically converts REST API specifications (OpenAPI/Swagger) into conversational interfaces — intelligent agents that let users interact with systems naturally, through chat.
+**Solução:**
+Uma plataforma que converte automaticamente especificações de APIs REST (OpenAPI/Swagger) em interfaces conversacionais — agentes inteligentes que permitem aos usuários interagir com sistemas naturalmente, através de chat.
 
-**Public Target:**
-CTOs, software architects, and product managers in medium-to-large companies that want to adopt AI faster without complex development.
+**Público-Alvo:**
+CTOs, arquitetos de software e gerentes de produto em empresas médio-grandes que querem adotar IA mais rapidamente sem desenvolvimento complexo.
 
-**Differential:**
+**Diferencial:**
 
-* Automates creation of conversational agents directly from API specs.
-* Low-code/no-code integration.
-* Focused on startups and mid-sized tech companies.
-* Lower cost vs. big global players.
-* Privacy-compliant (LGPD).
+* Automatiza a criação de agentes conversacionais diretamente das especificações de API.
+* Integração low-code/no-code.
+* Focado em startups e empresas de tecnologia de médio porte.
+* Menor custo vs. grandes players globais.
+* Compliance com privacidade (LGPD).
 
-**Market:**
+**Mercado:**
 
 * TAM ≈ US$ 10 bi (global)
-* SAM ≈ US$ 800 mi (LatAm)
-* SOM ≈ US$ 0.5 mi (Brazil, short term)
+* SAM ≈ US$ 800 mi (América Latina)
+* SOM ≈ US$ 0,5 mi (Brasil, curto prazo)
 
-**Competitors:**
+**Concorrentes:**
 Botpress, Dialogflow, Power Virtual Agents, Rasa, Zapier.
-**Your edge:** automation, simplicity, price, local compliance.
+**Sua vantagem:** automação, simplicidade, preço, compliance local.
 
-**Business Model:**
-B2B SaaS — monthly license (R$ 1.500 – 3.000 / month), possible freemium or pilot entry.
+**Modelo de Negócio:**
+B2B SaaS — licença mensal (R$ 1.500 – 3.000 / mês), possível entrada freemium ou piloto.
 
 ---
 
-## 🎬 **Pitch Flow (5 min / up to 10 slides)**
+## 🎬 **Fluxo do Pitch (5 min / até 10 slides)**
 
-Based on *Aula_Pitch_Certo*  and *Exemplo_CC_Business* .
+Baseado em *Aula_Pitch_Certo* e *Exemplo_CC_Business*.
 
 ### 🔹 Slide 1 — Elevator Ride (0 – 0:30)
 
-> Hook + Problem + Impact
+> Gancho + Problema + Impacto
 
-**Script:**
+**Roteiro:**
 
-> “Imagine your company has ten different systems — CRM, ERP, support, billing — all with APIs.
-> But every time you want to connect them with AI, it takes months of development, tons of testing, and each system speaks a different language.
-> The result? Fragmented experiences, lost productivity, and delayed innovation.
-> We’re here to fix that.”
-
----
-
-### 🔹 Slide 2 — The Problem (0:30 – 1:00)
-
-Show who suffers, evidence from validation (ECC doc stage 1 ).
-
-**Script:**
-
-> “Our research with over 15 companies and 7 CTOs confirmed:
-> even with well-documented APIs, integrating them with conversational AI takes 2–3 months per system.
-> 90 % say they lack internal expertise and tools to do it efficiently.”
-
-Visual: short graph/bar showing time vs integration difficulty.
+> "Imagine que sua empresa tem dez sistemas diferentes — CRM, ERP, suporte, faturamento — todos com APIs.
+> Mas toda vez que você quer conectá-los com IA, são meses de desenvolvimento, toneladas de teste, e cada sistema fala uma linguagem diferente.
+> O resultado? Experiências fragmentadas, produtividade perdida e inovação atrasada.
+> Estamos aqui para resolver isso."
 
 ---
 
-### 🔹 Slide 3 — The Solution (1:00 – 1:30)
+### 🔹 Slide 2 — O Problema (0:30 – 1:00)
 
-> Product + How it works + Demo snippet
+Mostrar quem sofre, evidências da validação (doc ECC etapa 1).
 
-**Script:**
+**Roteiro:**
 
-> “We created a platform that reads an API spec (OpenAPI) and automatically generates a conversational agent.
-> In minutes, that API can be accessed by natural language — no coding, no custom infrastructure.
-> Let’s look at the demo.”
-> *(insert short 10 s clip or screen showing the MVP from your Google Drive link)*
+> "Nossa pesquisa com mais de 15 empresas e 7 CTOs confirmou:
+> mesmo com APIs bem documentadas, integrá-las com IA conversacional leva 2–3 meses por sistema.
+> 90% dizem que não têm expertise interna e ferramentas para fazer isso eficientemente."
 
----
-
-### 🔹 Slide 4 — The Market (1:30 – 2:00)
-
-Show TAM / SAM / SOM from Entregas ECC .
-
-**Script:**
-
-> “Conversational AI will surpass US$ 32 billion globally by 2030.
-> Our intersection — conversational AI + API management — represents ~ US$ 10 billion TAM.
-> In Latin America, about US$ 800 million, and in Brazil alone, we can reach ~ US$ 0.5 million per year in the first phase.”
-
-Visual: concentric TAM / SAM / SOM circles.
+Visual: gráfico/barra curto mostrando tempo vs dificuldade de integração.
 
 ---
 
-### 🔹 Slide 5 — The Business Model (2:00 – 2:30)
+### 🔹 Slide 3 — A Solução (1:00 – 1:30)
 
-Show revenue strategy (B2B subscription + pilot).
+> Produto + Como funciona + Snippet da demo
 
-**Script:**
+**Roteiro:**
 
-> “Our model is B2B SaaS — companies pay a monthly subscription, from R$ 1.500 to R$ 3.000 per license.
-> We’ll begin with pilot programs and a freemium tier to accelerate adoption.
-> Our ROI comes from reducing integration time from months to hours.”
-
-Visual: small recurring-revenue diagram.
-
----
-
-### 🔹 Slide 6 — The Competition (2:30 – 3:00)
-
-Show differentiation matrix.
-
-**Script:**
-
-> “There are great tools like Dialogflow and Power Virtual Agents,
-> but they need heavy manual setup and target large enterprises.
-> We’re different: automation from OpenAPI → chat agent in one click,
-> lower cost, and LGPD-compliant hosting in Brazil.”
-
-Visual: table with checkmarks for features.
+> "Criamos uma plataforma que lê uma especificação de API (OpenAPI) e gera automaticamente um agente conversacional.
+> Em minutos, essa API pode ser acessada por linguagem natural — sem código, sem infraestrutura customizada.
+> Vamos ver a demo."
+> *(inserir clipe curto de 10s ou tela mostrando o MVP do seu link do Google Drive)*
 
 ---
 
-### 🔹 Slide 7 — Target User (3:00 – 3:30)
+### 🔹 Slide 4 — O Mercado (1:30 – 2:00)
 
-> Show persona and acquisition plan.
+Mostrar TAM / SAM / SOM das Entregas ECC.
 
-**Script:**
+**Roteiro:**
 
-> “Our initial users are CTOs and software architects in SaaS startups and mid-sized tech companies.
-> We’ll reach them through LinkedIn tech communities and local events in Santa Catarina and São Paulo.
-> Marketing strategy: pilot partnerships + content marketing showing real time savings.”
+> "IA conversacional vai ultrapassar US$ 32 bilhões globalmente até 2030.
+> Nossa intersecção — IA conversacional + gerenciamento de API — representa ~ US$ 10 bilhões TAM.
+> Na América Latina, cerca de US$ 800 milhões, e só no Brasil, podemos alcançar ~ US$ 0,5 milhões por ano na primeira fase."
 
----
-
-### 🔹 Slide 8 — Technology (3:30 – 4:00)
-
-Optional but valuable given your audience.
-
-**Script:**
-
-> “The platform is built with a microservice architecture — a backend in Go and Python for agent generation and an API orchestrator to consume OpenAPI specifications.
-> It uses GPT-based models for conversation flow and secure access management for enterprise data.”
+Visual: círculos concêntricos TAM / SAM / SOM.
 
 ---
 
-### 🔹 Slide 9 — Team (4:00 – 4:30)
+### 🔹 Slide 5 — O Modelo de Negócio (2:00 – 2:30)
 
-> Introduce yourselves + roles.
+Mostrar estratégia de receita (assinatura B2B + piloto).
 
-**Script:**
+**Roteiro:**
 
-> “Our team combines expertise in backend architecture and AI:
-> Bruno Boger – backend lead; Douglas Kuerten – integration specialist;
-> Lucas Zanoni – AI and platform architecture;
-> Joel Francisco – frontend and UX; Vinicius Milanez – infrastructure and deployment.
-> Together we built and tested the MVP you just saw.”
+> "Nosso modelo é B2B SaaS — empresas pagam uma assinatura mensal, de R$ 1.500 a R$ 3.000 por licença.
+> Começaremos com programas piloto e um nível freemium para acelerar a adoção.
+> Nosso ROI vem da redução do tempo de integração de meses para horas."
 
----
-
-### 🔹 Slide 10 — Future and Call to Action (4:30 – 5:00)
-
-> Vision + Next steps + Closing.
-
-**Script:**
-
-> “Our next goal is to launch a beta with three regional partners and scale to Latin America in 2026.
-> We aim to make API integration as simple as talking to an assistant.
-> If you believe in a future where every system can be accessed by conversation — join us to build it.”
+Visual: pequeno diagrama de receita recorrente.
 
 ---
 
-## 🧭 Tips for Your Delivery
+### 🔹 Slide 6 — A Concorrência (2:30 – 3:00)
 
-* Keep ≈ 30 seconds per slide.
-* Use one speaker (you or a chosen representative).
-* Start strong and end with a clear vision of impact.
-* Use the MVP demo as a hook — visual proof sells better than concepts.
-* Avoid reading slides verbatim — tell a story.
+Mostrar matriz de diferenciação.
+
+**Roteiro:**
+
+> "Existem ótimas ferramentas como Dialogflow e Power Virtual Agents,
+> mas elas precisam de configuração manual pesada e miram grandes empresas.
+> Somos diferentes: automação de OpenAPI → agente de chat em um clique,
+> menor custo, e hospedagem em compliance com LGPD no Brasil."
+
+Visual: tabela com checkmarks para recursos.
 
 ---
 
-Would you like me to draft the **actual slide outline (titles + key points + design suggestions)** next, matching this script? That way you’ll have the full presentation structure ready for PowerPoint or Canva.
+### 🔹 Slide 7 — Usuário-Alvo (3:00 – 3:30)
+
+> Mostrar persona e plano de aquisição.
+
+**Roteiro:**
+
+> "Nossos usuários iniciais são CTOs e arquitetos de software em startups SaaS e empresas de tecnologia de médio porte.
+> Vamos alcançá-los através de comunidades tech do LinkedIn e eventos locais em Santa Catarina e São Paulo.
+> Estratégia de marketing: parcerias piloto + marketing de conteúdo mostrando economia real de tempo."
+
+---
+
+### 🔹 Slide 8 — Tecnologia (3:30 – 4:00)
+
+Opcional, mas valiosa dado seu público.
+
+**Roteiro:**
+
+> "A plataforma é construída com arquitetura de microsserviços — um backend em Go e Python para geração de agentes e um orquestrador de API para consumir especificações OpenAPI.
+> Usa modelos baseados em GPT para fluxo de conversa e gerenciamento de acesso seguro para dados empresariais."
+
+---
+
+### 🔹 Slide 9 — Time (4:00 – 4:30)
+
+> Apresentar vocês + funções.
+
+**Roteiro:**
+
+> "Nossa equipe combina expertise em arquitetura backend e IA:
+> Bruno Boger – líder de backend; Douglas Kuerten – especialista em integração;
+> Lucas Zanoni – IA e arquitetura de plataforma;
+> Joel Francisco – frontend e UX; Vinicius Milanez – infraestrutura e deploy.
+> Juntos construímos e testamos o MVP que vocês acabaram de ver."
+
+---
+
+### 🔹 Slide 10 — Futuro e Call to Action (4:30 – 5:00)
+
+> Visão + Próximos passos + Fechamento.
+
+**Roteiro:**
+
+> "Nossa próxima meta é lançar um beta com três parceiros regionais e escalar para a América Latina em 2026.
+> Nosso objetivo é tornar a integração de API tão simples quanto falar com um assistente.
+> Se vocês acreditam em um futuro onde todo sistema pode ser acessado por conversa — juntem-se a nós para construí-lo."
+
+---
+
+## 🧭 Dicas para Sua Apresentação
+
+* Mantenha ≈ 30 segundos por slide.
+* Use um apresentador (você ou um representante escolhido).
+* Comece forte e termine com uma visão clara de impacto.
+* Use a demo do MVP como gancho — prova visual vende melhor que conceitos.
+* Evite ler os slides literalmente — conte uma história.
+
+---
+
+Gostaria que eu elaborasse o **esboço real dos slides (títulos + pontos-chave + sugestões de design)** em seguida, combinando com este roteiro? Assim vocês terão a estrutura completa da apresentação pronta para PowerPoint ou Canva.

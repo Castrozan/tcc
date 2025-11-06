@@ -1,13 +1,13 @@
 # PITCH## apresentando os resultadosProfessora dra. Claudia Nandi Formentin
 ---
 
-Um pitch é uma apresentação rápida de um projeto contendo todas as informações importantes encantando o interlocuto
+Um pitch é uma apresentação rápida de um projeto contendo todas as informações importantes encantando o interlocutor
 
 ---
 
-## Elementos Essenciai
+## Elementos Essenciais
 
-1.  Elevator Ride(30 segundos
+1.  Elevator Ride(30 segundos)
 2.  Demonstração do produto
 3.  O negócio
 4.  Usuário + receita

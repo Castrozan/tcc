@@ -1,7 +1,3 @@
-Perfeito — Eu li os três materiais e aqui está um detalhamento completo para o seu **pitch ECC** e um **roteiro detalhado de 5 minutos** seguindo a estrutura dos exemplos e da documentação do seu projeto.
-
----
-
 ## 🧩 **Resumo do Seu Projeto (das Entregas ECC)**
 
 **Tema:** Plataforma de Integração de IA Conversacional
@@ -180,7 +176,3 @@ Opcional, mas valiosa dado seu público.
 * Comece forte e termine com uma visão clara de impacto.
 * Use a demo do MVP como gancho — prova visual vende melhor que conceitos.
 * Evite ler os slides literalmente — conte uma história.
-
----
-
-Gostaria que eu elaborasse o **esboço real dos slides (títulos + pontos-chave + sugestões de design)** em seguida, combinando com este roteiro? Assim vocês terão a estrutura completa da apresentação pronta para PowerPoint ou Canva.

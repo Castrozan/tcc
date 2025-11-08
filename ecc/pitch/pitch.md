@@ -4,9 +4,7 @@
 
 ### 🔹 Slide 1 — Elevator Ride (0 – 0:30)
 
-> Gancho + Problema + Oportunidade
-
-**Roteiro:**
+Gancho + Problema + Oportunidade
 
 > "Implementar IA em cada sistema da Betha? O que vocês acham? Meses de desenvolvimento por sistema.
 > Mas e se eu te disser que a gente pode implementar isso automaticamente e em minutos?"
@@ -16,8 +14,6 @@
 ### 🔹 Slide 2 — O Desafio Interno (0:30 – 1:00)
 
 Mostrar a dor real da Betha e de seus clientes.
-
-**Roteiro:**
 
 > "Nossos clientes — gestores e servidores municipais — trabalham com sistemas complexos diariamente.
 > Para completar tarefas complexas — emitir nota fiscal, consultar tributos, aprovar documentos — servidores precisam navegar por dezenas de telas, clicar inúmeras vezes, e alternar entre múltiplos sistemas.
@@ -34,7 +30,6 @@ Visual: Diagrama mostrando múltiplos sistemas desconectados vs. tempo de integr
 > Produto + Como funciona + Demo
 
 > Vejam a demo."
-**Roteiro:**
 > "Por esse motivo desenvolvemos um motor que lê as especificações OpenAPI dos sistemas da Betha e gera **automaticamente** agentes conversacionais.
 > Em vez de meses de desenvolvimento, conectamos um sistema em **minutos**.
 > E agora? Como nossos usuários vão interagir com o sistema em conjunto com o agente? Uma única conversa: 'Emita nota fiscal para fornecedor X'. O agente executa todas as etapas uma depois da outra, consultando múltiplos sistemas as vezes, pedindo mais informação para o usuário, informa o progresso em tempo real e conclui uma atividade.
@@ -44,8 +39,6 @@ Visual: Diagrama mostrando múltiplos sistemas desconectados vs. tempo de integr
 ### 🔹 Slide 4 — O Mercado ea Oportunidade (1:30 – 2:00)
 
 Contextualizar o mercado de IA e o posicionamento da Betha.
-
-**Roteiro:**
 
 > "O mercado global de IA conversacional deve ultrapassar US$ 32 bilhões até 2030.
 > No Brasil, o setor público representa uma fatia significativa desse mercado tech — e a Betha no top 1 do mercado GOV. Estamos perfeitamente posicionados.
@@ -58,8 +51,6 @@ Visual: Mercado de IA + posicionamento da Betha vs. concorrentes no setor públi
 ### 🔹 Slide 5 — O Modelo de Inovação Interna (2:00 – 2:30)
 
 Mostrar como o projeto se sustenta e gera valor.
-
-**Roteiro:**
 
 > A Betha aproveita toda infraestrutura, sistemas e conhecimento que já possui dos serviços e ecossistema, sem se preocupar com mais código ou times.
 > O retorno vem de três frentes:
@@ -75,8 +66,6 @@ Visual: Diagrama de valor gerado (diferencial competitivo + redução de custos 
 
 Mostrar por que não usar soluções prontas do mercado.
 
-**Roteiro:**
-
 > "Poderíamos contratar outras empresas para fazer integração com IA, Dialogflow, Power Virtual Agents ou Botpress.
 > Mas essas soluções exigem configuração manual pesada, não entendem nossos sistemas, e custam caro em licenças externas.
 > **Nossa vantagem:**
@@ -91,9 +80,7 @@ Visual: Tabela comparativa com checkmarks mostrando nossas vantagens.
 
 ### 🔹 Slide 7 — Usuários e Impacto Real (3:00 – 3:30)
 
-> Mostrar quem se beneficia e como.
-
-**Roteiro:**
+Mostrar quem se beneficia e como.
 
 > "Três públicos se beneficiam diretamente:
 > - **1. Servidores municipais:** Acessam informações rapidamente conversando, sem precisar dominar múltiplos sistemas.
@@ -109,8 +96,6 @@ Visual: Personas dos três públicos + benefícios.
 
 Mostrar solidez técnica (importante para público técnico).
 
-**Roteiro:**
-
 > "A solução é robusta e escalável:
 > - **Gerador automático de agentes MCP** que lê OpenAPI e cria servidores conversacionais
 > - **Cliente de chat multi-servidor** que orquestra múltiplos sistemas simultaneamente
@@ -123,9 +108,7 @@ Visual: Diagrama de arquitetura simplificado.
 
 ### 🔹 Slide 9 — Time de Intraempreendedorismo (4:00 – 4:30)
 
-> Apresentar a equipe e expertise.
-
-**Roteiro:**
+Apresentar a equipe e expertise.
 
 > "Somos uma equipe multidisciplinar que uniu expertise técnica e visão de negócio:
 > - **Bruno Dimon** – Arquitetura backend e integração de sistemas
@@ -139,15 +122,11 @@ Visual: Diagrama de arquitetura simplificado.
 
 ### 🔹 Slide 10 — Próximos Passos e Visão de Futuro (4:30 – 5:00)
 
-> Visão + Roadmap + Call to Action
-
-**Roteiro:**
+Visão + Roadmap + Call to Action
 
 > "**Próximos passos:**
 > 1. Piloto interno com sistemas da Betha (Studio aplicações, Documentos, Saúde)
 > 2. Validação com clientes-piloto em 2 prefeituras parceiras
 > 3. Expansão para todo ecossistema de sistemas da Betha em 2026
-> 
 > **Nossa visão:** Tornar a Betha Sistemas a referência em **gestão municipal inteligente**, onde qualquer servidor pode acessar qualquer informação simplesmente conversando.
-> 
 > A IA agentiva não é o futuro — é o presente. E a Betha pode estar na liderança.

@@ -10,7 +10,13 @@ TODOs:
 
 ## 🎬 **Fluxo do Pitch (5 min / até 10 slides)**
 
-### 🔹 Slide 1 — Elevator Ride (0 – 0:30)
+### 🔹 Slide 1 — Capa (0:00 – 0:05)
+
+> "Boa noite!"
+
+---
+
+### 🔹 Slide 2 — Elevator Ride (0 – 0:30)
 
 Gancho + Problema + Oportunidade
 
@@ -19,7 +25,7 @@ Gancho + Problema + Oportunidade
 
 ---
 
-### 🔹 Slide 2 — O Desafio Interno (0:30 – 1:00)
+### 🔹 Slide 3 — O Desafio Interno (0:30 – 1:00)
 
 Mostrar a dor real da Betha e de seus clientes.
 
@@ -30,7 +36,7 @@ Mostrar a dor real da Betha e de seus clientes.
 
 ---
 
-### 🔹 Slide 3 — A Solução que Desenvolvemos (1:00 – 1:30)
+### 🔹 Slide 4 — A Solução que Desenvolvemos (1:00 – 1:30)
 Produto + Como funciona + Demo
 
 > "Por esse motivo desenvolvemos um motor que reaproveita as especificações técnicas dos sistemas da Betha e gera **automaticamente** agentes conversacionais. (colocar texto no slide com as palavras documentação e OPENAPI/SWAGGER)
@@ -40,7 +46,7 @@ Produto + Como funciona + Demo
 
 ---
 
-### 🔹 Slide 4 — O Mercado e a Oportunidade (1:30 – 2:00)
+### 🔹 Slide 5 — O Mercado e a Oportunidade (1:30 – 2:00)
 
 Contextualizar o mercado de IA e o posicionamento da Betha.
 
@@ -50,7 +56,7 @@ Contextualizar o mercado de IA e o posicionamento da Betha.
 
 ---
 
-### 🔹 Slide 5 — O Modelo de Inovação Interna (2:00 – 2:30)
+### 🔹 Slide 6 — O Modelo de Inovação Interna (2:00 – 2:30)
 
 Mostrar como o projeto se sustenta e gera valor.
 
@@ -62,7 +68,7 @@ Mostrar como o projeto se sustenta e gera valor.
 
 ---
 
-### 🔹 Slide 6 — Comparação com Alternativas (2:30 – 3:00)
+### 🔹 Slide 7 — Comparação com Alternativas (2:30 – 3:00)
 
 Mostrar por que não usar soluções prontas do mercado.
 
@@ -76,7 +82,7 @@ Mostrar por que não usar soluções prontas do mercado.
 
 ---
 
-### 🔹 Slide 7 — Usuários e Impacto Real (3:00 – 3:30)
+### 🔹 Slide 8 — Usuários e Impacto Real (3:00 – 3:30)
 
 Mostrar quem se beneficia e como.
 
@@ -88,7 +94,7 @@ Mostrar quem se beneficia e como.
 
 ---
 
-### 🔹 Slide 8 — Tecnologia e Arquitetura (3:30 – 4:00)
+### 🔹 Slide 9 — Tecnologia e Arquitetura (3:30 – 4:00)
 
 Mostrar solidez técnica (importante para público técnico).
 
@@ -98,7 +104,7 @@ Mostrar solidez técnica (importante para público técnico).
 
 ---
 
-### 🔹 Slide 9 — Time de Intraempreendedorismo (4:00 – 4:30)
+### 🔹 Slide 10 — Time de Intraempreendedorismo (4:00 – 4:30)
 
 Apresentar a equipe e expertise.
 
@@ -112,7 +118,7 @@ Apresentar a equipe e expertise.
 
 ---
 
-### 🔹 Slide 10 — Próximos Passos e Visão de Futuro (4:30 – 5:00)
+### 🔹 Slide 11 — Próximos Passos e Visão de Futuro (4:30 – 5:00)
 
 Visão + Roadmap + Call to Action
 

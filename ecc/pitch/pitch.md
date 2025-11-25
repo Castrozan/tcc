@@ -19,8 +19,6 @@ Mostrar a dor real da Betha e de seus clientes.
 > E a gente sabe que a Betha tem um enorme ecossistema de aplicações, e ai que está o problema, pois integrá-las com IA do zero levaria meses de desenvolvimento, **por sistema**.
 > Enquanto isso, empresas do mercado tech e as concorrentes diretos da Betha já anunciam 'soluções com IA'. Isso significa que estamos perdendo tempo e diferencial competitivo."
 
-Visual: Diagrama mostrando múltiplos sistemas desconectados vs. tempo de integração tradicional.
-
 ---
 
 ### 🔹 Slide 3 — A Solução que Desenvolvemos (1:00 – 1:30)
@@ -41,8 +39,6 @@ Contextualizar o mercado de IA e o posicionamento da Betha.
 > No Brasil, o setor público representa uma fatia significativa desse mercado tech — e a Betha no top 1 do mercado GOV. Estamos perfeitamente posicionados.
 > Nossos concorrentes diretos (IPM Sistemas, TOTVS, ELOTECH) estão também nesta corrida para implementar IA nos sistemas, mas com nossa solução automatizada, a Betha sai na frente com **diferencial competitivo real** em licitações e renovações. Todos os sistemas integrados com IA!"
 
-Visual: Mercado de IA + posicionamento da Betha vs. concorrentes no setor público.
-
 ---
 
 ### 🔹 Slide 5 — O Modelo de Inovação Interna (2:00 – 2:30)
@@ -54,8 +50,6 @@ Mostrar como o projeto se sustenta e gera valor.
 > 1. **Diferencial em licitações** — seremos os primeiros com IA nativa integrada entre todos os sistemas
 > 2. **Redução de custos** — sem implementação nova, reaproveitamos tudo, isso resulta em menos suporte e menos treinamento
 > 3. **Fidelização de clientes** — Transformamos a experiência do usuário com um agente que os ajuda a utilizar o sistema
-
-Visual: Diagrama de valor gerado (diferencial competitivo + redução de custos + fidelização).
 
 ---
 
@@ -71,8 +65,6 @@ Mostrar por que não usar soluções prontas do mercado.
 > - Custo: investimento interno vs. licenças mensais externas
 > - Compliance: dados sensíveis de prefeituras permanecem sob nosso controle (LGPD)"
 
-Visual: Tabela comparativa com checkmarks mostrando nossas vantagens.
-
 ---
 
 ### 🔹 Slide 7 — Usuários e Impacto Real (3:00 – 3:30)
@@ -80,12 +72,10 @@ Visual: Tabela comparativa com checkmarks mostrando nossas vantagens.
 Mostrar quem se beneficia e como.
 
 > "Três públicos se beneficiam diretamente:
-> - **1. Servidores municipais:** Acessam informações rapidamente conversando, sem precisar dominar múltiplos sistemas.
+> - **1. Servidores municipais:** Acessam informações rapidamente, conversando, sem precisar de grande domino nos sistemas.
 > - **2. Gestores da Betha:** Ganham diferencial competitivo em vendas e licitações.
 > - **3. Time de suporte:** Reduz chamados repetitivos, pois o assistente responde dúvidas comuns automaticamente.
 > Estamos preparando a Betha para a **era da IA agentiva no setor público**."
-
-Visual: Personas dos três públicos + benefícios.
 
 ---
 
@@ -94,12 +84,8 @@ Visual: Personas dos três públicos + benefícios.
 Mostrar solidez técnica (importante para público técnico).
 
 > "A solução é robusta e escalável:
-> - **Gerador automático de agentes MCP** que lê OpenAPI e cria servidores conversacionais
-> - **Cliente de chat multi-servidor** que orquestra múltiplos sistemas simultaneamente
-> - **Integração nativa** com sistemas existentes da Betha (tributos, saúde, educação, etc.)
-> Tudo desenvolvido com TypeScript, Node.js, protocolo MCP e modelos GPT."
-
-Visual: Diagrama de arquitetura simplificado.
+> - **Gerador automático de agentes MCP** que lê OpenAPI e cria servidores conversacionais desacoplados dos serviços atuais, evitando chance de intrusão de bugs na implementação.
+> - **Cliente de chat multi-servidor** que orquestra múltiplos sistemas simultaneamente e integra multiplos sistemas em um único chat, sem a necessidade de desenvolver uma novas interfaces para cada sistema.
 
 ---
 
@@ -125,5 +111,5 @@ Visão + Roadmap + Call to Action
 > 1. Piloto interno com sistemas da Betha (Studio aplicações, Documentos, Saúde)
 > 2. Validação com clientes-piloto em 2 prefeituras parceiras
 > 3. Expansão para todo ecossistema de sistemas da Betha em 2026
-> **Nossa visão:** Tornar a Betha Sistemas a referência em **gestão municipal inteligente**, onde qualquer servidor pode acessar qualquer informação simplesmente conversando.
-> A IA agentiva não é o futuro — é o presente. E a Betha pode estar na liderança.
+> **Nossa visão:** Tornar a Betha Sistemas a referência em **gestão municipal inteligente** no Brasil.
+> Obrigado pela atenção! Boa noite a todos!

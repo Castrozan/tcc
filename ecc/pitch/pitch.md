@@ -39,7 +39,7 @@ Produto + Como funciona + Demo
 
 ---
 
-### 🔹 Slide 4 — O Mercado ea Oportunidade (1:30 – 2:00)
+### 🔹 Slide 4 — O Mercado e a Oportunidade (1:30 – 2:00)
 
 Contextualizar o mercado de IA e o posicionamento da Betha.
 

@@ -112,7 +112,7 @@ Mostrar quem se beneficia e como.
 
 ---
 
-### 🔹 Slide 9 — Próximos Passos e Visão de Futuro (4:30 – 5:00)
+### 🔹 Slide 9 — O que esperamos pro futuro (4:30 – 5:00)
 
 Visão + Roadmap + Call to Action
 

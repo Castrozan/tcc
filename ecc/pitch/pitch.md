@@ -31,6 +31,8 @@ Mostrar a dor real da Betha e de seus clientes.
 
 **Alternativa 1 — Com Números Concretos:**
 
+TODO: perguntar destes processos (ou similares) pra alguém dos times e confirmar os números.
+
 > "Nossos clientes — gestores e servidores municipais — enfrentam rotinas complexas diariamente.
 > Para emitir uma nota fiscal: 47 cliques, 12 telas diferentes, 15 minutos. Para aprovar um processo: 63 cliques, 8 modais, 20 minutos.
 > A Betha tem mais de 200 sistemas. Integrar IA manualmente em cada um? 2–3 meses por sistema. Isso significa **anos** de desenvolvimento.
@@ -38,6 +40,8 @@ Mostrar a dor real da Betha e de seus clientes.
 > Estamos perdendo diferencial competitivo. E tempo."
 
 **Alternativa 2 — Storytelling com Exemplo:**
+
+TODO: perguntar pra alguém de algum time um processo moroso para exemplificar.
 
 > "Maria é servidora municipal. Ela precisa emitir uma nota fiscal.
 > Abre o sistema, clica em 'Novo Documento', preenche razão social... esqueceu o CNPJ. Volta duas telas. Copia, cola, continua.

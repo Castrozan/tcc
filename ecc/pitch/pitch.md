@@ -11,7 +11,7 @@ TODOs:
 
 Gancho + Problema + Oportunidade
 
-> "Implementar IA em cada sistema da Betha? O que vocês acham? Meses de desenvolvimento por sistema.
+> "A Betha tem mais de 200 sistemas. Implementar IA em cada um? Meses de desenvolvimento por sistema.
 > Mas e se eu te disser que a gente pode implementar isso automaticamente e em minutos?"
 
 ---

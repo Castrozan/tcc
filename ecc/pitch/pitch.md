@@ -31,7 +31,7 @@ Visual: Diagrama mostrando múltiplos sistemas desconectados vs. tempo de integr
 > "Por esse motivo desenvolvemos um motor que lê as especificações OpenAPI dos sistemas da Betha e gera **automaticamente** agentes conversacionais.
 > Em vez de meses de desenvolvimento, conectamos um sistema em **minutos**.
 > E agora? Como nossos usuários vão interagir com o sistema em conjunto com o agente? Uma única conversa: 'Emita nota fiscal para fornecedor X'. O agente executa todas as etapas uma depois da outra, consultando múltiplos sistemas as vezes, pedindo mais informação para o usuário, informa o progresso em tempo real e conclui uma atividade.
-> Vejam a demo."
+> Como vocês puderam ver na demo."
 
 ---
 

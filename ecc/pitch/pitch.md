@@ -120,11 +120,11 @@ Visão + Roadmap + Call to Action
 > 1. Piloto interno com sistemas da Betha (Studio aplicações, Documentos, Saúde)
 > 2. Validação com clientes-piloto em 2 prefeituras parceiras
 > 3. Expansão para todo ecossistema de sistemas da Betha em 2026
-> **Nossa visão:** Tornar a Betha Sistemas a referência em **gestão municipal inteligente** no Brasil.
 
 ### 🔹 Slide 10 — Time e Obrigado (4:00 – 4:30)
 
 Apresentar a equipe e expertise.
 
 > "Esse é o nosso time.
-> Obrigado pela atenção e boa noite a todos!
+> **Nossa visão:** Tornar a Betha Sistemas a referência em **gestão municipal inteligente** no Brasil.
+> Obrigado pela atenção e boa noite a todos!"

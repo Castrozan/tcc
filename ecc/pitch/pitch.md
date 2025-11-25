@@ -12,7 +12,7 @@ TODOs:
 
 ### 🔹 Slide 1 — Capa (0:00 – 0:05)
 
-> "Boa noite!"
+> "Boa noite! Meu nome é Lucas Zanoni."
 
 ---
 

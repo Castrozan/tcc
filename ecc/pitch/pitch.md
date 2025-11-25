@@ -1,30 +1,7 @@
 # PITCH ECC - ChatBridge
 
-Recalculando com os dados fornecidos:
-
-**Integração manual:**
-- 200 sistemas × 3 meses × 2,5 pessoas = 1.500 meses-pessoa
-- Para concluir em 4 anos (48 meses): 1.500 ÷ 48 = 31,25 pessoas em paralelo
-- Custo: 31,25 pessoas × R$ 9.000/mês × 48 meses = R$ 13.500.000
-
-**Solução automatizada:**
-- Desenvolvimento do motor: 6 meses com 5 pessoas = 5 × R$ 9.000 × 6 = R$ 270.000
-- Implementação: minutos por sistema (custo operacional mínimo)
-
-**Economia estimada: R$ 13,2 milhões**
-
-**Resumo para o pitch:**
-- Integração manual: R$ 13,5 milhões em 4 anos (31 desenvolvedores)
-- Solução automatizada: R$ 270 mil (desenvolvimento do motor)
-- Economia: R$ 13,2 milhões
-
 TODOs:
-- [ ] adicionar dados da Betha para ter embasamento e peso. 
-    - [ ] Analisar o pitch e buscar dados
-        - Número de sistemas da Betha: + 200 sistemas
 - [ ] Adicionar o gif da demo
-- [x] Foto de cada um dos integrantes da equipe
-
 
 ## 🎬 **Fluxo do Pitch (5 min / até 10 slides)**
 

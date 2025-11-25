@@ -3,6 +3,7 @@
 TODOs:
 - [ ] adicionar dados da Betha para ter embasamento e peso. 
     - [ ] Analisar o pitch e buscar dados
+        - Número de sistemas da Betha: + 200 sistemas
 
 ## 🎬 **Fluxo do Pitch (5 min / até 10 slides)**
 

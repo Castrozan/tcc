@@ -109,10 +109,10 @@ Mostrar solidez técnica (importante para público técnico).
 Apresentar a equipe e expertise.
 
 > "Somos uma equipe multidisciplinar que uniu expertise técnica e visão de negócio:
-> - **Bruno Dimon** – Arquitetura backend e integração de sistemas
+> - **Bruno Dimon** – Interface do usuário e experiência conversacional
 > - **Douglas Kuerten** – Especialista em APIs e integrações empresariais
 > - **Lucas Zanoni** – IA, agentes conversacionais e arquitetura de plataforma
-> - **Joel Francisco** – Interface do usuário e experiência conversacional
+> - **Joel Francisco** – Arquitetura backend e integração de sistemas
 > - **Vinicius Milanez** – Infraestrutura, deploy e operação
 > Desenvolvemos, validamos e testamos o MVP que vocês acabaram de ver — tudo aproveitando o ecossistema da Betha."
 

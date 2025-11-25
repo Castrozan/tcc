@@ -38,7 +38,7 @@ TODOs:
 
 Gancho + Problema + Oportunidade
 
-> "Implementar IA em cada sistema da Betha? Com um catálogo de mais de 200 sistemas, o que vocês acham?
+> "Integrar IA em cada sistema da Betha? Com um catálogo de mais de 200 sistemas, o que vocês acham?
 > Mas e se eu te disser que a gente pode implementar isso automaticamente e em minutos?"
 
 ---
@@ -112,31 +112,7 @@ Mostrar quem se beneficia e como.
 
 ---
 
-### 🔹 Slide 9 — Tecnologia e Arquitetura (3:30 – 4:00)
-
-Mostrar solidez técnica (importante para público técnico).
-
-> "A solução é robusta e escalável:
-> - **Gerador automático de agentes MCP** que lê OpenAPI e cria servidores conversacionais desacoplados dos serviços atuais, evitando chance de intrusão de bugs na implementação.
-> - **Cliente de chat multi-servidor** que orquestra múltiplos sistemas simultaneamente e integra multiplos sistemas em um único chat, sem a necessidade de desenvolver uma novas interfaces para cada sistema.
-
----
-
-### 🔹 Slide 10 — Time de Intraempreendedorismo (4:00 – 4:30)
-
-Apresentar a equipe e expertise.
-
-> "Somos uma equipe multidisciplinar que uniu expertise técnica e visão de negócio:
-> - **Bruno Dimon** – Interface do usuário e experiência conversacional
-> - **Douglas Kuerten** – Especialista em APIs e integrações empresariais
-> - **Lucas Zanoni** – IA, agentes conversacionais e arquitetura de plataforma
-> - **Joel Francisco** – Arquitetura backend e integração de sistemas
-> - **Vinicius Milanez** – Infraestrutura, deploy e operação
-> Desenvolvemos, validamos e testamos o MVP que vocês acabaram de ver — tudo aproveitando o ecossistema da Betha."
-
----
-
-### 🔹 Slide 11 — Próximos Passos e Visão de Futuro (4:30 – 5:00)
+### 🔹 Slide 9 — Próximos Passos e Visão de Futuro (4:30 – 5:00)
 
 Visão + Roadmap + Call to Action
 
@@ -145,4 +121,10 @@ Visão + Roadmap + Call to Action
 > 2. Validação com clientes-piloto em 2 prefeituras parceiras
 > 3. Expansão para todo ecossistema de sistemas da Betha em 2026
 > **Nossa visão:** Tornar a Betha Sistemas a referência em **gestão municipal inteligente** no Brasil.
-> Obrigado pela atenção! Boa noite a todos!
+
+### 🔹 Slide 10 — Time e Obrigado (4:00 – 4:30)
+
+Apresentar a equipe e expertise.
+
+> "Esse é o nosso time.
+> Obrigado pela atenção e boa noite a todos!

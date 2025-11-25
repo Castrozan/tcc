@@ -2,6 +2,10 @@
 
 TODOs:
 - [ ] Adicionar o gif da demo
+- [ ] Treinar
+- [ ] Ajustar a apresentação se preciso
+- [ ] Cronometrar a apresentação
+- [ ] Mandar muito bem na apresentação :thumbsup: :guy-with-glasses:
 
 ## 🎬 **Fluxo do Pitch (5 min / até 10 slides)**
 

@@ -1,5 +1,9 @@
 # PITCH ECC - ChatBridge
 
+TODOs:
+- [ ] adicionar dados da Betha para ter embasamento e peso. 
+    - [ ] Analisar o pitch e buscar dados
+
 ## 🎬 **Fluxo do Pitch (5 min / até 10 slides)**
 
 ### 🔹 Slide 1 — Elevator Ride (0 – 0:30)

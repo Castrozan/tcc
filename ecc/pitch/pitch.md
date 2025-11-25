@@ -24,14 +24,12 @@ Visual: Diagrama mostrando múltiplos sistemas desconectados vs. tempo de integr
 ---
 
 ### 🔹 Slide 3 — A Solução que Desenvolvemos (1:00 – 1:30)
-> *(inserir gif demonstrando o app MAXIMIZADO)*
-
-> Produto + Como funciona + Demo
+Produto + Como funciona + Demo
 
 > "Por esse motivo desenvolvemos um motor que lê as especificações OpenAPI dos sistemas da Betha e gera **automaticamente** agentes conversacionais.
 > Em vez de meses de desenvolvimento, conectamos um sistema em **minutos**.
 > E agora? Como nossos usuários vão interagir com o sistema em conjunto com o agente? Uma única conversa: 'Emita nota fiscal para fornecedor X'. O agente executa todas as etapas uma depois da outra, consultando múltiplos sistemas as vezes, pedindo mais informação para o usuário, informa o progresso em tempo real e conclui uma atividade.
-> Como vocês puderam ver na demo."
+> Como vocês puderam ver na demo." *(inserir gif demonstrando o app MAXIMIZADO)*
 
 ---
 

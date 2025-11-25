@@ -15,10 +15,9 @@ Gancho + Problema + Oportunidade
 
 Mostrar a dor real da Betha e de seus clientes.
 
-> "Nossos clientes — gestores e servidores municipais — trabalham com sistemas complexos diariamente.
-> Para completar tarefas complexas — emitir nota fiscal, consultar tributos, aprovar documentos — servidores precisam navegar por dezenas de telas, clicar inúmeras vezes, e alternar entre múltiplos sistemas.
-> A Betha tem um enorme ecossistema de aplicações, mas integrá-las com IA do zero levaria de 2–3 meses **por sistema**.
-> Enquanto isso, empresas do mercado tech e as concorrentes diretos da Betha já anunciam 'soluções com IA'. Isso significa que estamos perdendo tempo e diferencial."
+> "Nossos clientes — gestores e servidores municipais — trabalham com sistemas para completar tarefas complexas, como emitir nota fiscal, consultar tributos, aprovar documentos. Os servidores precisam navegar por dezenas de telas, clicar inúmeras vezes e aprender a usar cada sistema.
+> E a gente sabe que a Betha tem um enorme ecossistema de aplicações, e ai que está o problema, pois integrá-las com IA do zero levaria meses de desenvolvimento, **por sistema**.
+> Enquanto isso, empresas do mercado tech e as concorrentes diretos da Betha já anunciam 'soluções com IA'. Isso significa que estamos perdendo tempo e diferencial competitivo."
 
 Visual: Diagrama mostrando múltiplos sistemas desconectados vs. tempo de integração tradicional.
 

@@ -23,44 +23,10 @@ Gancho + Problema + Oportunidade
 
 Mostrar a dor real da Betha e de seus clientes.
 
-**Versão Original:**
-
-> "Nossos clientes — gestores e servidores municipais — trabalham com sistemas para completar tarefas complexas, como emitir nota fiscal, consultar tributos, aprovar documentos. Os servidores precisam navegar por dezenas de telas, clicar inúmeras vezes e aprender a usar cada sistema.
-> E a gente sabe que a Betha tem um enorme ecossistema de aplicações, e ai que está o problema, pois integrá-las com IA do zero levaria meses de desenvolvimento, **por sistema**.
-> Enquanto isso, empresas do mercado tech e as concorrentes diretos da Betha já anunciam 'soluções com IA'. Isso significa que estamos perdendo tempo e diferencial competitivo."
-
-**Alternativa 1 — Com Números Concretos:**
-
-TODO: perguntar destes processos (ou similares) pra alguém dos times e confirmar os números.
-
-> "Nossos clientes — gestores e servidores municipais — enfrentam rotinas complexas diariamente.
-> Para emitir uma nota fiscal: 47 cliques, 12 telas diferentes, 15 minutos. Para aprovar um processo: 63 cliques, 8 modais, 20 minutos.
-> A Betha tem mais de 200 sistemas. Integrar IA manualmente em cada um? 2–3 meses por sistema. Isso significa **anos** de desenvolvimento.
-> Enquanto isso, concorrentes diretos já anunciam assistentes inteligentes.
-> Estamos perdendo diferencial competitivo. E tempo."
-
-**Alternativa 2 — Storytelling com Exemplo:**
-
-TODO: perguntar pra alguém de algum time um processo moroso para exemplificar.
-
-> "Maria é servidora municipal. Ela precisa emitir uma nota fiscal.
-> Abre o sistema, clica em 'Novo Documento', preenche razão social... esqueceu o CNPJ. Volta duas telas. Copia, cola, continua.
-> Agora precisa selecionar categoria fiscal. Onde estava? Abre outro modal. Procura na lista de 200 opções.
-> 15 minutos, 47 cliques, 3 telas depois: concluído.
-> A Betha tem mais de 200 sistemas com processos assim. Integrar IA para simplificar? 2–3 meses por sistema.
-> Concorrentes não vão esperar. Estamos perdendo terreno."
-
-**Alternativa 3 — Foco no Problema de Escala:**
-
 > "Servidores municipais gastam horas navegando entre múltiplas telas, preenchendo dezenas de campos, clicando centenas de vezes — para tarefas que deveriam ser simples.
 > A Betha tem mais de 200 sistemas. Cada um com suas rotinas, suas interfaces, sua complexidade.
 > Mas possuindo um ecossistema tão vasto surge um grande problema. Anos de trabalho para introduzir IA. E esse simplesmente não é um tempo que temos.
 > Por quê? Enquanto isso, concorrentes diretos já anunciam 'soluções com IA'. Isso significa que estamos perdendo "time to market".
-
-**Alternativa 4**
-
-Nossos sistemas são utilizados para tarefas complexas, como emissão de nota, consultar tributos e aprovação de contratos, os servidores públicos precisam navegar por dezenas de telas, clicar por inúmeros menos e aprender cada canto de cada sistema. Uma integração com IA facilitaria o uso dessas ferramentas. Mas possuindo um ecossistema tão vasto surge um grande problema, integrá-los do zero levaria meses de desenvolvimento, *por cada sistema*. Enquanto isso, empresas do mercado de GovTech já anunciam ‘Soluções com IA’. Isso significa que estamos perdendo “time to market” e um gigantesco diferencial competitivo.
-
 
 ---
 
